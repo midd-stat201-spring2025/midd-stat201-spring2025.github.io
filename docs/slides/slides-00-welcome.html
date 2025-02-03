@@ -329,7 +329,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">9/9/24</p>
+  <p class="date">2/10/25</p>
 </section>
 <section>
 <section id="welcome-to-the-course" class="title-slide slide level1 center">
@@ -346,7 +346,7 @@
 <li class="fragment">Office: Warner 214</li>
 <li class="fragment">Email: btang@middlebury.edu</li>
 </ul></li>
-<li class="fragment"><p>Course website: <a href="https://midd-stat201-fall2024.github.io/" class="uri">https://midd-stat201-fall2024.github.io/</a></p>
+<li class="fragment"><p>Course website: <a href="https://midd-stat201-fall2024.github.io/" class="uri">https://midd-stat201-spring2025.github.io/</a></p>
 <ul>
 <li class="fragment">Please bookmark this page and visit frequently!</li>
 <li class="fragment">Note that both sections will use the same website</li>
@@ -683,6 +683,44 @@ The average length of a word in Beyoncé's first four alums is 3.62. What is the
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

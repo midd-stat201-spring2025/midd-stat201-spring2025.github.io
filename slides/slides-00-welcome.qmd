@@ -1,6 +1,6 @@
 ---
 title: "Welcome!"
-date: "September 9, 2024"
+date: "February 10, 2025"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
@@ -35,7 +35,7 @@ plot_theme <- theme(text = element_text(size = 16))
     -   Office: Warner 214
     -   Email: btang\@middlebury.edu
 
--   Course website: <https://midd-stat201-fall2024.github.io/>
+-   Course website: [https://midd-stat201-spring2025.github.io/](https://midd-stat201-fall2024.github.io/){.uri}
 
     -   Please bookmark this page and visit frequently!
     -   Note that both sections will use the same website
@@ -99,7 +99,6 @@ What do you notice? What might be the explanation?
 :::
 
 ## Example (cont.)
-
 
 Counties of the U.S. within the **top 10%** of death rates for kidney cancer for white males, 1980-1989.
 
