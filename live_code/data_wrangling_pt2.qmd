@@ -1,0 +1,104 @@
+---
+title: "Data wrangling with dplyr (cont.)"
+date: "September 26, 2024"
+format:
+  html:
+    toc: true
+    code-line-numbers: true
+---
+
+**Don't forget to load the `tidyverse` package!**
+
+Recall that we are looking at data provided by Kaggle. In 2017, Kaggle conducted an [industry-wide survey](https://www.kaggle.com/datasets/kaggle/kaggle-survey-2017/) to establish a comprehensive view of the state of data science and machine learning. We will be looking at just a subset of the data.
+
+```{r library-data, message= F}
+library(tidyverse)
+library(readr)
+url_file <- "https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/datascience_survey_subset.csv"
+
+datascience <- read_csv(url_file)
+```
+
+## Warm-up/Recap:
+
+Write code to determine many different programming languages were recommended in the data:
+
+```{r eval = FALSE}
+#| code-fold: true
+datascience |>
+  distinct(LanguageRecommendation) |>
+  nrow()
+```
+
+Display a data frame of the respondents who were living in the United States and were at most 35 years old at the time of taking the survey.
+
+```{r eval = FALSE}
+#| code-fold: true
+datascience |>
+  filter(Country == "United States", Age <= 35)
+```
+
+
+
+## Grouping by grouped operations
+
+Sometimes, we want to look at a given statistic or create a new variable focusing on each level of a specific categorical variable. The `group_by()` function tells `R` to treat each unique level as a separate data set.
+
+```{r}
+datascience |>
+  group_by(FormalEducation) |>
+  summarise(mean_age = mean(Age))
+```
+
+It's always important to `ungroup()` after using `group_by()`! Otherwise, the grouping with carry on and could lead to potential errors in your future wrangling! Notice the differences in the outputs in the following examples: 
+
+```{r}
+datascience |>
+  group_by(Major) |>
+  mutate(mean_age = mean(Age))|>
+  mutate(mean_comp = mean(CompensationAmount)) |>
+  ungroup() |>
+  select(Major, mean_age, mean_comp) |>
+  arrange(Major)
+
+datascience |>
+  group_by(Major) |>
+  mutate(mean_age = mean(Age)) |>
+  ungroup() |>
+  mutate(mean_comp = mean(CompensationAmount)) |>
+  select(Major, mean_age, mean_comp) |>
+  arrange(Major)
+```
+
+## Piping to ggplot()
+
+Remember that when creating plots, `ggplot()` expects a data frame as its first argument.
+
+We may sometimes need to wrangle data prior to visualizing it. We have two options (both have pros and cons):
+
+ 1.  Wrangle the original data, store the resulting data frame as a new object or overwrite the previous one, and then refer to that data frame with `ggplot()`
+
+```{r eval = T, fig.width=6, fig.height=3.75}
+datascience_india <- datascience |>
+  filter(Country == "India")
+
+ggplot(data = datascience_india, mapping = aes(x = Age)) +
+  geom_histogram(bins = 20)
+```
+
+2. Wrangle the original data, and then directly pipe the result into `ggplot()`, which knows to expect a data frame as its first argument:
+
+```{r eval = T, fig.width=6, fig.height=3.75}
+# Notice that we don't specify the data parameter in ggplot()!
+datascience |>
+  filter(Country == "India") |>
+  ggplot(mapping = aes(x = Age)) + 
+  geom_histogram(bins = 20)
+```
+
+::: column-margin
+When do we use `|>` and when do we use `+` to connect lines of code?
+:::
+
+
+

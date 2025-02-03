@@ -1,0 +1,76 @@
+---
+title: "Linear regression in R"
+---
+
+```{r message = F}
+library(tidyverse)
+library(openintro)
+```
+
+### `lm()` function
+
+The function that will obtain the coefficients for the least-squares line is the `lm()` function. The syntax is as follows:
+
+`lm(response ~ explanatory, data)`
+
+### Example 1: `cherry` data with continuous $x$
+
+Let's once again consider the `cherry` data from `openintro`, where we want to fit the model
+
+$$\text{volume} = \beta_{0} + \beta_{1} \times \text{diameter} + \epsilon$$
+
+What does this look like in `R`?
+
+```{r eval = F}
+lm(volume ~ diam, data = cherry)
+```
+
+*Note that the variables have to be spelled as they appear in the data frame!*
+
+The output from this line of code is:
+
+```{r echo = F}
+lm(volume ~ diam, data = cherry)
+```
+
+This isn't the most informative of output, so what we will do is use an additional function called `summary()` that will give us much more information!
+
+We will first store the output from `lm()` as a variable called `cherry_lm`:
+
+```{r}
+cherry_lm <- lm(volume ~ diam, data = cherry)
+```
+
+Then we will use the `summary()` function and pass in the linear model:
+
+```{r}
+summary(cherry_lm)
+```
+
+There's a lot more information here! We can now see the $b_{0}$ and $b_{1}$ estimates, along with some extra information. In particular, the "Multiple R-squared" quantity is the coefficient of determination $R^2$!
+
+### Example 2: `possum` data with categorical $x$
+
+The nice thing about `lm()` is that it will automatically convert categorical variables to indicator variables!
+
+Let's re-visit the `possum` model:
+
+$$\text{tail length} = \beta_{0} + \beta_{1} \times \text{pop-other} + \epsilon$$ $$
+\text{pop-other} = \begin{cases}
+0 & \text{ if  pop = Vic} \\
+1 & \text{ if  pop = other}
+\end{cases}
+$$
+
+We can use the `lm()` function just as before:
+
+```{r}
+possum_lm <- lm(tail_l ~ pop, data = possum)
+```
+
+Sometimes we just want the coefficients. The `coef()` function will output the coefficients as a vector. These can be nice for reproducibility and in-line code:
+
+```{r}
+coef(possum_lm)
+```
+

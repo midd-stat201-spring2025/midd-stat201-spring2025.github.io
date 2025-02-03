@@ -1,0 +1,309 @@
+---
+title: "Hypothesis testing with CLT"
+date: "October 28, 2024"
+title-slide-attributes:
+    data-background-image: "figs/bikeshare-plots.png"
+    data-background-size: contain
+    data-background-opacity: "0.2"
+format: 
+  revealjs:
+    theme: custom.scss
+    transition: none
+    incremental: true
+    scrollable: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+draft: false
+---
+
+## Housekeeping
+
+```{r echo = F, message= F}
+knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
+library(tidyverse)
+library(openintro)
+library(readr)
+library(kableExtra)
+plot_theme <- theme(text = element_text(size = 24))
+source("../stat201_fns.R")
+```
+
+-   Homework 6 due tonight
+
+-   Modified office hours
+
+## Recap
+
+-   CLT -\> sampling distribution for sample means -\> confidence intervals for populations means
+
+-   Now we're returning to hypothesis testing!
+
+    1.  Two sets of hypotheses (competing claims)
+
+    2.  Collect data, calculate a statistic from the observed data, set significance level
+
+    3.  Obtain p-value from the null distribution: sampling distribution assuming if $H_{0}$ were true
+
+        -   p-value: probability of observing data as or more extreme as our own, assuming $H_{0}$ true
+
+    4.  Make a decision
+
+## Hypothesis testing using mathematical model
+
+-   We learned how to conduct hypothesis tests (HTs) using simulation to obtain null distribution
+
+-   But we can also use CLT to obtain null distribution!
+
+-   So the only step that will "look different" is #3: how we obtain our null distribution and p-value
+
+    -   Looks different depending on type of data
+
+-   Make a conclusion in terms of $H_{A}$
+
+# Hypothesis test for single proportion
+
+## 1. Define hypotheses
+
+Want to conduct a hypothesis test about a population proportion.
+
+:::::: columns
+::: {.column width="33%"}
+-   $H_{0}: p = p_{0}$
+
+-   $H_{A}: p \neq p_{0}$ or $H_{A}: p > p_{0}$ or $H_{A}: p < p_{0}$
+:::
+
+::: {.column width="33%"}
+-   $H_{0}: p \geq p_{0}$
+
+-   $H_{A}: p < p_{0}$
+:::
+
+::: {.column width="33%"}
+-   $H_{0}: p \leq p_{0}$
+
+-   $H_{A}: p > p_{0}$
+:::
+::::::
+
+-   Remember, $p_{0}$ is our "null hypothesized value": the population proportion if $H_{0}$ were true
+
+## 2. Collect data, set significance
+
+-   Obtain observed sample proportion $\hat{p}_{obs}$
+
+-   Set $\alpha$ significance level
+
+## 3. Null distribution and p-value
+
+Recall CLT for sample proportion: if we have $n$ independent binary observations that satisfy the success-failure condition, then
+
+$$
+\hat{p} \overset{\cdot}{\sim} N\left(p, \sqrt{\frac{p(1-p)}{n}} \right)
+$$
+
+-   This is the *sampling distribution* of $\hat{p}$
+
+-   But we want the *null distribution* of $\hat{p}$: the sampling distribution under $H_{0}$
+
+-   We should operate in a world where $H_{0}$ is true, which means we operate assuming $p =p_{0}$
+
+-   So to use CLT, we must satisfy:
+
+    -   Independence
+    -   Success-failure condition under $H_{0}$: $np_{0} \geq 10$ and $n(1-p_{0}) \geq 10$
+
+## 3. Null distribution and p-value (cont.)
+
+If CLT holds and $H_{0}$ is true, then our **null distribution** is:
+
+$$
+\hat{p} \overset{\cdot}{\sim} N\left(p_{0}, \sqrt{\frac{p_{0} (1-p_{0})}{n}} \right)
+$$
+
+-   We can standardize the null distribution by taking z-score:
+
+::: fragment
+$$
+Z = \frac{\hat{p} - p_{0}}{\sqrt{\frac{p_{0} (1-p_{0})}{n}}} \sim N(0,1)
+$$
+:::
+
+## 3. Test statistic
+
+-   p-value requires us to compare our observed data to the null distribution
+
+-   Calculate a **test statistic**: a quantity that assesses how consistent your sample data are with $H_{0}$
+
+    -   Our test statistic is of the form:
+
+    ::: fragment
+    $$\frac{\text{point estimate} - \text{null value}}{\text{SE}}$$
+    :::
+
+    -   For this specific test, our test statistic is:
+
+    ::: fragment
+    $$z =\frac{\hat{p}_{\text{obs}} - p_{0}}{\sqrt{\frac{p_{0} (1-p_{0})}{n}}}$$
+
+    which is distributed $N(0,1)$
+    :::
+
+## Obtain p-value
+
+-   If $|z|$ large, then that usually means observed value is extremely unusual for $H_{0}$, which is convincing evidence against $H_{0}$
+
+-   p-value is then $\text{Pr}(Z \geq z)$ or $\text{Pr}(Z \leq z)$ (or both), depending on $H_{A}$
+
+    -   Easily obtained using `pnorm()`
+
+## Example: taste test
+
+Some people claim that they can tell the difference between a diet soda and a regular soda in the first sip. A researcher wanted to test this claim using a hypothesis test at the 0.05 significance level.
+
+-   He randomly sampled 80 such people.
+-   He then filled 80 plain white cups with soda, half diet and half regular through random assignment, and asked each person to take one sip from their cup and identify the soda as diet or regular.
+-   53 participants correctly identified the soda.
+
+::: {.fragment style="color: maroon"}
+Let $p$ be the probability/rate of correctly identifying soda type among people who think they can tell the difference.
+:::
+
+## Example: taste test (cont.)
+
+1.  **Define hypotheses**
+
+    -   $H_{0}$: $p = 0.5$ (random guessing)
+
+    -   $H_{A}$: $p > 0.5$ (better than random guessing)
+
+    -   Note: $p_{0} = 0.5$ is our null hypothesized value!
+
+2.  **Collect data**
+
+    -   $\hat{p}_{\text{obs}} = \frac{53}{80} = `r 53/80`$
+
+-   Note: significance level already determined to be 0.05
+
+## Example: taste test (cont.)
+
+3.  **Obtain null distribution and p-value**
+
+    i.  ::: {style="color: maroon"}
+        Check conditions for inference satisfied
+        :::
+
+        -   Independence: random sample
+        -   success-failure: $np_{0} = 80(0.5) = 40 \geq 10$ and $n(1-p_{0}) = 40 \geq 10$
+
+    ii. ::: {style="color: maroon"}
+        Null distribution
+        :::
+
+        ::: fragment
+        $$\hat{p} \overset{\cdot}{\sim} N\left(0.5, \sqrt{\frac{0.5(1-0.5)}{80}} = 0.056 \right)$$
+        :::
+
+    iii. ::: {style="color: maroon"}
+         Test statistic:
+         :::
+
+         ::: fragment
+         $$z = \frac{\hat{p}_{obs} - p_{0}}{\text{SE}_{0}} = \frac{0.6625 - 0.5}{0.056} = 2.90$$
+
+         -   i.e. if $H_{0}$ true, our observed $\hat{p}_{obs}$ is 2.90 SDs above the mean
+         :::
+
+## 4. Example: taste test (cont.)
+
+iv. ::: {style="color: maroon"}
+    Calculate p-value
+    :::
+
+    -   Remember $H_{A}: p > 0.5$
+
+::: fragment
+$$
+\text{p-value} = \text{Pr}(Z \geq z) = \text{Pr}(Z \geq 2.90) = \texttt{1 - pnorm(2.90, 0, 1) = `r round(1 - pnorm(2.90, 0, 1), 4)`}
+$$
+:::
+
+4.  **Decision and conclusion**
+    -   Since our p-value of 0.0019 is less than our significance level of 0.05, we reject $H_{0}$. The data provide strong evidence that the rate of correctly identifying a soda for these people is better than random guessing.
+
+## Example: M&M's
+
+M&M's reported that 14% of its candies are yellow. We are interested in testing this claim. In a random sample of 100 M&M's, 9 were found to be yellow. Conduct a hypothesis test at the $0.10$ level.
+
+$p =$ true proportion of yellow M&M's
+
+:::::: columns
+:::: {.column width="50%"}
+::: discuss
+1.  Write out null and alternative hypotheses
+
+2.  Collect data (i.e. obtain our observed statistics)
+
+3.  i\) Verify conditions for CLT are met
+:::
+::::
+
+::: {.column width="50%"}
+1.  $H_{0}: p = 0.14$ versus $H_{A}: p \neq 0.14$
+
+2.  $\hat{p}_{obs} = \frac{9}{100} = 0.09$
+
+3.  i\) Independence: random sample
+
+    Success-failure: $np_{0} = 100(0.14) = 14 \geq 10$ and $n(1-p_{0}) = 86 \geq 10$
+:::
+::::::
+
+## Example: M&M's (cont.)
+
+:::::: columns
+:::: {.column width="40%"}
+::: discuss
+3.  ii\) Obtain null distribution
+
+    iii\) Obtain test statistic $z$
+:::
+::::
+
+::: {.column width="60%"}
+3.  ii\) By CLT, our null distribution is $\hat{p} \overset{\cdot}{\sim} N\left(0.14, \sqrt{\frac{0.14(1-0.14)}{100}} \right)$
+
+    $\quad =N(0.14, 0.035)$
+
+    ::: fragment
+    iii\) $z = \frac{\hat{p}_{obs} - p_{0}}{\text{SE}_{0}} = \frac{0.09 - 0.14}{0.035} = -1.43$
+    :::
+:::
+::::::
+
+:::::: columns
+:::: {.column width="40%"}
+::: discuss
+3.  iv\) Obtain p-value. Write out in $\text{Pr}()$ notation or in code what we want to find. Drawing a picture may help!
+:::
+::::
+
+::: {.column width="60%"}
+3.  iv\) Since $H_{A}$ is two-sided, we want $$\begin{align*}
+       \text{p-value} &= \text{Pr}(Z \leq -1.43 \cup Z \geq 1.43) \\
+    &= \text{Pr}(Z \leq -1.43) + \text{Pr}(Z \geq 1.43)  \\
+    &= 2\times \text{Pr}(Z \geq 1.43) \\
+    &= \texttt{2 * (1 - pnorm(1.43))} \\
+    &= `r round(2*pnorm(-1.43), 3)`
+    \end{align*}$$
+:::
+::::::
+
+## Example: M&M's (cont.)
+
+4.  ::: discuss
+    Make a decision and conclusion in context.
+    :::
+
+    -   Since our p-value of 0.153 is greater than our significance level of 0.10, we fail to reject $H_{0}$. The data are not strong enough to suggest that the true proportion of yellow M&Ms is different from 14%.
