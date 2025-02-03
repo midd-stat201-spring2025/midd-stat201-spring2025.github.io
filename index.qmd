@@ -28,6 +28,8 @@ Welcome to the website for Middlebury College’s Spring 2025 STAT 201. On this 
 
 -   TBD
 
-The [syllabus](stat201_syllabus.pdf) (most recent update: 2/3/25) outlines our course policies and a rough schedule. Once classes begin, you should follow the schedule and due dates found on this website.
+The (most recent update: 2/3/25) outlines our course policies and a rough schedule. Once classes begin, you should follow the schedule and due dates found on this website.
+
+[table](t_table.pdf) and [syllabus](stat201_syllabus.pdf)
 
 -   Note the textbooks are optional in this class. However, several practice and homework problems are pulled from the OpenIntro textbook.
