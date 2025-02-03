@@ -2,23 +2,11 @@
 title: "Advanced Introduction to Statistics and Data Science"
 ---
 
-Welcome to the website for Middlebury College’s Fall 2024 STAT 201. On this website you will find the course syllabus, schedule, and assignments. The website is frequently updated during the semester, so please make a habit of refreshing the page. The icons at the top right will link to the supplemental textbook and Canvas.
+Welcome to the website for Middlebury College’s Spring 2025 STAT 201. On this website you will find the course syllabus, schedule, and assignments. The website is frequently updated during the semester, so please make a habit of refreshing the page. The icons at the top right will link to the supplemental textbook and Canvas.
 
 ------------------------------------------------------------------------
 
 ## Announcements
-
--   See this [document for knitting more beautiful tables](live_code/knitr.qmd).
--   If your group would like focused time with Prof. Tang, sign up for 15-minute meetings here: [Calendly link](https://calendly.com/beckytang/1-1-with-prof-tang)
-    -   Feel free to book back-to-back meetings if you think that is necessary
--   **Midterm 2 revisions** (written portion only)
-    -   Revisions are due to Prof. Tang by Friday 12:00pm at the latest. There will be a box outside the office for you to place the revisions if she is unavailable.
-    -   Please submit your original midterm alongside your revisions. Ensure the problem numbers are clearly indicated, and **write and sign the Honor Code statement on your revision.**
-    -   **You are not allowed to consult other students nor TAs, but you may ask Prof. Tang for clarifications and use your notes.**
-    -   Questions that are available for revision are: 2a, 2d, 3a, and any two multiple choice questions of your choice
-        -   For multiple choice questions, you must explain/justify/show work for why your new choice is correct
-        -   For all other questions, you should completely re-do the part you are revising. The exception is if your only revision is to check conditions. In this case, you do not need to re-do the whole part
-    -   Up to 25% of points back are available (depending on quality of revision)
 
 ------------------------------------------------------------------------
 
@@ -31,22 +19,14 @@ Welcome to the website for Middlebury College’s Fall 2024 STAT 201. On this we
 
 **Meeting times and location:**
 
--   Section AZ: MW 8:15-9:30am in Warner 100, R 8:15-9:30am in Warner 104
--   Section BY: MW 9:45-11:00am in Warner 100, R 9:45-11:00am in Warner 101
+-   MW 11:15am-12:30pm in Warner 011, R 11:15am-12:30pm in Warner 101
 
-**Office hours** (both sections welcome):
-
--   Prof. Tang: Monday 2-4pm, Friday 9-10am
+**Office hours**: Tuesday 2-3pm, Friday 10-11am
 
 **TA hours** in Quantitative Center in Armstrong Library:
 
--   TA Claire Yang: Sunday 7-9, Thursday 7-9
--   TA Justin Corke: Thursday 7-9
+-   TBD
 
-The [syllabus](Stat201_Syllabus.pdf) (most recent update: 9/8/24) outlines our course policies and a rough schedule. Once classes begin, you should follow the schedule and due dates found on this website.
+The [syllabus](stat201_syllabus.pdf) (most recent update: 2/3/25) outlines our course policies and a rough schedule. Once classes begin, you should follow the schedule and due dates found on this website.
 
 -   Note the textbooks are optional in this class. However, several practice and homework problems are pulled from the OpenIntro textbook.
-
-------------------------------------------------------------------------
-
--   `ggplot2` [cheat sheet](https://posit.co/wp-content/uploads/2022/10/data-visualization-1.pdf)
