@@ -19,7 +19,8 @@ Welcome to the website for Middlebury College’s Spring 2025 STAT 201. On this 
 
 **Meeting times and location:**
 
--   MW 11:15am-12:30pm in Warner 011, R 11:15am-12:30pm in Warner 101
+-   MW 11:15am-12:30pm in Warner 011
+-   R 11:15am-12:30pm in Warner 101
 
 **Office hours**: Tuesday 2-3pm, Friday 10-11am
 
