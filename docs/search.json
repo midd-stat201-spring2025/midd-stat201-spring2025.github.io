@@ -25,7 +25,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Jump to:\n\nWeek 1\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n\n\n\n\n\n\n\n1\n\nM 02/10\n\nTopic: Welcome! (pdf here)\n\nDirections for printing at bottom\n\n\n\n\nFill out this survey by next class.\n\n\n\n\nW 02/12\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/13\n\nTopic: Software installation (no need to print slides!)\nR and .Rmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  Rmd template \nRecording here! Password: 3g^SS69r\n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nTBD\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
+    "text": "Jump to:\n\nWeek 1\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n\n\n\n\n\n\n\n1\n\nM 02/10\n\nTopic: Welcome!\n\nDirections for printing at bottom\n\n\n\n\nFill out this survey by next class.\nTry to install R and RStudio before Thursday’s class using these instructions\n\nSee homepage for installation help hours\n\n\n\n\n\nW 02/12\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nWednesday problems on Problem Set 1\n\n\n\n\nR 09/13\n\nTopic: Software installation (no need to print slides!)\nR and .qmd basics\n\nDownload the following .Rmd template and drag to your new STAT 201 folder:  qmd template \n\n\n\nIntro to R and R Markdown\n Coding practice \n\n\nTBD\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
   },
   {
     "objectID": "slides/slides-01-study-design.html#population-and-samples",
@@ -2314,7 +2314,7 @@
     "href": "index.html#announcements",
     "title": "Advanced Introduction to Statistics and Data Science",
     "section": "Announcements",
-    "text": "Announcements"
+    "text": "Announcements\n\nModified Tuesday 2/11 office hours: 1:00-2:15pm\nR installation help hours (outside my office):\n\nTuesday 2/11 1:00-2:15pm, 3:00-4:00pm\nWednesday 3:00-4:00pm"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#recap",
