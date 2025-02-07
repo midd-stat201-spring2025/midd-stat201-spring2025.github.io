@@ -1425,7 +1425,7 @@
     "href": "slides/slides-00-welcome.html#necessary-background",
     "title": "Welcome!",
     "section": "Necessary background",
-    "text": "Necessary background\n\nWe assume ZERO background in statistics and data science\nThere is a large computing component, though not as much as in STAT 118\nMATH 121 (Calculus 1) pre-req"
+    "text": "Necessary background\n\nWe assume zero background in statistics and data science\nThere is a large computing component, though not as much as in STAT 118\n\nComfort in typing on keyboard, navigating your file system\n\nMATH 121 (Calculus 1) pre-req"
   },
   {
     "objectID": "slides/slides-00-welcome.html#recommendations",
@@ -1607,7 +1607,7 @@
     "href": "slides/slides-00-welcome.html#important-course-information",
     "title": "Welcome!",
     "section": "Important course information",
-    "text": "Important course information\n\nProfessor Becky Tang\n\nOffice: Warner 214\nEmail: btang@middlebury.edu\n\nCourse website: https://midd-stat201-spring2025.github.io/\n\nPlease bookmark this page and visit frequently!\nNote that both sections will use the same website"
+    "text": "Important course information\n\nProfessor Becky Tang\n\nOffice: Warner 214\nEmail: btang@middlebury.edu\nOffice hours: Mondays 2-3pm, Fridays 10-11am\n\nCourse website: https://midd-stat201-spring2025.github.io/\n\nPlease bookmark this page and visit frequently!\nNote that both sections will use the same website"
   },
   {
     "objectID": "slides/slides-00-welcome.html#example",
@@ -5864,5 +5864,12 @@
     "title": "Problem Set 0",
     "section": "",
     "text": "Due: 2/12/25 before class\nEither typed or written + scanned, submit a PDF to the corresponding Canvas assignment (via Gradescope) answering the following questions:\n\nWhat is your name and your preferred gender pronouns?\nWhat year are you at Middlebury?\nWhat classes are you most excited and nervous about this semester? (No offense taken or brownie points given if you list this course!)\nWhat is your major(s)/area of interest? If you don’t know, that’s also fine!\nWhy are you interested in taking this course?\nWhen and where did you take a Calculus class?\nDo you have any programming experience? If so, in what capacity?\nPlease identify which of my office hours times work for you, if any. (Monday 2-3pm, Friday 10-11am)\nIs there anything that might be important for me to know about demands on your time this semester? (e.g. clubs, sports, five-course semester)\nOptional: any questions for me?"
+  },
+  {
+    "objectID": "slides/slides-00-welcome.html#first-assignment-submission",
+    "href": "slides/slides-00-welcome.html#first-assignment-submission",
+    "title": "Welcome!",
+    "section": "First assignment + submission",
+    "text": "First assignment + submission\n\nProblem Set 0: answers to a brief questionnaire are due before next class. See the course Schedule page for details!\nAll coding practice and homework assignments will be submitted to Gradescope via Canvas. You should all be able to access your Gradescope account using your Middlebury College credentials.\n\nOn Canvas, assignments can be found in both the Assignment tab and the Gradescope tab\nSubmissions can be resubmitted as many times as you like up until the due date\nWe will walk through how to submit an assignment together, but instructions + video can also be found here"
   }
 ]
