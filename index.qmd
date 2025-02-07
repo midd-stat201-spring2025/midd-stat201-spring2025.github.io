@@ -8,13 +8,17 @@ Welcome to the website for Middlebury College’s Spring 2025 STAT 201. On this 
 
 ## Announcements
 
--   Modified Tuesday 2/11 office hours: 1:00-2:15pm
+-   R installation help hours:
 
--   R installation help hours (outside my office):
+    -   Monday 2/10
 
-    -   Tuesday 2/11 1:00-2:15pm, 3:00-4:00pm
+        -   2-3pm (outside my office)
 
-    -   Wednesday 3:00-4:00pm
+        -   7-9pm (Q-Center first floor MBH 202)
+
+    -   Tuesday 2/11
+
+        -   Times TBD (Q-Center first floor MBH 202)
 
 ------------------------------------------------------------------------
 
@@ -30,12 +34,12 @@ Welcome to the website for Middlebury College’s Spring 2025 STAT 201. On this 
 -   MW 11:15am-12:30pm in Warner 011
 -   R 11:15am-12:30pm in Warner 101
 
-**Office hours**: Tuesday 2-3pm, Friday 10-11am
+**Office hours**: Monday 2-3pm, Friday 10-11am
 
-**TA hours** in Quantitative Center in Armstrong Library:
+**TA hours** in Quantitative Center (MBH 202):
 
--   TBD
+-   Sunday, Monday, Thursdays 7-9pm
 
-The [syllabus](syllabus.pdf) (most recent update: 2/3/25) outlines our course policies and a rough schedule. Once classes begin, you should follow the schedule and due dates found on this website.
+The [syllabus](syllabus.pdf) (most recent update: 2/7/25) outlines our course policies and a rough schedule. Once classes begin, you should follow the schedule and due dates found on this website.
 
 -   Note the textbooks are optional in this class. However, several practice and homework problems are pulled from the OpenIntro textbook.

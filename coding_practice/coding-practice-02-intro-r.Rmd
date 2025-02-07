@@ -1,13 +1,13 @@
 ---
 title: "Intro to R coding practice"
 author: "Your name here"
-date: "Due: 9/12/2024 at 11:59pm"
+date: "Due: 2/13/2025 at 11:59pm"
 output: html_document
 ---
 
 1.  Change your name in the YAML. Be sure to keep the quotation marks!
 
-2.  Execute the following the code in the code chunk. Describe in words what the code is doing.
+2.  Execute the following the code in the code chunk. Describe in words (as specifically as possible) what the code is doing.
 
 ```{r}
 1:10
@@ -15,7 +15,7 @@ output: html_document
 
 **Answer**:
 
-3.  We will learn how to use the important function `sample()`, which allows us to obtain a random sample. Look at the help file by typing `?sample` into your Console. After some experimenting, write code randomly sample two numbers from the set of numbers 1-5, without replacement. Note: it's okay if you get something different from those around you! We are *random*ly sampling after all!
+3.  We will learn how to use the important function `sample()`, which allows us to obtain a random sample. Look at the help file by typing `?sample` into your Console. After some experimenting, write code that randomly samples two numbers from the set of numbers 5-10, *without* replacement. Note: it's okay if you get something different from those around you! We are *random*ly sampling after all!
 
 ```{r}
 
@@ -37,4 +37,4 @@ output: html_document
 
 ```
 
-Once you're finished, be sure to knit and submit the outputted file to the corresponding Canvas assignment!
+Once you're finished, be sure to knit and submit the outputted file to the corresponding Gradescope assignment!

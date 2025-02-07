@@ -1,6 +1,6 @@
 ---
-title: "Installation Day"
-date: "September 12, 2024"
+title: "Toolkit"
+date: "February 13, 2025"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
@@ -19,7 +19,7 @@ draft: false
 
 # Housekeeping
 
--   More homework problems released today. All due to Canvas on Monday, 9/16 by 11:59pm! Feel free to hand-write and then scan your work, or work in a text editor directly.
+-   More homework problems released today. All due to Canvas on Monday by 11:59pm! Feel free to hand-write and then scan your work, or work in a text editor directly.
 
 -   Office hours reminder!
 
@@ -31,9 +31,7 @@ draft: false
 
     -   `R` and RStudio (Posit)
 
-    -   `R` Markdown
-
--   Installation
+    -   Quarto markdown
 
 -   Practice!
 
@@ -73,6 +71,8 @@ draft: false
 
     -   You will almost always be provided with a template .Rmd to start with (the exception being the end of the semester when you've mastered this material!)
 
+```{=html}
+<!--
 # Installation
 
 ## Installing `R`
@@ -112,23 +112,24 @@ Please be patient! This process may be time-consuming and stressful, but it is n
     ::: fragment
     ![](figs/02-RStudio_download.png){width="273"}
     :::
+    
+-->
+```
 
-## Opening RStudio
+## RStudio
 
--   In the previous step, we put an RStudio shortcut into your *Applications* folder.
+To open RStudio, simply double click on the RStudio icon (you do not need to click on the `R` icon)
 
--   You may find it easier to put a shortcut somewhere else for easier access (e.g. your dock or home screen)
-
--   To open RStudio, simply double click on the RStudio icon (you do not need to click on the `R` icon)
-
-    ::: fragment
-    ![](figs/02-rstudio_interface.png)
-    :::
+::: fragment
+![](figs/02-rstudio_interface.png)
+:::
 
 ## Make a folder
 
--   Make a folder that is easy to access (e.g. on your Desktop). Call it **STAT 201**.
+Create a new folder on your Desktop that is named **STAT 201**.
 
 -   ::: {style="color: maroon"}
     All of your files for this course should go into this folder!!!!
     :::
+
+## Your file system

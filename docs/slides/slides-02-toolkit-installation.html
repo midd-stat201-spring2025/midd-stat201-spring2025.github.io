@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-09-12">
+<meta name="dcterms.date" content="2025-02-13">
 
-<title>STAT 201: Intro. to Statistics and Data Science - Installation Day</title>
+<title>STAT 201: Intro. to Statistics and Data Science - Toolkit</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Installation Day</h1>
+<h1 class="title">Toolkit</h1>
 </div>
 
 
@@ -126,7 +126,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 12, 2024</p>
+      <p class="date">February 13, 2025</p>
     </div>
   </div>
   
@@ -139,7 +139,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="housekeeping" class="level1">
 <h1>Housekeeping</h1>
 <ul>
-<li><p>More homework problems released today. All due to Canvas on Monday, 9/16 by 11:59pm! Feel free to hand-write and then scan your work, or work in a text editor directly.</p></li>
+<li><p>More homework problems released today. All due to Canvas on Monday by 11:59pm! Feel free to hand-write and then scan your work, or work in a text editor directly.</p></li>
 <li><p>Office hours reminder!</p></li>
 </ul>
 </section>
@@ -150,9 +150,8 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Toolkit</p>
 <ul>
 <li><p><code>R</code> and RStudio (Posit)</p></li>
-<li><p><code>R</code> Markdown</p></li>
+<li><p>Quarto markdown</p></li>
 </ul></li>
-<li><p>Installation</p></li>
 <li><p>Practice!</p></li>
 </ul>
 <section id="reproducibility" class="level2">
@@ -190,71 +189,68 @@ ul.task-list li input[type="checkbox"] {
 <li><p>You will almost always be provided with a template .Rmd to start with (the exception being the end of the semester when you’ve mastered this material!)</p></li>
 </ul></li>
 </ul>
+
+<!--
+# Installation
+
+## Installing `R`
+
+Please be patient! This process may be time-consuming and stressful, but it is necessary for the rest of the course!
+
+1.  **WINDOWS/MAC**: Go to the [CRAN website](https://lib.stat.cmu.edu/R/CRAN/) and click on the appropriate link under "Download and Install R". Then:
+    i.  If you are **Windows**: click on the blue text that says "install R for the first time".
+    ii. If you are **macOS**: check your Mac OS system and if you have a chip (Apple icon -\> About this Mac -\> Overview)
+        i.  Then on the website, click the newest release that supports your current OS version. This will most likely be R-4.4.1-arm64.pkg or R-4.4.1-x86_64.pkg.
+
+            ![](figs/02-macOS-R.png){width="267"}
+2.  **LINUX**: follow the instructions on for Steps 1 and 2 on [this website](https://posit.co/download/rstudio-server/).
+
+## Install R (cont.)
+
+2.  A file will download, most likely to your *Downloads* folder. Run the file by clicking on it. Allow the app to make changes to your device if prompted.
+
+    ![](figs/02-R_wizard.png){width="347"}
+
+3.  Follow the installation instructions, until you click on "Finish" to exit the installation setup. At this point, `R` should be successfully installed!
+
+## Installing RStudio
+
+1.  **LINUX**: go to step 3 of the same website
+
+2.  **WINDOWS/MACS**: Go to the [Posit website](https://posit.co/download/rstudio-desktop/) and scroll down a little until you see two steps. We already did Step 1!
+
+    i.  Under Step 2, click the blue Download RStudio Desktop button recommended for your computer
+
+        a.  macOS users: double check you have an OS that is recent enough! Otherwise, raise your hand!
+
+    ii. Run the downloaded RStudio Executable file until you hit the "Finish" button. It may be the case that you don't have to click anything at all.
+
+    iii. After RStudio finishes downloading, a window like this might pop up. If so, go ahead and drag the RStudio icon into the Applications folder.
+
+    ::: fragment
+    ![](figs/02-RStudio_download.png){width="273"}
+    :::
+    
+-->
 </section>
-</section>
-<section id="installation" class="level1">
-<h1>Installation</h1>
-<section id="installing-r" class="level2">
-<h2 class="anchored" data-anchor-id="installing-r">Installing <code>R</code></h2>
-<p>Please be patient! This process may be time-consuming and stressful, but it is necessary for the rest of the course!</p>
-<ol type="1">
-<li><strong>WINDOWS/MAC</strong>: Go to the <a href="https://lib.stat.cmu.edu/R/CRAN/">CRAN website</a> and click on the appropriate link under “Download and Install R”. Then:
-<ol type="i">
-<li>If you are <strong>Windows</strong>: click on the blue text that says “install R for the first time”.</li>
-<li>If you are <strong>macOS</strong>: check your Mac OS system and if you have a chip (Apple icon -&gt; About this Mac -&gt; Overview)
-<ol type="i">
-<li><p>Then on the website, click the newest release that supports your current OS version. This will most likely be R-4.4.1-arm64.pkg or R-4.4.1-x86_64.pkg.</p>
-<p><img src="figs/02-macOS-R.png" class="img-fluid" width="267"></p></li>
-</ol></li>
-</ol></li>
-<li><strong>LINUX</strong>: follow the instructions on for Steps 1 and 2 on <a href="https://posit.co/download/rstudio-server/">this website</a>.</li>
-</ol>
-</section>
-<section id="install-r-cont." class="level2">
-<h2 class="anchored" data-anchor-id="install-r-cont.">Install R (cont.)</h2>
-<ol start="2" type="1">
-<li><p>A file will download, most likely to your <em>Downloads</em> folder. Run the file by clicking on it. Allow the app to make changes to your device if prompted.</p>
-<p><img src="figs/02-R_wizard.png" class="img-fluid" width="347"></p></li>
-<li><p>Follow the installation instructions, until you click on “Finish” to exit the installation setup. At this point, <code>R</code> should be successfully installed!</p></li>
-</ol>
-</section>
-<section id="installing-rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="installing-rstudio">Installing RStudio</h2>
-<ol type="1">
-<li><p><strong>LINUX</strong>: go to step 3 of the same website</p></li>
-<li><p><strong>WINDOWS/MACS</strong>: Go to the <a href="https://posit.co/download/rstudio-desktop/">Posit website</a> and scroll down a little until you see two steps. We already did Step 1!</p>
-<ol type="i">
-<li><p>Under Step 2, click the blue Download RStudio Desktop button recommended for your computer</p>
-<ol type="a">
-<li>macOS users: double check you have an OS that is recent enough! Otherwise, raise your hand!</li>
-</ol></li>
-<li><p>Run the downloaded RStudio Executable file until you hit the “Finish” button. It may be the case that you don’t have to click anything at all.</p></li>
-<li><p>After RStudio finishes downloading, a window like this might pop up. If so, go ahead and drag the RStudio icon into the Applications folder.</p></li>
-</ol>
-<div class="fragment">
-<p><img src="figs/02-RStudio_download.png" class="img-fluid" width="273"></p>
-</div></li>
-</ol>
-</section>
-<section id="opening-rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="opening-rstudio">Opening RStudio</h2>
-<ul>
-<li><p>In the previous step, we put an RStudio shortcut into your <em>Applications</em> folder.</p></li>
-<li><p>You may find it easier to put a shortcut somewhere else for easier access (e.g.&nbsp;your dock or home screen)</p></li>
-<li><p>To open RStudio, simply double click on the RStudio icon (you do not need to click on the <code>R</code> icon)</p>
+<section id="rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio">RStudio</h2>
+<p>To open RStudio, simply double click on the RStudio icon (you do not need to click on the <code>R</code> icon)</p>
 <div class="fragment">
 <p><img src="figs/02-rstudio_interface.png" class="img-fluid"></p>
-</div></li>
-</ul>
+</div>
 </section>
 <section id="make-a-folder" class="level2">
 <h2 class="anchored" data-anchor-id="make-a-folder">Make a folder</h2>
+<p>Create a new folder on your Desktop that is named <strong>STAT 201</strong>.</p>
 <ul>
-<li><p>Make a folder that is easy to access (e.g.&nbsp;on your Desktop). Call it <strong>STAT 201</strong>.</p></li>
 <li><div style="color: maroon">
 <p>All of your files for this course should go into this folder!!!!</p>
 </div></li>
 </ul>
+</section>
+<section id="your-file-system" class="level2">
+<h2 class="anchored" data-anchor-id="your-file-system">Your file system</h2>
 
 
 </section>

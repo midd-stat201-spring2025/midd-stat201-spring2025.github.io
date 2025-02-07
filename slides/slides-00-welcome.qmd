@@ -34,6 +34,7 @@ plot_theme <- theme(text = element_text(size = 16))
 
     -   Office: Warner 214
     -   Email: btang\@middlebury.edu
+    -   Office hours: Mondays 2-3pm, Fridays 10-11am
 
 -   Course website: [https://midd-stat201-spring2025.github.io/](https://midd-stat201-fall2024.github.io/){.uri}
 
@@ -54,9 +55,11 @@ plot_theme <- theme(text = element_text(size = 16))
 
 ## Necessary background
 
--   We assume ZERO background in statistics and data science
+-   We assume zero background in statistics and data science
 
 -   There is a large computing component, though not as much as in STAT 118
+
+    -   Comfort in typing on keyboard, navigating your file system
 
 -   MATH 121 (Calculus 1) pre-req
 
@@ -87,6 +90,18 @@ plot_theme <- theme(text = element_text(size = 16))
 -   Keep an open mind and don't be afraid to ask for assistance or tell me to slow down!
 
 -   Resist the temptation of using ChatGPT or other generative AI tools
+
+## First assignment + submission
+
+-   **Problem Set 0**: answers to a brief questionnaire are due before next class. See the course Schedule page for details!
+
+-   All coding practice and homework assignments will be submitted to Gradescope via Canvas. You should all be able to access your Gradescope account using your Middlebury College credentials.
+
+    -   On Canvas, assignments can be found in both the Assignment tab and the Gradescope tab
+
+    -   Submissions can be resubmitted as many times as you like up until the due date
+
+    -   We will walk through how to submit an assignment together, but instructions + video can also be found [here](https://guides.gradescope.com/hc/en-us/articles/21864315441677-Submitting-a-PDF-for-an-assignment)
 
 ## Example
 

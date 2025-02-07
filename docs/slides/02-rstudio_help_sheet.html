@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT 201: Intro. to Statistics and Data Science - Advanced Introduction to Statistics and Data Science</title>
+<title>STAT 201: Intro. to Statistics and Data Science - RStudio Help Sheet</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,7 +69,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">STAT 201: Intro. to Statistics and Data Science</span>
     </a>
   </div>
@@ -79,11 +79,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page">
+    <a class="nav-link" href="../index.html">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./schedule.html">
+    <a class="nav-link" href="../schedule.html">
  <span class="menu-text">Schedule</span></a>
   </li>  
 </ul>
@@ -114,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Advanced Introduction to Statistics and Data Science</h1>
+<h1 class="title">RStudio Help Sheet</h1>
 </div>
 
 
@@ -129,50 +129,30 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Welcome to the website for Middlebury College’s Spring 2025 STAT 201. On this website you will find the course syllabus, schedule, and assignments. The website is frequently updated throughout the semester, so please make a habit of refreshing the page. The icons at the top right will link to the supplemental textbook and Canvas.</p>
+<p><img src="figs/02-rstudio_interface.png" class="img-fluid"></p>
 <hr>
-<section id="announcements" class="level2">
-<h2 class="anchored" data-anchor-id="announcements">Announcements</h2>
+<p>A <code>.qmd</code> document in the Source pane might look like the following:</p>
+<p><img src="figs/code_chunk_yaml.png" class="img-fluid"></p>
+<hr>
+<p><strong>What is the major difference between running code in an <code>.qmd</code> document in the Source pane versus running code in the Console?</strong></p>
 <ul>
-<li><p>R installation help hours:</p>
+<li><p>All code gets run/executed in the Console</p></li>
+<li><p>The Source pane is simply a text editor: you can write and save code here to edit later. When you run code in the Source pane, it actually gets executed in the Console.</p>
 <ul>
-<li><p>Monday 2/10</p>
-<ul>
-<li><p>2-3pm (outside my office)</p></li>
-<li><p>7-9pm (Q-Center first floor MBH 202)</p></li>
-</ul></li>
-<li><p>Tuesday 2/11</p>
-<ul>
-<li>Times TBD (Q-Center first floor MBH 202)</li>
-</ul></li>
+<li><p>In this course, we will almost always write our code in the Source pane within a <code>.Rmd</code> document.</p></li>
+<li><p>Code run in the Console will be “lost” whenever you quit RStudio.</p></li>
 </ul></li>
 </ul>
 <hr>
-</section>
-<section id="course-details" class="level2">
-<h2 class="anchored" data-anchor-id="course-details">Course details</h2>
-<p><strong>Instructor:</strong> Prof.&nbsp;Becky Tang (she/her)</p>
+<p>The <strong>working directory</strong> is the default location where R will look for files you want to load and where it will put any files you save. All files are read in relation to the current working directory!</p>
 <ul>
-<li>Office: WNS 214</li>
-<li>Email: btang@middlebury.edu</li>
-</ul>
-<p><strong>Meeting times and location:</strong></p>
-<ul>
-<li>MW 11:15am-12:30pm in Warner 011</li>
-<li>R 11:15am-12:30pm in Warner 101</li>
-</ul>
-<p><strong>Office hours</strong>: Monday 2-3pm, Friday 10-11am</p>
-<p><strong>TA hours</strong> in Quantitative Center (MBH 202):</p>
-<ul>
-<li>Sunday, Monday, Thursdays 7-9pm</li>
-</ul>
-<p>The <a href="syllabus.pdf">syllabus</a> (most recent update: 2/7/25) outlines our course policies and a rough schedule. Once classes begin, you should follow the schedule and due dates found on this website.</p>
-<ul>
-<li>Note the textbooks are optional in this class. However, several practice and homework problems are pulled from the OpenIntro textbook.</li>
+<li><p>Where can we see the current working directory?</p>
+<p><img src="figs/02-console-wd.png" class="img-fluid" width="350"></p></li>
+<li><p>What if we want to change the working directory?</p>
+<p><img src="figs/02-set-wd.png" class="img-fluid" width="479"></p></li>
 </ul>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
