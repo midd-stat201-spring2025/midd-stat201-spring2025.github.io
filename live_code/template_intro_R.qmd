@@ -151,7 +151,7 @@ There are two ways to install a package:
     1.  Type `install.packages("package name")` into the Console. Note that the quotation marks are necessary.
     2.  Press Return/Enter
 
-We will install the `openintro` package together. Now, try installing the `tidyverse` package on your own!
+We will install the `openintro` package together. Then try installing the `tidyverse` package on your own!
 
 ### Package loading
 
@@ -163,4 +163,4 @@ To use the package we have installed, we use the `library()` command:
 
 # Instructions for submission
 
-When you are finished with your work and ready to submit, you should always knit one last time. You should then submit the most recent knitted output (i.e. the HTML or PDF file) to the corresponding Canvas or Gradescope assignment. Sometimes I will also ask you to submit the accompanying .qmd file. You do **not** need to submit this document.
+When you are finished with your work and ready to submit, you should always knit to PDF one last time. You should then submit the most recent knitted **PDF** output to the corresponding Gradescope assignment. Very rarely, I will also ask you to submit the accompanying .qmd file.

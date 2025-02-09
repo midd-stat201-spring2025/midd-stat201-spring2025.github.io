@@ -1,6 +1,6 @@
 ---
 title: "Study design"
-date: "September 11, 2024"
+date: "February 12, 2025"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
@@ -26,52 +26,11 @@ library(tidyverse)
 plot_theme <- theme(text = element_text(size = 16))
 ```
 
--   Please bring your laptops tomorrow! We will be installing R and RStudio!
-
-# Key terminology
-
-## Population and samples
-
--   Data do not come from thin air! Data have to be *collected* in some way.
-
--   This usually takes the form of sampling a subset of individuals from a target group of interest
-
-    -   The target group of interest is called the **population**
-    -   The subset of individuals from whom we actually collect data is the **sample**
-
--   A **case** is a fancy term for saying one observational *unit*
-
--   ::: discuss
-    What are the target populations in the following research questions? What would an individual case/unit be?
-
-    1.  What is the average height of trees on Middlebury College campus?
-
-    2.  What proportion of current Middlebury professors attended a liberal arts college?
-
-    3.  Over the last five years, what is the average time to complete a degree for Middlebury College students?
-    :::
-
-## Population and samples (cont.)
-
--   Typically, the size of the sample is way smaller than the population. Why?
-    -   In the lucky event that we are able to collect data for every individual in the population, the sample is referred to as a **census**
--   Example: the U.S. Census Bureau is responsible for producing data about the American people and economy. They collect data with different schemes and frequency:
-    -   [Decennial census](https://www.census.gov/programs-surveys/decennial-census.html)
-    -   [American community survey](https://www.census.gov/history/www/programs/demographic/american_community_survey.html#:~:text=The%20survey%20provides%20current%20data,than%20once%20every%20five%20years.)
-
-## Parameters and statistics
-
--   Often times, answering the research question simplifies to understanding a numerical summary.
-
-    -   A numerical summary calculated from (or considered for calculation from) the entire population is called a (population) **parameter**
-
-    -   In contrast, a numerical summary calculated from the sample is called a (sample) **statistic**
-
--   Why do we differentiate? It's always good to remember that we are trying to answer questions about the population!
+-   Please bring your laptops tomorrow! We will be working with R and RStudio!
 
 # Sampling from a population
 
-::: {.notes}
+::: notes
 Ask class: do you like statistics? Expect: response, non-response, and selection bias due to convenience sampling
 :::
 

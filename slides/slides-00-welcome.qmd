@@ -39,7 +39,6 @@ plot_theme <- theme(text = element_text(size = 16))
 -   Course website: [https://midd-stat201-spring2025.github.io/](https://midd-stat201-fall2024.github.io/){.uri}
 
     -   Please bookmark this page and visit frequently!
-    -   Note that both sections will use the same website
 
 ## What is this course about?
 
@@ -126,6 +125,55 @@ What's going on? Let's do some digging...
 -   Death rate for kidney cancer: <https://seer.cancer.gov/statfacts/html/kidrp.html>
 
 -   County sizes: <https://en.wikipedia.org/wiki/County_statistics_of_the_United_States>
+
+# Key terminology
+
+## Population and samples
+
+-   Data do not come from thin air! Data have to be *collected* in some way.
+
+-   This usually takes the form of sampling a subset of individuals from a target group of interest
+
+    -   The target group of interest is called the **population**
+    -   The subset of individuals from whom we actually collect data is the **sample**
+
+-   A **case** is a fancy term for saying one observational *unit*
+
+    -   In the kidney cancer example, the cases are counties
+
+-   ::: discuss
+    What are the target populations and cases in the following?
+
+    1.  What is the average height of trees on Middlebury College campus?
+
+    2.  What proportion of current Middlebury professors attended a liberal arts college?
+
+    3.  Over the last five years, what is the average time to complete a degree for Middlebury students?
+    :::
+
+## Population and samples (cont.)
+
+-   Typically, the size of the sample is way smaller than the population. Why?
+    -   In the lucky event that we are able to collect data for every individual in the population, the sample is referred to as a **census**
+-   Example: the U.S. Census Bureau is responsible for producing data about the American people and economy. They collect data with different schemes and frequency:
+    -   [Decennial census](https://www.census.gov/programs-surveys/decennial-census.html)
+    -   [American community survey](https://www.census.gov/history/www/programs/demographic/american_community_survey.html#:~:text=The%20survey%20provides%20current%20data,than%20once%20every%20five%20years.)
+
+## Parameters and statistics
+
+-   Often times, answering a research question simplifies to understanding a numerical summary.
+
+    -   **(Population) parameter**: a numerical summary calculated from (or considered for calculation from) the entire population
+
+    -   **(Sample) statistic**: a numerical summary calculated from a sample
+
+-   Why do we differentiate? It's always good to remember that we are trying to answer questions about the population!
+
+-   In kidney cancer data, we might want to know a county's *true* kidney cancer rate (for white males, 1980-1989)
+
+    -   This would be an example of a population parameter
+
+    -   Unless all white males in the county responded, the reported rate is an example of a sample statistic
 
 ````{=html}
 <!--
