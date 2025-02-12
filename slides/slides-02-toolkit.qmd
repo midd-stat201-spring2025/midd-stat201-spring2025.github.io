@@ -19,7 +19,7 @@ draft: false
 
 # Housekeeping
 
--   More homework problems released today. All due to Canvas on Monday by 11:59pm! Feel free to hand-write and then scan your work, or work in a text editor directly.
+-   A few more homework problems released today. Yesterday and today's problems are due to Gradescope by Monday 11:59pm
 
 -   Office hours reminder!
 
@@ -57,19 +57,19 @@ draft: false
 
     -   `R` is like a car engine, and RStudio is like a car's dashboard
 
--   We will liberate our programming by keeping code, narrative, and output all in the same interface using **R Markdown** documents
+-   We will liberate our programming by keeping code, narrative, and output all in the same interface using **Quarto Markdown** documents
 
-## R Markdown
+## Quarto Markdown
 
 -   Allows us to create fully reproducible reports
 
 -   Can code in *code chunks* and type regular text/narrative outside of these chunks
 
--   How will we use R Markdown?
+-   How will we use Quarto Markdown?
 
-    -   You coding practice problems and some weekly lab assignments will be assigned as an R Markdown document (.Rmd)
+    -   You coding practice problems and some problems on your weekly assignments will be assigned as a Quarto Markdown document (.qmd)
 
-    -   You will almost always be provided with a template .Rmd to start with (the exception being the end of the semester when you've mastered this material!)
+    -   You will almost always be provided with a template .qmd to start with (the exception being the end of the semester when you've mastered this material!)
 
 ```{=html}
 <!--
@@ -131,5 +131,3 @@ Create a new folder on your Desktop that is named **STAT 201**.
 -   ::: {style="color: maroon"}
     All of your files for this course should go into this folder!!!!
     :::
-
-## Your file system

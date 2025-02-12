@@ -1,5 +1,5 @@
 ---
-title: "Intro to R and R Markdown"
+title: "Intro to R and Quarto Markdown"
 format:
   html:
     toc: true
@@ -23,9 +23,9 @@ Note that spacing doesn't matter in R code.
 
 We can add (+), subtract (-), multiply (\*), divide (/), and perform more complicated calculations using `R`.
 
-# Programming in R Markdown
+# Programming in Quarto markdown
 
-This document that we are working in is called an **R markdown** document. It allows us to seamlessly move between `R` code and regular text. The name of the file is easily found at the top this panel. All R markdown files end in \_\_\_\_.
+This document that we are working in is called an **Quarto markdown** document. It allows us to seamlessly move between `R` code and regular text. The name of the file is easily found at the top this panel. All Quarto markdown files end in \_\_\_\_.
 
 ## YAML
 
@@ -39,7 +39,7 @@ Notice the quotation marks! These are extremely important!
 
 Go ahead and change your name in the author argument of the YAML.
 
-## R Markdown basics
+## Quarto Markdown basics
 
 How do we tell the document which parts correspond to code, and which parts correspond to text?
 
@@ -71,18 +71,12 @@ sqrt(4)
 
 At this point it is a good idea to save our progress. Like most document editors, we need to explicitly save our work. You know your work is not saved when \_\_\_\_\_.
 
-To save our work in R Markdown document, we can do one of the following:
+To save our work in Quarto Markdown document, we can do one of the following:
 
 1.  Click on the floppy disk at the top of the panel
 2.  Go to File -\> Save
 3.  Hit Cmd+S
 4.  \_\_\_\_ the document
-
-### Knitting
-
-Knitting the document will render your R markdown into its final output form. To knit, simply click on the ball of yarn at the top of the panel. Knitting can take anywhere from a few seconds to a few minutes depending on the amount of code and narrative you have.
-
-Now, outside of R Studio, go to the Folder where this R Markdown document is located. What do you notice? \_\_\_\_\_\_
 
 ## Coding in R
 
@@ -138,28 +132,7 @@ sqrt(c(1,4,9, 16))
 
 ### Storing objects as variables
 
-Suppose I want to calculate the volume of a cube, where each edge is of length 2. The volume is $\text{edge length}^3$ . We could calculate the area as follows:
-
-```{r}
-2*2*2
-```
-
-Now suppose someone tells you that the edge length was actually 2.1 instead of 2. So you modify as follows:
-
-```{r}
-2.1*2.1*2.1
-```
-
-Then you get told the edge length is actually 2.2. So frustrating! To save ourselves further troubles, we do the following to make our code *reproducible*:
-
-```{r}
-length <- 2.2
-length^3
-```
-
-What did we do in the above code? We \_\_\_\_\_ or \_\_\_\_\_\_ the value 2.2 into the \_\_\_\_\_\_ called `length` using the keys `<-`.
-
-Now make a new R code chunk here. In this new code chunk, make a new object called `volume` and assign to it an appropriate value. Now let's knit the document.
+Suppose I want to save the result of a big calculation to use moving forward. We \_\_\_\_\_ or \_\_\_\_\_\_ the value of 1 + 2 + 3 + 4 + 5 into the \_\_\_\_\_\_ called `x` using the keys `<-`.
 
 ```{r}
 
@@ -171,7 +144,7 @@ As you should note: when we assign an object a value, its value is *not* automat
 
 These are always shown in red text in the Console. Whenever you see them, don't panic! With practice, you will be able to decipher the messages and de-bug your code with ease.
 
--   **Errors:** prevent code from executing and documents from knitting. It will be prefaced with "Error in...". Trying typing in the following code in your Console: `1 + a`. What happens?
+-   **Errors:** prevent code from executing and documents from rendering It will be prefaced with "Error in...". Trying typing in the following code in your Console: `1 + a`. What happens?
 
 ::: {.callout-tip collapse="true" icon="false"}
 ```{r error = T}
@@ -180,7 +153,7 @@ These are always shown in red text in the Console. Whenever you see them, don't 
 :::
 
 ::: column-margin
-A good reason to knit often is to ensure your code is error-free!
+A good reason to render often is to ensure your code is error-free!
 :::
 
 -   **Warnings**: your code will run with some caveats. It will be prefaced with "Warning: ". We will see examples of this later on.
@@ -199,7 +172,7 @@ To use a package, we need to:
 1.  \_\_\_\_ the package
 2.  \_\_\_\_ the package
 
-**Unless you update R Studio, you will only need to install a package once. However, you will need to explicitly load in packages every time you work in a new R Markdown document.**
+**Unless you update R Studio, you will only need to install a package once. However, you will need to explicitly load in packages every time you work in a new Quarto Markdown document.**
 
 There are thousands of available packages to work with. Two of the most common packages we will use are the `openintro` package and the `tidyverse` package (though, the `tidyverse` package is actually a giant package that is comprised of several other packages).
 
@@ -216,11 +189,13 @@ There are two ways to install a package:
     1.  Type `install.packages("package name")` into the Console. Note that the quotation marks are necessary.
     2.  Press Return/Enter
 
-We will install the `openintro` package together. Then, try installing the `tidyverse` package on your own!
+We will install the `openintro` package together.
+
+Then, try installing the `tidyverse` package on your own!
 
 ### Package loading
 
-To use the package we have installed, we use the `library()` command:
+If we want to use a package, we use the `library()` command:
 
 ```{r}
 library(openintro)
@@ -231,9 +206,15 @@ This is an example of a function that does not return an output
 :::
 
 ::: {.callout-tip icon="false"}
-You may have seen some red text in your Console when you loaded in the package above. Was this an error, warning, or regular message?
+You may have seen some red text in your Console when you loaded in the package above. That's okay!
 :::
+
+# Rendering
+
+Rendering the document will turn your Quarto markdown into its final output form. To render, simply click on the blue arrow button up top that reads "Render". Rendering can take anywhere from a few seconds to a few minutes depending on the amount of code and narrative you have. It will also save your output!
+
+Open your STAT 201 folder. What do you notice happens once we've rendered?
 
 # Submit to Canvas
 
-When you are finished with your work and ready to submit, you should always knit one last time. You should then submit the most recent knitted output (i.e. the HTML or PDF file) to the corresponding Canvas assignment. Sometimes I will also ask you to submit the accompanying .Rmd file.
+When you are finished with your work and ready to submit, you should always render one last time. You should then submit the most recent rendered output (i.e. PDF) to the corresponding Canvas assignment. Sometimes I will also ask you to submit the accompanying .qmd file.

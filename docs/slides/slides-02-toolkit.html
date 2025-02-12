@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-02-13">
 
-<title>STAT 201: Intro. to Statistics and Data Science - RStudio Help Sheet</title>
+<title>STAT 201: Intro. to Statistics and Data Science - Toolkit</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -114,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">RStudio Help Sheet</h1>
+<h1 class="title">Toolkit</h1>
 </div>
 
 
@@ -122,6 +123,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 13, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -129,30 +136,122 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p><img src="figs/02-rstudio_interface.png" class="img-fluid"></p>
-<hr>
-<p>A <code>.qmd</code> document in the Source pane might look like the following:</p>
-<p><img src="figs/code_chunk_yaml.png" class="img-fluid" width="305"></p>
-<hr>
-<p><strong>What is the major difference between running code in an <code>.qmd</code> document in the Source pane versus running code in the Console?</strong></p>
+<section id="housekeeping" class="level1">
+<h1>Housekeeping</h1>
 <ul>
-<li><p>All code gets run/executed in the Console</p></li>
-<li><p>The Source pane is simply a text editor: you can write and save code here to edit later. When you run code in the Source pane, it actually gets executed in the Console.</p>
+<li><p>A few more homework problems released today. Yesterday and today’s problems are due to Gradescope by Monday 11:59pm</p></li>
+<li><p>Office hours reminder!</p></li>
+</ul>
+</section>
+<section id="agenda" class="level1">
+<h1>Agenda</h1>
 <ul>
-<li><p>In this course, we will almost always write our code in the Source pane within a <code>.Rmd</code> document.</p></li>
-<li><p>Code run in the Console will be “lost” whenever you quit RStudio.</p></li>
+<li><p>Reproducible data analysis</p></li>
+<li><p>Toolkit</p>
+<ul>
+<li><p><code>R</code> and RStudio (Posit)</p></li>
+<li><p>Quarto markdown</p></li>
+</ul></li>
+<li><p>Practice!</p></li>
+</ul>
+<section id="reproducibility" class="level2">
+<h2 class="anchored" data-anchor-id="reproducibility">Reproducibility</h2>
+<ul>
+<li><p>Allows your code execution or an experiment to be repeated by another person</p></li>
+<li><p>Goals:</p>
+<ul>
+<li><p>Are the tables and figures generated directly from the code?</p></li>
+<li><p>Does the code actually do what you think it does?</p></li>
+<li><p>Can your code be used for other data/analyses?</p></li>
 </ul></li>
 </ul>
-<hr>
-<p>The <strong>working directory</strong> is the default location where R will look for files you want to load and where it will put any files you save. All files are read in relation to the current working directory!</p>
+</section>
+<section id="toolkit" class="level2">
+<h2 class="anchored" data-anchor-id="toolkit">Toolkit</h2>
+<p><img src="figs/02-toolkit.png" class="img-fluid" width="365"></p>
 <ul>
-<li><p>Where can we see the current working directory?</p>
-<p><img src="figs/02-console-wd.png" class="img-fluid" width="350"></p></li>
-<li><p>What if we want to change the working directory?</p>
-<p><img src="figs/02-set-wd.png" class="img-fluid" width="479"></p></li>
+<li><p>We will use the programming language <strong><code>R</code></strong> to write code</p></li>
+<li><p>How will interact with the <code>R</code> code? In the integrated development environment called <strong>RStudio.</strong> Helps us be more productive with <code>R</code></p>
+<ul>
+<li><code>R</code> is like a car engine, and RStudio is like a car’s dashboard</li>
+</ul></li>
+<li><p>We will liberate our programming by keeping code, narrative, and output all in the same interface using <strong>Quarto Markdown</strong> documents</p></li>
+</ul>
+</section>
+<section id="quarto-markdown" class="level2">
+<h2 class="anchored" data-anchor-id="quarto-markdown">Quarto Markdown</h2>
+<ul>
+<li><p>Allows us to create fully reproducible reports</p></li>
+<li><p>Can code in <em>code chunks</em> and type regular text/narrative outside of these chunks</p></li>
+<li><p>How will we use Quarto Markdown?</p>
+<ul>
+<li><p>You coding practice problems and some problems on your weekly assignments will be assigned as a Quarto Markdown document (.qmd)</p></li>
+<li><p>You will almost always be provided with a template .qmd to start with (the exception being the end of the semester when you’ve mastered this material!)</p></li>
+</ul></li>
+</ul>
+
+<!--
+# Installation
+
+## Installing `R`
+
+Please be patient! This process may be time-consuming and stressful, but it is necessary for the rest of the course!
+
+1.  **WINDOWS/MAC**: Go to the [CRAN website](https://lib.stat.cmu.edu/R/CRAN/) and click on the appropriate link under "Download and Install R". Then:
+    i.  If you are **Windows**: click on the blue text that says "install R for the first time".
+    ii. If you are **macOS**: check your Mac OS system and if you have a chip (Apple icon -\> About this Mac -\> Overview)
+        i.  Then on the website, click the newest release that supports your current OS version. This will most likely be R-4.4.1-arm64.pkg or R-4.4.1-x86_64.pkg.
+
+            ![](figs/02-macOS-R.png){width="267"}
+2.  **LINUX**: follow the instructions on for Steps 1 and 2 on [this website](https://posit.co/download/rstudio-server/).
+
+## Install R (cont.)
+
+2.  A file will download, most likely to your *Downloads* folder. Run the file by clicking on it. Allow the app to make changes to your device if prompted.
+
+    ![](figs/02-R_wizard.png){width="347"}
+
+3.  Follow the installation instructions, until you click on "Finish" to exit the installation setup. At this point, `R` should be successfully installed!
+
+## Installing RStudio
+
+1.  **LINUX**: go to step 3 of the same website
+
+2.  **WINDOWS/MACS**: Go to the [Posit website](https://posit.co/download/rstudio-desktop/) and scroll down a little until you see two steps. We already did Step 1!
+
+    i.  Under Step 2, click the blue Download RStudio Desktop button recommended for your computer
+
+        a.  macOS users: double check you have an OS that is recent enough! Otherwise, raise your hand!
+
+    ii. Run the downloaded RStudio Executable file until you hit the "Finish" button. It may be the case that you don't have to click anything at all.
+
+    iii. After RStudio finishes downloading, a window like this might pop up. If so, go ahead and drag the RStudio icon into the Applications folder.
+
+    ::: fragment
+    ![](figs/02-RStudio_download.png){width="273"}
+    :::
+    
+-->
+</section>
+<section id="rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio">RStudio</h2>
+<p>To open RStudio, simply double click on the RStudio icon (you do not need to click on the <code>R</code> icon)</p>
+<div class="fragment">
+<p><img src="figs/02-rstudio_interface.png" class="img-fluid"></p>
+</div>
+</section>
+<section id="make-a-folder" class="level2">
+<h2 class="anchored" data-anchor-id="make-a-folder">Make a folder</h2>
+<p>Create a new folder on your Desktop that is named <strong>STAT 201</strong>.</p>
+<ul>
+<li><div style="color: maroon">
+<p>All of your files for this course should go into this folder!!!!</p>
+</div></li>
 </ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

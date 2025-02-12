@@ -8,7 +8,7 @@ title: "RStudio Help Sheet"
 
 A `.qmd` document in the Source pane might look like the following:
 
-![](figs/code_chunk_yaml.png)
+![](figs/code_chunk_yaml.png){width="305"}
 
 ------------------------------------------------------------------------
 

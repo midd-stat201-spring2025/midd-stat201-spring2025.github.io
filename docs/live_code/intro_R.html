@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT 201: Intro. to Statistics and Data Science - Intro to R and R Markdown</title>
+<title>STAT 201: Intro. to Statistics and Data Science - Intro to R and Quarto Markdown</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -178,14 +178,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    
   <ul>
   <li><a href="#r-as-a-calculator" id="toc-r-as-a-calculator" class="nav-link active" data-scroll-target="#r-as-a-calculator">R as a calculator</a></li>
-  <li><a href="#programming-in-r-markdown" id="toc-programming-in-r-markdown" class="nav-link" data-scroll-target="#programming-in-r-markdown">Programming in R Markdown</a>
+  <li><a href="#programming-in-quarto-markdown" id="toc-programming-in-quarto-markdown" class="nav-link" data-scroll-target="#programming-in-quarto-markdown">Programming in Quarto markdown</a>
   <ul class="collapse">
   <li><a href="#yaml" id="toc-yaml" class="nav-link" data-scroll-target="#yaml">YAML</a></li>
-  <li><a href="#r-markdown-basics" id="toc-r-markdown-basics" class="nav-link" data-scroll-target="#r-markdown-basics">R Markdown basics</a></li>
-  <li><a href="#saving-progress" id="toc-saving-progress" class="nav-link" data-scroll-target="#saving-progress">Saving progress</a>
-  <ul class="collapse">
-  <li><a href="#knitting" id="toc-knitting" class="nav-link" data-scroll-target="#knitting">Knitting</a></li>
-  </ul></li>
+  <li><a href="#quarto-markdown-basics" id="toc-quarto-markdown-basics" class="nav-link" data-scroll-target="#quarto-markdown-basics">Quarto Markdown basics</a></li>
+  <li><a href="#saving-progress" id="toc-saving-progress" class="nav-link" data-scroll-target="#saving-progress">Saving progress</a></li>
   <li><a href="#coding-in-r" id="toc-coding-in-r" class="nav-link" data-scroll-target="#coding-in-r">Coding in R</a>
   <ul class="collapse">
   <li><a href="#object-types" id="toc-object-types" class="nav-link" data-scroll-target="#object-types">Object types</a></li>
@@ -199,6 +196,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#package-loading" id="toc-package-loading" class="nav-link" data-scroll-target="#package-loading">Package loading</a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#rendering" id="toc-rendering" class="nav-link" data-scroll-target="#rendering">Rendering</a></li>
   <li><a href="#submit-to-canvas" id="toc-submit-to-canvas" class="nav-link" data-scroll-target="#submit-to-canvas">Submit to Canvas</a></li>
   </ul>
 </nav>
@@ -208,7 +206,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Intro to R and R Markdown</h1>
+<h1 class="title">Intro to R and Quarto Markdown</h1>
 </div>
 
 
@@ -248,9 +246,9 @@ Answer
 <p>Note that spacing doesn’t matter in R code.</p>
 </div></div><p>We can add (+), subtract (-), multiply (*), divide (/), and perform more complicated calculations using <code>R</code>.</p>
 </section>
-<section id="programming-in-r-markdown" class="level1 page-columns page-full">
-<h1>Programming in R Markdown</h1>
-<p>This document that we are working in is called an <strong>R markdown</strong> document. It allows us to seamlessly move between <code>R</code> code and regular text. The name of the file is easily found at the top this panel. All R markdown files end in ____.</p>
+<section id="programming-in-quarto-markdown" class="level1 page-columns page-full">
+<h1>Programming in Quarto markdown</h1>
+<p>This document that we are working in is called an <strong>Quarto markdown</strong> document. It allows us to seamlessly move between <code>R</code> code and regular text. The name of the file is easily found at the top this panel. All Quarto markdown files end in ____.</p>
 <section id="yaml" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="yaml">YAML</h2>
 <p>At the top of a markdown topic, you’ll see code between two sets of three dashed lines. This is known as a <strong>YAML header</strong>, and it contains the “informational” content of a document (e.g.&nbsp;title, author, date). Change these arguments accordingly for each assignment.</p>
@@ -264,8 +262,8 @@ Answer
 <p>Notice the quotation marks! These are extremely important!</p>
 </div></div><p>Go ahead and change your name in the author argument of the YAML.</p>
 </section>
-<section id="r-markdown-basics" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="r-markdown-basics">R Markdown basics</h2>
+<section id="quarto-markdown-basics" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="quarto-markdown-basics">Quarto Markdown basics</h2>
 <p>How do we tell the document which parts correspond to code, and which parts correspond to text?</p>
 <p>In the following, you see three back ticks followed by a left curly brace, the letter r, and right curly brace. A few lines down, you will see three more back ticks. The background in between these lines is gray, with some symbols on the right. These backs ticks must be aligned on the same tabulation.</p>
 <p>This defines ______. All of our <code>R</code> code should go into one.</p>
@@ -293,18 +291,13 @@ Answer
 <section id="saving-progress" class="level2">
 <h2 class="anchored" data-anchor-id="saving-progress">Saving progress</h2>
 <p>At this point it is a good idea to save our progress. Like most document editors, we need to explicitly save our work. You know your work is not saved when _____.</p>
-<p>To save our work in R Markdown document, we can do one of the following:</p>
+<p>To save our work in Quarto Markdown document, we can do one of the following:</p>
 <ol type="1">
 <li>Click on the floppy disk at the top of the panel</li>
 <li>Go to File -&gt; Save</li>
 <li>Hit Cmd+S</li>
 <li>____ the document</li>
 </ol>
-<section id="knitting" class="level3">
-<h3 class="anchored" data-anchor-id="knitting">Knitting</h3>
-<p>Knitting the document will render your R markdown into its final output form. To knit, simply click on the ball of yarn at the top of the panel. Knitting can take anywhere from a few seconds to a few minutes depending on the amount of code and narrative you have.</p>
-<p>Now, outside of R Studio, go to the Folder where this R Markdown document is located. What do you notice? ______</p>
-</section>
 </section>
 <section id="coding-in-r" class="level2">
 <h2 class="anchored" data-anchor-id="coding-in-r">Coding in R</h2>
@@ -386,30 +379,7 @@ Tip
 </section>
 <section id="storing-objects-as-variables" class="level3">
 <h3 class="anchored" data-anchor-id="storing-objects-as-variables">Storing objects as variables</h3>
-<p>Suppose I want to calculate the volume of a cube, where each edge is of length 2. The volume is <span class="math inline">\(\text{edge length}^3\)</span> . We could calculate the area as follows:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span><span class="dv">2</span><span class="sc">*</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 8</code></pre>
-</div>
-</div>
-<p>Now suppose someone tells you that the edge length was actually 2.1 instead of 2. So you modify as follows:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fl">2.1</span><span class="sc">*</span><span class="fl">2.1</span><span class="sc">*</span><span class="fl">2.1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 9.261</code></pre>
-</div>
-</div>
-<p>Then you get told the edge length is actually 2.2. So frustrating! To save ourselves further troubles, we do the following to make our code <em>reproducible</em>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>length <span class="ot">&lt;-</span> <span class="fl">2.2</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>length<span class="sc">^</span><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 10.648</code></pre>
-</div>
-</div>
-<p>What did we do in the above code? We _____ or ______ the value 2.2 into the ______ called <code>length</code> using the keys <code>&lt;-</code>.</p>
-<p>Now make a new R code chunk here. In this new code chunk, make a new object called <code>volume</code> and assign to it an appropriate value. Now let’s knit the document.</p>
+<p>Suppose I want to save the result of a big calculation to use moving forward. We _____ or ______ the value of 1 + 2 + 3 + 4 + 5 into the ______ called <code>x</code> using the keys <code>&lt;-</code>.</p>
 <div class="cell">
 
 </div>
@@ -420,7 +390,7 @@ Tip
 <h2 class="anchored" data-anchor-id="errors-warnings-and-messages">Errors, warnings, and messages</h2>
 <p>These are always shown in red text in the Console. Whenever you see them, don’t panic! With practice, you will be able to decipher the messages and de-bug your code with ease.</p>
 <ul>
-<li><strong>Errors:</strong> prevent code from executing and documents from knitting. It will be prefaced with “Error in…”. Trying typing in the following code in your Console: <code>1 + a</code>. What happens?</li>
+<li><strong>Errors:</strong> prevent code from executing and documents from rendering It will be prefaced with “Error in…”. Trying typing in the following code in your Console: <code>1 + a</code>. What happens?</li>
 </ul>
 <div class="callout-tip callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -435,7 +405,7 @@ Tip
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">+</span>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">+</span>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in eval(expr, envir, enclos): object 'a' not found</code></pre>
 </div>
@@ -445,7 +415,7 @@ Tip
 </div>
 
 <div class="no-row-height column-margin column-container"><div class="">
-<p>A good reason to knit often is to ensure your code is error-free!</p>
+<p>A good reason to render often is to ensure your code is error-free!</p>
 </div></div><ul>
 <li><p><strong>Warnings</strong>: your code will run with some caveats. It will be prefaced with “Warning:”. We will see examples of this later on.</p></li>
 <li><p><strong>Messages</strong>: messages in red that do not begin with “Error” or “Warning” are simply friendly messages that might provide you more information about the execution of your code.</p></li>
@@ -463,7 +433,7 @@ Tip
 <li>____ the package</li>
 <li>____ the package</li>
 </ol>
-<p><strong>Unless you update R Studio, you will only need to install a package once. However, you will need to explicitly load in packages every time you work in a new R Markdown document.</strong></p>
+<p><strong>Unless you update R Studio, you will only need to install a package once. However, you will need to explicitly load in packages every time you work in a new Quarto Markdown document.</strong></p>
 <p>There are thousands of available packages to work with. Two of the most common packages we will use are the <code>openintro</code> package and the <code>tidyverse</code> package (though, the <code>tidyverse</code> package is actually a giant package that is comprised of several other packages).</p>
 <section id="package-installation" class="level3">
 <h3 class="anchored" data-anchor-id="package-installation">Package installation</h3>
@@ -482,13 +452,14 @@ Tip
 <li>Press Return/Enter</li>
 </ol></li>
 </ol>
-<p>We will install the <code>openintro</code> package together. Then, try installing the <code>tidyverse</code> package on your own!</p>
+<p>We will install the <code>openintro</code> package together.</p>
+<p>Then, try installing the <code>tidyverse</code> package on your own!</p>
 </section>
 <section id="package-loading" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="package-loading">Package loading</h3>
-<p>To use the package we have installed, we use the <code>library()</code> command:</p>
+<p>If we want to use a package, we use the <code>library()</code> command:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openintro)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openintro)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: airports</code></pre>
 </div>
@@ -512,15 +483,20 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You may have seen some red text in your Console when you loaded in the package above. Was this an error, warning, or regular message?</p>
+<p>You may have seen some red text in your Console when you loaded in the package above. That’s okay!</p>
 </div>
 </div>
 </section>
 </section>
+</section>
+<section id="rendering" class="level1">
+<h1>Rendering</h1>
+<p>Rendering the document will turn your Quarto markdown into its final output form. To render, simply click on the blue arrow button up top that reads “Render”. Rendering can take anywhere from a few seconds to a few minutes depending on the amount of code and narrative you have. It will also save your output!</p>
+<p>Open your STAT 201 folder. What do you notice happens once we’ve rendered?</p>
 </section>
 <section id="submit-to-canvas" class="level1">
 <h1>Submit to Canvas</h1>
-<p>When you are finished with your work and ready to submit, you should always knit one last time. You should then submit the most recent knitted output (i.e.&nbsp;the HTML or PDF file) to the corresponding Canvas assignment. Sometimes I will also ask you to submit the accompanying .Rmd file.</p>
+<p>When you are finished with your work and ready to submit, you should always render one last time. You should then submit the most recent rendered output (i.e.&nbsp;PDF) to the corresponding Canvas assignment. Sometimes I will also ask you to submit the accompanying .qmd file.</p>
 
 
 </section>
