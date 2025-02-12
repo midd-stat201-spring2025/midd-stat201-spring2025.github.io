@@ -60,14 +60,14 @@
     "href": "slides/slides-01-study-design.html#a-good-sample",
     "title": "Study design",
     "section": "A “good” sample",
-    "text": "A “good” sample\n\nThe way we sample data from a population can directly influence the quality of that sample.\n\nWhat are desirable characteristics of a sample?\n\n\nRepresentative: the sample roughly “looks like” the population, i.e. the individuals in the sample offer a good representation of the population at large\nGeneralizable: any results based on the sample can generalize to the population, i.e. we can make “good guesses” about a population parameter using a sample statistic\nUnbiased: every individual in the sample had an equal chance of being sampled"
+    "text": "A “good” sample\n\nAsk class: do you like statistics? Expect: response, non-response, and selection bias due to convenience sampling\n\n\nThe way we sample data from a population can directly influence the quality of that sample.\n\nWhat are desirable characteristics of a sample?\n\n\nRepresentative: the sample roughly “looks like” the population\n\ni.e. the characteristics of participants in the sample are similar to those of the population\n\nGeneralizable: any results based on the sample can generalize to the population\n\ni.e. we can use results from a sample to draw conclusions about a specific population"
   },
   {
     "objectID": "slides/slides-01-study-design.html#bias-in-a-sample",
     "href": "slides/slides-01-study-design.html#bias-in-a-sample",
     "title": "Study design",
     "section": "Bias in a sample",
-    "text": "Bias in a sample\nBias in a sample can arise due to many causes. Here are a few:\n\nSelection bias\n\nOften arises when convenience sample is taken\n\nExclusion/undercoverage bias\nNon-response bias\nResponse bias\n\n\n\nSelection bias: systematic tendency in procedure that causes some members of population to be more likely to be included than others\nUndercoverage bias: part of population is excluded from sample -> not representative\nNon-response bias: bias introduced when people who don’t respond differ for some reason that affects the target quantity of interest\nResponse bias: systematic favoring of certain outcomes that occurs when people don’t answer truthfully (lying or not being truthful)"
+    "text": "Bias in a sample\n\nBiased samples occur when the methods used to obtain data result in inaccurate/skewed depictions of the population. This is bad!!\n\nCan occur if a sample is not representative\n\nBias in a sample can arise due to many causes. Here are just a few:\n\nSelection bias: systematic tendency in procedure that causes some members of population to be more likely to be included than others\nNon-response bias: the values of the response variable of non-respondents differ systematically from those that do respond\nResponse bias: systematic favoring of certain response variable values that occurs when people don’t answer truthfully (e.g. lying)\n\nAny type of bias could lead to our sample being non representative or not generalizable"
   },
   {
     "objectID": "slides/slides-01-study-design.html#simple-random-sampling",
@@ -80,15 +80,15 @@
     "objectID": "slides/slides-01-study-design.html#stratified-sampling",
     "href": "slides/slides-01-study-design.html#stratified-sampling",
     "title": "Study design",
-    "section": "Stratified sampling",
-    "text": "Stratified sampling\n\nDepending on the population, we might need to use different random sampling methods to ensure the sample is representative.\nAssume that the population is/can be broken up into several different, distinct sub-populations or strata\n\nThe division should “make sense”\n\nRather than randomly sampling from the population as whole, we take a random sample from each stratum\n\nHow many from each stratum? Typically use a sampling fraction that is proportional to entire population!\nE.g. if population of trees on Middlebury campus are 80% deciduous and 20% coniferous and we want to sample \\(n = 10\\) trees total, we should randomly sample ___ deciduous and ___ coniferous trees\n\nWhat are some pros/cons?\n\n\n\nMay be useful to ensure we have samples from rare groups, and helps to improve precision of the sample\nMost useful when stratifying variables are simple to work with, easy to observe, closely related to topic of survey\nCan be expensive to travel –> motivates the next type"
+    "section": "2. Stratified sampling",
+    "text": "2. Stratified sampling\n\nAssume that the population is/can be broken up into several different, distinct sub-populations or strata\n\nCases grouped into a strata should be similar to each other\n\nThen take a (simple) random sample from each stratum (“divide and conquer”)\n\nHow many from each stratum? Typically use a sampling fraction that is proportional to entire population!\nE.g. if population of trees on Middlebury campus are 80% deciduous and 20% coniferous and we want to sample \\(n = 10\\) trees total, we should randomly sample ___ deciduous and ___ coniferous trees\n\nWhat are some pros/cons?\n\n\n\nDepending on the population, we might need to use different random sampling methods to ensure the sample is representative\nMay be useful to ensure we have samples from rare groups, and helps to improve precision of the sample\nMost useful when stratifying variables are simple to work with, easy to observe, closely related to topic of survey\nCan be expensive to travel –> motivates the next type\nAnalyzing data from stratified sampling usually requires a more complex approach (beyond our scope here)"
   },
   {
     "objectID": "slides/slides-01-study-design.html#cluster-sampling",
     "href": "slides/slides-01-study-design.html#cluster-sampling",
     "title": "Study design",
-    "section": "Cluster sampling",
-    "text": "Cluster sampling\n\nDivide total population into \\(M\\) distinct groups or clusters of roughly equal size\nPerform a simple random sample on the \\(M\\) clusters, than sample all individuals within each of the randomly selected clusters\n\nDiscuss the following:\n\nWould you prefer the individuals within a cluster to be homogeneous (similar) or heterogeneous (varied)? Why?\nWould you prefer that cluster A and cluster B be relatively similar or different in terms of their sub-populations?\nWhat is the difference between stratified and cluster sampling?\n\n\n\n\n\nCreates pockets of sampled units –> reducing costs. Also useful when we cannot obtain a list of ALL units in the population, but can easily obtain a list of all units within a cluster\nLess efficient that SRS –> better to survey large number of small clusters than vice versa\n\nNeighboring units tend to be more similar –> sampling one being cluster would not represent a whole spectrum of variation present in the entire population\n\nDifficult to control final sample size. If you want a particular size n (e.g. 100), the other two methods are easier"
+    "section": "3. Cluster sampling",
+    "text": "3. Cluster sampling\n\nDivide total population into \\(M\\) distinct groups or clusters of roughly equal size\nPerform a (simple) random sample on the \\(M\\) clusters, than sample all individuals within each of the randomly selected clusters\n\nDiscuss the following:\n\nWould you prefer the individuals within a cluster to be homogeneous (similar) or heterogeneous (varied)? Why?\nWould you prefer that cluster A and cluster B be relatively similar or different in terms of their sub-populations?\nWhat is the difference between stratified and cluster sampling?\n\n\n\n\n\nCreates pockets of sampled units –> reducing costs. Also useful when we cannot obtain a list of ALL units in the population, but can easily obtain a list of all units within a cluster\nLess efficient that SRS –> better to survey large number of small clusters than vice versa\n\nNeighboring units tend to be more similar –> sampling one being cluster would not represent a whole spectrum of variation present in the entire population\n\nDifficult to control final sample size. If you want a particular size n (e.g. 100), the other two methods are easier"
   },
   {
     "objectID": "slides/slides-01-study-design.html#multistage-sampling",
@@ -116,7 +116,7 @@
     "href": "slides/slides-01-study-design.html#principles-of-experimental-design",
     "title": "Study design",
     "section": "Principles of experimental design",
-    "text": "Principles of experimental design\n\nRandomization: randomly assign patients to treatments\n\nHelps account for variables that cannot be controlled and possible confounding variables\n\nControlling for differences in the treatment: ensure that everyone follows the same protocol exactly\nReplication: the more cases we observe, the more confidence we have in the effect of the explanatory on the response\n\nAchieved by collecting a sufficiently large sample in a single study, or repeating the entire study more than once\n\n\n\nThese first three principles are crucial! The following is principle is desirable, but more complicated."
+    "text": "Principles of experimental design\n\nRandomization: randomly assign patients to treatments\n\nHelps account possible confounding variables\n\nControlling for differences in the treatment: ensure that everyone follows the same protocol exactly\nReplication: the more cases we observe, the more confidence we have in the effect of the explanatory on the response\n\nAchieved by collecting a sufficiently large sample in a single study, or repeating the entire study more than once"
   },
   {
     "objectID": "slides/slides-01-study-design.html#principles-of-experimental-design-cont.",
@@ -130,7 +130,7 @@
     "href": "slides/slides-01-study-design.html#reducing-bias-in-human-experiments",
     "title": "Study design",
     "section": "Reducing bias in human experiments",
-    "text": "Reducing bias in human experiments\n\nWe should make the experiment a blind experiment by not allowing participants to know which group they’ve been assigned to\n\nGive a fake treatment known as a placebo to those in the control group (e.g. a sugar pill that looks exactly like the actual treatment pill)\nOftentimes, a placebo results in a slight but real improvement in patients. This is known as the placebo effect\n\nDoctors and researchers involved in the study should also be blinded so they do not give preferential treatment or care to patients in certain groups.\n\nDouble-blind experiments: both the patients and the doctors/researchers who interact with patients are unaware of who is or is not receiving the treatment\n\nQuestion of ethics"
+    "text": "Reducing bias in human experiments\n\nBiases can still unintentionally arise in experiments, even if we follow these three principles.\nWe should make the experiment a blind experiment by not allowing participants to know which group they’ve been assigned to\n\nGive a fake treatment known as a placebo to those in the control group (e.g. a sugar pill that looks exactly like the actual treatment pill)\nPlacebo effect: a placebo results in a slight but real improvement in control patients\n\nDoctors and researchers involved in the study should also be blinded so they do not give preferential treatment or care to patients in certain groups.\n\nDouble-blind experiments: both the patients and the doctors/researchers who interact with patients are unaware of who is receive which treatment"
   },
   {
     "objectID": "slides/slides-01-study-design.html#treatment-vs.-control",
@@ -151,7 +151,7 @@
     "href": "slides/slides-01-study-design.html#observational-studies",
     "title": "Study design",
     "section": "Observational studies",
-    "text": "Observational studies\n\nStudies where no treatment is explicitly applied\nNothing is manipulated; researchers simply record/observe without intervening\nTypically cannot obtain causal conclusions using data from observational studies\n\nThere are too many confounding variables at play in observational studies\n\nBut we can use these studies to identify associations or form hypotheses for future experiments!\n\n\nQuiz/exam example could be an observational study if we gave students the choice to do an optional quiz."
+    "text": "Observational studies\n\nCausal conclusions cannot be obtained using data from observational studies\n\nThere are too many confounding variables at play!\n\nBut they are much cheaper, and can be used to identify associations or form hypotheses for future experiments!"
   },
   {
     "objectID": "practice/practice-01-study-design.html",
@@ -1635,14 +1635,14 @@
     "href": "slides/slides-01-study-design.html#example-literary-digest-poll",
     "title": "Study design",
     "section": "Example: Literary Digest poll",
-    "text": "Example: Literary Digest poll\n\n1936 was an election year in the United States. Franklin D. Roosevelt (a Democrat) was completing his first term in office as president.\nRepublican candidate Alfred Landon of Kansas was his competitor\nLiterary Digest magazine conducted a polling survey, which received 2.4 million respondents (largest number of people every replying to a poll at that time)\n\nPrediction: overwhelming victory for Landon (predicted FDR would only get 43% of popular vote)\n\nActual result: FDR won by a landslide! (62% to 38%)\nWhat happened? Selection and non-response bias\n\n\n\nSelection bias: Digest mailed questionnaires to 10 million people. Where did they get the address form? Telephone books and club membership lists –> screened out the poor (only about 25% of households had phones)\n\nThis wouldn’t necessarily be bias, EXCEPT for the fact that poor people overwhelmingly favored FDR and the rich favored Landon\n\nNon-response bias: lots of people didn’t respond to survey (~75%)\n\nOnce again, wouldn’t matter if there wasn’t a difference in the opinions of respondents vs non-respondents. But among the 20% who responded, over half favored Landon\nNon-respondents can be very different from respondents. When there is high non-response rate, look for non-response bias\n\nLesson: not all samples that were done poorly are necessarily biased, but we should always ask how the sample was conducted! Also, when a selection procedure is biased, a large sample does not help; this just replicates the mistake on a larger scale!"
+    "text": "Example: Literary Digest poll\n\n1936 was an election year in the United States. Franklin D. Roosevelt (a Democrat) was completing his first term in office as president.\nRepublican candidate Alfred Landon of Kansas was his competitor\nLiterary Digest magazine conducted a polling survey, which received 2.4 million respondents (largest number of people every replying to a poll at that time)\n\nPrediction: overwhelming victory for Landon (predicted FDR would only get 43% of popular vote)\n\nActual result: FDR won by a landslide! (62% to 38%)\nWhat happened? Selection and non-response bias\n\n\n\nSelection bias: Digest mailed questionnaires to 10 million people. Where did they get the address form? Telephone books and club membership lists –> screened out the poor (only about 25% of households had phones)\n\nThis wouldn’t necessarily be bias, EXCEPT for the fact that poor people overwhelmingly favored FDR and the rich favored Landon\n\nNon-response bias: lots of people didn’t respond to survey (~75%)\n\nOnce again, wouldn’t matter if there wasn’t a difference in the opinions of respondents vs non-respondents. But among the 25% who responded, over half favored Landon\nNon-respondents can be very different from respondents. When there is high non-response rate, look for non-response bias\n\nLesson: not all samples that were done poorly are necessarily biased, but we should always ask how the sample was conducted! Also, when a selection procedure is biased, a large sample does not help; this just replicates the mistake on a larger scale!"
   },
   {
     "objectID": "slides/slides-01-study-design.html#simple-random-sampling-srs",
     "href": "slides/slides-01-study-design.html#simple-random-sampling-srs",
     "title": "Study design",
-    "section": "Simple random sampling (SRS)",
-    "text": "Simple random sampling (SRS)\n\nIn a simple random sample, each individual is chosen entirely by chance from the population, and each member of the population has an equal chance of being sampled\n\nTypically sampling without replacement\nKnowing that an individual was sampled does not provide useful information about which other cases are included\n\nAny given fixed-size subset of the population is equally likely to be chosen\n\n\n\nConsider again the research question: What proportion of current Middlebury professors attended a liberal arts college?\nHow might I obtain a sample random sample of 25 professors?\n\n\n\nRequires us to list all of the units in the target/survey population –> May be unrealistic!"
+    "section": "1. Simple random sampling (SRS)",
+    "text": "1. Simple random sampling (SRS)\n\nIn a simple random sample, each case is chosen entirely by chance from the population, and each member of the population has an equal chance of being sampled\n\nKnowing that an individual was sampled does not provide useful information about which other cases are included\n\nAny given fixed-size subset of the population is equally likely to be chosen\n\n\n\nConsider again the research question: What proportion of current Middlebury professors attended a liberal arts college?\nHow might I obtain a simple random sample of 25 professors?\n\n\n\nRequires us to list all of the units in the target/survey population –> May be unrealistic!"
   },
   {
     "objectID": "slides/slides-01-study-design.html#multistage-cluster-sampling",
@@ -1656,7 +1656,7 @@
     "href": "slides/slides-01-study-design.html#probability-sampling",
     "title": "Study design",
     "section": "Probability sampling",
-    "text": "Probability sampling\n\nAny sampling method where the selection from the target population is based on random selection/chance\n\nAll subjects in the target population have equal chances of being selected as some point in the method\nNo one has discretion about who is included in the sample\n\nRandomly sampling from the population can help reduce bias in our sample\n\nIf we don’t randomly sample, results obtained from the sample will most likely not be representative and will not generalize to the target population\n\nExamples include: simple random, stratified, cluster, systematic"
+    "text": "Probability sampling\n\nIn general, sampling methods that include a bit of randomness can help reduce the chance of bias\nProbability/random sampling: any sampling method where the selection from the population is based on random selection/chance\n\nNo one has full discretion about who is included in the sample\n\nRandom sampling usually yields a representative and generalizable sample\nExamples include: simple random, stratified, cluster, systematic"
   },
   {
     "objectID": "live_code/intro_R.html#yaml",
@@ -2314,7 +2314,7 @@
     "href": "index.html#announcements",
     "title": "Advanced Introduction to Statistics and Data Science",
     "section": "Announcements",
-    "text": "Announcements\n\nR installation help hours:\n\nMonday 2/10\n\n2-3pm (Prof. Tang’s office hours)\n7-9pm (TA in Q-Center first floor MBH 202)\n\nTuesday 2/11\n\n3-4pm (outside Prof. Tang’s office)\n\nWednesday 2/12\n\n3-4pm (with Prof. Malcolm-White in Q-Center first floor MBH 202)"
+    "text": "Announcements\n\nR installation help hours:\n\nWednesday 2/12\n\n3-4pm (with Prof. Malcolm-White in Q-Center first floor MBH 202)"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#recap",
@@ -5892,5 +5892,54 @@
     "title": "Welcome!",
     "section": "Parameters and statistics",
     "text": "Parameters and statistics\n\nOften times, answering a research question simplifies to understanding a numerical summary.\n\n(Population) parameter: a numerical summary calculated from (or considered for calculation from) the entire population\n(Sample) statistic: a numerical summary calculated from a sample\n\nWhy do we differentiate? It’s always good to remember that we are trying to answer questions about the population!\nIn kidney cancer data, we might want to know a county’s true kidney cancer rate (for white males, 1980-1989)\n\nThis would be an example of a population parameter\nUnless all white males in the county responded, the reported rate is an example of a sample statistic"
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#convenience-sampling",
+    "href": "slides/slides-01-study-design.html#convenience-sampling",
+    "title": "Study design",
+    "section": "Convenience sampling",
+    "text": "Convenience sampling\nThe worst kind of sampling (but often the easiest)!\n\nConvenience sampling takes place when cases that are easily accessible are more likely to be included in the sample\nExample:\n\nPopulation: students enrolled in statistics courses at Middlebury\nSample: students in STAT 201 AZ"
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#variables-in-statistics",
+    "href": "slides/slides-01-study-design.html#variables-in-statistics",
+    "title": "Study design",
+    "section": "Variables in statistics",
+    "text": "Variables in statistics\n\nWhat is a variable?\n\n\nVariables in math represent a quantity that can change; not fixed. For us, it’s the same idea! A variable is a characteristic/number/quantity that can be measured or counted and can take different values\n\n\nLots of research questions revolve around asking how variable \\(x\\) affects variable \\(y\\)\nIf \\(y\\) is the primary variable of interest, i.e. the variable whose behavior we want to understand, it is called the response variable\nIf we try to understand how changing \\(x\\) affects \\(y\\), then \\(x\\) is called the explanatory variable\n\nIn scientific studies, explanatory variables can often be manipulated/controlled/observed by the researcher ahead of time"
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#experiments-vs-observainal-studies",
+    "href": "slides/slides-01-study-design.html#experiments-vs-observainal-studies",
+    "title": "Study design",
+    "section": "Experiments vs Observainal studies",
+    "text": "Experiments vs Observainal studies\n\nObservational studies occur when a research observes cases without manipulating any variables\nExperiments are studies where the researcher assigns specific treatments to cases\n\nNote: experiments are often conducted in medical settings, hence the word “treatment”\n\nExample: I believe that students who take quizzes throughout the semester end up performing better on the final exam.\n\nObservational study: students optionally take quizzes\nExperiment: I choose half of the students to take quizzes and the other half to not take quizzes.\n\n\nAre treatments in experiments considered explanatory or response variables?"
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#randomized-experiments",
+    "href": "slides/slides-01-study-design.html#randomized-experiments",
+    "title": "Study design",
+    "section": "Randomized experiments",
+    "text": "Randomized experiments\n\nWhen the researcher randomly assigns the treatments, we have a randomized experiment\n\nRandomized experiments are critical when trying to assess the causal effect of the explanatory variable on the response variable\n\nNote: random assignment in experiments \\(\\ne\\) random sampling for participation in the sample\nContinuing example:\n\nRandomized experiment is achieved if I use SRS to determine who received which treatment\nBut the students who “participate” in the experiment were not obtained via SRS"
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#experiments-vs-observational-studies",
+    "href": "slides/slides-01-study-design.html#experiments-vs-observational-studies",
+    "title": "Study design",
+    "section": "Experiments vs Observational studies",
+    "text": "Experiments vs Observational studies\n\nObservational studies occur when a research observes cases without manipulating any variables\nExperiments are studies where the researcher assigns specific treatments to cases\n\nNote: experiments are often conducted in medical settings, hence the word “treatment”\n\nExample: I want to design a study to learn if students who take quizzes throughout the semester end up performing better on the final exam.\n\nObservational study: students optionally take quizzes\nExperiment: I choose half of the students to take quizzes and the other half to not take quizzes.\n\n\nAre treatments in experiments considered explanatory or response variables?"
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#treatment-vs-control",
+    "href": "slides/slides-01-study-design.html#treatment-vs-control",
+    "title": "Study design",
+    "section": "Treatment vs control",
+    "text": "Treatment vs control\n\nTreatments are typically divided into two categories:\n\nControl group: establishes a baseline, and typically receives “zero amount” of the explanatory variable\nTreatment group(s): receive some “non-zero amount” of the explanatory variable\n\nQuiz example continued:\n\nControl group: no quizzes\nTreatment group 1: takes one quiz\nTreatment group 2: takes two quizzes\n\nHow to decide which case gets which treatment?"
+  },
+  {
+    "objectID": "slides/slides-01-study-design.html#reducing-bias-in-human-experiments-cont.",
+    "href": "slides/slides-01-study-design.html#reducing-bias-in-human-experiments-cont.",
+    "title": "Study design",
+    "section": "Reducing bias in human experiments (cont.)",
+    "text": "Reducing bias in human experiments (cont.)\nCaveats:\n\nBlinding not always possible! It would be hard to give a placebo in the quiz experiment\nQuestion of ethics"
   }
 ]
