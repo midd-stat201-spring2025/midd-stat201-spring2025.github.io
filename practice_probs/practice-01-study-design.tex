@@ -152,9 +152,7 @@
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, interior hidden, borderline west={3pt}{0pt}{shadecolor}, breakable, enhanced, frame hidden, sharp corners]}{\end{tcolorbox}}\fi
-
-\clearpage
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, enhanced, interior hidden, borderline west={3pt}{0pt}{shadecolor}, frame hidden, sharp corners, boxrule=0pt]}{\end{tcolorbox}}\fi
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -169,6 +167,7 @@
   to a: case, variable, parameter, and statistic.
 
   \begin{itemize}
+  \tightlist
   \item
     10.2 hours
   \item
@@ -198,6 +197,7 @@
 
   \begin{enumerate}
   \def\labelenumii{\alph{enumii}.}
+  \tightlist
   \item
     What are the treatments in this study?
   \item

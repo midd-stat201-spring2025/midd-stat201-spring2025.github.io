@@ -1,7 +1,6 @@
 ---
 title: "Study design"
 author: "Practice problems"
-date: "September 11, 2024"
 format: 
   pdf:
     keep-tex: true
@@ -14,34 +13,29 @@ format:
       - right=1in
 ---
 
-Please work on the practice problems in your group. At least one of the following problems will be assigned to the weekly problem set.
+\clearpage
 
-1.  In Spring 2024, Prof. Tang asked her STAT 311 students to fill out a mid-semester survey. She was particularly interested in the the amount of hours her STAT 311 students were spending per week on the course. The average time spent on the course was found to be 10.2 hours per week.
+1.  In Spring 2024, Prof. Tang asked her STAT 311 students to fill out a mid-semester survey. She was particularly interested in the the amount of hours her STAT 311 students were spending per week on the course. Of the 90% of students who responded, the average time spent on the course was found to be 10.2 hours per week.
 
-    a.  Based on this information, identify each of the following: observation, variable, parameter, and statistic.
-    b.  Was this survey a census or (just) a sample? Why?
+    Based on this information, identify which of the following correspond to a: case, variable, parameter, and statistic.
+
+    -   10.2 hours
+
+    -   The average number of hours spent on the course of all STAT 311 students from Spring 2024
+
+    -   A STAT 311 student
+
+    -   The number of hours spent on STAT 311
 
 2.  Suppose we want to estimate household size, where a *“household”* is defined as people living together in the same dwelling, and sharing living accommodations. If we select students at random at an elementary school and ask them what their family size is, will this be a good measure of household size? Or will our average be biased? If so, will it overestimate or underestimate the true value?
 
-3.  To assess the effectiveness of taking large doses of vitamin C in reducing the duration of the common cold, researchers recruited 400 healthy volunteers from staff and students at a university. A quarter of the patients were assigned a placebo, and the rest were evenly divided between 1g Vitamin C, 3g Vitamin C, or 3g Vitamin C plus additives to be taken at onset of a cold for the following two days. All tablets had identical appearance and packaging. The nurses who handed the prescribed pills to the patients knew which patient received which treatment, but the researchers assessing the patients when they were sick did not. No statistically discernible differences were observed in any measure of cold duration or severity between the four groups, and the placebo group had the shortest duration of symptoms.
+3.  Chia seeds have gained reputation as a diet supplement. In one 2009 study, 38 men and 38 women were recruited (i.e. specifically chosen) and then divided randomly into two groups: treatment or control. One group was given 25 grams of chia seeds twice a day to consume, and the other was given a placebo. The seeds and placebo were designed to look the same. The subjects volunteered to be a part of the study. After 12 weeks, the scientists found no statistically discernible difference between the groups in appetite or weight loss.
 
-    a.  Was this an experiment or an observational study? Why?
-    b.  What are the explanatory and response variables in this study?
-    c.  Were the patients blinded to their treatment?
-    d.  Was this study double-blind?
-    e.  Participants are ultimately able to choose whether to use the pills prescribed to them. We might expect that not all of them will adhere and take their pills. Does this introduce a confounding variable to the study? Explain your reasoning.
+    a.  What are the treatments in this study?
 
-4.  Chia seeds have gained reputation as a diet supplement. In one 2009 study, 38 men and 38 women were recruited (i.e. specifically chosen) and then divided randomly into two groups: treatment or control. One group was given 25 grams of chia seeds twice a day to consume, and the other was given a placebo. The seeds and placebo were designed to look the same. The subjects volunteered to be a part of the study. After 12 weeks, the scientists found no statistically discernible difference between the groups in appetite or weight loss.
+    b.  Is there any blinding?
 
-    a.  What type of study is this?
-
-    b.  What are the experimental and control treatments in this study?
-
-    c.  Has blocking been used in this study? If so, what is the blocking variable?
-
-    d.  Is there any blinding in the study?
-
-    e.  Comment on whether we can make a causal statement, and indicate whether we can generalize the conclusions from this study to the population at large.
+    c.  Comment on whether we can make a causal statement, and indicate whether we can generalize the conclusions from this study to the population at large.
 
 ```{=html}
 <!--
