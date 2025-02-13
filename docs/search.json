@@ -25,7 +25,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Jump to:\n\nWeek 1\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n\n\n\n\n\n\n\n1\n\nM 2/10\n\nTopic: Welcome!\n\nDirections for printing at bottom\n\n\n\n\nSubmit Problem Set 0 before 2/12 class\nTry to install R and RStudio before Thursday’s 2/13 class using these instructions\n\n\n\n\nW 2/12\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nInstall R and RStudio before Thursday class using these instructions\nWednesday problems on Problem Set 1\n\n\n\n\nR 2/13\n\nTopic: Programming toolkit (no need to print slides!)\n\nRStudio help sheet\n\nR and .qmd basics\n\nDownload the following .qmd template and drag to your new STAT 201 folder:  qmd template \n\n\n\nIntro to R and Quarto Markdown\n Coding practice \n\n\nTBD\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
+    "text": "Jump to:\n\nWeek 1\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n\n\n\n\n\n\n\n1\n\nM 2/10\n\nTopic: Welcome!\n\nDirections for printing at bottom\n\n\n\n\nSubmit Problem Set 0 before 2/12 class\nTry to install R and RStudio before Thursday’s 2/13 class using these instructions\n\n\n\n\nW 2/12\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nInstall R and RStudio before Thursday class using these instructions\nWednesday problems on Problem Set 1\n\n\n\n\nR 2/13\n\nTopic: Programming toolkit (no need to print slides!)\n\nRStudio help sheet\n\nR and .qmd basics\n\nDownload the following .qmd template and drag to your new STAT 201 folder:  qmd template \n\n\n\nIntro to R and Quarto Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
   },
   {
     "objectID": "slides/slides-01-study-design.html#population-and-samples",
@@ -2314,7 +2314,7 @@
     "href": "index.html#announcements",
     "title": "Advanced Introduction to Statistics and Data Science",
     "section": "Announcements",
-    "text": "Announcements\n\nR installation help hours:\n\nWednesday 2/12\n\n3-4pm (with Prof. Malcolm-White in Q-Center first floor MBH 202)"
+    "text": "Announcements\n\nProblem Set 1 due Monday 2/17 at 11:59pm"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#recap",
