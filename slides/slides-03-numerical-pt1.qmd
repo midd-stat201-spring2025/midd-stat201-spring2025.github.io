@@ -1,7 +1,7 @@
 ---
 title: "Numerical data"
 subtitle: "Visualization and summary statistics (part 1)"
-date: "September 16, 2024"
+date: "February 17, 2025"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
@@ -28,9 +28,9 @@ library(readr)
 plot_theme <- theme(text = element_text(size = 16))
 ```
 
--   Feedback on coding practice
+-   Where to find feedback on coding practice
 -   Problem set 1 due tonight!
--   Office hours today 2-4pm
+-   Office hours today 2-3pm
 -   Activity!
 
 ## Variables types
@@ -62,6 +62,142 @@ insurance |>
 
 ```
 
+# Summary statistics for numerical data
+
+## Condensing information
+
+-   We often care about variable's **distribution**: the different values the variable can take on along with how often
+
+-   Rather than provide someone with an entire dataset, it is more useful to provide quick "snapshot" information
+
+-   Two pieces of quantitative information that describe a distribution:
+
+    -   Center
+
+    -   Spread
+
+## Mean
+
+-   Most common way to measure the center of the distribution of a numerical variable is using the **mean** (also called the **average**)
+
+-   ***Sample*** **mean**: a mean calculated using sampled data. The sample mean is typically denoted as $\bar{x}$
+
+    -   $x$ is a placeholder for the variable of interest (e.g. `BMI`, `charges`)
+    -   The bar communicates that we are looking at the average
+
+-   The sample mean is the sum over all the observed values of the variable, divided by total number of observations $n$:
+
+::: fragment
+$$\bar{x} = \frac{x_{1} + x_{2} + \ldots x_{n}}{n} = \frac{1}{n} \sum_{i=1}^{n} x_{i}$$
+:::
+
+## Mean (cont.)
+
+-   The sample mean $\bar{x}$ is an example of a sample statistic
+
+-   The mean over the entire population is an example of a population parameter. The **population mean** is denoted $\mu$ (Greek letter mu)
+
+    -   The sample mean $\bar{x}$ is often used as an estimate for $\mu$ (more on this in a few weeks!)
+
+## Examples
+
+-   Let's calculate the sample mean weight of a piece of candy in our bag. Let $x$ be the weight of a candy.
+
+    -   ::: discuss
+        Calculate your $\bar{x}$
+        :::
+
+    -   **Note**: we did not need individual values $x_{1}, x_{2},\ldots$ to calculate $\bar{x}$!
+
+-   Can we obtain the population mean?
+
+    -   $\mu=$
+
+:::: fragment
+::: discuss
+-   What is the average of the following values? $\qquad 1, 4, 4$
+
+-   If instead there were ten 1's and twenty 4's, would the average be the same?
+
+-   Thus, we see that means depend on proportions!
+:::
+::::
+
+## Variability
+
+-   At the heart of statistics is also the **variability** or spread of the distribution of the variable
+
+-   We will work with variance and standard deviation, which are ways to describe how spread out data are *from their mean*
+
+::: fragment
+```{r fig.width=8, fig.height=3}
+set.seed(10)
+n <- 100
+x <- seq(-5,5,0.01)
+y1 <- dnorm(x, 0, 0.25)
+y2 <- dnorm(x, 0, 1.25)
+data.frame(x = x, data1 = y1, data2 = y2) |>
+  pivot_longer(cols = 2:3, names_to = "variable", values_to = "density") %>%
+  ggplot(aes(x=x, y = density)) +
+  geom_line() +
+  facet_wrap(~variable) +
+  scale_y_continuous(NULL, breaks = NULL)+
+  geom_vline(xintercept =  0, col = "orange", linetype = "dashed", size = 1) +
+  plot_theme
+```
+:::
+
+## Deviation
+
+We begin with **deviation**, which is the distance or difference between an observation from the (sample) mean
+
+-   How might we write this using statistical notation?
+-   Let's write out the deviations of your five sampled weights
+
+## Variance and standard deviation
+
+-   The **sample variance** $s^2$ squares the deviations and takes an average:
+
+    $$
+    s^2 = \frac{1}{n-1}\sum_{i=1}^{n} (x_{i} - \bar{x})^2
+    $$
+
+    -   Let's talk about this notation and intuition behind this formula. In particular, there are at least two things to note
+
+-   ::: discuss
+    Set-up the calculation of the sample variance of your sample
+    :::
+
+    -   I will calculate this in `R`
+
+-   The **sample standard deviation** $s$ is the simply the square root of the sample variance ($s = \sqrt{s^2}$)
+
+## Variance and standard deviation (cont.)
+
+-   Like the mean, the population values for variance and standard deviation are denoted with Greek letters:
+
+    -   $\sigma$ for population standard deviation (Greek letter "sigma")
+
+    -   $\sigma^2$ for population variance
+
+-   ::: discuss
+    If the calculation of standard deviation is a more complicated quantity than the variance, why do we bother with standard deviation?
+    :::
+
+## Live code
+
+Functions to calculate sample mean, variance, and standard deviation in `R`. Each expects a vector of numerical values as input:
+
+::: nonincremental
+-   `mean()`
+
+-   `var()`
+
+-   `sd()`
+:::
+
+# Visualizing numerical data
+
 ## Scatterplots
 
 **Scatterplots** are *bivariate* (two-variable) visualizations that provide a case-by-case view of the data for two numerical variables
@@ -91,35 +227,23 @@ Associations/patterns (linear, exponential, etc) between two variables. They mig
 Positive vs negative associations
 :::
 
-## Dot plots
+## Visualizing univariate numerical data
 
--   Dot plots are a basic visualization that show the *distribution* of a single variable (univariate)
+-   To visualize the distribution (i.e. behavior) of a single variable, we could create a dot plot where:
+
+    -   Each case is plotted on a horizontal axis as a dot
+
+    -   Values that appear multiple times in the dataset would have stacked dots
+
+-   ::: discuss
+    Pros and cons?
+    :::
 
 -   In the following, we have a dot plot of `BMI` rounded to the nearest integer.
 
-::: fragment
-```{r fig.width=6, fig.height=4, fig.align='center'}
-nb <- 5
-insurance |>
-  mutate(bmi = round(bmi)) |>
-  ggplot(aes(x = bmi))+
-  geom_dotplot(binwidth = 1) +
-  xlab("Body mass index")  +
-  scale_x_continuous(n.breaks = 10)+
-  ylab("Count") +
-  scale_y_continuous(n.breaks = nb,
-                     labels= as.character(seq(0,  6*(nb-1), 6))) +
-  plot_theme
-```
-:::
-
-::: notes
-Typically, one dot for each case in our data. What is a disadvantage of dot plots?
-:::
-
 ## Binning
 
--   We will sacrifice a bit more of precision for convenience by *binning:*
+-   We will sacrifice precision for convenience by *binning:*
     -   Segment the variable into equal-sized bins
     -   Visualize the value of each observation using its corresponding bin
 -   For example, the `bmi` variable has observed values of $15.96$ through $49.6$. Consider the following bins of size 5: \[15, 19), \[19, 23), \[23, 27), ..., \[49, 53)
@@ -132,8 +256,8 @@ Typically, one dot for each case in our data. What is a disadvantage of dot plot
 
 -   Histograms provide a view of the **density** of the data (the values the data take on as well as how often)
 
-::: columns
-::: {.column width="30%"}
+::::::: columns
+:::: {.column width="30%"}
 ::: fragment
 ```{r}
 insurance |>
@@ -151,42 +275,42 @@ insurance |>
 
 ```
 :::
-:::
+::::
 
-::: {.column width="70%"}
+:::: {.column width="70%"}
 ::: fragment
 ```{r fig.width=8, fig.height=5, fig.align="center"}
 insurance |>
   ggplot(aes(x = bmi)) +
-  geom_histogram(breaks = seq(15, 53, 4)) +
+  geom_histogram(breaks = seq(15, 53, 4), col = "white") +
   scale_x_continuous(breaks = seq(15, 50, 5)) +
   scale_y_continuous(breaks = seq(0, 60, 10)) +
   xlab("Body mass index") +
   theme(text = element_text(size = 24))
 ```
 :::
-:::
-:::
+::::
+:::::::
 
 ## Describing distributions
 
-A convenient way to describe a variable's behavior is through the *shape* of its distribution. Using histograms, we should identify:
+A convenient way to describe a variable's behavior is through the ***shape*** of its distribution. Using histograms, we should identify:
 
-1.  If the distribution is **symmetric** or **skewed**
+1.  **Skewness** (or lack thereof):
     -   Distributions with long tails to the left are called **left-skewed**
     -   Distributions with long tails to the right are **right-skewed**
     -   If not skewed, then the distribution is **symmetric**
-2.  M**odes** which are prominent peaks in the distribution
+2.  **Modes**: prominent peaks in the distribution
     -   Distribution may be **unimodal** (one peak), **bimodal** (two peaks), or **multimodal** (more than two peaks)
     -   Peaks need not be same height
 
 ## Histograms (cont.)
 
 ::: discuss
-How would you describe the shape of the distributions in the following two histograms?
+How would you describe the shape (i.e. skewness and modality) of the distributions in the following two histograms?
 :::
 
-::: columns
+::::: columns
 ::: {.column width="\"50%"}
 ```{r fig.height=8}
 insurance |>
@@ -208,177 +332,15 @@ insurance |>
   theme(text=element_text(size = 30))
 ```
 :::
-:::
+:::::
 
 ## Creating visualizations
 
-Working in your groups, create a dot plot and a histogram of the estimated weights from the data we collected today!
+Working in your groups:
 
-## Live code
-
-If you'd like to follow along, please download the `.Rmd` template associated with today's class! Otherwise, feel free to just watch and try coding on your own later on.
-
-We will cover:
-
--   Scatterplots and histograms in base `R`
-
-# Summary statistics for numerical data
-
-Visualizations are great for understanding the shape of a data distribution, but it can be extremely useful to obtain more specific, quantitative information about how the data behave.
-
-In addition to describing the shape, we should also describe:
-
-1.   Center
-2.  Spread
-
-## Mean
-
--   By far the most common way to measure the center of the distribution of a numerical variable is using the **mean** (also called the **average**)
-
--   We use the term ***sample*** **mean** when calculating a mean using sampled data. The sample mean is typically denoted as $\bar{x}$
-
-    -   $x$ is a placeholder for the variable of interest (e.g. `BMI`, `charges`)
-    -   The bar communicates that we are looking at the average
-
--   The sample mean is the sum over all the observed values of the variable, divided by total number of observations $n$:
-
-::: fragment
-$$\bar{x} = \frac{x_{1} + x_{2} + \ldots x_{n}}{n} = \frac{1}{n} \sum_{i=1}^{n} x_{i}$$
+::: nonincremental
+1.  Using a histogram, visualize the distribution of the sample mean weights from our activity
+2.  Convince yourselves as a group: what is does a case represent in this data?
+3.  Describe the shape of your distribution (i.e. skewness and modality)
+4.  Obtain the sample mean and standard deviation of the sample means
 :::
-
-## Mean (cont.)
-
-::: fragment
-::: columns
-::: {.column width="\"50%"}
-```{r fig.height=8}
-insurance |>
-  ggplot(aes(x = bmi)) +
-  geom_histogram(breaks = seq(15, 53, 4)) +
-  scale_x_continuous(breaks = seq(15, 50, 5)) +
-  scale_y_continuous(breaks = seq(0, 60, 10)) +
-  geom_vline(xintercept = mean(insurance$bmi), col = "orange",
-             size = 3) +
-  xlab("Body mass index") +
-  theme(text=element_text(size = 24))
-```
-:::
-
-::: {.column width="\"50%"}
-```{r fig.height=8}
-insurance |>
-  ggplot(aes(x = charges)) +
-  geom_histogram(binwidth = 2500) +
-  xlab("Charges ($)") +
-  geom_vline(xintercept = mean(insurance$charges), col = "orange",
-             size = 3) +
-  theme(text=element_text(size = 24))+
-  labs(caption = "Orange line denotes sample mean")
-```
-:::
-:::
-:::
-
--   The sample mean $\bar{x}$ is an example of a sample statistic
-
--   The mean over the entire population is an example of a population parameter. The **population mean** is often denoted $\mu$ (Greek letter mu)
-
--   The sample mean $\bar{x}$ is often used as an estimate for $\mu$ (more on this in STAT 311!)
-
-## Example
-
-Let's calculate the sample mean estimated weight from the data we collected today
-
--   ::: discuss
-    Write out how you would calculate $\bar{x}$
-    :::
-
--   Then I will use `R` to calculate the sample mean!
-
-```{=html}
-<!--
-## Means depend on proportions
-
-::: discuss
--   What is the average of the following values? $\qquad 1, 4, 4$
-
--   If instead there were ten 1's and twenty 4's, would the average be the same?
-:::
-
-::: notes
-$\bar{x} = \frac{1+4+4}{3} = 1\left(\frac{1}{3} \right) + 4\left( \frac{2}{3}\right) = \frac{9}{3} = 3$
-
-$\bar{x} = 1\left(\frac{10}{30}\right) + 4 \left(\frac{20}{30} \right) = \frac{90}{30}  = 3$
-:::
--->
-```
-## Variability
-
--   However, at the heart of statistics is also the **variability** or spread of the distribution of the variable
-
--   We will work with variance and standard deviation, which are ways to describe how spread out data are *from their mean*
-
-::: fragment
-```{r fig.width=8, fig.height=3}
-set.seed(10)
-n <- 100
-x <- seq(-5,5,0.01)
-y1 <- dnorm(x, 0, 0.25)
-y2 <- dnorm(x, 0, 1.25)
-data.frame(x = x, data1 = y1, data2 = y2) |>
-  pivot_longer(cols = 2:3, names_to = "variable", values_to = "density") %>%
-  ggplot(aes(x=x, y = density)) +
-  geom_line() +
-  facet_wrap(~variable) +
-  scale_y_continuous(NULL, breaks = NULL)+
-  geom_vline(xintercept =  0, col = "orange", linetype = "dashed", size = 1) +
-  plot_theme
-```
-:::
-
-## Deviation
-
-We begin with **deviation**, which is the distance or difference between an observation from the (sample) mean
-
--   How might we write this using statistical notation?
--   Let's write out the deviations of our estimated weights
-
-## Variance and standard deviation
-
--   The **sample variance** $s^2$ squares the deviations and takes an average:
-
-    $$
-    s^2 = \frac{1}{n-1}\sum_{i=1}^{n} (x_{i} - \bar{x})^2
-    $$
-
-    -   Let's talk about this notation and intuition behind this formula. In particular, there are at least two things to note
-
--   ::: discuss
-    Set-up the calculation of the sample variance for our data
-    :::
-
-    -   I will calculate this in `R`
-
--   The **sample standard deviation** $s$ is the simply the square root of the sample variance ($s = \sqrt{s^2}$)
-
-## Variance and standard deviation (cont.)
-
--   Like the mean, the population values for variance and standard deviation are denoted with Greek letters:
-
-    -   $\sigma$ for population standard deviation (sigma)
-
-    -   $\sigma^2$ for population variance
-
--   ::: discuss
-    If the calculation of standard deviation is a more complicated quantity than the variance, why do we bother with standard deviation?
-    :::
-
-## Live code
-
-Functions to calculate sample mean, variance, and standard deviation in `R`:
-
--   `mean()`
-
--   `var()`
-
--   `sd()`
