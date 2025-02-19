@@ -159,7 +159,7 @@ Q3 = 119 and Q1 = 113 -\> IQR = 6
 
     -   How long should the whiskers be? There isn't a fixed rule, but $1.5 \times IQR$ below $Q_1$ and above $Q_{3}$ is common
     -   We "cut off" the whiskers at one of the observed values
-        -   e.g. we draw out the right whisker to greatest data point that is less than or equal to $Q_{1} - 1.5\times IQR$
+        -   e.g. we draw out the right whisker to greatest data point that is less than or equal to $Q_{3} + 1.5\times IQR$
 
 -   Lastly, we add dots for any cases that lie beyond the whiskers
 
