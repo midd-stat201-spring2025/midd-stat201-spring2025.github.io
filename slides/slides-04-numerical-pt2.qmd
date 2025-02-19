@@ -1,7 +1,7 @@
 ---
 title: "Numerical data"
 subtitle: "Visualization and summary statistics (part 2)"
-date: "September 18, 2024"
+date: "February 19, 2025"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
@@ -101,10 +101,12 @@ ggplot(insurance, aes(x = charges)) +
     -   If the number of observations $n$ is even, then there will be two values in the middle, and the median is taken as their average
 
 -   ::: discuss
-    Consider the following data: $\boldsymbol{x} =116, 114, 112, 121, 108, 113, 129, 118, 119, 115$. What is the median?
+    Consider the following data: $\boldsymbol{x} =108,112,113, 114, 115, 116, 118, 119,  121,  129$. What is the median?
     :::
 
 -   The median is also known the 50th ***percentile*** because 50% of the data fall below $m$
+
+- Code in R: `median(x)` where $x$ is a vector
 
 ## Quartiles
 
@@ -123,7 +125,7 @@ ggplot(insurance, aes(x = charges)) +
     -   $Q_{3}$ is the median of the $q$ largest values
 
 -   ::: discuss
-    What are $Q_{1}$ and $Q_{3}$ of the data $\boldsymbol{x}$?
+    What are $Q_{1}$ and $Q_{3}$ of the data $\boldsymbol{x} = 108,112,113, 114, 115, 116, 118, 119,  121,  129$?
     :::
 
 ## Interquartile range
@@ -147,16 +149,17 @@ Q3 = 119 and Q1 = 113 -\> IQR = 6
 
 -   The "box" part of the boxplot is created using $Q_{1}$, $m$, and $Q_{3}$
 
--   Then we draw out **whiskers** from the box that attempt to capture data outside the IQR
+-   Draw **whiskers** from the box that attempt to capture data outside the IQR
 
     -   How long should the whiskers be? There isn't a fixed rule, but $1.5 \times IQR$ below $Q_1$ and above $Q_{3}$ is common
-    -   We should "cut off" the whiskers to be true to the data
+    -   We "cut off" the whiskers at one of the observed values
+        -   e.g. we draw out the right whisker to greatest data point that is less than $Q_{1} - 1.5\times IQR$
 
 -   Lastly, we add dots for any cases that lie beyond the whiskers
 
     -   These points are unusually high/low compared to the rest of the data and are worth identifying as *potential* outliers
 
-    -   An **outlier** is an observation that appears extreme relative to the rest of the data
+    -   An **outlier** is an observation that *appears* extreme relative to the rest of the data
 
 -   Let's draw a boxplot for the data $\boldsymbol{x}$!
 
@@ -189,7 +192,7 @@ x <- c(116, 114, 112, 121, 108, 113, 129, 118, 119, 115)
 x2 <- c(x, 170)
 ```
 
--   In the data $\boldsymbol{x} = 116, 114, 112, 121, 108, 113, 129, 118, 119, 115$ that we have been working with, we have the following sample statistics:
+-   In the data $\boldsymbol{x} = 108,112,113, 114, 115, 116, 118, 119,  121,  129$ that we have been working with, we have the following sample statistics:
 
 ::: fragment
 $\qquad \bar{x} =$ `r round(mean(x),1)`, $s =$ `r round(sd(x),1)`, $m =$ `r round(median(x), 1)` , $IQR =$ 6
@@ -295,8 +298,3 @@ Median is more stable; not affected by one single data point. But mean is easier
 Median = what is typical, mean = what you expect. The typical charge amount is around \$9000. But if you're looking at insurance charges, you shouldn't expect to pay that low amount.
 :::
 
-## Live code
-
--   `median()`
-
--   Boxplots in base R

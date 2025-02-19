@@ -240,12 +240,23 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;"></td>
 <td>W 2/19</td>
 <td><ul>
-<li>Topic: Numerical data (cont.)</li>
+<li>Topic: <a href="./slides/slides-04-numerical-pt2.html">Numerical data</a> (cont.) (pdf <a href="slides/pdf/slides-04.pdf">here</a>)</li>
 </ul></td>
 <td><ul>
-<li>Numerical data</li>
+<li><p>Numerical data</p>
+<p><a href="#mtcars-btn" onclick="fetch('data:text/plain;base64,LS0tCnRpdGxlOiAiTnVtZXJpY2FsIGRhdGEgY29kaW5nIHByYWN0aWNlIgphdXRob3I6ICJZb3VyIG5hbWUiCmRhdGU6ICJEdWU6IDIvMTkvMjAyNSBhdCAxMTo1OXBtIgpvdXRwdXQ6IHBkZl9kb2N1bWVudAotLS0KCjEuICBDaGFuZ2UgeW91ciBuYW1lIGluIHRoZSBZQU1MLgoKMi4gIEluIHRoZSBmb2xsb3dpbmcgY29kZSBjaHVuaywgbG9hZCBpbiB0aGUgYG9wZW5pbnRyb2AgcGFja2FnZS4gVGhlbiBydW4gdGhpcyBjb2RlIGNodW5rLiBXZSBuZWVkIHRoaXMgcGFja2FnZSB0byBvbmNlIGFnYWluIHdvcmsgd2l0aCB0aGUgYGNoZXJyeWAgZGF0YSBmcmFtZS4KCmBgYHtyfQoKYGBgCgozLiAgSWYgd2UgaGF2ZSBhIGRhdGEgZnJhbWUgKGxpa2UgYGNoZXJyeWApLCB3ZSBjYW4gYWNjZXNzIGEgc3BlY2lmaWMgdmFyaWFibGUncyBkYXRhIGluIHRoZSBkYXRhIGZyYW1lIGJ5IHR5cGluZyB0aGUgY29kZSBsaWtlIHRoZSBmb2xsb3dpbmc6IGBkYXRhX2ZyYW1lX25hbWUkdmFyaWFibGVfbmFtZWAuIE5vdGUgdGhhdCB0aGUgc3BlbGxpbmcgb2YgdGhlIHZhcmlhYmxlIG5hbWUgbXVzdCBtYXRjaCBob3cgaXQgYXBwZWFycyBpbiB0aGUgZGF0YSBmcmFtZSEKCkluIHRoZSBjb2RlIGNodW5rIGJlbG93LCBvYnRhaW4gdGhlIHZhbHVlcyBvZiB0aGUgb2JzZXJ2ZWQgZGlhbWV0ZXJzIG9mIHRoZXNlIHRyZWVzIHVzaW5nIGNvZGUuIFRoZW4gYW5zd2VyOiB3aGF0IHR5cGUgb2Ygb2JqZWN0IGlzIG91dHB1dCBmcm9tIHRoZSBjb2RlPwoKYGBge3J9CgoKYGBgCgoqKkFuc3dlcjoqKgoKNC4gIEluIHRoZSBjb2RlIGNodW5rIGJlbG93LCB3cml0ZSBjb2RlIHRvIGZpbmQgdGhlIG1lYW4gYW5kIG1lZGlhbiBvZiB0aGUgaGVpZ2h0IG9mIHRyZWVzIGluIHRoZSBgY2hlcnJ5YCBkYXRhIGZyYW1lLiBCYXNlZCBvbiB3aGF0IHlvdSBmaW5kLCBhbnN3ZXIgdGhlIGZvbGxvd2luZzogZG8geW91IGJlbGlldmUgdGhlIGRpc3RyaWJ1dGlvbiBvZiB0aGUgaGVpZ2h0IG9mIGNoZXJyeSB0cmVlcyBpcyBza2V3ZWQgb3Igc3ltbWV0cmljPyBXaHk/CgpgYGB7cn0KCmBgYAoKKipBbnN3ZXI6KioKCjUuICBMZXQncyBjb25maXJtIHlvdXIgYW5zd2VyIGFib3ZlIGJ5IGNyZWF0aW5nIGEgcmF0aGVyIHVnbHkgKGJ1dCBlYXN5IHRvIG9idGFpbikgaGlzdG9ncmFtLiBUaGUgYGhpc3QoKWAgZnVuY3Rpb24gcmVxdWlyZXMgb25lIGlucHV0OiBhIHZlY3RvciBvZiBudW1lcmljYWwgdmFsdWVzIHRvIHZpc3VhbGl6ZS4gUGxvdCBhIGhpc3RvZ3JhbSBvZiB0aGUgaGVpZ2h0cyBvZiB0aGVzZSB0cmVlcy4KCmBgYHtyfQoKYGBgCgo2LiAgT3B0aW9uYWw6IG1vZGlmeSB0aGUgcGxvdCBhYm92ZSBieSBzcGVjaWZ5aW5nIHNvbWUgb2YgYWxsIG9mIGZvbGxvd2luZyBleHRyYSBpbnB1dHMgdG8gdGhlIGBoaXN0KClgIGZ1bmN0aW9uLgoKLSAgIG1haW46IHBsb3QgdGl0bGUgKG11c3QgYmUgYSBzdHJpbmcgb2JqZWN0KQotICAgeGxhYjogeC1heGlzIGxhYmVsIChtdXN0IGJlIGEgc3RyaW5nIG9iamVjdCkKLSAgIGNvbDogY29sb3IgdG8gZmlsbCB0aGUgYmFycyBpbiB3aXRoIChtdXN0IGJlIGEgdmFsaWQgY29sb3Igc3BlY2lmaWVkIGFzIGEgc3RyaW5nIG9iamVjdCkKClRoaXMgbG9va3MgbGlrZSBgaGlzdChkYXRhLCBtYWluID0gIlRpdGxlIiwgeGxhYiA9ICJ4LWF4aXMgdGl0bGUiLCBjb2wgPSAic29tZSBjb2xvciIpYC4KCk9uY2UgeW91J3JlIGZpbmlzaGVkLCBiZSBzdXJlIHRvIHJlbmRlciBhbmQgc3VibWl0IHRoZSBvdXRwdXR0ZWQgUERGIGZpbGUgdG8gdGhlIGNvcnJlc3BvbmRpbmcgR3JhZGVzY29wZSBhc3NpZ25tZW50IQo=').then(res => res.blob()).then(blob => {
+      const downloadURL = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      document.body.appendChild(a);
+      a.href = downloadURL;
+      a.download = 'coding-practice-numerical.qmd'; a.click();
+      window.URL.revokeObjectURL(downloadURL);
+      document.body.removeChild(a);
+        });"><button class="btn btn-default downloadthis  " id="mtcars-btn"><i class="bi bi-download"></i> Coding practice </button></a></p></li>
 </ul></td>
-<td></td>
+<td><ul>
+<li>Wednesday problems on Problem Set 2</li>
+</ul></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"></td>

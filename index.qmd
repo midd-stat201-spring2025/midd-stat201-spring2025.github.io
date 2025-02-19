@@ -8,7 +8,9 @@ Welcome to the website for Middlebury College’s Spring 2025 STAT 201. On this 
 
 ## Announcements
 
--   Problem Set 1 due Monday 2/17 at 11:59pm
+-   Data-related public lecture with Jeremy Ney: "American Inequality: Data, Maps, and Solutions for the Country's Biggest Problems"
+    -   Monday 2/24 4:30-6:00pm in Hillcrest 103
+    -   Details [here](https://www.middlebury.edu/events/event/american-inequality-data-maps-and-solutions-countrys-biggest-problems)
 
 ------------------------------------------------------------------------
 
