@@ -1,8 +1,8 @@
 ---
 title: "Numerical data coding practice"
 author: "Your name"
-date: "Due: 2/19/2025 at 11:59pm"
-output: pdf_document
+date: "2/19/2025"
+format: pdf
 ---
 
 1.  Change your name in the YAML.
