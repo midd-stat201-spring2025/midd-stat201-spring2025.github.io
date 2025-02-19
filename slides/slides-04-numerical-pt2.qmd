@@ -18,6 +18,12 @@ editor_options:
 draft: false
 ---
 
+## Announcements
+
+- Office hours change next week
+
+- Homework 2 due date changed
+
 ## Interpreting SD
 
 We learned about the sample mean $\bar{x}$, the sample variance $s^2 = \frac{1}{n-1} \sum_{i=1}^{n} (x_{i} - \bar{x})^2$, and the sample standard deviation $s = \sqrt{s^2}$
@@ -153,7 +159,7 @@ Q3 = 119 and Q1 = 113 -\> IQR = 6
 
     -   How long should the whiskers be? There isn't a fixed rule, but $1.5 \times IQR$ below $Q_1$ and above $Q_{3}$ is common
     -   We "cut off" the whiskers at one of the observed values
-        -   e.g. we draw out the right whisker to greatest data point that is less than $Q_{1} - 1.5\times IQR$
+        -   e.g. we draw out the right whisker to greatest data point that is less than or equal to $Q_{1} - 1.5\times IQR$
 
 -   Lastly, we add dots for any cases that lie beyond the whiskers
 

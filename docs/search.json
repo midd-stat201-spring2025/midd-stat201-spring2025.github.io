@@ -25,7 +25,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Jump to:\n\nWeek 1\nWeek 2\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n1\n\nM 2/10\n\nTopic: Welcome!\n\nDirections for printing at bottom\n\n\n\n\nSubmit Problem Set 0 before 2/12 class\nTry to install R and RStudio before Thursday’s 2/13 class using these instructions\n\n\n\n\nW 2/12\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nInstall R and RStudio before Thursday class using these instructions\nWednesday problems on Problem Set 1\n\n\n\n\nR 2/13\n\nTopic: Programming toolkit (no need to print slides!)\n\nRStudio help sheet\n\nR and .qmd basics\n\nDownload the following .qmd template and drag to your new STAT 201 folder:  qmd template \n\n\n\nIntro to R and Quarto Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n2\n\nM 2/17\n\nTopic: Numerical data (pdf here)\n\n\n\nMonday problems on Problem Set 2\n\n\n\n\nW 2/19\n\nTopic: Numerical data (cont.) (pdf here)\n\n\nNumerical data\n Coding practice \n\n\nWednesday problems on Problem Set 2\n\n\n\n\nR 2/20\n\nTopic: Visualizations with ggplot\n\n\nIntroduction to ggplot\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
+    "text": "Jump to:\n\nWeek 1\nWeek 2\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nIn-class material\nCoding practice\nAssignments\n\n\n\n\n\n1\n\nM 2/10\n\nTopic: Welcome!\n\nDirections for printing at bottom\n\n\n\n\nSubmit Problem Set 0 before 2/12 class\nTry to install R and RStudio before Thursday’s 2/13 class using these instructions\n\n\n\n\nW 2/12\n\nTopic: Study design (pdf here)\n\nPractice problems\n\n\n\n\nInstall R and RStudio before Thursday class using these instructions\nWednesday problems on Problem Set 1\n\n\n\n\nR 2/13\n\nTopic: Programming toolkit (no need to print slides!)\n\nRStudio help sheet\n\nR and .qmd basics\n\nDownload the following .qmd template and drag to your new STAT 201 folder:  qmd template \n\n\n\nIntro to R and Quarto Markdown\n Coding practice \n\n\nThursday problems on Problem Set 1\n\n\n\n\n2\n\nM 2/17\n\nTopic: Numerical data (pdf here)\n\n\n\nMonday problems on Problem Set 2\n\n\n\n\nW 2/19\n\nTopic: Numerical data (part 2) (pdf here)\n\n\nNumerical data\n Coding practice \n\n\nWednesday problems on Problem Set 2\n\n\n\n\nR 2/20\n\nTopic: Visualizations with ggplot\n\n\nIntroduction to ggplot\n\n\n\n\n\nTo print PDF of the slides with multiple slides on a page:\n\nDownload the PDF and open the document\nPrint the document\n\nIn the Print options, go to Layout then choose your preferred number of Pages per Sheet\nHit Print"
   },
   {
     "objectID": "slides/slides-01-study-design.html#population-and-samples",
@@ -340,7 +340,7 @@
     "href": "slides/slides-04-numerical-pt2.html#creating-the-boxplot",
     "title": "Numerical data",
     "section": "Creating the boxplot",
-    "text": "Creating the boxplot\n\nThe “box” part of the boxplot is created using \\(Q_{1}\\), \\(m\\), and \\(Q_{3}\\)\nDraw whiskers from the box that attempt to capture data outside the IQR\n\nHow long should the whiskers be? There isn’t a fixed rule, but \\(1.5 \\times IQR\\) below \\(Q_1\\) and above \\(Q_{3}\\) is common\nWe “cut off” the whiskers at one of the observed values\n\ne.g. we draw out the right whisker to greatest data point that is less than \\(Q_{1} - 1.5\\times IQR\\)\n\n\nLastly, we add dots for any cases that lie beyond the whiskers\n\nThese points are unusually high/low compared to the rest of the data and are worth identifying as potential outliers\nAn outlier is an observation that appears extreme relative to the rest of the data\n\nLet’s draw a boxplot for the data \\(\\boldsymbol{x}\\)!"
+    "text": "Creating the boxplot\n\nThe “box” part of the boxplot is created using \\(Q_{1}\\), \\(m\\), and \\(Q_{3}\\)\nDraw whiskers from the box that attempt to capture data outside the IQR\n\nHow long should the whiskers be? There isn’t a fixed rule, but \\(1.5 \\times IQR\\) below \\(Q_1\\) and above \\(Q_{3}\\) is common\nWe “cut off” the whiskers at one of the observed values\n\ne.g. we draw out the right whisker to greatest data point that is less than or equal to \\(Q_{1} - 1.5\\times IQR\\)\n\n\nLastly, we add dots for any cases that lie beyond the whiskers\n\nThese points are unusually high/low compared to the rest of the data and are worth identifying as potential outliers\nAn outlier is an observation that appears extreme relative to the rest of the data\n\nLet’s draw a boxplot for the data \\(\\boldsymbol{x}\\)!"
   },
   {
     "objectID": "slides/slides-04-numerical-pt2.html#a-note-on-outliers",
@@ -2314,7 +2314,7 @@
     "href": "index.html#announcements",
     "title": "Advanced Introduction to Statistics and Data Science",
     "section": "Announcements",
-    "text": "Announcements\n\nData-related public lecture with Jeremy Ney: “American Inequality: Data, Maps, and Solutions for the Country’s Biggest Problems”\n\nMonday 2/24 4:30-6:00pm in Hillcrest 103\nDetails here"
+    "text": "Announcements\n\nMonday 2/24 2-3pm office hours cancelled.\n\nMake-up hour on Tuesday 2/25 from 1-2pm\n\nHomework 2 due date extended one day to 2/25\nData-related public lecture with Jeremy Ney: “American Inequality: Data, Maps, and Solutions for the Country’s Biggest Problems”\n\nMonday 2/24 4:30-6:00pm in Hillcrest 103\nDetails here"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#recap",
@@ -6032,5 +6032,12 @@
     "title": "Numerical data coding practice",
     "section": "",
     "text": "Change your name in the YAML.\nIn the following code chunk, load in the openintro package. Then run this code chunk. We need this package to once again work with the cherry data frame.\n\n\n\n\n\nIf we have a data frame (like cherry), we can access a specific variable’s data in the data frame by typing the code like the following: data_frame_name$variable_name. Note that the spelling of the variable name must match how it appears in the data frame!\n\nIn the code chunk below, obtain the values of the observed diameters of these trees using code. Then answer: what type of object is output from the code?\n\n\n\nAnswer:\n\nIn the code chunk below, write code to find the mean and median of the height of trees in the cherry data frame. Based on what you find, answer the following: do you believe the distribution of the height of cherry trees is skewed or symmetric? Why?\n\n\n\n\nAnswer:\n\nLet’s confirm your answer above by creating a rather ugly (but easy to obtain) histogram. The hist() function requires one input: a vector of numerical values to visualize. Plot a histogram of the heights of these trees.\n\n\n\n\n\nOptional: modify the plot above by specifying some of all of following extra inputs to the hist() function.\n\n\nmain: plot title (must be a string object)\nxlab: x-axis label (must be a string object)\ncol: color to fill the bars in with (must be a valid color specified as a string object)\n\nThis looks like hist(data, main = \"Title\", xlab = \"x-axis title\", col = \"some color\").\nOnce you’re finished, be sure to render and submit the outputted PDF file to the corresponding Gradescope assignment!"
+  },
+  {
+    "objectID": "slides/slides-04-numerical-pt2.html#announcements",
+    "href": "slides/slides-04-numerical-pt2.html#announcements",
+    "title": "Numerical data",
+    "section": "Announcements",
+    "text": "Announcements\n\nOffice hours change next week\nHomework 2 due date changed"
   }
 ]
