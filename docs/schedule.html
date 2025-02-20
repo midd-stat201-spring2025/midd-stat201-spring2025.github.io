@@ -262,10 +262,31 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;"></td>
 <td>R 2/20</td>
 <td><ul>
-<li>Topic: Visualizations with ggplot</li>
+<li>Topic: <a href="./slides/slides-05-numerical-data-viz.html">Visualizations with ggplot</a> (pdf here)
+<ul>
+<li><p>Live code template</p>
+<p><a href="#mtcars-btn" onclick="fetch('data:text/plain;base64,LS0tCnRpdGxlOiAiU1RBVCAyMDEgTGl2ZSBjb2RlIG5vdGVzIgphdXRob3I6ICJZb3VyIG5hbWUiCmZvcm1hdDogcGRmCi0tLQoKIyMgMi8yMS8yMDI1CgpgYGB7cn0KIyB1cmwgdG8gcmVhZCBkYXRhIGZyb20KdXJsX2ZpbGUgPC0gImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9taWRkLXN0YXQyMDEtZmFsbDIwMjQvbWlkZC1zdGF0MjAxLWZhbGwyMDI0LmdpdGh1Yi5pby9tYWluL2xpdmVfY29kZS9kYXRhL2luc3VyYW5jZS5jc3YiCgojIGlmIHlvdSBkb24ndCBoYXZlIHRoZSByZWFkciBwYWNrYWdlLCBwbGVhc2UgaW5zdGFsbCBpdCEKbGlicmFyeShyZWFkcikKCiMgcmVhZCBkYXRhLCBhbmQgYXNzaWduIHRvIHZhcmlhYmxlIGNhbGxlZCBpbnN1cmFuY2UKaW5zdXJhbmNlIDwtIHJlYWRfY3N2KHVybF9maWxlKQpgYGAK').then(res => res.blob()).then(blob => {
+      const downloadURL = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      document.body.appendChild(a);
+      a.href = downloadURL;
+      a.download = 'live_code_notes.qmd'; a.click();
+      window.URL.revokeObjectURL(downloadURL);
+      document.body.removeChild(a);
+        });"><button class="btn btn-default downloadthis  " id="mtcars-btn"><i class="bi bi-download"></i> .qmd </button></a></p></li>
+</ul></li>
 </ul></td>
 <td><ul>
-<li>Introduction to ggplot</li>
+<li><p>Introduction to ggplot</p>
+<p><a href="#mtcars-btn" onclick="fetch('data:text/plain;base64,LS0tCnRpdGxlOiAiZ2dwbG90IGNvZGluZyBwcmFjdGljZSIKYXV0aG9yOiAiWW91ciBuYW1lIgpkYXRlOiAiMi8yMC8yMDI1Igpmb3JtYXQ6IHBkZgotLS0KCjEuICBMb2FkIHRoZSB0aWR5dmVyc2UgYW5kIG9wZW5pbnRybyBwYWNrYWdlcyBpbiB0aGUgY29kZSBjaHVuayBiZWxvdywgdGhlbiBiZSBzdXJlIHRvIHJ1biB0aGUgY29kZSBjaHVuay4gV2Ugd2lsbCB3b3JrIHdpdGggdGhlIGBtYW1tYWxzYCBkYXRhIGZyb20gdGhlIGBvcGVuaW50cm9gIHBhY2thZ2UuCgpgYGB7cn0KIyBwYWNrYWdlcwoKCmBgYAoKSWYgeW91IHdhbnQgdG8gc2VlIHRoZSBkYXRhIGZyYW1lLCB0eXBlIGBWaWV3KG1hbW1hbHMpYCBpbiB0aGUgKipDb25zb2xlKiouIFRoYXQgd2lsbCBvcGVuIHVwIGEgbmV3IHRhYiBkaXNwbGF5aW5nIHRoZSBkYXRhIGZyYW1lIGluIHRoZSBTb3VyY2UgcGFuZS4KCjIuICBVc2luZyBnZ3Bsb3QsIG1ha2UgYSBib3hwbG90IG9mIHRoZSBib2R5IHdlaWdodHMgb2YgdGhlc2UgbWFtbWFscy4KCmBgYHtyfQoKYGBgCgozLiBUaGlzIHBsb3QgZG9lc24ndCBzZWVtIHVzZWZ1bCBhdCBhbGwhIE1vZGlmeSB5b3VyIGNvZGUgYWJvdmUgdG8gZ2V0IHJpZCBvZi9oaWRlIHRoZSBwb3RlbnRpYWwgb3V0bGllcnMuIENoZWNrIG91dCB0aGUgaGVscCBmaWxlIGZvciB0aGUgYXBwcm9wcmlhdGUgZnVuY3Rpb24gdG8gZmlndXJlIG91dCBob3cgdG8gZG8gdGhpcyEKCjQuICBVc2luZyBnZ3Bsb3QsIG1ha2UgYSBzY2F0dGVycGxvdCBvZiB0aGUgZ2VzdGF0aW9uIHRpbWUgYW5kIGxpZmUgc3Bhbi4gKEdlc3RhdGlvbiB0aW1lIGlzIGhvdyBsb25nIGEgYmFieSBpcyBpbiB0aGUgdXRlcnVzLikgWW91IHNob3VsZCBub3RpY2UgdGhhdCBhIFdhcm5pbmcgbWVzc2FnZSBhcHBlYXJzLiBEZXNjcmliZSBpbiBjb21tb24gbGFuZ3VhZ2Ugd2hhdCB0aGUgd2FybmluZyBpcyB0cnlpbmcgdG8gdGVsbCB5b3UuCgpgYGB7cn0KCmBgYAoKKipBbnN3ZXI6KioKCjUuICBOb3csIGxldCdzIG1ha2UgeW91ciBwbG90IGZyb20gYWJvdmUgbW9yZSBwcmVzZW50YWJsZS4gVXNpbmcgdGhlIGBsYWJzKClgIGZ1bmN0aW9uLCBjaGFuZ2UgdGhlIGF4ZXMgb24geW91ciBwbG90cyB0byBoYXZlIGJldHRlciB0aXRsZXMgdGhhdCBpbmNsdWRlIHRoZSB1bml0cy4gQWxzbyBhZGQgYSB0aXRsZS4gWW91IG1heSBjb3B5IGFuZCBwYXN0ZSB5b3VyIGZyb20gYWJvdmUgdG8gZ2V0IHN0YXJ0ZWQuIFN0YXJ0IHByYWN0aWNpbmcgZ29vZCBjb2Rpbmcgc3R5bGUgYnkgaGF2aW5nIGxpbmUgYnJlYWtzIGJldHdlZW4gbGF5ZXJzIG9mIHRoZSBjb2RlIQoKYGBge3J9CgpgYGAKCjYuICBMZXQncyBhZGQgY29sb3IgdG8geW91ciBwbG90ISBNb2RpZnkgeW91ciBjb2RlIGFib3ZlIHRvIG1hcCB0aGUgY29sb3Igb2YgdGhlIHBvaW50cyB0byB0aGUgdG90YWwgYW1vdW50IG9mIHNsZWVwIGVhY2ggbWFtbWFsIGdldHMuIFlvdSBtaWdodCBub3RpY2UgdGhhdCBzb21lIHBvaW50cyBhcmUgY29sb3JlZCBncmF5LCBpbnN0ZWFkIG9mIGJsdWUuIFdoeSBkbyB5b3UgdGhpbmsgdGhhdCBpcz8KCioqQW5zd2VyKio6CgpPbmNlIHlvdSdyZSBmaW5pc2hlZCwgYmUgc3VyZSB0byByZW5kZXIgYW5kIHN1Ym1pdCB0aGUgb3V0cHV0dGVkIFBERiBmaWxlIHRvIHRoZSBjb3JyZXNwb25kaW5nIEdyYWRlc2NvcGUgYXNzaWdubWVudCEK').then(res => res.blob()).then(blob => {
+      const downloadURL = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      document.body.appendChild(a);
+      a.href = downloadURL;
+      a.download = 'coding-practice-ggplot.qmd'; a.click();
+      window.URL.revokeObjectURL(downloadURL);
+      document.body.removeChild(a);
+        });"><button class="btn btn-default downloadthis  " id="mtcars-btn"><i class="bi bi-download"></i> Coding practice </button></a></p></li>
 </ul></td>
 <td></td>
 </tr>

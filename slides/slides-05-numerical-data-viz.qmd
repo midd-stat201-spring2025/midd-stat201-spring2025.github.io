@@ -1,6 +1,6 @@
 ---
 title: "Visualizations with ggplot"
-date: "September 19, 2024"
+date: "Febraury 20, 2025"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
@@ -18,7 +18,7 @@ editor_options:
 draft: false
 ---
 
-# Housekeeping
+## Exploratory data analysis
 
 ```{r echo = F, warning = F}
 knitr::opts_chunk$set(echo = T)
@@ -27,12 +27,6 @@ library(readr)
 plot_theme <- theme(text = element_text(size = 16))
 insurance <- read_csv("data/insurance.csv") 
 ```
-
--   TA hours tonight 7-9pm, Sunday 7-9pm
--   Office hours tomorrow 2-4pm
--   Observations of Prof. Tang taking place next week
-
-## Exploratory data analysis
 
 -   **Exploratory data analysis (EDA)** is an approach to analyzing data sets to summarize the main characteristics.
 
@@ -50,8 +44,8 @@ insurance <- read_csv("data/insurance.csv")
 
 -   `anscombe` data frame: four datasets each with 11 observations each and the same two variables
 
-::: fragment
-::: columns
+:::::: fragment
+::::: columns
 ::: {.column width="\"50%"}
 Non-tidy version:
 
@@ -68,8 +62,8 @@ library(Tmisc)
 quartet[1:15,]
 ```
 :::
-:::
-:::
+:::::
+::::::
 
 # Data visualization
 
@@ -112,7 +106,7 @@ ggplot(quartet, aes(x = x, y = y)) +
 
 -   At a *minimum*, we need to specify 1) the dataset, 2) variable(s) from the dataset we'd like to plot, and 3) the type of plot
 
-    -   How does this differ from what we've seen in the past?
+    -   How does this differ from the previous coding practice?
 
 -   This is what the code will generally look like. Values in \< \> and `xxx` denote what you as the coder need to specify.
 
@@ -170,7 +164,7 @@ Note the message provided when you execute this code!
 
 To improve on histogram we change the bin width.
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r warning = T, `code-line-numbers`="3", eval = F}
 ggplot(data = insurance, 
@@ -200,11 +194,11 @@ ggplot(data = insurance,
   theme(text = element_text(size = 25))
 ```
 :::
-:::
+:::::
 
 ## geom_boxplot()
 
-::: columns
+:::::: columns
 ::: {.column width="60%"}
 ```{r fig.height=3, eval = F}
 ggplot(data = insurance, mapping = aes(x = charges)) +
@@ -219,7 +213,7 @@ ggplot(data = insurance,
 ```
 :::
 
-::: {.column width="40%"}
+:::: {.column width="40%"}
 ::: fragment
 ```{r fig.height=6, `code-line-numbers`="2", eval = F}
 ggplot(data = insurance, 
@@ -234,8 +228,8 @@ ggplot(data = insurance,
   theme(text = element_text(size = 35))
 ```
 :::
-:::
-:::
+::::
+::::::
 
 ## geom_point()
 
@@ -246,7 +240,7 @@ ggplot(data = insurance, mapping = aes(x = age, y = charges)) +
 
 ## Aesthetics: color
 
-::: columns
+:::::: columns
 ::: {.column width="50%"}
 ```{r eval = F}
 ggplot(data = insurance, 
@@ -264,7 +258,7 @@ ggplot(data = insurance,
 ```
 :::
 
-::: {.column width="50%"}
+:::: {.column width="50%"}
 ::: fragment
 ```{r eval = F}
 ggplot(data = insurance, 
@@ -279,8 +273,8 @@ ggplot(data = insurance,
   theme(text = element_text(size = 30))
 ```
 :::
-:::
-:::
+::::
+::::::
 
 ## Aesthetics: transparency
 
@@ -302,7 +296,7 @@ ggplot(data = insurance, mapping = aes(x = bmi, y = charges, col = age, alpha = 
 
 What's going on here?
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r eval = F}
 ggplot(data = insurance, 
@@ -332,7 +326,7 @@ ggplot(data = insurance,
   theme(text =element_text(size = 30))
 ```
 :::
-:::
+:::::
 
 -   ::: {style="color: maroon"}
     Key takeaway: aesthetics should correspond/map to a variable in the data frame
@@ -353,7 +347,7 @@ ggplot(data = insurance, mapping = aes(x = charges)) +
 
 By default, axis titles are taken from variable name specified in `aes()`. To change:
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r eval = F}
 ggplot(data = insurance, 
@@ -390,4 +384,4 @@ ggplot(data = insurance, mapping = aes(x = charges)) +
   theme(text = element_text(size = 25))
 ```
 :::
-:::
+:::::
