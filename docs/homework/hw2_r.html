@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Your name here">
+<meta name="author" content="Your name">
+<meta name="dcterms.date" content="2025-02-25">
 
-<title>STAT 201: Intro. to Statistics and Data Science - Problem Set 2: R</title>
+<title>STAT 201: Intro. to Statistics and Data Science - STAT 201: Problem Set 2 (R)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -178,7 +179,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Problem Set 2: R</h1>
+<h1 class="title">STAT 201: Problem Set 2 (R)</h1>
 </div>
 
 
@@ -188,10 +189,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Your name here </p>
+             <p>Your name </p>
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 25, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -199,52 +206,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>Throughout this assignment, try to pay attention to practicing good coding style by having each layer of ggplot code be on its own line.</p>
-<ol type="1">
+<ol start="0" type="1">
 <li>Change your name in the YAML. Then load in the <code>tidyverse</code> and <code>openintro</code> packages in the code chunk below. We will work with the <code>starbucks</code> data from the <code>openintro</code> package.</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Get a feel for the data by looking at its Help file and View()-ing it.</p>
+<ol type="1">
+<li>Write code that creates two variables: one for the average number of calories in a Starbucks food item and another for the standard deviation.</li>
+</ol>
+<div class="cell">
+
+</div>
 <ol start="2" type="1">
-<li>Notice in the code chunk above, the code chunk header reads {r message = FALSE} instead of the usual {r}. Knit this file, and briefly study the output. Then delete the message = FALSE and knit again. What is this argument is doing? Once you’ve answered this, put the message = FALSE back!</li>
+<li>Using ggplot, create a histogram of the calories in Starbucks food items. Change the binwidth or number of bins to make a more “pleasing” plot. Add an informative title.</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="3" type="1">
+<li>Modify your code chunk above so your plot includes:</li>
+</ol>
+<ul>
+<li><p>A vertical line that displays the mean number of calories. Do this by adding a layer to your plot and using the <code>geom_vline()</code> (which stands for <em>v</em>ertical line). You can look at the Help file to figure out exactly how to use this function. You should use one of the variables you created in number 1.</p></li>
+<li><p>Make your line a color of your choice by specifying the <code>col</code> argument within the <code>geom_vline()</code> function.</p></li>
+<li><p>A caption that provides a brief description of what the line represents.</p></li>
+</ul>
+<ol start="4" type="1">
+<li>Using the plots you created, along with some summary statistics, describe the distribution of calories in Starbucks food items. Make sure you discuss shape, center, spread, and potential outliers.</li>
 </ol>
 <p><strong>Answer</strong>:</p>
-<ol start="3" type="1">
-<li>Write code that creates a variable for the average number of calories in a Starbucks food item.</li>
-</ol>
-<div class="cell">
-
-</div>
-<ol start="4" type="1">
-<li>In the following code chunk, use ggplot code to create a boxplot of the amount of calories in Starbucks food items. You should note that that one of the axes has tick marks/break points that are meaningless. Add to your plot the appropriate choice of the following two functions <code>scale_x_continuous</code> or <code>scale_y_continuous()</code>, then set the <code>breaks</code> argument to get rid of the breaks (maybe looks at its Help file).</li>
-</ol>
-<div class="cell">
-
-</div>
 <ol start="5" type="1">
-<li>Using ggplot, create a histogram of the calories in Starbucks food items. Change the binwidth to make a more “pleasing” plot. Add an informative title.</li>
+<li>Now, create a scatterplot in ggplot with calories on the y-axis. For the x-axis variable, choose a variable that displays a strong association/pattern with calories. You may have to play around a bit! Add an informative title.</li>
 </ol>
 <div class="cell">
 
 </div>
 <ol start="6" type="1">
-<li><p>To your code above, add the function layer <code>geom_vline()</code> to add a vertical line that displays the mean number of calories (you may want to refer to the Help file). You should use the variable you created in number 3. Make this line a color of your choice. Then, add a caption that provides a brief description of what the line represents.</p></li>
-<li><p>Using the plots you created, along with some summary statistics, describe the distribution of calories in Starbucks food items. Make sure you discuss shape, center, spread, and potential outliers.</p></li>
-</ol>
-<p><strong>Answer</strong>:</p>
-<ol start="8" type="1">
-<li>Now create a scatterplot in ggplot with calories on the y-axis. For the x-axis variable, choose a variable that displays a strong association with calories. You may have to play around a bit! Add an informative title and change the x-axis variable to include the units (grams).</li>
+<li>In the code chunk above, color the points by another variable in the data set. Then, add a layer of code using the function <code>scale_color_viridis_c()</code>. When you run this code, you’ll notice that this function changes the color palette to something called the Viridis color palette. Play around with different palettes by looking to the Help file for this function and looking at the <em>option</em> parameter. Choose one of the eight options!</li>
 </ol>
 <div class="cell">
 
 </div>
-<ol start="9" type="1">
-<li><p>In the code above, color the points by another numerical variable in the data set. Then, add a layer of code using the function <code>scale_color_viridis_c()</code>. When you run this code, you’ll notice that this function changes the color palette to something called the Viridis color palette. Play around with different palettes by looking to the Help file for this function and looking at the <em>option</em> parameter. Choose one of the eight options!</p></li>
-<li><p>Briefly interpret this last plot you created. This may include discussing associations/trends/patterns (or lack thereof)!</p></li>
+<ol start="7" type="1">
+<li>Briefly interpret this last plot you created. Your interpretation may include discussing associations/trends/patterns (or lack thereof)!</li>
 </ol>
 <p><strong>Answer</strong>:</p>
-<p>Once you’re done, knit this file one more time, and submit the outputted HTML file to Canvas alongside the other homework problems.</p>
+<p>Once you’re done, render this file one more time, and submit this file to Gradescope alongside the other homework problems.</p>
 
 
 
