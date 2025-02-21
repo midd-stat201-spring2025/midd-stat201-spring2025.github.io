@@ -46,9 +46,7 @@ Get a feel for the data by looking at its Help file and View()-ing it.
 
 6.  In the code chunk above, color the points by another variable in the data set. Then, add a layer of code using the function `scale_color_viridis_c()`. When you run this code, you'll notice that this function changes the color palette to something called the Viridis color palette. Play around with different palettes by looking to the Help file for this function and looking at the *option* parameter. Choose one of the eight options!
 
-```{r}
-
-```
+<!-- -->
 
 7.  Briefly interpret this last plot you created. Your interpretation may include discussing associations/trends/patterns (or lack thereof)!
 
