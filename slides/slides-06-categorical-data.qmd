@@ -1,7 +1,7 @@
 ---
 title: "Categorical data"
 subtitle: "Visualizations and contingency tables"
-date: "September 23, 2024"
+date: "February 24, 2024"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
@@ -29,9 +29,9 @@ plot_theme <- theme(text = element_text(size = 24))
 insurance <- read_csv("data/insurance.csv")
 ```
 
--   Problem set 2 due tonight! Please be sure to submit both written and knitted HTML parts.
--   Office hours today 2-4pm
--   Reminder about TA hours
+-   Problem set 2 due tomorrow! Please be sure to submit both written and rendered parts by combining into a single PDF
+-   Office hours canceled today, moved to tomorrow 2-3pm
+-   Problem set 1 graded
 
 ## Categorical data
 
@@ -62,8 +62,8 @@ insurance |>
 
 If we are interested in understanding the distribution of a single categorical variable, it is common to:
 
-::: columns
-::: {.column width="40%"}
+::::::: columns
+:::: {.column width="40%"}
 ::: fragment
 Display a **frequency table**, which is a table of counts of each level
 
@@ -72,9 +72,9 @@ insurance |>
   count(smoker)
 ```
 :::
-:::
+::::
 
-::: {.column width="60%"}
+:::: {.column width="60%"}
 ::: fragment
 Create a **bar plot**, where different levels are displayed on one axis and the counts are portrayed on the other
 
@@ -84,8 +84,8 @@ ggplot(insurance, aes(x = smoker)) +
   plot_theme
 ```
 :::
-:::
-:::
+::::
+:::::::
 
 ::: notes
 How do bar plots differ from histograms?
@@ -135,25 +135,25 @@ p3 <- ggplot(insurance, aes(x = smoker, fill = sex)) +
   theme(text = element_text(size = 30))
 ```
 
-::: columns
+:::::: columns
 ::: {.column width="50%"}
 ```{r}
 ct
 ```
 :::
 
-::: {.column width="50%"}
+:::: {.column width="50%"}
 ::: fragment
 ```{r}
 p1
 ```
 :::
-:::
-:::
+::::
+::::::
 
 ## Stacked bar plot
 
-::: columns
+::::: columns
 ::: {.column width="60%"}
 The **stacked bar plot** looks at the counts either row-wise or column-wise.
 :::
@@ -163,18 +163,18 @@ The **stacked bar plot** looks at the counts either row-wise or column-wise.
 ct
 ```
 :::
-:::
+:::::
 
-::: columns
-::: {.column width="50%"}
+::::::: columns
+:::: {.column width="50%"}
 ::: fragment
 ```{r fig.height=8}
 p2
 ```
 :::
-:::
+::::
 
-::: {.column width="50%"}
+:::: {.column width="50%"}
 ::: fragment
 ```{r fig.height=8}
 ggplot(insurance, aes(fill = smoker, x = sex)) +
@@ -183,21 +183,21 @@ ggplot(insurance, aes(fill = smoker, x = sex)) +
   theme(text =element_text(size = 30))
 ```
 :::
-:::
-:::
+::::
+:::::::
 
 ## Proportions
 
 Can convert the contingency table to proportions row-wise or column-wise to obtain the fractional breakdown of one variable in another.
 
-::: columns
+:::::: columns
 ::: {.column width="50%"}
 ```{r}
 ct
 ```
 :::
 
-::: {.column width="50%"}
+:::: {.column width="50%"}
 ::: fragment
 ```{r}
 insurance |>
@@ -211,16 +211,16 @@ insurance |>
   kableExtra::column_spec(1, border_right = T)
 ```
 :::
-:::
-:::
+::::
+::::::
 
-::: fragment
+:::: fragment
 ::: discuss
 -   What does the quantity 0.378 represent?
 -   If we take the proportions row-wise, does each row need to sum to 1?
 -   If we take the proportions row-wise, does each column need to sum to 1?
 :::
-:::
+::::
 
 ## Proportions (cont.)
 
@@ -257,13 +257,12 @@ ggpubr::ggarrange(p1 + ggtitle("Dodged"),
 -   When might you prefer to use the stacked, dodged, or standardized bar plot?
 :::
 
-## Factoring
-
 ## Live code
 
 -   Bar plots
 -   Aesthetics: fill, shape
 -   Faceting
+-   Plot background
 
 ## Bar plot (univariate)
 
@@ -278,7 +277,7 @@ Note: if your data are already in the form of frequency table, we should use `ge
 
 ## Bivariate bar plots
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r eval = F, echo = T}
 ggplot(insurance, aes(x = smoker, fill = sex)) +
@@ -306,7 +305,7 @@ ggplot(insurance,
   theme(text = element_text(size = 30))
 ```
 :::
-:::
+:::::
 
 ## Bivariate bar plots (cont.)
 
@@ -358,7 +357,7 @@ ggplot(data = insurance, mapping = aes(x = bmi, y = charges, shape = smoker)) +
 
 Faceting is used when we want to split a particular visualization by the values of another (categorical) variable
 
-::: columns
+:::::: columns
 ::: {.column width="50%"}
 ```{r echo = T, eval = F}
 ggplot(data = insurance, 
@@ -376,7 +375,7 @@ ggplot(data = insurance,
 ```
 :::
 
-::: {.column width="50%"}
+:::: {.column width="50%"}
 ::: fragment
 ```{r echo = T, eval = F}
 ggplot(data = insurance, 
@@ -392,8 +391,8 @@ ggplot(data = insurance, mapping = aes(x = bmi)) +
   theme(text = element_text(size = 25))
 ```
 :::
-:::
-:::
+::::
+::::::
 
 ## facet_grid()
 
@@ -426,3 +425,29 @@ ggplot(data = insurance,
 ```
 
 Like faceting, but only for box plots.
+
+## Changing plot theme
+
+::::: columns
+::: {.column width="50%"}
+Change the background of plots by adding on any one of the following:
+
+-   `theme_bw()`, `theme_minimal()`, `theme_gray()`, `theme_void()` and a few more (see all options by checking the help file for any one of these)
+:::
+
+::: {.column width="50%"}
+```{r echo = T, eval = F}
+ggplot(data = insurance, 
+       mapping = aes(x = smoker, y = bmi)) +
+  geom_boxplot() +
+  theme_minimal()
+```
+
+```{r}
+ggplot(data = insurance, mapping = aes(x = smoker, y = bmi)) +
+  geom_boxplot()+
+  theme_minimal()+
+  theme(text = element_text(size = 25))
+```
+:::
+:::::

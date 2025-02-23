@@ -135,6 +135,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><a href="#week1">Week 1</a></li>
 <li><a href="#week2">Week 2</a></li>
+<li><a href="#week3">Week 3</a></li>
 </ul>
 <table class="table">
 <colgroup>
@@ -300,6 +301,47 @@ ul.task-list li input[type="checkbox"] {
       document.body.removeChild(a);
         });"><button class="btn btn-default downloadthis  " id="mtcars-btn"><i class="bi bi-download"></i> hw2_r </button></a></p></li>
 </ul></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><div id="week3">
+<p><strong>3</strong></p>
+</div></td>
+<td>M 2/24</td>
+<td><ul>
+<li>Topic: <a href="./slides/slides-06-categorical-data.html">Categorical data</a> (pdf <a href="slides/pdf/slides-06.pdf">here</a>)
+<ul>
+<li>Live code</li>
+</ul></li>
+</ul></td>
+<td><ul>
+<li><p>Visualizing categorical data in ggplot</p>
+<p><a href="#mtcars-btn" onclick="fetch('data:text/plain;base64,LS0tCnRpdGxlOiAiQ2F0ZWdvcmljYWwgZGF0YSBjb2RpbmcgcHJhY3RpY2UiCmF1dGhvcjogIllvdXIgbmFtZSIKZGF0ZTogIjIvMjQvMjAyNSIKZm9ybWF0OiBwZGYKLS0tCgpgYGB7cn0KIyBsb2FkIGFkZGl0aW9uYWwgcGFja2FnZXMgaGVyZQpsaWJyYXJ5KHJlYWRyKQoKYGBgCgowLiBJbiB0aGUgY29kZSBjaHVuayBhYm92ZSwgYWRkIGEgbGluZSBvZiBjb2RlIHRvIGxvYWQgaW4gdGhlIHR3byBwYWNrYWdlIG5lY2Vzc2FyeSBmb3IgZ2dwbG90LWluZy4gQWxzbyBjaGFuZ2UgeW91ciBuYW1lIGluIHRoZSBZQU1MLgoKMS4gIFdlIHdpbGwgYmUgdXNpbmcgdGhlIGBkaWFtb25kc2AgZGF0YXNldCB0aGF0IGlzIGluY2x1ZGVkIGluIHRoZSBwYWNrYWdlIHlvdSBsb2FkZWQgYWJvdmUuIFBsZWFzZSB0YWtlIGEgbG9vayBhdCB0aGUgSGVscCBmaWxlLiBDcmVhdGUgdmVydGljYWwgc2lkZS1ieS1zaWRlIGJveHBsb3RzIHRoYXQgZGlzcGxheSB0aGUgZGlzdHJpYnV0aW9uIG9mIGRpYW1vbmQgcHJpY2VzIGZvciBlYWNoIGNvbG9yIG9mIGRpYW1vbmQuICAKClRoZW4gYW5zd2VyIHRoZSBmb2xsb3dpbmcgcXVlc3Rpb246IHdoaWNoIGRpYW1vbmRzIHNlZW0gdG8gYmUgdGhlIG1vc3QgZXhwZW5zaXZlPyBJcyB0aGlzIHJlc3VsdCBzdXJwcmlzaW5nIHRvIHlvdSBnaXZlbiB0aGUgZGVzY3JpcHRpb24gb2YgdGhlIGRhdGE/IElmIHNvLCB3aGF0IG1pZ2h0IGJlIGEgcG9zc2libGUgZXhwbGFuYXRpb24/CgpgYGB7cn0KCmBgYAoKKipBbnN3ZXIqKjoKCjIuIE5vdyB2aXN1YWxpemUgdGhlIGRpc3RyaWJ1dGlvbiBvZiBkaWFtb25kcyBwcmljZXMgdXNpbmcgaGlzdG9ncmFtcywgd2hlcmUgd2UgaGF2ZSBvbmUgaGlzdG9ncmFtIGZvciBlYWNoIGNvbG9yLiBZb3Ugc2hvdWxkIGJlIGFibGUgdG8gZG8gdGhpcyBpbiBqdXN0IHRocmVlIGxpbmVzL2xheWVycyBvZiBjb2RlIQoKVGhlbiBhbnN3ZXIgdGhlIGZvbGxvd2luZzogd2hpY2ggdmlzdWFsaXphdGlvbiAodGhlIGJveHBsb3RzIG9yIHRoZSBoaXN0b2dyYW1zKSBkbyB5b3UgdGhpbmsgaXMgbW9yZSBlZmZlY3RpdmUgZm9yIGFuc3dlcmluZyB0aGUgcmVzZWFyY2ggcXVlc3Rpb24gb2YgIndoaWNoIGRpYW1vbmRzIHNlZW0gdG8gYmUgdGhlIG1vc3QgZXhwZW5zaXZlIj8gQnJpZWZseSBleHBsYWluIHdoeS4KCmBgYHtyfQoKYGBgCgoqKkFuc3dlcioqOgoKCjMuICBVc2luZyBhbiAqYXBwcm9wcmlhdGUqIHR5cGUgb2YgYmFyIHBsb3QsIGNvbXBhcmUgdGhlIGRpc3RyaWJ1dGlvbiBvZiBob3cgY2xlYXIgYSBkaWFtb25kIGlzIGFjcm9zcyB0aGUgZGlzdHJpYnV0aW9uIG9mIHRoZSBxdWFsaXR5IG9mIHRoIGN1dC4gRG8gdGhlIGZyZXF1ZW5jaWVzIG9mIG9jY3VycmVuY2VzIG9mIHRoZSBsZXZlbHMgb2Ygb25lIHZhcmlhYmxlIGRlcGVuZCBvbi9jaGFuZ2Ugd2l0aCB0aGUgbGV2ZWxzIG9mIHRoZSBzZWNvbmQgdmFyaWFibGU/IFRoYXQgaXMsIGRvIHlvdSB0aGluayB0aGVyZSBpcyBhbiBhc3NvY2lhdGlvbiBiZXR3ZWVuIHRoZSB0d28gdmFyaWFibGVzPwoKYGBge3J9CgoKYGBgCgoqKkFuc3dlcioqOgoKNC4gIFdlIHdpbGwgY2hhbmdlIHRoZSBjb2xvcnMgaW4gb3VyIGJhciBwbG90ISBMb29rIGF0IHRoZSBIZWxwIGZpbGUgZm9yIHRoZSBmdW5jdGlvbiBgc2NhbGVfZmlsbF9icmV3ZXIoKWAuIFlvdSBzaG91bGQgc2VlIG1hbnkgb3B0aW9ucyBvZiBkaWZmZXJlbnQgcGFsZXR0ZXMuIEFkZCB0aGlzIGZ1bmN0aW9uIHRvIHlvdXIgY29kZSBhYm92ZSAodXNlIGdvb2QgY29kaW5nIHN0eWxlISksIGFuZCBzZXQgdGhlIHBhbGV0dGUgYXJndW1lbnQgdG8gb25lIG9mIHRoZSBwYWxldHRlIG5hbWVzLiBQbGF5IGFyb3VuZCB1bnRpbCB5b3UndmUgc2V0dGxlZCBvbiBvbmUhCgo1LiAgWW91IHVzZWQgdGhlIGZ1bmN0aW9uIGBzY2FsZV9maWxsX2JyZXdlcigpYCBhYm92ZSwgYnV0IHRoZXJlIGlzIGEgc2ltaWxhciBmdW5jdGlvbiBjYWxsZWQgYHNjYWxlX2NvbG9yX2JyZXdlcigpYC4gV2h5IGRvIHlvdSB0aGluayB3ZSB1c2VkIHRoZSBmaXJzdCBmdW5jdGlvbiBhbmQgbm90IHRoZSBzZWNvbmQ/IChZb3UgY2FuIGV4cGxvcmUgdGhpcyBieSBjaGFuZ2luZyB5b3VyIGNvZGUgYWJvdmUgdG8gYHNjYWxlX2NvbG9yX2JyZXdlcmAgYW5kIHNlZWluZyB3aGF0IGhhcHBlbnMuIEJlIHN1cmUgdG8gcmV2ZXJ0IGJhY2sgdG8gYHNjYWxlX2ZpbGxfYnJld2VyYCBiZWZvcmUgc3VibWl0dGluZyEpCgoqKkFuc3dlcioqOgoKT25jZSB5b3UncmUgZmluaXNoZWQsIGJlIHN1cmUgdG8ga25pdCBhbmQgc3VibWl0IHRoZSByZW5kZXJlZCBQREYgdG8gdGhlIGNvcnJlc3BvbmRpbmcgR3JhZGVzY29wZSBhc3NpZ25tZW50IQo=').then(res => res.blob()).then(blob => {
+      const downloadURL = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      document.body.appendChild(a);
+      a.href = downloadURL;
+      a.download = 'coding-practice-categorical.qmd'; a.click();
+      window.URL.revokeObjectURL(downloadURL);
+      document.body.removeChild(a);
+        });"><button class="btn btn-default downloadthis  " id="mtcars-btn"><i class="bi bi-download"></i> Coding practice </button></a></p></li>
+</ul></td>
+<td><ul>
+<li>Monday problems in Problem Set 3</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td>W 2/26</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td>R 2/27</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
