@@ -7,11 +7,10 @@ format: pdf
 
 ```{r}
 # load additional packages here
-library(readr)
 
 ```
 
-0. In the code chunk above, add a line of code to load in the two package necessary for ggplot-ing. Also change your name in the YAML.
+0. In the code chunk above, add a line of code to load in the package necessary for ggplot-ing. Also change your name in the YAML.
 
 1.  We will be using the `diamonds` dataset that is included in the package you loaded above. Please take a look at the Help file. Create vertical side-by-side boxplots that display the distribution of diamond prices for each color of diamond.  
 
