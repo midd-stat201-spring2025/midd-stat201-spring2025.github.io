@@ -1,0 +1,506 @@
+---
+title: "More wrangling + Probability"
+date: "February 27, 2025"
+title-slide-attributes:
+    data-background-image: "figs/bikeshare-plots.png"
+    data-background-size: contain
+    data-background-opacity: "0.2"
+format: 
+  revealjs:
+    theme: custom.scss
+    transition: none
+    incremental: true
+    scrollable: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+draft: false
+---
+
+## Housekeeping
+
+```{r echo = F, warning = F, message = F}
+library(tidyverse)
+knitr::opts_chunk$set(echo = T, warning = F, messabundance = F)
+library(kableExtra)
+```
+
+## Joining data frames
+
+Assume we have two data frame, `x` and `y`. There are some shared variables (i.e. columns) in the two. Suppose we want to combine them together.
+
+```{r eval = F}
+something_join(x, y)
+```
+
+-   Mutating joins:
+
+    -   `left_join()`: return all rows from `x`
+    -   `right_join()`: return all rows from `y`
+    -   `full_join()`: return all rows from both `x` and `y`
+    -   `inner_join()`: all rows from `x` where there are matching values in `y`, return all combination of multiple matches in the case of multiple matches
+
+-   Filtering joins:
+
+    -   `semi_join()`: return all rows from `x` where there are matching values in `y`, keeping just columns from `x`
+    -   `anti_join()`: return all rows from `x` where there are not matching values in `y`, never duplicate rows of `x`
+
+## Setup
+
+For the next few slides...
+
+::::: columns
+::: {.column width="50%"}
+```{r echo=FALSE}
+x <-data.frame(ID = c(1, 2, 3), x_val = c("x1", "x2", "x3"))
+```
+
+```{r eval = F}
+x
+```
+
+```{r echo = F}
+kable(x)
+```
+:::
+
+::: {.column width="50%"}
+```{r echo=FALSE}
+y <- data.frame(ID = c(1, 2, 4), y_val = c("y1", "y2", "y4"))
+```
+
+```{r eval = F}
+y
+```
+
+```{r echo = F}
+kable(y)
+```
+:::
+:::::
+
+## `left_join()`
+
+Adds columns to `x` from `y`, matching all rows in `x`
+
+::::: columns
+::: {.column width="50%"}
+
+:::: columns
+::: {.column width="40%"}
+```{r eval = F}
+x
+```
+```{r echo = F}
+kable(x) %>%
+  kable_styling(font_size = 25)
+```
+:::
+
+::: {.column width="40%"}
+
+```{r eval = F}
+y
+```
+
+```{r echo = F}
+kable(y)%>%
+  kable_styling(font_size = 25)
+```
+:::
+::::
+
+```{r eval = F}
+left_join(x, y, by = "ID")
+```
+
+```{r echo = F}
+left_join(x, y, by = "ID") |>
+  kable()%>%
+  kable_styling(font_size = 25)
+```
+:::
+
+::: {.column width="50%"}
+![](figs/08-left-join.gif)
+
+:::
+:::::
+
+## `right_join()`
+
+Adds columns to `x` from `y`, matching all rows in `y`
+
+::::: columns
+::: {.column width="50%"}
+
+:::: columns
+::: {.column width="40%"}
+```{r eval = F}
+x
+```
+```{r echo = F}
+kable(x) %>%
+  kable_styling(font_size = 25)
+```
+:::
+
+::: {.column width="40%"}
+
+```{r eval = F}
+y
+```
+
+```{r echo = F}
+kable(y)%>%
+  kable_styling(font_size = 25)
+```
+:::
+::::
+
+```{r eval = F}
+right_join(x, y, by = "ID")
+```
+
+```{r echo = F}
+right_join(x, y, by = "ID") |>
+  kable()%>%
+  kable_styling(font_size = 25)
+```
+:::
+
+::: {.column width="50%"}
+![](figs/08-right-join.gif)
+
+:::
+:::::
+
+## `full_join()`
+
+Adds columns to `x` from `y`, matching all rows in `x` OR `y`
+
+::::: columns
+::: {.column width="50%"}
+
+:::: columns
+::: {.column width="40%"}
+```{r eval = F}
+x
+```
+```{r echo = F}
+kable(x) %>%
+  kable_styling(font_size = 25)
+```
+:::
+
+::: {.column width="40%"}
+
+```{r eval = F}
+y
+```
+
+```{r echo = F}
+kable(y)%>%
+  kable_styling(font_size = 25)
+```
+:::
+::::
+
+```{r eval = F}
+full_join(x, y, by = "ID")
+```
+
+```{r echo = F}
+full_join(x, y, by = "ID") |>
+  kable()%>%
+  kable_styling(font_size = 25)
+```
+:::
+
+::: {.column width="50%"}
+![](figs/08-full-join.gif)
+
+:::
+:::::
+
+
+## `inner_join()`
+
+All rows from `x` where there are matching values in `y`, return all combination of multiple matches in the case of multiple matches
+
+::::: columns
+::: {.column width="50%"}
+
+:::: columns
+::: {.column width="40%"}
+```{r eval = F}
+x
+```
+```{r echo = F}
+kable(x) %>%
+  kable_styling(font_size = 25)
+```
+:::
+
+::: {.column width="40%"}
+
+```{r eval = F}
+y
+```
+
+```{r echo = F}
+kable(y)%>%
+  kable_styling(font_size = 25)
+```
+:::
+::::
+
+```{r eval = F}
+inner_join(x, y, by = "ID")
+```
+
+```{r echo = F}
+inner_join(x, y, by = "ID") |>
+  kable()%>%
+  kable_styling(font_size = 25)
+```
+:::
+
+::: {.column width="50%"}
+![](figs/08-inner-join.gif)
+
+:::
+:::::
+
+## `inner_join()` (cont.)
+
+Example with multiple matches:
+
+
+
+:::: columns
+::: {.column width="40%"}
+```{r eval = F}
+x2
+```
+```{r echo = F}
+x2 <- x |>
+  add_row(ID = 1, x_val = "new_x")
+kable(x2) %>%
+  kable_styling(font_size = 20)
+```
+:::
+
+::: {.column width="40%"}
+
+```{r eval = F}
+y2
+```
+
+```{r echo = F}
+y2 <- y |>
+  add_row(ID = 1, y_val = "new_y")
+kable(y2)%>%
+  kable_styling(font_size = 20)
+```
+:::
+::::
+
+```{r eval = F}
+inner_join(x2, y2, by = "ID")
+```
+
+```{r echo = F, warning = T}
+inner_join(x2, y2, by = "ID") |>
+  kable()%>%
+  kable_styling(font_size = 20)
+```
+
+
+## `semi_join()`
+
+Returns all rows from `x` **with** a match in `y`, but does not add columns from `y`
+
+::::: columns
+::: {.column width="50%"}
+
+:::: columns
+::: {.column width="40%"}
+```{r eval = F}
+x
+```
+```{r echo = F}
+kable(x) %>%
+  kable_styling(font_size = 25)
+```
+:::
+
+::: {.column width="40%"}
+
+```{r eval = F}
+y
+```
+
+```{r echo = F}
+kable(y)%>%
+  kable_styling(font_size = 25)
+```
+:::
+::::
+
+```{r eval = F}
+semi_join(x, y, by = "ID")
+```
+
+```{r echo = F}
+semi_join(x, y, by = "ID") |>
+  kable()%>%
+  kable_styling(font_size = 25)
+```
+
+:::
+
+::: {.column width="50%"}
+![](figs/08-semi-join.gif)
+
+:::
+:::::
+
+
+## `anti_join()`
+
+Returns all rows from `x` **without** any match in `y`, and not add columns from `y`
+
+::::: columns
+::: {.column width="50%"}
+
+:::: columns
+::: {.column width="40%"}
+```{r eval = F}
+x
+```
+```{r echo = F}
+kable(x) %>%
+  kable_styling(font_size = 25)
+```
+:::
+
+::: {.column width="40%"}
+
+```{r eval = F}
+y
+```
+
+```{r echo = F}
+kable(y)%>%
+  kable_styling(font_size = 25)
+```
+:::
+::::
+
+```{r eval = F}
+anti_join(x, y, by = "ID")
+```
+
+```{r echo = F}
+anti_join(x, y, by = "ID") |>
+  kable()%>%
+  kable_styling(font_size = 25)
+```
+:::
+
+::: {.column width="50%"}
+![](figs/08-anti-join.gif)
+
+:::
+:::::
+
+
+## Joining with different variable names
+
+If the variables in `x` and `y` have different names but we know they represent the same variable:
+
+
+
+:::: columns
+::: {.column width="40%"}
+```{r eval = F}
+x
+```
+```{r echo = F}
+kable(x) %>%
+  kable_styling(font_size = 25)
+```
+:::
+
+::: {.column width="40%"}
+
+```{r eval = F}
+y3
+```
+
+```{r echo = F}
+y3 <- y |>
+  rename("ID_y" = 1)
+kable(y3)%>%
+  kable_styling(font_size = 25)
+```
+:::
+::::
+
+```{r eval = F}
+left_join(x, y3, by =  c("ID" = "ID_y"))
+```
+
+```{r echo = F}
+left_join(x, y3, by = c("ID" = "ID_y"))|>
+  kable()%>%
+  kable_styling(font_size = 25)
+```
+
+
+
+## Joining on multiple variables
+
+Can specify more than one variable in the `by` argument. Will need to be a vector of characters.
+
+##
+
+fishery harvest 
+of countries for 2016, by capture and aquaculture
+
+```{r}
+library(readr)
+fish_url <- "https://raw.githubusercontent.com/math118-fall2022/website/refs/heads/master/docs/slides/lec-slides/data/fisheries.csv"
+countries_url <- "https://raw.githubusercontent.com/math118-fall2022/website/refs/heads/master/docs/slides/lec-slides/data/continents.csv"
+fisheries <- read_csv(fish_url)
+continents <- read_csv(countries_url)
+```
+
+```{r}
+kable(fisheries) |>
+  kable_styling(font_size = 20)
+```
+
+
+## 
+
+
+```{r}
+kable(continents) |>
+  kable_styling(font_size = 20)
+```
+
+We want to keep all rows and columns from `fisheries` and add a column for 
+corresponding continents. Which join function should we use?
+
+
+##
+
+```{r}
+left_join(fisheries, continents, by = "country") |>
+  kable() |>
+  kable_styling(font_size = 20)
+# right_join(continents, fisheries, by = "country")
+```
+

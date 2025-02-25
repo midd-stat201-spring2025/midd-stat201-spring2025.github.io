@@ -1,6 +1,6 @@
 ---
 title: "Data wrangling with dplyr"
-date: "September 25, 2024"
+date: "February 26, 2025"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
@@ -30,11 +30,11 @@ insurance <- read_csv("data/insurance.csv")
 
 -   Recall: data frames are objects in R that store tabular data in tidy form
 
--   The `dplyr` package uses the concept of functions as verbs that manipulate data frames
+-   The `dplyr` package (included in `tidyverse` package) uses the concept of functions as verbs that manipulate data frames.
 
     -   `select()`: pick columns by name
     -   `slice()`: pick rows using indices
-    -   `filters()`: pick rows matching criteria
+    -   `filter()`: pick rows matching criteria
     -   `distinct()`: filter for unique rows
     -   `mutate()`: add new variables as columns
     -   `summarise()`: reduce variables to quantitative values
@@ -60,8 +60,8 @@ insurance <- read_csv("data/insurance.csv")
 
 -   For example: suppose that in order to get to work, I need to find my car keys, start my car, drive to work, and then park my car
 
-::: columns
-::: {.column width="50%"}
+::::::: columns
+:::: {.column width="50%"}
 -   Expressed as a set of nested `R` pseudocode, this may look like:
 
 ::: fragment
@@ -70,9 +70,9 @@ park(drive(start_car(find("car_keys")),
            to = "work"))
 ```
 :::
-:::
+::::
 
-::: {.column width="50%"}
+:::: {.column width="50%"}
 -   Expressed using pipes, this may look like:
 
 ::: fragment
@@ -83,8 +83,8 @@ find("car_keys") |>
   park()
 ```
 :::
-:::
-:::
+::::
+:::::::
 
 ## Logical operators in R
 

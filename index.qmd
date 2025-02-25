@@ -8,12 +8,7 @@ Welcome to the website for Middlebury College’s Spring 2025 STAT 201. On this 
 
 ## Announcements
 
--   Monday 2/24 2-3pm office hours cancelled.
-    -   Make-up hour on Tuesday 2/25 from 1-2pm
 -   Homework 2 due tomorrow 2/25
--   Data-related public lecture with Jeremy Ney: "American Inequality: Data, Maps, and Solutions for the Country's Biggest Problems"
-    -   Today Monday 2/24 4:30-6:00pm in Hillcrest 103
-    -   Details [here](https://www.middlebury.edu/events/event/american-inequality-data-maps-and-solutions-countrys-biggest-problems)
 
 ------------------------------------------------------------------------
 

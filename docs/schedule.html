@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -136,6 +199,7 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="#week1">Week 1</a></li>
 <li><a href="#week2">Week 2</a></li>
 <li><a href="#week3">Week 3</a></li>
+<li><a href="#code_copy">Code copy</a></li>
 </ul>
 <table class="table">
 <colgroup>
@@ -332,8 +396,21 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td style="text-align: center;"></td>
 <td>W 2/26</td>
-<td></td>
-<td></td>
+<td><ul>
+<li>Topic: <a href="./slides/slides-07-wrangling.html">Data wrangling with tidyverse</a></li>
+</ul></td>
+<td><ul>
+<li><p>Data wrangling practice</p>
+<p><a href="#mtcars-btn" onclick="fetch('data:text/plain;base64,LS0tCnRpdGxlOiAiRGF0YSB3cmFuZ2xpbmcgY29kaW5nIHByYWN0aWNlIgphdXRob3I6ICJZb3VyIG5hbWUiCmRhdGU6ICIyLzI2LzIwMjUiCmZvcm1hdDogcGRmCi0tLQoKMC4gIExvYWQgaW4gdGhlIGB0aWR5dmVyc2VgIGFuZCBgb3BlbmludHJvYCBwYWNrYWdlcyBpbiB0aGUgY29kZSBjaHVuayBiZWxvdy4gV2Ugd2lsbCBvbmNlIGFnYWluIHdvcmsgd2l0aCB0aGUgYHN0YXJidWNrc2AgZGF0YSBmcm9tIHRoZSBgb3BlbmludHJvYCBwYWNrYWdlLgoKYGBge3J9CiMgbG9hZCBwYWNrYWdlcyBoZXJlCgpgYGAKCjEuICBXcmFuZ2xlIHRoZSBgc3RhcmJ1Y2tzYCBkYXRhIHRvIHNob3cgYSBkYXRhIGZyYW1lIHRoYXQgY29udGFpbnMgdGhlIG51bWJlciBvZiBlYWNoIHR5cGUgb2YgU3RhcmJ1Y2tzIGl0ZW0uIERpc3BsYXkgdGhlIHJlc3VsdGluZyBkYXRhIGZyYW1lIGluIGRlc2NlbmRpbmcgb3JkZXIuCgpgYGB7cn0KCmBgYAoKMi4gIFdyYW5nbGUgdGhlIGRhdGEgdG8gZGlzcGxheSB0aGUgZml2ZSBTdGFyYnVja3MgaXRlbXMgd2l0aCB0aGUgaGlnaGVzdCBhbW91bnQgb2YgY2Fsb3JpZXMuIE9ubHkgZGlzcGxheSB0aGUgbmFtZSBvZiB0aGUgaXRlbXMgYW5kIHRoZWlyIGNhbG9yaWUgY29udGVudC4KCmBgYHtyfQoKYGBgCgozLiAgVGhyZWUgbWFjcm9udXRyaWVudHMgc2VydmUgYXMgc291cmNlcyBvZiBjYWxvcmllcyAoaS5lLiBlbmVyZ3kpIGluIGZvb2Q6IGNhcmJvaHlkcmF0ZXMsIHByb3RlaW5zLCBhbmQgZmF0LiBDYXJib2h5ZHJhdGVzIGNvbnRhaW4gNCBjYWxvcmllcyBwZXIgZ3JhbSwgcHJvdGVpbnMgY29udGFpbiA0IGNhbG9yaWVzIHBlciBncmFtLCBhbmQgZmF0cyBjb250YWluIDkgY2Fsb3JpZXMgcGVyIGdyYW0uCgpXcmFuZ2xlIHRoZSBkYXRhIHRvIGFkZCBhIG5ldyB2YXJpYWJsZSBjYWxsZWQgYHRoZW9yZXRpY2FsX2NhbHNgIHdoaWNoIHJlcHJlc2VudHMgdGhlIG51bWJlciBvZiBjYWxvcmllcyBlYWNoIGl0ZW0gaW4gdGhlIGBzdGFyYnVja3NgIGRhdGEgdGhlb3JldGljYWxseSBzaG91bGQgaGF2ZSBiYXNlZCBvbiBpdHMgbGV2ZWxzIG9mIGNhcmJvaHlkcmF0ZXMsIHByb3RlaW4sIGFuZCBmYXQuIFN0b3JlIHRoZSByZXN1bHRpbmcgZGF0YSBmcmFtZSBhcyBhIG5ldyBkYXRhIGZyYW1lIGNhbGxlZCBgc3RhcmJ1Y2tzX25ld2AuCgpgYGB7cn0KCmBgYAoKNC4gIFVzaW5nIHlvdXIgYHN0YXJidWNrc19uZXdgIGRhdGEgZnJhbWUgZnJvbSB0aGUgcHJldmlvdXMgc3RlcCwgZGlzcGxheSBhIHN1bW1hcnkgdGFibGUvZGF0YSBmcmFtZSB0aGF0IHNob3dzIHRoZSBzdGFuZGFyZCBkZXZpYXRpb24gb2YgdGhlIGRpZmZlcmVuY2VzIGJldHdlZW4gdGhlIHJlcG9ydGVkIGNhbG9yaWVzIGFuZCB0aGVvcmV0aWNhbCBjYWxvcmllcy4gTWFrZSBzdXJlIHRvIHNwZWNpZnkgYW4gaW5mb3JtYXRpdmUvbmljZXIgbmFtZSBpbiB5b3VyIHN1bW1hcnkgdGFibGUuCgpgYGB7cn0KCmBgYAoKT25jZSB5b3UncmUgZmluaXNoZWQsIGJlIHN1cmUgdG8gcmVuZGVyIGFuZCBzdWJtaXQgdGhlIFBERiBmaWxlIHRvIHRoZSBjb3JyZXNwb25kaW5nIEdyYWRlc2NvcGUgYXNzaWdubWVudCEK').then(res => res.blob()).then(blob => {
+      const downloadURL = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      document.body.appendChild(a);
+      a.href = downloadURL;
+      a.download = 'coding-practice-wrangling.qmd'; a.click();
+      window.URL.revokeObjectURL(downloadURL);
+      document.body.removeChild(a);
+        });"><button class="btn btn-default downloadthis  " id="mtcars-btn"><i class="bi bi-download"></i> Coding practice </button></a></p></li>
+</ul></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -354,6 +431,18 @@ ul.task-list li input[type="checkbox"] {
 <li>Hit <em>Print</em></li>
 </ol></li>
 </ol>
+<div id="code_copy">
+<section id="code-copy" class="level2">
+<h2 class="anchored" data-anchor-id="code-copy">Code copy</h2>
+</section>
+</div>
+<ul>
+<li><p>Tuesday, 2/26:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>url_file <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/datascience_survey_subset.csv"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+</ul>
 
 
 

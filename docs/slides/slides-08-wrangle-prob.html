@@ -1,0 +1,5225 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2025-02-27">
+
+<title>STAT 201: Intro. to Statistics and Data Science - More wrangling + Probability</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">STAT 201: Intro. to Statistics and Data Science</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../schedule.html">
+ <span class="menu-text">Schedule</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://openintro-ims.netlify.app/"><i class="bi bi-book-half" role="img">
+</i> 
+ <span class="menu-text">Textbook</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://middlebury.instructure.com/"><i class="bi bi-bar-chart-fill" role="img">
+</i> 
+ <span class="menu-text">Canvas</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">More wrangling + Probability</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 27, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="housekeeping" class="level2">
+<h2 class="anchored" data-anchor-id="housekeeping">Housekeeping</h2>
+<div class="cell">
+
+</div>
+</section>
+<section id="joining-data-frames" class="level2">
+<h2 class="anchored" data-anchor-id="joining-data-frames">Joining data frames</h2>
+<p>Assume we have two data frame, <code>x</code> and <code>y</code>. There are some shared variables (i.e.&nbsp;columns) in the two. Suppose we want to combine them together.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">something_join</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p>Mutating joins:</p>
+<ul>
+<li><code>left_join()</code>: return all rows from <code>x</code></li>
+<li><code>right_join()</code>: return all rows from <code>y</code></li>
+<li><code>full_join()</code>: return all rows from both <code>x</code> and <code>y</code></li>
+<li><code>inner_join()</code>: all rows from <code>x</code> where there are matching values in <code>y</code>, return all combination of multiple matches in the case of multiple matches</li>
+</ul></li>
+<li><p>Filtering joins:</p>
+<ul>
+<li><code>semi_join()</code>: return all rows from <code>x</code> where there are matching values in <code>y</code>, keeping just columns from <code>x</code></li>
+<li><code>anti_join()</code>: return all rows from <code>x</code> where there are not matching values in <code>y</code>, never duplicate rows of <code>x</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<p>For the next few slides…</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: right;">ID</th>
+<th style="text-align: left;">x_val</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">x1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">x2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">x3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: right;">ID</th>
+<th style="text-align: left;">y_val</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">y1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">y2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">y4</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="left_join" class="level2">
+<h2 class="anchored" data-anchor-id="left_join"><code>left_join()</code></h2>
+<p>Adds columns to <code>x</code> from <code>y</code>, matching all rows in <code>x</code></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:left;"> x_val </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> x1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> x2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> x3 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:left;"> y_val </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> y1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> y2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> y4 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">left_join</span>(x, y, <span class="at">by =</span> <span class="st">"ID"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:left;"> x_val </th>
+   <th style="text-align:left;"> y_val </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> x1 </td>
+   <td style="text-align:left;"> y1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> x2 </td>
+   <td style="text-align:left;"> y2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> x3 </td>
+   <td style="text-align:left;"> NA </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img src="figs/08-left-join.gif" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="right_join" class="level2">
+<h2 class="anchored" data-anchor-id="right_join"><code>right_join()</code></h2>
+<p>Adds columns to <code>x</code> from <code>y</code>, matching all rows in <code>y</code></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:left;"> x_val </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> x1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> x2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> x3 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:left;"> y_val </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> y1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> y2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> y4 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">right_join</span>(x, y, <span class="at">by =</span> <span class="st">"ID"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:left;"> x_val </th>
+   <th style="text-align:left;"> y_val </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> x1 </td>
+   <td style="text-align:left;"> y1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> x2 </td>
+   <td style="text-align:left;"> y2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:left;"> y4 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img src="figs/08-right-join.gif" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="full_join" class="level2">
+<h2 class="anchored" data-anchor-id="full_join"><code>full_join()</code></h2>
+<p>Adds columns to <code>x</code> from <code>y</code>, matching all rows in <code>x</code> OR <code>y</code></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:left;"> x_val </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> x1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> x2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> x3 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:left;"> y_val </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> y1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> y2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> y4 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">full_join</span>(x, y, <span class="at">by =</span> <span class="st">"ID"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:left;"> x_val </th>
+   <th style="text-align:left;"> y_val </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> x1 </td>
+   <td style="text-align:left;"> y1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> x2 </td>
+   <td style="text-align:left;"> y2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> x3 </td>
+   <td style="text-align:left;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:left;"> y4 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img src="figs/08-full-join.gif" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="inner_join" class="level2">
+<h2 class="anchored" data-anchor-id="inner_join"><code>inner_join()</code></h2>
+<p>All rows from <code>x</code> where there are matching values in <code>y</code>, return all combination of multiple matches in the case of multiple matches</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:left;"> x_val </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> x1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> x2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> x3 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:left;"> y_val </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> y1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> y2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> y4 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inner_join</span>(x, y, <span class="at">by =</span> <span class="st">"ID"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:left;"> x_val </th>
+   <th style="text-align:left;"> y_val </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> x1 </td>
+   <td style="text-align:left;"> y1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> x2 </td>
+   <td style="text-align:left;"> y2 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img src="figs/08-inner-join.gif" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="inner_join-cont." class="level2">
+<h2 class="anchored" data-anchor-id="inner_join-cont."><code>inner_join()</code> (cont.)</h2>
+<p>Example with multiple matches:</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>x2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 20px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:left;"> x_val </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> x1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> x2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> x3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> new_x </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>y2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 20px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:left;"> y_val </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> y1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> y2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> y4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> new_y </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inner_join</span>(x2, y2, <span class="at">by =</span> <span class="st">"ID"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in inner_join(x2, y2, by = "ID"): Detected an unexpected many-to-many relationship between `x` and `y`.
+ℹ Row 1 of `x` matches multiple rows in `y`.
+ℹ Row 1 of `y` matches multiple rows in `x`.
+ℹ If a many-to-many relationship is expected, set `relationship =
+  "many-to-many"` to silence this warning.</code></pre>
+</div>
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 20px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:left;"> x_val </th>
+   <th style="text-align:left;"> y_val </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> x1 </td>
+   <td style="text-align:left;"> y1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> x1 </td>
+   <td style="text-align:left;"> new_y </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> x2 </td>
+   <td style="text-align:left;"> y2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> new_x </td>
+   <td style="text-align:left;"> y1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> new_x </td>
+   <td style="text-align:left;"> new_y </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</section>
+<section id="semi_join" class="level2">
+<h2 class="anchored" data-anchor-id="semi_join"><code>semi_join()</code></h2>
+<p>Returns all rows from <code>x</code> <strong>with</strong> a match in <code>y</code>, but does not add columns from <code>y</code></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:left;"> x_val </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> x1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> x2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> x3 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:left;"> y_val </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> y1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> y2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> y4 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">semi_join</span>(x, y, <span class="at">by =</span> <span class="st">"ID"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:left;"> x_val </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> x1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> x2 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img src="figs/08-semi-join.gif" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="anti_join" class="level2">
+<h2 class="anchored" data-anchor-id="anti_join"><code>anti_join()</code></h2>
+<p>Returns all rows from <code>x</code> <strong>without</strong> any match in <code>y</code>, and not add columns from <code>y</code></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:left;"> x_val </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> x1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> x2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> x3 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:left;"> y_val </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> y1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> y2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> y4 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anti_join</span>(x, y, <span class="at">by =</span> <span class="st">"ID"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:left;"> x_val </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> x3 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img src="figs/08-anti-join.gif" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="joining-with-different-variable-names" class="level2">
+<h2 class="anchored" data-anchor-id="joining-with-different-variable-names">Joining with different variable names</h2>
+<p>If the variables in <code>x</code> and <code>y</code> have different names but we know they represent the same variable:</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:left;"> x_val </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> x1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> x2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> x3 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>y3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID_y </th>
+   <th style="text-align:left;"> y_val </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> y1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> y2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> y4 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">left_join</span>(x, y3, <span class="at">by =</span>  <span class="fu">c</span>(<span class="st">"ID"</span> <span class="ot">=</span> <span class="st">"ID_y"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:left;"> x_val </th>
+   <th style="text-align:left;"> y_val </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> x1 </td>
+   <td style="text-align:left;"> y1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> x2 </td>
+   <td style="text-align:left;"> y2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> x3 </td>
+   <td style="text-align:left;"> NA </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</section>
+<section id="joining-on-multiple-variables" class="level2">
+<h2 class="anchored" data-anchor-id="joining-on-multiple-variables">Joining on multiple variables</h2>
+<p>Can specify more than one variable in the <code>by</code> argument. Will need to be a vector of characters.</p>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
+<p>fishery harvest of countries for 2016, by capture and aquaculture</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>fish_url <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/math118-fall2022/website/refs/heads/master/docs/slides/lec-slides/data/fisheries.csv"</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>countries_url <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/math118-fall2022/website/refs/heads/master/docs/slides/lec-slides/data/continents.csv"</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>fisheries <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(fish_url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 216 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): country
+dbl (3): capture, aquaculture, total
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>continents <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(countries_url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 245 Columns: 2
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (2): country, continent
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(fisheries) <span class="sc">|&gt;</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">font_size =</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 20px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> country </th>
+   <th style="text-align:right;"> capture </th>
+   <th style="text-align:right;"> aquaculture </th>
+   <th style="text-align:right;"> total </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Afghanistan </td>
+   <td style="text-align:right;"> 1000 </td>
+   <td style="text-align:right;"> 1200 </td>
+   <td style="text-align:right;"> 2200 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Albania </td>
+   <td style="text-align:right;"> 7886 </td>
+   <td style="text-align:right;"> 950 </td>
+   <td style="text-align:right;"> 8836 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Algeria </td>
+   <td style="text-align:right;"> 95000 </td>
+   <td style="text-align:right;"> 1361 </td>
+   <td style="text-align:right;"> 96361 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> American Samoa </td>
+   <td style="text-align:right;"> 3047 </td>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:right;"> 3067 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Andorra </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Angola </td>
+   <td style="text-align:right;"> 486490 </td>
+   <td style="text-align:right;"> 655 </td>
+   <td style="text-align:right;"> 487145 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Antigua and Barbuda </td>
+   <td style="text-align:right;"> 3000 </td>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:right;"> 3010 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Argentina </td>
+   <td style="text-align:right;"> 755226 </td>
+   <td style="text-align:right;"> 3673 </td>
+   <td style="text-align:right;"> 758899 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Armenia </td>
+   <td style="text-align:right;"> 3758 </td>
+   <td style="text-align:right;"> 16381 </td>
+   <td style="text-align:right;"> 20139 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Aruba </td>
+   <td style="text-align:right;"> 142 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 142 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Australia </td>
+   <td style="text-align:right;"> 174629 </td>
+   <td style="text-align:right;"> 96847 </td>
+   <td style="text-align:right;"> 271476 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Austria </td>
+   <td style="text-align:right;"> 350 </td>
+   <td style="text-align:right;"> 3483 </td>
+   <td style="text-align:right;"> 3833 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Azerbaijan </td>
+   <td style="text-align:right;"> 676 </td>
+   <td style="text-align:right;"> 640 </td>
+   <td style="text-align:right;"> 1316 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bahamas </td>
+   <td style="text-align:right;"> 11625 </td>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:right;"> 11633 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bahrain </td>
+   <td style="text-align:right;"> 15000 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 15006 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bangladesh </td>
+   <td style="text-align:right;"> 1674770 </td>
+   <td style="text-align:right;"> 2203554 </td>
+   <td style="text-align:right;"> 3878324 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Barbados </td>
+   <td style="text-align:right;"> 1735 </td>
+   <td style="text-align:right;"> 26 </td>
+   <td style="text-align:right;"> 1761 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Belarus </td>
+   <td style="text-align:right;"> 686 </td>
+   <td style="text-align:right;"> 11199 </td>
+   <td style="text-align:right;"> 11885 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Belgium </td>
+   <td style="text-align:right;"> 26970 </td>
+   <td style="text-align:right;"> 44 </td>
+   <td style="text-align:right;"> 27014 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Belize </td>
+   <td style="text-align:right;"> 91432 </td>
+   <td style="text-align:right;"> 953 </td>
+   <td style="text-align:right;"> 92385 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Benin </td>
+   <td style="text-align:right;"> 49806 </td>
+   <td style="text-align:right;"> 3080 </td>
+   <td style="text-align:right;"> 52886 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bermuda </td>
+   <td style="text-align:right;"> 410 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 410 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bhutan </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 150 </td>
+   <td style="text-align:right;"> 157 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bolivia </td>
+   <td style="text-align:right;"> 7000 </td>
+   <td style="text-align:right;"> 3000 </td>
+   <td style="text-align:right;"> 10000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bosnia and Herzegovina </td>
+   <td style="text-align:right;"> 305 </td>
+   <td style="text-align:right;"> 4564 </td>
+   <td style="text-align:right;"> 4869 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Botswana </td>
+   <td style="text-align:right;"> 38 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 53 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Brazil </td>
+   <td style="text-align:right;"> 705000 </td>
+   <td style="text-align:right;"> 581230 </td>
+   <td style="text-align:right;"> 1286230 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> British Virgin Islands </td>
+   <td style="text-align:right;"> 1200 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1200 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Brunei </td>
+   <td style="text-align:right;"> 13292 </td>
+   <td style="text-align:right;"> 948 </td>
+   <td style="text-align:right;"> 14240 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bulgaria </td>
+   <td style="text-align:right;"> 8614 </td>
+   <td style="text-align:right;"> 15762 </td>
+   <td style="text-align:right;"> 24376 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Burkina Faso </td>
+   <td style="text-align:right;"> 22070 </td>
+   <td style="text-align:right;"> 470 </td>
+   <td style="text-align:right;"> 22540 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Burundi </td>
+   <td style="text-align:right;"> 21805 </td>
+   <td style="text-align:right;"> 1330 </td>
+   <td style="text-align:right;"> 23135 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cambodia </td>
+   <td style="text-align:right;"> 629950 </td>
+   <td style="text-align:right;"> 172500 </td>
+   <td style="text-align:right;"> 802450 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cameroon </td>
+   <td style="text-align:right;"> 233190 </td>
+   <td style="text-align:right;"> 2315 </td>
+   <td style="text-align:right;"> 235505 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Canada </td>
+   <td style="text-align:right;"> 874727 </td>
+   <td style="text-align:right;"> 200765 </td>
+   <td style="text-align:right;"> 1075492 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cape Verde </td>
+   <td style="text-align:right;"> 19900 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 19900 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cayman Islands </td>
+   <td style="text-align:right;"> 125 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 125 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Central African Republic </td>
+   <td style="text-align:right;"> 29000 </td>
+   <td style="text-align:right;"> 190 </td>
+   <td style="text-align:right;"> 29190 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Chad </td>
+   <td style="text-align:right;"> 110000 </td>
+   <td style="text-align:right;"> 94 </td>
+   <td style="text-align:right;"> 110094 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Chile </td>
+   <td style="text-align:right;"> 1829238 </td>
+   <td style="text-align:right;"> 1050117 </td>
+   <td style="text-align:right;"> 2879355 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> China </td>
+   <td style="text-align:right;"> 17800000 </td>
+   <td style="text-align:right;"> 63700000 </td>
+   <td style="text-align:right;"> 81500000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Colombia </td>
+   <td style="text-align:right;"> 86344 </td>
+   <td style="text-align:right;"> 96970 </td>
+   <td style="text-align:right;"> 183314 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Comoros </td>
+   <td style="text-align:right;"> 16407 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 16407 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Costa Rica </td>
+   <td style="text-align:right;"> 14750 </td>
+   <td style="text-align:right;"> 22421 </td>
+   <td style="text-align:right;"> 37171 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Croatia </td>
+   <td style="text-align:right;"> 72312 </td>
+   <td style="text-align:right;"> 15805 </td>
+   <td style="text-align:right;"> 88117 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cuba </td>
+   <td style="text-align:right;"> 23574 </td>
+   <td style="text-align:right;"> 29185 </td>
+   <td style="text-align:right;"> 52759 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Curaçao </td>
+   <td style="text-align:right;"> 35534 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 35534 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cyprus </td>
+   <td style="text-align:right;"> 1507 </td>
+   <td style="text-align:right;"> 6625 </td>
+   <td style="text-align:right;"> 8132 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Czech Republic </td>
+   <td style="text-align:right;"> 3507 </td>
+   <td style="text-align:right;"> 20952 </td>
+   <td style="text-align:right;"> 24459 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Democratic Republic of the Congo </td>
+   <td style="text-align:right;"> 237372 </td>
+   <td style="text-align:right;"> 3161 </td>
+   <td style="text-align:right;"> 240533 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Denmark </td>
+   <td style="text-align:right;"> 670344 </td>
+   <td style="text-align:right;"> 36337 </td>
+   <td style="text-align:right;"> 706681 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Djibouti </td>
+   <td style="text-align:right;"> 2220 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 2220 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dominica </td>
+   <td style="text-align:right;"> 770 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 776 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dominican Republic </td>
+   <td style="text-align:right;"> 14640 </td>
+   <td style="text-align:right;"> 2285 </td>
+   <td style="text-align:right;"> 16925 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ecuador </td>
+   <td style="text-align:right;"> 715495 </td>
+   <td style="text-align:right;"> 451090 </td>
+   <td style="text-align:right;"> 1166585 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Egypt </td>
+   <td style="text-align:right;"> 335614 </td>
+   <td style="text-align:right;"> 1370660 </td>
+   <td style="text-align:right;"> 1706274 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> El Salvador </td>
+   <td style="text-align:right;"> 54084 </td>
+   <td style="text-align:right;"> 7956 </td>
+   <td style="text-align:right;"> 62040 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equatorial Guinea </td>
+   <td style="text-align:right;"> 8000 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 8015 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Eritrea </td>
+   <td style="text-align:right;"> 4300 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 4300 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Estonia </td>
+   <td style="text-align:right;"> 75931 </td>
+   <td style="text-align:right;"> 868 </td>
+   <td style="text-align:right;"> 76799 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Eswatini </td>
+   <td style="text-align:right;"> 65 </td>
+   <td style="text-align:right;"> 100 </td>
+   <td style="text-align:right;"> 165 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ethiopia </td>
+   <td style="text-align:right;"> 45500 </td>
+   <td style="text-align:right;"> 95 </td>
+   <td style="text-align:right;"> 45595 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Faroe Islands </td>
+   <td style="text-align:right;"> 568435 </td>
+   <td style="text-align:right;"> 83300 </td>
+   <td style="text-align:right;"> 651735 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Federated States of Micronesia </td>
+   <td style="text-align:right;"> 88397 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 88397 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Fiji </td>
+   <td style="text-align:right;"> 44663 </td>
+   <td style="text-align:right;"> 754 </td>
+   <td style="text-align:right;"> 45417 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Finland </td>
+   <td style="text-align:right;"> 192065 </td>
+   <td style="text-align:right;"> 14412 </td>
+   <td style="text-align:right;"> 206477 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> France </td>
+   <td style="text-align:right;"> 561173 </td>
+   <td style="text-align:right;"> 166640 </td>
+   <td style="text-align:right;"> 727813 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> France </td>
+   <td style="text-align:right;"> 90 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 90 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> French Polynesia </td>
+   <td style="text-align:right;"> 13754 </td>
+   <td style="text-align:right;"> 1343 </td>
+   <td style="text-align:right;"> 15097 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Gabon </td>
+   <td style="text-align:right;"> 31000 </td>
+   <td style="text-align:right;"> 45 </td>
+   <td style="text-align:right;"> 31045 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Gambia </td>
+   <td style="text-align:right;"> 58261 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 58266 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Georgia </td>
+   <td style="text-align:right;"> 30078 </td>
+   <td style="text-align:right;"> 670 </td>
+   <td style="text-align:right;"> 30748 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Germany </td>
+   <td style="text-align:right;"> 271185 </td>
+   <td style="text-align:right;"> 41721 </td>
+   <td style="text-align:right;"> 312906 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ghana </td>
+   <td style="text-align:right;"> 327457 </td>
+   <td style="text-align:right;"> 52480 </td>
+   <td style="text-align:right;"> 379937 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Gibraltar </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Greece </td>
+   <td style="text-align:right;"> 76362 </td>
+   <td style="text-align:right;"> 123410 </td>
+   <td style="text-align:right;"> 199772 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Greenland </td>
+   <td style="text-align:right;"> 273175 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 273175 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Grenada </td>
+   <td style="text-align:right;"> 2550 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 2550 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Guam </td>
+   <td style="text-align:right;"> 1391 </td>
+   <td style="text-align:right;"> 110 </td>
+   <td style="text-align:right;"> 1501 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Guatemala </td>
+   <td style="text-align:right;"> 19011 </td>
+   <td style="text-align:right;"> 26268 </td>
+   <td style="text-align:right;"> 45279 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Guinea </td>
+   <td style="text-align:right;"> 128000 </td>
+   <td style="text-align:right;"> 250 </td>
+   <td style="text-align:right;"> 128250 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Guinea-Bissau </td>
+   <td style="text-align:right;"> 6700 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6700 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Guyana </td>
+   <td style="text-align:right;"> 42142 </td>
+   <td style="text-align:right;"> 337 </td>
+   <td style="text-align:right;"> 42479 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Haiti </td>
+   <td style="text-align:right;"> 16510 </td>
+   <td style="text-align:right;"> 1220 </td>
+   <td style="text-align:right;"> 17730 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Honduras </td>
+   <td style="text-align:right;"> 10600 </td>
+   <td style="text-align:right;"> 53100 </td>
+   <td style="text-align:right;"> 63700 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Hong Kong </td>
+   <td style="text-align:right;"> 142775 </td>
+   <td style="text-align:right;"> 4258 </td>
+   <td style="text-align:right;"> 147033 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Hungary </td>
+   <td style="text-align:right;"> 5048 </td>
+   <td style="text-align:right;"> 16248 </td>
+   <td style="text-align:right;"> 21296 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Iceland </td>
+   <td style="text-align:right;"> 1085176 </td>
+   <td style="text-align:right;"> 15129 </td>
+   <td style="text-align:right;"> 1100305 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> India </td>
+   <td style="text-align:right;"> 5082332 </td>
+   <td style="text-align:right;"> 5703002 </td>
+   <td style="text-align:right;"> 10785334 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Indonesia </td>
+   <td style="text-align:right;"> 6584419 </td>
+   <td style="text-align:right;"> 16600000 </td>
+   <td style="text-align:right;"> 23184419 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Iran </td>
+   <td style="text-align:right;"> 695407 </td>
+   <td style="text-align:right;"> 398129 </td>
+   <td style="text-align:right;"> 1093536 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Iraq </td>
+   <td style="text-align:right;"> 28000 </td>
+   <td style="text-align:right;"> 28835 </td>
+   <td style="text-align:right;"> 56835 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ireland </td>
+   <td style="text-align:right;"> 259845 </td>
+   <td style="text-align:right;"> 40244 </td>
+   <td style="text-align:right;"> 300089 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Isle of Man </td>
+   <td style="text-align:right;"> 7040 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 7040 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Israel </td>
+   <td style="text-align:right;"> 1758 </td>
+   <td style="text-align:right;"> 18914 </td>
+   <td style="text-align:right;"> 20672 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Italy </td>
+   <td style="text-align:right;"> 198130 </td>
+   <td style="text-align:right;"> 157109 </td>
+   <td style="text-align:right;"> 355239 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ivory Coast </td>
+   <td style="text-align:right;"> 67500 </td>
+   <td style="text-align:right;"> 4701 </td>
+   <td style="text-align:right;"> 72201 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jamaica </td>
+   <td style="text-align:right;"> 16800 </td>
+   <td style="text-align:right;"> 620 </td>
+   <td style="text-align:right;"> 17420 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Japan </td>
+   <td style="text-align:right;"> 3275263 </td>
+   <td style="text-align:right;"> 1067994 </td>
+   <td style="text-align:right;"> 4343257 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jersey and Guernsey </td>
+   <td style="text-align:right;"> 2985 </td>
+   <td style="text-align:right;"> 1499 </td>
+   <td style="text-align:right;"> 4484 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jordan </td>
+   <td style="text-align:right;"> 873 </td>
+   <td style="text-align:right;"> 885 </td>
+   <td style="text-align:right;"> 1758 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kazakhstan </td>
+   <td style="text-align:right;"> 41335 </td>
+   <td style="text-align:right;"> 1878 </td>
+   <td style="text-align:right;"> 43213 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kenya </td>
+   <td style="text-align:right;"> 171391 </td>
+   <td style="text-align:right;"> 15360 </td>
+   <td style="text-align:right;"> 186751 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kiribati </td>
+   <td style="text-align:right;"> 172822 </td>
+   <td style="text-align:right;"> 3652 </td>
+   <td style="text-align:right;"> 176474 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kuwait </td>
+   <td style="text-align:right;"> 5493 </td>
+   <td style="text-align:right;"> 196 </td>
+   <td style="text-align:right;"> 5689 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kyrgyzstan </td>
+   <td style="text-align:right;"> 89 </td>
+   <td style="text-align:right;"> 1931 </td>
+   <td style="text-align:right;"> 2020 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Laos </td>
+   <td style="text-align:right;"> 70915 </td>
+   <td style="text-align:right;"> 109835 </td>
+   <td style="text-align:right;"> 180750 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Latvia </td>
+   <td style="text-align:right;"> 114806 </td>
+   <td style="text-align:right;"> 788 </td>
+   <td style="text-align:right;"> 115594 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Lebanon </td>
+   <td style="text-align:right;"> 4291 </td>
+   <td style="text-align:right;"> 1015 </td>
+   <td style="text-align:right;"> 5306 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Lesotho </td>
+   <td style="text-align:right;"> 52 </td>
+   <td style="text-align:right;"> 1050 </td>
+   <td style="text-align:right;"> 1102 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Liberia </td>
+   <td style="text-align:right;"> 14700 </td>
+   <td style="text-align:right;"> 40 </td>
+   <td style="text-align:right;"> 14740 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Libya </td>
+   <td style="text-align:right;"> 30002 </td>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:right;"> 30012 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Liechtenstein </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Lithuania </td>
+   <td style="text-align:right;"> 106945 </td>
+   <td style="text-align:right;"> 4393 </td>
+   <td style="text-align:right;"> 111338 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Luxembourg </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Macao </td>
+   <td style="text-align:right;"> 1500 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1500 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Madagascar </td>
+   <td style="text-align:right;"> 142333 </td>
+   <td style="text-align:right;"> 25998 </td>
+   <td style="text-align:right;"> 168331 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Malawi </td>
+   <td style="text-align:right;"> 152852 </td>
+   <td style="text-align:right;"> 7646 </td>
+   <td style="text-align:right;"> 160498 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Malaysia </td>
+   <td style="text-align:right;"> 1584371 </td>
+   <td style="text-align:right;"> 407887 </td>
+   <td style="text-align:right;"> 1992258 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maldives </td>
+   <td style="text-align:right;"> 129191 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 129191 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mali </td>
+   <td style="text-align:right;"> 102486 </td>
+   <td style="text-align:right;"> 4194 </td>
+   <td style="text-align:right;"> 106680 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Malta </td>
+   <td style="text-align:right;"> 2420 </td>
+   <td style="text-align:right;"> 6073 </td>
+   <td style="text-align:right;"> 8493 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Marshall Islands </td>
+   <td style="text-align:right;"> 64795 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 64800 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mauritania </td>
+   <td style="text-align:right;"> 609754 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 609754 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mauritius </td>
+   <td style="text-align:right;"> 18062 </td>
+   <td style="text-align:right;"> 1021 </td>
+   <td style="text-align:right;"> 19083 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mexico </td>
+   <td style="text-align:right;"> 1524467 </td>
+   <td style="text-align:right;"> 221328 </td>
+   <td style="text-align:right;"> 1745795 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Moldova </td>
+   <td style="text-align:right;"> 50 </td>
+   <td style="text-align:right;"> 16011 </td>
+   <td style="text-align:right;"> 16061 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Monaco </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mongolia </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 15 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Montenegro </td>
+   <td style="text-align:right;"> 1595 </td>
+   <td style="text-align:right;"> 929 </td>
+   <td style="text-align:right;"> 2524 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Morocco </td>
+   <td style="text-align:right;"> 1454105 </td>
+   <td style="text-align:right;"> 1142 </td>
+   <td style="text-align:right;"> 1455247 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mozambique </td>
+   <td style="text-align:right;"> 299591 </td>
+   <td style="text-align:right;"> 1180 </td>
+   <td style="text-align:right;"> 300771 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Myanmar </td>
+   <td style="text-align:right;"> 2072390 </td>
+   <td style="text-align:right;"> 1017644 </td>
+   <td style="text-align:right;"> 3090034 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Namibia </td>
+   <td style="text-align:right;"> 503878 </td>
+   <td style="text-align:right;"> 591 </td>
+   <td style="text-align:right;"> 504469 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Nauru </td>
+   <td style="text-align:right;"> 530 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 530 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Nepal </td>
+   <td style="text-align:right;"> 21500 </td>
+   <td style="text-align:right;"> 49043 </td>
+   <td style="text-align:right;"> 70543 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Netherlands </td>
+   <td style="text-align:right;"> 370274 </td>
+   <td style="text-align:right;"> 62940 </td>
+   <td style="text-align:right;"> 433214 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> New Caledonia </td>
+   <td style="text-align:right;"> 3815 </td>
+   <td style="text-align:right;"> 1587 </td>
+   <td style="text-align:right;"> 5402 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> New Zealand </td>
+   <td style="text-align:right;"> 424791 </td>
+   <td style="text-align:right;"> 109016 </td>
+   <td style="text-align:right;"> 533807 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Nicaragua </td>
+   <td style="text-align:right;"> 45500 </td>
+   <td style="text-align:right;"> 22530 </td>
+   <td style="text-align:right;"> 68030 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Niger </td>
+   <td style="text-align:right;"> 34592 </td>
+   <td style="text-align:right;"> 300 </td>
+   <td style="text-align:right;"> 34892 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Nigeria </td>
+   <td style="text-align:right;"> 734731 </td>
+   <td style="text-align:right;"> 306727 </td>
+   <td style="text-align:right;"> 1041458 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> North Korea </td>
+   <td style="text-align:right;"> 209000 </td>
+   <td style="text-align:right;"> 554100 </td>
+   <td style="text-align:right;"> 763100 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> North Macedonia </td>
+   <td style="text-align:right;"> 306 </td>
+   <td style="text-align:right;"> 986 </td>
+   <td style="text-align:right;"> 1292 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Northern Mariana Islands </td>
+   <td style="text-align:right;"> 950 </td>
+   <td style="text-align:right;"> 42 </td>
+   <td style="text-align:right;"> 992 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Norway </td>
+   <td style="text-align:right;"> 2203360 </td>
+   <td style="text-align:right;"> 1326216 </td>
+   <td style="text-align:right;"> 3529576 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Oman </td>
+   <td style="text-align:right;"> 279606 </td>
+   <td style="text-align:right;"> 103 </td>
+   <td style="text-align:right;"> 279709 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Pakistan </td>
+   <td style="text-align:right;"> 513156 </td>
+   <td style="text-align:right;"> 156430 </td>
+   <td style="text-align:right;"> 669586 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Palau </td>
+   <td style="text-align:right;"> 818 </td>
+   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 841 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Palestine </td>
+   <td style="text-align:right;"> 3306 </td>
+   <td style="text-align:right;"> 280 </td>
+   <td style="text-align:right;"> 3586 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Panama </td>
+   <td style="text-align:right;"> 144450 </td>
+   <td style="text-align:right;"> 8808 </td>
+   <td style="text-align:right;"> 153258 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Papua New Guinea </td>
+   <td style="text-align:right;"> 309245 </td>
+   <td style="text-align:right;"> 6200 </td>
+   <td style="text-align:right;"> 315445 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Paraguay </td>
+   <td style="text-align:right;"> 17000 </td>
+   <td style="text-align:right;"> 8500 </td>
+   <td style="text-align:right;"> 25500 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Peru </td>
+   <td style="text-align:right;"> 3811802 </td>
+   <td style="text-align:right;"> 100187 </td>
+   <td style="text-align:right;"> 3911989 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Philippines </td>
+   <td style="text-align:right;"> 2027992 </td>
+   <td style="text-align:right;"> 2200914 </td>
+   <td style="text-align:right;"> 4228906 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Poland </td>
+   <td style="text-align:right;"> 218115 </td>
+   <td style="text-align:right;"> 38300 </td>
+   <td style="text-align:right;"> 256415 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Portugal </td>
+   <td style="text-align:right;"> 186950 </td>
+   <td style="text-align:right;"> 9787 </td>
+   <td style="text-align:right;"> 196737 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Puerto Rico </td>
+   <td style="text-align:right;"> 1901 </td>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:right;"> 1921 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Qatar </td>
+   <td style="text-align:right;"> 14516 </td>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:right;"> 14526 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Republic of the Congo </td>
+   <td style="text-align:right;"> 86748 </td>
+   <td style="text-align:right;"> 177 </td>
+   <td style="text-align:right;"> 86925 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Romania </td>
+   <td style="text-align:right;"> 12728 </td>
+   <td style="text-align:right;"> 12574 </td>
+   <td style="text-align:right;"> 25302 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Russia </td>
+   <td style="text-align:right;"> 4773413 </td>
+   <td style="text-align:right;"> 173840 </td>
+   <td style="text-align:right;"> 4947253 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Rwanda </td>
+   <td style="text-align:right;"> 25013 </td>
+   <td style="text-align:right;"> 580 </td>
+   <td style="text-align:right;"> 25593 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Saint Kitts and Nevis </td>
+   <td style="text-align:right;"> 65734 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 65735 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Saint Lucia </td>
+   <td style="text-align:right;"> 2097 </td>
+   <td style="text-align:right;"> 32 </td>
+   <td style="text-align:right;"> 2129 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Saint Vincent and the Grenadines </td>
+   <td style="text-align:right;"> 23077 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 23077 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Samoa </td>
+   <td style="text-align:right;"> 8801 </td>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:right;"> 8811 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> San Marino </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> São Tomé and Príncipe </td>
+   <td style="text-align:right;"> 11750 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 11750 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Saudi Arabia </td>
+   <td style="text-align:right;"> 68082 </td>
+   <td style="text-align:right;"> 39920 </td>
+   <td style="text-align:right;"> 108002 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Senegal </td>
+   <td style="text-align:right;"> 474162 </td>
+   <td style="text-align:right;"> 2079 </td>
+   <td style="text-align:right;"> 476241 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Serbia </td>
+   <td style="text-align:right;"> 2067 </td>
+   <td style="text-align:right;"> 6878 </td>
+   <td style="text-align:right;"> 8945 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Seychelles </td>
+   <td style="text-align:right;"> 127128 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 127128 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sierra Leone </td>
+   <td style="text-align:right;"> 202100 </td>
+   <td style="text-align:right;"> 75 </td>
+   <td style="text-align:right;"> 202175 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Singapore </td>
+   <td style="text-align:right;"> 1234 </td>
+   <td style="text-align:right;"> 6112 </td>
+   <td style="text-align:right;"> 7346 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sint Maarten </td>
+   <td style="text-align:right;"> 253 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 253 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Slovakia </td>
+   <td style="text-align:right;"> 1866 </td>
+   <td style="text-align:right;"> 2169 </td>
+   <td style="text-align:right;"> 4035 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Slovenia </td>
+   <td style="text-align:right;"> 311 </td>
+   <td style="text-align:right;"> 1844 </td>
+   <td style="text-align:right;"> 2155 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Solomon Islands </td>
+   <td style="text-align:right;"> 66445 </td>
+   <td style="text-align:right;"> 10582 </td>
+   <td style="text-align:right;"> 77027 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Somalia </td>
+   <td style="text-align:right;"> 30000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 30000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> South Africa </td>
+   <td style="text-align:right;"> 622070 </td>
+   <td style="text-align:right;"> 7994 </td>
+   <td style="text-align:right;"> 630064 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> South Korea </td>
+   <td style="text-align:right;"> 1395951 </td>
+   <td style="text-align:right;"> 1859220 </td>
+   <td style="text-align:right;"> 3255171 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> South Sudan </td>
+   <td style="text-align:right;"> 35000 </td>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:right;"> 35020 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Spain </td>
+   <td style="text-align:right;"> 915137 </td>
+   <td style="text-align:right;"> 283831 </td>
+   <td style="text-align:right;"> 1198968 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sri Lanka </td>
+   <td style="text-align:right;"> 521637 </td>
+   <td style="text-align:right;"> 30974 </td>
+   <td style="text-align:right;"> 552611 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sudan </td>
+   <td style="text-align:right;"> 33002 </td>
+   <td style="text-align:right;"> 4500 </td>
+   <td style="text-align:right;"> 37502 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Suriname </td>
+   <td style="text-align:right;"> 47013 </td>
+   <td style="text-align:right;"> 102 </td>
+   <td style="text-align:right;"> 47115 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sweden </td>
+   <td style="text-align:right;"> 208783 </td>
+   <td style="text-align:right;"> 15747 </td>
+   <td style="text-align:right;"> 224530 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Switzerland </td>
+   <td style="text-align:right;"> 1851 </td>
+   <td style="text-align:right;"> 1733 </td>
+   <td style="text-align:right;"> 3584 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Syria </td>
+   <td style="text-align:right;"> 4500 </td>
+   <td style="text-align:right;"> 3500 </td>
+   <td style="text-align:right;"> 8000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tajikistan </td>
+   <td style="text-align:right;"> 1100 </td>
+   <td style="text-align:right;"> 450 </td>
+   <td style="text-align:right;"> 1550 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tanzania </td>
+   <td style="text-align:right;"> 370966 </td>
+   <td style="text-align:right;"> 12547 </td>
+   <td style="text-align:right;"> 383513 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Thailand </td>
+   <td style="text-align:right;"> 1530583 </td>
+   <td style="text-align:right;"> 962571 </td>
+   <td style="text-align:right;"> 2493154 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Timor-Leste </td>
+   <td style="text-align:right;"> 3200 </td>
+   <td style="text-align:right;"> 1560 </td>
+   <td style="text-align:right;"> 4760 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Togo </td>
+   <td style="text-align:right;"> 31891 </td>
+   <td style="text-align:right;"> 98 </td>
+   <td style="text-align:right;"> 31989 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tonga </td>
+   <td style="text-align:right;"> 1697 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 1700 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Trinidad and Tobago </td>
+   <td style="text-align:right;"> 13027 </td>
+   <td style="text-align:right;"> 11 </td>
+   <td style="text-align:right;"> 13038 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tunisia </td>
+   <td style="text-align:right;"> 115064 </td>
+   <td style="text-align:right;"> 16165 </td>
+   <td style="text-align:right;"> 131229 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Turkey </td>
+   <td style="text-align:right;"> 335326 </td>
+   <td style="text-align:right;"> 250331 </td>
+   <td style="text-align:right;"> 585657 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Turkmenistan </td>
+   <td style="text-align:right;"> 15000 </td>
+   <td style="text-align:right;"> 30 </td>
+   <td style="text-align:right;"> 15030 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Turks and Caicos Islands </td>
+   <td style="text-align:right;"> 2780 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 2780 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tuvalu </td>
+   <td style="text-align:right;"> 7684 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 7687 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Uganda </td>
+   <td style="text-align:right;"> 389244 </td>
+   <td style="text-align:right;"> 118051 </td>
+   <td style="text-align:right;"> 507295 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ukraine </td>
+   <td style="text-align:right;"> 75743 </td>
+   <td style="text-align:right;"> 21425 </td>
+   <td style="text-align:right;"> 97168 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> United Arab Emirates </td>
+   <td style="text-align:right;"> 73000 </td>
+   <td style="text-align:right;"> 1241 </td>
+   <td style="text-align:right;"> 74241 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> United Kingdom </td>
+   <td style="text-align:right;"> 702405 </td>
+   <td style="text-align:right;"> 194492 </td>
+   <td style="text-align:right;"> 896897 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> United States </td>
+   <td style="text-align:right;"> 4931017 </td>
+   <td style="text-align:right;"> 444369 </td>
+   <td style="text-align:right;"> 5375386 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Uruguay </td>
+   <td style="text-align:right;"> 51500 </td>
+   <td style="text-align:right;"> 70 </td>
+   <td style="text-align:right;"> 51570 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> US Virgin Islands </td>
+   <td style="text-align:right;"> 551 </td>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:right;"> 559 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Uzbekistan </td>
+   <td style="text-align:right;"> 27267 </td>
+   <td style="text-align:right;"> 38055 </td>
+   <td style="text-align:right;"> 65322 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Vanuatu </td>
+   <td style="text-align:right;"> 44002 </td>
+   <td style="text-align:right;"> 16 </td>
+   <td style="text-align:right;"> 44018 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Venezuela </td>
+   <td style="text-align:right;"> 284175 </td>
+   <td style="text-align:right;"> 25998 </td>
+   <td style="text-align:right;"> 310173 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Vietnam </td>
+   <td style="text-align:right;"> 2785940 </td>
+   <td style="text-align:right;"> 3634531 </td>
+   <td style="text-align:right;"> 6420471 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Yemen </td>
+   <td style="text-align:right;"> 154450 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 154450 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Zambia </td>
+   <td style="text-align:right;"> 83918 </td>
+   <td style="text-align:right;"> 30285 </td>
+   <td style="text-align:right;"> 114203 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Zimbabwe </td>
+   <td style="text-align:right;"> 15711 </td>
+   <td style="text-align:right;"> 10085 </td>
+   <td style="text-align:right;"> 25796 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</section>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1"></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(continents) <span class="sc">|&gt;</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">font_size =</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 20px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> country </th>
+   <th style="text-align:left;"> continent </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Afghanistan </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Åland Islands </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Albania </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Algeria </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> American Samoa </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Andorra </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Angola </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Anguilla </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Antigua &amp; Barbuda </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Argentina </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Armenia </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Aruba </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Australia </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Austria </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Azerbaijan </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bahamas </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bahrain </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bangladesh </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Barbados </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Belarus </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Belgium </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Belize </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Benin </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bermuda </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bhutan </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bolivia </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Caribbean Netherlands </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bosnia &amp; Herzegovina </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Botswana </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Brazil </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Brunei </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bulgaria </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Burkina Faso </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Burundi </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cape Verde </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cambodia </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cameroon </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Canada </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cayman Islands </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Central African Republic </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Chad </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Chile </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> China </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Christmas Island </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Colombia </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Comoros </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Congo - Brazzaville </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cook Islands </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Costa Rica </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Côte d’Ivoire </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Croatia </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cuba </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Curaçao </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cyprus </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Czechia </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> North Korea </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Congo - Kinshasa </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Denmark </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Djibouti </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dominica </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dominican Republic </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ecuador </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Egypt </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> El Salvador </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equatorial Guinea </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Eritrea </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Estonia </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ethiopia </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Falkland Islands </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Faroe Islands </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Fiji </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Finland </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> France </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> French Guiana </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> French Polynesia </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Gabon </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Gambia </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Georgia </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Germany </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ghana </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Gibraltar </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Greece </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Greenland </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Grenada </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Guadeloupe </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Guam </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Guatemala </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Guernsey </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Guinea </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Guinea-Bissau </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Guyana </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Haiti </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Vatican City </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Honduras </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Hong Kong SAR China </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Hungary </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Iceland </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> India </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Indonesia </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Iran </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Iraq </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ireland </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Isle of Man </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Israel </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Italy </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jamaica </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Japan </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jersey </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jordan </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kazakhstan </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kenya </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kiribati </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kuwait </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kyrgyzstan </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Laos </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Latvia </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Lebanon </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Lesotho </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Liberia </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Libya </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Liechtenstein </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Lithuania </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Luxembourg </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Macau SAR China </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Madagascar </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Malawi </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Malaysia </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maldives </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mali </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Malta </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Marshall Islands </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Martinique </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mauritania </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mauritius </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mayotte </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mexico </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Micronesia (Federated States of) </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Monaco </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mongolia </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Montenegro </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Montserrat </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Morocco </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mozambique </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Myanmar (Burma) </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Namibia </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Nauru </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Nepal </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Netherlands </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Netherlands Antilles </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> New Caledonia </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> New Zealand </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Nicaragua </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Niger </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Nigeria </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Niue </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Norfolk Island </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Northern Mariana Islands </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Norway </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Oman </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Pakistan </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Palau </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Palestinian Territories </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Panama </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Papua New Guinea </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Paraguay </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Peru </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Philippines </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Pitcairn Islands </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Poland </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Portugal </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Puerto Rico </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Qatar </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> South Korea </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Moldova </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Réunion </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Romania </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Russia </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Rwanda </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> St. Barthélemy </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> St. Helena </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> St. Kitts &amp; Nevis </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> St. Lucia </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Saint Martin (French part) </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> St. Pierre &amp; Miquelon </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> St. Vincent &amp; Grenadines </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Samoa </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> San Marino </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> São Tomé &amp; Príncipe </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Saudi Arabia </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Senegal </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Serbia </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Seychelles </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sierra Leone </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Singapore </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sint Maarten </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Slovakia </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Slovenia </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Solomon Islands </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Somalia </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Somaliland </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> South Africa </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> South Sudan </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Spain </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sri Lanka </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sudan </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Suriname </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Svalbard &amp; Jan Mayen </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Swaziland </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sweden </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Switzerland </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Syria </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Taiwan </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tajikistan </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Thailand </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Macedonia </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Timor-Leste </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Togo </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tokelau </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tonga </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Trinidad &amp; Tobago </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tunisia </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Turkey </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Turkmenistan </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Turks &amp; Caicos Islands </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tuvalu </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Uganda </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ukraine </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> United Arab Emirates </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> United Arab Republic </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> United Kingdom </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tanzania </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> United States </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Uruguay </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Uzbekistan </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Vanuatu </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Venezuela </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Vietnam </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Republic of Vietnam </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> British Virgin Islands </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> U.S. Virgin Islands </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Wallis &amp; Futuna </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Western Sahara </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Yemen </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Zambia </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Zimbabwe </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<p>We want to keep all rows and columns from <code>fisheries</code> and add a column for corresponding continents. Which join function should we use?</p>
+</section>
+<section id="section-2" class="level2">
+<h2 class="anchored" data-anchor-id="section-2"></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">left_join</span>(fisheries, continents, <span class="at">by =</span> <span class="st">"country"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>() <span class="sc">|&gt;</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">font_size =</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 20px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> country </th>
+   <th style="text-align:right;"> capture </th>
+   <th style="text-align:right;"> aquaculture </th>
+   <th style="text-align:right;"> total </th>
+   <th style="text-align:left;"> continent </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Afghanistan </td>
+   <td style="text-align:right;"> 1000 </td>
+   <td style="text-align:right;"> 1200 </td>
+   <td style="text-align:right;"> 2200 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Albania </td>
+   <td style="text-align:right;"> 7886 </td>
+   <td style="text-align:right;"> 950 </td>
+   <td style="text-align:right;"> 8836 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Algeria </td>
+   <td style="text-align:right;"> 95000 </td>
+   <td style="text-align:right;"> 1361 </td>
+   <td style="text-align:right;"> 96361 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> American Samoa </td>
+   <td style="text-align:right;"> 3047 </td>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:right;"> 3067 </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Andorra </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Angola </td>
+   <td style="text-align:right;"> 486490 </td>
+   <td style="text-align:right;"> 655 </td>
+   <td style="text-align:right;"> 487145 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Antigua and Barbuda </td>
+   <td style="text-align:right;"> 3000 </td>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:right;"> 3010 </td>
+   <td style="text-align:left;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Argentina </td>
+   <td style="text-align:right;"> 755226 </td>
+   <td style="text-align:right;"> 3673 </td>
+   <td style="text-align:right;"> 758899 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Armenia </td>
+   <td style="text-align:right;"> 3758 </td>
+   <td style="text-align:right;"> 16381 </td>
+   <td style="text-align:right;"> 20139 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Aruba </td>
+   <td style="text-align:right;"> 142 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 142 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Australia </td>
+   <td style="text-align:right;"> 174629 </td>
+   <td style="text-align:right;"> 96847 </td>
+   <td style="text-align:right;"> 271476 </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Austria </td>
+   <td style="text-align:right;"> 350 </td>
+   <td style="text-align:right;"> 3483 </td>
+   <td style="text-align:right;"> 3833 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Azerbaijan </td>
+   <td style="text-align:right;"> 676 </td>
+   <td style="text-align:right;"> 640 </td>
+   <td style="text-align:right;"> 1316 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bahamas </td>
+   <td style="text-align:right;"> 11625 </td>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:right;"> 11633 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bahrain </td>
+   <td style="text-align:right;"> 15000 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 15006 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bangladesh </td>
+   <td style="text-align:right;"> 1674770 </td>
+   <td style="text-align:right;"> 2203554 </td>
+   <td style="text-align:right;"> 3878324 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Barbados </td>
+   <td style="text-align:right;"> 1735 </td>
+   <td style="text-align:right;"> 26 </td>
+   <td style="text-align:right;"> 1761 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Belarus </td>
+   <td style="text-align:right;"> 686 </td>
+   <td style="text-align:right;"> 11199 </td>
+   <td style="text-align:right;"> 11885 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Belgium </td>
+   <td style="text-align:right;"> 26970 </td>
+   <td style="text-align:right;"> 44 </td>
+   <td style="text-align:right;"> 27014 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Belize </td>
+   <td style="text-align:right;"> 91432 </td>
+   <td style="text-align:right;"> 953 </td>
+   <td style="text-align:right;"> 92385 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Benin </td>
+   <td style="text-align:right;"> 49806 </td>
+   <td style="text-align:right;"> 3080 </td>
+   <td style="text-align:right;"> 52886 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bermuda </td>
+   <td style="text-align:right;"> 410 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 410 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bhutan </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 150 </td>
+   <td style="text-align:right;"> 157 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bolivia </td>
+   <td style="text-align:right;"> 7000 </td>
+   <td style="text-align:right;"> 3000 </td>
+   <td style="text-align:right;"> 10000 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bosnia and Herzegovina </td>
+   <td style="text-align:right;"> 305 </td>
+   <td style="text-align:right;"> 4564 </td>
+   <td style="text-align:right;"> 4869 </td>
+   <td style="text-align:left;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Botswana </td>
+   <td style="text-align:right;"> 38 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 53 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Brazil </td>
+   <td style="text-align:right;"> 705000 </td>
+   <td style="text-align:right;"> 581230 </td>
+   <td style="text-align:right;"> 1286230 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> British Virgin Islands </td>
+   <td style="text-align:right;"> 1200 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1200 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Brunei </td>
+   <td style="text-align:right;"> 13292 </td>
+   <td style="text-align:right;"> 948 </td>
+   <td style="text-align:right;"> 14240 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bulgaria </td>
+   <td style="text-align:right;"> 8614 </td>
+   <td style="text-align:right;"> 15762 </td>
+   <td style="text-align:right;"> 24376 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Burkina Faso </td>
+   <td style="text-align:right;"> 22070 </td>
+   <td style="text-align:right;"> 470 </td>
+   <td style="text-align:right;"> 22540 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Burundi </td>
+   <td style="text-align:right;"> 21805 </td>
+   <td style="text-align:right;"> 1330 </td>
+   <td style="text-align:right;"> 23135 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cambodia </td>
+   <td style="text-align:right;"> 629950 </td>
+   <td style="text-align:right;"> 172500 </td>
+   <td style="text-align:right;"> 802450 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cameroon </td>
+   <td style="text-align:right;"> 233190 </td>
+   <td style="text-align:right;"> 2315 </td>
+   <td style="text-align:right;"> 235505 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Canada </td>
+   <td style="text-align:right;"> 874727 </td>
+   <td style="text-align:right;"> 200765 </td>
+   <td style="text-align:right;"> 1075492 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cape Verde </td>
+   <td style="text-align:right;"> 19900 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 19900 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cayman Islands </td>
+   <td style="text-align:right;"> 125 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 125 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Central African Republic </td>
+   <td style="text-align:right;"> 29000 </td>
+   <td style="text-align:right;"> 190 </td>
+   <td style="text-align:right;"> 29190 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Chad </td>
+   <td style="text-align:right;"> 110000 </td>
+   <td style="text-align:right;"> 94 </td>
+   <td style="text-align:right;"> 110094 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Chile </td>
+   <td style="text-align:right;"> 1829238 </td>
+   <td style="text-align:right;"> 1050117 </td>
+   <td style="text-align:right;"> 2879355 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> China </td>
+   <td style="text-align:right;"> 17800000 </td>
+   <td style="text-align:right;"> 63700000 </td>
+   <td style="text-align:right;"> 81500000 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Colombia </td>
+   <td style="text-align:right;"> 86344 </td>
+   <td style="text-align:right;"> 96970 </td>
+   <td style="text-align:right;"> 183314 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Comoros </td>
+   <td style="text-align:right;"> 16407 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 16407 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Costa Rica </td>
+   <td style="text-align:right;"> 14750 </td>
+   <td style="text-align:right;"> 22421 </td>
+   <td style="text-align:right;"> 37171 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Croatia </td>
+   <td style="text-align:right;"> 72312 </td>
+   <td style="text-align:right;"> 15805 </td>
+   <td style="text-align:right;"> 88117 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cuba </td>
+   <td style="text-align:right;"> 23574 </td>
+   <td style="text-align:right;"> 29185 </td>
+   <td style="text-align:right;"> 52759 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Curaçao </td>
+   <td style="text-align:right;"> 35534 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 35534 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cyprus </td>
+   <td style="text-align:right;"> 1507 </td>
+   <td style="text-align:right;"> 6625 </td>
+   <td style="text-align:right;"> 8132 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Czech Republic </td>
+   <td style="text-align:right;"> 3507 </td>
+   <td style="text-align:right;"> 20952 </td>
+   <td style="text-align:right;"> 24459 </td>
+   <td style="text-align:left;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Democratic Republic of the Congo </td>
+   <td style="text-align:right;"> 237372 </td>
+   <td style="text-align:right;"> 3161 </td>
+   <td style="text-align:right;"> 240533 </td>
+   <td style="text-align:left;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Denmark </td>
+   <td style="text-align:right;"> 670344 </td>
+   <td style="text-align:right;"> 36337 </td>
+   <td style="text-align:right;"> 706681 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Djibouti </td>
+   <td style="text-align:right;"> 2220 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 2220 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dominica </td>
+   <td style="text-align:right;"> 770 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 776 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dominican Republic </td>
+   <td style="text-align:right;"> 14640 </td>
+   <td style="text-align:right;"> 2285 </td>
+   <td style="text-align:right;"> 16925 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ecuador </td>
+   <td style="text-align:right;"> 715495 </td>
+   <td style="text-align:right;"> 451090 </td>
+   <td style="text-align:right;"> 1166585 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Egypt </td>
+   <td style="text-align:right;"> 335614 </td>
+   <td style="text-align:right;"> 1370660 </td>
+   <td style="text-align:right;"> 1706274 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> El Salvador </td>
+   <td style="text-align:right;"> 54084 </td>
+   <td style="text-align:right;"> 7956 </td>
+   <td style="text-align:right;"> 62040 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Equatorial Guinea </td>
+   <td style="text-align:right;"> 8000 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 8015 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Eritrea </td>
+   <td style="text-align:right;"> 4300 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 4300 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Estonia </td>
+   <td style="text-align:right;"> 75931 </td>
+   <td style="text-align:right;"> 868 </td>
+   <td style="text-align:right;"> 76799 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Eswatini </td>
+   <td style="text-align:right;"> 65 </td>
+   <td style="text-align:right;"> 100 </td>
+   <td style="text-align:right;"> 165 </td>
+   <td style="text-align:left;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ethiopia </td>
+   <td style="text-align:right;"> 45500 </td>
+   <td style="text-align:right;"> 95 </td>
+   <td style="text-align:right;"> 45595 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Faroe Islands </td>
+   <td style="text-align:right;"> 568435 </td>
+   <td style="text-align:right;"> 83300 </td>
+   <td style="text-align:right;"> 651735 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Federated States of Micronesia </td>
+   <td style="text-align:right;"> 88397 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 88397 </td>
+   <td style="text-align:left;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Fiji </td>
+   <td style="text-align:right;"> 44663 </td>
+   <td style="text-align:right;"> 754 </td>
+   <td style="text-align:right;"> 45417 </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Finland </td>
+   <td style="text-align:right;"> 192065 </td>
+   <td style="text-align:right;"> 14412 </td>
+   <td style="text-align:right;"> 206477 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> France </td>
+   <td style="text-align:right;"> 561173 </td>
+   <td style="text-align:right;"> 166640 </td>
+   <td style="text-align:right;"> 727813 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> France </td>
+   <td style="text-align:right;"> 90 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 90 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> French Polynesia </td>
+   <td style="text-align:right;"> 13754 </td>
+   <td style="text-align:right;"> 1343 </td>
+   <td style="text-align:right;"> 15097 </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Gabon </td>
+   <td style="text-align:right;"> 31000 </td>
+   <td style="text-align:right;"> 45 </td>
+   <td style="text-align:right;"> 31045 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Gambia </td>
+   <td style="text-align:right;"> 58261 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 58266 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Georgia </td>
+   <td style="text-align:right;"> 30078 </td>
+   <td style="text-align:right;"> 670 </td>
+   <td style="text-align:right;"> 30748 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Germany </td>
+   <td style="text-align:right;"> 271185 </td>
+   <td style="text-align:right;"> 41721 </td>
+   <td style="text-align:right;"> 312906 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ghana </td>
+   <td style="text-align:right;"> 327457 </td>
+   <td style="text-align:right;"> 52480 </td>
+   <td style="text-align:right;"> 379937 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Gibraltar </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Greece </td>
+   <td style="text-align:right;"> 76362 </td>
+   <td style="text-align:right;"> 123410 </td>
+   <td style="text-align:right;"> 199772 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Greenland </td>
+   <td style="text-align:right;"> 273175 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 273175 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Grenada </td>
+   <td style="text-align:right;"> 2550 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 2550 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Guam </td>
+   <td style="text-align:right;"> 1391 </td>
+   <td style="text-align:right;"> 110 </td>
+   <td style="text-align:right;"> 1501 </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Guatemala </td>
+   <td style="text-align:right;"> 19011 </td>
+   <td style="text-align:right;"> 26268 </td>
+   <td style="text-align:right;"> 45279 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Guinea </td>
+   <td style="text-align:right;"> 128000 </td>
+   <td style="text-align:right;"> 250 </td>
+   <td style="text-align:right;"> 128250 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Guinea-Bissau </td>
+   <td style="text-align:right;"> 6700 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 6700 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Guyana </td>
+   <td style="text-align:right;"> 42142 </td>
+   <td style="text-align:right;"> 337 </td>
+   <td style="text-align:right;"> 42479 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Haiti </td>
+   <td style="text-align:right;"> 16510 </td>
+   <td style="text-align:right;"> 1220 </td>
+   <td style="text-align:right;"> 17730 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Honduras </td>
+   <td style="text-align:right;"> 10600 </td>
+   <td style="text-align:right;"> 53100 </td>
+   <td style="text-align:right;"> 63700 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Hong Kong </td>
+   <td style="text-align:right;"> 142775 </td>
+   <td style="text-align:right;"> 4258 </td>
+   <td style="text-align:right;"> 147033 </td>
+   <td style="text-align:left;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Hungary </td>
+   <td style="text-align:right;"> 5048 </td>
+   <td style="text-align:right;"> 16248 </td>
+   <td style="text-align:right;"> 21296 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Iceland </td>
+   <td style="text-align:right;"> 1085176 </td>
+   <td style="text-align:right;"> 15129 </td>
+   <td style="text-align:right;"> 1100305 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> India </td>
+   <td style="text-align:right;"> 5082332 </td>
+   <td style="text-align:right;"> 5703002 </td>
+   <td style="text-align:right;"> 10785334 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Indonesia </td>
+   <td style="text-align:right;"> 6584419 </td>
+   <td style="text-align:right;"> 16600000 </td>
+   <td style="text-align:right;"> 23184419 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Iran </td>
+   <td style="text-align:right;"> 695407 </td>
+   <td style="text-align:right;"> 398129 </td>
+   <td style="text-align:right;"> 1093536 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Iraq </td>
+   <td style="text-align:right;"> 28000 </td>
+   <td style="text-align:right;"> 28835 </td>
+   <td style="text-align:right;"> 56835 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ireland </td>
+   <td style="text-align:right;"> 259845 </td>
+   <td style="text-align:right;"> 40244 </td>
+   <td style="text-align:right;"> 300089 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Isle of Man </td>
+   <td style="text-align:right;"> 7040 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 7040 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Israel </td>
+   <td style="text-align:right;"> 1758 </td>
+   <td style="text-align:right;"> 18914 </td>
+   <td style="text-align:right;"> 20672 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Italy </td>
+   <td style="text-align:right;"> 198130 </td>
+   <td style="text-align:right;"> 157109 </td>
+   <td style="text-align:right;"> 355239 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ivory Coast </td>
+   <td style="text-align:right;"> 67500 </td>
+   <td style="text-align:right;"> 4701 </td>
+   <td style="text-align:right;"> 72201 </td>
+   <td style="text-align:left;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jamaica </td>
+   <td style="text-align:right;"> 16800 </td>
+   <td style="text-align:right;"> 620 </td>
+   <td style="text-align:right;"> 17420 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Japan </td>
+   <td style="text-align:right;"> 3275263 </td>
+   <td style="text-align:right;"> 1067994 </td>
+   <td style="text-align:right;"> 4343257 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jersey and Guernsey </td>
+   <td style="text-align:right;"> 2985 </td>
+   <td style="text-align:right;"> 1499 </td>
+   <td style="text-align:right;"> 4484 </td>
+   <td style="text-align:left;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jordan </td>
+   <td style="text-align:right;"> 873 </td>
+   <td style="text-align:right;"> 885 </td>
+   <td style="text-align:right;"> 1758 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kazakhstan </td>
+   <td style="text-align:right;"> 41335 </td>
+   <td style="text-align:right;"> 1878 </td>
+   <td style="text-align:right;"> 43213 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kenya </td>
+   <td style="text-align:right;"> 171391 </td>
+   <td style="text-align:right;"> 15360 </td>
+   <td style="text-align:right;"> 186751 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kiribati </td>
+   <td style="text-align:right;"> 172822 </td>
+   <td style="text-align:right;"> 3652 </td>
+   <td style="text-align:right;"> 176474 </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kuwait </td>
+   <td style="text-align:right;"> 5493 </td>
+   <td style="text-align:right;"> 196 </td>
+   <td style="text-align:right;"> 5689 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kyrgyzstan </td>
+   <td style="text-align:right;"> 89 </td>
+   <td style="text-align:right;"> 1931 </td>
+   <td style="text-align:right;"> 2020 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Laos </td>
+   <td style="text-align:right;"> 70915 </td>
+   <td style="text-align:right;"> 109835 </td>
+   <td style="text-align:right;"> 180750 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Latvia </td>
+   <td style="text-align:right;"> 114806 </td>
+   <td style="text-align:right;"> 788 </td>
+   <td style="text-align:right;"> 115594 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Lebanon </td>
+   <td style="text-align:right;"> 4291 </td>
+   <td style="text-align:right;"> 1015 </td>
+   <td style="text-align:right;"> 5306 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Lesotho </td>
+   <td style="text-align:right;"> 52 </td>
+   <td style="text-align:right;"> 1050 </td>
+   <td style="text-align:right;"> 1102 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Liberia </td>
+   <td style="text-align:right;"> 14700 </td>
+   <td style="text-align:right;"> 40 </td>
+   <td style="text-align:right;"> 14740 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Libya </td>
+   <td style="text-align:right;"> 30002 </td>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:right;"> 30012 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Liechtenstein </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Lithuania </td>
+   <td style="text-align:right;"> 106945 </td>
+   <td style="text-align:right;"> 4393 </td>
+   <td style="text-align:right;"> 111338 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Luxembourg </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Macao </td>
+   <td style="text-align:right;"> 1500 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1500 </td>
+   <td style="text-align:left;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Madagascar </td>
+   <td style="text-align:right;"> 142333 </td>
+   <td style="text-align:right;"> 25998 </td>
+   <td style="text-align:right;"> 168331 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Malawi </td>
+   <td style="text-align:right;"> 152852 </td>
+   <td style="text-align:right;"> 7646 </td>
+   <td style="text-align:right;"> 160498 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Malaysia </td>
+   <td style="text-align:right;"> 1584371 </td>
+   <td style="text-align:right;"> 407887 </td>
+   <td style="text-align:right;"> 1992258 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Maldives </td>
+   <td style="text-align:right;"> 129191 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 129191 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mali </td>
+   <td style="text-align:right;"> 102486 </td>
+   <td style="text-align:right;"> 4194 </td>
+   <td style="text-align:right;"> 106680 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Malta </td>
+   <td style="text-align:right;"> 2420 </td>
+   <td style="text-align:right;"> 6073 </td>
+   <td style="text-align:right;"> 8493 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Marshall Islands </td>
+   <td style="text-align:right;"> 64795 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 64800 </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mauritania </td>
+   <td style="text-align:right;"> 609754 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 609754 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mauritius </td>
+   <td style="text-align:right;"> 18062 </td>
+   <td style="text-align:right;"> 1021 </td>
+   <td style="text-align:right;"> 19083 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mexico </td>
+   <td style="text-align:right;"> 1524467 </td>
+   <td style="text-align:right;"> 221328 </td>
+   <td style="text-align:right;"> 1745795 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Moldova </td>
+   <td style="text-align:right;"> 50 </td>
+   <td style="text-align:right;"> 16011 </td>
+   <td style="text-align:right;"> 16061 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Monaco </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mongolia </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Montenegro </td>
+   <td style="text-align:right;"> 1595 </td>
+   <td style="text-align:right;"> 929 </td>
+   <td style="text-align:right;"> 2524 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Morocco </td>
+   <td style="text-align:right;"> 1454105 </td>
+   <td style="text-align:right;"> 1142 </td>
+   <td style="text-align:right;"> 1455247 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mozambique </td>
+   <td style="text-align:right;"> 299591 </td>
+   <td style="text-align:right;"> 1180 </td>
+   <td style="text-align:right;"> 300771 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Myanmar </td>
+   <td style="text-align:right;"> 2072390 </td>
+   <td style="text-align:right;"> 1017644 </td>
+   <td style="text-align:right;"> 3090034 </td>
+   <td style="text-align:left;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Namibia </td>
+   <td style="text-align:right;"> 503878 </td>
+   <td style="text-align:right;"> 591 </td>
+   <td style="text-align:right;"> 504469 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Nauru </td>
+   <td style="text-align:right;"> 530 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 530 </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Nepal </td>
+   <td style="text-align:right;"> 21500 </td>
+   <td style="text-align:right;"> 49043 </td>
+   <td style="text-align:right;"> 70543 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Netherlands </td>
+   <td style="text-align:right;"> 370274 </td>
+   <td style="text-align:right;"> 62940 </td>
+   <td style="text-align:right;"> 433214 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> New Caledonia </td>
+   <td style="text-align:right;"> 3815 </td>
+   <td style="text-align:right;"> 1587 </td>
+   <td style="text-align:right;"> 5402 </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> New Zealand </td>
+   <td style="text-align:right;"> 424791 </td>
+   <td style="text-align:right;"> 109016 </td>
+   <td style="text-align:right;"> 533807 </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Nicaragua </td>
+   <td style="text-align:right;"> 45500 </td>
+   <td style="text-align:right;"> 22530 </td>
+   <td style="text-align:right;"> 68030 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Niger </td>
+   <td style="text-align:right;"> 34592 </td>
+   <td style="text-align:right;"> 300 </td>
+   <td style="text-align:right;"> 34892 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Nigeria </td>
+   <td style="text-align:right;"> 734731 </td>
+   <td style="text-align:right;"> 306727 </td>
+   <td style="text-align:right;"> 1041458 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> North Korea </td>
+   <td style="text-align:right;"> 209000 </td>
+   <td style="text-align:right;"> 554100 </td>
+   <td style="text-align:right;"> 763100 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> North Macedonia </td>
+   <td style="text-align:right;"> 306 </td>
+   <td style="text-align:right;"> 986 </td>
+   <td style="text-align:right;"> 1292 </td>
+   <td style="text-align:left;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Northern Mariana Islands </td>
+   <td style="text-align:right;"> 950 </td>
+   <td style="text-align:right;"> 42 </td>
+   <td style="text-align:right;"> 992 </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Norway </td>
+   <td style="text-align:right;"> 2203360 </td>
+   <td style="text-align:right;"> 1326216 </td>
+   <td style="text-align:right;"> 3529576 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Oman </td>
+   <td style="text-align:right;"> 279606 </td>
+   <td style="text-align:right;"> 103 </td>
+   <td style="text-align:right;"> 279709 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Pakistan </td>
+   <td style="text-align:right;"> 513156 </td>
+   <td style="text-align:right;"> 156430 </td>
+   <td style="text-align:right;"> 669586 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Palau </td>
+   <td style="text-align:right;"> 818 </td>
+   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 841 </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Palestine </td>
+   <td style="text-align:right;"> 3306 </td>
+   <td style="text-align:right;"> 280 </td>
+   <td style="text-align:right;"> 3586 </td>
+   <td style="text-align:left;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Panama </td>
+   <td style="text-align:right;"> 144450 </td>
+   <td style="text-align:right;"> 8808 </td>
+   <td style="text-align:right;"> 153258 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Papua New Guinea </td>
+   <td style="text-align:right;"> 309245 </td>
+   <td style="text-align:right;"> 6200 </td>
+   <td style="text-align:right;"> 315445 </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Paraguay </td>
+   <td style="text-align:right;"> 17000 </td>
+   <td style="text-align:right;"> 8500 </td>
+   <td style="text-align:right;"> 25500 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Peru </td>
+   <td style="text-align:right;"> 3811802 </td>
+   <td style="text-align:right;"> 100187 </td>
+   <td style="text-align:right;"> 3911989 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Philippines </td>
+   <td style="text-align:right;"> 2027992 </td>
+   <td style="text-align:right;"> 2200914 </td>
+   <td style="text-align:right;"> 4228906 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Poland </td>
+   <td style="text-align:right;"> 218115 </td>
+   <td style="text-align:right;"> 38300 </td>
+   <td style="text-align:right;"> 256415 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Portugal </td>
+   <td style="text-align:right;"> 186950 </td>
+   <td style="text-align:right;"> 9787 </td>
+   <td style="text-align:right;"> 196737 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Puerto Rico </td>
+   <td style="text-align:right;"> 1901 </td>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:right;"> 1921 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Qatar </td>
+   <td style="text-align:right;"> 14516 </td>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:right;"> 14526 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Republic of the Congo </td>
+   <td style="text-align:right;"> 86748 </td>
+   <td style="text-align:right;"> 177 </td>
+   <td style="text-align:right;"> 86925 </td>
+   <td style="text-align:left;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Romania </td>
+   <td style="text-align:right;"> 12728 </td>
+   <td style="text-align:right;"> 12574 </td>
+   <td style="text-align:right;"> 25302 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Russia </td>
+   <td style="text-align:right;"> 4773413 </td>
+   <td style="text-align:right;"> 173840 </td>
+   <td style="text-align:right;"> 4947253 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Rwanda </td>
+   <td style="text-align:right;"> 25013 </td>
+   <td style="text-align:right;"> 580 </td>
+   <td style="text-align:right;"> 25593 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Saint Kitts and Nevis </td>
+   <td style="text-align:right;"> 65734 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 65735 </td>
+   <td style="text-align:left;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Saint Lucia </td>
+   <td style="text-align:right;"> 2097 </td>
+   <td style="text-align:right;"> 32 </td>
+   <td style="text-align:right;"> 2129 </td>
+   <td style="text-align:left;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Saint Vincent and the Grenadines </td>
+   <td style="text-align:right;"> 23077 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 23077 </td>
+   <td style="text-align:left;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Samoa </td>
+   <td style="text-align:right;"> 8801 </td>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:right;"> 8811 </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> San Marino </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> São Tomé and Príncipe </td>
+   <td style="text-align:right;"> 11750 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 11750 </td>
+   <td style="text-align:left;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Saudi Arabia </td>
+   <td style="text-align:right;"> 68082 </td>
+   <td style="text-align:right;"> 39920 </td>
+   <td style="text-align:right;"> 108002 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Senegal </td>
+   <td style="text-align:right;"> 474162 </td>
+   <td style="text-align:right;"> 2079 </td>
+   <td style="text-align:right;"> 476241 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Serbia </td>
+   <td style="text-align:right;"> 2067 </td>
+   <td style="text-align:right;"> 6878 </td>
+   <td style="text-align:right;"> 8945 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Seychelles </td>
+   <td style="text-align:right;"> 127128 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 127128 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sierra Leone </td>
+   <td style="text-align:right;"> 202100 </td>
+   <td style="text-align:right;"> 75 </td>
+   <td style="text-align:right;"> 202175 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Singapore </td>
+   <td style="text-align:right;"> 1234 </td>
+   <td style="text-align:right;"> 6112 </td>
+   <td style="text-align:right;"> 7346 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sint Maarten </td>
+   <td style="text-align:right;"> 253 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 253 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Slovakia </td>
+   <td style="text-align:right;"> 1866 </td>
+   <td style="text-align:right;"> 2169 </td>
+   <td style="text-align:right;"> 4035 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Slovenia </td>
+   <td style="text-align:right;"> 311 </td>
+   <td style="text-align:right;"> 1844 </td>
+   <td style="text-align:right;"> 2155 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Solomon Islands </td>
+   <td style="text-align:right;"> 66445 </td>
+   <td style="text-align:right;"> 10582 </td>
+   <td style="text-align:right;"> 77027 </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Somalia </td>
+   <td style="text-align:right;"> 30000 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 30000 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> South Africa </td>
+   <td style="text-align:right;"> 622070 </td>
+   <td style="text-align:right;"> 7994 </td>
+   <td style="text-align:right;"> 630064 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> South Korea </td>
+   <td style="text-align:right;"> 1395951 </td>
+   <td style="text-align:right;"> 1859220 </td>
+   <td style="text-align:right;"> 3255171 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> South Sudan </td>
+   <td style="text-align:right;"> 35000 </td>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:right;"> 35020 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Spain </td>
+   <td style="text-align:right;"> 915137 </td>
+   <td style="text-align:right;"> 283831 </td>
+   <td style="text-align:right;"> 1198968 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sri Lanka </td>
+   <td style="text-align:right;"> 521637 </td>
+   <td style="text-align:right;"> 30974 </td>
+   <td style="text-align:right;"> 552611 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sudan </td>
+   <td style="text-align:right;"> 33002 </td>
+   <td style="text-align:right;"> 4500 </td>
+   <td style="text-align:right;"> 37502 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Suriname </td>
+   <td style="text-align:right;"> 47013 </td>
+   <td style="text-align:right;"> 102 </td>
+   <td style="text-align:right;"> 47115 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sweden </td>
+   <td style="text-align:right;"> 208783 </td>
+   <td style="text-align:right;"> 15747 </td>
+   <td style="text-align:right;"> 224530 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Switzerland </td>
+   <td style="text-align:right;"> 1851 </td>
+   <td style="text-align:right;"> 1733 </td>
+   <td style="text-align:right;"> 3584 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Syria </td>
+   <td style="text-align:right;"> 4500 </td>
+   <td style="text-align:right;"> 3500 </td>
+   <td style="text-align:right;"> 8000 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tajikistan </td>
+   <td style="text-align:right;"> 1100 </td>
+   <td style="text-align:right;"> 450 </td>
+   <td style="text-align:right;"> 1550 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tanzania </td>
+   <td style="text-align:right;"> 370966 </td>
+   <td style="text-align:right;"> 12547 </td>
+   <td style="text-align:right;"> 383513 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Thailand </td>
+   <td style="text-align:right;"> 1530583 </td>
+   <td style="text-align:right;"> 962571 </td>
+   <td style="text-align:right;"> 2493154 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Timor-Leste </td>
+   <td style="text-align:right;"> 3200 </td>
+   <td style="text-align:right;"> 1560 </td>
+   <td style="text-align:right;"> 4760 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Togo </td>
+   <td style="text-align:right;"> 31891 </td>
+   <td style="text-align:right;"> 98 </td>
+   <td style="text-align:right;"> 31989 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tonga </td>
+   <td style="text-align:right;"> 1697 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 1700 </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Trinidad and Tobago </td>
+   <td style="text-align:right;"> 13027 </td>
+   <td style="text-align:right;"> 11 </td>
+   <td style="text-align:right;"> 13038 </td>
+   <td style="text-align:left;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tunisia </td>
+   <td style="text-align:right;"> 115064 </td>
+   <td style="text-align:right;"> 16165 </td>
+   <td style="text-align:right;"> 131229 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Turkey </td>
+   <td style="text-align:right;"> 335326 </td>
+   <td style="text-align:right;"> 250331 </td>
+   <td style="text-align:right;"> 585657 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Turkmenistan </td>
+   <td style="text-align:right;"> 15000 </td>
+   <td style="text-align:right;"> 30 </td>
+   <td style="text-align:right;"> 15030 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Turks and Caicos Islands </td>
+   <td style="text-align:right;"> 2780 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 2780 </td>
+   <td style="text-align:left;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tuvalu </td>
+   <td style="text-align:right;"> 7684 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 7687 </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Uganda </td>
+   <td style="text-align:right;"> 389244 </td>
+   <td style="text-align:right;"> 118051 </td>
+   <td style="text-align:right;"> 507295 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ukraine </td>
+   <td style="text-align:right;"> 75743 </td>
+   <td style="text-align:right;"> 21425 </td>
+   <td style="text-align:right;"> 97168 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> United Arab Emirates </td>
+   <td style="text-align:right;"> 73000 </td>
+   <td style="text-align:right;"> 1241 </td>
+   <td style="text-align:right;"> 74241 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> United Kingdom </td>
+   <td style="text-align:right;"> 702405 </td>
+   <td style="text-align:right;"> 194492 </td>
+   <td style="text-align:right;"> 896897 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> United States </td>
+   <td style="text-align:right;"> 4931017 </td>
+   <td style="text-align:right;"> 444369 </td>
+   <td style="text-align:right;"> 5375386 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Uruguay </td>
+   <td style="text-align:right;"> 51500 </td>
+   <td style="text-align:right;"> 70 </td>
+   <td style="text-align:right;"> 51570 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> US Virgin Islands </td>
+   <td style="text-align:right;"> 551 </td>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:right;"> 559 </td>
+   <td style="text-align:left;"> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Uzbekistan </td>
+   <td style="text-align:right;"> 27267 </td>
+   <td style="text-align:right;"> 38055 </td>
+   <td style="text-align:right;"> 65322 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Vanuatu </td>
+   <td style="text-align:right;"> 44002 </td>
+   <td style="text-align:right;"> 16 </td>
+   <td style="text-align:right;"> 44018 </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Venezuela </td>
+   <td style="text-align:right;"> 284175 </td>
+   <td style="text-align:right;"> 25998 </td>
+   <td style="text-align:right;"> 310173 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Vietnam </td>
+   <td style="text-align:right;"> 2785940 </td>
+   <td style="text-align:right;"> 3634531 </td>
+   <td style="text-align:right;"> 6420471 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Yemen </td>
+   <td style="text-align:right;"> 154450 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 154450 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Zambia </td>
+   <td style="text-align:right;"> 83918 </td>
+   <td style="text-align:right;"> 30285 </td>
+   <td style="text-align:right;"> 114203 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Zimbabwe </td>
+   <td style="text-align:right;"> 15711 </td>
+   <td style="text-align:right;"> 10085 </td>
+   <td style="text-align:right;"> 25796 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># right_join(continents, fisheries, by = "country")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
