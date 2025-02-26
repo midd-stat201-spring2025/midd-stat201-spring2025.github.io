@@ -1,7 +1,7 @@
 ---
 title: "STAT 201: Problem Set 3 (R)"
 author: "Your name"
-date: "3/4/2025"
+date: "3/3/2025"
 format: pdf
 ---
 
@@ -140,7 +140,7 @@ Based on your visualization, do the data appear to support Buzzfeed’s Claim #2
 
 **Answer:**
 
-8.  We will explore where the non-US laureates were born. In a single pipeline starting with `nobel_living_science`, filter for laureates who were living in the US when they won their prize but where born outside of the US. Then create a frequency table for their birth country, only displaying the countries with at least three laureates. Display your order in descending order of number of laureates.
+8.  We will explore where the non-US laureates were born. In a single pipeline starting with `nobel_living_science2`, filter for laureates who were living in the US when they won their prize but where born outside of the US. Then create a frequency table for their birth country, only displaying the countries with at least three laureates. Display your order in descending order of number of laureates.
 
 ```{r}
 
