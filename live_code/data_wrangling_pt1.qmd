@@ -1,6 +1,5 @@
 ---
 title: "Data wrangling with dplyr"
-date: "September 25, 2024"
 format:
   html:
     toc: true
@@ -55,7 +54,7 @@ Why do we type `Age` and not `age`?
 
 ### Multiple variables and excluding
 
-::: {.callout-note collapse="true" appearance="minimal"}
+:::: {.callout-note collapse="true" appearance="minimal"}
 ## Expand
 
 ```{r}
@@ -82,7 +81,7 @@ datascience |>
 datascience |>
   select(-Country)
 ```
-:::
+::::
 
 ## Arranging rows
 
@@ -180,10 +179,10 @@ What variables are by default included in the output from `distinct()`?
 
 It is typical for us to want to add variables to a given data frame. We do this with the `mutate()` function. We must specify:
 
-1. The name of the new variable and
-2. How to calculate the value of that new variable for each observation. This will typically involve operations involving variables already present in the data frame.
+1.  The name of the new variable and
+2.  How to calculate the value of that new variable for each observation. This will typically involve operations involving variables already present in the data frame.
 
-We link the two with an equals sign. 
+We link the two with an equals sign.
 
 ```{r}
 datascience %>%
@@ -216,7 +215,7 @@ How does the resulting data frame from `count()` compare to the original data fr
 
 We typically want to present the counts in ascending or descending order.
 
-::: {.callout-note collapse="true" appearance="minimal"}
+:::: {.callout-note collapse="true" appearance="minimal"}
 ## Expand
 
 Note that the following chunks of code do the same thing. One of them takes advantage of an additional argument in `count()`, whereas the other block of the uses an additional function:
@@ -237,7 +236,7 @@ datascience |>
 
 What happens if you pass in more than one variable into `count()`?
 :::
-:::
+::::
 
 ## Practice
 
