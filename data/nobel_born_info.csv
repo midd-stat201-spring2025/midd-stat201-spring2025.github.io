@@ -1,0 +1,999 @@
+﻿last_name,born_city,born_country,born_country_code
+van 't Hoff,Rotterdam,Netherlands,NL
+Fischer,Euskirchen,Germany,DE
+Arrhenius,Vik,Sweden,SE
+Ramsay,Glasgow,Scotland,GB
+von Baeyer,Berlin,Germany,DE
+Moissan,Paris,France,FR
+Buchner,Munich,Germany,DE
+Rutherford,Nelson,New Zealand,NZ
+Ostwald,Riga,Latvia,LV
+Wallach,Kaliningrad,Russia,RU
+Curie,Warsaw,Poland,PL
+Grignard,Cherbourg,France,FR
+Sabatier,Carcassonne,France,FR
+Werner,Mulhouse,France,FR
+Richards,Germantown PA,USA,US
+Willst√§tter,Karlsruhe,Germany,DE
+Haber,Wroclaw,Poland,PL
+Nernst,Briesen,Germany,DE
+Soddy,Eastbourne,United Kingdom,GB
+Aston,Harborne,United Kingdom,GB
+Pregl,Ljubljana,Slovenia,SI
+Zsigmondy,Vienna,Austria,AT
+Svedberg,Fler√§ng,Sweden,SE
+Wieland,Pforzheim,Germany,DE
+Windaus,Berlin,Germany,DE
+Harden,Manchester,United Kingdom,GB
+von Euler-Chelpin,Augsburg,Germany,DE
+Fischer,Hoechst,Germany,DE
+Bosch,Cologne,Germany,DE
+Bergius,Goldschmieden near Breslau,Poland,PL
+Langmuir,Brooklyn NY,USA,US
+Urey,Walkerton IN,USA,US
+Joliot,Paris,France,FR
+Joliot-Curie,Paris,France,FR
+Debye,Maastricht,Netherlands,NL
+Haworth,Chorley,United Kingdom,GB
+Karrer,Moscow,Russia,RU
+Kuhn,Vienna,Austria,AT
+Butenandt,Bremerhaven-Lehe,Germany,DE
+Ruzicka,Vukovar,Croatia,HR
+de Hevesy,Budapest,Hungary,HU
+Hahn,Frankfurt-on-the-Main,Germany,DE
+Virtanen,Helsinki,Finland,FI
+Sumner,Canton MA,USA,US
+Northrop,Yonkers NY,USA,US
+Stanley,Ridgeville IN,USA,US
+Robinson,Rufford near Chesterfield,United Kingdom,GB
+Tiselius,Stockholm,Sweden,SE
+Giauque,Niagara Falls,Canada,CA
+Diels,Hamburg,Germany,DE
+Alder,Chorz√≥w,Poland,PL
+McMillan,Redondo Beach CA,USA,US
+Seaborg,Ishpeming MI,USA,US
+Martin,London,United Kingdom,GB
+Synge,Liverpool,United Kingdom,GB
+Staudinger,Worms,Germany,DE
+Pauling,Portland OR,USA,US
+du Vigneaud,Chicago IL,USA,US
+Hinshelwood,London,United Kingdom,GB
+Semenov,Saratov,Russia,RU
+Todd,Glasgow,Scotland,GB
+Sanger,Rendcombe,United Kingdom,GB
+Heyrovsky,Prague,Czech Republic,CZ
+Libby,Grand Valley CO,USA,US
+Calvin,St. Paul MN,USA,US
+Perutz,Vienna,Austria,AT
+Kendrew,Oxford,United Kingdom,GB
+Ziegler,Helsa,Germany,DE
+Natta,Imperia,Italy,IT
+Hodgkin,Cairo,Egypt,EG
+Woodward,Boston MA,USA,US
+Mulliken,Newburyport MA,USA,US
+Eigen,Bochum,Germany,DE
+Norrish,Cambridge,United Kingdom,GB
+Porter,Stainforth,United Kingdom,GB
+Onsager,Oslo,Norway,NO
+Barton,Gravesend,United Kingdom,GB
+Hassel,Oslo,Norway,NO
+Leloir,Paris,France,FR
+Herzberg,Hamburg,Germany,DE
+Anfinsen,Monessen PA,USA,US
+Moore,Chicago IL,USA,US
+Stein,New York NY,USA,US
+Fischer,Munich,Germany,DE
+Wilkinson,Todmorden,United Kingdom,GB
+Flory,Sterling IL,USA,US
+Cornforth,Sydney,Australia,AU
+Prelog,Sarajevo,Bosnia and Herzegovina,BA
+Lipscomb,Cleveland OH,USA,US
+Prigogine,Moscow,Russia,RU
+Mitchell,Mitcham,United Kingdom,GB
+Brown,London,United Kingdom,GB
+Wittig,Berlin,Germany,DE
+Sanger,Rendcombe,United Kingdom,GB
+Berg,New York NY,USA,US
+Gilbert,Boston MA,USA,US
+Fukui,Nara,Japan,JP
+Hoffmann,Zloczov,Ukraine,UA
+Klug,Zelvas,Lithuania,LT
+Taube,Neudorf,Canada,CA
+Merrifield,Fort Worth TX,USA,US
+Hauptman,New York NY,USA,US
+Karle,New York NY,USA,US
+Herschbach,San Jos√© CA,USA,US
+Lee,Hsinchu,Taiwan,TW
+Polanyi,Berlin,Germany,DE
+Cram,Chester VT,USA,US
+Lehn,Rosheim,France,FR
+Pedersen,Pusan,South Korea,KR
+Deisenhofer,Zusamaltheim,Germany,DE
+Huber,Munich,Germany,DE
+Michel,Ludwigsburg,Germany,DE
+Altman,Montreal,Canada,CA
+Cech,Chicago IL,USA,US
+Corey,Methuen MA,USA,US
+Ernst,Winterthur,Switzerland,CH
+Marcus,Montreal,Canada,CA
+Mullis,Lenoir NC,USA,US
+Smith,Blackpool,United Kingdom,GB
+Olah,Budapest,Hungary,HU
+Crutzen,Amsterdam,Netherlands,NL
+Molina,Mexico City,Mexico,MX
+Rowland,Delaware OH,USA,US
+Curl Jr.,Alice TX,USA,US
+Kroto,Wisbech,United Kingdom,GB
+Smalley,Akron OH,USA,US
+Boyer,Provo UT,USA,US
+Walker,Halifax,United Kingdom,GB
+Skou,Lemvig,Denmark,DK
+Kohn,Vienna,Austria,AT
+Pople,Burnham-on-Sea,United Kingdom,GB
+Zewail,Damanhur,Egypt,EG
+Heeger,Sioux City IA,USA,US
+MacDiarmid,Masterton,New Zealand,NZ
+Shirakawa,Tokyo,Japan,JP
+Knowles,Taunton MA,USA,US
+Noyori,Kobe,Japan,JP
+Sharpless,Philadelphia PA,USA,US
+Fenn,New York NY,USA,US
+Tanaka,Toyama City,Japan,JP
+W√ºthrich,Aarberg,Switzerland,CH
+Agre,Northfield MN,USA,US
+MacKinnon,Burlington MA,USA,US
+Ciechanover,Haifa,Israel,IL
+Hershko,Karcag,Hungary,HU
+Rose,Brooklyn NY,USA,US
+Chauvin,Menin,Belgium,BE
+Grubbs,Possum Trot KY,USA,US
+Schrock,Berne IN,USA,US
+Kornberg,St. Louis MO,USA,US
+Ertl,Bad Cannstatt,Germany,DE
+Shimomura,Kyoto,Japan,JP
+Chalfie,Chicago IL,USA,US
+Tsien,New York NY,USA,US
+Ramakrishnan,Chidambaram Tamil Nadu,India,IN
+Steitz,Milwaukee WI,USA,US
+Yonath,Jerusalem,Israel,IL
+Heck,Springfield MA,USA,US
+Negishi,Changchun,China,CN
+Suzuki,Mukawa,Japan,JP
+Shechtman,Tel Aviv,Israel,IL
+Lefkowitz,New York NY,USA,US
+Kobilka,Little Falls MN,USA,US
+Karplus,Vienna,Austria,AT
+Levitt,Pretoria,South Africa,ZA
+Warshel,Kibbutz Sde-Nahum,Israel,IL
+Betzig,Ann Arbor MI,USA,US
+Hell,Arad,Romania,RO
+Moerner,Pleasanton CA,USA,US
+Lindahl,Stockholm,Sweden,SE
+Modrich,Raton NM,USA,US
+Sancar,Savur,Turkey,TR
+Sauvage,Paris,France,FR
+Stoddart,Edinburgh,United Kingdom,GB
+Feringa,Barger-Compascuum,Netherlands,NL
+Dubochet,Aigle,Switzerland,CH
+Frank,Siegen,Germany,DE
+Henderson,Edinburgh,Scotland,GB
+Arnold,Pittsburgh PA,USA,US
+Smith,Norwalk CT,USA,US
+Winter,Leicester,United Kingdom,GB
+Goodenough,"Jena, Thuringia",Germany,DE
+Whittingham,Nottingham,United Kingdom,GB
+Yoshino,Suita,Japan,JP
+Charpentier,Juvisy-sur-Orge,France,FR
+Doudna,Washington DC,USA,US
+List,Frankfurt-on-the-Main,Germany,DE
+MacMillan,Bellshill,United Kingdom,GB
+Bertozzi,Boston MA,USA,US
+Meldal,Copenhagen,Denmark,DK
+Sharpless,Philadelphia PA,USA,US
+Bawendi,Paris,France,FR
+Brus,Cleveland OH,USA,US
+Yekimov,St. Petersburg,Russia,RU
+Frisch,Oslo,Norway,NO
+Tinbergen,the Hague,Netherlands,NL
+Samuelson,Gary IN,USA,US
+Kuznets,Pinsk,Belarus,BY
+Hicks,Warwick,United Kingdom,GB
+Arrow,New York NY,USA,US
+Leontief,St. Petersburg,Russia,RU
+Myrdal,Skattungbyn,Sweden,SE
+von Hayek,Vienna,Austria,AT
+Kantorovich,St. Petersburg,Russia,RU
+Koopmans,'s Graveland,Netherlands,NL
+Friedman,Brooklyn NY,USA,US
+Ohlin,Klippan,Sweden,SE
+Meade,Swanage,United Kingdom,GB
+Simon,Milwaukee WI,USA,US
+Schultz,Arlington SD,USA,US
+Lewis,Castries,Saint Lucia,LC
+Klein,Omaha NE,USA,US
+Tobin,Champaign IL,USA,US
+Stigler,Renton WA,USA,US
+Debreu,Calais,France,FR
+Stone,London,United Kingdom,GB
+Modigliani,Rome,Italy,IT
+Buchanan Jr.,Murfreesboro TN,USA,US
+Solow,Brooklyn NY,USA,US
+Allais,Paris,France,FR
+Haavelmo,Skedsmo,Norway,NO
+Markowitz,Chicago IL,USA,US
+Miller,Boston MA,USA,US
+Sharpe,Boston MA,USA,US
+Coase,Willesden,United Kingdom,GB
+Becker,Pottsville PA,USA,US
+Fogel,New York NY,USA,US
+North,Cambridge MA,USA,US
+Harsanyi,Budapest,Hungary,HU
+Nash Jr.,Bluefield WV,USA,US
+Selten,Wroclaw,Poland,PL
+Lucas Jr.,Yakima WA,USA,US
+Mirrlees,Minnigaff,Scotland,GB
+Vickrey,Victoria BC,Canada,CA
+Merton,New York NY,USA,US
+Scholes,Timmins ON,Canada,CA
+Sen,Santiniketan,India,IN
+Mundell,Kingston ON,Canada,CA
+Heckman,Chicago IL,USA,US
+McFadden,Raleigh NC,USA,US
+Akerlof,New Haven CT,USA,US
+Spence,Montclair NJ,USA,US
+Stiglitz,Gary IN,USA,US
+Kahneman,Tel Aviv,Israel,IL
+Smith,Wichita KS,USA,US
+Engle III,Syracuse NY,USA,US
+Granger,Swansea,United Kingdom,GB
+Kydland,Gjesdal,Norway,NO
+Prescott,Glens Falls NY,USA,US
+Aumann,Frankfurt-on-the-Main,Germany,DE
+Schelling,Oakland CA,USA,US
+Phelps,Evanston IL,USA,US
+Hurwicz,Moscow,Russia,RU
+Maskin,New York NY,USA,US
+Myerson,Boston MA,USA,US
+Krugman,New York NY,USA,US
+Ostrom,Los Angeles CA,USA,US
+Williamson,Superior WI,USA,US
+Diamond,New York NY,USA,US
+Mortensen,Enterprise OR,USA,US
+Pissarides,Nicosia,Cyprus,CY
+Sargent,Pasadena CA,USA,US
+Sims,Washington DC,USA,US
+Roth,New York NY,USA,US
+Shapley,Cambridge MA,USA,US
+Fama,Boston MA,USA,US
+Hansen,Urbana IL,USA,US
+Shiller,Detroit MI,USA,US
+Tirole,Troyes,France,FR
+Deaton,Edinburgh,Scotland,GB
+Hart,London,United Kingdom,GB
+Holmstr√∂m,Helsinki,Finland,FI
+Thaler,East Orange NJ,USA,US
+Nordhaus,Albuquerque NM,USA,US
+Romer,Denver CO,USA,US
+Banerjee,Mumbai,India,IN
+Duflo,Paris,France,FR
+Kremer,New York NY,USA,US
+Milgrom,Detroit MI,USA,US
+Wilson,Geneva NE,USA,US
+Card,Guelph,Canada,CA
+Angrist,Columbus OH,USA,US
+Bernanke,Augusta GA,USA,US
+Diamond,Chicago IL,USA,US
+Dybvig,Gainesville FL,USA,US
+Goldin,New York NY,USA,US
+Prudhomme,Paris,France,FR
+Mommsen,Garding,Germany,DE
+Bj√∏rnson,Kvikne,Norway,NO
+Mistral,Maillane,France,FR
+Echegaray,Madrid,Spain,ES
+Sienkiewicz,Wola Okrzejska,Poland,PL
+Carducci,Val di Castello,Italy,IT
+Kipling,Bombay,India,IN
+Eucken,Aurich,Germany,DE
+Lagerl√∂f,M√•rbacka,Sweden,SE
+Heyse,Berlin,Germany,DE
+Maeterlinck,Ghent,Belgium,BE
+Hauptmann,Bad Salzbrunn,Germany,DE
+Tagore,Calcutta,India,IN
+Rolland,Clamecy,France,FR
+von Heidenstam,Olshammar,Sweden,SE
+Gjellerup,Roholte,Denmark,DK
+Pontoppidan,Fredericia,Denmark,DK
+Spitteler,Liestal,Switzerland,CH
+Hamsun,Lom,Norway,NO
+France,Paris,France,FR
+Benavente,Madrid,Spain,ES
+Yeats,Dublin,Ireland,IE
+Reymont,Kobiele Wielkie,Poland,PL
+Shaw,Dublin,Ireland,IE
+Deledda,Nuoro Sardinia,Italy,IT
+Bergson,Paris,France,FR
+Undset,Kalundborg,Denmark,DK
+Mann,L√ºbeck,Germany,DE
+Lewis,Sauk Centre MN,USA,US
+Karlfeldt,Karlbo,Sweden,SE
+Galsworthy,Kingston Hill,United Kingdom,GB
+Bunin,Voronezh,Russia,RU
+Pirandello,Agrigento Sicily,Italy,IT
+O'Neill,New York NY,USA,US
+Martin du Gard,Neuilly-sur-Seine,France,FR
+Buck,Hillsboro WV,USA,US
+Sillanp√§√§,H√§meenkyr√∂,Finland,FI
+Jensen,Fars√∏,Denmark,DK
+Mistral,Vicu√±a,Chile,CL
+Hesse,Calw,Germany,DE
+Gide,Paris,France,FR
+Eliot,St. Louis MO,USA,US
+Faulkner,New Albany MS,USA,US
+Russell,Trelleck,United Kingdom,GB
+Lagerkvist,V√§xj√∂,Sweden,SE
+Mauriac,Bordeaux,France,FR
+Churchill,Woodstock,United Kingdom,GB
+Hemingway,Oak Park IL,USA,US
+Laxness,Reykjavik,Iceland,IS
+Jim√©nez,Moguer,Spain,ES
+Camus,Mondovi,Algeria,DZ
+Pasternak,Moscow,Russia,RU
+Quasimodo,Modica,Italy,IT
+Perse,Pointe-√†-Pitre,Guadeloupe Island,GP
+Andric,Dolac,Bosnia and Herzegovina,BA
+Steinbeck,Salinas CA,USA,US
+Seferis,Izmir,Turkey,TR
+Sartre,Paris,France,FR
+Sholokhov,Veshenskaya,Russia,RU
+Agnon,Buchach,Ukraine,UA
+Sachs,Berlin,Germany,DE
+Asturias,Guatemala City,Guatemala,GT
+Kawabata,Osaka,Japan,JP
+Beckett,Dublin,Ireland,IE
+Solzhenitsyn,Kislovodsk,Russia,RU
+Neruda,Parral,Chile,CL
+B√∂ll,Cologne,Germany,DE
+White,London,United Kingdom,GB
+Johnson,Svartbj√∂rnsbyn,Sweden,SE
+Martinson,J√§msh√∂g,Sweden,SE
+Montale,Genoa,Italy,IT
+Bellow,Montreal,Canada,CA
+Aleixandre,Sevilla,Spain,ES
+Singer,Leoncin,Poland,PL
+Elytis,Ir√°klion,Greece,GR
+Milosz,≈öeteniai,Lithuania,LT
+Canetti,Ruse,Bulgaria,BG
+Garc√≠a M√°rquez,Aracataca,Colombia,CO
+Golding,St. Columb Minor,United Kingdom,GB
+Seifert,Prague,Czech Republic,CZ
+Simon,Antananarivo,Madagascar,MG
+Soyinka,Abeokuta,Nigeria,NG
+Brodsky,St. Petersburg,Russia,RU
+Mahfouz,Cairo,Egypt,EG
+Cela,Iria Flavia,Spain,ES
+Paz,Mexico City,Mexico,MX
+Gordimer,Springs,South Africa,ZA
+Walcott,Castries,Saint Lucia,LC
+Morrison,Lorain OH,USA,US
+Oe,Uchiko,Japan,JP
+Heaney,Casteld√†wson,Northern Ireland,GB
+Szymborska,K√≥rnik,Poland,PL
+Fo,Leggiuno-Sangiano,Italy,IT
+Saramago,Azinhaga,Portugal,PT
+Grass,Gdansk,Poland,PL
+Xingjian,Ganzhou,China,CN
+Naipaul,NA,NA,NA
+Kert√©sz,Budapest,Hungary,HU
+Coetzee,Cape Town,South Africa,ZA
+Jelinek,M√ºrzzuschlag,Austria,AT
+Pinter,London,United Kingdom,GB
+Pamuk,Istanbul,Turkey,TR
+Lessing,Kermanshah,Iran,IR
+Le Cl√©zio,Nice,France,FR
+M√ºller,Nitzkydorf Banat,Romania,RO
+Vargas Llosa,Arequipa,Peru,PE
+Transtr√∂mer,Stockholm,Sweden,SE
+Yan,Gaomi,China,CN
+Munro,Wingham,Canada,CA
+Modiano,Paris,France,FR
+Alexievich,Ivano-Frankivsk,Ukraine,UA
+Dylan,Duluth MN,USA,US
+Ishiguro,Nagasaki,Japan,JP
+Handke,Griffen,Austria,AT
+Glück,New York NY,USA,US
+Gurnah,NA,Tanzania,TZ
+Ernaux,Lillebonne,France,FR
+Fosse,Haugesund,Norway,NO
+von Behring,Lawice,Poland,PL
+Ross,Almora,India,IN
+Finsen,Thorshavn,Faroe Islands (Denmark),DK
+Pavlov,Ryazan,Russia,RU
+Koch,Clausthal-Zellerfeld,Germany,DE
+Golgi,Corteno,Italy,IT
+Ram√≥n y Cajal,Petilla de Arag√≥n,Spain,ES
+Laveran,Paris,France,FR
+Mechnikov,Kharkiv,Ukraine,UA
+Ehrlich,Strzelin,Poland,PL
+Kocher,Bern,Switzerland,CH
+Kossel,Rostock,Germany,DE
+Gullstrand,Landskrona,Sweden,SE
+Carrel,Sainte-Foy-l√®s-Lyon,France,FR
+Richet,Paris,France,FR
+B√°r√°ny,Vienna,Austria,AT
+Bordet,Soignies,Belgium,BE
+Krogh,Gren√•,Denmark,DK
+Hill,Bristol,United Kingdom,GB
+Meyerhof,Hanover,Germany,DE
+Banting,Alliston,Canada,CA
+Macleod,Cluny,Scotland,GB
+Einthoven,Semarang,Indonesia,ID
+Fibiger,Silkeborg,Denmark,DK
+Wagner-Jauregg,Wels,Austria,AT
+Nicolle,Rouen,France,FR
+Eijkman,Nijkerk,Netherlands,NL
+Hopkins,Eastbourne,United Kingdom,GB
+Landsteiner,Vienna,Austria,AT
+Warburg,Freiburg im Breisgau,Germany,DE
+Sherrington,London,United Kingdom,GB
+Adrian,London,United Kingdom,GB
+Morgan,Lexington KY,USA,US
+Whipple,Ashland NH,USA,US
+Minot,Boston MA,USA,US
+Murphy,Stoughton WI,USA,US
+Spemann,Stuttgart,Germany,DE
+Dale,London,United Kingdom,GB
+Loewi,Frankfurt-on-the-Main,Germany,DE
+Szent-Gy√∂rgyi,Budapest,Hungary,HU
+Heymans,Ghent,Belgium,BE
+Domagk,Lagow,Poland,PL
+Dam,Copenhagen,Denmark,DK
+Doisy,Hume IL,USA,US
+Erlanger,San Francisco CA,USA,US
+Gasser,Platteville WI,USA,US
+Fleming,Lochfield,Scotland,GB
+Chain,Berlin,Germany,DE
+Florey,Adelaide,Australia,AU
+Muller,New York NY,USA,US
+Cori,Prague,Czech Republic,CZ
+Cori,Prague,Czech Republic,CZ
+Houssay,Buenos Aires,Argentina,AR
+M√ºller,Olten,Switzerland,CH
+Hess,Frauenfeld,Switzerland,CH
+Moniz,Avanca,Portugal,PT
+Kendall,South Norwalk CT,USA,US
+Reichstein,Wloclawek,Poland,PL
+Hench,Pittsburgh PA,USA,US
+Theiler,Pretoria,South Africa,ZA
+Waksman,Nova Pryluka,Ukraine,UA
+Krebs,Hildesheim,Germany,DE
+Lipmann,Kaliningrad,Russia,RU
+Enders,West Hartford CT,USA,US
+Weller,Ann Arbor MI,USA,US
+Robbins,Auburn AL,USA,US
+Theorell,Link√∂ping,Sweden,SE
+Cournand,Paris,France,FR
+Forssmann,Berlin,Germany,DE
+Richards,Orange NJ,USA,US
+Bovet,Neuch√¢tel,Switzerland,CH
+Beadle,Wahoo NE,USA,US
+Tatum,Boulder CO,USA,US
+Lederberg,Montclair NJ,USA,US
+Ochoa,Luarca,Spain,ES
+Kornberg,Brooklyn NY,USA,US
+Burnet,Traralgon,Australia,AU
+Medawar,Rio de Janeiro,Brazil,BR
+von B√©k√©sy,Budapest,Hungary,HU
+Crick,Northampton,United Kingdom,GB
+Watson,Chicago IL,USA,US
+Wilkins,Pongaroa,New Zealand,NZ
+Eccles,Melbourne,Australia,AU
+Hodgkin,Banbury,United Kingdom,GB
+Huxley,Hampstead,United Kingdom,GB
+Bloch,Nysa,Poland,PL
+Lynen,Munich,Germany,DE
+Jacob,Nancy,France,FR
+Lwoff,Ainay-le-Ch√¢teau,France,FR
+Monod,Paris,France,FR
+Rous,Baltimore MD,USA,US
+Huggins,Halifax,Canada,CA
+Granit,Helsinki,Finland,FI
+Hartline,Bloomsburg PA,USA,US
+Wald,New York NY,USA,US
+Holley,Urbana IL,USA,US
+Khorana,Raipur,India,IN
+Nirenberg,New York NY,USA,US
+Delbr√ºck,Berlin,Germany,DE
+Hershey,Owosso MI,USA,US
+Luria,Torino,Italy,IT
+Katz,Leipzig,Germany,DE
+von Euler,Stockholm,Sweden,SE
+Axelrod,New York NY,USA,US
+Sutherland Jr.,Burlingame KS,USA,US
+Edelman,New York NY,USA,US
+Porter,Newton-le-Willows,United Kingdom,GB
+von Frisch,Vienna,Austria,AT
+Lorenz,Vienna,Austria,AT
+Tinbergen,the Hague,Netherlands,NL
+Claude,Longlier,Belgium,BE
+de Duve,Thames Ditton,United Kingdom,GB
+Palade,Lasi,Romania,RO
+Baltimore,New York NY,USA,US
+Dulbecco,Catanzaro,Italy,IT
+Temin,Philadelphia PA,USA,US
+Blumberg,New York NY,USA,US
+Gajdusek,Yonkers NY,USA,US
+Guillemin,Dijon,France,FR
+Schally,Vilnius,Lithuania,LT
+Yalow,New York NY,USA,US
+Arber,Gr√§nichen,Switzerland,CH
+Nathans,Wilmington DE,USA,US
+Smith,New York NY,USA,US
+Cormack,Johannesburg,South Africa,ZA
+Hounsfield,Newark,United Kingdom,GB
+Benacerraf,Caracas,Venezuela,VE
+Dausset,Toulouse,France,FR
+Snell,Bradford MA,USA,US
+Sperry,Hartford CT,USA,US
+Hubel,Windsor ON,Canada,CA
+Wiesel,Uppsala,Sweden,SE
+Bergstr√∂m,Stockholm,Sweden,SE
+Samuelsson,Halmstad,Sweden,SE
+Vane,Tardebigg,United Kingdom,GB
+McClintock,Hartford CT,USA,US
+Jerne,London,United Kingdom,GB
+K√∂hler,Munich,Germany,DE
+Milstein,Bahia Blanca,Argentina,AR
+Brown,New York NY,USA,US
+Goldstein,Sumter SC,USA,US
+Cohen,Brooklyn NY,USA,US
+Levi-Montalcini,Turin,Italy,IT
+Tonegawa,Nagoya,Japan,JP
+Black,Uddingston,Scotland,GB
+Elion,New York NY,USA,US
+Hitchings,Hoquiam WA,USA,US
+Bishop,York PA,USA,US
+Varmus,Oceanside NY,USA,US
+Murray,Milford MA,USA,US
+Thomas,Mart TX,USA,US
+Neher,Landsberg,Germany,DE
+Sakmann,Stuttgart,Germany,DE
+Fischer,Shanghai,China,CN
+Krebs,Lansing IA,USA,US
+Roberts,Derby,United Kingdom,GB
+Sharp,Falmouth KY,USA,US
+Gilman,New Haven CT,USA,US
+Rodbell,Baltimore MD,USA,US
+Lewis,Wilkes-Barre PA,USA,US
+N√ºsslein-Volhard,Magdeburg,Germany,DE
+Wieschaus,South Bend IN,USA,US
+Doherty,Brisbane,Australia,AU
+Zinkernagel,Basel,Switzerland,CH
+Prusiner,Des Moines IA,USA,US
+Furchgott,Charleston SC,USA,US
+Ignarro,Brooklyn NY,USA,US
+Murad,Whiting IN,USA,US
+Blobel,Niegoslawice,Poland,PL
+Carlsson,Uppsala,Sweden,SE
+Greengard,New York NY,USA,US
+Kandel,Vienna,Austria,AT
+Hartwell,Los Angeles CA,USA,US
+Hunt,Neston,United Kingdom,GB
+Nurse,Norwich,United Kingdom,GB
+Brenner,Germiston,South Africa,ZA
+Horvitz,Chicago IL,USA,US
+Sulston,Cambridge,United Kingdom,GB
+Lauterbur,Sidney OH,USA,US
+Mansfield,London,United Kingdom,GB
+Axel,New York NY,USA,US
+Buck,Seattle WA,USA,US
+Marshall,Kalgoorlie,Australia,AU
+Warren,Adelaide,Australia,AU
+Fire,Stanford CA,USA,US
+Mello,New Haven CT,USA,US
+Capecchi,Verona,Italy,IT
+Evans,Stroud,United Kingdom,GB
+Smithies,Halifax,United Kingdom,GB
+zur Hausen,Gelsenkirchen,Germany,DE
+Barr√©-Sinoussi,Paris,France,FR
+Montagnier,Chabris,France,FR
+Blackburn,Hobart Tasmania,Australia,AU
+Greider,San Diego CA,USA,US
+Szostak,London,United Kingdom,GB
+Edwards,Batley,United Kingdom,GB
+Beutler,Chicago IL,USA,US
+Hoffmann,Echternach,Luxembourg,LU
+Steinman,Montreal,Canada,CA
+Gurdon,Dippenhall,United Kingdom,GB
+Yamanaka,Osaka,Japan,JP
+Rothman,Haverhill MA,USA,US
+Schekman,St. Paul MN,USA,US
+S√ºdhof,G√∂ttingen,Germany,DE
+O'Keefe,New York NY,USA,US
+Moser,Fosnav√•g,Norway,NO
+Moser,√Ölesund,Norway,NO
+Campbell,Ramelton,Ireland,IE
+&#332;mura,Yamanashi Prefecture,Japan,JP
+Youyou,Zhejiang Ningbo,China,CN
+Ohsumi,Fukuoka,Japan,JP
+Hall,New York NY,USA,US
+Rosbash,Kansas City MO,USA,US
+Young,Miami FL,USA,US
+Allison,Alice TX,USA,US
+Honjo,Kyoto,Japan,JP
+Kaelin Jr.,New York NY,USA,US
+Ratcliffe,Lancashire,United Kingdom,GB
+Semenza,New York NY,USA,US
+Alter,New York NY,USA,US
+Houghton,NA,United Kingdom,GB
+Rice,Sacramento CA,USA,US
+Julius,New York NY,USA,US
+Patapoutian,Beirut,Lebanon,LB
+Pääbo,Stockholm,Sweden,SE
+Karikó,Szolnok,Hungary,HU
+Weissman,Lexington MA,USA,US
+Dunant,Geneva,Switzerland,CH
+Passy,Paris,France,FR
+Ducommun,Geneva,Switzerland,CH
+Gobat,Tramelan,Switzerland,CH
+Cremer,Fareham,United Kingdom,GB
+NA,NA,NA,NA
+von Suttner,Prague,Czech Republic,CZ
+Roosevelt,New York NY,USA,US
+Moneta,Milan,Italy,IT
+Renault,Autun,France,FR
+Arnoldson,Gothenburg,Sweden,SE
+Bajer,N√¶stved,Denmark,DK
+Beernaert,Ostend,Belgium,BE
+d'Estournelles de Constant,La Fl√®che,France,FR
+NA,NA,NA,NA
+Asser,Amsterdam,Netherlands,NL
+Fried,Vienna,Austria,AT
+Root,Clinton NY,USA,US
+La Fontaine,Brussels,Belgium,BE
+NA,NA,NA,NA
+Wilson,Staunton VA,USA,US
+Bourgeois,Paris,France,FR
+Branting,Stockholm,Sweden,SE
+Lange,Stavanger,Norway,NO
+Nansen,Oslo,Norway,NO
+Chamberlain,Birmingham,United Kingdom,GB
+Dawes,Marietta OH,USA,US
+Briand,Nantes,France,FR
+Stresemann,Berlin,Germany,DE
+Buisson,Paris,France,FR
+Quidde,Bremen,Germany,DE
+Kellogg,Potsdam NY,USA,US
+S√∂derblom,Tr√∂n√∂,Sweden,SE
+Addams,Cedarville IL,USA,US
+Butler,Elizabeth NJ,USA,US
+Angell,Holbeach,United Kingdom,GB
+Henderson,Glasgow,Scotland,GB
+von Ossietzky,Hamburg,Germany,DE
+Saavedra Lamas,Buenos Aires,Argentina,AR
+Cecil,London,United Kingdom,GB
+NA,NA,NA,NA
+NA,NA,NA,NA
+Hull,Olympus TN,USA,US
+Balch,Boston MA,USA,US
+Mott,Livingston Manor NY,USA,US
+NA,NA,NA,NA
+NA,NA,NA,NA
+Boyd Orr,Kilmaurs,Scotland,GB
+Bunche,Detroit MI,USA,US
+Jouhaux,Paris,France,FR
+Schweitzer,Kaysersberg,France,FR
+Marshall,Uniontown PA,USA,US
+NA,NA,NA,NA
+Pearson,Toronto,Canada,CA
+Pire,Dinant,Belgium,BE
+Noel-Baker,London,United Kingdom,GB
+Luthuli,Bulawayo,Zimbabwe,ZW
+Hammarskj√∂ld,J√∂nk√∂ping,Sweden,SE
+Pauling,Portland OR,USA,US
+NA,NA,NA,NA
+NA,NA,NA,NA
+King Jr.,Atlanta GA,USA,US
+NA,NA,NA,NA
+Cassin,Bayonne,France,FR
+NA,NA,NA,NA
+Borlaug,Cresco IA,USA,US
+Brandt,L√ºbeck,Germany,DE
+Kissinger,F√ºrth,Germany,DE
+NA,Nam Ha province,Vietnam,VN
+MacBride,Paris,France,FR
+Sato,Tabuse,Japan,JP
+Sakharov,Moscow,Russia,RU
+Williams,Belfast,Northern Ireland,GB
+Corrigan,Belfast,Northern Ireland,GB
+NA,NA,NA,NA
+al-Sadat,Mit Abu al-Kawm,Egypt,EG
+Begin,Brest Litovsk,Belarus,BY
+Bojaxhiu,Skopje,North Macedonia,MK
+P√©rez Esquivel,Buenos Aires,Argentina,AR
+NA,NA,NA,NA
+Myrdal,Uppsala,Sweden,SE
+Garc√≠a Robles,Zamora,Mexico,MX
+Walesa,Popowo,Poland,PL
+Tutu,Klerksdorp,South Africa,ZA
+NA,NA,NA,NA
+Wiesel,Sighet,Romania,RO
+Arias S√°nchez,Heredia,Costa Rica,CR
+NA,NA,NA,NA
+Thondup,Taktser,China,CN
+Gorbachev,Privolnoye,Russia,RU
+NA,Yangon,Myanmar,MM
+Mench√∫ Tum,Aldea Chimel,Guatemala,GT
+Mandela,Qunu,South Africa,ZA
+de Klerk,Johannesburg,South Africa,ZA
+Arafat,Cairo,Egypt,EG
+Peres,Vishneva,Belarus,BY
+Rabin,Jerusalem,Israel,IL
+Rotblat,Warsaw,Poland,PL
+NA,NA,NA,NA
+Belo,Wailacama,East Timor,TL
+Ramos-Horta,Dili,East Timor,TL
+NA,NA,NA,NA
+Williams,Putney VT,USA,US
+Hume,Londonderry,Northern Ireland,GB
+Trimble,Belfast,Northern Ireland,GB
+NA,NA,NA,NA
+Dae-jung,Mokpo,South Korea,KR
+NA,NA,NA,NA
+Annan,Kumasi,Ghana,GH
+Carter,Plains GA,USA,US
+Ebadi,Hamadan,Iran,IR
+Maathai,Nyeri,Kenya,KE
+NA,NA,NA,NA
+ElBaradei,Cairo,Egypt,EG
+Yunus,Chittagong,Bangladesh,BD
+NA,NA,NA,NA
+NA,NA,NA,NA
+Gore,Washington DC,USA,US
+Ahtisaari,Vyborg,Finland,FI
+Obama,Honolulu HI,USA,US
+Xiaobo,Changchun,China,CN
+Johnson Sirleaf,Monrovia,Liberia,LR
+Gbowee,Monrovia,Liberia,LR
+Karman,Ta'izz,Yemen,YE
+NA,NA,NA,NA
+NA,NA,NA,NA
+Satyarthi,Vidisha,India,IN
+Yousafzai,Mingora,Pakistan,PK
+NA,NA,NA,NA
+Santos,Bogot√°,Colombia,CO
+NA,NA,NA,NA
+Mukwege,Bukavu,Democratic Republic of Congo,CD
+Murad,Kojo,Iraq,IQ
+Ahmed,Beshasha,Ethiopia,ET
+NA,NA,NA,NA
+Ressa,Manila,Philippines,PH
+Muratov,Samara,Russia,RU
+Bialiatski,"Vyartsilya, Karelia",Russia,RU
+NA,Moscow,Russia,RU
+NA,Kyiv,Ukraine,UA
+Mohammadi,Zanjan,Iran,IR
+R√∂ntgen,Remscheid,Germany,DE
+Lorentz,Arnhem,Netherlands,NL
+Zeeman,Zonnemaire,Netherlands,NL
+Becquerel,Paris,France,FR
+Curie,Paris,France,FR
+Curie,Warsaw,Poland,PL
+Rayleigh,Langford Grove Maldon Essex,United Kingdom,GB
+Lenard,Bratislava,Slovakia,SK
+Thomson,Cheetham Hill near Manchester,United Kingdom,GB
+Michelson,Strzelno,Poland,PL
+Lippmann,Hollerich,Luxembourg,LU
+Marconi,Bologna,Italy,IT
+Braun,Fulda,Germany,DE
+van der Waals,Leiden,Netherlands,NL
+Wien,Parusnoye,Russia,RU
+Dal√©n,Stenstorp,Sweden,SE
+Kamerlingh Onnes,Groningen,Netherlands,NL
+von Laue,Pfaffendorf,Germany,DE
+Bragg,Wigton,United Kingdom,GB
+Bragg,Adelaide,Australia,AU
+Barkla,Widnes,United Kingdom,GB
+Planck,Kiel,Germany,DE
+Stark,Schickenhof,Germany,DE
+Guillaume,Fleurier,Switzerland,CH
+Einstein,Ulm,Germany,DE
+Bohr,Copenhagen,Denmark,DK
+Millikan,Morrison IL,USA,US
+Siegbahn,√ñrebro,Sweden,SE
+Franck,Hamburg,Germany,DE
+Hertz,Hamburg,Germany,DE
+Perrin,Lille,France,FR
+Compton,Wooster OH,USA,US
+Wilson,Glencorse,Scotland,GB
+Richardson,Dewsbury,United Kingdom,GB
+de Broglie,Dieppe,France,FR
+Raman,Tiruchirappalli,India,IN
+Heisenberg,W√ºrzburg,Germany,DE
+Schr√∂dinger,Vienna,Austria,AT
+Dirac,Bristol,United Kingdom,GB
+Chadwick,Manchester,United Kingdom,GB
+Hess,Peggau,Austria,AT
+Anderson,New York NY,USA,US
+Davisson,Bloomington IL,USA,US
+Thomson,Cambridge,United Kingdom,GB
+Fermi,Rome,Italy,IT
+Lawrence,Canton SD,USA,US
+Stern,Zory,Poland,PL
+Rabi,Rymanow,Poland,PL
+Pauli,Vienna,Austria,AT
+Bridgman,Cambridge MA,USA,US
+Appleton,Bradford,United Kingdom,GB
+Blackett,London,United Kingdom,GB
+Yukawa,Tokyo,Japan,JP
+Powell,Tonbridge,United Kingdom,GB
+Cockcroft,Todmorden,United Kingdom,GB
+Walton,Dungarvan,Ireland,IE
+Bloch,Zurich,Switzerland,CH
+Purcell,Taylorville IL,USA,US
+Zernike,Amsterdam,Netherlands,NL
+Born,Wroclaw,Poland,PL
+Bothe,Oranienburg,Germany,DE
+Lamb,Los Angeles CA,USA,US
+Kusch,Blankenburg,Germany,DE
+Shockley,London,United Kingdom,GB
+Bardeen,Madison WI,USA,US
+Brattain,Amoy,China,CN
+Yang,Hofei Anhwei,China,CN
+Lee,Shanghai,China,CN
+Cherenkov,Novaya Chigla,Russia,RU
+Tamm,Vladivostok,Russia,RU
+Frank,St. Petersburg,Russia,RU
+Segr√®,Tivoli,Italy,IT
+Chamberlain,San Francisco CA,USA,US
+Glaser,Cleveland OH,USA,US
+Hofstadter,New York NY,USA,US
+M√∂ssbauer,Munich,Germany,DE
+Landau,Baku,Azerbaijan,AZ
+Wigner,Budapest,Hungary,HU
+Goeppert Mayer,Katowice,Poland,PL
+Jensen,Hamburg,Germany,DE
+Townes,Greenville SC,USA,US
+Basov,Usman,Russia,RU
+Prokhorov,Atherton,Australia,AU
+Tomonaga,Kyoto,Japan,JP
+Schwinger,New York NY,USA,US
+Feynman,New York NY,USA,US
+Kastler,Guebwiller,France,FR
+Bethe,Strasbourg,France,FR
+Alvarez,San Francisco CA,USA,US
+Gell-Mann,New York NY,USA,US
+Alfv√©n,Norrk√∂ping,Sweden,SE
+N√©el,Lyon,France,FR
+Gabor,Budapest,Hungary,HU
+Bardeen,Madison WI,USA,US
+Cooper,New York NY,USA,US
+Schrieffer,Oak Park IL,USA,US
+Esaki,Osaka,Japan,JP
+Giaever,Bergen,Norway,NO
+Josephson,Cardiff,United Kingdom,GB
+Ryle,Brighton,United Kingdom,GB
+Hewish,Fowey,United Kingdom,GB
+Bohr,Copenhagen,Denmark,DK
+Mottelson,Chicago IL,USA,US
+Rainwater,Council ID,USA,US
+Richter,Brooklyn NY,USA,US
+Ting,Ann Arbor MI,USA,US
+Anderson,Indianapolis IN,USA,US
+Mott,Leeds,United Kingdom,GB
+van Vleck,Middletown CT,USA,US
+Kapitsa,Kronshtadt,Russia,RU
+Penzias,Munich,Germany,DE
+Wilson,Houston TX,USA,US
+Glashow,New York NY,USA,US
+Salam,Jhang MaghiƒÅna,Pakistan,PK
+Weinberg,New York NY,USA,US
+Cronin,Chicago IL,USA,US
+Fitch,Merriman NE,USA,US
+Bloembergen,Dordrecht,Netherlands,NL
+Schawlow,Mount Verno NY,USA,US
+Siegbahn,Lund,Sweden,SE
+Wilson,Waltham MA,USA,US
+Chandrasekhar,Lahore,Pakistan,PK
+Fowler,Pittsburgh PA,USA,US
+Rubbia,Gorizia,Italy,IT
+van der Meer,the Hague,Netherlands,NL
+von Klitzing,Schroda,Poland,PL
+Ruska,Heidelberg,Germany,DE
+Binnig,Frankfurt-on-the-Main,Germany,DE
+Rohrer,Buchs,Switzerland,CH
+Bednorz,Neuenkirchen,Germany,DE
+M√ºller,Basel,Switzerland,CH
+Lederman,New York NY,USA,US
+Schwartz,New York NY,USA,US
+Steinberger,Bad Kissingen,Germany,DE
+Ramsey,Washington DC,USA,US
+Dehmelt,G√∂rlitz,Germany,DE
+Paul,Lorenzkirch,Germany,DE
+Friedman,Chicago IL,USA,US
+Kendall,Boston MA,USA,US
+Taylor,Medicine Hat Alberta,Canada,CA
+de Gennes,Paris,France,FR
+Charpak,Dabrovica,Poland,PL
+Hulse,New York NY,USA,US
+Taylor Jr.,Philadelphia PA,USA,US
+Brockhouse,Lethbridge Alberta,Canada,CA
+Shull,Pittsburgh PA,USA,US
+Perl,New York NY,USA,US
+Reines,Paterson NJ,USA,US
+Lee,Rye NY,USA,US
+Osheroff,Aberdeen WA,USA,US
+Richardson,Washington DC,USA,US
+Chu,St. Louis MO,USA,US
+Cohen-Tannoudji,Constantine,Algeria,DZ
+Phillips,Wilkes-Barre PA,USA,US
+Laughlin,Visalia CA,USA,US
+St√∂rmer,Frankfurt-on-the-Main,Germany,DE
+Tsui,Henan,China,CN
+'t Hooft,Den Helder,Netherlands,NL
+Veltman,Waalwijk,Netherlands,NL
+Alferov,Vitebsk Belorussia,Belarus,BY
+Kroemer,Weimar,Germany,DE
+Kilby,Jefferson City MO,USA,US
+Cornell,Palo Alto CA,USA,US
+Ketterle,Heidelberg,Germany,DE
+Wieman,Corvallis OR,USA,US
+Davis Jr.,Washington DC,USA,US
+Koshiba,Toyohashi,Japan,JP
+Giacconi,Genoa,Italy,IT
+Abrikosov,Moscow,Russia,RU
+Ginzburg,Moscow,Russia,RU
+Leggett,London,United Kingdom,GB
+Gross,Washington DC,USA,US
+Politzer,New York NY,USA,US
+Wilczek,New York NY,USA,US
+Glauber,New York NY,USA,US
+Hall,Denver CO,USA,US
+H√§nsch,Heidelberg,Germany,DE
+Mather,Roanoke VA,USA,US
+Smoot,Yukon FL,USA,US
+Fert,Carcassonne,France,FR
+Gr√ºnberg,Plzen,Czech Republic,CZ
+Nambu,Tokyo,Japan,JP
+Kobayashi,Nagoya,Japan,JP
+Maskawa,Nagoya,Japan,JP
+Kao,Shanghai,China,CN
+Boyle,Amherst NS,Canada,CA
+Smith,White Plains NY,USA,US
+Geim,Sochi,Russia,RU
+Novoselov,Nizhny Tagil,Russia,RU
+Perlmutter,Champaign-Urbana IL,USA,US
+Schmidt,Missoula MT,USA,US
+Riess,Washington DC,USA,US
+Haroche,Casablanca,Morocco,MA
+Wineland,Milwaukee WI,USA,US
+Englert,Etterbeek,Belgium,BE
+Higgs,Newcastle upon Tyne,United Kingdom,GB
+Akasaki,Chiran,Japan,JP
+Amano,Hamamatsu,Japan,JP
+Nakamura,Ikata,Japan,JP
+Kajita,Higashimatsuyama,Japan,JP
+McDonald,Sydney,Canada,CA
+Thouless,Bearsden,United Kingdom,GB
+Haldane,London,United Kingdom,GB
+Kosterlitz,Aberdeen,United Kingdom,GB
+Weiss,Berlin,Germany,DE
+Barish,Omaha NE,USA,US
+Thorne,Logan UT,USA,US
+Ashkin,New York NY,USA,US
+Mourou,Albertville,France,FR
+Strickland,Guelph,Canada,CA
+Peebles,"Winnipeg, Manitoba",Canada,CA
+Mayor,Lausanne,Switzerland,CH
+Queloz,NA,Switzerland,CH
+Penrose,Colchester,United Kingdom,GB
+Genzel,Bad Homburg vor der Höhe,Germany,DE
+Ghez,New York NY,USA,US
+Manabe,"Shingu, Ehime",Japan,JP
+Hasselmann,Hamburg,Germany,DE
+Parisi,Rome,Italy,IT
+Aspect,Agen,France,FR
+Clauser,Pasadena CA,USA,US
+Zeilinger,Ried im Innkreis,Austria,AT
+Agostini,Tunis,Tunisia,TN
+Krausz,Mór,Hungary,HU
+L'Huillier,Paris,France,FR
