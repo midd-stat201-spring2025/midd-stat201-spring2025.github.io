@@ -1524,11 +1524,16 @@
 </div>
 </div>
 <div class="discuss">
-<p>We want to keep all rows and columns from <code>fisheries</code> and add a column for corresponding continents. Which join function should we use?</p>
+<ul>
+<li class="fragment"><p>We want to keep all rows and columns from <code>fisheries</code> and add a column for corresponding continents. Which join function should we use?</p></li>
+<li class="fragment"><p>We want to keep all rows from <code>fisheries</code> for which we have a corresponding continent and add a column for corresponding continents. Which joint function should we use?</p></li>
+</ul>
 </div>
 </section>
 <section id="example-cont." class="slide level2">
 <h2>Example (cont.)</h2>
+<div class="columns">
+<div class="column" style="width:&quot;50%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">left_join</span>(fisheries, continents, <span class="at">by =</span> <span class="st">"country"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1623,15 +1628,119 @@
 </div>
 </div>
 <ul>
-<li class="fragment"><p>Notice the <code>NA</code></p></li>
-<li class="fragment"><p>Could also use the following piping code:</p></li>
+<li class="fragment">Notice the <code>NA</code></li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">inner_join</span>(fisheries, continents, <span class="at">by =</span> <span class="st">"country"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 20px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> country </th>
+   <th style="text-align:right;"> capture </th>
+   <th style="text-align:right;"> aquaculture </th>
+   <th style="text-align:right;"> total </th>
+   <th style="text-align:left;"> continent </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Afghanistan </td>
+   <td style="text-align:right;"> 1000 </td>
+   <td style="text-align:right;"> 1200 </td>
+   <td style="text-align:right;"> 2200 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Albania </td>
+   <td style="text-align:right;"> 7886 </td>
+   <td style="text-align:right;"> 950 </td>
+   <td style="text-align:right;"> 8836 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Algeria </td>
+   <td style="text-align:right;"> 95000 </td>
+   <td style="text-align:right;"> 1361 </td>
+   <td style="text-align:right;"> 96361 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> American Samoa </td>
+   <td style="text-align:right;"> 3047 </td>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:right;"> 3067 </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Andorra </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Europe </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Angola </td>
+   <td style="text-align:right;"> 486490 </td>
+   <td style="text-align:right;"> 655 </td>
+   <td style="text-align:right;"> 487145 </td>
+   <td style="text-align:left;"> Africa </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Argentina </td>
+   <td style="text-align:right;"> 755226 </td>
+   <td style="text-align:right;"> 3673 </td>
+   <td style="text-align:right;"> 758899 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Armenia </td>
+   <td style="text-align:right;"> 3758 </td>
+   <td style="text-align:right;"> 16381 </td>
+   <td style="text-align:right;"> 20139 </td>
+   <td style="text-align:left;"> Asia </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Aruba </td>
+   <td style="text-align:right;"> 142 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 142 </td>
+   <td style="text-align:left;"> Americas </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Australia </td>
+   <td style="text-align:right;"> 174629 </td>
+   <td style="text-align:right;"> 96847 </td>
+   <td style="text-align:right;"> 271476 </td>
+   <td style="text-align:left;"> Oceania </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">Could also use the following piping code:</li>
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>fisheries <span class="sc">|&gt;</span></span>
-<span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">left_join</span>(continents, <span class="at">by =</span> <span class="st">"country"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>fisheries <span class="sc">|&gt;</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">left_join</span>(continents, <span class="at">by =</span> <span class="st">"country"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</section>
+<section id="live-code" class="slide level2">
+<h2>Live code</h2>
+</section>
+<section id="probability" class="title-slide slide level1 center">
+<h1>Probability</h1>
 
 <div class="footer footer-default">
 

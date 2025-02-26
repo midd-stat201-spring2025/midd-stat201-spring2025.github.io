@@ -6165,5 +6165,236 @@
     "title": "More wrangling + Probability",
     "section": "",
     "text": "left_join(fisheries, continents, by = \"country\") |>\n  kable() |>\n  kable_styling(font_size = 20)\n\n\n\n \n  \n    country \n    capture \n    aquaculture \n    total \n    continent \n  \n \n\n  \n    Afghanistan \n    1000 \n    1200 \n    2200 \n    Asia \n  \n  \n    Albania \n    7886 \n    950 \n    8836 \n    Europe \n  \n  \n    Algeria \n    95000 \n    1361 \n    96361 \n    Africa \n  \n  \n    American Samoa \n    3047 \n    20 \n    3067 \n    Oceania \n  \n  \n    Andorra \n    0 \n    0 \n    0 \n    Europe \n  \n  \n    Angola \n    486490 \n    655 \n    487145 \n    Africa \n  \n  \n    Antigua and Barbuda \n    3000 \n    10 \n    3010 \n    NA \n  \n  \n    Argentina \n    755226 \n    3673 \n    758899 \n    Americas \n  \n  \n    Armenia \n    3758 \n    16381 \n    20139 \n    Asia \n  \n  \n    Aruba \n    142 \n    0 \n    142 \n    Americas \n  \n  \n    Australia \n    174629 \n    96847 \n    271476 \n    Oceania \n  \n  \n    Austria \n    350 \n    3483 \n    3833 \n    Europe \n  \n  \n    Azerbaijan \n    676 \n    640 \n    1316 \n    Asia \n  \n  \n    Bahamas \n    11625 \n    8 \n    11633 \n    Americas \n  \n  \n    Bahrain \n    15000 \n    6 \n    15006 \n    Asia \n  \n  \n    Bangladesh \n    1674770 \n    2203554 \n    3878324 \n    Asia \n  \n  \n    Barbados \n    1735 \n    26 \n    1761 \n    Americas \n  \n  \n    Belarus \n    686 \n    11199 \n    11885 \n    Europe \n  \n  \n    Belgium \n    26970 \n    44 \n    27014 \n    Europe \n  \n  \n    Belize \n    91432 \n    953 \n    92385 \n    Americas \n  \n  \n    Benin \n    49806 \n    3080 \n    52886 \n    Africa \n  \n  \n    Bermuda \n    410 \n    0 \n    410 \n    Americas \n  \n  \n    Bhutan \n    7 \n    150 \n    157 \n    Asia \n  \n  \n    Bolivia \n    7000 \n    3000 \n    10000 \n    Americas \n  \n  \n    Bosnia and Herzegovina \n    305 \n    4564 \n    4869 \n    NA \n  \n  \n    Botswana \n    38 \n    15 \n    53 \n    Africa \n  \n  \n    Brazil \n    705000 \n    581230 \n    1286230 \n    Americas \n  \n  \n    British Virgin Islands \n    1200 \n    0 \n    1200 \n    Americas \n  \n  \n    Brunei \n    13292 \n    948 \n    14240 \n    Asia \n  \n  \n    Bulgaria \n    8614 \n    15762 \n    24376 \n    Europe \n  \n  \n    Burkina Faso \n    22070 \n    470 \n    22540 \n    Africa \n  \n  \n    Burundi \n    21805 \n    1330 \n    23135 \n    Africa \n  \n  \n    Cambodia \n    629950 \n    172500 \n    802450 \n    Asia \n  \n  \n    Cameroon \n    233190 \n    2315 \n    235505 \n    Africa \n  \n  \n    Canada \n    874727 \n    200765 \n    1075492 \n    Americas \n  \n  \n    Cape Verde \n    19900 \n    0 \n    19900 \n    Africa \n  \n  \n    Cayman Islands \n    125 \n    0 \n    125 \n    Americas \n  \n  \n    Central African Republic \n    29000 \n    190 \n    29190 \n    Africa \n  \n  \n    Chad \n    110000 \n    94 \n    110094 \n    Africa \n  \n  \n    Chile \n    1829238 \n    1050117 \n    2879355 \n    Americas \n  \n  \n    China \n    17800000 \n    63700000 \n    81500000 \n    Asia \n  \n  \n    Colombia \n    86344 \n    96970 \n    183314 \n    Americas \n  \n  \n    Comoros \n    16407 \n    0 \n    16407 \n    Africa \n  \n  \n    Costa Rica \n    14750 \n    22421 \n    37171 \n    Americas \n  \n  \n    Croatia \n    72312 \n    15805 \n    88117 \n    Europe \n  \n  \n    Cuba \n    23574 \n    29185 \n    52759 \n    Americas \n  \n  \n    Curaçao \n    35534 \n    0 \n    35534 \n    Americas \n  \n  \n    Cyprus \n    1507 \n    6625 \n    8132 \n    Asia \n  \n  \n    Czech Republic \n    3507 \n    20952 \n    24459 \n    NA \n  \n  \n    Democratic Republic of the Congo \n    237372 \n    3161 \n    240533 \n    NA \n  \n  \n    Denmark \n    670344 \n    36337 \n    706681 \n    Europe \n  \n  \n    Djibouti \n    2220 \n    0 \n    2220 \n    Africa \n  \n  \n    Dominica \n    770 \n    6 \n    776 \n    Americas \n  \n  \n    Dominican Republic \n    14640 \n    2285 \n    16925 \n    Americas \n  \n  \n    Ecuador \n    715495 \n    451090 \n    1166585 \n    Americas \n  \n  \n    Egypt \n    335614 \n    1370660 \n    1706274 \n    Africa \n  \n  \n    El Salvador \n    54084 \n    7956 \n    62040 \n    Americas \n  \n  \n    Equatorial Guinea \n    8000 \n    15 \n    8015 \n    Africa \n  \n  \n    Eritrea \n    4300 \n    0 \n    4300 \n    Africa \n  \n  \n    Estonia \n    75931 \n    868 \n    76799 \n    Europe \n  \n  \n    Eswatini \n    65 \n    100 \n    165 \n    NA \n  \n  \n    Ethiopia \n    45500 \n    95 \n    45595 \n    Africa \n  \n  \n    Faroe Islands \n    568435 \n    83300 \n    651735 \n    Europe \n  \n  \n    Federated States of Micronesia \n    88397 \n    0 \n    88397 \n    NA \n  \n  \n    Fiji \n    44663 \n    754 \n    45417 \n    Oceania \n  \n  \n    Finland \n    192065 \n    14412 \n    206477 \n    Europe \n  \n  \n    France \n    561173 \n    166640 \n    727813 \n    Europe \n  \n  \n    France \n    90 \n    0 \n    90 \n    Europe \n  \n  \n    French Polynesia \n    13754 \n    1343 \n    15097 \n    Oceania \n  \n  \n    Gabon \n    31000 \n    45 \n    31045 \n    Africa \n  \n  \n    Gambia \n    58261 \n    5 \n    58266 \n    Africa \n  \n  \n    Georgia \n    30078 \n    670 \n    30748 \n    Asia \n  \n  \n    Germany \n    271185 \n    41721 \n    312906 \n    Europe \n  \n  \n    Ghana \n    327457 \n    52480 \n    379937 \n    Africa \n  \n  \n    Gibraltar \n    1 \n    0 \n    1 \n    Europe \n  \n  \n    Greece \n    76362 \n    123410 \n    199772 \n    Europe \n  \n  \n    Greenland \n    273175 \n    0 \n    273175 \n    Americas \n  \n  \n    Grenada \n    2550 \n    0 \n    2550 \n    Americas \n  \n  \n    Guam \n    1391 \n    110 \n    1501 \n    Oceania \n  \n  \n    Guatemala \n    19011 \n    26268 \n    45279 \n    Americas \n  \n  \n    Guinea \n    128000 \n    250 \n    128250 \n    Africa \n  \n  \n    Guinea-Bissau \n    6700 \n    0 \n    6700 \n    Africa \n  \n  \n    Guyana \n    42142 \n    337 \n    42479 \n    Americas \n  \n  \n    Haiti \n    16510 \n    1220 \n    17730 \n    Americas \n  \n  \n    Honduras \n    10600 \n    53100 \n    63700 \n    Americas \n  \n  \n    Hong Kong \n    142775 \n    4258 \n    147033 \n    NA \n  \n  \n    Hungary \n    5048 \n    16248 \n    21296 \n    Europe \n  \n  \n    Iceland \n    1085176 \n    15129 \n    1100305 \n    Europe \n  \n  \n    India \n    5082332 \n    5703002 \n    10785334 \n    Asia \n  \n  \n    Indonesia \n    6584419 \n    16600000 \n    23184419 \n    Asia \n  \n  \n    Iran \n    695407 \n    398129 \n    1093536 \n    Asia \n  \n  \n    Iraq \n    28000 \n    28835 \n    56835 \n    Asia \n  \n  \n    Ireland \n    259845 \n    40244 \n    300089 \n    Europe \n  \n  \n    Isle of Man \n    7040 \n    0 \n    7040 \n    Europe \n  \n  \n    Israel \n    1758 \n    18914 \n    20672 \n    Asia \n  \n  \n    Italy \n    198130 \n    157109 \n    355239 \n    Europe \n  \n  \n    Ivory Coast \n    67500 \n    4701 \n    72201 \n    NA \n  \n  \n    Jamaica \n    16800 \n    620 \n    17420 \n    Americas \n  \n  \n    Japan \n    3275263 \n    1067994 \n    4343257 \n    Asia \n  \n  \n    Jersey and Guernsey \n    2985 \n    1499 \n    4484 \n    NA \n  \n  \n    Jordan \n    873 \n    885 \n    1758 \n    Asia \n  \n  \n    Kazakhstan \n    41335 \n    1878 \n    43213 \n    Asia \n  \n  \n    Kenya \n    171391 \n    15360 \n    186751 \n    Africa \n  \n  \n    Kiribati \n    172822 \n    3652 \n    176474 \n    Oceania \n  \n  \n    Kuwait \n    5493 \n    196 \n    5689 \n    Asia \n  \n  \n    Kyrgyzstan \n    89 \n    1931 \n    2020 \n    Asia \n  \n  \n    Laos \n    70915 \n    109835 \n    180750 \n    Asia \n  \n  \n    Latvia \n    114806 \n    788 \n    115594 \n    Europe \n  \n  \n    Lebanon \n    4291 \n    1015 \n    5306 \n    Asia \n  \n  \n    Lesotho \n    52 \n    1050 \n    1102 \n    Africa \n  \n  \n    Liberia \n    14700 \n    40 \n    14740 \n    Africa \n  \n  \n    Libya \n    30002 \n    10 \n    30012 \n    Africa \n  \n  \n    Liechtenstein \n    0 \n    0 \n    0 \n    Europe \n  \n  \n    Lithuania \n    106945 \n    4393 \n    111338 \n    Europe \n  \n  \n    Luxembourg \n    0 \n    0 \n    0 \n    Europe \n  \n  \n    Macao \n    1500 \n    0 \n    1500 \n    NA \n  \n  \n    Madagascar \n    142333 \n    25998 \n    168331 \n    Africa \n  \n  \n    Malawi \n    152852 \n    7646 \n    160498 \n    Africa \n  \n  \n    Malaysia \n    1584371 \n    407887 \n    1992258 \n    Asia \n  \n  \n    Maldives \n    129191 \n    0 \n    129191 \n    Asia \n  \n  \n    Mali \n    102486 \n    4194 \n    106680 \n    Africa \n  \n  \n    Malta \n    2420 \n    6073 \n    8493 \n    Europe \n  \n  \n    Marshall Islands \n    64795 \n    5 \n    64800 \n    Oceania \n  \n  \n    Mauritania \n    609754 \n    0 \n    609754 \n    Africa \n  \n  \n    Mauritius \n    18062 \n    1021 \n    19083 \n    Africa \n  \n  \n    Mexico \n    1524467 \n    221328 \n    1745795 \n    Americas \n  \n  \n    Moldova \n    50 \n    16011 \n    16061 \n    Europe \n  \n  \n    Monaco \n    1 \n    0 \n    1 \n    Europe \n  \n  \n    Mongolia \n    15 \n    0 \n    15 \n    Asia \n  \n  \n    Montenegro \n    1595 \n    929 \n    2524 \n    Europe \n  \n  \n    Morocco \n    1454105 \n    1142 \n    1455247 \n    Africa \n  \n  \n    Mozambique \n    299591 \n    1180 \n    300771 \n    Africa \n  \n  \n    Myanmar \n    2072390 \n    1017644 \n    3090034 \n    NA \n  \n  \n    Namibia \n    503878 \n    591 \n    504469 \n    Africa \n  \n  \n    Nauru \n    530 \n    0 \n    530 \n    Oceania \n  \n  \n    Nepal \n    21500 \n    49043 \n    70543 \n    Asia \n  \n  \n    Netherlands \n    370274 \n    62940 \n    433214 \n    Europe \n  \n  \n    New Caledonia \n    3815 \n    1587 \n    5402 \n    Oceania \n  \n  \n    New Zealand \n    424791 \n    109016 \n    533807 \n    Oceania \n  \n  \n    Nicaragua \n    45500 \n    22530 \n    68030 \n    Americas \n  \n  \n    Niger \n    34592 \n    300 \n    34892 \n    Africa \n  \n  \n    Nigeria \n    734731 \n    306727 \n    1041458 \n    Africa \n  \n  \n    North Korea \n    209000 \n    554100 \n    763100 \n    Asia \n  \n  \n    North Macedonia \n    306 \n    986 \n    1292 \n    NA \n  \n  \n    Northern Mariana Islands \n    950 \n    42 \n    992 \n    Oceania \n  \n  \n    Norway \n    2203360 \n    1326216 \n    3529576 \n    Europe \n  \n  \n    Oman \n    279606 \n    103 \n    279709 \n    Asia \n  \n  \n    Pakistan \n    513156 \n    156430 \n    669586 \n    Asia \n  \n  \n    Palau \n    818 \n    23 \n    841 \n    Oceania \n  \n  \n    Palestine \n    3306 \n    280 \n    3586 \n    NA \n  \n  \n    Panama \n    144450 \n    8808 \n    153258 \n    Americas \n  \n  \n    Papua New Guinea \n    309245 \n    6200 \n    315445 \n    Oceania \n  \n  \n    Paraguay \n    17000 \n    8500 \n    25500 \n    Americas \n  \n  \n    Peru \n    3811802 \n    100187 \n    3911989 \n    Americas \n  \n  \n    Philippines \n    2027992 \n    2200914 \n    4228906 \n    Asia \n  \n  \n    Poland \n    218115 \n    38300 \n    256415 \n    Europe \n  \n  \n    Portugal \n    186950 \n    9787 \n    196737 \n    Europe \n  \n  \n    Puerto Rico \n    1901 \n    20 \n    1921 \n    Americas \n  \n  \n    Qatar \n    14516 \n    10 \n    14526 \n    Asia \n  \n  \n    Republic of the Congo \n    86748 \n    177 \n    86925 \n    NA \n  \n  \n    Romania \n    12728 \n    12574 \n    25302 \n    Europe \n  \n  \n    Russia \n    4773413 \n    173840 \n    4947253 \n    Europe \n  \n  \n    Rwanda \n    25013 \n    580 \n    25593 \n    Africa \n  \n  \n    Saint Kitts and Nevis \n    65734 \n    1 \n    65735 \n    NA \n  \n  \n    Saint Lucia \n    2097 \n    32 \n    2129 \n    NA \n  \n  \n    Saint Vincent and the Grenadines \n    23077 \n    0 \n    23077 \n    NA \n  \n  \n    Samoa \n    8801 \n    10 \n    8811 \n    Oceania \n  \n  \n    San Marino \n    0 \n    0 \n    0 \n    Europe \n  \n  \n    São Tomé and Príncipe \n    11750 \n    0 \n    11750 \n    NA \n  \n  \n    Saudi Arabia \n    68082 \n    39920 \n    108002 \n    Asia \n  \n  \n    Senegal \n    474162 \n    2079 \n    476241 \n    Africa \n  \n  \n    Serbia \n    2067 \n    6878 \n    8945 \n    Europe \n  \n  \n    Seychelles \n    127128 \n    0 \n    127128 \n    Africa \n  \n  \n    Sierra Leone \n    202100 \n    75 \n    202175 \n    Africa \n  \n  \n    Singapore \n    1234 \n    6112 \n    7346 \n    Asia \n  \n  \n    Sint Maarten \n    253 \n    0 \n    253 \n    Americas \n  \n  \n    Slovakia \n    1866 \n    2169 \n    4035 \n    Europe \n  \n  \n    Slovenia \n    311 \n    1844 \n    2155 \n    Europe \n  \n  \n    Solomon Islands \n    66445 \n    10582 \n    77027 \n    Oceania \n  \n  \n    Somalia \n    30000 \n    0 \n    30000 \n    Africa \n  \n  \n    South Africa \n    622070 \n    7994 \n    630064 \n    Africa \n  \n  \n    South Korea \n    1395951 \n    1859220 \n    3255171 \n    Asia \n  \n  \n    South Sudan \n    35000 \n    20 \n    35020 \n    Africa \n  \n  \n    Spain \n    915137 \n    283831 \n    1198968 \n    Europe \n  \n  \n    Sri Lanka \n    521637 \n    30974 \n    552611 \n    Asia \n  \n  \n    Sudan \n    33002 \n    4500 \n    37502 \n    Africa \n  \n  \n    Suriname \n    47013 \n    102 \n    47115 \n    Americas \n  \n  \n    Sweden \n    208783 \n    15747 \n    224530 \n    Europe \n  \n  \n    Switzerland \n    1851 \n    1733 \n    3584 \n    Europe \n  \n  \n    Syria \n    4500 \n    3500 \n    8000 \n    Asia \n  \n  \n    Tajikistan \n    1100 \n    450 \n    1550 \n    Asia \n  \n  \n    Tanzania \n    370966 \n    12547 \n    383513 \n    Africa \n  \n  \n    Thailand \n    1530583 \n    962571 \n    2493154 \n    Asia \n  \n  \n    Timor-Leste \n    3200 \n    1560 \n    4760 \n    Asia \n  \n  \n    Togo \n    31891 \n    98 \n    31989 \n    Africa \n  \n  \n    Tonga \n    1697 \n    3 \n    1700 \n    Oceania \n  \n  \n    Trinidad and Tobago \n    13027 \n    11 \n    13038 \n    NA \n  \n  \n    Tunisia \n    115064 \n    16165 \n    131229 \n    Africa \n  \n  \n    Turkey \n    335326 \n    250331 \n    585657 \n    Asia \n  \n  \n    Turkmenistan \n    15000 \n    30 \n    15030 \n    Asia \n  \n  \n    Turks and Caicos Islands \n    2780 \n    0 \n    2780 \n    NA \n  \n  \n    Tuvalu \n    7684 \n    3 \n    7687 \n    Oceania \n  \n  \n    Uganda \n    389244 \n    118051 \n    507295 \n    Africa \n  \n  \n    Ukraine \n    75743 \n    21425 \n    97168 \n    Europe \n  \n  \n    United Arab Emirates \n    73000 \n    1241 \n    74241 \n    Asia \n  \n  \n    United Kingdom \n    702405 \n    194492 \n    896897 \n    Europe \n  \n  \n    United States \n    4931017 \n    444369 \n    5375386 \n    Americas \n  \n  \n    Uruguay \n    51500 \n    70 \n    51570 \n    Americas \n  \n  \n    US Virgin Islands \n    551 \n    8 \n    559 \n    NA \n  \n  \n    Uzbekistan \n    27267 \n    38055 \n    65322 \n    Asia \n  \n  \n    Vanuatu \n    44002 \n    16 \n    44018 \n    Oceania \n  \n  \n    Venezuela \n    284175 \n    25998 \n    310173 \n    Americas \n  \n  \n    Vietnam \n    2785940 \n    3634531 \n    6420471 \n    Asia \n  \n  \n    Yemen \n    154450 \n    0 \n    154450 \n    Asia \n  \n  \n    Zambia \n    83918 \n    30285 \n    114203 \n    Africa \n  \n  \n    Zimbabwe \n    15711 \n    10085 \n    25796 \n    Africa \n  \n\n\n\n\n# right_join(continents, fisheries, by = \"country\")"
+  },
+  {
+    "objectID": "slides/slides-08-wrangle-prob.html#example",
+    "href": "slides/slides-08-wrangle-prob.html#example",
+    "title": "More wrangling + Probability",
+    "section": "Example",
+    "text": "Example\nWe have data on fishery harvests of countries from 2016:\n\n\n\n\nfisheries |>\n    slice(1:10)\n\n\n\n\n\n \n  \n    country \n    capture \n    aquaculture \n    total \n  \n \n\n  \n    Afghanistan \n    1000 \n    1200 \n    2200 \n  \n  \n    Albania \n    7886 \n    950 \n    8836 \n  \n  \n    Algeria \n    95000 \n    1361 \n    96361 \n  \n  \n    American Samoa \n    3047 \n    20 \n    3067 \n  \n  \n    Andorra \n    0 \n    0 \n    0 \n  \n  \n    Angola \n    486490 \n    655 \n    487145 \n  \n  \n    Antigua and Barbuda \n    3000 \n    10 \n    3010 \n  \n  \n    Argentina \n    755226 \n    3673 \n    758899 \n  \n  \n    Armenia \n    3758 \n    16381 \n    20139 \n  \n  \n    Aruba \n    142 \n    0 \n    142"
+  },
+  {
+    "objectID": "slides/slides-08-wrangle-prob.html#bringing-in-continent",
+    "href": "slides/slides-08-wrangle-prob.html#bringing-in-continent",
+    "title": "More wrangling + Probability",
+    "section": "Bringing in continent",
+    "text": "Bringing in continent\nSuppose I would like to explore the data on a continent level. We don’t have continent in the current data frame, but we could join in the following data:\n\ncontinents |>\n  slice(1:5)\n\n\n\n\n\n \n  \n    country \n    continent \n  \n \n\n  \n    Afghanistan \n    Asia \n  \n  \n    Åland Islands \n    Europe \n  \n  \n    Albania \n    Europe \n  \n  \n    Algeria \n    Africa \n  \n  \n    American Samoa \n    Oceania \n  \n\n\n\n\n\n\nWe want to keep all rows and columns from fisheries and add a column for corresponding continents. Which join function should we use?"
+  },
+  {
+    "objectID": "slides/slides-08-wrangle-prob.html#example-cont.",
+    "href": "slides/slides-08-wrangle-prob.html#example-cont.",
+    "title": "More wrangling + Probability",
+    "section": "Example (cont.)",
+    "text": "Example (cont.)\n\nleft_join(fisheries, continents, by = \"country\") |>\n  slice(1:10)\n\n\n\n\n\n \n  \n    country \n    capture \n    aquaculture \n    total \n    continent \n  \n \n\n  \n    Afghanistan \n    1000 \n    1200 \n    2200 \n    Asia \n  \n  \n    Albania \n    7886 \n    950 \n    8836 \n    Europe \n  \n  \n    Algeria \n    95000 \n    1361 \n    96361 \n    Africa \n  \n  \n    American Samoa \n    3047 \n    20 \n    3067 \n    Oceania \n  \n  \n    Andorra \n    0 \n    0 \n    0 \n    Europe \n  \n  \n    Angola \n    486490 \n    655 \n    487145 \n    Africa \n  \n  \n    Antigua and Barbuda \n    3000 \n    10 \n    3010 \n    NA \n  \n  \n    Argentina \n    755226 \n    3673 \n    758899 \n    Americas \n  \n  \n    Armenia \n    3758 \n    16381 \n    20139 \n    Asia \n  \n  \n    Aruba \n    142 \n    0 \n    142 \n    Americas \n  \n\n\n\n\n\n\nNotice the NA\nCould also use the following piping code:\n\n\n\nfisheries |>\n  left_join(continents, by = \"country\")"
+  },
+  {
+    "objectID": "slides/slides-08-joins.html#joining-data-frames",
+    "href": "slides/slides-08-joins.html#joining-data-frames",
+    "title": "More wrangling + Probability",
+    "section": "Joining data frames",
+    "text": "Joining data frames\nAssume we have two data frame, x and y. There are some shared variables (i.e. columns) in the two. Suppose we want to combine them together.\n\nsomething_join(x, y)\n\n\nMutating joins:\n\nleft_join(): return all rows from x\nright_join(): return all rows from y\nfull_join(): return all rows from both x and y\ninner_join(): all rows from x where there are matching values in y, return all combination of multiple matches in the case of multiple matches\n\nFiltering joins:\n\nsemi_join(): return all rows from x where there are matching values in y, keeping just columns from x\nanti_join(): return all rows from x where there are not matching values in y, never duplicate rows of x"
+  },
+  {
+    "objectID": "slides/slides-08-joins.html#setup",
+    "href": "slides/slides-08-joins.html#setup",
+    "title": "More wrangling + Probability",
+    "section": "Setup",
+    "text": "Setup\nFor the next few slides…\n\n\n\n\n\n\nx\n\n\n\n\n\n\nID\nx_val\n\n\n\n\n1\nx1\n\n\n2\nx2\n\n\n3\nx3\n\n\n\n\n\n\n\n\n\n\ny\n\n\n\n\n\n\nID\ny_val\n\n\n\n\n1\ny1\n\n\n2\ny2\n\n\n4\ny4"
+  },
+  {
+    "objectID": "slides/slides-08-joins.html#left_join",
+    "href": "slides/slides-08-joins.html#left_join",
+    "title": "More wrangling + Probability",
+    "section": "left_join()",
+    "text": "left_join()\nAdds columns to x from y, matching all rows in x\n\n\n\n\n\nx\n\n\n\n\n\n \n  \n    ID \n    x_val \n  \n \n\n  \n    1 \n    x1 \n  \n  \n    2 \n    x2 \n  \n  \n    3 \n    x3 \n  \n\n\n\n\n\n\n\ny\n\n\n\n\n\n \n  \n    ID \n    y_val \n  \n \n\n  \n    1 \n    y1 \n  \n  \n    2 \n    y2 \n  \n  \n    4 \n    y4 \n  \n\n\n\n\n\n\n\n\nleft_join(x, y, by = \"ID\")\n\n\n\n\n\n \n  \n    ID \n    x_val \n    y_val \n  \n \n\n  \n    1 \n    x1 \n    y1 \n  \n  \n    2 \n    x2 \n    y2 \n  \n  \n    3 \n    x3 \n    NA"
+  },
+  {
+    "objectID": "slides/slides-08-joins.html#right_join",
+    "href": "slides/slides-08-joins.html#right_join",
+    "title": "More wrangling + Probability",
+    "section": "right_join()",
+    "text": "right_join()\nAdds columns to x from y, matching all rows in y\n\n\n\n\n\nx\n\n\n\n\n\n \n  \n    ID \n    x_val \n  \n \n\n  \n    1 \n    x1 \n  \n  \n    2 \n    x2 \n  \n  \n    3 \n    x3 \n  \n\n\n\n\n\n\n\ny\n\n\n\n\n\n \n  \n    ID \n    y_val \n  \n \n\n  \n    1 \n    y1 \n  \n  \n    2 \n    y2 \n  \n  \n    4 \n    y4 \n  \n\n\n\n\n\n\n\n\nright_join(x, y, by = \"ID\")\n\n\n\n\n\n \n  \n    ID \n    x_val \n    y_val \n  \n \n\n  \n    1 \n    x1 \n    y1 \n  \n  \n    2 \n    x2 \n    y2 \n  \n  \n    4 \n    NA \n    y4"
+  },
+  {
+    "objectID": "slides/slides-08-joins.html#full_join",
+    "href": "slides/slides-08-joins.html#full_join",
+    "title": "More wrangling + Probability",
+    "section": "full_join()",
+    "text": "full_join()\nAdds columns to x from y, matching all rows in x OR y\n\n\n\n\n\nx\n\n\n\n\n\n \n  \n    ID \n    x_val \n  \n \n\n  \n    1 \n    x1 \n  \n  \n    2 \n    x2 \n  \n  \n    3 \n    x3 \n  \n\n\n\n\n\n\n\ny\n\n\n\n\n\n \n  \n    ID \n    y_val \n  \n \n\n  \n    1 \n    y1 \n  \n  \n    2 \n    y2 \n  \n  \n    4 \n    y4 \n  \n\n\n\n\n\n\n\n\nfull_join(x, y, by = \"ID\")\n\n\n\n\n\n \n  \n    ID \n    x_val \n    y_val \n  \n \n\n  \n    1 \n    x1 \n    y1 \n  \n  \n    2 \n    x2 \n    y2 \n  \n  \n    3 \n    x3 \n    NA \n  \n  \n    4 \n    NA \n    y4"
+  },
+  {
+    "objectID": "slides/slides-08-joins.html#inner_join",
+    "href": "slides/slides-08-joins.html#inner_join",
+    "title": "More wrangling + Probability",
+    "section": "inner_join()",
+    "text": "inner_join()\nAll rows from x where there are matching values in y, return all combination of multiple matches in the case of multiple matches\n\n\n\n\n\nx\n\n\n\n\n\n \n  \n    ID \n    x_val \n  \n \n\n  \n    1 \n    x1 \n  \n  \n    2 \n    x2 \n  \n  \n    3 \n    x3 \n  \n\n\n\n\n\n\n\ny\n\n\n\n\n\n \n  \n    ID \n    y_val \n  \n \n\n  \n    1 \n    y1 \n  \n  \n    2 \n    y2 \n  \n  \n    4 \n    y4 \n  \n\n\n\n\n\n\n\n\ninner_join(x, y, by = \"ID\")\n\n\n\n\n\n \n  \n    ID \n    x_val \n    y_val \n  \n \n\n  \n    1 \n    x1 \n    y1 \n  \n  \n    2 \n    x2 \n    y2"
+  },
+  {
+    "objectID": "slides/slides-08-joins.html#inner_join-cont.",
+    "href": "slides/slides-08-joins.html#inner_join-cont.",
+    "title": "More wrangling + Probability",
+    "section": "inner_join() (cont.)",
+    "text": "inner_join() (cont.)\nExample with multiple matches:\n\n\n\nx2\n\n\n\n\n\n \n  \n    ID \n    x_val \n  \n \n\n  \n    1 \n    x1 \n  \n  \n    2 \n    x2 \n  \n  \n    3 \n    x3 \n  \n  \n    1 \n    new_x \n  \n\n\n\n\n\n\n\ny2\n\n\n\n\n\n \n  \n    ID \n    y_val \n  \n \n\n  \n    1 \n    y1 \n  \n  \n    2 \n    y2 \n  \n  \n    4 \n    y4 \n  \n  \n    1 \n    new_y \n  \n\n\n\n\n\n\n\n\ninner_join(x2, y2, by = \"ID\")\n\n\n\nWarning in inner_join(x2, y2, by = \"ID\"): Detected an unexpected many-to-many relationship between `x` and `y`.\nℹ Row 1 of `x` matches multiple rows in `y`.\nℹ Row 1 of `y` matches multiple rows in `x`.\nℹ If a many-to-many relationship is expected, set `relationship =\n  \"many-to-many\"` to silence this warning.\n\n\n\n\n \n  \n    ID \n    x_val \n    y_val \n  \n \n\n  \n    1 \n    x1 \n    y1 \n  \n  \n    1 \n    x1 \n    new_y \n  \n  \n    2 \n    x2 \n    y2 \n  \n  \n    1 \n    new_x \n    y1 \n  \n  \n    1 \n    new_x \n    new_y"
+  },
+  {
+    "objectID": "slides/slides-08-joins.html#semi_join",
+    "href": "slides/slides-08-joins.html#semi_join",
+    "title": "More wrangling + Probability",
+    "section": "semi_join()",
+    "text": "semi_join()\nReturns all rows from x with a match in y, but does not add columns from y\n\n\n\n\n\nx\n\n\n\n\n\n \n  \n    ID \n    x_val \n  \n \n\n  \n    1 \n    x1 \n  \n  \n    2 \n    x2 \n  \n  \n    3 \n    x3 \n  \n\n\n\n\n\n\n\ny\n\n\n\n\n\n \n  \n    ID \n    y_val \n  \n \n\n  \n    1 \n    y1 \n  \n  \n    2 \n    y2 \n  \n  \n    4 \n    y4 \n  \n\n\n\n\n\n\n\n\nsemi_join(x, y, by = \"ID\")\n\n\n\n\n\n \n  \n    ID \n    x_val \n  \n \n\n  \n    1 \n    x1 \n  \n  \n    2 \n    x2"
+  },
+  {
+    "objectID": "slides/slides-08-joins.html#anti_join",
+    "href": "slides/slides-08-joins.html#anti_join",
+    "title": "More wrangling + Probability",
+    "section": "anti_join()",
+    "text": "anti_join()\nReturns all rows from x without any match in y, and not add columns from y\n\n\n\n\n\nx\n\n\n\n\n\n \n  \n    ID \n    x_val \n  \n \n\n  \n    1 \n    x1 \n  \n  \n    2 \n    x2 \n  \n  \n    3 \n    x3 \n  \n\n\n\n\n\n\n\ny\n\n\n\n\n\n \n  \n    ID \n    y_val \n  \n \n\n  \n    1 \n    y1 \n  \n  \n    2 \n    y2 \n  \n  \n    4 \n    y4 \n  \n\n\n\n\n\n\n\n\nanti_join(x, y, by = \"ID\")\n\n\n\n\n\n \n  \n    ID \n    x_val \n  \n \n\n  \n    3 \n    x3"
+  },
+  {
+    "objectID": "slides/slides-08-joins.html#joining-with-different-variable-names",
+    "href": "slides/slides-08-joins.html#joining-with-different-variable-names",
+    "title": "More wrangling + Probability",
+    "section": "Joining with different variable names",
+    "text": "Joining with different variable names\nIf the variables in x and y have different names but we know they represent the same variable:\n\n\n\nx\n\n\n\n\n\n \n  \n    ID \n    x_val \n  \n \n\n  \n    1 \n    x1 \n  \n  \n    2 \n    x2 \n  \n  \n    3 \n    x3 \n  \n\n\n\n\n\n\n\ny3\n\n\n\n\n\n \n  \n    ID_y \n    y_val \n  \n \n\n  \n    1 \n    y1 \n  \n  \n    2 \n    y2 \n  \n  \n    4 \n    y4 \n  \n\n\n\n\n\n\n\n\nleft_join(x, y3, by =  c(\"ID\" = \"ID_y\"))\n\n\n\n\n\n \n  \n    ID \n    x_val \n    y_val \n  \n \n\n  \n    1 \n    x1 \n    y1 \n  \n  \n    2 \n    x2 \n    y2 \n  \n  \n    3 \n    x3 \n    NA"
+  },
+  {
+    "objectID": "slides/slides-08-joins.html#joining-on-multiple-variables",
+    "href": "slides/slides-08-joins.html#joining-on-multiple-variables",
+    "title": "More wrangling + Probability",
+    "section": "Joining on multiple variables",
+    "text": "Joining on multiple variables\nCan specify more than one variable in the by argument. Will need to be a vector of characters."
+  },
+  {
+    "objectID": "slides/slides-08-joins.html#example",
+    "href": "slides/slides-08-joins.html#example",
+    "title": "More wrangling + Probability",
+    "section": "Example",
+    "text": "Example\nWe have data on fishery harvests of countries from 2016:\n\n\n\n\nfisheries |>\n    slice(1:10)\n\n\n\n\n\n \n  \n    country \n    capture \n    aquaculture \n    total \n  \n \n\n  \n    Afghanistan \n    1000 \n    1200 \n    2200 \n  \n  \n    Albania \n    7886 \n    950 \n    8836 \n  \n  \n    Algeria \n    95000 \n    1361 \n    96361 \n  \n  \n    American Samoa \n    3047 \n    20 \n    3067 \n  \n  \n    Andorra \n    0 \n    0 \n    0 \n  \n  \n    Angola \n    486490 \n    655 \n    487145 \n  \n  \n    Antigua and Barbuda \n    3000 \n    10 \n    3010 \n  \n  \n    Argentina \n    755226 \n    3673 \n    758899 \n  \n  \n    Armenia \n    3758 \n    16381 \n    20139 \n  \n  \n    Aruba \n    142 \n    0 \n    142"
+  },
+  {
+    "objectID": "slides/slides-08-joins.html#bringing-in-continent",
+    "href": "slides/slides-08-joins.html#bringing-in-continent",
+    "title": "More wrangling + Probability",
+    "section": "Bringing in continent",
+    "text": "Bringing in continent\nSuppose I would like to explore the data on a continent level. We don’t have continent in the current data frame, but we could join in the following data:\n\ncontinents |>\n  slice(1:5)\n\n\n\n\n\n \n  \n    country \n    continent \n  \n \n\n  \n    Afghanistan \n    Asia \n  \n  \n    Åland Islands \n    Europe \n  \n  \n    Albania \n    Europe \n  \n  \n    Algeria \n    Africa \n  \n  \n    American Samoa \n    Oceania \n  \n\n\n\n\n\n\n\nWe want to keep all rows and columns from fisheries and add a column for corresponding continents. Which join function should we use?\nWe want to keep all rows from fisheries for which we have a corresponding continent and add a column for corresponding continents. Which joint function should we use?"
+  },
+  {
+    "objectID": "slides/slides-08-joins.html#example-cont.",
+    "href": "slides/slides-08-joins.html#example-cont.",
+    "title": "More wrangling + Probability",
+    "section": "Example (cont.)",
+    "text": "Example (cont.)\n\n\n\nleft_join(fisheries, continents, by = \"country\") |>\n  slice(1:10)\n\n\n\n\n\n \n  \n    country \n    capture \n    aquaculture \n    total \n    continent \n  \n \n\n  \n    Afghanistan \n    1000 \n    1200 \n    2200 \n    Asia \n  \n  \n    Albania \n    7886 \n    950 \n    8836 \n    Europe \n  \n  \n    Algeria \n    95000 \n    1361 \n    96361 \n    Africa \n  \n  \n    American Samoa \n    3047 \n    20 \n    3067 \n    Oceania \n  \n  \n    Andorra \n    0 \n    0 \n    0 \n    Europe \n  \n  \n    Angola \n    486490 \n    655 \n    487145 \n    Africa \n  \n  \n    Antigua and Barbuda \n    3000 \n    10 \n    3010 \n    NA \n  \n  \n    Argentina \n    755226 \n    3673 \n    758899 \n    Americas \n  \n  \n    Armenia \n    3758 \n    16381 \n    20139 \n    Asia \n  \n  \n    Aruba \n    142 \n    0 \n    142 \n    Americas \n  \n\n\n\n\n\n\nNotice the NA\n\n\n\ninner_join(fisheries, continents, by = \"country\") |>\n  slice(1:10)\n\n\n\n\n\n \n  \n    country \n    capture \n    aquaculture \n    total \n    continent \n  \n \n\n  \n    Afghanistan \n    1000 \n    1200 \n    2200 \n    Asia \n  \n  \n    Albania \n    7886 \n    950 \n    8836 \n    Europe \n  \n  \n    Algeria \n    95000 \n    1361 \n    96361 \n    Africa \n  \n  \n    American Samoa \n    3047 \n    20 \n    3067 \n    Oceania \n  \n  \n    Andorra \n    0 \n    0 \n    0 \n    Europe \n  \n  \n    Angola \n    486490 \n    655 \n    487145 \n    Africa \n  \n  \n    Argentina \n    755226 \n    3673 \n    758899 \n    Americas \n  \n  \n    Armenia \n    3758 \n    16381 \n    20139 \n    Asia \n  \n  \n    Aruba \n    142 \n    0 \n    142 \n    Americas \n  \n  \n    Australia \n    174629 \n    96847 \n    271476 \n    Oceania \n  \n\n\n\n\n\n\n\n\nCould also use the following piping code:\n\n\n\nfisheries |>\n  left_join(continents, by = \"country\")"
+  },
+  {
+    "objectID": "slides/slides-08-joins.html#live-code",
+    "href": "slides/slides-08-joins.html#live-code",
+    "title": "More wrangling + Probability",
+    "section": "Live code",
+    "text": "Live code"
+  },
+  {
+    "objectID": "slides/slides-11-probability.html#key-terms",
+    "href": "slides/slides-11-probability.html#key-terms",
+    "title": "Probability basics",
+    "section": "Key terms",
+    "text": "Key terms\n\nRandom process: a situation in which a particular result, called an outcome, is random/not known ahead of time\n\nExamples: flipping a coin, rolling six-sided die, sports game, if a treatment is effective\n\nA sample space \\(S\\) is the set of all possible outcomes of the random process\n\n\nWhat are possible sample spaces for the above examples?\n\n\nAn event is a set of outcomes from a random process"
+  },
+  {
+    "objectID": "slides/slides-11-probability.html#random-variable",
+    "href": "slides/slides-11-probability.html#random-variable",
+    "title": "Probability basics",
+    "section": "Random variable",
+    "text": "Random variable\n\nA random variable is a variable whose value is unknown and depends on random events\n\nOften denoted with a capital letter like \\(X\\) or \\(Y\\)\n\nThere are two types: discrete and continuous (just like in numeric variables)\n\nDiscrete: represents random process where sample space is countable (i.e. finite, or distinct counts)\nContinuous: sample space is uncountable (i.e. can take on any value within a specified interval with infinite number of possible values)\n\nNOTE: we will focus on discrete random variables for now"
+  },
+  {
+    "objectID": "slides/slides-11-probability.html#probability",
+    "href": "slides/slides-11-probability.html#probability",
+    "title": "Probability basics",
+    "section": "Probability",
+    "text": "Probability\n\nFor us, the probability of an outcome is the proportion of times the outcome would occur if we observed the random process an infinite number of times\n\nProbability is used to express the likelihood that some outcome or event will or will not occur\nThink of as a proportion\n\nLet \\(A\\) denote some outcome or event. We denote the probability of \\(A\\) occurring as \\(\\text{P}(A)\\) or \\(\\text{Pr}(A)\\).\nWhen the sample space \\(S\\) is discrete with a finite size, then \\(\\text{Pr}(A) = \\frac{\\text{ number of outcomes favorable to } A}{\\text{ number of total outcomes possible} }\\)"
+  },
+  {
+    "objectID": "slides/slides-11-probability.html#example",
+    "href": "slides/slides-11-probability.html#example",
+    "title": "Probability basics",
+    "section": "Example",
+    "text": "Example\nLet the random process rolling a fair, six-sided die. Let \\(X\\) a random variable representing the value of the die.\n\nFor each of the following, determine the outcome(s) and event under consideration, along with the value of the probability itself:\n\n\\(\\text{Pr}(X = 1)\\)\n\\(\\text{Pr}(X = 1 \\text{ and } 2)\\)\n\\(\\text{Pr}(X \\text{ is even})\\)\n\n\n\nConvince ourselves that \\(X\\) is a RV. Recall: sample space is 1,..,6.\nPossible outcome is 1, and an event would be \\(X=1\\); the RV being 1.\nPossible event is 1 or 2."
+  },
+  {
+    "objectID": "slides/slides-11-probability.html#operations-with-events",
+    "href": "slides/slides-11-probability.html#operations-with-events",
+    "title": "Probability basics",
+    "section": "Operations with events",
+    "text": "Operations with events\nLet \\(A\\) and \\(B\\) be two possible events.\n\nThe intersection of \\(A\\) and \\(B\\) is denoted as \\(A \\cap B\\), and is the set of outcomes that belong to both events \\(A\\) and \\(B\\)\nThe union of \\(A\\) and \\(B\\) is denoted as \\(A \\cup B\\), and is the set of outcomes that belong to \\(A\\) and/or \\(B\\)\n\n\nWhen we have only two or three events, Venn diagrams can be very useful for visualizing probabilities!"
+  },
+  {
+    "objectID": "slides/slides-11-probability.html#disjoint-events",
+    "href": "slides/slides-11-probability.html#disjoint-events",
+    "title": "Probability basics",
+    "section": "Disjoint events",
+    "text": "Disjoint events\nTwo events are disjoint or mutually exclusive if they cannot simultaneously happen.\n\nThat is, if \\(A\\) and \\(B\\) are disjoint, then \\(\\text{Pr}(A \\cap B) = ?\\)\n\nIf our random process is rolling a six-sided die one time, what are some examples of disjoint events?"
+  },
+  {
+    "objectID": "slides/slides-11-probability.html#rules-of-probability",
+    "href": "slides/slides-11-probability.html#rules-of-probability",
+    "title": "Probability basics",
+    "section": "Rules of probability",
+    "text": "Rules of probability\nKolmogorov axioms\n\nThe probability of any event is non-negative real number\nThe probability of the entire sample space 1\nIf \\(A\\) and \\(B\\) are disjoint, then \\(\\text{Pr}(A \\cup B) = \\text{Pr}(A) + \\text{Pr}(B)\\)\n\n\nThese axioms imply that all probabilities are between 0 and 1 inclusive, and lead to some important rules!"
+  },
+  {
+    "objectID": "slides/slides-11-probability.html#addition-rule",
+    "href": "slides/slides-11-probability.html#addition-rule",
+    "title": "Probability basics",
+    "section": "Addition rule",
+    "text": "Addition rule\nLet \\(A\\) and \\(B\\) be two possible events. Then the addition rule states that the probability that at least one will occur is:\n\\[\nP(A \\cup B) = P(A) + P(B) - P(A \\cap B)\n\\]\n\nVenn diagram\nExample: in a standard deck of 52 cards, we have four suits (diamond, heart, club, spade) with 13 cards within each suit (1-10, Jack, Queen, King).\n\nSuppose we randomly draw one card from the shuffled deck.\nLet \\(A\\) be the event that the card is a spade.\nLet \\(B\\) be the event that the card is a face card (Jack, Queen or King).\nFind \\(P(A \\cup B)\\)."
+  },
+  {
+    "objectID": "slides/slides-11-probability.html#complement",
+    "href": "slides/slides-11-probability.html#complement",
+    "title": "Probability basics",
+    "section": "Complement",
+    "text": "Complement\n\nThe complement of an event \\(A\\) is the set of all outcomes in \\(S\\) that are not in \\(A\\)\n\nDenoted as \\(A^c\\)\n\nContinuing the dice example, if \\(A\\) is the event that a 1 or 2 is rolled, what is \\(A^c\\)?\nComplement rule: \\(\\text{Pr}(A^c) = 1 - \\text{Pr}(A)\\)\n\nLet our random process be the sum of two dice. What is the probability that…\n\nthe sum of the dice is \\(not\\) 6?\nthe sum is at least 4?"
+  },
+  {
+    "objectID": "slides/slides-11-probability.html#demorgans-laws",
+    "href": "slides/slides-11-probability.html#demorgans-laws",
+    "title": "Probability basics",
+    "section": "DeMorgan’s Laws",
+    "text": "DeMorgan’s Laws\nLet’s use Venn diagrams to try and determine formulas for the following:\n\nComplement of union: \\((A \\cup B)^c = \\ ?\\)\nComplement of intersection: \\((A \\cap B)^c = \\ ?\\)"
+  },
+  {
+    "objectID": "slides/slides-11-probability.html#independence",
+    "href": "slides/slides-11-probability.html#independence",
+    "title": "Probability basics",
+    "section": "Independence",
+    "text": "Independence\n\nQualitatively, two processes are independent if knowing the outcome of one does not provide any information about the outcome of the other process\n\nExamples and non-examples? How to formalize this?\n\nIf \\(A\\) and \\(B\\) are independent events from two different and independent processes, then \\(\\text{Pr}(A \\cap B) = \\text{Pr}(A) \\times \\text{Pr}(B)\\)\nMore generally, if \\(\\text{Pr}(A \\cap B) = \\text{Pr}(A) \\times \\text{Pr}(B)\\) and \\(A\\) and \\(B\\) are events from the same process, then \\(A\\) and \\(B\\) are independent.\n\nThis is known as the multiplication rule for independent events"
+  },
+  {
+    "objectID": "slides/slides-11-probability.html#probability-distributions",
+    "href": "slides/slides-11-probability.html#probability-distributions",
+    "title": "Probability basics",
+    "section": "Probability distributions",
+    "text": "Probability distributions\nWhen a random variable is discrete, it can be useful to discuss its probability distribution, which is a table of all (disjoint) outcomes and their associated probabilities.\n\n\nLet \\(X\\) be the sum of two fair, six-sided dice. What is the sample space \\(S\\)?\nFill out the table below to display the probability distribution of \\(X\\):\n\n\n\n\n\n\n\\(X\\)\n2\n3\n4\n5\n6\n7\n\n\nProbability\n\n\n\n\n\n\n\n\n\\(X\\)\n8\n9\n10\n11\n12\n\n\n\nProbability\n\n\n\n\n\n\n\n\n\n\n\nWhy not include 1 or 13?"
+  },
+  {
+    "objectID": "slides/slides-11-probability.html#probability-distributions-cont.",
+    "href": "slides/slides-11-probability.html#probability-distributions-cont.",
+    "title": "Probability basics",
+    "section": "Probability distributions (cont.)",
+    "text": "Probability distributions (cont.)\nThe probability distribution of a discrete random variable must satisfy the following three rules:\n\nThe outcomes listed must be disjoint\nEach probability must be between 0 and 1 (inclusive)\nThe probabilities must sum to 1\n\n\nLet’s confirm that the distribution we found on the previous slide satisfies these rules!"
+  },
+  {
+    "objectID": "slides/slides-11-probability.html#practice",
+    "href": "slides/slides-11-probability.html#practice",
+    "title": "Probability basics",
+    "section": "Practice",
+    "text": "Practice\n\nA Pew Research survey asked 2,373 randomly sampled registered voters their political affiliation (Republican, Democrat, or Independent) and whether or not they identify as swing voters. 35% of respondents identified as Independent, 23% identified as swing voters, and 11% identified as both.\n\nWhat percent of voters are Independent but not swing voters?\nWhat percent of voters are Independent or swing voters?\nWhat percent of voters are neither Independent nor swing voters?\nIs the event that someone is a swing voter independent of the event that someone is a political Independent?"
+  },
+  {
+    "objectID": "slides/slides-08-joins.html#housekeeping",
+    "href": "slides/slides-08-joins.html#housekeeping",
+    "title": "More wrangling + Probability",
+    "section": "Housekeeping",
+    "text": "Housekeeping"
   }
 ]

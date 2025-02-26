@@ -83,14 +83,14 @@ kable(y)
 
 Adds columns to `x` from `y`, matching all rows in `x`
 
+:::::::: columns
+:::::: {.column width="50%"}
 ::::: columns
-::: {.column width="50%"}
-
-:::: columns
 ::: {.column width="40%"}
 ```{r eval = F}
 x
 ```
+
 ```{r echo = F}
 kable(x) %>%
   kable_styling(font_size = 25)
@@ -98,7 +98,6 @@ kable(x) %>%
 :::
 
 ::: {.column width="40%"}
-
 ```{r eval = F}
 y
 ```
@@ -108,7 +107,7 @@ kable(y)%>%
   kable_styling(font_size = 25)
 ```
 :::
-::::
+:::::
 
 ```{r eval = F}
 left_join(x, y, by = "ID")
@@ -119,26 +118,25 @@ left_join(x, y, by = "ID") |>
   kable()%>%
   kable_styling(font_size = 25)
 ```
-:::
+::::::
 
 ::: {.column width="50%"}
 ![](figs/08-left-join.gif)
-
 :::
-:::::
+::::::::
 
 ## `right_join()`
 
 Adds columns to `x` from `y`, matching all rows in `y`
 
+:::::::: columns
+:::::: {.column width="50%"}
 ::::: columns
-::: {.column width="50%"}
-
-:::: columns
 ::: {.column width="40%"}
 ```{r eval = F}
 x
 ```
+
 ```{r echo = F}
 kable(x) %>%
   kable_styling(font_size = 25)
@@ -146,7 +144,6 @@ kable(x) %>%
 :::
 
 ::: {.column width="40%"}
-
 ```{r eval = F}
 y
 ```
@@ -156,7 +153,7 @@ kable(y)%>%
   kable_styling(font_size = 25)
 ```
 :::
-::::
+:::::
 
 ```{r eval = F}
 right_join(x, y, by = "ID")
@@ -167,26 +164,25 @@ right_join(x, y, by = "ID") |>
   kable()%>%
   kable_styling(font_size = 25)
 ```
-:::
+::::::
 
 ::: {.column width="50%"}
 ![](figs/08-right-join.gif)
-
 :::
-:::::
+::::::::
 
 ## `full_join()`
 
 Adds columns to `x` from `y`, matching all rows in `x` OR `y`
 
+:::::::: columns
+:::::: {.column width="50%"}
 ::::: columns
-::: {.column width="50%"}
-
-:::: columns
 ::: {.column width="40%"}
 ```{r eval = F}
 x
 ```
+
 ```{r echo = F}
 kable(x) %>%
   kable_styling(font_size = 25)
@@ -194,7 +190,6 @@ kable(x) %>%
 :::
 
 ::: {.column width="40%"}
-
 ```{r eval = F}
 y
 ```
@@ -204,7 +199,7 @@ kable(y)%>%
   kable_styling(font_size = 25)
 ```
 :::
-::::
+:::::
 
 ```{r eval = F}
 full_join(x, y, by = "ID")
@@ -215,27 +210,25 @@ full_join(x, y, by = "ID") |>
   kable()%>%
   kable_styling(font_size = 25)
 ```
-:::
+::::::
 
 ::: {.column width="50%"}
 ![](figs/08-full-join.gif)
-
 :::
-:::::
-
+::::::::
 
 ## `inner_join()`
 
 All rows from `x` where there are matching values in `y`, return all combination of multiple matches in the case of multiple matches
 
+:::::::: columns
+:::::: {.column width="50%"}
 ::::: columns
-::: {.column width="50%"}
-
-:::: columns
 ::: {.column width="40%"}
 ```{r eval = F}
 x
 ```
+
 ```{r echo = F}
 kable(x) %>%
   kable_styling(font_size = 25)
@@ -243,7 +236,6 @@ kable(x) %>%
 :::
 
 ::: {.column width="40%"}
-
 ```{r eval = F}
 y
 ```
@@ -253,7 +245,7 @@ kable(y)%>%
   kable_styling(font_size = 25)
 ```
 :::
-::::
+:::::
 
 ```{r eval = F}
 inner_join(x, y, by = "ID")
@@ -264,25 +256,23 @@ inner_join(x, y, by = "ID") |>
   kable()%>%
   kable_styling(font_size = 25)
 ```
-:::
+::::::
 
 ::: {.column width="50%"}
 ![](figs/08-inner-join.gif)
-
 :::
-:::::
+::::::::
 
 ## `inner_join()` (cont.)
 
 Example with multiple matches:
 
-
-
-:::: columns
+::::: columns
 ::: {.column width="40%"}
 ```{r eval = F}
 x2
 ```
+
 ```{r echo = F}
 x2 <- x |>
   add_row(ID = 1, x_val = "new_x")
@@ -292,7 +282,6 @@ kable(x2) %>%
 :::
 
 ::: {.column width="40%"}
-
 ```{r eval = F}
 y2
 ```
@@ -304,7 +293,7 @@ kable(y2)%>%
   kable_styling(font_size = 20)
 ```
 :::
-::::
+:::::
 
 ```{r eval = F}
 inner_join(x2, y2, by = "ID")
@@ -316,19 +305,18 @@ inner_join(x2, y2, by = "ID") |>
   kable_styling(font_size = 20)
 ```
 
-
 ## `semi_join()`
 
 Returns all rows from `x` **with** a match in `y`, but does not add columns from `y`
 
+:::::::: columns
+:::::: {.column width="50%"}
 ::::: columns
-::: {.column width="50%"}
-
-:::: columns
 ::: {.column width="40%"}
 ```{r eval = F}
 x
 ```
+
 ```{r echo = F}
 kable(x) %>%
   kable_styling(font_size = 25)
@@ -336,7 +324,6 @@ kable(x) %>%
 :::
 
 ::: {.column width="40%"}
-
 ```{r eval = F}
 y
 ```
@@ -346,7 +333,7 @@ kable(y)%>%
   kable_styling(font_size = 25)
 ```
 :::
-::::
+:::::
 
 ```{r eval = F}
 semi_join(x, y, by = "ID")
@@ -357,28 +344,25 @@ semi_join(x, y, by = "ID") |>
   kable()%>%
   kable_styling(font_size = 25)
 ```
-
-:::
+::::::
 
 ::: {.column width="50%"}
 ![](figs/08-semi-join.gif)
-
 :::
-:::::
-
+::::::::
 
 ## `anti_join()`
 
 Returns all rows from `x` **without** any match in `y`, and not add columns from `y`
 
+:::::::: columns
+:::::: {.column width="50%"}
 ::::: columns
-::: {.column width="50%"}
-
-:::: columns
 ::: {.column width="40%"}
 ```{r eval = F}
 x
 ```
+
 ```{r echo = F}
 kable(x) %>%
   kable_styling(font_size = 25)
@@ -386,7 +370,6 @@ kable(x) %>%
 :::
 
 ::: {.column width="40%"}
-
 ```{r eval = F}
 y
 ```
@@ -396,7 +379,7 @@ kable(y)%>%
   kable_styling(font_size = 25)
 ```
 :::
-::::
+:::::
 
 ```{r eval = F}
 anti_join(x, y, by = "ID")
@@ -407,26 +390,23 @@ anti_join(x, y, by = "ID") |>
   kable()%>%
   kable_styling(font_size = 25)
 ```
-:::
+::::::
 
 ::: {.column width="50%"}
 ![](figs/08-anti-join.gif)
-
 :::
-:::::
-
+::::::::
 
 ## Joining with different variable names
 
 If the variables in `x` and `y` have different names but we know they represent the same variable:
 
-
-
-:::: columns
+::::: columns
 ::: {.column width="40%"}
 ```{r eval = F}
 x
 ```
+
 ```{r echo = F}
 kable(x) %>%
   kable_styling(font_size = 25)
@@ -434,7 +414,6 @@ kable(x) %>%
 :::
 
 ::: {.column width="40%"}
-
 ```{r eval = F}
 y3
 ```
@@ -446,7 +425,7 @@ kable(y3)%>%
   kable_styling(font_size = 25)
 ```
 :::
-::::
+:::::
 
 ```{r eval = F}
 left_join(x, y3, by =  c("ID" = "ID_y"))
@@ -458,18 +437,15 @@ left_join(x, y3, by = c("ID" = "ID_y"))|>
   kable_styling(font_size = 25)
 ```
 
-
-
 ## Joining on multiple variables
 
 Can specify more than one variable in the `by` argument. Will need to be a vector of characters.
 
-##
+## Example
 
-fishery harvest 
-of countries for 2016, by capture and aquaculture
+We have data on fishery harvests of countries from 2016:
 
-```{r}
+```{r echo = F}
 library(readr)
 fish_url <- "https://raw.githubusercontent.com/math118-fall2022/website/refs/heads/master/docs/slides/lec-slides/data/fisheries.csv"
 countries_url <- "https://raw.githubusercontent.com/math118-fall2022/website/refs/heads/master/docs/slides/lec-slides/data/continents.csv"
@@ -477,30 +453,83 @@ fisheries <- read_csv(fish_url)
 continents <- read_csv(countries_url)
 ```
 
-```{r}
-kable(fisheries) |>
-  kable_styling(font_size = 20)
+```{r eval = F}
+fisheries |>
+    slice(1:10)
 ```
 
-
-## 
-
-
-```{r}
-kable(continents) |>
-  kable_styling(font_size = 20)
-```
-
-We want to keep all rows and columns from `fisheries` and add a column for 
-corresponding continents. Which join function should we use?
-
-
-##
-
-```{r}
-left_join(fisheries, continents, by = "country") |>
+```{r echo = F}
+fisheries |>
+  slice(1:10) |>
   kable() |>
   kable_styling(font_size = 20)
-# right_join(continents, fisheries, by = "country")
 ```
 
+## Bringing in continent
+
+Suppose I would like to explore the data on a continent level. We don't have continent in the current data frame, but we could join in the following data:
+
+```{r eval = F}
+continents |>
+  slice(1:5)
+```
+
+```{r echo = F}
+continents |> 
+  slice(1:5) |>
+  kable() |>
+  kable_styling(font_size = 20)
+```
+
+::: discuss
+-   We want to keep all rows and columns from `fisheries` and add a column for corresponding continents. Which join function should we use?
+
+-   We want to keep all rows from `fisheries` for which we have a corresponding continent and add a column for corresponding continents. Which joint function should we use?
+:::
+
+## Example (cont.)
+
+:::: {.columns}
+::: {.column width="50%}
+```{r eval = F}
+left_join(fisheries, continents, by = "country") |>
+  slice(1:10)
+```
+
+```{r echo = F}
+left_join(fisheries, continents, by = "country") |>
+  slice(1:10) |>
+  kable() |>
+  kable_styling(font_size = 20)
+```
+-   Notice the `NA`
+:::
+
+::: {.column width="50%}
+
+```{r eval = F}
+inner_join(fisheries, continents, by = "country") |>
+  slice(1:10)
+```
+
+```{r echo = F}
+inner_join(fisheries, continents, by = "country") |>
+  slice(1:10) |>
+  kable() |>
+  kable_styling(font_size = 20)
+```
+:::
+::::
+
+-   Could also use the following piping code:
+
+::: fragment
+```{r eval = F}
+fisheries |>
+  left_join(continents, by = "country")
+```
+:::
+
+## Live code
+
+# Probability
