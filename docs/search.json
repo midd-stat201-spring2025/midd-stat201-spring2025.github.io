@@ -6190,100 +6190,100 @@
   {
     "objectID": "slides/slides-08-joins.html#joining-data-frames",
     "href": "slides/slides-08-joins.html#joining-data-frames",
-    "title": "More wrangling + Probability",
+    "title": "Joining data frames",
     "section": "Joining data frames",
-    "text": "Joining data frames\nAssume we have two data frame, x and y. There are some shared variables (i.e. columns) in the two. Suppose we want to combine them together.\n\nsomething_join(x, y)\n\n\nMutating joins:\n\nleft_join(): return all rows from x\nright_join(): return all rows from y\nfull_join(): return all rows from both x and y\ninner_join(): all rows from x where there are matching values in y, return all combination of multiple matches in the case of multiple matches\n\nFiltering joins:\n\nsemi_join(): return all rows from x where there are matching values in y, keeping just columns from x\nanti_join(): return all rows from x where there are not matching values in y, never duplicate rows of x"
+    "text": "Joining data frames\nAssume we have two data frame, x and y. There are some shared variables (i.e. columns) in the two. Suppose we want to combine them together into one single data frame.\n\n\nsomething_join(x, y)\n\n\n\nMutating joins:\n\nleft_join(): return all rows from x\nright_join(): return all rows from y\nfull_join(): return all rows from both x and y\ninner_join(): all rows from x where there are matching values in y, return all combination of multiple matches in the case of multiple matches\n\nFiltering joins:\n\nsemi_join(): return all rows from x where there are matching values in y, keeping just columns from x\nanti_join(): return all rows from x where there are not matching values in y, never duplicate rows of x"
   },
   {
     "objectID": "slides/slides-08-joins.html#setup",
     "href": "slides/slides-08-joins.html#setup",
-    "title": "More wrangling + Probability",
+    "title": "Joining data frames",
     "section": "Setup",
     "text": "Setup\nFor the next few slides…\n\n\n\n\n\n\nx\n\n\n\n\n\n\nID\nx_val\n\n\n\n\n1\nx1\n\n\n2\nx2\n\n\n3\nx3\n\n\n\n\n\n\n\n\n\n\ny\n\n\n\n\n\n\nID\ny_val\n\n\n\n\n1\ny1\n\n\n2\ny2\n\n\n4\ny4"
   },
   {
     "objectID": "slides/slides-08-joins.html#left_join",
     "href": "slides/slides-08-joins.html#left_join",
-    "title": "More wrangling + Probability",
+    "title": "Joining data frames",
     "section": "left_join()",
     "text": "left_join()\nAdds columns to x from y, matching all rows in x\n\n\n\n\n\nx\n\n\n\n\n\n \n  \n    ID \n    x_val \n  \n \n\n  \n    1 \n    x1 \n  \n  \n    2 \n    x2 \n  \n  \n    3 \n    x3 \n  \n\n\n\n\n\n\n\ny\n\n\n\n\n\n \n  \n    ID \n    y_val \n  \n \n\n  \n    1 \n    y1 \n  \n  \n    2 \n    y2 \n  \n  \n    4 \n    y4 \n  \n\n\n\n\n\n\n\n\nleft_join(x, y, by = \"ID\")\n\n\n\n\n\n \n  \n    ID \n    x_val \n    y_val \n  \n \n\n  \n    1 \n    x1 \n    y1 \n  \n  \n    2 \n    x2 \n    y2 \n  \n  \n    3 \n    x3 \n    NA"
   },
   {
     "objectID": "slides/slides-08-joins.html#right_join",
     "href": "slides/slides-08-joins.html#right_join",
-    "title": "More wrangling + Probability",
+    "title": "Joining data frames",
     "section": "right_join()",
     "text": "right_join()\nAdds columns to x from y, matching all rows in y\n\n\n\n\n\nx\n\n\n\n\n\n \n  \n    ID \n    x_val \n  \n \n\n  \n    1 \n    x1 \n  \n  \n    2 \n    x2 \n  \n  \n    3 \n    x3 \n  \n\n\n\n\n\n\n\ny\n\n\n\n\n\n \n  \n    ID \n    y_val \n  \n \n\n  \n    1 \n    y1 \n  \n  \n    2 \n    y2 \n  \n  \n    4 \n    y4 \n  \n\n\n\n\n\n\n\n\nright_join(x, y, by = \"ID\")\n\n\n\n\n\n \n  \n    ID \n    x_val \n    y_val \n  \n \n\n  \n    1 \n    x1 \n    y1 \n  \n  \n    2 \n    x2 \n    y2 \n  \n  \n    4 \n    NA \n    y4"
   },
   {
     "objectID": "slides/slides-08-joins.html#full_join",
     "href": "slides/slides-08-joins.html#full_join",
-    "title": "More wrangling + Probability",
+    "title": "Joining data frames",
     "section": "full_join()",
     "text": "full_join()\nAdds columns to x from y, matching all rows in x OR y\n\n\n\n\n\nx\n\n\n\n\n\n \n  \n    ID \n    x_val \n  \n \n\n  \n    1 \n    x1 \n  \n  \n    2 \n    x2 \n  \n  \n    3 \n    x3 \n  \n\n\n\n\n\n\n\ny\n\n\n\n\n\n \n  \n    ID \n    y_val \n  \n \n\n  \n    1 \n    y1 \n  \n  \n    2 \n    y2 \n  \n  \n    4 \n    y4 \n  \n\n\n\n\n\n\n\n\nfull_join(x, y, by = \"ID\")\n\n\n\n\n\n \n  \n    ID \n    x_val \n    y_val \n  \n \n\n  \n    1 \n    x1 \n    y1 \n  \n  \n    2 \n    x2 \n    y2 \n  \n  \n    3 \n    x3 \n    NA \n  \n  \n    4 \n    NA \n    y4"
   },
   {
     "objectID": "slides/slides-08-joins.html#inner_join",
     "href": "slides/slides-08-joins.html#inner_join",
-    "title": "More wrangling + Probability",
+    "title": "Joining data frames",
     "section": "inner_join()",
     "text": "inner_join()\nAll rows from x where there are matching values in y, return all combination of multiple matches in the case of multiple matches\n\n\n\n\n\nx\n\n\n\n\n\n \n  \n    ID \n    x_val \n  \n \n\n  \n    1 \n    x1 \n  \n  \n    2 \n    x2 \n  \n  \n    3 \n    x3 \n  \n\n\n\n\n\n\n\ny\n\n\n\n\n\n \n  \n    ID \n    y_val \n  \n \n\n  \n    1 \n    y1 \n  \n  \n    2 \n    y2 \n  \n  \n    4 \n    y4 \n  \n\n\n\n\n\n\n\n\ninner_join(x, y, by = \"ID\")\n\n\n\n\n\n \n  \n    ID \n    x_val \n    y_val \n  \n \n\n  \n    1 \n    x1 \n    y1 \n  \n  \n    2 \n    x2 \n    y2"
   },
   {
     "objectID": "slides/slides-08-joins.html#inner_join-cont.",
     "href": "slides/slides-08-joins.html#inner_join-cont.",
-    "title": "More wrangling + Probability",
+    "title": "Joining data frames",
     "section": "inner_join() (cont.)",
     "text": "inner_join() (cont.)\nExample with multiple matches:\n\n\n\nx2\n\n\n\n\n\n \n  \n    ID \n    x_val \n  \n \n\n  \n    1 \n    x1 \n  \n  \n    2 \n    x2 \n  \n  \n    3 \n    x3 \n  \n  \n    1 \n    new_x \n  \n\n\n\n\n\n\n\ny2\n\n\n\n\n\n \n  \n    ID \n    y_val \n  \n \n\n  \n    1 \n    y1 \n  \n  \n    2 \n    y2 \n  \n  \n    4 \n    y4 \n  \n  \n    1 \n    new_y \n  \n\n\n\n\n\n\n\n\ninner_join(x2, y2, by = \"ID\")\n\n\n\nWarning in inner_join(x2, y2, by = \"ID\"): Detected an unexpected many-to-many relationship between `x` and `y`.\nℹ Row 1 of `x` matches multiple rows in `y`.\nℹ Row 1 of `y` matches multiple rows in `x`.\nℹ If a many-to-many relationship is expected, set `relationship =\n  \"many-to-many\"` to silence this warning.\n\n\n\n\n \n  \n    ID \n    x_val \n    y_val \n  \n \n\n  \n    1 \n    x1 \n    y1 \n  \n  \n    1 \n    x1 \n    new_y \n  \n  \n    2 \n    x2 \n    y2 \n  \n  \n    1 \n    new_x \n    y1 \n  \n  \n    1 \n    new_x \n    new_y"
   },
   {
     "objectID": "slides/slides-08-joins.html#semi_join",
     "href": "slides/slides-08-joins.html#semi_join",
-    "title": "More wrangling + Probability",
+    "title": "Joining data frames",
     "section": "semi_join()",
     "text": "semi_join()\nReturns all rows from x with a match in y, but does not add columns from y\n\n\n\n\n\nx\n\n\n\n\n\n \n  \n    ID \n    x_val \n  \n \n\n  \n    1 \n    x1 \n  \n  \n    2 \n    x2 \n  \n  \n    3 \n    x3 \n  \n\n\n\n\n\n\n\ny\n\n\n\n\n\n \n  \n    ID \n    y_val \n  \n \n\n  \n    1 \n    y1 \n  \n  \n    2 \n    y2 \n  \n  \n    4 \n    y4 \n  \n\n\n\n\n\n\n\n\nsemi_join(x, y, by = \"ID\")\n\n\n\n\n\n \n  \n    ID \n    x_val \n  \n \n\n  \n    1 \n    x1 \n  \n  \n    2 \n    x2"
   },
   {
     "objectID": "slides/slides-08-joins.html#anti_join",
     "href": "slides/slides-08-joins.html#anti_join",
-    "title": "More wrangling + Probability",
+    "title": "Joining data frames",
     "section": "anti_join()",
     "text": "anti_join()\nReturns all rows from x without any match in y, and not add columns from y\n\n\n\n\n\nx\n\n\n\n\n\n \n  \n    ID \n    x_val \n  \n \n\n  \n    1 \n    x1 \n  \n  \n    2 \n    x2 \n  \n  \n    3 \n    x3 \n  \n\n\n\n\n\n\n\ny\n\n\n\n\n\n \n  \n    ID \n    y_val \n  \n \n\n  \n    1 \n    y1 \n  \n  \n    2 \n    y2 \n  \n  \n    4 \n    y4 \n  \n\n\n\n\n\n\n\n\nanti_join(x, y, by = \"ID\")\n\n\n\n\n\n \n  \n    ID \n    x_val \n  \n \n\n  \n    3 \n    x3"
   },
   {
     "objectID": "slides/slides-08-joins.html#joining-with-different-variable-names",
     "href": "slides/slides-08-joins.html#joining-with-different-variable-names",
-    "title": "More wrangling + Probability",
+    "title": "Joining data frames",
     "section": "Joining with different variable names",
-    "text": "Joining with different variable names\nIf the variables in x and y have different names but we know they represent the same variable:\n\n\n\nx\n\n\n\n\n\n \n  \n    ID \n    x_val \n  \n \n\n  \n    1 \n    x1 \n  \n  \n    2 \n    x2 \n  \n  \n    3 \n    x3 \n  \n\n\n\n\n\n\n\ny3\n\n\n\n\n\n \n  \n    ID_y \n    y_val \n  \n \n\n  \n    1 \n    y1 \n  \n  \n    2 \n    y2 \n  \n  \n    4 \n    y4 \n  \n\n\n\n\n\n\n\n\nleft_join(x, y3, by =  c(\"ID\" = \"ID_y\"))\n\n\n\n\n\n \n  \n    ID \n    x_val \n    y_val \n  \n \n\n  \n    1 \n    x1 \n    y1 \n  \n  \n    2 \n    x2 \n    y2 \n  \n  \n    3 \n    x3 \n    NA"
+    "text": "Joining with different variable names\nIf the variables in x and y have different names but we know they represent the same variable:\n\n\n\nx\n\n\n\n\n\n \n  \n    ID \n    x_val \n  \n \n\n  \n    1 \n    x1 \n  \n  \n    2 \n    x2 \n  \n  \n    3 \n    x3 \n  \n\n\n\n\n\n\n\ny3\n\n\n\n\n\n \n  \n    ID_y \n    y_val \n  \n \n\n  \n    1 \n    y1 \n  \n  \n    2 \n    y2 \n  \n  \n    4 \n    y4 \n  \n\n\n\n\n\n\n\n\n\nleft_join(x, y3, by =  c(\"ID\" = \"ID_y\"))\n\n\n\n\n\n \n  \n    ID \n    x_val \n    y_val \n  \n \n\n  \n    1 \n    x1 \n    y1 \n  \n  \n    2 \n    x2 \n    y2 \n  \n  \n    3 \n    x3 \n    NA"
   },
   {
     "objectID": "slides/slides-08-joins.html#joining-on-multiple-variables",
     "href": "slides/slides-08-joins.html#joining-on-multiple-variables",
-    "title": "More wrangling + Probability",
+    "title": "Joining data frames",
     "section": "Joining on multiple variables",
-    "text": "Joining on multiple variables\nCan specify more than one variable in the by argument. Will need to be a vector of characters."
+    "text": "Joining on multiple variables\nCan specify more than one variable in the by argument. Will need to a vector of character objects.\n\n\n\nenrollment\n\n\n\n\n\n \n  \n    student_id \n    course \n    start_year \n  \n \n\n  \n    1 \n    STAT 310 \n    F22 \n  \n  \n    1 \n    MATH 223 \n    F22 \n  \n  \n    2 \n    STAT 310 \n    F23 \n  \n  \n    3 \n    STAT 201 \n    W24 \n  \n\n\n\n\n\n\n\npayment\n\n\n\n\n\n \n  \n    student_id \n    Course \n    status \n  \n \n\n  \n    1 \n    STAT 310 \n    paid \n  \n  \n    1 \n    MATH 223 \n    paid \n  \n  \n    2 \n    STAT 310 \n    unpaid \n  \n  \n    3 \n    STAT 201 \n    paid \n  \n\n\n\n\n\n\n\n\n\n# note, multiple join functions would work in this example!\ninner_join(enrollment, payment, by = c(\"student_id\", \"course\" = \"Course\"))\n\n\n\n\n\n \n  \n    student_id \n    course \n    start_year \n    status \n  \n \n\n  \n    1 \n    STAT 310 \n    F22 \n    paid \n  \n  \n    1 \n    MATH 223 \n    F22 \n    paid \n  \n  \n    2 \n    STAT 310 \n    F23 \n    unpaid \n  \n  \n    3 \n    STAT 201 \n    W24 \n    paid"
   },
   {
     "objectID": "slides/slides-08-joins.html#example",
     "href": "slides/slides-08-joins.html#example",
-    "title": "More wrangling + Probability",
+    "title": "Joining data frames",
     "section": "Example",
-    "text": "Example\nWe have data on fishery harvests of countries from 2016:\n\n\n\n\nfisheries |>\n    slice(1:10)\n\n\n\n\n\n \n  \n    country \n    capture \n    aquaculture \n    total \n  \n \n\n  \n    Afghanistan \n    1000 \n    1200 \n    2200 \n  \n  \n    Albania \n    7886 \n    950 \n    8836 \n  \n  \n    Algeria \n    95000 \n    1361 \n    96361 \n  \n  \n    American Samoa \n    3047 \n    20 \n    3067 \n  \n  \n    Andorra \n    0 \n    0 \n    0 \n  \n  \n    Angola \n    486490 \n    655 \n    487145 \n  \n  \n    Antigua and Barbuda \n    3000 \n    10 \n    3010 \n  \n  \n    Argentina \n    755226 \n    3673 \n    758899 \n  \n  \n    Armenia \n    3758 \n    16381 \n    20139 \n  \n  \n    Aruba \n    142 \n    0 \n    142"
+    "text": "Example\nWe have data on fishery harvests by countries from 2016:\n\n\n\n\nfish |>\n    slice(1:9)\n\n\n\n\n\n \n  \n    country \n    capture \n  \n \n\n  \n    Afghanistan \n    1000 \n  \n  \n    Albania \n    7886 \n  \n  \n    Algeria \n    95000 \n  \n  \n    American Samoa \n    3047 \n  \n  \n    Andorra \n    0 \n  \n  \n    Angola \n    486490 \n  \n  \n    Antigua and Barbuda \n    3000 \n  \n  \n    Argentina \n    755226 \n  \n  \n    Armenia \n    3758"
   },
   {
     "objectID": "slides/slides-08-joins.html#bringing-in-continent",
     "href": "slides/slides-08-joins.html#bringing-in-continent",
-    "title": "More wrangling + Probability",
+    "title": "Joining data frames",
     "section": "Bringing in continent",
-    "text": "Bringing in continent\nSuppose I would like to explore the data on a continent level. We don’t have continent in the current data frame, but we could join in the following data:\n\ncontinents |>\n  slice(1:5)\n\n\n\n\n\n \n  \n    country \n    continent \n  \n \n\n  \n    Afghanistan \n    Asia \n  \n  \n    Åland Islands \n    Europe \n  \n  \n    Albania \n    Europe \n  \n  \n    Algeria \n    Africa \n  \n  \n    American Samoa \n    Oceania \n  \n\n\n\n\n\n\n\nWe want to keep all rows and columns from fisheries and add a column for corresponding continents. Which join function should we use?\nWe want to keep all rows from fisheries for which we have a corresponding continent and add a column for corresponding continents. Which joint function should we use?"
+    "text": "Bringing in continent\nSuppose I would like to explore the data on a continent level. We don’t have continent in the current data frame, but we could join in the following data:\n\ncontinents |>\n  slice(1:5)\n\n\n\n\n\n \n  \n    country \n    continent \n  \n \n\n  \n    Afghanistan \n    Asia \n  \n  \n    Åland Islands \n    Europe \n  \n  \n    Albania \n    Europe \n  \n  \n    Algeria \n    Africa \n  \n  \n    American Samoa \n    Oceania \n  \n\n\n\n\n\n\n\nWe want to keep all rows and columns from fish and add a column for corresponding continents. Which join function should we use?\nWe want to keep all rows from fish for which we have a corresponding continent and add a column for corresponding continents. Which join function should we use?"
   },
   {
     "objectID": "slides/slides-08-joins.html#example-cont.",
     "href": "slides/slides-08-joins.html#example-cont.",
-    "title": "More wrangling + Probability",
+    "title": "Joining data frames",
     "section": "Example (cont.)",
-    "text": "Example (cont.)\n\n\n\nleft_join(fisheries, continents, by = \"country\") |>\n  slice(1:10)\n\n\n\n\n\n \n  \n    country \n    capture \n    aquaculture \n    total \n    continent \n  \n \n\n  \n    Afghanistan \n    1000 \n    1200 \n    2200 \n    Asia \n  \n  \n    Albania \n    7886 \n    950 \n    8836 \n    Europe \n  \n  \n    Algeria \n    95000 \n    1361 \n    96361 \n    Africa \n  \n  \n    American Samoa \n    3047 \n    20 \n    3067 \n    Oceania \n  \n  \n    Andorra \n    0 \n    0 \n    0 \n    Europe \n  \n  \n    Angola \n    486490 \n    655 \n    487145 \n    Africa \n  \n  \n    Antigua and Barbuda \n    3000 \n    10 \n    3010 \n    NA \n  \n  \n    Argentina \n    755226 \n    3673 \n    758899 \n    Americas \n  \n  \n    Armenia \n    3758 \n    16381 \n    20139 \n    Asia \n  \n  \n    Aruba \n    142 \n    0 \n    142 \n    Americas \n  \n\n\n\n\n\n\nNotice the NA\n\n\n\ninner_join(fisheries, continents, by = \"country\") |>\n  slice(1:10)\n\n\n\n\n\n \n  \n    country \n    capture \n    aquaculture \n    total \n    continent \n  \n \n\n  \n    Afghanistan \n    1000 \n    1200 \n    2200 \n    Asia \n  \n  \n    Albania \n    7886 \n    950 \n    8836 \n    Europe \n  \n  \n    Algeria \n    95000 \n    1361 \n    96361 \n    Africa \n  \n  \n    American Samoa \n    3047 \n    20 \n    3067 \n    Oceania \n  \n  \n    Andorra \n    0 \n    0 \n    0 \n    Europe \n  \n  \n    Angola \n    486490 \n    655 \n    487145 \n    Africa \n  \n  \n    Argentina \n    755226 \n    3673 \n    758899 \n    Americas \n  \n  \n    Armenia \n    3758 \n    16381 \n    20139 \n    Asia \n  \n  \n    Aruba \n    142 \n    0 \n    142 \n    Americas \n  \n  \n    Australia \n    174629 \n    96847 \n    271476 \n    Oceania \n  \n\n\n\n\n\n\n\n\nCould also use the following piping code:\n\n\n\nfisheries |>\n  left_join(continents, by = \"country\")"
+    "text": "Example (cont.)\n\n\n\nleft_join(fish, continents, by = \"country\") |>\n  slice(1:9)\n\n\n\n\n\n \n  \n    country \n    capture \n    continent \n  \n \n\n  \n    Afghanistan \n    1000 \n    Asia \n  \n  \n    Albania \n    7886 \n    Europe \n  \n  \n    Algeria \n    95000 \n    Africa \n  \n  \n    American Samoa \n    3047 \n    Oceania \n  \n  \n    Andorra \n    0 \n    Europe \n  \n  \n    Angola \n    486490 \n    Africa \n  \n  \n    Antigua and Barbuda \n    3000 \n    NA \n  \n  \n    Argentina \n    755226 \n    Americas \n  \n  \n    Armenia \n    3758 \n    Asia \n  \n\n\n\n\n\n\nNotice the NA\n\n\n\n\ninner_join(fish, continents, by = \"country\") |>\n  slice(1:9)\n\n\n\n\n\n \n  \n    country \n    capture \n    continent \n  \n \n\n  \n    Afghanistan \n    1000 \n    Asia \n  \n  \n    Albania \n    7886 \n    Europe \n  \n  \n    Algeria \n    95000 \n    Africa \n  \n  \n    American Samoa \n    3047 \n    Oceania \n  \n  \n    Andorra \n    0 \n    Europe \n  \n  \n    Angola \n    486490 \n    Africa \n  \n  \n    Argentina \n    755226 \n    Americas \n  \n  \n    Armenia \n    3758 \n    Asia \n  \n  \n    Aruba \n    142 \n    Americas \n  \n\n\n\n\n\n\n\n\n\nCould also use the following piping code:\n\n\n\nfish |>\n  left_join(continents, by = \"country\")"
   },
   {
     "objectID": "slides/slides-08-joins.html#live-code",
@@ -6393,8 +6393,29 @@
   {
     "objectID": "slides/slides-08-joins.html#housekeeping",
     "href": "slides/slides-08-joins.html#housekeeping",
-    "title": "More wrangling + Probability",
+    "title": "Joining data frames",
     "section": "Housekeeping",
-    "text": "Housekeeping"
+    "text": "Housekeeping\n\n\n\n\nWrangling coding practice due tonight!\nOffice hours tomorrow 10am-12pm\nProblem Set 3 has large R component"
+  },
+  {
+    "objectID": "slides/slides-08-joins.html#wrangle",
+    "href": "slides/slides-08-joins.html#wrangle",
+    "title": "Joining data frames",
+    "section": "Wrangle",
+    "text": "Wrangle\n\nfish |>\n  left_join(continents, by = \"country\") |>\n  group_by(continent) |> # get continent-level summary stats\n  summarise(mean_capture = mean(capture), sd_capture = sd(capture))\n\n# A tibble: 6 × 3\n  continent mean_capture sd_capture\n  <chr>            <dbl>      <dbl>\n1 Africa         180705.    266107.\n2 Americas       433235.   1038899.\n3 Asia          1036018.   2869652.\n4 Europe         317874.    797072.\n5 Oceania         74660.    121027.\n6 <NA>           134722.    448079."
+  },
+  {
+    "objectID": "slides/slides-08-joins.html#visualize",
+    "href": "slides/slides-08-joins.html#visualize",
+    "title": "Joining data frames",
+    "section": "Visualize",
+    "text": "Visualize\n\nfish |>\n  na.omit() |> #remove observations with any NAs\n  left_join(continents, by = \"country\") |>\n  ggplot(aes(x = continent, y = capture)) +\n  geom_boxplot(outliers = F) +\n  theme_bw() +\n  labs(caption = \"Excluding outliers\")"
+  },
+  {
+    "objectID": "slides/slides-08-joins.html#visualize-cont.",
+    "href": "slides/slides-08-joins.html#visualize-cont.",
+    "title": "Joining data frames",
+    "section": "Visualize (cont.)",
+    "text": "Visualize (cont.)\n\nfish |>\n  na.omit() |> #remove observations with any NAs\n  left_join(continents, by = \"country\") |>\n  ggplot(aes(x = continent, y = capture)) +\n  geom_boxplot(outliers = F) +\n  theme_bw() +\n  labs(caption = \"Excluding outliers\", x = \"Log capture\")\n\n\n\nWarning: Removed 4 rows containing non-finite outside the scale range\n(`stat_boxplot()`)."
   }
 ]

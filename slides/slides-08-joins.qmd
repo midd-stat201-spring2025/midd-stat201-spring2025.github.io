@@ -1,5 +1,5 @@
 ---
-title: "More wrangling + Probability"
+title: "Joining data frames"
 date: "February 27, 2025"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
@@ -25,13 +25,21 @@ knitr::opts_chunk$set(echo = T, warning = F, messabundance = F)
 library(kableExtra)
 ```
 
+- Wrangling coding practice due tonight!
+
+- Office hours tomorrow 10am-12pm
+
+- Problem Set 3 has large `R` component
+
 ## Joining data frames
 
-Assume we have two data frame, `x` and `y`. There are some shared variables (i.e. columns) in the two. Suppose we want to combine them together.
+Assume we have two data frame, `x` and `y`. There are some shared variables (i.e. columns) in the two. Suppose we want to combine them together into one single data frame.
 
+::: {.fragment}
 ```{r eval = F}
 something_join(x, y)
 ```
+:::
 
 -   Mutating joins:
 
@@ -427,6 +435,8 @@ kable(y3)%>%
 :::
 :::::
 
+::: {.fragment}
+
 ```{r eval = F}
 left_join(x, y3, by =  c("ID" = "ID_y"))
 ```
@@ -436,31 +446,75 @@ left_join(x, y3, by = c("ID" = "ID_y"))|>
   kable()%>%
   kable_styling(font_size = 25)
 ```
+:::
 
 ## Joining on multiple variables
 
-Can specify more than one variable in the `by` argument. Will need to be a vector of characters.
+Can specify more than one variable in the `by` argument. Will need to a vector of character objects.
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r eval = F}
+enrollment
+```
+
+```{r echo= F}
+enrollment <- data.frame(student_id = c(1, 1, 2, 3), course = c("STAT 310", "MATH 223" , "STAT 310", "STAT 201"), start_year = c("F22", "F22", "F23", "W24"))
+enrollment |>
+  kable() |>
+  kable_styling(font_size = 25)
+```
+:::
+::: {.column width="50%"}
+```{r eval = F}
+payment
+```
+
+```{r echo = F}
+payment <- data.frame(student_id = c(1, 1, 2, 3), Course = c("STAT 310", "MATH 223" , "STAT 310", "STAT 201"), status = c("paid", "paid" , "unpaid", "paid"))
+payment |>
+  kable() |>
+  kable_styling(font_size = 25)
+```
+
+:::
+::::
+
+::: {.fragment}
+
+```{r eval = F}
+# note, multiple join functions would work in this example!
+inner_join(enrollment, payment, by = c("student_id", "course" = "Course"))
+```
+
+```{r echo = F}
+# note, multiple join functions would work in this example!
+inner_join(enrollment, payment, by = c("student_id", "course" = "Course")) |>
+   kable() |>
+  kable_styling(font_size = 25)
+```
+:::
 
 ## Example
 
-We have data on fishery harvests of countries from 2016:
+We have data on fishery harvests (in tons) by countries from 2016:
 
 ```{r echo = F}
 library(readr)
-fish_url <- "https://raw.githubusercontent.com/math118-fall2022/website/refs/heads/master/docs/slides/lec-slides/data/fisheries.csv"
+fish_url <- "https://raw.githubusercontent.com/midd-stat201-spring2025/midd-stat201-spring2025.github.io/refs/heads/main/data/fisheries.csv"
 countries_url <- "https://raw.githubusercontent.com/math118-fall2022/website/refs/heads/master/docs/slides/lec-slides/data/continents.csv"
-fisheries <- read_csv(fish_url)
+fish <- read_csv(fish_url)
 continents <- read_csv(countries_url)
 ```
 
 ```{r eval = F}
-fisheries |>
-    slice(1:10)
+fish |>
+    slice(1:9)
 ```
 
 ```{r echo = F}
-fisheries |>
-  slice(1:10) |>
+fish |>
+  slice(1:9) |>
   kable() |>
   kable_styling(font_size = 20)
 ```
@@ -482,9 +536,9 @@ continents |>
 ```
 
 ::: discuss
--   We want to keep all rows and columns from `fisheries` and add a column for corresponding continents. Which join function should we use?
+-   We want to keep all rows and columns from `fish` and add a column for corresponding continents. Which join function should we use?
 
--   We want to keep all rows from `fisheries` for which we have a corresponding continent and add a column for corresponding continents. Which joint function should we use?
+-   We want to keep all rows from `fish` for which we have a corresponding continent and add a column for corresponding continents. Which join function should we use?
 :::
 
 ## Example (cont.)
@@ -492,13 +546,13 @@ continents |>
 :::: {.columns}
 ::: {.column width="50%}
 ```{r eval = F}
-left_join(fisheries, continents, by = "country") |>
-  slice(1:10)
+left_join(fish, continents, by = "country") |>
+  slice(1:9)
 ```
 
 ```{r echo = F}
-left_join(fisheries, continents, by = "country") |>
-  slice(1:10) |>
+left_join(fish, continents, by = "country") |>
+  slice(1:9) |>
   kable() |>
   kable_styling(font_size = 20)
 ```
@@ -506,18 +560,19 @@ left_join(fisheries, continents, by = "country") |>
 :::
 
 ::: {.column width="50%}
-
+::: {.fragment}
 ```{r eval = F}
-inner_join(fisheries, continents, by = "country") |>
-  slice(1:10)
+inner_join(fish, continents, by = "country") |>
+  slice(1:9)
 ```
 
 ```{r echo = F}
-inner_join(fisheries, continents, by = "country") |>
-  slice(1:10) |>
+inner_join(fish, continents, by = "country") |>
+  slice(1:9) |>
   kable() |>
   kable_styling(font_size = 20)
 ```
+:::
 :::
 ::::
 
@@ -525,11 +580,66 @@ inner_join(fisheries, continents, by = "country") |>
 
 ::: fragment
 ```{r eval = F}
-fisheries |>
+fish |>
   left_join(continents, by = "country")
 ```
 :::
 
-## Live code
 
-# Probability
+## Wrangle 
+
+```{r}
+fish |>
+  left_join(continents, by = "country") |>
+  group_by(continent) |> # get continent-level summary stats
+  summarise(mean_capture = mean(capture), sd_capture = sd(capture))
+```
+
+## Visualize
+
+```{r eval = F}
+fish |>
+  na.omit() |> #remove observations with any NAs
+  left_join(continents, by = "country") |>
+  ggplot(aes(x = continent, y = capture)) +
+  geom_boxplot(outliers = F) +
+  theme_bw() +
+  labs(caption = "Excluding outliers")
+```
+
+```{r echo = F}
+fish |>
+  left_join(continents, by = "country") |>
+  na.omit() |> #remove observations with any NAs
+  ggplot(aes(x = continent, y = capture)) +
+  geom_boxplot(outliers = F) +
+  theme_bw() +
+  labs(caption = "Excluding outliers") +
+  theme(text = element_text(size = 20))
+```
+
+## Visualize (cont.)
+
+```{r eval = F}
+fish |>
+  na.omit() |> #remove observations with any NAs
+  left_join(continents, by = "country") |>
+  ggplot(aes(x = continent, y = capture)) +
+  geom_boxplot(outliers = F) +
+  theme_bw() +
+  labs(caption = "Excluding outliers", y = "Log capture")
+```
+
+```{r echo = F, warning = T}
+fish |>
+  mutate(log_capture = log(capture)) |>
+  left_join(continents, by = "country") |>
+  na.omit() |> #remove observations with any NAs
+  ggplot(aes(x = continent, y = log_capture)) +
+  geom_boxplot() +
+  theme_bw() +
+  labs(caption = "Excluding countries with 0 capture", y = "Log capture") +
+  theme(text = element_text(size = 20))
+```
+
+

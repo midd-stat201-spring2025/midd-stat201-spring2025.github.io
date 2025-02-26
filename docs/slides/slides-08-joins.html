@@ -9,7 +9,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.2.313">
 
-  <title>STAT 201: Intro. to Statistics and Data Science - More wrangling + Probability</title>
+  <title>STAT 201: Intro. to Statistics and Data Science - Joining data frames</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -391,7 +391,7 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="figs/bikeshare-plots.png" data-background-opacity="0.2" data-background-size="contain" class="quarto-title-block center">
-  <h1 class="title">More wrangling + Probability</h1>
+  <h1 class="title">Joining data frames</h1>
 
 <div class="quarto-title-authors">
 </div>
@@ -403,12 +403,19 @@
 <div class="cell">
 
 </div>
+<ul>
+<li class="fragment"><p>Wrangling coding practice due tonight!</p></li>
+<li class="fragment"><p>Office hours tomorrow 10am-12pm</p></li>
+<li class="fragment"><p>Problem Set 3 has large <code>R</code> component</p></li>
+</ul>
 </section>
 <section id="joining-data-frames" class="slide level2">
 <h2>Joining data frames</h2>
-<p>Assume we have two data frame, <code>x</code> and <code>y</code>. There are some shared variables (i.e.&nbsp;columns) in the two. Suppose we want to combine them together.</p>
+<p>Assume we have two data frame, <code>x</code> and <code>y</code>. There are some shared variables (i.e.&nbsp;columns) in the two. Suppose we want to combine them together into one single data frame.</p>
+<div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">something_join</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <ul>
 <li class="fragment"><p>Mutating joins:</p>
@@ -1351,6 +1358,7 @@
 </div>
 </div>
 </div>
+<div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">left_join</span>(x, y3, <span class="at">by =</span>  <span class="fu">c</span>(<span class="st">"ID"</span> <span class="ot">=</span> <span class="st">"ID_y"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1386,20 +1394,154 @@
 
 </div>
 </div>
+</div>
 </section>
 <section id="joining-on-multiple-variables" class="slide level2">
 <h2>Joining on multiple variables</h2>
-<p>Can specify more than one variable in the <code>by</code> argument. Will need to be a vector of characters.</p>
+<p>Can specify more than one variable in the <code>by</code> argument. Will need to a vector of character objects.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>enrollment</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> student_id </th>
+   <th style="text-align:left;"> course </th>
+   <th style="text-align:left;"> start_year </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> STAT 310 </td>
+   <td style="text-align:left;"> F22 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> MATH 223 </td>
+   <td style="text-align:left;"> F22 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> STAT 310 </td>
+   <td style="text-align:left;"> F23 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> STAT 201 </td>
+   <td style="text-align:left;"> W24 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>payment</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> student_id </th>
+   <th style="text-align:left;"> Course </th>
+   <th style="text-align:left;"> status </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> STAT 310 </td>
+   <td style="text-align:left;"> paid </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> MATH 223 </td>
+   <td style="text-align:left;"> paid </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> STAT 310 </td>
+   <td style="text-align:left;"> unpaid </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> STAT 201 </td>
+   <td style="text-align:left;"> paid </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># note, multiple join functions would work in this example!</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a><span class="fu">inner_join</span>(enrollment, payment, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"student_id"</span>, <span class="st">"course"</span> <span class="ot">=</span> <span class="st">"Course"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> student_id </th>
+   <th style="text-align:left;"> course </th>
+   <th style="text-align:left;"> start_year </th>
+   <th style="text-align:left;"> status </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> STAT 310 </td>
+   <td style="text-align:left;"> F22 </td>
+   <td style="text-align:left;"> paid </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> MATH 223 </td>
+   <td style="text-align:left;"> F22 </td>
+   <td style="text-align:left;"> paid </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> STAT 310 </td>
+   <td style="text-align:left;"> F23 </td>
+   <td style="text-align:left;"> unpaid </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> STAT 201 </td>
+   <td style="text-align:left;"> W24 </td>
+   <td style="text-align:left;"> paid </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
 </section>
 <section id="example" class="slide level2">
 <h2>Example</h2>
-<p>We have data on fishery harvests of countries from 2016:</p>
+<p>We have data on fishery harvests by countries from 2016:</p>
 <div class="cell">
 
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>fisheries <span class="sc">|&gt;</span></span>
-<span id="cb29-2"><a href="#cb29-2"></a>    <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>fish <span class="sc">|&gt;</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a>    <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -1409,70 +1551,44 @@
   <tr>
    <th style="text-align:left;"> country </th>
    <th style="text-align:right;"> capture </th>
-   <th style="text-align:right;"> aquaculture </th>
-   <th style="text-align:right;"> total </th>
   </tr>
  </thead>
 <tbody>
   <tr>
    <td style="text-align:left;"> Afghanistan </td>
    <td style="text-align:right;"> 1000 </td>
-   <td style="text-align:right;"> 1200 </td>
-   <td style="text-align:right;"> 2200 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Albania </td>
    <td style="text-align:right;"> 7886 </td>
-   <td style="text-align:right;"> 950 </td>
-   <td style="text-align:right;"> 8836 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Algeria </td>
    <td style="text-align:right;"> 95000 </td>
-   <td style="text-align:right;"> 1361 </td>
-   <td style="text-align:right;"> 96361 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> American Samoa </td>
    <td style="text-align:right;"> 3047 </td>
-   <td style="text-align:right;"> 20 </td>
-   <td style="text-align:right;"> 3067 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Andorra </td>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 0 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Angola </td>
    <td style="text-align:right;"> 486490 </td>
-   <td style="text-align:right;"> 655 </td>
-   <td style="text-align:right;"> 487145 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Antigua and Barbuda </td>
    <td style="text-align:right;"> 3000 </td>
-   <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 3010 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Argentina </td>
    <td style="text-align:right;"> 755226 </td>
-   <td style="text-align:right;"> 3673 </td>
-   <td style="text-align:right;"> 758899 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Armenia </td>
    <td style="text-align:right;"> 3758 </td>
-   <td style="text-align:right;"> 16381 </td>
-   <td style="text-align:right;"> 20139 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Aruba </td>
-   <td style="text-align:right;"> 142 </td>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 142 </td>
   </tr>
 </tbody>
 </table>
@@ -1484,8 +1600,8 @@
 <h2>Bringing in continent</h2>
 <p>Suppose I would like to explore the data on a continent level. We don’t have continent in the current data frame, but we could join in the following data:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>continents <span class="sc">|&gt;</span></span>
-<span id="cb30-2"><a href="#cb30-2"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>continents <span class="sc">|&gt;</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -1525,8 +1641,8 @@
 </div>
 <div class="discuss">
 <ul>
-<li class="fragment"><p>We want to keep all rows and columns from <code>fisheries</code> and add a column for corresponding continents. Which join function should we use?</p></li>
-<li class="fragment"><p>We want to keep all rows from <code>fisheries</code> for which we have a corresponding continent and add a column for corresponding continents. Which joint function should we use?</p></li>
+<li class="fragment"><p>We want to keep all rows and columns from <code>fish</code> and add a column for corresponding continents. Which join function should we use?</p></li>
+<li class="fragment"><p>We want to keep all rows from <code>fish</code> for which we have a corresponding continent and add a column for corresponding continents. Which join function should we use?</p></li>
 </ul>
 </div>
 </section>
@@ -1535,8 +1651,8 @@
 <div class="columns">
 <div class="column" style="width:&quot;50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">left_join</span>(fisheries, continents, <span class="at">by =</span> <span class="st">"country"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">left_join</span>(fish, continents, <span class="at">by =</span> <span class="st">"country"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -1546,8 +1662,6 @@
   <tr>
    <th style="text-align:left;"> country </th>
    <th style="text-align:right;"> capture </th>
-   <th style="text-align:right;"> aquaculture </th>
-   <th style="text-align:right;"> total </th>
    <th style="text-align:left;"> continent </th>
   </tr>
  </thead>
@@ -1555,72 +1669,47 @@
   <tr>
    <td style="text-align:left;"> Afghanistan </td>
    <td style="text-align:right;"> 1000 </td>
-   <td style="text-align:right;"> 1200 </td>
-   <td style="text-align:right;"> 2200 </td>
    <td style="text-align:left;"> Asia </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Albania </td>
    <td style="text-align:right;"> 7886 </td>
-   <td style="text-align:right;"> 950 </td>
-   <td style="text-align:right;"> 8836 </td>
    <td style="text-align:left;"> Europe </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Algeria </td>
    <td style="text-align:right;"> 95000 </td>
-   <td style="text-align:right;"> 1361 </td>
-   <td style="text-align:right;"> 96361 </td>
    <td style="text-align:left;"> Africa </td>
   </tr>
   <tr>
    <td style="text-align:left;"> American Samoa </td>
    <td style="text-align:right;"> 3047 </td>
-   <td style="text-align:right;"> 20 </td>
-   <td style="text-align:right;"> 3067 </td>
    <td style="text-align:left;"> Oceania </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Andorra </td>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:left;"> Europe </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Angola </td>
    <td style="text-align:right;"> 486490 </td>
-   <td style="text-align:right;"> 655 </td>
-   <td style="text-align:right;"> 487145 </td>
    <td style="text-align:left;"> Africa </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Antigua and Barbuda </td>
    <td style="text-align:right;"> 3000 </td>
-   <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 3010 </td>
    <td style="text-align:left;"> NA </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Argentina </td>
    <td style="text-align:right;"> 755226 </td>
-   <td style="text-align:right;"> 3673 </td>
-   <td style="text-align:right;"> 758899 </td>
    <td style="text-align:left;"> Americas </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Armenia </td>
    <td style="text-align:right;"> 3758 </td>
-   <td style="text-align:right;"> 16381 </td>
-   <td style="text-align:right;"> 20139 </td>
    <td style="text-align:left;"> Asia </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Aruba </td>
-   <td style="text-align:right;"> 142 </td>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 142 </td>
-   <td style="text-align:left;"> Americas </td>
   </tr>
 </tbody>
 </table>
@@ -1631,9 +1720,10 @@
 <li class="fragment">Notice the <code>NA</code></li>
 </ul>
 </div><div class="column" style="width:&quot;50%;">
+<div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">inner_join</span>(fisheries, continents, <span class="at">by =</span> <span class="st">"country"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">inner_join</span>(fish, continents, <span class="at">by =</span> <span class="st">"country"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -1643,8 +1733,6 @@
   <tr>
    <th style="text-align:left;"> country </th>
    <th style="text-align:right;"> capture </th>
-   <th style="text-align:right;"> aquaculture </th>
-   <th style="text-align:right;"> total </th>
    <th style="text-align:left;"> continent </th>
   </tr>
  </thead>
@@ -1652,76 +1740,52 @@
   <tr>
    <td style="text-align:left;"> Afghanistan </td>
    <td style="text-align:right;"> 1000 </td>
-   <td style="text-align:right;"> 1200 </td>
-   <td style="text-align:right;"> 2200 </td>
    <td style="text-align:left;"> Asia </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Albania </td>
    <td style="text-align:right;"> 7886 </td>
-   <td style="text-align:right;"> 950 </td>
-   <td style="text-align:right;"> 8836 </td>
    <td style="text-align:left;"> Europe </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Algeria </td>
    <td style="text-align:right;"> 95000 </td>
-   <td style="text-align:right;"> 1361 </td>
-   <td style="text-align:right;"> 96361 </td>
    <td style="text-align:left;"> Africa </td>
   </tr>
   <tr>
    <td style="text-align:left;"> American Samoa </td>
    <td style="text-align:right;"> 3047 </td>
-   <td style="text-align:right;"> 20 </td>
-   <td style="text-align:right;"> 3067 </td>
    <td style="text-align:left;"> Oceania </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Andorra </td>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:left;"> Europe </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Angola </td>
    <td style="text-align:right;"> 486490 </td>
-   <td style="text-align:right;"> 655 </td>
-   <td style="text-align:right;"> 487145 </td>
    <td style="text-align:left;"> Africa </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Argentina </td>
    <td style="text-align:right;"> 755226 </td>
-   <td style="text-align:right;"> 3673 </td>
-   <td style="text-align:right;"> 758899 </td>
    <td style="text-align:left;"> Americas </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Armenia </td>
    <td style="text-align:right;"> 3758 </td>
-   <td style="text-align:right;"> 16381 </td>
-   <td style="text-align:right;"> 20139 </td>
    <td style="text-align:left;"> Asia </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Aruba </td>
    <td style="text-align:right;"> 142 </td>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 142 </td>
    <td style="text-align:left;"> Americas </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Australia </td>
-   <td style="text-align:right;"> 174629 </td>
-   <td style="text-align:right;"> 96847 </td>
-   <td style="text-align:right;"> 271476 </td>
-   <td style="text-align:left;"> Oceania </td>
   </tr>
 </tbody>
 </table>
 
+</div>
 </div>
 </div>
 </div>
@@ -1731,18 +1795,64 @@
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>fisheries <span class="sc">|&gt;</span></span>
-<span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">left_join</span>(continents, <span class="at">by =</span> <span class="st">"country"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>fish <span class="sc">|&gt;</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">left_join</span>(continents, <span class="at">by =</span> <span class="st">"country"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
-<section id="live-code" class="slide level2">
-<h2>Live code</h2>
+<section id="wrangle" class="slide level2">
+<h2>Wrangle</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>fish <span class="sc">|&gt;</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a>  <span class="fu">left_join</span>(continents, <span class="at">by =</span> <span class="st">"country"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb37-3"><a href="#cb37-3"></a>  <span class="fu">group_by</span>(continent) <span class="sc">|&gt;</span> <span class="co"># get continent-level summary stats</span></span>
+<span id="cb37-4"><a href="#cb37-4"></a>  <span class="fu">summarise</span>(<span class="at">mean_capture =</span> <span class="fu">mean</span>(capture), <span class="at">sd_capture =</span> <span class="fu">sd</span>(capture))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  continent mean_capture sd_capture
+  &lt;chr&gt;            &lt;dbl&gt;      &lt;dbl&gt;
+1 Africa         180705.    266107.
+2 Americas       433235.   1038899.
+3 Asia          1036018.   2869652.
+4 Europe         317874.    797072.
+5 Oceania         74660.    121027.
+6 &lt;NA&gt;           134722.    448079.</code></pre>
+</div>
+</div>
 </section>
-<section id="probability" class="title-slide slide level1 center">
-<h1>Probability</h1>
+<section id="visualize" class="slide level2">
+<h2>Visualize</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>fish <span class="sc">|&gt;</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">na.omit</span>() <span class="sc">|&gt;</span> <span class="co">#remove observations with any NAs</span></span>
+<span id="cb39-3"><a href="#cb39-3"></a>  <span class="fu">left_join</span>(continents, <span class="at">by =</span> <span class="st">"country"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb39-4"><a href="#cb39-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> capture)) <span class="sc">+</span></span>
+<span id="cb39-5"><a href="#cb39-5"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outliers =</span> F) <span class="sc">+</span></span>
+<span id="cb39-6"><a href="#cb39-6"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb39-7"><a href="#cb39-7"></a>  <span class="fu">labs</span>(<span class="at">caption =</span> <span class="st">"Excluding outliers"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
-<div class="footer footer-default">
+<img data-src="slides-08-joins_files/figure-revealjs/unnamed-chunk-75-1.png" width="960" class="r-stretch"></section>
+<section id="visualize-cont." class="slide level2">
+<h2>Visualize (cont.)</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>fish <span class="sc">|&gt;</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a>  <span class="fu">na.omit</span>() <span class="sc">|&gt;</span> <span class="co">#remove observations with any NAs</span></span>
+<span id="cb40-3"><a href="#cb40-3"></a>  <span class="fu">left_join</span>(continents, <span class="at">by =</span> <span class="st">"country"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb40-4"><a href="#cb40-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> capture)) <span class="sc">+</span></span>
+<span id="cb40-5"><a href="#cb40-5"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outliers =</span> F) <span class="sc">+</span></span>
+<span id="cb40-6"><a href="#cb40-6"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb40-7"><a href="#cb40-7"></a>  <span class="fu">labs</span>(<span class="at">caption =</span> <span class="st">"Excluding outliers"</span>, <span class="at">x =</span> <span class="st">"Log capture"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 4 rows containing non-finite outside the scale range
+(`stat_boxplot()`).</code></pre>
+</div>
+
+</div>
+
+<img data-src="slides-08-joins_files/figure-revealjs/unnamed-chunk-77-1.png" width="960" class="r-stretch"><div class="footer footer-default">
 
 </div>
 </section>
