@@ -1,42 +1,74 @@
 ---
 title: "Data wrangling with dplyr (cont.)"
-date: "September 26, 2024"
 format:
   html:
     toc: true
     code-line-numbers: true
+editor_options: 
+  chunk_output_type: console
 ---
 
 **Don't forget to load the `tidyverse` package!**
 
-Recall that we are looking at data provided by Kaggle. In 2017, Kaggle conducted an [industry-wide survey](https://www.kaggle.com/datasets/kaggle/kaggle-survey-2017/) to establish a comprehensive view of the state of data science and machine learning. We will be looking at just a subset of the data.
+2016 fisheries data about capture and aquaculture harvests (in tons) by country.
 
 ```{r library-data, message= F}
 library(tidyverse)
 library(readr)
-url_file <- "https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/datascience_survey_subset.csv"
+fish_url <- "https://raw.githubusercontent.com/midd-stat201-spring2025/midd-stat201-spring2025.github.io/refs/heads/main/data/fisheries.csv"
 
-datascience <- read_csv(url_file)
+fish <- read_csv(fish_url)
 ```
 
 ## Warm-up/Recap:
 
-Write code to determine many different programming languages were recommended in the data:
+Write code to wrangle the data to include a variable called `total_mil` that represents the total harvest for each continent in *millions* of tons. Assign the output back into `fish`, so the data frame is updated to include this new variable. Only display the 10 countries with the highest total harvest, and only display the two variables of interest.
+
+```{r eval = T}
+#| code-fold: true
+fish <- fish |>
+  mutate(total = capture + aquaculture) |>
+  mutate(total_mil = total/1000000)
+```
+
+Then wrangle the data to only display the 10 countries with the highest total harvest, and only display the two variables of interest.
 
 ```{r eval = FALSE}
 #| code-fold: true
-datascience |>
-  distinct(LanguageRecommendation) |>
-  nrow()
+fish |>
+  arrange(-total_mil) |>
+  slice(1:10) |>
+  select(country, total_mil)
 ```
 
-Display a data frame of the respondents who were living in the United States and were at most 35 years old at the time of taking the survey.
+## Joins
 
-```{r eval = FALSE}
-#| code-fold: true
-datascience |>
-  filter(Country == "United States", Age <= 35)
+We also have a dataset the provides the continent for a given country:
+
+```{r message = F}
+continents_url <- "https://raw.githubusercontent.com/math118-fall2022/website/refs/heads/master/docs/slides/lec-slides/data/continents.csv"
+continents <- read_csv(continents_url)
 ```
+
+Let's join the two data frames together.
+
+-   If we want to keep all rows from `fish` for which we have a corresponding continent and add a column for the continents:
+
+    ```{r}
+    inner_join(fish, continents, by = "country") |>
+      slice(1:9)
+    ```
+
+-   If we want to keep all rows from `fish` and add a column for the corresponding continent:
+
+    ```{r}
+    left_join(fish, continents, by = "country") |>
+      slice(1:9)
+    
+    # we could also use this piping code
+    fish_joined <- fish |>
+      left_join(continents, by = "country")
+    ```
 
 
 
@@ -44,30 +76,54 @@ datascience |>
 
 Sometimes, we want to look at a given statistic or create a new variable focusing on each level of a specific categorical variable. The `group_by()` function tells `R` to treat each unique level as a separate data set.
 
+In the following, we obtain the average total harvest (in millions of tons) per continent:
+
 ```{r}
-datascience |>
-  group_by(FormalEducation) |>
-  summarise(mean_age = mean(Age))
+fish_joined |>
+  group_by(continent) |>
+  summarise(mean_total_mil = mean(total_mil))
 ```
 
-It's always important to `ungroup()` after using `group_by()`! Otherwise, the grouping with carry on and could lead to potential errors in your future wrangling! Notice the differences in the outputs in the following examples: 
+It's always important to `ungroup()` after using `group_by()` if you're going to continue using the data frame in future analyses! Otherwise, the grouping will carry on and could lead to potential errors in your future wrangling!
+
+See the following example:
+
+:::: {.callout-note collapse="true" appearance="minimal"}
+## Expand
+
+```{r echo = F}
+ID <- c(1:6)
+Sex <- rep(c("male", "female"), each = 3) 
+Age <- c(26, 25, 39, 37, 31, 20) 
+Score <- c(0.010, 0.418, 0.014, 0.090, 0.061, 0.328)
+
+data <- tibble(ID, Sex, Age, Score)
+```
 
 ```{r}
-datascience |>
-  group_by(Major) |>
-  mutate(mean_age = mean(Age))|>
-  mutate(mean_comp = mean(CompensationAmount)) |>
-  ungroup() |>
-  select(Major, mean_age, mean_comp) |>
-  arrange(Major)
+data
+data |> 
+  group_by(Sex) |> 
+  mutate(m = mean(Age)) |>   # calculates the average age of males and females
+  mutate(x = mean(Score)) # counts number of participants
 
-datascience |>
-  group_by(Major) |>
-  mutate(mean_age = mean(Age)) |>
+data |> 
+  group_by(Sex) |> 
+  mutate(m = mean(Age)) |>  # calculates the average age of males and females
+  ungroup() |>              # nested ungroup()
+  mutate(x = mean(Score))    # counts number of participants
+```
+
+::::
+
+Notice the differences in the outputs in the following examples. We also remove the `NA`s:
+
+```{r}
+fish_joined |>
+  group_by(continent) |>
+  summarise(mean_total_mil = mean(total_mil)) |>
   ungroup() |>
-  mutate(mean_comp = mean(CompensationAmount)) |>
-  select(Major, mean_age, mean_comp) |>
-  arrange(Major)
+  na.omit() # this could go in many places
 ```
 
 ## Piping to ggplot()
@@ -76,29 +132,26 @@ Remember that when creating plots, `ggplot()` expects a data frame as its first 
 
 We may sometimes need to wrangle data prior to visualizing it. We have two options (both have pros and cons):
 
- 1.  Wrangle the original data, store the resulting data frame as a new object or overwrite the previous one, and then refer to that data frame with `ggplot()`
+1.  Wrangle the original data, store the resulting data frame as a new object or overwrite the previous one, and then refer to that data frame with `ggplot()`
 
 ```{r eval = T, fig.width=6, fig.height=3.75}
-datascience_india <- datascience |>
-  filter(Country == "India")
-
-ggplot(data = datascience_india, mapping = aes(x = Age)) +
-  geom_histogram(bins = 20)
+fish_joined_no_na <- fish_joined |>
+  na.omit()
+fish_joined_no_na |> 
+  ggplot(aes(x = continent, y = total)) +
+  geom_boxplot(outliers = F) +
+  labs(caption = "Excluding outliers") 
 ```
 
-2. Wrangle the original data, and then directly pipe the result into `ggplot()`, which knows to expect a data frame as its first argument:
+2.  Wrangle the original data, and then directly pipe the result into `ggplot()`, which knows to expect a data frame as its first argument:
 
 ```{r eval = T, fig.width=6, fig.height=3.75}
 # Notice that we don't specify the data parameter in ggplot()!
-datascience |>
-  filter(Country == "India") |>
-  ggplot(mapping = aes(x = Age)) + 
-  geom_histogram(bins = 20)
+fish_joined |>
+  na.omit() |>
+  mutate(log_total = log(total)) |>
+  ggplot(aes(x = continent, y = log_total)) +
+  geom_boxplot(outliers = F) +
+  labs(caption = "Excluding countries with 0 harvest")
 ```
-
-::: column-margin
-When do we use `|>` and when do we use `+` to connect lines of code?
-:::
-
-
 

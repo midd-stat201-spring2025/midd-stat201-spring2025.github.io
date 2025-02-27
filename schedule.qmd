@@ -49,7 +49,7 @@ Jump to:
 |              |          |     -   [Live code](live_code/data_wrangling_pt1.qmd) from today                                                                                                                          |                                                                                                                                                       |                                                                                                                                                                |
 |              |          |                                                                                                                                                                                           |     {{< downloadthis coding_practice/coding-practice-07-wrangling.qmd dname="coding-practice-wrangling" label="Coding practice" id=mtcars-btn >}}     |     {{< downloadthis homework/hw3_r.qmd dname="hw3_r" label="hw3_r" id=mtcars-btn >}}                                                                          |
 +--------------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|              | R 2/27   | -   Topic: [Joining data](slides/slides-08-joins.qmd)                                                                                                                                     |                                                                                                                                                       |                                                                                                                                                                |
+|              | R 2/27   | -   Topic: [Joining data](slides/slides-08-joins.qmd) (pdf [here](slides/pdf/slides-08.pdf))                                                                                              | -   See above                                                                                                                                         | -   See above                                                                                                                                                  |
 +--------------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 : {tbl-colwidths="\[10,10,40,40\]"}
@@ -65,9 +65,20 @@ To print PDF of the slides with multiple slides on a page:
 ## Code copy
 :::
 
--   Tuesday, 2/26:
+-   Wednesday 2/26:
 
     ```{r eval = F}
     library(readr)
     url_file <- "https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/datascience_survey_subset.csv"
+    ```
+
+-   Thursday 2/27
+
+    ```{r eval = F}
+    library(readr)
+    fish_url <- "https://raw.githubusercontent.com/midd-stat201-spring2025/midd-stat201-spring2025.github.io/refs/heads/main/data/fisheries.csv"
+    continents_url <- "https://raw.githubusercontent.com/math118-fall2022/website/refs/heads/master/docs/slides/lec-slides/data/continents.csv"
+
+    fish <- read_csv(fish_url)
+    continents <- read_csv(continents_url)
     ```

@@ -25,17 +25,17 @@ knitr::opts_chunk$set(echo = T, warning = F, messabundance = F)
 library(kableExtra)
 ```
 
-- Wrangling coding practice due tonight!
+-   Wrangling coding practice due tonight!
 
-- Office hours tomorrow 10am-12pm
+-   Office hours tomorrow 10am-12pm
 
-- Problem Set 3 has large `R` component
+-   Problem Set 3 has large `R` component
 
 ## Joining data frames
 
 Assume we have two data frame, `x` and `y`. There are some shared variables (i.e. columns) in the two. Suppose we want to combine them together into one single data frame.
 
-::: {.fragment}
+::: fragment
 ```{r eval = F}
 something_join(x, y)
 ```
@@ -435,8 +435,7 @@ kable(y3)%>%
 :::
 :::::
 
-::: {.fragment}
-
+::: fragment
 ```{r eval = F}
 left_join(x, y3, by =  c("ID" = "ID_y"))
 ```
@@ -452,7 +451,7 @@ left_join(x, y3, by = c("ID" = "ID_y"))|>
 
 Can specify more than one variable in the `by` argument. Will need to a vector of character objects.
 
-:::: {.columns}
+::::: columns
 ::: {.column width="50%"}
 ```{r eval = F}
 enrollment
@@ -465,6 +464,7 @@ enrollment |>
   kable_styling(font_size = 25)
 ```
 :::
+
 ::: {.column width="50%"}
 ```{r eval = F}
 payment
@@ -476,12 +476,10 @@ payment |>
   kable() |>
   kable_styling(font_size = 25)
 ```
-
 :::
-::::
+:::::
 
-::: {.fragment}
-
+::: fragment
 ```{r eval = F}
 # note, multiple join functions would work in this example!
 inner_join(enrollment, payment, by = c("student_id", "course" = "Course"))
@@ -494,6 +492,8 @@ inner_join(enrollment, payment, by = c("student_id", "course" = "Course")) |>
   kable_styling(font_size = 25)
 ```
 :::
+
+# Live code
 
 ## Example
 
@@ -543,8 +543,8 @@ continents |>
 
 ## Example (cont.)
 
-:::: {.columns}
-::: {.column width="50%}
+:::::: columns
+::: {.column width="\"50%"}
 ```{r eval = F}
 left_join(fish, continents, by = "country") |>
   slice(1:9)
@@ -556,11 +556,12 @@ left_join(fish, continents, by = "country") |>
   kable() |>
   kable_styling(font_size = 20)
 ```
+
 -   Notice the `NA`
 :::
 
-::: {.column width="50%}
-::: {.fragment}
+:::: {.column width="\"50%"}
+::: fragment
 ```{r eval = F}
 inner_join(fish, continents, by = "country") |>
   slice(1:9)
@@ -573,8 +574,8 @@ inner_join(fish, continents, by = "country") |>
   kable_styling(font_size = 20)
 ```
 :::
-:::
 ::::
+::::::
 
 -   Could also use the following piping code:
 
@@ -585,8 +586,7 @@ fish |>
 ```
 :::
 
-
-## Wrangle 
+## `group_by()`
 
 ```{r}
 fish |>
@@ -622,8 +622,9 @@ fish |>
 
 ```{r eval = F}
 fish |>
-  na.omit() |> #remove observations with any NAs
+  mutate(log_capture = log(capture)) |>
   left_join(continents, by = "country") |>
+  na.omit() |> #remove observations with any NAs
   ggplot(aes(x = continent, y = capture)) +
   geom_boxplot(outliers = F) +
   theme_bw() +
@@ -641,5 +642,3 @@ fish |>
   labs(caption = "Excluding countries with 0 capture", y = "Log capture") +
   theme(text = element_text(size = 20))
 ```
-
-
