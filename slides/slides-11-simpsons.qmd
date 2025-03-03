@@ -1,6 +1,6 @@
 ---
 title: "Simpson's paradox"
-date: "October 3, 2024"
+date: "March 6, 2025"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
@@ -123,7 +123,7 @@ admissions |>
   filter(Gender == "Male") |> 
   count(Dept) |>
   # pivot_wider(names_from = c(Gender, Decision), names_sep= ": ", values_from = n ) |>
-  kableExtra::kable()
+  kableExtra::kable() 
 
 ```
 :::
@@ -143,7 +143,7 @@ admissions |>
   count(Dept, Decision) |>
   # pivot_wider(names_from = c(Gender, Decision), names_sep= ": ", values_from = n ) |>
   kableExtra::kable()|>
-  kableExtra::kable_styling(font_size = 25)
+  kableExtra::kable_styling(font_size = 20)
 
 ```
 :::
@@ -156,7 +156,7 @@ admissions |>
   filter(Gender == "Male") |> 
   count(Dept, Decision) |>
   kableExtra::kable()|>
-  kableExtra::kable_styling(font_size = 25)
+  kableExtra::kable_styling(font_size = 20)
 
 ```
 :::
@@ -287,29 +287,41 @@ ggplot() +
 ::::
 :::::::
 
-## Misc. live code
+# Live code
 
-```{r message= F, echo = T}
-library(readr)
-url_file <- "https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/main/live_code/data/insurance.csv"
-insurance <- read_csv(url_file)
-```
-
-We will return to `insurance` data to learn about:
+-   More robust filtering
 
 -   Using wrangling to obtain probabilities
 
 -   `case_when()` to create more complex categorical variables
 
+## Filtering for multiple levels
+
+Suppose I want to retain observations in the first three departments. We could do the following:
+
+```{r eval = F, echo = T}
+admissions |>
+  filter(Dept == "A" | Dept == "B" | Dept == "C")
+```
+
+Or I could streamline using the `%in%` operator:
+
+```{r eval = F, echo = T}
+admissions |>
+  filter(Dept %in% c("A", "B", "C"))
+```
+
+-   This reads: filter for observations where the `Dept` value is in the vector of options (A, B, C)
+
 ## Wrangling for probabilities
 
 :::::: columns
 ::: {.column width="50%"}
-What is probability that someone is a smoker?
+What is the probability that someone was admitted?
 
 ```{r eval = T, echo = T}
-insurance |>
-  count(smoker) |>
+admissions |>
+  count(Decision) |>
   mutate(prob = n/sum(n)) |>
   select(-n)
 ```
@@ -317,35 +329,46 @@ insurance |>
 
 :::: {.column width="50%"}
 ::: fragment
-What is the probability that someone is a smoker, conditioned on sex?
+What is the probability that someone was admitted, conditioned on gender?
 
 ```{r eval = T, echo = T}
-insurance |>
-  count(smoker, sex) |>
-  group_by(sex) |>
+admissions |>
+  count(Gender, Decision) |>
+  group_by(Gender) |>
   mutate(cond_prob = n/sum(n)) |>
   select(-n)
 ```
 :::
 ::::
+
+- How might I extend to also condition on Department?
 ::::::
 
 ## More complex categorical variables
 
-Suppose I want to create a new variable representing the categories of BMI, constructed as follows:
+Suppose I want to create a new variable called `Dept2` that takes the values:
 
--   underweight if someone's BMI is less than 18.5
--   healthy if BMI is 18.5 to less than 25
--   overweight if BMI is 25 to less than 30
--   obese if BMI is 30 or greater
+-   "Group 1" if someone applied to Department A or B
+-   "Group 2" if someone applied to Department C or D
+-   "Group 3" if someone applied to Department E or F
 
 ::: fragment
 ```{r eval = F, echo = T}
 # option 1 (awful): nested if_else()
-insurance |>
-  mutate(bmi_cat = if_else(bmi < 18.5, "under",
-                           if_else(bmi >= 18.5 & bmi < 25, "healthy",
-                                   if_else(...))))
+admissions |>
+  mutate(Dept2 = if_else(Dept %in% c("A", "B"), "Group 1",
+                           if_else(Dept %in% c("C", "D"), "Group 2",
+                                   "Group 3")))
+```
+```{r eval = T, echo = F}
+# option 1 (awful): nested if_else()
+set.seed(2)
+admissions |>
+  mutate(Dept2 = if_else(Dept %in% c("A", "B"), "Group 1",
+                           if_else(Dept %in% c("C", "D"), "Group 2",
+                                   "Group 3"))) |>
+  sample_frac() |>
+  slice(1:5)
 ```
 :::
 
@@ -355,33 +378,90 @@ We will use the `case_when()` function which generalizes `if_else()`. We use the
 
 ::::: columns
 ::: {.column width="50%"}
-```{r echo = T, eval = T}
-insurance |>
-  mutate(bmi_cat = case_when(
-    bmi < 18.5 ~ "under",
-    bmi >= 18.5 & bmi < 25 ~ "healthy",
-    bmi >= 25 & bmi < 30 ~ "over",
-    bmi >= 30 ~ "obese"
+```{r echo = T, eval = F}
+admissions |>
+  mutate(Dept2 = case_when(
+    Dept %in% c("A", "B") ~ "Group 1",
+    Dept %in% c("C", "D") ~ "Group 2",
+    Dept %in% c("E", "F") ~ "Group 3",
+  )) 
+```
+
+```{r echo = F, eval = T}
+set.seed(2)
+admissions |>
+  mutate(Dept2 = case_when(
+    Dept %in% c("A", "B") ~ "Group 1",
+    Dept %in% c("C", "D") ~ "Group 2",
+    Dept %in% c("E", "F") ~ "Group 3",
   )) |>
-  select(bmi, bmi_cat) |>
+  sample_frac() |>
   slice(1:5)
 ```
 :::
 
 ::: {.column width="50%"}
-```{r echo = T, eval = T}
-#| code-line-numbers: "1,2,8"
+```{r echo =T, eval = F}
+#| code-line-numbers: "1,2,7"
 # The following is also acceptable, but 
 # relies on sequential ordering:
-insurance |>
-  mutate(bmi_cat = case_when(
-    bmi < 18.5 ~ "under",
-    bmi >= 18.5 & bmi < 25 ~ "healthy",
-    bmi >= 25 & bmi < 30 ~ "over",
-    T ~ "obese" 
+admissions |>
+  mutate(Dept2 = case_when(
+    Dept %in% c("A", "B") ~ "Group 1",
+    Dept %in% c("C", "D") ~ "Group 2",
+    T ~ "Group 3",
   )) |>
-  select(bmi, bmi_cat) |>
+  sample_frac() 
+```
+
+```{r echo = F, eval = T}
+set.seed(2)
+admissions |>
+  mutate(Dept2 = case_when(
+    Dept %in% c("A", "B") ~ "Group 1",
+    Dept %in% c("C", "D") ~ "Group 2",
+    T ~ "Group 3",
+  )) |>
+  sample_frac() |>
   slice(1:5)
 ```
 :::
 :::::
+
+## Prettier tables using `kable()`
+
+- When we finish wrangling, the output is always a data frame
+
+    - While this is so useful for coding, it's not the most beautiful when rendering!
+    
+    - How can we make turn the data frame into a beautiful table?
+
+- We will need to first install the `kableExtra` library.
+
+:::: {.columns}
+::: {.column width="50%"}
+::: {.fragment}
+```{r echo = T, eval = T}
+library(kableExtra)
+
+admissions |>
+  count(Decision) |>
+  mutate(prob = n/sum(n)) |>
+  kable()
+```
+:::
+:::
+
+::: {.column width="50%"}
+- Can specify number of digits:
+
+::: {.fragment}
+```{r echo = T, eval = T}
+admissions |>
+  count(Decision) |>
+  mutate(prob = n/sum(n)) |>
+  kable(digits = 3)
+```
+:::
+:::
+::::

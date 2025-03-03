@@ -1,6 +1,6 @@
 ---
 title: "Conditional probability"
-date: "October 2, 2024"
+date: "March 5, 2025"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
@@ -70,23 +70,9 @@ Define events $A$ = died and $B$ = non-coffee drinker. Calculate/set-up the calc
 
     -   From the contingency table, we use row totals or column totals and the overall total to obtain marginal probabilities
 
-2.  $\text{P}(A \cap B)$ and $\text{P}(A \cup B^c)$ are examples of a **joint probability**, which is a probability involving two or more events that have yet to occur
+2.  $\text{P}(A \cap B)$ is an example of a **joint probability**, which is a probability involving two or more events that have yet to occur
 
     -   From the contingency table, we use specific cells and the overall total to obtain joint probabilities
-
-## Law of Total Probability
-
--   Let $A$ be an event, then let $\{B_{1},B_{2},\ldots, B_{k}\}$ be a set of mutually exclusive events whose union comprises their entire sample space $S$
-
--   Then **Law of Total Probability (LoTP)** says:
-
-::: fragment
-$$
-\text{Pr}(A) = \text{Pr}(A \cap B_{1} ) + \text{Pr}(A \cap B_{2}) + \ldots + \text{Pr}(A \cap B_{k})
-$$
-:::
-
--   Blob picture
 
 ## Marginal from joint
 
@@ -184,6 +170,20 @@ $$
     Note: complement rule holds for conditional probabilities if we condition on the *same* information: $\text{P}(A|B) = 1 - \text{P}(A^c | B)$
     :::
 
+## Law of Total Probability
+
+-   Let $A$ be an event, then let $\{B_{1},B_{2},\ldots, B_{k}\}$ be a set of mutually exclusive events whose union comprises their entire sample space $S$
+
+-   Then **Law of Total Probability (LoTP)** says:
+
+::: fragment
+$$
+\text{Pr}(A) = \text{Pr}(A \cap B_{1} ) + \text{Pr}(A \cap B_{2}) + \ldots + \text{Pr}(A \cap B_{k})
+$$
+:::
+
+-   Blob picture
+
 ## Tree diagram
 
 Tool to organize outcomes and probabilities around the structure of the data. Useful when outcomes occur sequentially, and outcomes are conditioned on predecessors. Let's do an example:
@@ -200,8 +200,6 @@ Tool to organize outcomes and probabilities around the structure of the data. Us
     In the tree diagram, where are the three types of probabilities appearing?
     :::
 
-# 
-
 # Bayes' Rule
 
 ## Bayes' Rule
@@ -212,7 +210,7 @@ Tool to organize outcomes and probabilities around the structure of the data. Us
 
 ::: fragment
 $$
-\text{P}(A|B) =
+\text{P}(A|B) = \frac{P(B|A) P(A)}{P(B)}
 $$
 :::
 
@@ -240,6 +238,8 @@ How would this change if we wanted $P(A_{2} | B)$ instead?
 Why is this important? We want P(B_i \| A), but sometimes we only have probabilities in the other order of conditioning!
 :::
 
+-   Let's see how the tree diagram compares to the formula!
+
 ## Example
 
 -   In Canada, about 0.35% of women over 40 will develop breast cancer in any given year. A common screening test for cancer is the mammogram, but this test is not perfect.
@@ -249,3 +249,4 @@ Why is this important? We want P(B_i \| A), but sometimes we only have probabili
 -   In about 7% of patients who do not have breast cancer, the test gives a *false positive*: it indicates these patients have breast cancer when they actually do not.
 
 -   If we tested a random Canadian woman over 40 for breast cancer using a mammogram and the test came back positive, what is the probability that the patient actually has breast cancer?
+
