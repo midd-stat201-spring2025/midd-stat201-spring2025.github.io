@@ -1,7 +1,7 @@
 ---
 title: "Probability basics"
 subtitle: "Part 1"
-date: "September 30, 2024"
+date: "March 3, 2025"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
@@ -20,9 +20,15 @@ draft: false
 
 # Housekeeping
 
+-   Problem Set 3 due tonight
+
 # Probability basics
 
-We spend a whole semester on this in MATH/STAT 310!
+-   We spend a whole semester on this in MATH/STAT 310!
+
+<!-- -->
+
+-   We will need be comfortable talking about and develop some intuition for understanding how probabilities behave
 
 ## Key terms
 
@@ -46,9 +52,9 @@ We spend a whole semester on this in MATH/STAT 310!
 
 -   There are two types: discrete and continuous (just like in numeric variables)
 
-    -   **Discrete**: represents random process where sample space is countable (i.e. finite, or distinct counts)
+    -   **Discrete**: represents random process where sample space is "countable" (i.e. {1,2} or {1,2,3,4,...})
 
-    -   **Continuous**: sample space is uncountable (i.e. can take on any value within a specified interval with infinite number of possible values)
+    -   **Continuous**: sample space is "uncountable" (i.e. can take on any value within a specified interval with infinite number of possible values)
 
 -   **NOTE**: we will focus on *discrete* random variables for now
 
@@ -62,16 +68,16 @@ We spend a whole semester on this in MATH/STAT 310!
 
 -   Let $A$ denote some outcome or event. We denote the probability of $A$ occurring as $\text{P}(A)$ or $\text{Pr}(A)$.
 
--   When the sample space $S$ is discrete with a finite size, then $\text{Pr}(A) =  \frac{\text{ number of outcomes favorable to } A}{\text{ number of total outcomes possible} }$
+-   When the sample space $S$ is discrete with a finite size, and all outcomes equally likely, then $\text{Pr}(A) =  \frac{\text{ number of outcomes favorable to } A}{\text{ number of total outcomes possible} }$
 
 ## Example
 
-Let the random process rolling a fair, six-sided die. Let $X$ a random variable representing the value of the die.
+Let the random process rolling a fair, six-sided die one time. Let $X$ be a random variable representing the value of the die.
 
--   For each of the following, determine the outcome(s) and event under consideration, along with the value of the probability itself:
+-   For each of the following, determine the outcome(s) under consideration, along with the value of the probability itself:
 
     -   $\text{Pr}(X = 1)$
-    -   $\text{Pr}(X = 1 \text{ and } 2)$
+    -   $\text{Pr}(X = 1 \text{ and } X = 2)$
     -   $\text{Pr}(X \text{ is even})$
 
 ::: notes
@@ -86,9 +92,9 @@ Possible event is 1 or 2.
 
 Let $A$ and $B$ be two possible events.
 
--   The **intersection** of $A$ and $B$ is denoted as $A \cap B$, and is the set of outcomes that belong to *both* events $A$ and $B$
+-   The **intersection** of $A$ and $B$ is denoted as $A \cap B$, and is the set of outcomes that belong to *both* events $A$ **and** $B$
 
--   The **union** of $A$ and $B$ is denoted as $A \cup B$, and is the set of outcomes that belong to $A$ and/or $B$
+-   The **union** of $A$ and $B$ is denoted as $A \cup B$, and is the set of outcomes that belong to $A$ **and/or** $B$
 
 ::: fragment
 When we have only two or three events, Venn diagrams can be very useful for visualizing probabilities!
@@ -156,31 +162,20 @@ $$
     -   the sum is *at least* 4?
     :::
 
-## DeMorgan's Laws
-
-Let's use Venn diagrams to try and determine formulas for the following:
-
-1.  Complement of union: $(A \cup B)^c =  \ ?$
-2.  Complement of intersection: $(A \cap B)^c = \ ?$
-
 ## Independence
 
 -   Qualitatively, two processes are **independent** if knowing the outcome of one does not provide any information about the outcome of the other process
 
-    -   Examples and non-examples? How to formalize this?
+    -   Examples and non-examples?
 
--   If $A$ and $B$ are independent events from two different and independent processes, then $\text{Pr}(A \cap B) = \text{Pr}(A) \times \text{Pr}(B)$
-
--   More generally, if $\text{Pr}(A \cap B) = \text{Pr}(A) \times \text{Pr}(B)$ and $A$ and $B$ are events from the same process, then $A$ and $B$ are independent.
-
-    -   This is known as the **multiplication rule** **for independent events**
+-   Formally: $A$ and $B$ are independent events if$\text{Pr}(A \cap B) = \text{Pr}(A) \times \text{Pr}(B)$
 
 ## Probability distributions
 
 When a random variable is discrete, it can be useful to discuss its **probability distribution**, which is a table of all (disjoint) outcomes and their associated probabilities.
 
 ::: discuss
--   Let $X$ be the sum of two fair, six-sided dice. What is the sample space $S$?
+-   Let $X$ be the sum of two fair, six-sided dice. What is the sample space associated with $S$?
 
 -   Fill out the table below to display the probability distribution of $X$:
 :::
@@ -200,9 +195,9 @@ Why not include 1 or 13?
 
 ## Probability distributions (cont.)
 
-The probability distribution of a discrete random variable must satisfy the following three rules:
+The probability distribution of a discrete random variable $X$ must satisfy the following three rules:
 
-1.  The outcomes listed must be disjoint
+1.  The values $x$ listed must be disjoint
 2.  Each probability must be between 0 and 1 (inclusive)
 3.  The probabilities must sum to 1
 

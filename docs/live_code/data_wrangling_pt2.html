@@ -180,6 +180,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#joins" id="toc-joins" class="nav-link" data-scroll-target="#joins">Joins</a></li>
   <li><a href="#grouping-by-grouped-operations" id="toc-grouping-by-grouped-operations" class="nav-link" data-scroll-target="#grouping-by-grouped-operations">Grouping by grouped operations</a></li>
   <li><a href="#piping-to-ggplot" id="toc-piping-to-ggplot" class="nav-link" data-scroll-target="#piping-to-ggplot">Piping to ggplot()</a></li>
+  <li><a href="#a-note-on-nas" id="toc-a-note-on-nas" class="nav-link" data-scroll-target="#a-note-on-nas">A note on <code>NA</code>s</a></li>
   </ul>
 </nav>
     </div>
@@ -416,16 +417,48 @@ Expand
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># Notice that we don't specify the data parameter in ggplot()!</span></span>
 <span id="cb21-2"><a href="#cb21-2"></a>fish_joined <span class="sc">|&gt;</span></span>
 <span id="cb21-3"><a href="#cb21-3"></a>  <span class="fu">na.omit</span>() <span class="sc">|&gt;</span></span>
-<span id="cb21-4"><a href="#cb21-4"></a>  <span class="fu">mutate</span>(<span class="at">log_total =</span> <span class="fu">log</span>(total)) <span class="sc">|&gt;</span></span>
-<span id="cb21-5"><a href="#cb21-5"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> log_total)) <span class="sc">+</span></span>
-<span id="cb21-6"><a href="#cb21-6"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outliers =</span> F) <span class="sc">+</span></span>
-<span id="cb21-7"><a href="#cb21-7"></a>  <span class="fu">labs</span>(<span class="at">caption =</span> <span class="st">"Excluding countries with 0 harvest"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 4 rows containing non-finite outside the scale range
-(`stat_boxplot()`).</code></pre>
-</div>
+<span id="cb21-4"><a href="#cb21-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> total)) <span class="sc">+</span></span>
+<span id="cb21-5"><a href="#cb21-5"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outliers =</span> F) <span class="sc">+</span></span>
+<span id="cb21-6"><a href="#cb21-6"></a>  <span class="fu">labs</span>(<span class="at">caption =</span> <span class="st">"Excluding outliers"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="data_wrangling_pt2_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="576"></p>
+</div>
+</div>
+</section>
+<section id="a-note-on-nas" class="level2">
+<h2 class="anchored" data-anchor-id="a-note-on-nas">A note on <code>NA</code>s</h2>
+<p>Consider the following data frame:</p>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  age score
+1   1    NA
+2   2     2
+3  NA     3</code></pre>
+</div>
+</div>
+<p><code>na.omit()</code> will remove ALL rows with any <code>NA</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a>  <span class="fu">na.omit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  age score
+2   2     2</code></pre>
+</div>
+</div>
+<p>If we want to be more selective, we should combine <code>filter()</code> with <code>is.na()</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># is.na() returns TRUE if the value is NA, and FALSE otherwise</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a><span class="co"># the ! says "not"</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb26-4"><a href="#cb26-4"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(age))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  age score
+1   1    NA
+2   2     2</code></pre>
 </div>
 </div>
 

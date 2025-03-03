@@ -2209,7 +2209,7 @@
     "href": "live_code/data_wrangling_pt2.html#piping-to-ggplot",
     "title": "Data wrangling with dplyr (cont.)",
     "section": "Piping to ggplot()",
-    "text": "Piping to ggplot()\nRemember that when creating plots, ggplot() expects a data frame as its first argument.\nWe may sometimes need to wrangle data prior to visualizing it. We have two options (both have pros and cons):\n\nWrangle the original data, store the resulting data frame as a new object or overwrite the previous one, and then refer to that data frame with ggplot()\n\n\nfish_joined_no_na <- fish_joined |>\n  na.omit()\nfish_joined_no_na |> \n  ggplot(aes(x = continent, y = total)) +\n  geom_boxplot(outliers = F) +\n  labs(caption = \"Excluding outliers\") \n\n\n\n\n\nWrangle the original data, and then directly pipe the result into ggplot(), which knows to expect a data frame as its first argument:\n\n\n# Notice that we don't specify the data parameter in ggplot()!\nfish_joined |>\n  na.omit() |>\n  mutate(log_total = log(total)) |>\n  ggplot(aes(x = continent, y = log_total)) +\n  geom_boxplot(outliers = F) +\n  labs(caption = \"Excluding countries with 0 harvest\")\n\nWarning: Removed 4 rows containing non-finite outside the scale range\n(`stat_boxplot()`)."
+    "text": "Piping to ggplot()\nRemember that when creating plots, ggplot() expects a data frame as its first argument.\nWe may sometimes need to wrangle data prior to visualizing it. We have two options (both have pros and cons):\n\nWrangle the original data, store the resulting data frame as a new object or overwrite the previous one, and then refer to that data frame with ggplot()\n\n\nfish_joined_no_na <- fish_joined |>\n  na.omit()\nfish_joined_no_na |> \n  ggplot(aes(x = continent, y = total)) +\n  geom_boxplot(outliers = F) +\n  labs(caption = \"Excluding outliers\") \n\n\n\n\n\nWrangle the original data, and then directly pipe the result into ggplot(), which knows to expect a data frame as its first argument:\n\n\n# Notice that we don't specify the data parameter in ggplot()!\nfish_joined |>\n  na.omit() |>\n  ggplot(aes(x = continent, y = total)) +\n  geom_boxplot(outliers = F) +\n  labs(caption = \"Excluding outliers\")"
   },
   {
     "objectID": "live_code/data_wrangling_pt2.html#warm-uprecap",
@@ -6304,21 +6304,21 @@
     "href": "slides/slides-11-probability.html#random-variable",
     "title": "Probability basics",
     "section": "Random variable",
-    "text": "Random variable\n\nA random variable is a variable whose value is unknown and depends on random events\n\nOften denoted with a capital letter like \\(X\\) or \\(Y\\)\n\nThere are two types: discrete and continuous (just like in numeric variables)\n\nDiscrete: represents random process where sample space is countable (i.e. finite, or distinct counts)\nContinuous: sample space is uncountable (i.e. can take on any value within a specified interval with infinite number of possible values)\n\nNOTE: we will focus on discrete random variables for now"
+    "text": "Random variable\n\nA random variable is a variable whose value is unknown and depends on random events\n\nOften denoted with a capital letter like \\(X\\) or \\(Y\\)\n\nThere are two types: discrete and continuous (just like in numeric variables)\n\nDiscrete: represents random process where sample space is “countable” (i.e. {1,2} or {1,2,3,4,…})\nContinuous: sample space is “uncountable” (i.e. can take on any value within a specified interval with infinite number of possible values)\n\nNOTE: we will focus on discrete random variables for now"
   },
   {
     "objectID": "slides/slides-11-probability.html#probability",
     "href": "slides/slides-11-probability.html#probability",
     "title": "Probability basics",
     "section": "Probability",
-    "text": "Probability\n\nFor us, the probability of an outcome is the proportion of times the outcome would occur if we observed the random process an infinite number of times\n\nProbability is used to express the likelihood that some outcome or event will or will not occur\nThink of as a proportion\n\nLet \\(A\\) denote some outcome or event. We denote the probability of \\(A\\) occurring as \\(\\text{P}(A)\\) or \\(\\text{Pr}(A)\\).\nWhen the sample space \\(S\\) is discrete with a finite size, then \\(\\text{Pr}(A) = \\frac{\\text{ number of outcomes favorable to } A}{\\text{ number of total outcomes possible} }\\)"
+    "text": "Probability\n\nFor us, the probability of an outcome is the proportion of times the outcome would occur if we observed the random process an infinite number of times\n\nProbability is used to express the likelihood that some outcome or event will or will not occur\nThink of as a proportion\n\nLet \\(A\\) denote some outcome or event. We denote the probability of \\(A\\) occurring as \\(\\text{P}(A)\\) or \\(\\text{Pr}(A)\\).\nWhen the sample space \\(S\\) is discrete with a finite size, and all outcomes equally likely, then \\(\\text{Pr}(A) = \\frac{\\text{ number of outcomes favorable to } A}{\\text{ number of total outcomes possible} }\\)"
   },
   {
     "objectID": "slides/slides-11-probability.html#example",
     "href": "slides/slides-11-probability.html#example",
     "title": "Probability basics",
     "section": "Example",
-    "text": "Example\nLet the random process rolling a fair, six-sided die. Let \\(X\\) a random variable representing the value of the die.\n\nFor each of the following, determine the outcome(s) and event under consideration, along with the value of the probability itself:\n\n\\(\\text{Pr}(X = 1)\\)\n\\(\\text{Pr}(X = 1 \\text{ and } 2)\\)\n\\(\\text{Pr}(X \\text{ is even})\\)\n\n\n\nConvince ourselves that \\(X\\) is a RV. Recall: sample space is 1,..,6.\nPossible outcome is 1, and an event would be \\(X=1\\); the RV being 1.\nPossible event is 1 or 2."
+    "text": "Example\nLet the random process rolling a fair, six-sided die one time. Let \\(X\\) be a random variable representing the value of the die.\n\nFor each of the following, determine the outcome(s) under consideration, along with the value of the probability itself:\n\n\\(\\text{Pr}(X = 1)\\)\n\\(\\text{Pr}(X = 1 \\text{ and } X = 2)\\)\n\\(\\text{Pr}(X \\text{ is even})\\)\n\n\n\nConvince ourselves that \\(X\\) is a RV. Recall: sample space is 1,..,6.\nPossible outcome is 1, and an event would be \\(X=1\\); the RV being 1.\nPossible event is 1 or 2."
   },
   {
     "objectID": "slides/slides-11-probability.html#operations-with-events",
@@ -6367,21 +6367,21 @@
     "href": "slides/slides-11-probability.html#independence",
     "title": "Probability basics",
     "section": "Independence",
-    "text": "Independence\n\nQualitatively, two processes are independent if knowing the outcome of one does not provide any information about the outcome of the other process\n\nExamples and non-examples? How to formalize this?\n\nIf \\(A\\) and \\(B\\) are independent events from two different and independent processes, then \\(\\text{Pr}(A \\cap B) = \\text{Pr}(A) \\times \\text{Pr}(B)\\)\nMore generally, if \\(\\text{Pr}(A \\cap B) = \\text{Pr}(A) \\times \\text{Pr}(B)\\) and \\(A\\) and \\(B\\) are events from the same process, then \\(A\\) and \\(B\\) are independent.\n\nThis is known as the multiplication rule for independent events"
+    "text": "Independence\n\nQualitatively, two processes are independent if knowing the outcome of one does not provide any information about the outcome of the other process\n\nExamples and non-examples?\n\nFormally: \\(A\\) and \\(B\\) are independent events if\\(\\text{Pr}(A \\cap B) = \\text{Pr}(A) \\times \\text{Pr}(B)\\)"
   },
   {
     "objectID": "slides/slides-11-probability.html#probability-distributions",
     "href": "slides/slides-11-probability.html#probability-distributions",
     "title": "Probability basics",
     "section": "Probability distributions",
-    "text": "Probability distributions\nWhen a random variable is discrete, it can be useful to discuss its probability distribution, which is a table of all (disjoint) outcomes and their associated probabilities.\n\n\nLet \\(X\\) be the sum of two fair, six-sided dice. What is the sample space \\(S\\)?\nFill out the table below to display the probability distribution of \\(X\\):\n\n\n\n\n\n\n\\(X\\)\n2\n3\n4\n5\n6\n7\n\n\nProbability\n\n\n\n\n\n\n\n\n\\(X\\)\n8\n9\n10\n11\n12\n\n\n\nProbability\n\n\n\n\n\n\n\n\n\n\n\nWhy not include 1 or 13?"
+    "text": "Probability distributions\nWhen a random variable is discrete, it can be useful to discuss its probability distribution, which is a table of all (disjoint) outcomes and their associated probabilities.\n\n\nLet \\(X\\) be the sum of two fair, six-sided dice. What is the sample space associated with \\(S\\)?\nFill out the table below to display the probability distribution of \\(X\\):\n\n\n\n\n\n\n\\(X\\)\n2\n3\n4\n5\n6\n7\n\n\nProbability\n\n\n\n\n\n\n\n\n\\(X\\)\n8\n9\n10\n11\n12\n\n\n\nProbability\n\n\n\n\n\n\n\n\n\n\n\nWhy not include 1 or 13?"
   },
   {
     "objectID": "slides/slides-11-probability.html#probability-distributions-cont.",
     "href": "slides/slides-11-probability.html#probability-distributions-cont.",
     "title": "Probability basics",
     "section": "Probability distributions (cont.)",
-    "text": "Probability distributions (cont.)\nThe probability distribution of a discrete random variable must satisfy the following three rules:\n\nThe outcomes listed must be disjoint\nEach probability must be between 0 and 1 (inclusive)\nThe probabilities must sum to 1\n\n\nLet’s confirm that the distribution we found on the previous slide satisfies these rules!"
+    "text": "Probability distributions (cont.)\nThe probability distribution of a discrete random variable \\(X\\) must satisfy the following three rules:\n\nThe values \\(x\\) listed must be disjoint\nEach probability must be between 0 and 1 (inclusive)\nThe probabilities must sum to 1\n\n\nLet’s confirm that the distribution we found on the previous slide satisfies these rules!"
   },
   {
     "objectID": "slides/slides-11-probability.html#practice",
@@ -6438,5 +6438,110 @@
     "title": "Joining data frames",
     "section": "group_by()",
     "text": "group_by()\n\nfish |>\n  left_join(continents, by = \"country\") |>\n  group_by(continent) |> # get continent-level summary stats\n  summarise(mean_capture = mean(capture), sd_capture = sd(capture))\n\n# A tibble: 6 × 3\n  continent mean_capture sd_capture\n  <chr>            <dbl>      <dbl>\n1 Africa         180705.    266107.\n2 Americas       433235.   1038899.\n3 Asia          1036018.   2869652.\n4 Europe         317874.    797072.\n5 Oceania         74660.    121027.\n6 <NA>           134722.    448079."
+  },
+  {
+    "objectID": "live_code/data_wrangling_pt2.html#a-note-on-nas",
+    "href": "live_code/data_wrangling_pt2.html#a-note-on-nas",
+    "title": "Data wrangling with dplyr (cont.)",
+    "section": "A note on NAs",
+    "text": "A note on NAs\nConsider the following data frame:\n\n\n\n\ndf\n\n  age score\n1   1    NA\n2   2     2\n3  NA     3\n\n\nna.omit() will remove ALL rows with any NA:\n\ndf |>\n  na.omit()\n\n  age score\n2   2     2\n\n\nIf we want to be more selective, we should combine filter() with is.na()\n\n# is.na() returns TRUE if the value is NA, and FALSE otherwise\n# the ! says \"not\"\ndf |>\n  filter(!is.na(age))\n\n  age score\n1   1    NA\n2   2     2"
+  },
+  {
+    "objectID": "slides/slides-09-probability.html",
+    "href": "slides/slides-09-probability.html",
+    "title": "Probability basics",
+    "section": "",
+    "text": "Problem Set 3 due tonight"
+  },
+  {
+    "objectID": "slides/slides-09-probability.html#key-terms",
+    "href": "slides/slides-09-probability.html#key-terms",
+    "title": "Probability basics",
+    "section": "Key terms",
+    "text": "Key terms\n\nRandom process: a situation in which a particular result, called an outcome, is random/not known ahead of time\n\nExamples: flipping a coin, rolling six-sided die, sports game, if a treatment is effective\n\nA sample space \\(S\\) is the set of all possible outcomes of the random process\n\n\nWhat are possible sample spaces for the above examples?\n\n\nAn event is a set of outcomes from a random process"
+  },
+  {
+    "objectID": "slides/slides-09-probability.html#random-variable",
+    "href": "slides/slides-09-probability.html#random-variable",
+    "title": "Probability basics",
+    "section": "Random variable",
+    "text": "Random variable\n\nA random variable is a variable whose value is unknown and depends on random events\n\nOften denoted with a capital letter like \\(X\\) or \\(Y\\)\n\nThere are two types: discrete and continuous (just like in numeric variables)\n\nDiscrete: represents random process where sample space is “countable” (i.e. {1,2} or {1,2,3,4,…})\nContinuous: sample space is “uncountable” (i.e. can take on any value within a specified interval with infinite number of possible values)\n\nNOTE: we will focus on discrete random variables for now"
+  },
+  {
+    "objectID": "slides/slides-09-probability.html#probability",
+    "href": "slides/slides-09-probability.html#probability",
+    "title": "Probability basics",
+    "section": "Probability",
+    "text": "Probability\n\nFor us, the probability of an outcome is the proportion of times the outcome would occur if we observed the random process an infinite number of times\n\nProbability is used to express the likelihood that some outcome or event will or will not occur\nThink of as a proportion\n\nLet \\(A\\) denote some outcome or event. We denote the probability of \\(A\\) occurring as \\(\\text{P}(A)\\) or \\(\\text{Pr}(A)\\).\nWhen the sample space \\(S\\) is discrete with a finite size, and all outcomes equally likely, then \\(\\text{Pr}(A) = \\frac{\\text{ number of outcomes favorable to } A}{\\text{ number of total outcomes possible} }\\)"
+  },
+  {
+    "objectID": "slides/slides-09-probability.html#example",
+    "href": "slides/slides-09-probability.html#example",
+    "title": "Probability basics",
+    "section": "Example",
+    "text": "Example\nLet the random process rolling a fair, six-sided die one time. Let \\(X\\) be a random variable representing the value of the die.\n\nFor each of the following, determine the outcome(s) under consideration, along with the value of the probability itself:\n\n\\(\\text{Pr}(X = 1)\\)\n\\(\\text{Pr}(X = 1 \\text{ and } X = 2)\\)\n\\(\\text{Pr}(X \\text{ is even})\\)\n\n\n\nConvince ourselves that \\(X\\) is a RV. Recall: sample space is 1,..,6.\nPossible outcome is 1, and an event would be \\(X=1\\); the RV being 1.\nPossible event is 1 or 2."
+  },
+  {
+    "objectID": "slides/slides-09-probability.html#operations-with-events",
+    "href": "slides/slides-09-probability.html#operations-with-events",
+    "title": "Probability basics",
+    "section": "Operations with events",
+    "text": "Operations with events\nLet \\(A\\) and \\(B\\) be two possible events.\n\nThe intersection of \\(A\\) and \\(B\\) is denoted as \\(A \\cap B\\), and is the set of outcomes that belong to both events \\(A\\) and \\(B\\)\nThe union of \\(A\\) and \\(B\\) is denoted as \\(A \\cup B\\), and is the set of outcomes that belong to \\(A\\) and/or \\(B\\)\n\n\nWhen we have only two or three events, Venn diagrams can be very useful for visualizing probabilities!"
+  },
+  {
+    "objectID": "slides/slides-09-probability.html#disjoint-events",
+    "href": "slides/slides-09-probability.html#disjoint-events",
+    "title": "Probability basics",
+    "section": "Disjoint events",
+    "text": "Disjoint events\nTwo events are disjoint or mutually exclusive if they cannot simultaneously happen.\n\nThat is, if \\(A\\) and \\(B\\) are disjoint, then \\(\\text{Pr}(A \\cap B) = ?\\)\n\nIf our random process is rolling a six-sided die one time, what are some examples of disjoint events?"
+  },
+  {
+    "objectID": "slides/slides-09-probability.html#rules-of-probability",
+    "href": "slides/slides-09-probability.html#rules-of-probability",
+    "title": "Probability basics",
+    "section": "Rules of probability",
+    "text": "Rules of probability\nKolmogorov axioms\n\nThe probability of any event is non-negative real number\nThe probability of the entire sample space 1\nIf \\(A\\) and \\(B\\) are disjoint, then \\(\\text{Pr}(A \\cup B) = \\text{Pr}(A) + \\text{Pr}(B)\\)\n\n\nThese axioms imply that all probabilities are between 0 and 1 inclusive, and lead to some important rules!"
+  },
+  {
+    "objectID": "slides/slides-09-probability.html#addition-rule",
+    "href": "slides/slides-09-probability.html#addition-rule",
+    "title": "Probability basics",
+    "section": "Addition rule",
+    "text": "Addition rule\nLet \\(A\\) and \\(B\\) be two possible events. Then the addition rule states that the probability that at least one will occur is:\n\\[\nP(A \\cup B) = P(A) + P(B) - P(A \\cap B)\n\\]\n\nVenn diagram\nExample: in a standard deck of 52 cards, we have four suits (diamond, heart, club, spade) with 13 cards within each suit (1-10, Jack, Queen, King).\n\nSuppose we randomly draw one card from the shuffled deck.\nLet \\(A\\) be the event that the card is a spade.\nLet \\(B\\) be the event that the card is a face card (Jack, Queen or King).\nFind \\(P(A \\cup B)\\)."
+  },
+  {
+    "objectID": "slides/slides-09-probability.html#complement",
+    "href": "slides/slides-09-probability.html#complement",
+    "title": "Probability basics",
+    "section": "Complement",
+    "text": "Complement\n\nThe complement of an event \\(A\\) is the set of all outcomes in \\(S\\) that are not in \\(A\\)\n\nDenoted as \\(A^c\\)\n\nContinuing the dice example, if \\(A\\) is the event that a 1 or 2 is rolled, what is \\(A^c\\)?\nComplement rule: \\(\\text{Pr}(A^c) = 1 - \\text{Pr}(A)\\)\n\nLet our random process be the sum of two dice. What is the probability that…\n\nthe sum of the dice is \\(not\\) 6?\nthe sum is at least 4?"
+  },
+  {
+    "objectID": "slides/slides-09-probability.html#independence",
+    "href": "slides/slides-09-probability.html#independence",
+    "title": "Probability basics",
+    "section": "Independence",
+    "text": "Independence\n\nQualitatively, two processes are independent if knowing the outcome of one does not provide any information about the outcome of the other process\n\nExamples and non-examples?\n\nFormally: \\(A\\) and \\(B\\) are independent events if\\(\\text{Pr}(A \\cap B) = \\text{Pr}(A) \\times \\text{Pr}(B)\\)"
+  },
+  {
+    "objectID": "slides/slides-09-probability.html#probability-distributions",
+    "href": "slides/slides-09-probability.html#probability-distributions",
+    "title": "Probability basics",
+    "section": "Probability distributions",
+    "text": "Probability distributions\nWhen a random variable is discrete, it can be useful to discuss its probability distribution, which is a table of all (disjoint) outcomes and their associated probabilities.\n\n\nLet \\(X\\) be the sum of two fair, six-sided dice. What is the sample space associated with \\(S\\)?\nFill out the table below to display the probability distribution of \\(X\\):\n\n\n\n\n\n\n\\(X\\)\n2\n3\n4\n5\n6\n7\n\n\nProbability\n\n\n\n\n\n\n\n\n\\(X\\)\n8\n9\n10\n11\n12\n\n\n\nProbability\n\n\n\n\n\n\n\n\n\n\n\nWhy not include 1 or 13?"
+  },
+  {
+    "objectID": "slides/slides-09-probability.html#probability-distributions-cont.",
+    "href": "slides/slides-09-probability.html#probability-distributions-cont.",
+    "title": "Probability basics",
+    "section": "Probability distributions (cont.)",
+    "text": "Probability distributions (cont.)\nThe probability distribution of a discrete random variable \\(X\\) must satisfy the following three rules:\n\nThe values \\(x\\) listed must be disjoint\nEach probability must be between 0 and 1 (inclusive)\nThe probabilities must sum to 1\n\n\nLet’s confirm that the distribution we found on the previous slide satisfies these rules!"
+  },
+  {
+    "objectID": "slides/slides-09-probability.html#practice",
+    "href": "slides/slides-09-probability.html#practice",
+    "title": "Probability basics",
+    "section": "Practice",
+    "text": "Practice\n\nA Pew Research survey asked 2,373 randomly sampled registered voters their political affiliation (Republican, Democrat, or Independent) and whether or not they identify as swing voters. 35% of respondents identified as Independent, 23% identified as swing voters, and 11% identified as both.\n\nWhat percent of voters are Independent but not swing voters?\nWhat percent of voters are Independent or swing voters?\nWhat percent of voters are neither Independent nor swing voters?\nIs the event that someone is a swing voter independent of the event that someone is a political Independent?"
   }
 ]
