@@ -599,7 +599,7 @@ fish |>
 
 ```{r eval = F}
 fish |>
-  na.omit() |> #remove observations with any NAs
+  na.omit() |> #remove any observations with any NAs
   left_join(continents, by = "country") |>
   ggplot(aes(x = continent, y = capture)) +
   geom_boxplot(outliers = F) +
@@ -642,3 +642,43 @@ fish |>
   labs(caption = "Excluding countries with 0 capture", y = "Log capture") +
   theme(text = element_text(size = 20))
 ```
+
+## Removing NAs
+
+-   `na.omit()` will remove **all** observations with any `NA`, regardless of where the `NA` appears
+
+-   If you want a more delicate touch and would like to remove observations with an `NA` for a given variable, we can use `is.na()`
+
+    -   This function takes in a variable as input, and outputs `TRUE` for each observation with an `NA` value in that variable, and `FALSE` otherwise
+    
+    - Useful with the `filter()` function!
+    
+::: {.fragment}
+:::: {.columns}
+
+::: {.column width="50%"}
+    
+```{r}
+fish |>
+  full_join(continents, by = "country") |>
+  mutate(prop_capture = capture / (capture + aquaculture)) |>
+  na.omit() |>
+  summarise(avg_prop = mean(prop_capture))
+```
+
+:::
+
+::: {.column width="50%"}
+```{r}
+fish |>
+  full_join(continents, by = "country") |>
+  mutate(prop_capture = capture / (capture + aquaculture)) |>
+  filter(!is.na(prop_capture)) |>
+  summarise(avg_prop = mean(prop_capture))
+```
+:::
+
+::::
+:::
+
+- Notice the difference!

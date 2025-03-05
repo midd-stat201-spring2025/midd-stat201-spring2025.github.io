@@ -2314,7 +2314,7 @@
     "href": "index.html#announcements",
     "title": "Advanced Introduction to Statistics and Data Science",
     "section": "Announcements",
-    "text": "Announcements\n\nNone!"
+    "text": "Announcements\n\nMidterm 1: in class on Thursday 3/13. Details coming soon!"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#recap",
@@ -6409,7 +6409,7 @@
     "href": "slides/slides-08-joins.html#visualize",
     "title": "Joining data frames",
     "section": "Visualize",
-    "text": "Visualize\n\nfish |>\n  na.omit() |> #remove observations with any NAs\n  left_join(continents, by = \"country\") |>\n  ggplot(aes(x = continent, y = capture)) +\n  geom_boxplot(outliers = F) +\n  theme_bw() +\n  labs(caption = \"Excluding outliers\")"
+    "text": "Visualize\n\nfish |>\n  na.omit() |> #remove any observations with any NAs\n  left_join(continents, by = \"country\") |>\n  ggplot(aes(x = continent, y = capture)) +\n  geom_boxplot(outliers = F) +\n  theme_bw() +\n  labs(caption = \"Excluding outliers\")"
   },
   {
     "objectID": "slides/slides-08-joins.html#visualize-cont.",
@@ -6626,7 +6626,7 @@
     "href": "slides/slides-10-conditional-probability.html#tree-diagram",
     "title": "Conditional probability",
     "section": "Tree diagram",
-    "text": "Tree diagram\nTool to organize outcomes and probabilities around the structure of the data. Useful when outcomes occur sequentially, and outcomes are conditioned on predecessors. Let’s do an example:\n\nA class has a midterm and a final exam. 13% of students earned an A on the midterm. Of those students who earned an A on the midterm, 47% received an A on the final. Of those student who earned below an A on the midterm, 11% received an A on the final. You randomly pick up a final exam and notice the student received an A. What is the probability that they earned an A on the midterm?\n\nUsing \\(\\text{P}()\\) notation, what probability are we interested in? What probabilities do we need to calculate along the way?\n\nLet’s construct our tree!\n\nIn the tree diagram, where are the three types of probabilities appearing?"
+    "text": "Tree diagram\nTool to organize outcomes and probabilities around the structure of the data. Useful when outcomes occur sequentially, and outcomes are conditioned on predecessors. Let’s do an example:\n\nA class has a midterm and a final exam. 80% of students passed the midterm. Of those students who passed the midterm, 90% also passed the final. Of those student who did not pass the midterm, 15% passed on the final. You randomly pick up a final exam and notice the student passed. What is the probability that they passed the midterm?\n\nUsing \\(\\text{P}()\\) notation, what probability are we interested in? What probabilities do we need to calculate along the way?\n\nLet’s construct our tree!\n\nIn the tree diagram, where are the three types of probabilities appearing?"
   },
   {
     "objectID": "slides/slides-10-conditional-probability.html#bayes-rule-1",
@@ -6753,5 +6753,19 @@
     "title": "Simpson’s paradox",
     "section": "Prettier tables using kable()",
     "text": "Prettier tables using kable()\n\nWhen we finish wrangling, the output is always a data frame\n\nWhile this is so useful for coding, it’s not the most beautiful when rendering!\nHow can we make turn the data frame into a beautiful table?\n\nWe will need to first install the kableExtra library.\n\n\n\n\n\nlibrary(kableExtra)\n\nadmissions |>\n  count(Decision) |>\n  mutate(prob = n/sum(n)) |>\n  kable()\n\n\n\n\nDecision\nn\nprob\n\n\n\n\nAdmit\n1755\n0.3877596\n\n\nReject\n2771\n0.6122404\n\n\n\n\n\n\n\n\nCan specify number of digits:\n\n\n\nadmissions |>\n  count(Decision) |>\n  mutate(prob = n/sum(n)) |>\n  kable(digits = 3)\n\n\n\n\nDecision\nn\nprob\n\n\n\n\nAdmit\n1755\n0.388\n\n\nReject\n2771\n0.612"
+  },
+  {
+    "objectID": "slides/slides-08-joins.html#removing-nas",
+    "href": "slides/slides-08-joins.html#removing-nas",
+    "title": "Joining data frames",
+    "section": "Removing NAs",
+    "text": "Removing NAs\n\nna.omit() will remove all observations with any NA, regardless of where the NA appears\nIf you want a more delicate touch and would like to remove observations with an NA for a given variable, we can use is.na()\n\nThis function takes in a variable as input, and outputs TRUE for each observation with an NA value in that variable, and FALSE otherwise\nUseful with the filter() function!\n\n\n\n\n\n\nfish |>\n  full_join(continents, by = \"country\") |>\n  mutate(prop_capture = capture / (capture + aquaculture)) |>\n  na.omit() |>\n  summarise(avg_prop = mean(prop_capture))\n\n# A tibble: 1 × 1\n  avg_prop\n     <dbl>\n1    0.780\n\n\n\n\nfish |>\n  full_join(continents, by = \"country\") |>\n  mutate(prop_capture = capture / (capture + aquaculture)) |>\n  filter(!is.na(prop_capture)) |>\n  summarise(avg_prop = mean(prop_capture))\n\n# A tibble: 1 × 1\n  avg_prop\n     <dbl>\n1    0.782\n\n\n\n\n\n\nNotice the difference!"
+  },
+  {
+    "objectID": "slides/slides-10-conditional-probability.html",
+    "href": "slides/slides-10-conditional-probability.html",
+    "title": "Conditional probability",
+    "section": "",
+    "text": "Two events are disjoint/mutually exclusive if they do not have any overlapping outcomes\nAddition rule: \\(\\text{Pr}(A \\cup B) =\\)\nComplement rule: \\(\\text{Pr}(A^c) =\\)"
   }
 ]

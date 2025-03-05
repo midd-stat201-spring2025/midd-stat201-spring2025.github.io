@@ -1859,7 +1859,7 @@
 <h2>Visualize</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>fish <span class="sc">|&gt;</span></span>
-<span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">na.omit</span>() <span class="sc">|&gt;</span> <span class="co">#remove observations with any NAs</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">na.omit</span>() <span class="sc">|&gt;</span> <span class="co">#remove any observations with any NAs</span></span>
 <span id="cb39-3"><a href="#cb39-3"></a>  <span class="fu">left_join</span>(continents, <span class="at">by =</span> <span class="st">"country"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb39-4"><a href="#cb39-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> capture)) <span class="sc">+</span></span>
 <span id="cb39-5"><a href="#cb39-5"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outliers =</span> F) <span class="sc">+</span></span>
@@ -1887,8 +1887,55 @@
 </div>
 
 </div>
+<img data-src="slides-08-joins_files/figure-revealjs/unnamed-chunk-77-1.png" width="960" class="r-stretch"></section>
+<section id="removing-nas" class="slide level2">
+<h2>Removing NAs</h2>
+<ul>
+<li class="fragment"><p><code>na.omit()</code> will remove <strong>all</strong> observations with any <code>NA</code>, regardless of where the <code>NA</code> appears</p></li>
+<li class="fragment"><p>If you want a more delicate touch and would like to remove observations with an <code>NA</code> for a given variable, we can use <code>is.na()</code></p>
+<ul>
+<li class="fragment"><p>This function takes in a variable as input, and outputs <code>TRUE</code> for each observation with an <code>NA</code> value in that variable, and <code>FALSE</code> otherwise</p></li>
+<li class="fragment"><p>Useful with the <code>filter()</code> function!</p></li>
+</ul></li>
+</ul>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>fish <span class="sc">|&gt;</span></span>
+<span id="cb42-2"><a href="#cb42-2"></a>  <span class="fu">full_join</span>(continents, <span class="at">by =</span> <span class="st">"country"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb42-3"><a href="#cb42-3"></a>  <span class="fu">mutate</span>(<span class="at">prop_capture =</span> capture <span class="sc">/</span> (capture <span class="sc">+</span> aquaculture)) <span class="sc">|&gt;</span></span>
+<span id="cb42-4"><a href="#cb42-4"></a>  <span class="fu">na.omit</span>() <span class="sc">|&gt;</span></span>
+<span id="cb42-5"><a href="#cb42-5"></a>  <span class="fu">summarise</span>(<span class="at">avg_prop =</span> <span class="fu">mean</span>(prop_capture))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  avg_prop
+     &lt;dbl&gt;
+1    0.780</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>fish <span class="sc">|&gt;</span></span>
+<span id="cb44-2"><a href="#cb44-2"></a>  <span class="fu">full_join</span>(continents, <span class="at">by =</span> <span class="st">"country"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb44-3"><a href="#cb44-3"></a>  <span class="fu">mutate</span>(<span class="at">prop_capture =</span> capture <span class="sc">/</span> (capture <span class="sc">+</span> aquaculture)) <span class="sc">|&gt;</span></span>
+<span id="cb44-4"><a href="#cb44-4"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(prop_capture)) <span class="sc">|&gt;</span></span>
+<span id="cb44-5"><a href="#cb44-5"></a>  <span class="fu">summarise</span>(<span class="at">avg_prop =</span> <span class="fu">mean</span>(prop_capture))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  avg_prop
+     &lt;dbl&gt;
+1    0.782</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">Notice the difference!</li>
+</ul>
 
-<img data-src="slides-08-joins_files/figure-revealjs/unnamed-chunk-77-1.png" width="960" class="r-stretch"><div class="footer footer-default">
+<div class="footer footer-default">
 
 </div>
 </section></section>
