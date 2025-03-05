@@ -19,8 +19,6 @@ draft: false
 
 # Housekeeping
 
--   Homework 4 due this Saturday at 11:59pm
-
 -   Content through today is fair game for Midterm 1
 
 ```{r echo = F}
