@@ -6577,7 +6577,7 @@
     "href": "slides/slides-10-conditional-probability.html#marginal-from-joint",
     "title": "Conditional probability",
     "section": "Marginal from joint",
-    "text": "Marginal from joint\nUsing LoTP, we can obtain the marginal probabilities from joint probabilities (which some of you intuitively did)!\n\n\n\n\nDid not die\nDied\nTotal\n\n\n\n\nDoes not drink coffee\n5438\n1039\n6477\n\n\nDrinks coffee occasionally\n29712\n4440\n34152\n\n\nDrinks coffee regularly\n24934\n3601\n28535\n\n\nTotal\n60084\n9080\n69164\n\n\n\n\n\\[\\begin{align*}\n\\text{P}(B) &=\\text{P}(\\text{no coffee}) \\\\\n&\\overset{\\text{LoTP}}{=} \\text{P}(\\text{no coffee} \\ \\cap \\text{ did not die}) + \\text{P}(\\text{no coffee} \\ \\cap \\text{ died})  \\\\\n&= \\text{P}(B \\cap A) + \\text{P}(B \\cap A^c) \\\\\n&= \\frac{5438}{69164 } + \\frac{1039}{69164} \\\\\n&= 0.0936\n\\end{align*}\n\\]"
+    "text": "Marginal from joint\nWe can obtain the marginal probabilities from joint probabilities:\n\n\n\n\nDid not die\nDied\nTotal\n\n\n\n\nDoes not drink coffee\n5438\n1039\n6477\n\n\nDrinks coffee occasionally\n29712\n4440\n34152\n\n\nDrinks coffee regularly\n24934\n3601\n28535\n\n\nTotal\n60084\n9080\n69164\n\n\n\n\n\\[\\begin{align*}\n\\text{P}(B) &=\\text{P}(\\text{no coffee}) \\\\\n&= \\text{P}(\\text{no coffee} \\ \\cap \\text{ did not die}) + \\text{P}(\\text{no coffee} \\ \\cap \\text{ died})  \\\\\n&= \\text{P}(B \\cap A) + \\text{P}(B \\cap A^c) \\\\\n&= \\frac{5438}{69164 } + \\frac{1039}{69164} \\\\\n&= 0.0936\n\\end{align*}\n\\]"
   },
   {
     "objectID": "slides/slides-10-conditional-probability.html#conditional-probability",
@@ -6619,7 +6619,7 @@
     "href": "slides/slides-10-conditional-probability.html#law-of-total-probability",
     "title": "Conditional probability",
     "section": "Law of Total Probability",
-    "text": "Law of Total Probability\n\nLet \\(A\\) be an event, then let \\(\\{B_{1},B_{2},\\ldots, B_{k}\\}\\) be a set of mutually exclusive events whose union comprises their entire sample space \\(S\\)\nThen Law of Total Probability (LoTP) says:\n\n\n\\[\n\\text{Pr}(A) = \\text{Pr}(A \\cap B_{1} ) + \\text{Pr}(A \\cap B_{2}) + \\ldots + \\text{Pr}(A \\cap B_{k})\n\\]\n\n\nBlob picture"
+    "text": "Law of Total Probability\n\nLet \\(A\\) be an event, then let \\(\\{B_{1},B_{2},\\ldots, B_{k}\\}\\) be a set of mutually exclusive events whose union comprises their entire sample space \\(S\\)\nThen Law of Total Probability (LoTP) says:\n\n\n\\[\n\\text{Pr}(A) = \\text{Pr}(A \\cap B_{1} ) + \\text{Pr}(A \\cap B_{2}) + \\ldots + \\text{Pr}(A \\cap B_{k})\n\\]\n\n\nBlob picture\nWe already did this in the coffee example! We said \\(\\text{P}(\\text{no coffee}) = \\text{P}(\\text{no coffee} \\ \\cap \\text{ did not die}) + \\text{P}(\\text{no coffee} \\ \\cap \\text{ died})\\)\n\nHere, the outcomes of “did not die” and “died” are the mutually exclusive events that comprise \\(S\\)"
   },
   {
     "objectID": "slides/slides-10-conditional-probability.html#tree-diagram",

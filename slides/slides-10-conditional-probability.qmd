@@ -76,7 +76,7 @@ Define events $A$ = died and $B$ = non-coffee drinker. Calculate/set-up the calc
 
 ## Marginal from joint
 
-Using LoTP, we can obtain the marginal probabilities from joint probabilities (which some of you intuitively did)!
+We can obtain the marginal probabilities from joint probabilities:
 
 |                                | Did not die | Died | **Total** |
 |--------------------------------|-------------|------|-----------|
@@ -88,7 +88,7 @@ Using LoTP, we can obtain the marginal probabilities from joint probabilities (w
 ::: fragment
 $$\begin{align*}
 \text{P}(B) &=\text{P}(\text{no coffee}) \\
-&\overset{\text{LoTP}}{=} \text{P}(\text{no coffee} \ \cap \text{ did not die}) + \text{P}(\text{no coffee} \ \cap \text{ died})  \\
+&= \text{P}(\text{no coffee} \ \cap \text{ did not die}) + \text{P}(\text{no coffee} \ \cap \text{ died})  \\
 &= \text{P}(B \cap A) + \text{P}(B \cap A^c) \\
 &= \frac{5438}{69164 } + \frac{1039}{69164} \\
 &= 0.0936
@@ -183,6 +183,10 @@ $$
 :::
 
 -   Blob picture
+
+- We already did this in the coffee example! We said $\text{P}(\text{no coffee}) = \text{P}(\text{no coffee} \ \cap \text{ did not die}) + \text{P}(\text{no coffee} \ \cap \text{ died})$
+
+    - Here, the outcomes of "did not die" and "died" are the mutually exclusive events that comprise $S$
 
 ## Tree diagram
 
