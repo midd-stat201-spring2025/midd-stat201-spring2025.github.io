@@ -27,7 +27,8 @@ draft: false
 knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
 library(tidyverse)
 library(readr)
-plot_theme <- theme(text = element_text(size = 16))
+plot_theme <- theme_bw() +
+  theme(text = element_text(size = 16)) 
 set.seed(1)
 admissions <- read_csv("data/ucb_admissions.csv") |>
   sample_frac()
@@ -52,7 +53,7 @@ Observational study on sex bias based on Fall 1973 admissions data to the gradua
 | **Total** | 5232  | 7531 | 12763 |
 
 ::: discuss
-1.  What is the probability of admission for a randomly selected applicant?
+1.  What is the probability* of admission for a randomly selected applicant?
 
 2.  What is the probability of admission among men? Among women?
 
@@ -73,7 +74,8 @@ admissions |>
   ggplot(aes(x = Gender, fill = Decision)) +
   geom_bar(position = "fill") +
   ggtitle("Admission decisions by gender") +
-  plot_theme
+  plot_theme+
+  scale_fill_brewer(palette = "Accent")
 ```
 :::
 
@@ -89,6 +91,7 @@ We will consider the six largest departments: A, B, C, D, E, F
 
 ::: fragment
 ```{r echo = T}
+# head() gives us the first 6 rows
 head(admissions)
 ```
 :::
@@ -102,8 +105,14 @@ head(admissions)
 Number of applicants by department:
 
 ::::: columns
-::: {.column width="50%"}
+::: {.column width="30%"}
 Female applicants:
+
+```{r echo = T, eval = F}
+admissions |>
+  filter(Gender == "Female") |> 
+  count(Dept)
+```
 
 ```{r}
 admissions |>
@@ -115,8 +124,14 @@ admissions |>
 ```
 :::
 
-::: {.column width="50%"}
+::: {.column width="30%"}
 Male applicants:
+
+```{r echo = T, eval = F}
+admissions |>
+  filter(Gender == "Male") |> 
+  count(Dept)
+```
 
 ```{r}
 admissions |>
@@ -124,6 +139,24 @@ admissions |>
   count(Dept) |>
   # pivot_wider(names_from = c(Gender, Decision), names_sep= ": ", values_from = n ) |>
   kableExtra::kable() 
+
+```
+:::
+
+::: {.column width="30%"}
+Both groups:
+
+```{r echo = T, eval = F}
+admissions |>
+  count(Dept, Gender)
+```
+
+```{r}
+admissions |>
+  count(Dept, Gender) |>
+  # pivot_wider(names_from = c(Gender, Decision), names_sep= ": ", values_from = n ) |>
+  kableExtra::kable() |>
+    kableExtra::kable_styling(font_size = 20)
 
 ```
 :::
@@ -164,12 +197,15 @@ admissions |>
 
 ## Visualize
 
+Can visualize three categorical variables at once!
+
 ```{r}
 admissions |>
   ggplot(aes(x = Gender, fill = Decision)) +
   geom_bar(position = 'fill') +
   facet_wrap(~ Dept) +
-  plot_theme
+  plot_theme +
+  scale_fill_brewer(palette = "Accent")
 ```
 
 ## Closer look

@@ -456,7 +456,7 @@
 </table>
 <div class="discuss">
 <ol type="1">
-<li class="fragment"><p>What is the probability of admission for a randomly selected applicant?</p></li>
+<li class="fragment"><p>What is the probability* of admission for a randomly selected applicant?</p></li>
 <li class="fragment"><p>What is the probability of admission among men? Among women?</p></li>
 <li class="fragment"><p>Are the probabilities you found marginal, joint, or conditional probabilities?</p></li>
 </ol>
@@ -491,7 +491,8 @@
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">head</span>(admissions)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># head() gives us the first 6 rows</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">head</span>(admissions)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
   Decision Gender Dept 
@@ -515,8 +516,13 @@
 <h2>Frequency tables</h2>
 <p>Number of applicants by department:</p>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:30%;">
 <p>Female applicants:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>admissions <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">filter</span>(Gender <span class="sc">==</span> <span class="st">"Female"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">count</span>(Dept)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell">
 <div class="cell-output-display">
 <table>
@@ -555,8 +561,13 @@
 </table>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:30%;">
 <p>Male applicants:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>admissions <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">filter</span>(Gender <span class="sc">==</span> <span class="st">"Male"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">count</span>(Dept)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell">
 <div class="cell-output-display">
 <table>
@@ -593,6 +604,89 @@
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</div><div class="column" style="width:30%;">
+<p>Both groups:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>admissions <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">count</span>(Dept, Gender)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="font-size: 20px; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Dept </th>
+   <th style="text-align:left;"> Gender </th>
+   <th style="text-align:right;"> n </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> A </td>
+   <td style="text-align:left;"> Female </td>
+   <td style="text-align:right;"> 108 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> A </td>
+   <td style="text-align:left;"> Male </td>
+   <td style="text-align:right;"> 825 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> B </td>
+   <td style="text-align:left;"> Female </td>
+   <td style="text-align:right;"> 25 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> B </td>
+   <td style="text-align:left;"> Male </td>
+   <td style="text-align:right;"> 560 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> C </td>
+   <td style="text-align:left;"> Female </td>
+   <td style="text-align:right;"> 593 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> C </td>
+   <td style="text-align:left;"> Male </td>
+   <td style="text-align:right;"> 325 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> D </td>
+   <td style="text-align:left;"> Female </td>
+   <td style="text-align:right;"> 375 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> D </td>
+   <td style="text-align:left;"> Male </td>
+   <td style="text-align:right;"> 417 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> E </td>
+   <td style="text-align:left;"> Female </td>
+   <td style="text-align:right;"> 393 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> E </td>
+   <td style="text-align:left;"> Male </td>
+   <td style="text-align:right;"> 191 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> F </td>
+   <td style="text-align:left;"> Female </td>
+   <td style="text-align:right;"> 341 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> F </td>
+   <td style="text-align:left;"> Male </td>
+   <td style="text-align:right;"> 373 </td>
+  </tr>
+</tbody>
+</table>
+
 </div>
 </div>
 </div>
@@ -765,8 +859,9 @@
 </section>
 <section id="visualize" class="slide level2">
 <h2>Visualize</h2>
+<p>Can visualize three categorical variables at once!</p>
 
-<img data-src="slides-11-simpsons_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<img data-src="slides-11-simpsons_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
 <section id="closer-look" class="slide level2">
 <h2>Closer look</h2>
 <p>Probability of admission conditioning on gender and department:</p>
@@ -968,7 +1063,7 @@
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="slides-11-simpsons_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
+<p><img data-src="slides-11-simpsons_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -976,7 +1071,7 @@
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="slides-11-simpsons_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
+<p><img data-src="slides-11-simpsons_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -996,13 +1091,13 @@
 <h2>Filtering for multiple levels</h2>
 <p>Suppose I want to retain observations in the first three departments. We could do the following:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>admissions <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">filter</span>(Dept <span class="sc">==</span> <span class="st">"A"</span> <span class="sc">|</span> Dept <span class="sc">==</span> <span class="st">"B"</span> <span class="sc">|</span> Dept <span class="sc">==</span> <span class="st">"C"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>admissions <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">filter</span>(Dept <span class="sc">==</span> <span class="st">"A"</span> <span class="sc">|</span> Dept <span class="sc">==</span> <span class="st">"B"</span> <span class="sc">|</span> Dept <span class="sc">==</span> <span class="st">"C"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Or I could streamline using the <code>%in%</code> operator:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>admissions <span class="sc">|&gt;</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">filter</span>(Dept <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>admissions <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">filter</span>(Dept <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li class="fragment">This reads: filter for observations where the <code>Dept</code> value is in the vector of options (A, B, C)</li>
@@ -1014,10 +1109,10 @@
 <div class="column" style="width:50%;">
 <p>What is the probability that someone was admitted?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>admissions <span class="sc">|&gt;</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">count</span>(Decision) <span class="sc">|&gt;</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">mutate</span>(<span class="at">prob =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">|&gt;</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a>  <span class="fu">select</span>(<span class="sc">-</span>n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>admissions <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">count</span>(Decision) <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">mutate</span>(<span class="at">prob =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">|&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>  <span class="fu">select</span>(<span class="sc">-</span>n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 2
   Decision  prob
@@ -1030,11 +1125,11 @@
 <div class="fragment">
 <p>What is the probability that someone was admitted, conditioned on gender?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>admissions <span class="sc">|&gt;</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">count</span>(Gender, Decision) <span class="sc">|&gt;</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">group_by</span>(Gender) <span class="sc">|&gt;</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">mutate</span>(<span class="at">cond_prob =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">|&gt;</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a>  <span class="fu">select</span>(<span class="sc">-</span>n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>admissions <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">count</span>(Gender, Decision) <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">group_by</span>(Gender) <span class="sc">|&gt;</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">mutate</span>(<span class="at">cond_prob =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">|&gt;</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>  <span class="fu">select</span>(<span class="sc">-</span>n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 3
 # Groups:   Gender [2]
@@ -1062,11 +1157,11 @@
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># option 1 (awful): nested if_else()</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>admissions <span class="sc">|&gt;</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">mutate</span>(<span class="at">Dept2 =</span> <span class="fu">if_else</span>(Dept <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="st">"Group 1"</span>,</span>
-<span id="cb9-4"><a href="#cb9-4"></a>                           <span class="fu">if_else</span>(Dept <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"C"</span>, <span class="st">"D"</span>), <span class="st">"Group 2"</span>,</span>
-<span id="cb9-5"><a href="#cb9-5"></a>                                   <span class="st">"Group 3"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># option 1 (awful): nested if_else()</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>admissions <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">mutate</span>(<span class="at">Dept2 =</span> <span class="fu">if_else</span>(Dept <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="st">"Group 1"</span>,</span>
+<span id="cb12-4"><a href="#cb12-4"></a>                           <span class="fu">if_else</span>(Dept <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"C"</span>, <span class="st">"D"</span>), <span class="st">"Group 2"</span>,</span>
+<span id="cb12-5"><a href="#cb12-5"></a>                                   <span class="st">"Group 3"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -1088,12 +1183,12 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>admissions <span class="sc">|&gt;</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">mutate</span>(<span class="at">Dept2 =</span> <span class="fu">case_when</span>(</span>
-<span id="cb11-3"><a href="#cb11-3"></a>    Dept <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>) <span class="sc">~</span> <span class="st">"Group 1"</span>,</span>
-<span id="cb11-4"><a href="#cb11-4"></a>    Dept <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"C"</span>, <span class="st">"D"</span>) <span class="sc">~</span> <span class="st">"Group 2"</span>,</span>
-<span id="cb11-5"><a href="#cb11-5"></a>    Dept <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"E"</span>, <span class="st">"F"</span>) <span class="sc">~</span> <span class="st">"Group 3"</span>,</span>
-<span id="cb11-6"><a href="#cb11-6"></a>  )) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>admissions <span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">mutate</span>(<span class="at">Dept2 =</span> <span class="fu">case_when</span>(</span>
+<span id="cb14-3"><a href="#cb14-3"></a>    Dept <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>) <span class="sc">~</span> <span class="st">"Group 1"</span>,</span>
+<span id="cb14-4"><a href="#cb14-4"></a>    Dept <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"C"</span>, <span class="st">"D"</span>) <span class="sc">~</span> <span class="st">"Group 2"</span>,</span>
+<span id="cb14-5"><a href="#cb14-5"></a>    Dept <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"E"</span>, <span class="st">"F"</span>) <span class="sc">~</span> <span class="st">"Group 3"</span>,</span>
+<span id="cb14-6"><a href="#cb14-6"></a>  )) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -1109,15 +1204,15 @@
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13" data-code-line-numbers="1,2,7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># The following is also acceptable, but </span></span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="co"># relies on sequential ordering:</span></span>
-<span id="cb13-3"><a href="#cb13-3"></a>admissions <span class="sc">|&gt;</span></span>
-<span id="cb13-4"><a href="#cb13-4"></a>  <span class="fu">mutate</span>(<span class="at">Dept2 =</span> <span class="fu">case_when</span>(</span>
-<span id="cb13-5"><a href="#cb13-5"></a>    Dept <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>) <span class="sc">~</span> <span class="st">"Group 1"</span>,</span>
-<span id="cb13-6"><a href="#cb13-6"></a>    Dept <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"C"</span>, <span class="st">"D"</span>) <span class="sc">~</span> <span class="st">"Group 2"</span>,</span>
-<span id="cb13-7"><a href="#cb13-7"></a>    T <span class="sc">~</span> <span class="st">"Group 3"</span>,</span>
-<span id="cb13-8"><a href="#cb13-8"></a>  )) <span class="sc">|&gt;</span></span>
-<span id="cb13-9"><a href="#cb13-9"></a>  <span class="fu">sample_frac</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16" data-code-line-numbers="1,2,7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># The following is also acceptable, but </span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="co"># relies on sequential ordering:</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a>admissions <span class="sc">|&gt;</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a>  <span class="fu">mutate</span>(<span class="at">Dept2 =</span> <span class="fu">case_when</span>(</span>
+<span id="cb16-5"><a href="#cb16-5"></a>    Dept <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>) <span class="sc">~</span> <span class="st">"Group 1"</span>,</span>
+<span id="cb16-6"><a href="#cb16-6"></a>    Dept <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"C"</span>, <span class="st">"D"</span>) <span class="sc">~</span> <span class="st">"Group 2"</span>,</span>
+<span id="cb16-7"><a href="#cb16-7"></a>    T <span class="sc">~</span> <span class="st">"Group 3"</span>,</span>
+<span id="cb16-8"><a href="#cb16-8"></a>  )) <span class="sc">|&gt;</span></span>
+<span id="cb16-9"><a href="#cb16-9"></a>  <span class="fu">sample_frac</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -1148,12 +1243,12 @@
 <div class="column" style="width:50%;">
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb15-2"><a href="#cb15-2"></a></span>
-<span id="cb15-3"><a href="#cb15-3"></a>admissions <span class="sc">|&gt;</span></span>
-<span id="cb15-4"><a href="#cb15-4"></a>  <span class="fu">count</span>(Decision) <span class="sc">|&gt;</span></span>
-<span id="cb15-5"><a href="#cb15-5"></a>  <span class="fu">mutate</span>(<span class="at">prob =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">|&gt;</span></span>
-<span id="cb15-6"><a href="#cb15-6"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb18-2"><a href="#cb18-2"></a></span>
+<span id="cb18-3"><a href="#cb18-3"></a>admissions <span class="sc">|&gt;</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a>  <span class="fu">count</span>(Decision) <span class="sc">|&gt;</span></span>
+<span id="cb18-5"><a href="#cb18-5"></a>  <span class="fu">mutate</span>(<span class="at">prob =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">|&gt;</span></span>
+<span id="cb18-6"><a href="#cb18-6"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table>
 <thead>
@@ -1185,10 +1280,10 @@
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>admissions <span class="sc">|&gt;</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">count</span>(Decision) <span class="sc">|&gt;</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a>  <span class="fu">mutate</span>(<span class="at">prob =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">|&gt;</span></span>
-<span id="cb16-4"><a href="#cb16-4"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>admissions <span class="sc">|&gt;</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>  <span class="fu">count</span>(Decision) <span class="sc">|&gt;</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a>  <span class="fu">mutate</span>(<span class="at">prob =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">|&gt;</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table>
 <thead>

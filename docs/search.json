@@ -6661,7 +6661,7 @@
     "href": "slides/slides-11-simpsons.html#uc-berkeley-admissions",
     "title": "Simpson’s paradox",
     "section": "UC Berkeley admissions",
-    "text": "UC Berkeley admissions\nObservational study on sex bias based on Fall 1973 admissions data to the graduate program at the University of California, Berkeley\n\n\n\n\nAdmit\nDeny\nTotal\n\n\n\n\nMen\n3738\n4704\n8442\n\n\nWomen\n1494\n2827\n4321\n\n\nTotal\n5232\n7531\n12763\n\n\n\n\n\nWhat is the probability of admission for a randomly selected applicant?\nWhat is the probability of admission among men? Among women?\nAre the probabilities you found marginal, joint, or conditional probabilities?\n\n\n\n\nSuppose we want to understand the relationship between gender and admission decision. What sort of visualization might be appropriate for representing this data?"
+    "text": "UC Berkeley admissions\nObservational study on sex bias based on Fall 1973 admissions data to the graduate program at the University of California, Berkeley\n\n\n\n\nAdmit\nDeny\nTotal\n\n\n\n\nMen\n3738\n4704\n8442\n\n\nWomen\n1494\n2827\n4321\n\n\nTotal\n5232\n7531\n12763\n\n\n\n\n\nWhat is the probability* of admission for a randomly selected applicant?\nWhat is the probability of admission among men? Among women?\nAre the probabilities you found marginal, joint, or conditional probabilities?\n\n\n\n\nSuppose we want to understand the relationship between gender and admission decision. What sort of visualization might be appropriate for representing this data?"
   },
   {
     "objectID": "slides/slides-11-simpsons.html#uc-berkeley-admissions-cont.",
@@ -6675,14 +6675,14 @@
     "href": "slides/slides-11-simpsons.html#dive-into-data",
     "title": "Simpson’s paradox",
     "section": "Dive into data",
-    "text": "Dive into data\nWe have more nuanced data about the graduate admissions: we know the department that each person was applied to.\nWe will consider the six largest departments: A, B, C, D, E, F\n\nThe first six observations in the data frame are as follows:\n\n\n\nhead(admissions)\n\n# A tibble: 6 × 3\n  Decision Gender Dept \n  <chr>    <chr>  <chr>\n1 Admit    Male   B    \n2 Reject   Female C    \n3 Admit    Male   C    \n4 Reject   Female C    \n5 Admit    Male   A    \n6 Reject   Male   F    \n\n\n\n\n\nWhat sort of EDA would be interesting/appropriate for these data?"
+    "text": "Dive into data\nWe have more nuanced data about the graduate admissions: we know the department that each person was applied to.\nWe will consider the six largest departments: A, B, C, D, E, F\n\nThe first six observations in the data frame are as follows:\n\n\n\n# head() gives us the first 6 rows\nhead(admissions)\n\n# A tibble: 6 × 3\n  Decision Gender Dept \n  <chr>    <chr>  <chr>\n1 Admit    Male   B    \n2 Reject   Female C    \n3 Admit    Male   C    \n4 Reject   Female C    \n5 Admit    Male   A    \n6 Reject   Male   F    \n\n\n\n\n\nWhat sort of EDA would be interesting/appropriate for these data?"
   },
   {
     "objectID": "slides/slides-11-simpsons.html#frequency-tables",
     "href": "slides/slides-11-simpsons.html#frequency-tables",
     "title": "Simpson’s paradox",
     "section": "Frequency tables",
-    "text": "Frequency tables\nNumber of applicants by department:\n\n\nFemale applicants:\n\n\n\n\n\nDept\nn\n\n\n\n\nA\n108\n\n\nB\n25\n\n\nC\n593\n\n\nD\n375\n\n\nE\n393\n\n\nF\n341\n\n\n\n\n\n\nMale applicants:\n\n\n\n\n\nDept\nn\n\n\n\n\nA\n825\n\n\nB\n560\n\n\nC\n325\n\n\nD\n417\n\n\nE\n191\n\n\nF\n373"
+    "text": "Frequency tables\nNumber of applicants by department:\n\n\nFemale applicants:\n\nadmissions |>\n  filter(Gender == \"Female\") |> \n  count(Dept)\n\n\n\n\n\n\nDept\nn\n\n\n\n\nA\n108\n\n\nB\n25\n\n\nC\n593\n\n\nD\n375\n\n\nE\n393\n\n\nF\n341\n\n\n\n\n\n\nMale applicants:\n\nadmissions |>\n  filter(Gender == \"Male\") |> \n  count(Dept)\n\n\n\n\n\n\nDept\nn\n\n\n\n\nA\n825\n\n\nB\n560\n\n\nC\n325\n\n\nD\n417\n\n\nE\n191\n\n\nF\n373\n\n\n\n\n\n\nBoth groups:\n\nadmissions |>\n  count(Dept, Gender)\n\n\n\n\n\n \n  \n    Dept \n    Gender \n    n \n  \n \n\n  \n    A \n    Female \n    108 \n  \n  \n    A \n    Male \n    825 \n  \n  \n    B \n    Female \n    25 \n  \n  \n    B \n    Male \n    560 \n  \n  \n    C \n    Female \n    593 \n  \n  \n    C \n    Male \n    325 \n  \n  \n    D \n    Female \n    375 \n  \n  \n    D \n    Male \n    417 \n  \n  \n    E \n    Female \n    393 \n  \n  \n    E \n    Male \n    191 \n  \n  \n    F \n    Female \n    341 \n  \n  \n    F \n    Male \n    373"
   },
   {
     "objectID": "slides/slides-11-simpsons.html#more-detailed-frequency-tables",
@@ -6696,7 +6696,7 @@
     "href": "slides/slides-11-simpsons.html#visualize",
     "title": "Simpson’s paradox",
     "section": "Visualize",
-    "text": "Visualize"
+    "text": "Visualize\nCan visualize three categorical variables at once!"
   },
   {
     "objectID": "slides/slides-11-simpsons.html#closer-look",
