@@ -1,0 +1,127 @@
+---
+title: "STAT 201: Midterm 1 Practice"
+format: pdf
+---
+
+```{r}
+# load your libraries here for wrangling, plotting, and making pretty tables
+library(readr)
+```
+
+## Dataset 1
+From pell package
+A Pell Grant is a need-based federal grant for undergraduate students paying for college. Studets are automatically considered for a Pell Grant award when they submit a FAFSA. 
+
+Each case in the dataset `pell` represents the Pell Grant award to a given school in a given year.
+
+- `STATE`: state shortcode
+- `AWARD`: total award amount in USD
+- `RECIPIENT`: total number of recipients 
+- `NAME`: name of college/university
+- `SESSION`: meeting ID 
+- `YEAR`: year
+
+Run the following code chunk to load in the data:
+
+```{r}
+pell <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2022/2022-08-30/pell.csv', show_col_types = F)
+states <- read_csv("~/Downloads/states.csv", show_col_types = F)
+```
+
+### Exercise 1
+
+```{r eval = F}
+# remove anyone for whom there was NA for award, 0 recipients, or AWARD of 0 but more than 0 recipepints
+pell <- pell |>
+  filter(!is.na(AWARD)) |>
+  filter(!(AWARD == 0 & RECIPIENT > 0)) |>
+  filter(RECIPIENT > 0)
+  
+pell <- pell |>
+  mutate(decade = case_when(
+    YEAR < 2000 ~ "1990s",
+    YEAR >= 2000 & YEAR < 2010 ~ "2000s",
+    T ~ "2010s"
+  )) |>
+  mutate(avg_award = AWARD/RECIPIENT)
+pell <- pell |>
+  inner_join(states, by = c("STATE" = "Abbreviation"))
+
+pell |>
+  ggplot(aes(x  = decade, y = avg_award)) +
+  geom_boxplot() 
+
+
+pell |>
+  filter(YEAR == 2015) |>
+  group_by(Type) |>
+  summarise(avg_award = mean(avg_award))
+  
+pell |>
+  filter(Type == "State", decade == "2010s") |>
+  group_by(Name)  |>
+  summarise(state_avg = mean(avg_award)) |>
+  ungroup() |>
+  arrange(-state_avg) |>
+  slice(1:5)
+
+pell |>
+  group_by(decade, NAME)|>
+  summarise(n = sum(RECIPIENT)) |>
+  ungroup() |>
+  group_by(decade) |>
+  mutate(prop = n/sum(n) ) |>
+  arrange(-prop) |>
+  slice(1) |>
+  select(decade, NAME, prop)
+
+
+pell |>
+  filter(Name == "Vermont", RECIPIENT < 1000) |>
+  ggplot(aes(x = RECIPIENT, y = AWARD, col = decade)) +
+  geom_point() +
+  labs(x = "Number of recipients", y = "Award amount (USD)",
+       title = "Pell grant award by institution and year",
+       subtitle = "Cases with less than 1000 recipients")
+```
+
+## Wine ratings
+
+From Kaggle
+
+- `country`: country of origin
+
+- `variety`: grape type
+
+- `points`: the number of points WineEnthusiast rated the wine on a scale of 1-100 (100 best)
+
+- `title`: title of the wine review, which often contains the year of the wine
+
+- `taster_name`: name of taster/reviewer
+
+- `description`: flavor and taste profile as written by the reviewer
+
+- `year`: year/vintage of the wine, if available in the title of the review
+
+```{r}
+wine_ratings <- readr::read_csv("~/Desktop/wine_ratings.csv", show_col_types = FALSE,
+                                col_types = "cc")
+
+wine_ratings |>
+  count(country) |>
+  arrange(-n) |>
+  slice(1:4)
+
+wine_ratings_top <- wine_ratings |>
+  filter(country %in% c("US", "France", "Italy", "Portugal"))
+
+wine_ratings_top |>
+  group_by(country) |>
+  # na.omit() |>
+  filter(!is.na(price)) |>
+  summarise(mean_pts = mean(points), mean_price = mean(price), sd_points = sd(points), sd_price = sd(price))
+
+wine_ratings_top |>
+  ggplot(aes(x = year, y = points)) +
+  geom_boxplot()
+```
