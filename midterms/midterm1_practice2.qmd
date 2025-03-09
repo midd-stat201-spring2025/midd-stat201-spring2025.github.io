@@ -1,0 +1,99 @@
+---
+title: "STAT 201: Midterm 1 Practice 2"
+author: "Your name"
+format: pdf
+---
+
+In the following code chunk, load your libraries for wrangling, plotting, and making pretty tables. Run the code chunk.
+
+```{r message = F}
+library(readr)
+```
+
+A Pell Grant is a need-based federal grant for undergraduate students paying for college. Students are automatically considered for a Pell Grant award when they submit a FAFSA.
+
+Each case in the dataset `pell` represents the Pell Grant award to a given school in a given year. (Data retrieved from the R pell package.)
+
+-   `state`: state/territory shortcode
+-   `award`: total award amount in USD
+-   `recipient`: total number of recipients
+-   `name`: name of college/university
+-   `session`: meeting ID
+-   `year`: year
+
+We also have a dataset called `states` that provide information on the states and territories of the US. The variables are:
+
+-   `NAME`: name of the state/territory
+-   `Abbreviation`: state/territory shortcode
+-   `Type`: political devision ("state" or "territory")
+
+Run the following code chunk to load in the two datasets:
+
+```{r echo = F}
+pell <- read_csv("https://raw.githubusercontent.com/midd-stat201-spring2025/midd-stat201-spring2025.github.io/refs/heads/main/data/pell.csv", show_col_types = F)
+states <- read_csv("https://raw.githubusercontent.com/midd-stat201-spring2025/midd-stat201-spring2025.github.io/refs/heads/main/data/states.csv", show_col_types = F)
+```
+
+### Exercise 1
+
+Let's clean and wrangle the data a bit.
+
+-   Remove any case where at least one of the following is true:
+    -   The school is missing information about the award amount
+    -   The school had less than 1 student receiving a Pell Grant
+    -   The school receive an award of 0 dollars but had more than 0 students recieve a Pell grant
+-   Create a new variable called `award_pp` that represents the award amount per person for each school
+-   Create a new variable called `decade` that takes the value:
+    -   "1990s" if the award was granted in the 1990s
+    -   "2000s" if the award was granted in the 2000s
+    -   "2010s" if the award was granted in the 2010s
+
+Store your cleaned and wrangled data back into `pell`.
+
+```{r}
+
+```
+
+### Exercise 2
+
+Make a visualization the shows the distribution of the award amount per person for each decade. Have informative labels and titles. Interpret what you see.
+
+```{r}
+
+```
+
+**Answer**:
+
+### Exercise 3
+
+Now let's bring in the information about states vs territories. Combine the two datasets into a single dataset called `pell2` that retains all observations about pell grants awards for which we also have information about the type of political division (i.e. state or territory).
+
+```{r}
+
+```
+
+### Exercise 4
+
+For awards made in 2015, create a beautiful table that displays the mean and standard deviation of the award per person for each of the two political divisions. Then answer the question: did the two political divisions differ in the Pell grant awarded?
+
+```{r}
+
+```
+
+**Answer**:
+
+### Exercise 5
+
+Display a beautiful table of the five U.S. states that received the largest statewide average award per person in the 2010s.
+
+```{r}
+
+```
+
+### Exercise 6
+
+Find the rendered version of this assignment on the course website. Re-create the plot found there.
+
+```{r}
+
+```

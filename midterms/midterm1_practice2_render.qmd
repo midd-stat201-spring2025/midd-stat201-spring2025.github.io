@@ -1,0 +1,129 @@
+---
+title: "STAT 201: Midterm 1 Practice 2"
+format: pdf
+---
+
+```{r message = F, echo = F}
+# load your libraries here for wrangling, plotting, and making pretty tables
+library(readr)
+library(tidyverse)
+library(kableExtra)
+```
+
+A Pell Grant is a need-based federal grant for undergraduate students paying for college. Students are automatically considered for a Pell Grant award when they submit a FAFSA.
+
+Each case in the dataset `pell` represents the Pell Grant award to a given school in a given year.
+
+-   `state`: state/territory shortcode
+-   `award`: total award amount in USD
+-   `recipient`: total number of recipients
+-   `name`: name of college/university
+-   `session`: meeting ID
+-   `year`: year
+
+We also have a dataset called `states` that provide information on the states and territories of the US. The variables are:
+
+-   `NAME`: name of the state/territory
+-   `Abbreviation`: state/territory shortcode
+-   `Type`: political devision ("state" or "territory")
+
+Run the following code chunk to load in the two datasets:
+
+```{r echo = F}
+pell <- read_csv("https://raw.githubusercontent.com/midd-stat201-spring2025/midd-stat201-spring2025.github.io/refs/heads/main/data/pell.csv", show_col_types = F)
+states <- read_csv("https://raw.githubusercontent.com/midd-stat201-spring2025/midd-stat201-spring2025.github.io/refs/heads/main/data/states.csv", show_col_types = F)
+```
+
+### Exercise 1
+
+Let's clean and wrangle the data a bit.
+
+-   Remove any case where at least one of the following is true:
+    -   The school is missing information about the award amount
+    -   The school had less than 1 student receiving a Pell Grant
+    -   The school receive an award of 0 dollars but had more than 0 students recieve a Pell grant
+-   Create a new variable called `award_pp` that represents the award amount per person for each school
+-   Create a new variable called `decade` that takes the value:
+    -   "1990s" if the award was granted in the 1990s
+    -   "2000s" if the award was granted in the 2000s
+    -   "2010s" if the award was granted in the 2010s
+
+Store your cleaned and wrangled data frame back into `pell`.
+
+```{r echo = F}
+pell <- pell |>
+  filter(!is.na(award)) |>
+  filter(!(award == 0 & recipient > 0)) |>
+  filter(recipient > 0)
+pell <- pell |>
+  mutate(decade = case_when(
+    year < 2000 ~ "1990s",
+    year >= 2000 & year < 2010 ~ "2000s",
+    T ~ "2010s"
+  )) |>
+  mutate(award_pp = award/recipient)
+```
+
+### Exercise 2
+
+Make a visualization the shows the distribution of the award amount per person for each decade. Have informative labels and titles. Interpret what you see.
+
+```{r echo = F, eval = F}
+pell |>
+  ggplot(aes(x  = decade, y = award_pp)) +
+  geom_boxplot() 
+```
+
+**Answer**:
+
+### Exercise 3
+
+Now let's bring in the information about states vs territories. Combine the two datasets into a single dataset called `pell2` that retains all observations about pell grants awards for which we also have information about the type of political division (i.e. state or territory).
+
+```{r echo = F, eval = F}
+pell2 <- pell |>
+  inner_join(states, by = c("state" = "Abbreviation"))
+```
+
+### Exercise 4
+
+For awards made in 2015, create a beautiful table that displays the mean and standard deviation of the award per person for each of the two political divisions. Then answer the question: did the two political divisions differ in the Pell grant awarded?
+
+```{r echo = F, eval = F}
+pell2 |>
+  filter(year == 2015) |>
+  group_by(Type) |>
+  summarise(avg_award_pp = mean(award_pp), sd_award_pp = sd(award_pp)) |>
+  kable()
+```
+
+**Answer**:
+
+### Exercise 5
+
+Display a beautiful table of the five U.S. states that received the largest statewide average award per person in the 2010s.
+
+```{r echo = F, eval = F}
+pell2 |>
+  filter(Type == "State", decade == "2010s") |>
+  group_by(Name)  |>
+  summarise(state_avg = mean(award_pp)) |>
+  ungroup() |>
+  arrange(-state_avg) |>
+  slice(1:5)
+```
+
+### Exercise 6
+
+Re-create the following plot:
+
+```{r echo = F}
+pell |>
+  filter(state == "VT", recipient < 500) |>
+  mutate(college = if_else(name == "Middlebury College", "Middlebury", "Other")) |>
+  ggplot(aes(x = recipient, y = award, col = decade, shape = college)) +
+  geom_point() +
+  labs(x = "Number of recipients", y = "Award amount (USD)",
+       title = "Pell grant award by institution and year",
+       subtitle = "Vermont institutions with less than 500 recipients")
+```

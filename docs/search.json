@@ -2300,14 +2300,14 @@
     "href": "midterms.html",
     "title": "Midterms",
     "section": "",
-    "text": "When and where: Thursday, 3/13/25 during class (75 minutes)\nWhat: content through end of Week 4 (i.e. through Simpson’s Paradox)\n\nThis includes homework and coding practices\nThe midterm will be done entirely in a .qmd that will be made available to you at the start of class 11:15am on 3/13. The midterm ends at 12:30pm, but you will have an extra 5 minutes to render the assignment and submit to Gradescope. If your submission is not in by 12:35pm, you will receive an automatic 25% penalty.\nNon-coding concepts are also fair game for the midterm!\n\nImportant: Prof. Tang will be proctoring the exam\n\nHowever, Prof. Tang will not help de-bug code or fix rendering issues.\n\nYou will not have a problem set assigned this week!\nFriday 3/14 office hours will be moved to Wednesday 3/12 3:15-4:15pm instead.\nThis midterm will be open note in the sense that your notes, my slides, and your homework/coding practices are all available to you."
+    "text": "When and where: Thursday, 3/13/25 during class (75 minutes)\nWhat: content through end of Week 4 (i.e. through Simpson’s Paradox)\n\nThis includes homework and coding practices\nThe midterm will be done entirely in a .qmd that will be made available to you at the start of class 11:15am on 3/13. The midterm ends at 12:30pm, but you will have an extra 5 minutes to render the assignment and submit to Gradescope. If your submission is not in by 12:35pm, you will receive an automatic 25% penalty.\nNon-coding concepts are also fair game for the midterm!\n\nImportant: Prof. Tang will be proctoring the exam\n\nHowever, Prof. Tang will not help de-bug code or fix rendering issues.\n\nYou will not have a problem set assigned this week!\nFriday 3/14 office hours will be moved to Wednesday 3/12 3:15-4:15pm instead.\nThis midterm will be open note in the sense that your notes, my slides, and your homework/coding practices are all available to you.\n\n\n\n\n\nThe best preparation you can do for the midterm is to go through your homework and coding practices and be honest with yourself about what you do/don’t understand. This means going through the painful process of looking at feedback on Gradescope. For the concepts that you need to practice more, try more problems (see below)!\nJust because the midterm is open note, this does not mean you cannot study and prepare. You will not have time to try and re-learn what all the functions we learned do!\n\nI suggest going through each of the ggplot and dplyr functions that we’ve seen in the course and ensuring you know how they work and when to use them!\n\nFor extra practice, additional coding problems are made available below. These questions are not necessarily representative of the typical scope and difficulty of individual exam questions. This review is not comprehensive, nor does it represent the expected amount of time for it will take for you to complete the midterm.\n\nPractice 1: rendered version\n\n.qmd template  .qmd"
   },
   {
     "objectID": "midterms.html#preparation",
     "href": "midterms.html#preparation",
     "title": "Midterms",
     "section": "Preparation",
-    "text": "Preparation\n\nThe best preparation you can do for the midterm is to go through your homework and coding practices and be honest with yourself about what you do/don’t understand. This means going through the painful process of looking at feedback on Gradescope. For the concepts that you need to practice more, try more problems (see below)!\nJust because the midterm is open note, this does not mean you cannot study and prepare. You will not have time to try and re-learn what all the functions we learned do!\n\nI suggest going through each of the ggplot and dplyr functions that we’ve seen in the course and ensuring you know how they work and when to use them!\n\nFor extra practice, additional coding problems will soon be made available below. These questions are not necessarily representative of the typical scope and difficulty of individual exam questions. This review is not comprehensive, nor does it represent the expected amount of time for it will take for you to complete the midterm."
+    "text": "Preparation\n\nThe best preparation you can do for the midterm is to go through your homework and coding practices and be honest with yourself about what you do/don’t understand. This means going through the painful process of looking at feedback on Gradescope. For the concepts that you need to practice more, try more problems (see below)!\nJust because the midterm is open note, this does not mean you cannot study and prepare. You will not have time to try and re-learn what all the functions we learned do!\n\nI suggest going through each of the ggplot and dplyr functions that we’ve seen in the course and ensuring you know how they work and when to use them!\n\nFor extra practice, additional coding problems will soon be made available below. These questions are not necessarily representative of the typical scope and difficulty of individual exam questions. This review is not comprehensive, nor does it represent the expected amount of time for it will take for you to complete the midterm.\n\nPractice 1: rendered version\n\n.qmd template\n Midterm practice \n\nPractice 2: rendered version\n\n.qmd template\n Midterm practice"
   },
   {
     "objectID": "index.html#announcements",
@@ -6781,5 +6781,96 @@
     "title": "STAT 201: Problem Set 4 (R)",
     "section": "",
     "text": "Today’s data comes from a study of conducted in Whickham, England. In this study, the researchers recorded each participant’s age, smoking status at the start of the study, and their health outcome 20 years later.\nThe data is in the mosaicData package. You may have to install the package first! Then run the following code:\n\nlibrary(tidyverse)\nlibrary(kableExtra)\nlibrary(mosaicData)\n\nWe will work with the Whickham data from the package. You should open its Help file and take a view of the data before proceeding. Note that the type “factor” can be though of as a categorical variable. Make sure you understand the data before proceeding!\n\nBefore looking at the data and using your intuition: What would you expect the relationship between smoking status and health outcome to be?\n\nAnswer:\n\nCreate an standardized bar plot that depicts the relationship between smoking status and health outcome. This about what the explanatory and response variables should be and how that affects your plot. Make sure you have informative labels and titles. Change the background of the plot to something besides the default, and also change the colors of the bars to be something besides the default (e.g. scale_fill_viridis_d() or scale_fill_brewer()).\n\n\n\n\n\nUsing wrangling code, calculate the conditional probabilities of death for each smoking status. Your resulting table should:\n\n\nOnly report only the probabilities for when outcome is Dead\nOnly retain the variables for smoke statu and the conditional probabilities in a meaningful order\nRender as a beautiful table, not a data frame\n\n\n\n\n\nDo your calculations and visualization from Exercises 2 and 3 align with your hypothesis from Exercise 1? Briefly explain why or why not.\n\nAnswer:\n\nUsing case_when(), create a new variable for future use called age_cat that takes the values as follows:\n\n\n“18-44”: if someone is less than or equal to 44 years old\n“45-64”: if someone is between 45 and 64 years old, inclusive\n“65+”: if someone is older than 64\n\nStore the resulting data frame into a new data frame called Whickham2\n\n\n\n\nRe-create your first visualization from Exercise 2, this time bringing in your new age_cat variable in an appropriate way. Make sure you have informative labels and titles, and use the same color choice you as in Exercise 2.\n\n\n\n\n\nElaborate on your table from Exercise 3 above by breaking it down by age category. Your resulting table should:\n\n\nOnly report only the probabilities for when outcome is Dead\nOnly retain the variables for smoke status, the conditional probabilities, and age category in a meaningful order\nPresent the results such that multiple rows with the same age categories appear in consecutive order in the table\nRender as a beautiful table, not a data frame\n\n\n\n\n\nCompare the two visualizations and the two summary tables. What changed, and what might explain the change?\n\nAnswer:\nWhen finished, render one more time and submit the PDF to Gradescope!"
+  },
+  {
+    "objectID": "midterms/midterm1_practice.html",
+    "href": "midterms/midterm1_practice.html",
+    "title": "STAT 201: Practice Midterm",
+    "section": "",
+    "text": "TYPE THE HONOR CODE PLEDGE BELOW\nLoad your packages necessary for wrangling code, plotting, and creating beautiful tables:\nThe data containing the records of gun violence incidents are found in gun_violence. The data are obtained from Kaggle, and have been slightly modified. The variable definitions are as follows:\nWe will also be using data about state populations The data are found in the census. These data come from the U.S. Census. The definition of variables in this file are as follows:\nLastly, we have information about the number of gun laws in each state in 2017. These are found in laws, with variables as follows:"
+  },
+  {
+    "objectID": "midterms/midterm1_practice.html#question-1",
+    "href": "midterms/midterm1_practice.html#question-1",
+    "title": "STAT 201: Practice Midterm",
+    "section": "Question 1",
+    "text": "Question 1\nIn which five cities or counties did the most incidents occur? What are the probabilities that a randomly selected incident in our dataset occurred in each of these cities/counties? Answer this by creating some beautiful tables, and and interpret what you find in a sentence.\n\n\n\nAnswer:"
+  },
+  {
+    "objectID": "midterms/midterm1_practice.html#question-2",
+    "href": "midterms/midterm1_practice.html#question-2",
+    "title": "STAT 201: Practice Midterm",
+    "section": "Question 2",
+    "text": "Question 2\nWhile there are a variety of definitions of mass shootings, one definition is “any incidents in which four or more people were shot, whether injured or killed”. Based on this definition, create a beautiful table that displays the top six incidents that meet this definition of mass shooting in descending order of number of people shot. Only display the date, state, city or county, and number of people."
+  },
+  {
+    "objectID": "midterms/midterm1_practice.html#question-3",
+    "href": "midterms/midterm1_practice.html#question-3",
+    "title": "STAT 201: Practice Midterm",
+    "section": "Question 3",
+    "text": "Question 3\nLet’s examine which days of the year are most common for gun violence. Display a table of the top three days of the year with highest number of total incidents, displayed in descending order. Comment on what you notice.\n\n\n\nAnswer:"
+  },
+  {
+    "objectID": "midterms/midterm1_practice.html#question-4",
+    "href": "midterms/midterm1_practice.html#question-4",
+    "title": "STAT 201: Practice Midterm",
+    "section": "Question 4",
+    "text": "Question 4\nCreate a data frame called state_incidents where each row is an observation of a state and its total number of incidents in a given year. For the years 2014-2017, which three states had the lowest average number of incidents? Which three states had the highest average number of incidents?\n\n\n\nAnswer:"
+  },
+  {
+    "objectID": "midterms/midterm1_practice.html#question-5",
+    "href": "midterms/midterm1_practice.html#question-5",
+    "title": "STAT 201: Practice Midterm",
+    "section": "Question 5",
+    "text": "Question 5\nCombine the three datasets into one and save the result into a new dataframe called state_incidents2. After this step, you should have 6 variables in state_incidents2."
+  },
+  {
+    "objectID": "midterms/midterm1_practice.html#question-6",
+    "href": "midterms/midterm1_practice.html#question-6",
+    "title": "STAT 201: Practice Midterm",
+    "section": "Question 6",
+    "text": "Question 6\nCreate a new variable called rate that is equal to the number of gun violence incidents per 100000 people in a given year. This is calculated as taking the number of incidents divided by number of residents, multiplied by 100000. Save this into the same data frame state_incidents2. Then answer the following question:\nFor the years 2014-2017, which three states had the lowest average rate of incidents? Which three states had the highest average rate of incidents? Comment on how your findings here compare to your findings from Exercise 4.\n\n\n\nAnswer:"
+  },
+  {
+    "objectID": "midterms/midterm1_practice.html#question-7",
+    "href": "midterms/midterm1_practice.html#question-7",
+    "title": "STAT 201: Practice Midterm",
+    "section": "Question 7",
+    "text": "Question 7\nCreate groupings for the state populations for easy visualization. Add a new variable called pop_class that groups the states into the following categories. Don’t forget to store your results.\n- \"Extra-small\" = populations less than 1.5 million residents\n- \"Small\" = population of at least 1.5 million, but less than 5 million residents\n- \"Medium\" = population of at least 5 million, but less than 10 million residents\n- \"Large\" = population of least 10 million residents"
+  },
+  {
+    "objectID": "midterms/midterm1_practice.html#question-8",
+    "href": "midterms/midterm1_practice.html#question-8",
+    "title": "STAT 201: Practice Midterm",
+    "section": "Question 8",
+    "text": "Question 8\nCreate a visualization that displays the distribution of the rate of gun violence incidents for each year and by the population class. Describe any trends you notice."
+  },
+  {
+    "objectID": "midterms/midterm1_practice1.html",
+    "href": "midterms/midterm1_practice1.html",
+    "title": "STAT 201: Midterm 1 Practice 1",
+    "section": "",
+    "text": "In the following code chunk, load your libraries for wrangling, plotting, and making pretty tables. Then run the code chunk:\nWe have data from over 1000 wines in the dataset wine_ratings. Each case in the dataset represents one bottle of wine. The wines included in the dataset are wines that were tasted and reviewed.\nRun the following code to load in the data and take a look at it before continuing!"
+  },
+  {
+    "objectID": "midterms/midterm1_practice1.html#exercise-5",
+    "href": "midterms/midterm1_practice1.html#exercise-5",
+    "title": "STAT 201: Midterm 1 Practice 1",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nAmong all wines in the original dataset that have at least 25 reviews and information about prices, determine which type of wine grape seems to be the worst value. In your answer, briefly describe your methods/reasoning and identify the wine variety.\n\n\n\nAnswer:"
+  },
+  {
+    "objectID": "midterms/midterm1_practice2.html",
+    "href": "midterms/midterm1_practice2.html",
+    "title": "STAT 201: Midterm 1 Practice 2",
+    "section": "",
+    "text": "In the following code chunk, load your libraries for wrangling, plotting, and making pretty tables. Run the code chunk.\n\nlibrary(readr)\n\nA Pell Grant is a need-based federal grant for undergraduate students paying for college. Students are automatically considered for a Pell Grant award when they submit a FAFSA.\nEach case in the dataset pell represents the Pell Grant award to a given school in a given year. (Data retrieved from the R pell package.)\n\nstate: state/territory shortcode\naward: total award amount in USD\nrecipient: total number of recipients\nname: name of college/university\nsession: meeting ID\nyear: year\n\nWe also have a dataset called states that provide information on the states and territories of the US. The variables are:\n\nNAME: name of the state/territory\nAbbreviation: state/territory shortcode\nType: political devision (“state” or “territory”)\n\nRun the following code chunk to load in the two datasets:\n\n\n\n\nExercise 1\nLet’s clean and wrangle the data a bit.\n\nRemove any case where at least one of the following is true:\n\nThe school is missing information about the award amount\nThe school had less than 1 student receiving a Pell Grant\nThe school receive an award of 0 dollars but had more than 0 students recieve a Pell grant\n\nCreate a new variable called award_pp that represents the award amount per person for each school\nCreate a new variable called decade that takes the value:\n\n“1990s” if the award was granted in the 1990s\n“2000s” if the award was granted in the 2000s\n“2010s” if the award was granted in the 2010s\n\n\nStore your cleaned and wrangled data back into pell.\n\n\n\n\n\nExercise 2\nMake a visualization the shows the distribution of the award amount per person for each decade. Have informative labels and titles. Interpret what you see.\n\n\n\nAnswer:\n\n\nExercise 3\nNow let’s bring in the information about states vs territories. Combine the two datasets into a single dataset called pell2 that retains all observations about pell grants awards for which we also have information about the type of political division (i.e. state or territory).\n\n\n\n\n\nExercise 4\nFor awards made in 2015, create a beautiful table that displays the mean and standard deviation of the award per person for each of the two political divisions. Then answer the question: did the two political divisions differ in the Pell grant awarded?\n\n\n\nAnswer:\n\n\nExercise 5\nDisplay a beautiful table of the five U.S. states that received the largest statewide average award per person in the 2010s.\n\n\n\n\n\nExercise 6\nFind the rendered version of this assignment on the course website. Re-create the plot found there."
+  },
+  {
+    "objectID": "midterms/midterm1_practice2_render.html",
+    "href": "midterms/midterm1_practice2_render.html",
+    "title": "STAT 201: Midterm 1 Practice 2",
+    "section": "",
+    "text": "A Pell Grant is a need-based federal grant for undergraduate students paying for college. Students are automatically considered for a Pell Grant award when they submit a FAFSA.\nEach case in the dataset pell represents the Pell Grant award to a given school in a given year.\n\nstate: state/territory shortcode\naward: total award amount in USD\nrecipient: total number of recipients\nname: name of college/university\nsession: meeting ID\nyear: year\n\nWe also have a dataset called states that provide information on the states and territories of the US. The variables are:\n\nNAME: name of the state/territory\nAbbreviation: state/territory shortcode\nType: political devision (“state” or “territory”)\n\nRun the following code chunk to load in the two datasets:\n\n\n\n\nExercise 1\nLet’s clean and wrangle the data a bit.\n\nRemove any case where at least one of the following is true:\n\nThe school is missing information about the award amount\nThe school had less than 1 student receiving a Pell Grant\nThe school receive an award of 0 dollars but had more than 0 students recieve a Pell grant\n\nCreate a new variable called award_pp that represents the award amount per person for each school\nCreate a new variable called decade that takes the value:\n\n“1990s” if the award was granted in the 1990s\n“2000s” if the award was granted in the 2000s\n“2010s” if the award was granted in the 2010s\n\n\nStore your cleaned and wrangled data frame back into pell.\n\n\n\n\n\nExercise 2\nMake a visualization the shows the distribution of the award amount per person for each decade. Have informative labels and titles. Interpret what you see.\n\n\n\nAnswer:\n\n\nExercise 3\nNow let’s bring in the information about states vs territories. Combine the two datasets into a single dataset called pell2 that retains all observations about pell grants awards for which we also have information about the type of political division (i.e. state or territory).\n\n\n\n\n\nExercise 4\nFor awards made in 2015, create a beautiful table that displays the mean and standard deviation of the award per person for each of the two political divisions. Then answer the question: did the two political divisions differ in the Pell grant awarded?\n\n\n\nAnswer:\n\n\nExercise 5\nDisplay a beautiful table of the five U.S. states that received the largest statewide average award per person in the 2010s.\n\n\n\n\n\nExercise 6\nRe-create the following plot:"
   }
 ]
