@@ -36,7 +36,7 @@ title: "Midterms"
 
     -   In-class practice: [rendered version](midterms/midterm1_practice_inclass_rendered.qmd)
 
-        -   [Solutions](midterms/midterm1_practice_solns.pdf) (note that many problems have many different solutions)
+        -   [Solutions](midterms/midterm1_practice_inclass_solns.pdf) (note that many problems have many different solutions)
 
     -   Practice 1: [rendered version](midterms/midterm1_practice1_render.qmd)
 

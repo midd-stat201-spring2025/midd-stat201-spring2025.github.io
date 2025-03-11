@@ -29,6 +29,8 @@ wine_ratings <- read_csv("https://raw.githubusercontent.com/midd-stat201-spring2
 
 ### Exercise 1
 
+First, modify the `wine_ratings` data to remove observations for which we don't have information about price.
+
 First, find the three countries that are most represented in the dataset. Once you have identified those countries, create a new data frame called `wine_ratings_top` that only retains observations from those three countries.
 
 ```{r}
