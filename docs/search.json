@@ -6872,5 +6872,124 @@
     "title": "STAT 201: Midterm 1 Practice 2",
     "section": "",
     "text": "A Pell Grant is a need-based federal grant for undergraduate students paying for college. Students are automatically considered for a Pell Grant award when they submit a FAFSA.\nEach case in the dataset pell represents the Pell Grant award to a given school in a given year.\n\nstate: state/territory shortcode\naward: total award amount in USD\nrecipient: total number of recipients\nname: name of college/university\nsession: meeting ID\nyear: year\n\nWe also have a dataset called states that provide information on the states and territories of the US. The variables are:\n\nNAME: name of the state/territory\nAbbreviation: state/territory shortcode\nType: political devision (“state” or “territory”)\n\nRun the following code chunk to load in the two datasets:\n\n\n\n\nExercise 1\nLet’s clean and wrangle the data a bit.\n\nRemove any case where at least one of the following is true:\n\nThe school is missing information about the award amount\nThe school had less than 1 student receiving a Pell Grant\nThe school receive an award of 0 dollars but had more than 0 students recieve a Pell grant\n\nCreate a new variable called award_pp that represents the award amount per person for each school\nCreate a new variable called decade that takes the value:\n\n“1990s” if the award was granted in the 1990s\n“2000s” if the award was granted in the 2000s\n“2010s” if the award was granted in the 2010s\n\n\nStore your cleaned and wrangled data frame back into pell.\n\n\n\n\n\nExercise 2\nMake a visualization the shows the distribution of the award amount per person for each decade. Have informative labels and titles. Interpret what you see.\n\n\n\nAnswer:\n\n\nExercise 3\nNow let’s bring in the information about states vs territories. Combine the two datasets into a single dataset called pell2 that retains all observations about pell grants awards for which we also have information about the type of political division (i.e. state or territory).\n\n\n\n\n\nExercise 4\nFor awards made in 2015, create a beautiful table that displays the mean and standard deviation of the award per person for each of the two political divisions. Then answer the question: did the two political divisions differ in the Pell grant awarded?\n\n\n\nAnswer:\n\n\nExercise 5\nDisplay a beautiful table of the five U.S. states that received the largest statewide average award per person in the 2010s.\n\n\n\n\n\nExercise 6\nRe-create the following plot:"
+  },
+  {
+    "objectID": "slides/slides-12-ethics.html#what-is-ethics-why-discuss",
+    "href": "slides/slides-12-ethics.html#what-is-ethics-why-discuss",
+    "title": "Data ethics",
+    "section": "What is ethics? Why discuss?",
+    "text": "What is ethics? Why discuss?\n\nPhilosopher Socrates is quoted as saying that “the most important thing is not life, but the good life”1\n\nQuestions of ethics attempt to answer the question: What is a life worth living?\n\nEthics involves human choice, and goes beyond “intent”\nEthics enters politically, personally, and professionally\n\nProfessional ethics describes the standard of behavior expected of workplace professional (depends on the field)\n\nQuestions of technological and data ethics are emerging due to speed at which these fields are growing\n\nTechnology increasingly affects how and how successfully humans are seeking the “good life”\n\n\nPlato, Crito"
+  },
+  {
+    "objectID": "slides/slides-12-ethics.html#ethical-benefits-of-data-practices",
+    "href": "slides/slides-12-ethics.html#ethical-benefits-of-data-practices",
+    "title": "Data ethics",
+    "section": "Ethical benefits of data practices?",
+    "text": "Ethical benefits of data practices?\n\nData does have benefits for society! What are some?\n\n\nIncreasing human understanding of our world\nCan lead to more efficient use of resources\nPredictive accuracy and personalization"
+  },
+  {
+    "objectID": "slides/slides-12-ethics.html#ethically-significant-harms-of-data-practices",
+    "href": "slides/slides-12-ethics.html#ethically-significant-harms-of-data-practices",
+    "title": "Data ethics",
+    "section": "Ethically significant harms of data practices?",
+    "text": "Ethically significant harms of data practices?\n\nData does have harms for society! What are some?\n\n\nHarms to privacy and security, lack of consent\nHarms to fairness and justice\n\nAvoidable errors and inaccuracies, biases that arise from falsehood, sampling errors, and discriminatory practices\n\nHarms to transparency and autonomy\n\n“Black box”, “deep learning” algorithms\nProprietary software\n\nMany harms are implicit (which makes them hard to mitigate!)"
+  },
+  {
+    "objectID": "slides/slides-12-ethics.html#ethics-in-technology-and-data",
+    "href": "slides/slides-12-ethics.html#ethics-in-technology-and-data",
+    "title": "Data ethics",
+    "section": "Ethics in technology and data",
+    "text": "Ethics in technology and data\n\nTechnologies are not ethically “neutral”–they are built and informed by humans, and so they naturally reflect the values and biases that humans have\n\nHave you heard of the term “big data”? If so, what does it mean to you?\n\n“Big data” is more than just the explosive growth of large datasets!\n\nIt involves the ways/techniques that these large datasets are stored, processed, and analyzed\nHumans enter at these steps!"
+  },
+  {
+    "objectID": "slides/slides-12-ethics.html#what-can-you-do",
+    "href": "slides/slides-12-ethics.html#what-can-you-do",
+    "title": "Data ethics",
+    "section": "What can you do?",
+    "text": "What can you do?\n\nWith this class, you should learn to make visualizations and tables that are factual and not intended to deceive your audience\n\nYou can and should tell stories with your visualizations, but you should not purposefully hide or distort important aspects of the data (e.g. outliers, omit confounders, only display results that confirm your hypothesis)\n\nDon’t lie with statistics!\nMake all your work reproducible, and open-source (i.e. public)"
+  },
+  {
+    "objectID": "slides/slides-12-ethics.html#example-1-stand-your-ground",
+    "href": "slides/slides-12-ethics.html#example-1-stand-your-ground",
+    "title": "Data ethics",
+    "section": "Example 1: stand your ground",
+    "text": "Example 1: stand your ground\n\nIn 2005, the Florida legislature passed a controversial “Stand Your Ground” law\n\nThe law allowed for a broader class of scenarios where the use of deadly force by citizens could be justified\nProponents of the law thought it woulf reduce crime, opponents worried it was increase the amount of lethal force"
+  },
+  {
+    "objectID": "slides/slides-12-ethics.html#example-2-covid-19-reporting",
+    "href": "slides/slides-12-ethics.html#example-2-covid-19-reporting",
+    "title": "Data ethics",
+    "section": "Example 2: COVID-19 reporting",
+    "text": "Example 2: COVID-19 reporting\nIn May 2020, the state of Georgia published the following graphical display of COVID-19 cases:\n\n\n\n\n\nWhat is the story the figure is trying to tell?\nIs it factually correct?\nIs it deceptive?"
+  },
+  {
+    "objectID": "slides/slides-12-ethics.html#example-3-health-care-recommendation",
+    "href": "slides/slides-12-ethics.html#example-3-health-care-recommendation",
+    "title": "Data ethics",
+    "section": "Example 3: health care recommendation",
+    "text": "Example 3: health care recommendation\n\nGoal: identify patients for “high-risk care management” programs that seek to improve the care of patients with complex health needs by providing additional resources\nSuch program are considered effective at improving outcomes and satisfaction while reducing costs, but are themselves costly -> want to identify patients who had the highest “medical need”\nAlgorithm’s designers used previous patients’ health care spending as a proxy for medical need\nAssigned patients a “risk score”, where higher risk meant more complex needs and therefore priority\n\nPatients with highest risk scores automatically qualified for program\nPatient with lower (but still high) risk scores were interviewed for potential candidacy"
+  },
+  {
+    "objectID": "slides/slides-12-ethics.html#example-3-health-care-cont.",
+    "href": "slides/slides-12-ethics.html#example-3-health-care-cont.",
+    "title": "Data ethics",
+    "section": "Example 3: health care (cont.)",
+    "text": "Example 3: health care (cont.)\n\n\n\nInterpret the plot1. What do you notice happened?\n\n\n\n\n\n\n\n\n\nObermeyer, Z., Powers, B., Vogeli, C., & Mullainathan, S. (2019)."
+  },
+  {
+    "objectID": "slides/slides-12-ethics.html#example-3-health-care-cont.-1",
+    "href": "slides/slides-12-ethics.html#example-3-health-care-cont.-1",
+    "title": "Data ethics",
+    "section": "Example 3: health care (cont.)",
+    "text": "Example 3: health care (cont.)\n\nDiscuss what’s going on in these two new plots. Then use them to explain the results of the algorithm.\n\n\n\n\n\n\n\n\n\nEven though black patients tend to have more severe medical conditions, algorithm is built to predict health care costs rather than illness"
+  },
+  {
+    "objectID": "slides/slides-12-ethics.html#example-4-propublica-analysis4",
+    "href": "slides/slides-12-ethics.html#example-4-propublica-analysis4",
+    "title": "Data ethics",
+    "section": "Example 4: ProPublica analysis1",
+    "text": "Example 4: ProPublica analysis1\nFamous case study of algorithmic bias!\n\nFor more than 7,000 people arrested in Broward County, Florida in 2013 and 2014:\n\n“Risk scores” were assigned via an algorithm that were used to predict the likelihood of the person committing a future crime\n\nTo see how the risk scores did, these people were tracked to see if they charged with new crimes over the next two years\nIntention of algorithm’s designers: higher risk scores should accurately predict if someone will be charged with a future crime\n\nhttps://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing"
+  },
+  {
+    "objectID": "slides/slides-12-ethics.html#example-4-propublica-cont.",
+    "href": "slides/slides-12-ethics.html#example-4-propublica-cont.",
+    "title": "Data ethics",
+    "section": "Example 4: ProPublica (cont.)",
+    "text": "Example 4: ProPublica (cont.)\nDistribution of risk scores:\n\n\n\n\n\n\n\n\nHow did the algorithm do?"
+  },
+  {
+    "objectID": "slides/slides-12-ethics.html#example-4-propublica-cont.-1",
+    "href": "slides/slides-12-ethics.html#example-4-propublica-cont.-1",
+    "title": "Data ethics",
+    "section": "Example 4: ProPublica (cont.)",
+    "text": "Example 4: ProPublica (cont.)\n\nOnly 20% of those predicted to commit violent crimes actually did\nAlgorithm had higher accuracy (61%) when full range of crimes taken into account (e.g. misdemeanors)\n\n\n\n\n\nAlgorithm was more likely to falsely flag Black defendants as higher risk/future criminals, and at almost twice the rate as White defendants\nWhite defendants were mislabeled as low risk more often than black defendants\n\nAre risk scores inherently bad?"
+  },
+  {
+    "objectID": "slides/slides-12-ethics.html#example-5-race-prediction",
+    "href": "slides/slides-12-ethics.html#example-5-race-prediction",
+    "title": "Data ethics",
+    "section": "Example 5: race prediction",
+    "text": "Example 5: race prediction\nImai and Khanna (2016) built a racial prediction algorithm using a Bayes classifier trained on voter registration records from Florida and the U.S. Census Bureau’s name list.\n\nTheir algorithm takes in a list of last names (and optionally their home address) and returns predicted probabilities for a person’s race.\nIn addition to the publishing the paper detailing the methodology, the authors published the software for the classifier on GitHub under an open-source license."
+  },
+  {
+    "objectID": "slides/slides-12-ethics.html#example-5-race-prediction-cont.",
+    "href": "slides/slides-12-ethics.html#example-5-race-prediction-cont.",
+    "title": "Data ethics",
+    "section": "Example 5: race prediction (cont.)",
+    "text": "Example 5: race prediction (cont.)\n\nlibrary(tidyverse)\nlibrary(wru) # uses 2020 census data by default\nnames <- data.frame(surname =  c(\"Tang\", \"Lyford\", \"Peterson\", \"Flores\", \"Malcolm\"))\npredict_race(voter.file = names, surname.only = TRUE) %>% \n  select(surname, pred.whi, pred.bla, pred.his, pred.asi, pred.oth) |>\n  kable(digits = 3)\n\n\n\n\nsurname\npred.whi\npred.bla\npred.his\npred.asi\npred.oth\n\n\n\n\nTang\n0.018\n0.004\n0.011\n0.932\n0.035\n\n\nLyford\n0.927\n0.001\n0.025\n0.013\n0.034\n\n\nPeterson\n0.803\n0.103\n0.029\n0.009\n0.056\n\n\nFlores\n0.039\n0.004\n0.919\n0.025\n0.013\n\n\nMalcolm\n0.613\n0.302\n0.026\n0.006\n0.054\n\n\n\n\n\n\n\nWhat might this algorithm be useful for? What are some questions you have about it? Is it ethical to use this software? Does your answer change depending on the intended use? Does it matter that the software is open-source?"
+  },
+  {
+    "objectID": "slides/slides-12-ethics.html#ethical-benefits-and-harms-of-data",
+    "href": "slides/slides-12-ethics.html#ethical-benefits-and-harms-of-data",
+    "title": "Data ethics",
+    "section": "Ethical benefits and harms of data?",
+    "text": "Ethical benefits and harms of data?\n\n\n\nData does have benefits for society! What are some?\n\n\nIncreasing human understanding of our world\nCan lead to more efficient use of resources\nPredictive accuracy and personalization\n\n\n\nData does have harms for society! What are some?\n\n\nHarms to privacy and security, lack of consent\nHarms to fairness and justice\n\nBiases arise from falsehood, sampling errors, and discriminatory practices\n\nHarms to transparency and autonomy\n\n“Black box”/“deep learning” algorithms, proprietary software\n\nMany harms are implicit (which makes them hard to mitigate!)"
+  },
+  {
+    "objectID": "slides/slides-12-ethics.html#example-1-stand-your-ground-cont.",
+    "href": "slides/slides-12-ethics.html#example-1-stand-your-ground-cont.",
+    "title": "Data ethics",
+    "section": "Example 1: stand your ground (cont.)",
+    "text": "Example 1: stand your ground (cont.)\nNine years later, in 2014, Reuters published a graphic similar to the one below1:\n\n\n\n\n\nWhat is the story the figure is trying to tell?\nIs it factually correct?\nIs it deceptive?\n\n\n\nhttps://mdsr-book.github.io/mdsr2e/ch-ethics.html#ethics-intro"
   }
 ]
