@@ -1,6 +1,5 @@
 ---
 title: "Midterm 1 Practice 2"
-author: "Your name"
 format: pdf
 ---
 
@@ -12,11 +11,12 @@ In many cities, there is a bike-share system where people can rent bicycles by t
 -   `day_week`: day of the week
 -   `type`: whether the renter was a member or a non-member ("registered" or "casual")
 
-0.  To the code chunk below, add libraries necessary for data wrangling, plotting, and making pretty tables.
+0.  Add libraries necessary for data wrangling, plotting, and making pretty tables.
 
 ```{r message = F, echo = F}
-library(readr)
-
+knitr::opts_chunk$set(echo = F, message = F, eval = F)
+library(tidyverse)
+library(kableExtra)
 bikes <- read_csv("https://raw.githubusercontent.com/midd-stat201-spring2025/midd-stat201-spring2025.github.io/refs/heads/main/data/bikes_summer.csv", show_col_types = F)
 ```
 
@@ -28,36 +28,62 @@ bikes <- read_csv("https://raw.githubusercontent.com/midd-stat201-spring2025/mid
     -   Rentals from 5:00pm-8:00pm are "early evening"
     -   Rentals at any other time are "evening"
 
-```{r}
-
+```{r eval = F}
+bikes <- bikes |>
+  mutate(time_day = case_when(
+    hour %in% 6:8 ~ "early morning",
+    hour %in% 9:12 ~ "late morning",
+    hour %in% 13:16 ~ "afternoon",
+    hour %in% 17:20 ~ "early evening",
+    T ~ "evening"
+  ))
 ```
 
 2.  For rentals in 2011, do the time of day and the type of renter appear associated? Create an appropriate, well-labeled visualization and interpret it to answer the question.
 
 ```{r}
-
+bikes |>
+  ggplot(aes(y = time_day, fill = type)) +
+  geom_bar(position = "fill") 
 ```
-
-**Answer:**
 
 3.  Create a beautiful table that displays the proportion of rentals by registered users for each day of the week, displayed in order of highest to lowest. Your table should only retain the day of the week and the proportion of registered users. What do you notice?
 
 ```{r}
-
+bikes |>
+  group_by(day_week) |>
+  count(type) |>
+  mutate(prop = n/sum(n)) |>
+  ungroup() |>
+  filter(type == "registered") |>
+  select(-type, -n) |>
+  arrange(-prop) |>
+  kable()
 ```
 
-**Answer:**
-
-4.  Create a beautiful summary table that displays the mean and standard deviation of daily number of bike rentals in June 2012.
+4.  Create a summary table that displays the mean and standard deviation of daily number of bike rentals in June 2012.
 
 ```{r}
-
+bikes |>
+  filter(month == 6) |>
+  group_by(day) |>
+  count() |>
+  ungroup() |>
+  summarise(avg = mean(n), sd = sd(n)) |>
+  kable()
 ```
 
-5.  Re-create the graph seen on the rendered version. 
+5.  Re-create the graph seen here. You will need to use the function `geom_line()`.
 
-```{r}
-
+```{r eval = T}
+bikes |>
+  group_by(type, hour, day_week) |>
+  count(type) |>
+  ggplot(aes(x = hour, y = n, col = day_week)) +
+  geom_line() +
+  facet_wrap(~ type) +
+  labs(x = "Hour", y = "Total rentals", colour = "Day of the week",
+       title = "D.C. bike rentals",
+       caption = "June-August 2012") +
+  theme_bw()
 ```
-
-

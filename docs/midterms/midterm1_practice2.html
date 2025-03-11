@@ -8,7 +8,7 @@
 
 <meta name="author" content="Your name">
 
-<title>STAT 201: Intro. to Statistics and Data Science - STAT 201: Midterm 1 Practice 2</title>
+<title>STAT 201: Intro. to Statistics and Data Science - Midterm 1 Practice 2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,69 +21,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -182,7 +119,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">STAT 201: Midterm 1 Practice 2</h1>
+<h1 class="title">Midterm 1 Practice 2</h1>
 </div>
 
 
@@ -203,92 +140,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>In the following code chunk, load your libraries for wrangling, plotting, and making pretty tables. Run the code chunk.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>A Pell Grant is a need-based federal grant for undergraduate students paying for college. Students are automatically considered for a Pell Grant award when they submit a FAFSA.</p>
-<p>Each case in the dataset <code>pell</code> represents the Pell Grant award to a given school in a given year. (Data retrieved from the R pell package.)</p>
+<p>In many cities, there is a bike-share system where people can rent bicycles by the hour. People can use the bikes by either registering as members and purchasing a pass at a discounted rate, or by being a casual rider and paying per trip. We have data from Washington D.C.’s bike-share system from June-August 2012. The data are loaded in and stored as <code>bikes</code>. Each case is one rental. The variables are as follows:</p>
 <ul>
-<li><code>state</code>: state/territory shortcode</li>
-<li><code>award</code>: total award amount in USD</li>
-<li><code>recipient</code>: total number of recipients</li>
-<li><code>name</code>: name of college/university</li>
-<li><code>session</code>: meeting ID</li>
-<li><code>year</code>: year</li>
+<li><code>month</code>: month (6 = June, 7 = July, 8 = August)</li>
+<li><code>day</code>: day of the month (1-30)</li>
+<li><code>hour</code>: hour (0, 6-23, where 0 = 12:00am, 6 = 6:00am, …, 23 = 11:00pm)</li>
+<li><code>day_week</code>: day of the week</li>
+<li><code>type</code>: whether the renter was a member or a non-member (“registered” or “casual”)</li>
 </ul>
-<p>We also have a dataset called <code>states</code> that provide information on the states and territories of the US. The variables are:</p>
-<ul>
-<li><code>NAME</code>: name of the state/territory</li>
-<li><code>Abbreviation</code>: state/territory shortcode</li>
-<li><code>Type</code>: political devision (“state” or “territory”)</li>
-</ul>
-<p>Run the following code chunk to load in the two datasets:</p>
+<ol start="0" type="1">
+<li>To the code chunk below, add libraries necessary for data wrangling, plotting, and making pretty tables.</li>
+</ol>
 <div class="cell">
 
 </div>
-<section id="exercise-1" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
-<p>Let’s clean and wrangle the data a bit.</p>
+<ol type="1">
+<li><p>Modify the <code>bikes</code> data frame to include a variable that represents the time of day where:</p>
 <ul>
-<li>Remove any case where at least one of the following is true:
-<ul>
-<li>The school is missing information about the award amount</li>
-<li>The school had less than 1 student receiving a Pell Grant</li>
-<li>The school receive an award of 0 dollars but had more than 0 students recieve a Pell grant</li>
+<li>Rentals from 6:00-8:00am are “early morning”</li>
+<li>Rentals from 9:00am-12:00pm are “late morning”</li>
+<li>Rentals from 1:00pm-4:00pm are “afternoon”</li>
+<li>Rentals from 5:00pm-8:00pm are “early evening”</li>
+<li>Rentals at any other time are “evening”</li>
 </ul></li>
-<li>Create a new variable called <code>award_pp</code> that represents the award amount per person for each school</li>
-<li>Create a new variable called <code>decade</code> that takes the value:
-<ul>
-<li>“1990s” if the award was granted in the 1990s</li>
-<li>“2000s” if the award was granted in the 2000s</li>
-<li>“2010s” if the award was granted in the 2010s</li>
-</ul></li>
-</ul>
-<p>Store your cleaned and wrangled data back into <code>pell</code>.</p>
+</ol>
 <div class="cell">
 
 </div>
-</section>
-<section id="exercise-2" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
-<p>Make a visualization the shows the distribution of the award amount per person for each decade. Have informative labels and titles. Interpret what you see.</p>
+<ol start="2" type="1">
+<li>For rentals in 2011, do the time of day and the type of renter appear associated? Create an appropriate, well-labeled visualization and interpret it to answer the question.</li>
+</ol>
 <div class="cell">
 
 </div>
-<p><strong>Answer</strong>:</p>
-</section>
-<section id="exercise-3" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
-<p>Now let’s bring in the information about states vs territories. Combine the two datasets into a single dataset called <code>pell2</code> that retains all observations about pell grants awards for which we also have information about the type of political division (i.e.&nbsp;state or territory).</p>
+<p><strong>Answer:</strong></p>
+<ol start="3" type="1">
+<li>Create a beautiful table that displays the proportion of rentals by registered users for each day of the week, displayed in order of highest to lowest. Your table should only retain the day of the week and the proportion of registered users. What do you notice?</li>
+</ol>
 <div class="cell">
 
 </div>
-</section>
-<section id="exercise-4" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
-<p>For awards made in 2015, create a beautiful table that displays the mean and standard deviation of the award per person for each of the two political divisions. Then answer the question: did the two political divisions differ in the Pell grant awarded?</p>
+<p><strong>Answer:</strong></p>
+<ol start="4" type="1">
+<li>Create a beautiful summary table that displays the mean and standard deviation of daily number of bike rentals in June 2012.</li>
+</ol>
 <div class="cell">
 
 </div>
-<p><strong>Answer</strong>:</p>
-</section>
-<section id="exercise-5" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
-<p>Display a beautiful table of the five U.S. states that received the largest statewide average award per person in the 2010s.</p>
-<div class="cell">
-
-</div>
-</section>
-<section id="exercise-6" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-6">Exercise 6</h3>
-<p>Find the rendered version of this assignment on the course website. Re-create the plot found there.</p>
+<ol start="5" type="1">
+<li>Re-create the graph seen on the rendered version.</li>
+</ol>
 <div class="cell">
 
 </div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
