@@ -20,6 +20,7 @@ draft: false
 # Housekeeping
 
 -   Midterm 1 tomorrow! Bring a fully charged laptop!
+-   Extra office hours today 3:15-4:15pm
 -   Lots of material comes from Modern Dive and Dr. Shannon Vallor's module "An Introduction to Data Ethics"
 
 ```{r echo = F}
@@ -106,7 +107,9 @@ Data does have harms for society! What are some?
 
     -   The law allowed for a broader class of scenarios where the use of deadly force by citizens could be justified
 
-    -   Proponents of the law thought it woulf reduce crime, opponents worried it was increase the amount of lethal force
+    -   Proponents of the law thought it would reduce crime
+
+    -   Opponents worried it would increase the amount of lethal force
 
 ## Example 1: stand your ground (cont.)
 
@@ -150,29 +153,42 @@ Is it deceptive?
 ::::
 ::::::
 
+## Data viz worst practices
+
+Don't do the following:
+
+1.  Use misleading scales
+2.  Cherry-pick the data/only visualize specific data points
+3.  Have ambiguous legends/labels
+4.  Use colors that convey a bias
+5.  Fail to explain your methods
+
 # Algorithmic bias
 
 *Less a feature of this course, but important to keep in mind if/when you progress further in statistics, data science, and computer science!*
 
--   Often a result of lack of transparency
+-   Often related to lack of transparency
 -   Algorithms have to be "trained" on data.
     -   Garbage in, garbage out
 
 ## Example 3: health care recommendation
 
 -   Goal: identify patients for “high-risk care management” programs that seek to improve the care of patients with complex health needs by providing additional resources
--   Such program are considered effective at improving outcomes and satisfaction while reducing costs, but are themselves costly -\> want to identify patients who had the highest "medical need"
+    -   Such programs are considered effective at improving outcomes and satisfaction while reducing costs
+    -   But these programs are themselves costly -\> want to identify patients who have the highest "medical need"
 -   **Algorithm’s designers used previous patients’ health care spending as a proxy for medical need**
 -   Assigned patients a "risk score", where higher risk meant more complex needs and therefore priority
     -   Patients with highest risk scores automatically qualified for program
-    -   Patient with lower (but still high) risk scores were interviewed for potential candidacy
+    -   Patients with lower (but still high) risk scores were interviewed for potential candidacy
 
 ## Example 3: health care (cont.)
 
 :::::: columns
 :::: {.column width="30%"}
 ::: discuss
-Interpret the plot[^3]. What do you notice happened?
+Interpret the plot[^3].
+
+What do you notice happened?
 :::
 ::::
 
@@ -203,19 +219,21 @@ Discuss what's going on in these two new plots. Then use them to explain the res
 Even though black patients tend to have more severe medical conditions, algorithm is built to predict health care costs rather than illness
 :::
 
-## Example 4: ProPublica analysis[^4]
+## Example 4: COMPAS and ProPublica analysis[^4]
 
 [^4]: <https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing>
 
 Famous case study of algorithmic bias!
 
--   For more than 7,000 people arrested in Broward County, Florida in 2013 and 2014:
+-   For more than 7,000 people arrested in Broward County, Florida in 2013 and 2014, "**risk scores**" were assigned via an algorithm that were used to *predict the likelihood of the person committing a future crime*
 
-    -   "Risk scores" were assigned via an algorithm that were used to predict the likelihood of the person committing a future crime
+    -   Intention of algorithm's designers: higher risk scores should accurately predict if someone will be charged with a future crime
 
--   To see how the risk scores did, these people were tracked to see if they charged with new crimes over the next two years
+-   To determine accuracy of the risk scores, these people were tracked over the next two years to see if they were charged with new crimes
 
--   Intention of algorithm's designers: higher risk scores should accurately predict if someone will be charged with a future crime
+-   ::: discuss
+    Who might want such risk scores? How might they be used?
+    :::
 
 ## Example 4: ProPublica (cont.)
 
@@ -231,7 +249,7 @@ Distribution of risk scores:
 :::
 :::::
 
-- How did the algorithm do?
+-   Lets's now see how the algorithms performed
 
 ## Example 4: ProPublica (cont.)
 
@@ -243,24 +261,56 @@ Distribution of risk scores:
 ![](figs/12-propublica-results.png)
 :::
 
--   Algorithm was more likely to **falsely** flag Black defendants as higher risk/future criminals, and at *almost twice the rate* as White defendants
+-   Black defendants were more likely to be **falsely** flagged as "higher"/future criminals, and at *almost twice the rate* as White defendants
 
--   White defendants were mislabeled as low risk more often than black defendants
+-   White defendants **mislabeled** as "low risk" more often than black defendants
 
 -   ::: discuss
     Are risk scores inherently bad?
     :::
 
-## Example 5: race prediction
+## Example 5: facial criminal prediction
+
+*Activity borrowed from Prof. Chodrow in CS department.*
+
+-   In 2016, researchers Xiaolin Wu and Xi Zhang [published a paper](https://confilegal.com/wp-content/uploads/2016/11/ESTUDIO-UNIVERSIDAD-DE-JIAO-TONG-SHANGHAI.pdf) detailing an algorithm that predicted whether an individual is likely to commit a crime in the future, based only on a picture of their face
+
+    -   According to the paper, their algorithm was "very accurate" (details beyond this course)
+
+-   ::: discuss
+    Read Section 2 of the paper and answer the following questions:
+
+    1.  How were the data obtained?
+    2.  What would be the "explanatory" and "response variables"? Are the values of the response variables directly observed, or inferred?
+    :::
+
+## Example 5: facial criminal prediction (cont.)
+
+-   ::: discuss
+    Now look to Figure 1 from the paper. What do you notice? What questions might you have?
+    :::
+
+-   The authors' algorithm identified certain features of the face that were highly predictive of criminality, including
+
+    -   the curvature of upper lip
+
+    -   the distance between two eye inner corners
+
+    -   the angle enclosed by rays from the nose tip to the two corners of the mouth
+
+-   ::: discuss
+    One possible explanation is that these features are expressions of genetic markers that are also associated with criminality. Can you suggest another possible explanation?
+    :::
+
+## Example 6: race prediction
 
 Imai and Khanna (2016) built a racial prediction algorithm using a Bayes classifier trained on voter registration records from Florida and the U.S. Census Bureau’s name list.
 
-- Their algorithm takes in a list of last names (and optionally their home address) and returns predicted probabilities for a person’s race.
+-   Their algorithm takes in a list of last names (and optionally their home address) and returns predicted probabilities for a person’s race.
 
-- In addition to the publishing the paper detailing the methodology, the authors published the software for the classifier on GitHub under an open-source license.
+-   In addition to the publishing the paper detailing the methodology, the authors published the software for the classifier on GitHub under an open-source license.
 
-
-## Example 5: race prediction (cont.)
+## Example 6: race prediction (cont.)
 
 ```{r message = F, echo = T}
 library(tidyverse)

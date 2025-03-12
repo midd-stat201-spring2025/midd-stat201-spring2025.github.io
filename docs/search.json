@@ -2300,7 +2300,7 @@
     "href": "midterms.html",
     "title": "Midterms",
     "section": "",
-    "text": "When and where: Thursday, 3/13/25 during class (75 minutes)\nWhat: content through end of Week 4 (i.e. through Simpson’s Paradox)\n\nThis includes homework and coding practices\nThe midterm will be done entirely in a .qmd that will be made available to you at the start of class 11:15am on 3/13. The midterm ends at 12:30pm, but you will have an extra 5 minutes to render the assignment and submit to Gradescope. If your submission is not in by 12:35pm, you will receive an automatic 25% penalty.\nNon-coding concepts are also fair game for the midterm!\n\nImportant: Prof. Tang will be proctoring the exam\n\nHowever, Prof. Tang will not help de-bug code or fix rendering issues.\n\nYou will not have a problem set assigned this week!\nFriday 3/14 office hours will be moved to Wednesday 3/12 3:15-4:15pm instead.\nThis midterm will be open note in the sense that your notes, my slides, and your homework/coding practices are all available to you.\n\n\n\n\n\nThe best preparation you can do for the midterm is to go through your homework and coding practices and be honest with yourself about what you do/don’t understand. This means going through the painful process of looking at feedback on Gradescope. For the concepts that you need to practice more, try more problems (see below)!\nJust because the midterm is open note, this does not mean you cannot study and prepare. You will not have time to try and re-learn what all the functions we learned do!\n\nI suggest going through each of the ggplot and dplyr functions that we’ve seen in the course and ensuring you know how they work and when to use them!\n\nFor extra practice, additional coding problems are made available below. These questions are not necessarily representative of the typical scope and difficulty of individual exam questions. This review is not comprehensive, nor does it represent the expected amount of time for it will take for you to complete the midterm.\n\nIn-class practice: rendered version\n\nSolutions (note that many problems have many different solutions)\n\nPractice 1: rendered version\n\n.qmd template  .qmd \n\nPractice 2: rendered version\n\n.qmd template  .qmd"
+    "text": "When and where: Thursday, 3/13/25 during class (75 minutes)\nWhat: content through end of Week 4 (i.e. through Simpson’s Paradox)\n\nThis includes homework and coding practices\nThe midterm will be done entirely in a .qmd that will be made available to you at the start of class 11:15am on 3/13. The midterm ends at 12:30pm, but you will have an extra 5 minutes to render the assignment and submit to Gradescope. If your submission is not in by 12:35pm, you will receive an automatic 25% penalty.\nNon-coding concepts are also fair game for the midterm!\n\nImportant: Prof. Tang will be proctoring the exam\n\nHowever, Prof. Tang will not help de-bug code or fix rendering issues.\n\nYou will not have a problem set assigned this week!\nFriday 3/14 office hours will be moved to Wednesday 3/12 3:15-4:15pm instead.\nThis midterm will be open note in the sense that your notes, my slides, and your homework/coding practices are all available to you.\n\n\n\n\n\nThe best preparation you can do for the midterm is to go through your homework and coding practices and be honest with yourself about what you do/don’t understand. This means going through the painful process of looking at feedback on Gradescope. For the concepts that you need to practice more, try more problems (see below)!\nJust because the midterm is open note, this does not mean you cannot study and prepare. You will not have time to try and re-learn what all the functions we learned do!\n\nI suggest going through each of the ggplot and dplyr functions that we’ve seen in the course and ensuring you know how they work and when to use them!\n\nFor extra practice, additional coding problems are made available below. These questions are not necessarily representative of the typical scope and difficulty of individual exam questions. This review is not comprehensive, nor does it represent the expected amount of time for it will take for you to complete the midterm.\n\nIn-class practice: rendered version\n\nSolutions (note that many problems have many different solutions)\n\nPractice 1: rendered version (solutions)\n\n.qmd template  .qmd \n\nPractice 2: rendered version\n\n.qmd template  .qmd"
   },
   {
     "objectID": "midterms.html#preparation",
@@ -6913,7 +6913,7 @@
     "href": "slides/slides-12-ethics.html#example-1-stand-your-ground",
     "title": "Data ethics",
     "section": "Example 1: stand your ground",
-    "text": "Example 1: stand your ground\n\nIn 2005, the Florida legislature passed a controversial “Stand Your Ground” law\n\nThe law allowed for a broader class of scenarios where the use of deadly force by citizens could be justified\nProponents of the law thought it woulf reduce crime, opponents worried it was increase the amount of lethal force"
+    "text": "Example 1: stand your ground\n\nIn 2005, the Florida legislature passed a controversial “Stand Your Ground” law\n\nThe law allowed for a broader class of scenarios where the use of deadly force by citizens could be justified\nProponents of the law thought it would reduce crime\nOpponents worried it would increase the amount of lethal force"
   },
   {
     "objectID": "slides/slides-12-ethics.html#example-2-covid-19-reporting",
@@ -6927,14 +6927,14 @@
     "href": "slides/slides-12-ethics.html#example-3-health-care-recommendation",
     "title": "Data ethics",
     "section": "Example 3: health care recommendation",
-    "text": "Example 3: health care recommendation\n\nGoal: identify patients for “high-risk care management” programs that seek to improve the care of patients with complex health needs by providing additional resources\nSuch program are considered effective at improving outcomes and satisfaction while reducing costs, but are themselves costly -> want to identify patients who had the highest “medical need”\nAlgorithm’s designers used previous patients’ health care spending as a proxy for medical need\nAssigned patients a “risk score”, where higher risk meant more complex needs and therefore priority\n\nPatients with highest risk scores automatically qualified for program\nPatient with lower (but still high) risk scores were interviewed for potential candidacy"
+    "text": "Example 3: health care recommendation\n\nGoal: identify patients for “high-risk care management” programs that seek to improve the care of patients with complex health needs by providing additional resources\n\nSuch programs are considered effective at improving outcomes and satisfaction while reducing costs\nBut these programs are themselves costly -> want to identify patients who have the highest “medical need”\n\nAlgorithm’s designers used previous patients’ health care spending as a proxy for medical need\nAssigned patients a “risk score”, where higher risk meant more complex needs and therefore priority\n\nPatients with highest risk scores automatically qualified for program\nPatients with lower (but still high) risk scores were interviewed for potential candidacy"
   },
   {
     "objectID": "slides/slides-12-ethics.html#example-3-health-care-cont.",
     "href": "slides/slides-12-ethics.html#example-3-health-care-cont.",
     "title": "Data ethics",
     "section": "Example 3: health care (cont.)",
-    "text": "Example 3: health care (cont.)\n\n\n\nInterpret the plot1. What do you notice happened?\n\n\n\n\n\n\n\n\n\nObermeyer, Z., Powers, B., Vogeli, C., & Mullainathan, S. (2019)."
+    "text": "Example 3: health care (cont.)\n\n\n\nInterpret the plot1.\nWhat do you notice happened?\n\n\n\n\n\n\n\n\n\nObermeyer, Z., Powers, B., Vogeli, C., & Mullainathan, S. (2019)."
   },
   {
     "objectID": "slides/slides-12-ethics.html#example-3-health-care-cont.-1",
@@ -6948,21 +6948,21 @@
     "href": "slides/slides-12-ethics.html#example-4-propublica-analysis4",
     "title": "Data ethics",
     "section": "Example 4: ProPublica analysis1",
-    "text": "Example 4: ProPublica analysis1\nFamous case study of algorithmic bias!\n\nFor more than 7,000 people arrested in Broward County, Florida in 2013 and 2014:\n\n“Risk scores” were assigned via an algorithm that were used to predict the likelihood of the person committing a future crime\n\nTo see how the risk scores did, these people were tracked to see if they charged with new crimes over the next two years\nIntention of algorithm’s designers: higher risk scores should accurately predict if someone will be charged with a future crime\n\nhttps://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing"
+    "text": "Example 4: ProPublica analysis1\nFamous case study of algorithmic bias!\n\nFor more than 7,000 people arrested in Broward County, Florida in 2013 and 2014, “risk scores” were assigned via an algorithm that were used to predict the likelihood of the person committing a future crime\n\nIntention of algorithm’s designers: higher risk scores should accurately predict if someone will be charged with a future crime\n\nTo determine accuracy of the risk scores, these people were tracked over the next two years to see if they were charged with new crimes\n\nhttps://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing"
   },
   {
     "objectID": "slides/slides-12-ethics.html#example-4-propublica-cont.",
     "href": "slides/slides-12-ethics.html#example-4-propublica-cont.",
     "title": "Data ethics",
     "section": "Example 4: ProPublica (cont.)",
-    "text": "Example 4: ProPublica (cont.)\nDistribution of risk scores:\n\n\n\n\n\n\n\n\nHow did the algorithm do?"
+    "text": "Example 4: ProPublica (cont.)\nDistribution of risk scores:\n\n\n\n\n\n\n\n\nLets’s now see how the algorithms performed"
   },
   {
     "objectID": "slides/slides-12-ethics.html#example-4-propublica-cont.-1",
     "href": "slides/slides-12-ethics.html#example-4-propublica-cont.-1",
     "title": "Data ethics",
     "section": "Example 4: ProPublica (cont.)",
-    "text": "Example 4: ProPublica (cont.)\n\nOnly 20% of those predicted to commit violent crimes actually did\nAlgorithm had higher accuracy (61%) when full range of crimes taken into account (e.g. misdemeanors)\n\n\n\n\n\nAlgorithm was more likely to falsely flag Black defendants as higher risk/future criminals, and at almost twice the rate as White defendants\nWhite defendants were mislabeled as low risk more often than black defendants\n\nAre risk scores inherently bad?"
+    "text": "Example 4: ProPublica (cont.)\n\nOnly 20% of those predicted to commit violent crimes actually did\nAlgorithm had higher accuracy (61%) when full range of crimes taken into account (e.g. misdemeanors)\n\n\n\n\n\nBlack defendants were more likely to be falsely flagged as “higher”/future criminals, and at almost twice the rate as White defendants\nWhite defendants mislabeled as “low risk” more often than black defendants\n\nAre risk scores inherently bad?"
   },
   {
     "objectID": "slides/slides-12-ethics.html#example-5-race-prediction",
@@ -6991,5 +6991,47 @@
     "title": "Data ethics",
     "section": "Example 1: stand your ground (cont.)",
     "text": "Example 1: stand your ground (cont.)\nNine years later, in 2014, Reuters published a graphic similar to the one below1:\n\n\n\n\n\nWhat is the story the figure is trying to tell?\nIs it factually correct?\nIs it deceptive?\n\n\n\nhttps://mdsr-book.github.io/mdsr2e/ch-ethics.html#ethics-intro"
+  },
+  {
+    "objectID": "slides/slides-12-ethics.html#data-viz-worst-practices",
+    "href": "slides/slides-12-ethics.html#data-viz-worst-practices",
+    "title": "Data ethics",
+    "section": "Data viz worst practices",
+    "text": "Data viz worst practices\nDon’t do the following:\n\nUse misleading scales\nCherry-pick the data/only visualize specific data points\nHave ambiguous legends/labels\nUse colors that convey a bias\nFail to explain your methods"
+  },
+  {
+    "objectID": "slides/slides-12-ethics.html#example-4-compas-and-propublica-analysis4",
+    "href": "slides/slides-12-ethics.html#example-4-compas-and-propublica-analysis4",
+    "title": "Data ethics",
+    "section": "Example 4: COMPAS and ProPublica analysis1",
+    "text": "Example 4: COMPAS and ProPublica analysis1\nFamous case study of algorithmic bias!\n\nFor more than 7,000 people arrested in Broward County, Florida in 2013 and 2014, “risk scores” were assigned via an algorithm that were used to predict the likelihood of the person committing a future crime\n\nIntention of algorithm’s designers: higher risk scores should accurately predict if someone will be charged with a future crime\n\nTo determine accuracy of the risk scores, these people were tracked over the next two years to see if they were charged with new crimes\n\nWho might want such risk scores? How might they be used?\n\n\nhttps://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing"
+  },
+  {
+    "objectID": "slides/slides-12-ethics.html#example-5-facial-criminal-prediction",
+    "href": "slides/slides-12-ethics.html#example-5-facial-criminal-prediction",
+    "title": "Data ethics",
+    "section": "Example 5: facial criminal prediction",
+    "text": "Example 5: facial criminal prediction\nActivity borrowed from Prof. Chodrow in CS department.\n\nIn 2016, researchers Xiaolin Wu and Xi Zhang published a paper detailing an algorithm that predicted whether an individual is likely to commit a crime in the future, based only on a picture of their face\n\nAccording to the paper, their algorithm was “very accurate” (details beyond this course)\n\n\nRead Section 2 of the paper and answer the following questions:\n\nHow were the data obtained?\nWhat would be the “explanatory” and “response variables”? Are the values of the response variables directly observed, or inferred?"
+  },
+  {
+    "objectID": "slides/slides-12-ethics.html#example-5-facial-criminal-prediction-cont.",
+    "href": "slides/slides-12-ethics.html#example-5-facial-criminal-prediction-cont.",
+    "title": "Data ethics",
+    "section": "Example 5: facial criminal prediction (cont.)",
+    "text": "Example 5: facial criminal prediction (cont.)\n\n\nNow look to Figure 1 from the paper. What do you notice? What questions might you have?\n\nThe authors’ algorithm identified certain features of the face that were highly predictive of criminality, including\n\nthe curvature of upper lip\nthe distance between two eye inner corners\nthe angle enclosed by rays from the nose tip to the two corners of the mouth\n\n\nOne possible explanation is that these features are expressions of genetic markers that are also associated with criminality. Can you suggest another possible explanation?"
+  },
+  {
+    "objectID": "slides/slides-12-ethics.html#example-6-race-prediction",
+    "href": "slides/slides-12-ethics.html#example-6-race-prediction",
+    "title": "Data ethics",
+    "section": "Example 6: race prediction",
+    "text": "Example 6: race prediction\nImai and Khanna (2016) built a racial prediction algorithm using a Bayes classifier trained on voter registration records from Florida and the U.S. Census Bureau’s name list.\n\nTheir algorithm takes in a list of last names (and optionally their home address) and returns predicted probabilities for a person’s race.\nIn addition to the publishing the paper detailing the methodology, the authors published the software for the classifier on GitHub under an open-source license."
+  },
+  {
+    "objectID": "slides/slides-12-ethics.html#example-6-race-prediction-cont.",
+    "href": "slides/slides-12-ethics.html#example-6-race-prediction-cont.",
+    "title": "Data ethics",
+    "section": "Example 6: race prediction (cont.)",
+    "text": "Example 6: race prediction (cont.)\n\nlibrary(tidyverse)\nlibrary(wru) # uses 2020 census data by default\nnames <- data.frame(surname =  c(\"Tang\", \"Lyford\", \"Peterson\", \"Flores\", \"Malcolm\"))\npredict_race(voter.file = names, surname.only = TRUE) %>% \n  select(surname, pred.whi, pred.bla, pred.his, pred.asi, pred.oth) |>\n  kable(digits = 3)\n\n\n\n\nsurname\npred.whi\npred.bla\npred.his\npred.asi\npred.oth\n\n\n\n\nTang\n0.018\n0.004\n0.011\n0.932\n0.035\n\n\nLyford\n0.927\n0.001\n0.025\n0.013\n0.034\n\n\nPeterson\n0.803\n0.103\n0.029\n0.009\n0.056\n\n\nFlores\n0.039\n0.004\n0.919\n0.025\n0.013\n\n\nMalcolm\n0.613\n0.302\n0.026\n0.006\n0.054\n\n\n\n\n\n\n\nWhat might this algorithm be useful for? What are some questions you have about it? Is it ethical to use this software? Does your answer change depending on the intended use? Does it matter that the software is open-source?"
   }
 ]

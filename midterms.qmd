@@ -38,7 +38,7 @@ title: "Midterms"
 
         -   [Solutions](midterms/midterm1_practice_inclass_solns.pdf) (note that many problems have many different solutions)
 
-    -   Practice 1: [rendered version](midterms/midterm1_practice1_render.qmd)
+    -   Practice 1: [rendered version](midterms/midterm1_practice1_render.qmd) ([solutions](midterms/midterm1_practice1_solns.pdf))
 
         -   `.qmd` template {{< downloadthis midterms/midterm1_practice1.qmd dname="midterm1_practice1" label=".qmd" id=mtcars-btn >}}
 

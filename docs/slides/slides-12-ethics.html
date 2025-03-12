@@ -400,6 +400,7 @@
 <h1>Housekeeping</h1>
 <ul>
 <li class="fragment">Midterm 1 tomorrow! Bring a fully charged laptop!</li>
+<li class="fragment">Extra office hours today 3:15-4:15pm</li>
 <li class="fragment">Lots of material comes from Modern Dive and Dr.&nbsp;Shannon Vallor’s module “An Introduction to Data Ethics”</li>
 </ul>
 <div class="cell">
@@ -486,7 +487,8 @@
 <li class="fragment"><p>In 2005, the Florida legislature passed a controversial “Stand Your Ground” law</p>
 <ul>
 <li class="fragment"><p>The law allowed for a broader class of scenarios where the use of deadly force by citizens could be justified</p></li>
-<li class="fragment"><p>Proponents of the law thought it woulf reduce crime, opponents worried it was increase the amount of lethal force</p></li>
+<li class="fragment"><p>Proponents of the law thought it would reduce crime</p></li>
+<li class="fragment"><p>Opponents worried it would increase the amount of lethal force</p></li>
 </ul></li>
 </ul>
 </section>
@@ -519,13 +521,24 @@
 </div>
 </div>
 </div>
+</section>
+<section id="data-viz-worst-practices" class="slide level2">
+<h2>Data viz worst practices</h2>
+<p>Don’t do the following:</p>
+<ol type="1">
+<li class="fragment">Use misleading scales</li>
+<li class="fragment">Cherry-pick the data/only visualize specific data points</li>
+<li class="fragment">Have ambiguous legends/labels</li>
+<li class="fragment">Use colors that convey a bias</li>
+<li class="fragment">Fail to explain your methods</li>
+</ol>
 </section></section>
 <section>
 <section id="algorithmic-bias" class="title-slide slide level1 center">
 <h1>Algorithmic bias</h1>
 <p><em>Less a feature of this course, but important to keep in mind if/when you progress further in statistics, data science, and computer science!</em></p>
 <ul>
-<li class="fragment">Often a result of lack of transparency</li>
+<li class="fragment">Often related to lack of transparency</li>
 <li class="fragment">Algorithms have to be “trained” on data.
 <ul>
 <li class="fragment">Garbage in, garbage out</li>
@@ -535,13 +548,16 @@
 <section id="example-3-health-care-recommendation" class="slide level2">
 <h2>Example 3: health care recommendation</h2>
 <ul>
-<li class="fragment">Goal: identify patients for “high-risk care management” programs that seek to improve the care of patients with complex health needs by providing additional resources</li>
-<li class="fragment">Such program are considered effective at improving outcomes and satisfaction while reducing costs, but are themselves costly -&gt; want to identify patients who had the highest “medical need”</li>
+<li class="fragment">Goal: identify patients for “high-risk care management” programs that seek to improve the care of patients with complex health needs by providing additional resources
+<ul>
+<li class="fragment">Such programs are considered effective at improving outcomes and satisfaction while reducing costs</li>
+<li class="fragment">But these programs are themselves costly -&gt; want to identify patients who have the highest “medical need”</li>
+</ul></li>
 <li class="fragment"><strong>Algorithm’s designers used previous patients’ health care spending as a proxy for medical need</strong></li>
 <li class="fragment">Assigned patients a “risk score”, where higher risk meant more complex needs and therefore priority
 <ul>
 <li class="fragment">Patients with highest risk scores automatically qualified for program</li>
-<li class="fragment">Patient with lower (but still high) risk scores were interviewed for potential candidacy</li>
+<li class="fragment">Patients with lower (but still high) risk scores were interviewed for potential candidacy</li>
 </ul></li>
 </ul>
 </section>
@@ -550,7 +566,8 @@
 <div class="columns">
 <div class="column" style="width:30%;">
 <div class="discuss">
-<p>Interpret the plot<sup>1</sup>. What do you notice happened?</p>
+<p>Interpret the plot<sup>1</sup>.</p>
+<p>What do you notice happened?</p>
 </div>
 </div><div class="column" style="width:70%;">
 <div class="quarto-figure quarto-figure-right">
@@ -587,16 +604,18 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="example-4-propublica-analysis4" class="slide level2">
-<h2>Example 4: ProPublica analysis<sup>1</sup></h2>
+<section id="example-4-compas-and-propublica-analysis4" class="slide level2">
+<h2>Example 4: COMPAS and ProPublica analysis<sup>1</sup></h2>
 <p>Famous case study of algorithmic bias!</p>
 <ul>
-<li class="fragment"><p>For more than 7,000 people arrested in Broward County, Florida in 2013 and 2014:</p>
+<li class="fragment"><p>For more than 7,000 people arrested in Broward County, Florida in 2013 and 2014, “<strong>risk scores</strong>” were assigned via an algorithm that were used to <em>predict the likelihood of the person committing a future crime</em></p>
 <ul>
-<li class="fragment">“Risk scores” were assigned via an algorithm that were used to predict the likelihood of the person committing a future crime</li>
+<li class="fragment">Intention of algorithm’s designers: higher risk scores should accurately predict if someone will be charged with a future crime</li>
 </ul></li>
-<li class="fragment"><p>To see how the risk scores did, these people were tracked to see if they charged with new crimes over the next two years</p></li>
-<li class="fragment"><p>Intention of algorithm’s designers: higher risk scores should accurately predict if someone will be charged with a future crime</p></li>
+<li class="fragment"><p>To determine accuracy of the risk scores, these people were tracked over the next two years to see if they were charged with new crimes</p></li>
+<li class="fragment"><div class="discuss">
+<p>Who might want such risk scores? How might they be used?</p>
+</div></li>
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn4"><p><a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing" class="uri">https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing</a></p></li></ol></aside></section>
 <section id="example-4-propublica-cont." class="slide level2">
@@ -610,7 +629,7 @@
 </div>
 </div>
 <ul>
-<li class="fragment">How did the algorithm do?</li>
+<li class="fragment">Lets’s now see how the algorithms performed</li>
 </ul>
 </section>
 <section id="example-4-propublica-cont.-1" class="slide level2">
@@ -623,23 +642,57 @@
 <p><img data-src="figs/12-propublica-results.png"></p>
 </div>
 <ul>
-<li class="fragment"><p>Algorithm was more likely to <strong>falsely</strong> flag Black defendants as higher risk/future criminals, and at <em>almost twice the rate</em> as White defendants</p></li>
-<li class="fragment"><p>White defendants were mislabeled as low risk more often than black defendants</p></li>
+<li class="fragment"><p>Black defendants were more likely to be <strong>falsely</strong> flagged as “higher”/future criminals, and at <em>almost twice the rate</em> as White defendants</p></li>
+<li class="fragment"><p>White defendants <strong>mislabeled</strong> as “low risk” more often than black defendants</p></li>
 <li class="fragment"><div class="discuss">
 <p>Are risk scores inherently bad?</p>
 </div></li>
 </ul>
 </section>
-<section id="example-5-race-prediction" class="slide level2">
-<h2>Example 5: race prediction</h2>
+<section id="example-5-facial-criminal-prediction" class="slide level2">
+<h2>Example 5: facial criminal prediction</h2>
+<p><em>Activity borrowed from Prof.&nbsp;Chodrow in CS department.</em></p>
+<ul>
+<li class="fragment"><p>In 2016, researchers Xiaolin Wu and Xi Zhang <a href="https://confilegal.com/wp-content/uploads/2016/11/ESTUDIO-UNIVERSIDAD-DE-JIAO-TONG-SHANGHAI.pdf">published a paper</a> detailing an algorithm that predicted whether an individual is likely to commit a crime in the future, based only on a picture of their face</p>
+<ul>
+<li class="fragment">According to the paper, their algorithm was “very accurate” (details beyond this course)</li>
+</ul></li>
+<li class="fragment"><div class="discuss">
+<p>Read Section 2 of the paper and answer the following questions:</p>
+<ol type="1">
+<li class="fragment">How were the data obtained?</li>
+<li class="fragment">What would be the “explanatory” and “response variables”? Are the values of the response variables directly observed, or inferred?</li>
+</ol>
+</div></li>
+</ul>
+</section>
+<section id="example-5-facial-criminal-prediction-cont." class="slide level2">
+<h2>Example 5: facial criminal prediction (cont.)</h2>
+<ul>
+<li class="fragment"><div class="discuss">
+<p>Now look to Figure 1 from the paper. What do you notice? What questions might you have?</p>
+</div></li>
+<li class="fragment"><p>The authors’ algorithm identified certain features of the face that were highly predictive of criminality, including</p>
+<ul>
+<li class="fragment"><p>the curvature of upper lip</p></li>
+<li class="fragment"><p>the distance between two eye inner corners</p></li>
+<li class="fragment"><p>the angle enclosed by rays from the nose tip to the two corners of the mouth</p></li>
+</ul></li>
+<li class="fragment"><div class="discuss">
+<p>One possible explanation is that these features are expressions of genetic markers that are also associated with criminality. Can you suggest another possible explanation?</p>
+</div></li>
+</ul>
+</section>
+<section id="example-6-race-prediction" class="slide level2">
+<h2>Example 6: race prediction</h2>
 <p>Imai and Khanna (2016) built a racial prediction algorithm using a Bayes classifier trained on voter registration records from Florida and the U.S. Census Bureau’s name list.</p>
 <ul>
 <li class="fragment"><p>Their algorithm takes in a list of last names (and optionally their home address) and returns predicted probabilities for a person’s race.</p></li>
 <li class="fragment"><p>In addition to the publishing the paper detailing the methodology, the authors published the software for the classifier on GitHub under an open-source license.</p></li>
 </ul>
 </section>
-<section id="example-5-race-prediction-cont." class="slide level2">
-<h2>Example 5: race prediction (cont.)</h2>
+<section id="example-6-race-prediction-cont." class="slide level2">
+<h2>Example 6: race prediction (cont.)</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(wru) <span class="co"># uses 2020 census data by default</span></span>
