@@ -42,6 +42,6 @@ title: "Midterms"
 
         -   `.qmd` template {{< downloadthis midterms/midterm1_practice1.qmd dname="midterm1_practice1" label=".qmd" id=mtcars-btn >}}
 
-    -   Practice 2: [rendered version](midterms/midterm1_practice2_rendered.qmd)
+    -   Practice 2: [rendered version](midterms/midterm1_practice2_rendered.qmd) ([solutions](midterms/midterm1_practice2_solns.pdf))
 
         -   `.qmd` template {{< downloadthis midterms/midterm1_practice2.qmd dname="midterm1_practice2" label=".qmd" id=mtcars-btn >}}
