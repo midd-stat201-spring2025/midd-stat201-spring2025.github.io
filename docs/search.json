@@ -2314,7 +2314,7 @@
     "href": "index.html#announcements",
     "title": "Advanced Introduction to Statistics and Data Science",
     "section": "Announcements",
-    "text": "Announcements\n\nMidterm 1: in class on Thursday 3/13. Details here!"
+    "text": "Announcements\n\nWelcome back from Spring Break!"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#recap",
@@ -2557,9 +2557,9 @@
   {
     "objectID": "live_code/bootstrap_dist.html",
     "href": "live_code/bootstrap_dist.html",
-    "title": "Bootstrap distribution",
+    "title": "Bootstrap distribution demo",
     "section": "",
-    "text": "library(tidyverse)\n# our original sample\nx_orig <- c(1, 1, 1, 0, 1)\n\n# sample size stored as variable for reproducibility\nn <- length(x_orig)\n\n# number of bootstrap samples to take\nB <- 1000\n\n# vector to store bootstrap statistics. Starts off as vector full of NAs of length B\nbootstrap_props <- rep(NA, B)\n\nfor(b in 1:B){\n  # resample\n  x_boot <- sample(x = x_orig, size = n, replace = TRUE)\n  \n  # calculate and store bootstrap statistic\n  bootstrap_props[b] <- mean(x_boot)\n}\n\n# visualize\ndata.frame(props = bootstrap_props) |>\n  ggplot(aes(x = props))+\n  geom_histogram(binwidth =  0.2 ) +\n  labs(title = \"Bootstrap distribution of sample proportions\")"
+    "text": "library(tidyverse)\n\n# \"set seed\" for reproducibility\nset.seed(1)\n\n# our original sample\nx_orig <- c(\"yes\", \"no\", \"yes\", \"yes\", \"no\", \"yes\", \"yes\", \"yes\", \"yes\", \"no\")\n\n# sample size stored as variable for reproducibility\nn <- length(x_orig)\n\n# number of bootstrap samples to take\nB <- 5000\n\n# vector to store bootstrap statistics\n# starts off as vector full of NAs of length B\nbootstrap_props <- rep(NA, B)\n\nfor(b in 1:B){\n  # obtain bootstrap resample (will change every iteration)\n  x_b <- sample(x = x_orig, size = n, replace = TRUE)\n  \n  # calculate bootstrap statistic (will change every iteration)\n  boot_mean <- mean(x_b == \"yes\")\n  \n  # store into b-th position, replacing the NA\n  bootstrap_props[b] <- boot_mean\n}\n\n# visualize bootstrap dist.\n\n## first create data frame\nboot_df <- data.frame(props = bootstrap_props) \n\n## ggplot\nggplot(boot_df, aes(x = props))+\n  geom_histogram(bins = 10, col = \"white\") +\n  labs(title = \"Bootstrap distribution\",\n       subtitle = \"Population: STAT 201A students\",\n       x = \"Proportion who drink coffee\")"
   },
   {
     "objectID": "slides/slides-12-bootstrap_ci.html#why-bootstrap",
@@ -7033,5 +7033,152 @@
     "title": "Data ethics",
     "section": "Example 6: race prediction (cont.)",
     "text": "Example 6: race prediction (cont.)\n\nlibrary(tidyverse)\nlibrary(wru) # uses 2020 census data by default\nnames <- data.frame(surname =  c(\"Tang\", \"Lyford\", \"Peterson\", \"Flores\", \"Malcolm\"))\npredict_race(voter.file = names, surname.only = TRUE) %>% \n  select(surname, pred.whi, pred.bla, pred.his, pred.asi, pred.oth) |>\n  kable(digits = 3)\n\n\n\n\nsurname\npred.whi\npred.bla\npred.his\npred.asi\npred.oth\n\n\n\n\nTang\n0.018\n0.004\n0.011\n0.932\n0.035\n\n\nLyford\n0.927\n0.001\n0.025\n0.013\n0.034\n\n\nPeterson\n0.803\n0.103\n0.029\n0.009\n0.056\n\n\nFlores\n0.039\n0.004\n0.919\n0.025\n0.013\n\n\nMalcolm\n0.613\n0.302\n0.026\n0.006\n0.054\n\n\n\n\n\n\n\nWhat might this algorithm be useful for? What are some questions you have about it? Is it ethical to use this software? Does your answer change depending on the intended use? Does it matter that the software is open-source?"
+  },
+  {
+    "objectID": "slides/slides-13-samp-dist.html#activity",
+    "href": "slides/slides-13-samp-dist.html#activity",
+    "title": "Sampling distribution and Introduction to Bootstrap",
+    "section": "Activity",
+    "text": "Activity\nWhile you’re coming into the room, please take:\n\n1 pink card\n1 white card\n\n\nOn the pink card, write down “yes” if you drink coffee regularly, and “no” otherwise\nOn white card, write down the average number of hours of sleep you get per night\nThen bring these to Prof. Tang"
+  },
+  {
+    "objectID": "slides/slides-13-samp-dist.html#where-we-are-going",
+    "href": "slides/slides-13-samp-dist.html#where-we-are-going",
+    "title": "Sampling distribution and Introduction to Bootstrap",
+    "section": "Where we are going",
+    "text": "Where we are going\nWe are shifting focus from EDA and beginning to enter the world of statistical inference and modeling!\n\nWant to answer questions about a population, but must rely on a sample\nCollect data from sample –> calculate statistics\nWhat can we say about the statistics?\nData are random! So how sure are we about our conclusions?\n\n\nStatistics starts here!"
+  },
+  {
+    "objectID": "slides/slides-13-samp-dist.html#inference",
+    "href": "slides/slides-13-samp-dist.html#inference",
+    "title": "Sampling distribution and Introduction to Bootstrap",
+    "section": "Inference",
+    "text": "Inference\nStatistical inference is the process of using sample data to make conclusions about the underlying population the sample came from\n\nEstimation: using the sample to estimate a plausible values for the unknown parameter\nTesting: evaluating whether our observed sample provides evidence for or against some claim about the population"
+  },
+  {
+    "objectID": "slides/slides-13-samp-dist.html#research-questions-involving-estimation",
+    "href": "slides/slides-13-samp-dist.html#research-questions-involving-estimation",
+    "title": "Sampling distribution and Introduction to Bootstrap",
+    "section": "Research questions involving estimation",
+    "text": "Research questions involving estimation\n\nExamples:\n\nWhat proportion of Middlebury students drink coffee regularly?\nWhat is the average number of hours of sleep Middlebury students get a night?\n\nQuestions here are about a population parameter\n\nIf we have a census, we can answer the question immediately.\nIf we only have a sample, we have to do our best to answer the question using our data \\(x_{1}, x_{2},\\ldots, x_{n}\\)"
+  },
+  {
+    "objectID": "slides/slides-13-samp-dist.html#activity-1",
+    "href": "slides/slides-13-samp-dist.html#activity-1",
+    "title": "Sampling distribution and Introduction to Bootstrap",
+    "section": "Activity",
+    "text": "Activity\n\n\nWhat proportion of Middlebury STAT 201A students drink coffee regularly?\n\nTarget population:\nSampling method:\nPopulation parameter:\nAre we able to compute the value of the parameter, or do we need to calculate a statistic?\n\n\nWhat proportion of Middlebury students drink coffee regularly?\n\nTarget population:\nSampling method:\nPopulation parameter:\nAre we able to compute the value of the parameter, or do we need to calculate a statistic?"
+  },
+  {
+    "objectID": "slides/slides-13-samp-dist.html#point-estimate",
+    "href": "slides/slides-13-samp-dist.html#point-estimate",
+    "title": "Sampling distribution and Introduction to Bootstrap",
+    "section": "Point estimate",
+    "text": "Point estimate\n\nSample proportion \\(\\hat{p}\\) is a very sensible estimate for true proportion \\(p\\)\n\\(\\hat{p}\\) is an example of a point estimate: a single number used to estimate a true but unknown population parameter\n\ni.e. a point estimate is a statistic with a specific purpose\nOther examples include sample mean \\(\\bar{x}\\) for true mean \\(\\mu\\), and \\(s\\) for \\(\\sigma\\)\n\n\nWhat might be a desirable characteristic of a “good” point estimate?\n\n\nDo we expect that the sample statistic will equal the population parameter? (e.g. how likely is it that \\(\\bar{x} = \\mu\\) or \\(\\hat{p} = p\\) exactly?) Why or why not?"
+  },
+  {
+    "objectID": "slides/slides-13-samp-dist.html#variability-of-statistic",
+    "href": "slides/slides-13-samp-dist.html#variability-of-statistic",
+    "title": "Sampling distribution and Introduction to Bootstrap",
+    "section": "Variability of statistic",
+    "text": "Variability of statistic\n\nTwo datasets collected under identical sampling procedures will almost always differ due to variability in the sample.\n\nAs a result, values of the point estimate/sample statistic that we calculate from the different samples will also exhibit variability\n\nThus, there exists the notion of a sampling distribution of the statistic: how the statistic behaves under repeated random samples obtained via the same sampling procedure\n\nThe variability associated with the sampling distribution of the statistic is called the standard error\n\nNote: “error” \\(\\neq\\) bad\n\nThis is in contrast to the standard deviation, which describes variability in the individual data points and not the statistic"
+  },
+  {
+    "objectID": "slides/slides-13-samp-dist.html#different-distributions",
+    "href": "slides/slides-13-samp-dist.html#different-distributions",
+    "title": "Sampling distribution and Introduction to Bootstrap",
+    "section": "Different distributions",
+    "text": "Different distributions\n\nPopulation distribution: distribution of the variable of interest for everyone in the population\n\nHas associated variability \\(\\sigma\\)\n\nSample distribution: distribution of the data from a single sample\n\nHas associated variability \\(s\\)\n\nSampling distribution: distribution of sample statistics calculated from the data obtained from multiple samples\n\nHas associated variability standard error \\((SE)\\)"
+  },
+  {
+    "objectID": "slides/slides-13-samp-dist.html#recall-candy-activity",
+    "href": "slides/slides-13-samp-dist.html#recall-candy-activity",
+    "title": "Sampling distribution and Introduction to Bootstrap",
+    "section": "Recall candy activity",
+    "text": "Recall candy activity\nAt the beginning of the semester, I passed around a bag of candy and everyone took out 5 pieces at random, and measured the average weight.\n\n\nWhat was the parameter of interest? What sample statistic did you calculate?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe histogram visualizes your sample mean weights.\nDoes this histogram visualize the population distribution, the sample distribution, or the sampling distribution of a statistic?"
+  },
+  {
+    "objectID": "slides/slides-13-samp-dist.html#candy-activity-cont.",
+    "href": "slides/slides-13-samp-dist.html#candy-activity-cont.",
+    "title": "Sampling distribution and Introduction to Bootstrap",
+    "section": "Candy activity (cont.)",
+    "text": "Candy activity (cont.)\n\n\nEach one of the values in the histogram is a sample mean \\(\\bar{x}\\) (i.e. a sample statistic)\nThus, the histogram visualizes the sampling distribution of the sample mean\n\nThe mean of these sample means is 7.49 grams, with \\(SE=\\) 1.34"
+  },
+  {
+    "objectID": "slides/slides-13-samp-dist.html#how-to-answer-the-research-question",
+    "href": "slides/slides-13-samp-dist.html#how-to-answer-the-research-question",
+    "title": "Sampling distribution and Introduction to Bootstrap",
+    "section": "How to answer the research question?",
+    "text": "How to answer the research question?\nRemember, our questions of interest are about a population. The following options list ways to answer the question. For each, what are the pros/cons?\n\n\nUsing the population\nUsing a single sample (i.e. the sample distribution)\nUsing several samples (i.e. the sampling distribution)\n\n\n\nThus, for answering estimation questions, we should aim to access a sampling distribution (we did this with the candy activity!)"
+  },
+  {
+    "objectID": "slides/slides-13-samp-dist.html#how-to-obtain-a-sampling-distribution",
+    "href": "slides/slides-13-samp-dist.html#how-to-obtain-a-sampling-distribution",
+    "title": "Sampling distribution and Introduction to Bootstrap",
+    "section": "How to obtain a sampling distribution?",
+    "text": "How to obtain a sampling distribution?\n\nSometimes, we assume that the population/data have a very specific behavior, and this allows us to exactly define the sampling distribution\n\nWill see this in a couple of weeks\n\nIf we don’t want to make assumptions, then we rely on sampling\n\nCan we obtain multiple samples cheaply and quickly?"
+  },
+  {
+    "objectID": "slides/slides-13-samp-dist.html#procedure",
+    "href": "slides/slides-13-samp-dist.html#procedure",
+    "title": "Sampling distribution and Introduction to Bootstrap",
+    "section": "Procedure",
+    "text": "Procedure\n\nAssume we have a single sample \\(\\boldsymbol{x} = (x_{1}, x_{2}, \\ldots, x_{n})\\) from the population. Note the sample size is \\(n\\)\nChoose a large number \\(B\\). For \\(b\\) in \\(1,2, \\ldots, B\\):\n\nResample: take a sample of size \\(n\\) with replacement from \\(\\boldsymbol{x}\\). Call this set of \\(b\\)-th re-sampled data \\(\\boldsymbol{x}^*_{b}\\)\nCalculate: calculate and record the statistic of interest from \\(\\boldsymbol{x}^{*}_{b}\\)\n\n\n\n\nAt the end of this procedure, we will have a bootstrap distribution of resample or bootstrap statistics.\n\nThis bootstrap distribution approximates the sampling distribution!\n\n\n\n\n\nIn the candy activity, I claim that we did not perform bootstrapping. Why not?"
+  },
+  {
+    "objectID": "slides/slides-13-samp-dist.html#demonstration",
+    "href": "slides/slides-13-samp-dist.html#demonstration",
+    "title": "Sampling distribution and Introduction to Bootstrap",
+    "section": "Demonstration",
+    "text": "Demonstration\n\nActivity cont.\nLive code demonstration"
+  },
+  {
+    "objectID": "slides/slides-13-samp-dist.html#why-resample-with-replacement",
+    "href": "slides/slides-13-samp-dist.html#why-resample-with-replacement",
+    "title": "Sampling distribution and Introduction to Bootstrap",
+    "section": "Why resample with replacement?",
+    "text": "Why resample with replacement?\n\nWe want to understand the sampling error of the sampling distribution!\n\nWhat would the bootstrap samples \\(\\boldsymbol{x}^*_b\\) look like if we sampled without replacement?\n\n\nSampling without replacement -> zero variation in the resampled statistics\n\nResampling with replacement will give us “new” datasets that are similar to original sample distribution but not exactly the same!\n\nIdeally, the variation in the bootstrapped statistics is similar to the true standard error of the sample statistics"
+  },
+  {
+    "objectID": "slides/slides-13-samp-dist.html#remarks",
+    "href": "slides/slides-13-samp-dist.html#remarks",
+    "title": "Sampling distribution and Introduction to Bootstrap",
+    "section": "Remarks",
+    "text": "Remarks\n\n\nRelies on having a representative original sample!\n\n\nResampling from initial sample should be roughly equivalent to sampling directly from the population\n\nRequires computational tools!\n\nWe need \\(B\\) to be large enough to accurately capture variability. \\(B=5000\\) or \\(B=10000\\) sufficient in this class\nMore complex problems will require larger \\(B\\)\n\nBootstrapping can fail!\nBootstrapping is not a solution to small sample sizes!!"
+  },
+  {
+    "objectID": "datafest.html",
+    "href": "datafest.html",
+    "title": "DataFest",
+    "section": "",
+    "text": "Over the weekend of April 4-6, you will work with a completely new-to-you dataset to answer some research question(s) of interest! More details on the Middlebury DataFest website!\nIn small groups, you will work to answer the research question(s) of interest using methods we’ve thus far learned in the class.\nBecause of the extra time-commitment of DataFest, the problem set associated with Week 7 will be light/combined into a problem set with Week 8!"
+  },
+  {
+    "objectID": "datafest.html#brief-description",
+    "href": "datafest.html#brief-description",
+    "title": "DataFest",
+    "section": "Brief description",
+    "text": "Brief description\nOver the weekend of April 4-6, you will work with a completely new-to-you dataset to answer some research question(s) of interest!\nIn small groups, you will work to answer the research question(s) of interest using methods we’ve thus far learned in the class.\nBecause of the extra time-commitment of DataFest, the problem set associated with Week 7 will be light/combined into a problem set with Week 8!"
+  },
+  {
+    "objectID": "datafest.html#requirements",
+    "href": "datafest.html#requirements",
+    "title": "DataFest",
+    "section": "Requirements",
+    "text": "Requirements\n\nGroup creation\nYou will work in groups of 2-3 people.\nBy the due date listed in the table above, you should either:\n\nform a group of three on your own and then e-mail Prof. Tang your decision, cc-ing everyone in the group\nform a group of two and then e-mail Prof. Tang your decision, cc-ing the other person in the group.\n\nYour group of two may be randomly paired with another person\n\ne-mail Prof. Tang if you don’t have a preference and/or want to meet new people and would like to be randomly placed in a group\n\nWhile not binding, you should view the people you work with on DataFest as people who you might like to work on the final project with.\nOnce all groups have been formed, Prof. Tang will confirm them and we will register for DataFest as a class on Monday 3/31.\n\n\nDataFest participation\n\nYou must attend the DataFest opening ceremony on Friday 4/4 at 6:00pm in the Q-Center. At the ceremony you will learn about the data and the research questions\nIn addition to the opening ceremony, it is my expectation that your group works for at least 3 hours on the project over the course of the weekend.\n\nYour whole group need not work together at the same time, but I highly encourage it all the same!\nYour are certainly welcome to work more than 3 hours!\n\nThere will be plenty of mentors on-site to help you will bugs. Prof. Tang will specifically be there at times TBD.\nYou will be asked to sign-up to present your finalized product to a panel of judges on Sunday 4/6 somewhere between 11am-1pm. Your entire group should attend the presentations (more details below).\n\n\n\nReport\nYou will be asked to create and submit a well-written report (in the form a rendered .qmd) that answers some or all of the research question(s) using a mix of both:\n\nCompelling visualizations and summary tables, and\nSimulation-based techniques (one of which must be in the form of a hypothesis test)\n\nYour report should include:\n\nA brief introduction\nFor each research question of interest:\n\nDetails of cleaning/wrangling of the data you performed to answer the question\nA description of the methods you used to answer the question\nThe actual result+interpretation in context (e.g. a visualization, confidence interval, conduct hypothesis test)\n\nA brief conclusion about what you might do differently or things that were particularly challenging\n\n\n\nPresentation\nEach group will givne an oral presentation of their project to a panel of judges. Prizes will be awarded in several categories. For your presentation, you should either accompany your presentation with:\n\nA brief set of slides (preferred), or\nYour rendered report"
+  },
+  {
+    "objectID": "datafest.html#grading",
+    "href": "datafest.html#grading",
+    "title": "DataFest",
+    "section": "Grading",
+    "text": "Grading\nTBD"
+  },
+  {
+    "objectID": "datafest.html#key-dates",
+    "href": "datafest.html#key-dates",
+    "title": "DataFest",
+    "section": "Key dates",
+    "text": "Key dates\n\n\n\nDeliverable\nWhat/where\nDate\n\n\n\n\nGroup formation\nEmail Prof. Tang (one per group)\nThursday 3/27 at 11:59pm\n\n\nRegister for DataFest\nDataFest website, “Register” tab (each person must do so)\nMonday 3/31 in class\n\n\nDataFest opening ceremony\nQ-Center (MBH 202)\nFriday 4/4 at 6:00pm\n\n\nWork on DataFest project\nQ-Center (MBH 202)\nAnytime from opening ceremony-Sunday 4/6 11:00am\n\n\nSubmit deliverable\nRendered .qmd report submitted to Canvas\nSunday 4/6 11:00am\n\n\nProject presentations (either rendered report or brief slides)\nQ-Center (MBH 202)\nSunday 4/6 11:00am-1:00pm (depending on time slot)"
   }
 ]
