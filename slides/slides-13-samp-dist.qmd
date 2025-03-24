@@ -34,6 +34,13 @@ While you're coming into the room, please take:
 # Housekeeping
 
 -   Midterm 1 graded. Well done!
+
+    -   Scores out of 51
+
+    -   Feedback posted on Gradescope. Everyone received a free 3.5 points.
+
+    -   Final score on Canvas: minimum(51, score + 3.5)
+
 -   DataFest next weekend April 4-6. Details announced at end of class!
 
 ```{r echo = F}
@@ -157,7 +164,6 @@ What proportion of Middlebury students drink coffee regularly?
 
     -   Has associated variability standard error $(SE)$
 
-
 ## Recall candy activity
 
 At the beginning of the semester, I passed around a bag of candy and everyone took out 5 pieces at random, and measured the average weight.
@@ -247,15 +253,15 @@ Bootstrapping is a flexible method that allows us to move forward in an analysis
 ::: {style="color: maroon"}
 At the end of this procedure, we will have a **bootstrap distribution** of resample or bootstrap statistics.
 
-- This bootstrap distribution **approximates** the sampling distribution!
+-   This bootstrap distribution **approximates** the sampling distribution!
 :::
 ::::
 
-::: {.fragment}
-::: {.discuss}
+:::: fragment
+::: discuss
 In the candy activity, I claim that we did not perform bootstrapping. Why not?
 :::
-:::
+::::
 
 ## Demonstration
 
