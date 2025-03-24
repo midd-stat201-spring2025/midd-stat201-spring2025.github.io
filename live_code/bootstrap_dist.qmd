@@ -3,7 +3,7 @@ title: "Bootstrap distribution demo"
 date: "March 24, 2024"
 ---
 
-```{r message = F}
+```{r message = F, fig.height=3}
 library(tidyverse)
 
 # "set seed" for reproducibility
@@ -22,6 +22,7 @@ B <- 5000
 # starts off as vector full of NAs of length B
 bootstrap_props <- rep(NA, B)
 
+# for loop
 for(b in 1:B){
   # obtain bootstrap resample (will change every iteration)
   x_b <- sample(x = x_orig, size = n, replace = TRUE)

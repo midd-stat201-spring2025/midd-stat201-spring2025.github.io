@@ -2559,7 +2559,7 @@
     "href": "live_code/bootstrap_dist.html",
     "title": "Bootstrap distribution demo",
     "section": "",
-    "text": "library(tidyverse)\n\n# \"set seed\" for reproducibility\nset.seed(1)\n\n# our original sample\nx_orig <- c(\"yes\", \"no\", \"yes\", \"yes\", \"no\", \"yes\", \"yes\", \"yes\", \"yes\", \"no\")\n\n# sample size stored as variable for reproducibility\nn <- length(x_orig)\n\n# number of bootstrap samples to take\nB <- 5000\n\n# vector to store bootstrap statistics\n# starts off as vector full of NAs of length B\nbootstrap_props <- rep(NA, B)\n\nfor(b in 1:B){\n  # obtain bootstrap resample (will change every iteration)\n  x_b <- sample(x = x_orig, size = n, replace = TRUE)\n  \n  # calculate bootstrap statistic (will change every iteration)\n  boot_mean <- mean(x_b == \"yes\")\n  \n  # store into b-th position, replacing the NA\n  bootstrap_props[b] <- boot_mean\n}\n\n# visualize bootstrap dist.\n\n## first create data frame\nboot_df <- data.frame(props = bootstrap_props) \n\n## ggplot\nggplot(boot_df, aes(x = props))+\n  geom_histogram(bins = 10, col = \"white\") +\n  labs(title = \"Bootstrap distribution\",\n       subtitle = \"Population: STAT 201A students\",\n       x = \"Proportion who drink coffee\")"
+    "text": "library(tidyverse)\n\n# \"set seed\" for reproducibility\nset.seed(1)\n\n# our original sample\nx_orig <- c(\"yes\", \"no\", \"yes\", \"yes\", \"no\", \"yes\", \"yes\", \"yes\", \"yes\", \"no\")\n\n# sample size stored as variable for reproducibility\nn <- length(x_orig)\n\n# number of bootstrap samples to take\nB <- 5000\n\n# vector to store bootstrap statistics\n# starts off as vector full of NAs of length B\nbootstrap_props <- rep(NA, B)\n\n# for loop\nfor(b in 1:B){\n  # obtain bootstrap resample (will change every iteration)\n  x_b <- sample(x = x_orig, size = n, replace = TRUE)\n  \n  # calculate bootstrap statistic (will change every iteration)\n  boot_mean <- mean(x_b == \"yes\")\n  \n  # store into b-th position, replacing the NA\n  bootstrap_props[b] <- boot_mean\n}\n\n# visualize bootstrap dist.\n\n## first create data frame\nboot_df <- data.frame(props = bootstrap_props) \n\n## ggplot\nggplot(boot_df, aes(x = props))+\n  geom_histogram(bins = 10, col = \"white\") +\n  labs(title = \"Bootstrap distribution\",\n       subtitle = \"Population: STAT 201A students\",\n       x = \"Proportion who drink coffee\")"
   },
   {
     "objectID": "slides/slides-12-bootstrap_ci.html#why-bootstrap",
@@ -7039,7 +7039,7 @@
     "href": "slides/slides-13-samp-dist.html#activity",
     "title": "Sampling distribution and Introduction to Bootstrap",
     "section": "Activity",
-    "text": "Activity\nWhile you’re coming into the room, please take:\n\n1 pink card\n1 white card\n\n\nOn the pink card, write down “yes” if you drink coffee regularly, and “no” otherwise\nOn white card, write down the average number of hours of sleep you get per night\nThen bring these to Prof. Tang"
+    "text": "Activity\nWhile you’re coming into the room, please take 1 card. Then:\n\nOn the unlined side, write down “yes” if you drink coffee regularly, and “no” otherwise\nOn the lined side, write down the average number of hours of sleep you get per night\nThen bring these to Prof. Tang"
   },
   {
     "objectID": "slides/slides-13-samp-dist.html#where-we-are-going",
