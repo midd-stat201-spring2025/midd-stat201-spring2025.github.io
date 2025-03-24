@@ -7180,5 +7180,12 @@
     "title": "DataFest",
     "section": "Key dates",
     "text": "Key dates\n\n\n\nDeliverable\nWhat/where\nDate\n\n\n\n\nGroup formation\nEmail Prof. Tang (one per group)\nThursday 3/27 at 11:59pm\n\n\nRegister for DataFest\nDataFest website, “Register” tab (each person must do so)\nMonday 3/31 in class\n\n\nDataFest opening ceremony\nQ-Center (MBH 202)\nFriday 4/4 at 6:00pm\n\n\nWork on DataFest project\nQ-Center (MBH 202)\nAnytime from opening ceremony-Sunday 4/6 11:00am\n\n\nSubmit deliverable\nRendered .qmd report submitted to Canvas\nSunday 4/6 11:00am\n\n\nProject presentations (either rendered report or brief slides)\nQ-Center (MBH 202)\nSunday 4/6 11:00am-1:00pm (depending on time slot)"
+  },
+  {
+    "objectID": "live_code/bootstrap_dist_live.html",
+    "href": "live_code/bootstrap_dist_live.html",
+    "title": "Bootstrap distribution",
+    "section": "",
+    "text": "library(tidyverse)\nx <- c(\"no\",\"no\",\"no\",\"no\",\"no\",\"no\",\"no\",\"no\",\"yes\",\"yes\")\nn <- length(x)\nB <- 1000\nboot_props <- rep(NA, B)\nfor(b in 1:B){\n  x_b <- sample(x, size = n, replace = TRUE)\n  boot_props[b] <- sum(x_b == \"yes\")/n\n}\n\ndata.frame(props = boot_props) |>\n  ggplot(aes(x = props)) +\n  geom_histogram(bins = 10)"
   }
 ]

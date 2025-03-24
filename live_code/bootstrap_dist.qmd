@@ -1,6 +1,8 @@
 ---
 title: "Bootstrap distribution demo"
 date: "March 24, 2024"
+html:
+  code-line-numbers: true
 ---
 
 ```{r message = F, fig.height=3}
