@@ -41,7 +41,7 @@ get_bootstrap <- function(x, n, B, stat){
 }
 ```
 
-## Samplint distribution recap
+## Sampling distribution recap
 
 -   Sampling distribution describes how statistic behaves under repeated sampling from population
 
@@ -313,11 +313,9 @@ What do you notice about the bootstrap distributions and CIs as $n$ increases?
 ::::
 ::::::
 
-## Live code + your turn!
+## Live code + Coding practice!
 
 -   Live code:
-
-    -   coding your own for loop
 
     -   in-line code
 
