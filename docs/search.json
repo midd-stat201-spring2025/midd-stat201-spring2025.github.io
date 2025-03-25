@@ -7187,5 +7187,117 @@
     "title": "Bootstrap distribution",
     "section": "",
     "text": "library(tidyverse)\nx <- c(\"no\",\"no\",\"no\",\"no\",\"no\",\"no\",\"no\",\"no\",\"yes\",\"yes\")\nn <- length(x)\nB <- 1000\nboot_props <- rep(NA, B)\nfor(b in 1:B){\n  x_b <- sample(x, size = n, replace = TRUE)\n  boot_props[b] <- sum(x_b == \"yes\")/n\n}\n\ndata.frame(props = boot_props) |>\n  ggplot(aes(x = props)) +\n  geom_histogram(bins = 10)"
+  },
+  {
+    "objectID": "slides/slides-14-bootstrap_ci.html#housekeeping",
+    "href": "slides/slides-14-bootstrap_ci.html#housekeeping",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Housekeeping",
+    "text": "Housekeeping\n\nDataFest groups!"
+  },
+  {
+    "objectID": "slides/slides-14-bootstrap_ci.html#recap",
+    "href": "slides/slides-14-bootstrap_ci.html#recap",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Recap",
+    "text": "Recap\n\nSampling distribution describes how statistic behaves under repeated sampling from population\nRecall research question from last class: what proportion of STAT 201A students drink coffee regularly?\nSince I actually can take a census, I do have access to true sampling distribution of the sample proportion\n\nI will repeatedly take SRS (i.e. without replacement) of \\(n=10\\) values from the population (call this \\(\\vec{x}\\)) and calculate \\(\\hat{p}\\)"
+  },
+  {
+    "objectID": "slides/slides-14-bootstrap_ci.html#bootstrap-recap",
+    "href": "slides/slides-14-bootstrap_ci.html#bootstrap-recap",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Bootstrap recap",
+    "text": "Bootstrap recap\nIf instead I could not repeatedly sample from population, we could obtain bootstrap distribution as an approximation of the sampling distribution of the statistic!\nProcedure:\n\nAssume we have a sample \\(x_{1}, x_{2}, \\ldots, x_{n}\\) from the population. Call this sample \\(\\boldsymbol{x}\\). Note the sample size is \\(n\\)\nChoose a large number \\(B\\). For \\(b\\) in \\(1,2, \\ldots, B\\):\n\nResample: take a sample of size \\(n\\) with replacement from \\(\\boldsymbol{x}\\). Call this set of resampled data \\(\\boldsymbol{x}^*_{b}\\)\nCalculate: calculate and record the statistic of interest from \\(\\boldsymbol{x}^{*}_{b}\\)\n\n\n\nAt the end of this procedure, we will have a distribution of resample or bootstrap statistics"
+  },
+  {
+    "objectID": "slides/slides-14-bootstrap_ci.html#bootstrap-distribution-from-activity",
+    "href": "slides/slides-14-bootstrap_ci.html#bootstrap-distribution-from-activity",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Bootstrap distribution from activity",
+    "text": "Bootstrap distribution from activity\n\n\n\nIn our original sample of \\(n = 10\\), we had \\(\\hat{p} = 0.2\\). We have the following bootstrap distribution of sample proportions, obtained from \\(B=\\) 5000 iterations:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotice that our bootstrap distribution isn’t a great approximation (maybe \\(n = 10\\) did not yield a representative sample)"
+  },
+  {
+    "objectID": "slides/slides-14-bootstrap_ci.html#comparison",
+    "href": "slides/slides-14-bootstrap_ci.html#comparison",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Comparison",
+    "text": "Comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOur bootstrap distribution isn’t a great approximation (maybe \\(n = 10\\) did not yield a representative sample)\nWhat do we do with the bootstrap distribution?"
+  },
+  {
+    "objectID": "slides/slides-14-bootstrap_ci.html#answering-estimation-question",
+    "href": "slides/slides-14-bootstrap_ci.html#answering-estimation-question",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Answering estimation question",
+    "text": "Answering estimation question\n\nGreat…but what do we do with the bootstrap distribution?\nRecall our research question: What proportion of STAT 201A drink coffee regularly?\n\nCould respond using our single point estimate: \\(\\hat{p} = 0.35\\)\nBut due to variability, we recognize that the point estimate will rarely (if ever) equal population parameter\n\nRather than report a single number, why not report a range of values?\n\n\nThis is possible only if we have a sampling distribution to work with!!"
+  },
+  {
+    "objectID": "slides/slides-14-bootstrap_ci.html#confidence-intervals",
+    "href": "slides/slides-14-bootstrap_ci.html#confidence-intervals",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Confidence intervals",
+    "text": "Confidence intervals\n\nAnalogy: would you rather go fishing with a single pole or a large net?\n\nA range of values gives us a better chance at capturing the true value\n\nA confidence interval provides such a range of plausible values for the parameter (more rigorous definition coming soon)\n\n“Interval”: specify a lower bound and an upper bound\nConfidence intervals are not unique! Depending on the method you use, you might get different intervals"
+  },
+  {
+    "objectID": "slides/slides-14-bootstrap_ci.html#bootstrap-percentile-interval",
+    "href": "slides/slides-14-bootstrap_ci.html#bootstrap-percentile-interval",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Bootstrap percentile interval",
+    "text": "Bootstrap percentile interval\n\nThe \\(\\gamma \\times 100\\)% bootstrap percentile interval is obtained by finding the bounds of the middle \\(\\gamma \\times 100\\)% of the bootstrap distribution\nCalled “percentile interval” because the bounds are the \\((1-\\gamma)/2\\times100\\) and \\((1+\\gamma)/2\\times 100\\) percentiles of the bootstrap distribution\n\n\n\nIf \\(\\gamma = 0.90\\), then the bounds would be at which percentiles?\n\n\n\nFor our purposes, “bootstrap confidence interval” will be equivalent to “bootstrap percentile interval”\nquantile() function in R gives us easy way to obtain percentiles: quantile(x, p) gives us \\(p\\)-th percentile of x"
+  },
+  {
+    "objectID": "slides/slides-14-bootstrap_ci.html#obtaining-bootstrap-confidence-interval",
+    "href": "slides/slides-14-bootstrap_ci.html#obtaining-bootstrap-confidence-interval",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Obtaining bootstrap confidence interval",
+    "text": "Obtaining bootstrap confidence interval\n\n\nOur 90% confidence interval for \\(p\\): (0, 0.4)"
+  },
+  {
+    "objectID": "slides/slides-14-bootstrap_ci.html#interpreting-a-confidence-interval",
+    "href": "slides/slides-14-bootstrap_ci.html#interpreting-a-confidence-interval",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Interpreting a confidence interval",
+    "text": "Interpreting a confidence interval\n\nOur 90% bootstrap CI for \\(p\\): (0, 0.4). Does this mean there is a 90% chance/probability that the true proportion lies in the interval?\n\n\nAnswer: NO\n\n\nRemember: bootstrap distribution is based on our original sample\n\nIf we started with a different original sample \\(\\boldsymbol{x}\\), then our estimated 90% confidence interval would also be different\n\n\nWhat a confidence interval (CI) represents: if we take many independent repeated samples from this population using the same method and calculate a \\(\\gamma \\times 100\\) % CI for the parameter in the exact same way, then in theory, \\(\\gamma \\times 100\\) % of these intervals should capture/contain the parameter\n\n\n\\(\\gamma\\) represents the long-run proportion of CIs that theoretically contain the true parameter\nHowever, we never know if any particular interval(s) actually do!"
+  },
+  {
+    "objectID": "slides/slides-14-bootstrap_ci.html#interpreting-a-confidence-interval-cont.",
+    "href": "slides/slides-14-bootstrap_ci.html#interpreting-a-confidence-interval-cont.",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Interpreting a confidence interval (cont.)",
+    "text": "Interpreting a confidence interval (cont.)\n\nCorrect interpretation (generic) of our interval \\((a,b)\\): We are \\(\\gamma \\times 100\\) % confident that the population parameter is between \\(a\\) and \\(b\\).\n\n\nInterpret our bootstrap CI in context\n\n\nAgain: why is this interpretation incorrect? “There is a 90% chance/probability that the true parameter value lies in the interval.”"
+  },
+  {
+    "objectID": "slides/slides-14-bootstrap_ci.html#remarks",
+    "href": "slides/slides-14-bootstrap_ci.html#remarks",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Remarks",
+    "text": "Remarks\n\n\nWhat is a virtue of a “good” confidence interval?\n\n\nHow do you expect the interval to change as the original sample size \\(n\\) changes?\nHow do you expect the interval to change as level of confidence \\(\\gamma\\) changes?\n\nOnce again, a good interval relies on a representative original sample!"
+  },
+  {
+    "objectID": "slides/slides-14-bootstrap_ci.html#comparing-confidence-intervals",
+    "href": "slides/slides-14-bootstrap_ci.html#comparing-confidence-intervals",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Comparing confidence intervals",
+    "text": "Comparing confidence intervals\nComparing changes in 90% bootstrap CI for sample sizes \\(n = 5, 10, \\text{ and } 17\\).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nn\ninterval\n\n\n\n\nn = 5\n(0, 0.8)\n\n\nn = 10\n(0, 0.4)\n\n\nn = 17\n(0.18, 0.53)\n\n\n\n\n\n\nWhat do you notice about the bootstrap distributions and CIs as \\(n\\) increases?"
+  },
+  {
+    "objectID": "slides/slides-14-bootstrap_ci.html#live-code-your-turn",
+    "href": "slides/slides-14-bootstrap_ci.html#live-code-your-turn",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Live code + your turn!",
+    "text": "Live code + your turn!\n\nLive code:\n\ncoding your own for loop\nin-line code\nsetting a seed\n\nYou will investigate what happens as we move \\(\\gamma\\) between \\(0\\) to \\(1\\)!"
+  },
+  {
+    "objectID": "slides/slides-14-bootstrap_ci.html#visualizing-bootstrap-confidence-interval",
+    "href": "slides/slides-14-bootstrap_ci.html#visualizing-bootstrap-confidence-interval",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Visualizing bootstrap confidence interval",
+    "text": "Visualizing bootstrap confidence interval\n\n\nOur 90% bootstrap CI for \\(p\\): (0, 0.4)"
+  },
+  {
+    "objectID": "slides/slides-14-bootstrap_ci.html#samplint-distribution-recap",
+    "href": "slides/slides-14-bootstrap_ci.html#samplint-distribution-recap",
+    "title": "Bootstrap Confidence Intervals",
+    "section": "Samplint distribution recap",
+    "text": "Samplint distribution recap\n\nSampling distribution describes how statistic behaves under repeated sampling from population\nRecall research question from last class: what proportion of STAT 201A students drink coffee regularly?\n\n\n\n\nSince I took a census, I actually do have access to true sampling distribution of the sample proportion!\nI will repeatedly take SRS (i.e. without replacement) of \\(n=10\\) values from the population and calculate \\(\\hat{p}\\)"
   }
 ]
