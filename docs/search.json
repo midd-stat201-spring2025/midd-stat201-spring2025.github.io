@@ -7305,7 +7305,7 @@
     "href": "coding_practice/coding-practice-14-bootstrap.html",
     "title": "Bootstrap confidence intervals",
     "section": "",
-    "text": "We will work with the average hours of sleep our class reported. Run the following code chunk to load the data:\n\nlibrary(tidyverse)\nlibrary(readr)\nsleep <- read_csv(\"https://raw.githubusercontent.com/midd-stat201-spring2025/midd-stat201-spring2025.github.io/refs/heads/main/data/coffee_sleep.csv\")\n\nWe will intialize a pseudo-random-number-generator using the set.seed() function. You can choose any whole number to input as the parameter to this function. For example, I used the seed of 201. If I have the exact same seed and code as you, then we will produce the same random results.\n\nset.seed(201)\n\n\nCreate a variable that represents and stores the target sample size: 10. Then, take a random sample of size 10 of average sleep hours from our population. Store your sample into a variable called x.\n\nThen, we will take 5000 bootstrap iterations. Store this value as a variable B for reproducibility.\n\n# create a variable for sample size\n\n# obtain and store our sample\n\n# store number of bootstrap iterations\n\n\nObtain a bootstrap distribution of the sample means using your original sample. Remember to store the bootstrap statistics somewhere! Please use a meaningful variable name. It may be useful to look at and modify the live code from previous class (on website). Your code shouldn’t print out/show us any output.\n\n\n\n\n\nUse the quantile() function to obtain the bounds for a 80%, 90%, and 99% bootstrap confidence interval, respectively. Store these bounds as variables with different (but meaningful) variable names (you should have 6 variables total).\n\nYour code shouldn’t print out/show us any output.\n\n# 80%\n\n# 90%\n\n# 99%\n\n\nIn the space provided below, report the three confidence intervals in the format of (lower, upper) using in-line code.\n\nIn-line code allows us to be reproducible. Remember, the format is: r where after the space within the back-ticks you type the appropriate R code.\n80% CI:\n90%: CI:\n99% CI:\n\nHow do the confidence interval widths change as the level of confidence increases?\n\nAnswer:\n\nInterpret one of your confidence intervals in context. Use in-line code in your answer.\n\nAnswer:"
+    "text": "We will work with the average hours of sleep our class reported. Run the following code chunk to load the data:\n\nlibrary(tidyverse)\nlibrary(readr)\nsleep <- read_csv(\"https://raw.githubusercontent.com/midd-stat201-spring2025/midd-stat201-spring2025.github.io/refs/heads/main/data/coffee_sleep.csv\")\n\nWe will intialize a pseudo-random-number-generator using the set.seed() function. You can choose any whole number to input as the parameter to this function. For example, I used the seed of 201. If I have the exact same seed and code as you, then we will produce the same random results.\n\nset.seed(201)\n\n\nWe will first take an original sample of size 10.\nCreate a variable that represents and stores the target sample size. Then, take a random sample of size 10 of average sleep hours from our population. Store your sample into a variable called x.\n\n\n# create a variable for sample size\n\n# obtain and store our sample\n\n\nThen, we will take 5000 bootstrap iterations. Store this value as a variable B for reproducibility.\nThen obtain a bootstrap distribution of the sample means using your original sample. Remember to store the bootstrap statistics somewhere! Please use a meaningful variable name. It may be useful to look at and modify the live code from previous class (on website). Your code shouldn’t print out/show us any output.\n\n\n# store number of bootstrap iterations\n\n\nUse the quantile() function to obtain the bounds for a 80%, 90%, and 99% bootstrap confidence interval, respectively. Store these bounds as variables with different (but meaningful) variable names (you should have 6 variables total).\n\nYour code shouldn’t print out/show us any output.\n\n# 80%\n\n# 90%\n\n# 99%\n\n\nIn the space provided below, report the three confidence intervals in the format of (lower, upper) using in-line code.\n\nIn-line code allows us to be reproducible. Remember, the format is: r where after the space within the back-ticks you type the appropriate R code.\n80% CI:\n90%: CI:\n99% CI:\n\nHow do the confidence interval widths change as the level of confidence increases?\n\nAnswer:\n\nInterpret one of your confidence intervals in context. Use in-line code in your answer.\n\nAnswer:"
   },
   {
     "objectID": "slides/slides-14-bootstrap-ci.html",
@@ -7418,5 +7418,124 @@
     "title": "Bootstrap Confidence Intervals",
     "section": "Sampling distribution recap",
     "text": "Sampling distribution recap\n\nSampling distribution describes how statistic behaves under repeated sampling from population\nRecall research question from last class: what proportion of STAT 201A students drink coffee regularly?\n\n\n\n\nSince I took a census, I actually do have access to true sampling distribution of the sample proportion!\nI will repeatedly take SRS (i.e. without replacement) of \\(n=10\\) values from the population and calculate \\(\\hat{p}\\)"
+  },
+  {
+    "objectID": "slides/slides-15-intro-testing.html",
+    "href": "slides/slides-15-intro-testing.html",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "",
+    "text": "Office hours change this week\nMid-semester feedback survey results"
+  },
+  {
+    "objectID": "slides/slides-15-intro-testing.html#testing",
+    "href": "slides/slides-15-intro-testing.html#testing",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Testing",
+    "text": "Testing\nWe are now entering into second branch of inference-related tasks: testing.\n\nWe have some “claim”/question about the target population, and we use sampled data to provide evidence for or against the claim/question.\nEspecially important in experiments where we want to learn the effect of some new drug\nWe will use the hypothesis testing framework to formalize the process of making decisions about research claims.\n\nBecause claim is about target population, we will almost always formulate claims in terms of population parameters\nThen we use sample statistics to provide the evidence for/against"
+  },
+  {
+    "objectID": "slides/slides-15-intro-testing.html#step-1-define-hypotheses",
+    "href": "slides/slides-15-intro-testing.html#step-1-define-hypotheses",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Step 1: Define hypotheses",
+    "text": "Step 1: Define hypotheses\nA hypothesis test is a statistical technique used to evaluate competing claims using data\n\nWe define hypotheses to translate our research question/claim into statistical notation\nWe always define two hypotheses in context: a null hypothesis and an alternative hypothesis\nNull hypothesis \\(H_{0}\\): the hypothesis that represents “business as usual”/status quo/nothing unusual or noteworthy\nAlternative hypothesis \\(H_{A}\\): claim the researchers want to demonstrate\n\n\nIt will not always be obvious what \\(H_{0}\\) should be, but you will develop intuition for this over time!"
+  },
+  {
+    "objectID": "slides/slides-15-intro-testing.html#defining-hypotheses-in-context",
+    "href": "slides/slides-15-intro-testing.html#defining-hypotheses-in-context",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Defining hypotheses in context",
+    "text": "Defining hypotheses in context\nResearch question: do the majority of STAT 201A/STAT 201B students get at least 7 hours of sleep?\n\nDefine \\(p\\) as the true proportion of STAT 201A/STAT 201B who get at least 7 hours of sleep on average\n\n\n\n\\(H_{0}\\): \\(p \\leq 0.5\\)\n\\(H_{A}\\): \\(p > 0.5\\)"
+  },
+  {
+    "objectID": "slides/slides-15-intro-testing.html#step-2-collect-and-summarize-data",
+    "href": "slides/slides-15-intro-testing.html#step-2-collect-and-summarize-data",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Step 2: Collect and summarize data",
+    "text": "Step 2: Collect and summarize data\nSuppose I collect a sample of \\(n= 10\\) students from each class:\n\n\n\n\n\nIn STAT 201A sample: 6 students received at least 7 hours of sleep, and 4 received less than 7 hours\n\nSample statistic: \\(\\hat{p}\\): 0.6\n\n\nIn STAT 201B sample: 7 students received at least 7 hours of sleep, and 3 received less than 7 hours\n\nSample statistic: \\(\\hat{p}\\): 0.7\n\n\n\n\n\nAre we prepared to answer our research question based on this evidence?\n\nDue to variability in data and \\(\\hat{p}\\) we should ask: do the data provide convincing evidence that the majority of students get at least 7 hours of sleep?"
+  },
+  {
+    "objectID": "slides/slides-15-intro-testing.html#step-3-determine-if-we-have-convincing-evidence",
+    "href": "slides/slides-15-intro-testing.html#step-3-determine-if-we-have-convincing-evidence",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Step 3: Determine if we have “convincing evidence”",
+    "text": "Step 3: Determine if we have “convincing evidence”\n“Convincing evidence” for us means that it would be highly unlikely to observe the data we did (or data even more extreme) if \\(H_{0}\\) were true!\n\nWe will calculate a p-value: the probability of observing data as or more extreme than we did assuming \\(H_{0}\\) true\n\nNote: p is not the same as true proportion \\(p\\)!\n\nHighly unlikely is vague and needs to defined by the researcher, ideally before seeing data.\n\nIf we want to answer the research question with a binary yes/no, we need some threshold to compare the p-value to. This is called a significance level \\(\\alpha\\)\nCommon choices are \\(\\alpha = 0.05\\), \\(\\alpha = 0.01\\) (more on this later)!\n\nFor our example, we will choose \\(\\alpha = 0.05\\)"
+  },
+  {
+    "objectID": "slides/slides-15-intro-testing.html#how-to-obtain-p-value",
+    "href": "slides/slides-15-intro-testing.html#how-to-obtain-p-value",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "How to obtain p-value?",
+    "text": "How to obtain p-value?\n\nHow to obtain this probability? It depends!\n\nOption 1: if we have assumptions about how our data behave, we can obtain this probability using theory/math (next week)\nOption 2: if we don’t want to make assumptions, why not simulate?\n\nWe will call this option “simulating under \\(H_{0}\\)”\n\n\n\nThis is the step that requires the most “work”, and what exactly you do will depend on the the type of data and the research question/claim you have\n\nRemark: hypothesis tests, like confidence intervals, are not unique!"
+  },
+  {
+    "objectID": "slides/slides-15-intro-testing.html#simulating-under-h_0-step-3-cont.",
+    "href": "slides/slides-15-intro-testing.html#simulating-under-h_0-step-3-cont.",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Simulating under \\(H_{0}\\) (step 3 cont.)",
+    "text": "Simulating under \\(H_{0}\\) (step 3 cont.)\n\nWe have to simulate our data under the assumption that \\(H_{0}\\) is true (recall \\(H_0\\): \\(p \\leq 0.5\\))\nImagine a big bag with pink and purple slips of paper\n\nPink = people who got at least 7 hours of sleep\nPurple = people who got less than 7 hours\n\nWhat proportion of the slips in the bowl should be pink vs purple?\n\nTo simulate under \\(H_{0}\\), no more than 50% of the slip should be pink\n\nWe want convincing evidence even in the most “borderline” case, so we will choose 50% of the slips to be pink."
+  },
+  {
+    "objectID": "slides/slides-15-intro-testing.html#simulating-under-h_0-step-3-cont.-1",
+    "href": "slides/slides-15-intro-testing.html#simulating-under-h_0-step-3-cont.-1",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Simulating under \\(H_{0}\\) (step 3 cont.)",
+    "text": "Simulating under \\(H_{0}\\) (step 3 cont.)\n\nActivity: we now replicate our original sample, this time sampling from this bag of paper slips\n\nWe repeatedly take samples from the null distribution, using original sample size \\(n =\\) 10\nFor each sample, calculate the simulated proportion of pink slips, \\(\\hat{p}_{sim}\\)\n\nLive code?\n\n\n\nset.seed(2) # reproducibility\nB <- 5000 # number of simulations to do to gather enough evidence\nn <- 10 # size of our original sample\np_null_vec <- rep(NA, B) # vector to store the simulated proportions\nfor(b in 1:B){\n  # sample() takes a random sample\n  null_samp <- sample(x = c(\"pink\", \"purple\"), # pink and purple slips\n                      size = n, # sample of size n\n                      replace = T, # tell R that my bowl has infinitely many marbles \n                      prob = c(0.5, 0.5)) # 50% of slips are pink and 50% are purple\n  \n  # calculate and store the proportion of pink slips in this simulation\n  p_null_vec[b] <- sum(null_samp == \"pink\")/n\n}"
+  },
+  {
+    "objectID": "slides/slides-15-intro-testing.html#null-distribution-of-statistic",
+    "href": "slides/slides-15-intro-testing.html#null-distribution-of-statistic",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Null distribution of statistic",
+    "text": "Null distribution of statistic\nWe can visualize the distribution of \\(\\hat{p}_{sim}\\) assuming \\(H_{0}\\) true:\n\n\n\n\n\n\nThis is called the null distribution of the sample statistic, which is the distribution of the statistic assuming \\(H_{0}\\) is true\n\nWhere is the null distribution of \\(\\hat{p}\\) centered? Why does that “make sense”?"
+  },
+  {
+    "objectID": "slides/slides-15-intro-testing.html#comparing-null-to-observed",
+    "href": "slides/slides-15-intro-testing.html#comparing-null-to-observed",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Comparing null to observed",
+    "text": "Comparing null to observed\nLet’s return to our original goal of Step 3! We need to find the p-value: the probability of observing data as or more extreme as ours, assuming \\(H_{0}\\) were true.\n\nOur observed data were \\(\\hat{p} =\\) 0.6 (STAT 201A) or \\(\\hat{p} =\\) 0.7 (STAT 201B)\n\\(H_{0}\\): \\(p \\leq 0.5\\) and \\(H_{A}\\): \\(p > 0.5\\)\n\nWhat does “as or more extreme” mean in this context?\nHow can we use the null distribution to obtain this probability?"
+  },
+  {
+    "objectID": "slides/slides-15-intro-testing.html#obtain-p-value-step-3-cont.",
+    "href": "slides/slides-15-intro-testing.html#obtain-p-value-step-3-cont.",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Obtain p-value (step 3 cont.)",
+    "text": "Obtain p-value (step 3 cont.)\nWe can directly obtain (technically estimate) the p-value using our null distribution and our observed \\(\\hat{p}\\)!\n\n\n\n\n\n\n\n\n\nOut of 5000 replications, we saw 1946 instances of \\(\\hat{p}_{sim} \\geq \\hat{p}\\)\np-value is \\(\\frac{ 1946}{5000} \\approx\\) 0.39\n\n\n\n\n\n\n\n\nOut of 5000 replications, we saw 853 instances of \\(\\hat{p}_{sim} \\geq \\hat{p}\\)\np-value is \\(\\frac{ 853}{5000} \\approx\\) 0.17"
+  },
+  {
+    "objectID": "slides/slides-15-intro-testing.html#step-4-interpret-p-value-and-make-decision",
+    "href": "slides/slides-15-intro-testing.html#step-4-interpret-p-value-and-make-decision",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Step 4: Interpret p-value and make decision",
+    "text": "Step 4: Interpret p-value and make decision\n\nInterpret the p-value in context\n\n\nAssuming \\(H_{0}\\) true, the probability of observing a sample proportion as or more extreme as ours (0.6 or 0.7) is 0.39 or 0.17\n\n\nMake a decision about research claim/question by comparing p-value to significance level \\(\\alpha\\)\n\nIf p-value \\(< \\alpha\\), we reject \\(H_{0}\\) (it was highly unlikely to observe our data given our selected threshold)\nIf p-value \\(\\geq \\alpha\\), we fail to reject \\(H_{0}\\) (we did not have enough evidence against the null)\n\n\nNote: we never “accept \\(H_{A}\\)”!\n\n\n\nSince our p value is greater than \\(\\alpha = 0.05\\), we fail to reject \\(H_{0}\\). The data do not provide sufficient evidence to suggest that the majority of STAT 201A/STAT 201B students get more than 7 hours of sleep."
+  },
+  {
+    "objectID": "slides/slides-15-intro-testing.html#summary-of-testing-framework",
+    "href": "slides/slides-15-intro-testing.html#summary-of-testing-framework",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Summary of testing framework",
+    "text": "Summary of testing framework\nFour steps for hypothesis test:\n\nDefine null and alternative hypotheses \\(H_{0}\\) and \\(H_{A}\\) in context\nCollect data and set significance level \\(\\alpha\\)\nObtain/estimate p-value by modeling randomness that would occur if the \\(H_{0}\\) were true\n\nWe did this using by simulating under the null distribution\n\nInterpret p-value and make a decision in context"
+  },
+  {
+    "objectID": "slides/slides-15-intro-testing.html#errors-in-decision",
+    "href": "slides/slides-15-intro-testing.html#errors-in-decision",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Errors in decision",
+    "text": "Errors in decision\n\nIn Step 4, we make a decision but it could be wrong! (Unfortunately, we will never know)\nWe always fall into one of the following four scenarios:\n\n\n\n\n\n\n\n\n\n\nIdentify which cells are good scenarios, and which are bad"
+  },
+  {
+    "objectID": "slides/slides-15-intro-testing.html#errors-in-decision-1",
+    "href": "slides/slides-15-intro-testing.html#errors-in-decision-1",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Errors in decision",
+    "text": "Errors in decision\n\n\n\nWhat kind of error could we have made in our example?\n\nIt is important to weight the consequences of making each type of error!\n\nWe have some control in this - how? Through \\(\\alpha\\)!"
+  },
+  {
+    "objectID": "slides/slides-15-intro-testing.html#comprehension-questions",
+    "href": "slides/slides-15-intro-testing.html#comprehension-questions",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Comprehension questions",
+    "text": "Comprehension questions\n\nWhat are the similarities/differences between the bootstrap distribution of a sample statistic and the simulated null distribution?\nDo you understand what a p-value represents, and how we obtain it from the null distribution?\nWhat role does \\(\\alpha\\) play? Why is it important to set \\(\\alpha\\) early on?"
   }
 ]
