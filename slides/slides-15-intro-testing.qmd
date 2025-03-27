@@ -81,16 +81,87 @@ A **hypothesis test** is a statistical technique used to evaluate competing clai
 It will not always be obvious what the hypotheses should be, but you will develop intuition for this over time!
 :::
 
+## Practice in defining hypotheses
+
+::: discuss
+For each of the following, determine whether it represents a null hypothesis claim or an alternative hypothesis claim:
+:::
+
+1.  King cheetahs on average run the same speed as standard spotted cheetahs.
+
+2.  For a particular student, the probability of correctly answer a 5-option multiple choice test is larger than 0.2 (i.e. better than guessing)
+
+3.  The probability of getting in a car accident is the same if using a cell phone then if not using a cell phone.
+
+4.  The number of hours that grade-school children spend doing homework predicts their future success on standardized tests.
+
+## Practice in defining hypotheses
+
+For each of the following, determine whether it represents a null hypothesis claim or an alternative hypothesis claim:
+
+1.  King cheetahs on average run the same speed as standard spotted cheetahs.
+
+    -   Null!
+
+2.  For a particular student, the probability of correctly answer a 5-option multiple choice test is larger than 0.2 (i.e. better than guessing)
+
+    -   Alternative!
+
+3.  The probability of getting in a car accident is the same if using a cell phone then if not using a cell phone.
+
+    -   Null!
+
+4.  The number of hours that grade-school children spend doing homework predicts their future success on standardized tests.
+
+    -   Alternative!
+
+## Practice in defining hypotheses
+
+::: discuss
+Write out the null and alternative hypotheses in words and also in statistical notation for the following situations:
+:::
+
+1.  New York is known as "the city that never sleeps''. A random sample of 25 New Yorkers were asked how much they sleep they get per night. Do these data providing convincing evidence that New Yorkers on average sleep less than 8 hours per night?
+
+2.  A study suggests that 25% of 25 year-olds have gotten married. You believe that this is incorrect and decide to conduct your own analysis.
+
+## Practice in defining hypotheses
+
+New York is known as "the city that never sleeps''. A random sample of 25 New Yorkers were asked how much they sleep they get per night. Does these data providing convincing evidence that New Yorkers on average sleep less than 8 hours per night?
+
+-   Words
+
+    -   $H_0$: New Yorkers sleep an average of 8 hours per night
+    -   $H_{A}:$ New Yorkers sleep an average of less than 8 hours per night
+
+-   Notation: let $\mu$ be the average hours of sleep of New Yorkers
+
+    -   $H_{0}: \mu = 8$
+    -   $H_{0}:  \mu < 8$
+
+## Practice in defining hypotheses
+
+A study suggests that 25% of 25 year-olds in the US have gotten married. You believe that this is incorrect and decide to conduct your own analysis.
+
+-   Words
+
+    -   $H_0$: the proportion of 25 year-olds in the US who are married is 0.25
+    -   $H_{A}:$ the proportion of 25 year-olds in the US who are married is not 0.25
+
+-   Notation: let $p$ be the proportion of 25 year-olds in the US who are married
+
+    -   $H_{0}: p = 0.25$
+    -   $H_{0}:  p \neq 0.25$
+
 ## Defining hypotheses in context
 
-Research question: do the minority of Middlebury students drink coffee regularly?
-
--   Define $p$ as the true proportion of Middlebury students who drink coffee regularly
+**Research question**: do the minority of Middlebury students drink coffee regularly?
 
 -   ::: discuss
-    Try to write down our null and alternative hypotheses in terms of $p$!
+    Try to write down our null and alternative hypotheses in statistical notation! This includes defining parameters!
     :::
 
+    -   Define $p$ as the true proportion of Middlebury students who drink coffee regularly
     -   $H_{0}:\ p = 0.5$ versus $H_{A}:\ p < 0.5$
 
 ## Step 2: Collect and summarize data
@@ -215,15 +286,16 @@ Let's return to our original goal of Step 3! We need to find the **p-value**: th
 
 -   $H_{0}$: $p = 0.5$ and $H_{A}$: $p < 0.5$
 
-:::: {.columns}
+:::::: columns
 ::: {.column width="50%"}
 -   ::: discuss
-    What does "as or more extreme" mean in this context? 
-    
+    What does "as or more extreme" mean in this context?
+
     How can we use the null distribution to obtain this probability?
     :::
 :::
-::: {.column width="50%"}
+
+:::: {.column width="50%"}
 ::: fragment
 ```{r fig.height=8}
 null_dist +
@@ -232,11 +304,8 @@ null_dist +
   theme(text =element_text(size = 30))
 ```
 :::
-:::
 ::::
-
-
-
+::::::
 
 ## Obtain p-value (step 3 cont.)
 

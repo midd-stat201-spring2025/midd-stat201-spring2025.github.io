@@ -1,18 +1,69 @@
 ---
 title: "Introduction to Hypothesis Testing"
-date: "March 27, 2025"
-format: pdf
+format: 
+  pdf:
+    geometry:
+      - top=2.5cm
+      - left=2.5cm
+      - right=2.5cm
+      - bottom=2.5cm
+include-in-header:
+  - text: |
+      \pagenumbering{gobble}
 ---
+\vspace{-2.5cm}
 
 ```{r message = F, include = F}
 library(tidyverse)
 ```
 
-### Hypotheses and significance level (steps 1 and 2)
+### Practice in defining hypotheses
+
+For each of the following, determine whether it represents a null hypothesis claim or an alternative hypothesis claim:
+
+1.  King cheetahs on average run the same speed as standard spotted cheetahs.
+
+\vspace{1cm}
+
+2.  For a particular student, the probability of correctly answer a 5-option multiple choice test is larger than 0.2 (i.e. better than guessing)
+
+\vspace{1cm}
+
+
+3.  The probability of getting in a car accident is the same if using a cell phone then if not using a cell phone.
+
+\vspace{1cm}
+
+
+4.  The number of hours that grade-school children spend doing homework predicts their future success on standardized tests.
+
+\vspace{1cm}
+
+
+Write out the null and alternative hypotheses in words and also in statistical notation for each of the following situations:
+
+1.  New York is known as "the city that never sleeps''. A random sample of 25 New Yorkers were asked how much they sleep they get per night. Does these data providing convincing evidence that New Yorkers on average sleep less than 8 hours per night? 
+
+\vspace{2.5cm}
+
+2.  A study suggests that 25% of 25 year-olds have gotten married. You believe that this is incorrect and decide to conduct your own analysis. 
+
+\vspace{2.5cm}
+
+## Do a minority of Middlebury students drink coffee regularly?
+
+#### Hypotheses, significance level, and data (steps 1 and 2)
+
+\vspace{0.5cm}
 
 $H_{0}:$
 
+\vspace{0.5cm}
+
 $H_{A}:$
+
+\vspace{0.5cm}
+
 
 $\alpha=$
 
@@ -20,16 +71,16 @@ The following is our data:
 
 ```{r}
 x <- c(rep(1, 7), rep(0, 13)) 
-n <- length(x) 
 p_hat <- mean(x)
 ```
 
-### Simulating under the null (step 3)
+#### Simulating under the null (step 3)
 
 ```{r}
+#| code-line-numbers: true
 set.seed(2) 
 B <- 5000 
-n <- length(x)
+n <- length(x) 
 null_props <- rep(NA, B) 
 for(b in 1:B){
   null_samp <- sample(x = c("pink", "purple"), 
@@ -40,11 +91,11 @@ for(b in 1:B){
 }
 ```
 
-\clearpage
+\vspace{0.25cm}
 
 Visualize the null distribution of $\hat{p}$:
 
-```{r echo = F, fig.height=3}
+```{r echo = F, fig.height=2.75}
 null_dist <- data.frame(p_null = null_props) |>
   ggplot(aes(x = p_null)) +
   geom_histogram(binwidth = 0.05,col = "white")+
@@ -55,13 +106,24 @@ null_dist
 
 ```
 
+\clearpage 
+
+What does "as or more extreme" mean in this problem?
+
+\vspace{3cm}
+
 p-value:
 
-### Conclusion in context (step 4)
+#### Conclusion in context (step 4)
 
 Decision and rationale:
 
+\vspace{2cm}
+
 Conclusion in context:
+
+\vspace{2cm}
+
 
 ### Possible scenarios
 
