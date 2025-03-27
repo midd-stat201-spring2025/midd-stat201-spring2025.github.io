@@ -1,0 +1,68 @@
+---
+title: "Introduction to Hypothesis Testing"
+date: "March 27, 2025"
+format: pdf
+---
+
+```{r message = F, include = F}
+library(tidyverse)
+```
+
+### Hypotheses and significance level (steps 1 and 2)
+
+$H_{0}:$
+
+$H_{A}:$
+
+$\alpha=$
+
+The following is our data:
+
+```{r}
+x <- c(rep(1, 7), rep(0, 13)) 
+n <- length(x) 
+p_hat <- mean(x)
+```
+
+### Simulating under the null (step 3)
+
+```{r}
+set.seed(2) 
+B <- 5000 
+n <- length(x)
+null_props <- rep(NA, B) 
+for(b in 1:B){
+  null_samp <- sample(x = c("pink", "purple"), 
+                      size = n,
+                      replace = T, 
+                      prob = c(0.5, 0.5))
+  null_props[b] <- sum(null_samp == "pink")/n
+}
+```
+
+\clearpage
+
+Visualize the null distribution of $\hat{p}$:
+
+```{r echo = F, fig.height=3}
+null_dist <- data.frame(p_null = null_props) |>
+  ggplot(aes(x = p_null)) +
+  geom_histogram(binwidth = 0.05,col = "white")+
+  scale_x_continuous(breaks = seq(0,1,0.1)) +
+  labs(x = "Sample proportion drink coffee", title = "Null distribution",
+       caption = "pink line = observed sample proportion") 
+null_dist 
+
+```
+
+p-value:
+
+### Conclusion in context (step 4)
+
+Decision and rationale:
+
+Conclusion in context:
+
+### Possible scenarios
+
+![](figs/13-error_table_empty.png){fig-align="center" width="419"}

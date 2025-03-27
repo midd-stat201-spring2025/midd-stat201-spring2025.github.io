@@ -7340,7 +7340,7 @@
     "href": "slides/slides-14-bootstrap-ci.html#answering-estimation-question",
     "title": "Bootstrap Confidence Intervals",
     "section": "Answering estimation question",
-    "text": "Answering estimation question\n\nGreat…but what do we do with the bootstrap distribution?\nRecall our research question: What proportion of STAT 201A drink coffee regularly?\n\nCould respond using our single point estimate: \\(\\hat{p} = 0.35\\)\nBut due to variability, we recognize that the point estimate will rarely (if ever) equal population parameter\n\nRather than report a single number, why not report a range of values?\n\n\nThis is possible only if we have a sampling distribution to work with!!"
+    "text": "Answering estimation question\n\nGreat…but what do we do with the bootstrap distribution?\nRecall our research question: What proportion of STAT 201A drink coffee regularly?\n\nCould respond using our single point estimate: \\(\\hat{p} = 0.2\\)\nBut due to variability, we recognize that the point estimate will rarely (if ever) equal population parameter\n\nRather than report a single number, why not report a range of values?\n\n\nThis is possible only if we have a sampling distribution to work with!!"
   },
   {
     "objectID": "slides/slides-14-bootstrap-ci.html#confidence-intervals",
@@ -7431,91 +7431,91 @@
     "href": "slides/slides-15-intro-testing.html#testing",
     "title": "Introduction to Hypothesis Testing",
     "section": "Testing",
-    "text": "Testing\nWe are now entering into second branch of inference-related tasks: testing.\n\nWe have some “claim”/question about the target population, and we use sampled data to provide evidence for or against the claim/question.\nEspecially important in experiments where we want to learn the effect of some new drug\nWe will use the hypothesis testing framework to formalize the process of making decisions about research claims.\n\nBecause claim is about target population, we will almost always formulate claims in terms of population parameters\nThen we use sample statistics to provide the evidence for/against"
+    "text": "Testing\nWe are now entering into second branch of inference-related tasks: testing.\n\nWe have some “claim”/question about the target population, and we use sampled data to provide evidence for or against the claim\n\nEspecially important in medicine\n\nWe will use the hypothesis testing framework to formalize the process of making decisions about research claims.\n\nBecause the claim is about target population, we will almost always formulate claims in terms of population parameters\nThen we use sampled data to provide the evidence for/against"
   },
   {
     "objectID": "slides/slides-15-intro-testing.html#step-1-define-hypotheses",
     "href": "slides/slides-15-intro-testing.html#step-1-define-hypotheses",
     "title": "Introduction to Hypothesis Testing",
     "section": "Step 1: Define hypotheses",
-    "text": "Step 1: Define hypotheses\nA hypothesis test is a statistical technique used to evaluate competing claims using data\n\nWe define hypotheses to translate our research question/claim into statistical notation\nWe always define two hypotheses in context: a null hypothesis and an alternative hypothesis\nNull hypothesis \\(H_{0}\\): the hypothesis that represents “business as usual”/status quo/nothing unusual or noteworthy\nAlternative hypothesis \\(H_{A}\\): claim the researchers want to demonstrate\n\n\nIt will not always be obvious what \\(H_{0}\\) should be, but you will develop intuition for this over time!"
+    "text": "Step 1: Define hypotheses\nA hypothesis test is a statistical technique used to evaluate competing claims using data\n\nWe define hypotheses to translate our research question/claim into statistical notation\nWe always define two hypotheses in context: a null hypothesis and an alternative hypothesis\nNull hypothesis \\(H_{0}\\): hypothesis that represents “business as usual”/status quo/nothing unusual or noteworthy\nAlternative hypothesis \\(H_{A}\\): claim the researchers want to demonstrate\n\n\nIt will not always be obvious what the hypotheses should be, but you will develop intuition for this over time!"
   },
   {
     "objectID": "slides/slides-15-intro-testing.html#defining-hypotheses-in-context",
     "href": "slides/slides-15-intro-testing.html#defining-hypotheses-in-context",
     "title": "Introduction to Hypothesis Testing",
     "section": "Defining hypotheses in context",
-    "text": "Defining hypotheses in context\nResearch question: do the majority of STAT 201A/STAT 201B students get at least 7 hours of sleep?\n\nDefine \\(p\\) as the true proportion of STAT 201A/STAT 201B who get at least 7 hours of sleep on average\n\n\n\n\\(H_{0}\\): \\(p \\leq 0.5\\)\n\\(H_{A}\\): \\(p > 0.5\\)"
+    "text": "Defining hypotheses in context\nResearch question: do the minority of Middlebury students drink coffee regularly?\n\nDefine \\(p\\) as the true proportion of Middlebury students who drink coffee regularly\n\nTry to write down our null and alternative hypotheses in terms of \\(p\\)!\n\n\n\\(H_{0}:\\ p = 0.5\\) versus \\(H_{A}:\\ p < 0.5\\)"
   },
   {
     "objectID": "slides/slides-15-intro-testing.html#step-2-collect-and-summarize-data",
     "href": "slides/slides-15-intro-testing.html#step-2-collect-and-summarize-data",
     "title": "Introduction to Hypothesis Testing",
     "section": "Step 2: Collect and summarize data",
-    "text": "Step 2: Collect and summarize data\nSuppose I collect a sample of \\(n= 10\\) students from each class:\n\n\n\n\n\nIn STAT 201A sample: 6 students received at least 7 hours of sleep, and 4 received less than 7 hours\n\nSample statistic: \\(\\hat{p}\\): 0.6\n\n\nIn STAT 201B sample: 7 students received at least 7 hours of sleep, and 3 received less than 7 hours\n\nSample statistic: \\(\\hat{p}\\): 0.7\n\n\n\n\n\nAre we prepared to answer our research question based on this evidence?\n\nDue to variability in data and \\(\\hat{p}\\) we should ask: do the data provide convincing evidence that the majority of students get at least 7 hours of sleep?"
+    "text": "Step 2: Collect and summarize data\n\n\n\nOur sample is the convenience sample I took of our class: 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, where 1 = “yes” and 0 = “no”.\n\nPoint estimate: \\(\\hat{p}_{obs} = 0.35\\)\n\nAre we prepared to answer our research question based on this evidence?\n\nNO! Due to variability, we should ask: do the data provide convincing evidence that the minority of Middlebury students drink coffee regularly?"
   },
   {
     "objectID": "slides/slides-15-intro-testing.html#step-3-determine-if-we-have-convincing-evidence",
     "href": "slides/slides-15-intro-testing.html#step-3-determine-if-we-have-convincing-evidence",
     "title": "Introduction to Hypothesis Testing",
     "section": "Step 3: Determine if we have “convincing evidence”",
-    "text": "Step 3: Determine if we have “convincing evidence”\n“Convincing evidence” for us means that it would be highly unlikely to observe the data we did (or data even more extreme) if \\(H_{0}\\) were true!\n\nWe will calculate a p-value: the probability of observing data as or more extreme than we did assuming \\(H_{0}\\) true\n\nNote: p is not the same as true proportion \\(p\\)!\n\nHighly unlikely is vague and needs to defined by the researcher, ideally before seeing data.\n\nIf we want to answer the research question with a binary yes/no, we need some threshold to compare the p-value to. This is called a significance level \\(\\alpha\\)\nCommon choices are \\(\\alpha = 0.05\\), \\(\\alpha = 0.01\\) (more on this later)!\n\nFor our example, we will choose \\(\\alpha = 0.05\\)"
+    "text": "Step 3: Determine if we have “convincing evidence”\n“Convincing evidence” for us means that it would be highly unlikely to observe the data we did (or data even more extreme) if \\(H_{0}\\) were true!\n\nWe will calculate a p-value: the probability of observing data as or more extreme than we did, assuming \\(H_{0}\\) true\n\nNote: p in “p-value” is not the same as parameter \\(p\\)!\nThis is a conditional probability: we condition on \\(H_{0}\\) true\n\nHighly unlikely is vague and needs to defined by the researcher, ideally before seeing data.\n\nIf we want to provide a yes/no answer to the research question, we need some threshold to compare the p-value to. This is called a significance level \\(\\alpha\\)\nCommon choices are \\(\\alpha = 0.05\\), \\(\\alpha = 0.01\\) (more on this later)!\n\nFor our example, we will choose \\(\\alpha = 0.05\\)"
   },
   {
     "objectID": "slides/slides-15-intro-testing.html#how-to-obtain-p-value",
     "href": "slides/slides-15-intro-testing.html#how-to-obtain-p-value",
     "title": "Introduction to Hypothesis Testing",
     "section": "How to obtain p-value?",
-    "text": "How to obtain p-value?\n\nHow to obtain this probability? It depends!\n\nOption 1: if we have assumptions about how our data behave, we can obtain this probability using theory/math (next week)\nOption 2: if we don’t want to make assumptions, why not simulate?\n\nWe will call this option “simulating under \\(H_{0}\\)”\n\n\n\nThis is the step that requires the most “work”, and what exactly you do will depend on the the type of data and the research question/claim you have\n\nRemark: hypothesis tests, like confidence intervals, are not unique!"
+    "text": "How to obtain p-value?\n\nHow to obtain this probability?\nNeed access to a distribution that corresponds to a world where \\(H_{0}\\) is true (i.e. the null distribution)\n\nOption 1: if we have assumptions about how our data behave, we can obtain this distribution using theory/math (next week)\nOption 2: if we don’t want to make assumptions, why not simulate?\n\nWe will call this option “simulating under \\(H_{0}\\)”\n\n\n\nThis is the step that requires the most “work”, and what exactly you do will depend on the the type of data and the research question/claim you have"
   },
   {
     "objectID": "slides/slides-15-intro-testing.html#simulating-under-h_0-step-3-cont.",
     "href": "slides/slides-15-intro-testing.html#simulating-under-h_0-step-3-cont.",
     "title": "Introduction to Hypothesis Testing",
     "section": "Simulating under \\(H_{0}\\) (step 3 cont.)",
-    "text": "Simulating under \\(H_{0}\\) (step 3 cont.)\n\nWe have to simulate our data under the assumption that \\(H_{0}\\) is true (recall \\(H_0\\): \\(p \\leq 0.5\\))\nImagine a big bag with pink and purple slips of paper\n\nPink = people who got at least 7 hours of sleep\nPurple = people who got less than 7 hours\n\nWhat proportion of the slips in the bowl should be pink vs purple?\n\nTo simulate under \\(H_{0}\\), no more than 50% of the slip should be pink\n\nWe want convincing evidence even in the most “borderline” case, so we will choose 50% of the slips to be pink."
+    "text": "Simulating under \\(H_{0}\\) (step 3 cont.)\n\nWe have to simulate our data under the assumption that \\(H_{0}\\) is true (recall \\(H_0\\): \\(p = 0.5\\))\nImagine a big bag filled with many slips of pink and purple slips of paper\n\nPink = coffee-drinkers\nPurple = non-coffee-drinkers\n\n\n\n\nTo simulate under \\(H_{0}\\), what proportion of the slips in the bag should be pink vs purple?\n\n\n\nTo simulate under \\(H_{0}: p = 0.50\\), half of the slips should be pink!"
   },
   {
     "objectID": "slides/slides-15-intro-testing.html#simulating-under-h_0-step-3-cont.-1",
     "href": "slides/slides-15-intro-testing.html#simulating-under-h_0-step-3-cont.-1",
     "title": "Introduction to Hypothesis Testing",
     "section": "Simulating under \\(H_{0}\\) (step 3 cont.)",
-    "text": "Simulating under \\(H_{0}\\) (step 3 cont.)\n\nActivity: we now replicate our original sample, this time sampling from this bag of paper slips\n\nWe repeatedly take samples from the null distribution, using original sample size \\(n =\\) 10\nFor each sample, calculate the simulated proportion of pink slips, \\(\\hat{p}_{sim}\\)\n\nLive code?\n\n\n\nset.seed(2) # reproducibility\nB <- 5000 # number of simulations to do to gather enough evidence\nn <- 10 # size of our original sample\np_null_vec <- rep(NA, B) # vector to store the simulated proportions\nfor(b in 1:B){\n  # sample() takes a random sample\n  null_samp <- sample(x = c(\"pink\", \"purple\"), # pink and purple slips\n                      size = n, # sample of size n\n                      replace = T, # tell R that my bowl has infinitely many marbles \n                      prob = c(0.5, 0.5)) # 50% of slips are pink and 50% are purple\n  \n  # calculate and store the proportion of pink slips in this simulation\n  p_null_vec[b] <- sum(null_samp == \"pink\")/n\n}"
+    "text": "Simulating under \\(H_{0}\\) (step 3 cont.)\n\nTo simulate under \\(H_{0}\\), we replicate our original sample, this time sampling from this “null world” bag of paper slips\n\nRepeatedly take samples from this null distribution using original sample size \\(n =\\) 20\nFor each sample, calculate the simulated proportion of pink slips\n\nLive code?\n\n\n\nset.seed(2)\nB <- 5000 \nn <- length(x)\np_null_vec <- rep(NA, B)\nfor(b in 1:B){\n  null_samp <- sample(x = c(\"pink\", \"purple\"), \n                      size = n,\n                      replace = T,\n                      prob = c(0.5, 0.5)) \n  p_null_vec[b] <- sum(null_samp == \"pink\")/n\n}"
   },
   {
     "objectID": "slides/slides-15-intro-testing.html#null-distribution-of-statistic",
     "href": "slides/slides-15-intro-testing.html#null-distribution-of-statistic",
     "title": "Introduction to Hypothesis Testing",
     "section": "Null distribution of statistic",
-    "text": "Null distribution of statistic\nWe can visualize the distribution of \\(\\hat{p}_{sim}\\) assuming \\(H_{0}\\) true:\n\n\n\n\n\n\nThis is called the null distribution of the sample statistic, which is the distribution of the statistic assuming \\(H_{0}\\) is true\n\nWhere is the null distribution of \\(\\hat{p}\\) centered? Why does that “make sense”?"
+    "text": "Null distribution of statistic\nWe can visualize the distribution of \\(\\hat{p}\\) assuming \\(H_{0}\\) true:\n\n\nThis is called the null distribution of the sample statistic, which is the distribution of the statistic \\(\\hat{p}\\) assuming \\(H_{0}\\) is true\n\nWhere is this null distribution of \\(\\hat{p}\\) centered? Why does that “make sense”?"
   },
   {
     "objectID": "slides/slides-15-intro-testing.html#comparing-null-to-observed",
     "href": "slides/slides-15-intro-testing.html#comparing-null-to-observed",
     "title": "Introduction to Hypothesis Testing",
     "section": "Comparing null to observed",
-    "text": "Comparing null to observed\nLet’s return to our original goal of Step 3! We need to find the p-value: the probability of observing data as or more extreme as ours, assuming \\(H_{0}\\) were true.\n\nOur observed data were \\(\\hat{p} =\\) 0.6 (STAT 201A) or \\(\\hat{p} =\\) 0.7 (STAT 201B)\n\\(H_{0}\\): \\(p \\leq 0.5\\) and \\(H_{A}\\): \\(p > 0.5\\)\n\nWhat does “as or more extreme” mean in this context?\nHow can we use the null distribution to obtain this probability?"
+    "text": "Comparing null to observed\nLet’s return to our original goal of Step 3! We need to find the p-value: the probability of observing data as or more extreme as ours, assuming \\(H_{0}\\) were true.\n\nOur observed point estimate was \\(\\hat{p}_{obs} =\\) 0.35\n\\(H_{0}\\): \\(p = 0.5\\) and \\(H_{A}\\): \\(p < 0.5\\)\n\n\n\n\n\nWhat does “as or more extreme” mean in this context?\nHow can we use the null distribution to obtain this probability?"
   },
   {
     "objectID": "slides/slides-15-intro-testing.html#obtain-p-value-step-3-cont.",
     "href": "slides/slides-15-intro-testing.html#obtain-p-value-step-3-cont.",
     "title": "Introduction to Hypothesis Testing",
     "section": "Obtain p-value (step 3 cont.)",
-    "text": "Obtain p-value (step 3 cont.)\nWe can directly obtain (technically estimate) the p-value using our null distribution and our observed \\(\\hat{p}\\)!\n\n\n\n\n\n\n\n\n\nOut of 5000 replications, we saw 1946 instances of \\(\\hat{p}_{sim} \\geq \\hat{p}\\)\np-value is \\(\\frac{ 1946}{5000} \\approx\\) 0.39\n\n\n\n\n\n\n\n\nOut of 5000 replications, we saw 853 instances of \\(\\hat{p}_{sim} \\geq \\hat{p}\\)\np-value is \\(\\frac{ 853}{5000} \\approx\\) 0.17"
+    "text": "Obtain p-value (step 3 cont.)\nWe can directly estimate the p-value using our null distribution and our observed \\(\\hat{p}\\)!\n\n\nOut of 5000 replications, we saw 643 instances of \\(\\hat{p} \\leq \\hat{p}_{obs}\\)\np-value is \\(\\frac{ 643}{5000} \\approx\\) 0.13"
   },
   {
     "objectID": "slides/slides-15-intro-testing.html#step-4-interpret-p-value-and-make-decision",
     "href": "slides/slides-15-intro-testing.html#step-4-interpret-p-value-and-make-decision",
     "title": "Introduction to Hypothesis Testing",
     "section": "Step 4: Interpret p-value and make decision",
-    "text": "Step 4: Interpret p-value and make decision\n\nInterpret the p-value in context\n\n\nAssuming \\(H_{0}\\) true, the probability of observing a sample proportion as or more extreme as ours (0.6 or 0.7) is 0.39 or 0.17\n\n\nMake a decision about research claim/question by comparing p-value to significance level \\(\\alpha\\)\n\nIf p-value \\(< \\alpha\\), we reject \\(H_{0}\\) (it was highly unlikely to observe our data given our selected threshold)\nIf p-value \\(\\geq \\alpha\\), we fail to reject \\(H_{0}\\) (we did not have enough evidence against the null)\n\n\nNote: we never “accept \\(H_{A}\\)”!\n\n\n\nSince our p value is greater than \\(\\alpha = 0.05\\), we fail to reject \\(H_{0}\\). The data do not provide sufficient evidence to suggest that the majority of STAT 201A/STAT 201B students get more than 7 hours of sleep."
+    "text": "Step 4: Interpret p-value and make decision\n\nInterpret the p-value 0.1286 in context\n\n\nAssuming \\(H_{0}\\) true, the probability of observing a sample proportion as or more extreme as our 0.35 is approximately 0.13\n\n\nMake a decision about research claim/question by comparing p-value to significance level \\(\\alpha\\)\n\nIf p-value \\(< \\alpha\\), we reject \\(H_{0}\\) (it was highly unlikely to observe our data given \\(H_{0}\\) and our selected threshold)\nIf p-value \\(\\geq \\alpha\\), we fail to reject \\(H_{0}\\) (not have enough evidence against the null)\n\n\nNote: we never “accept \\(H_{A}\\)”!\n\n\n\nSince our p value is greater than \\(\\alpha = 0.05\\), we fail to reject \\(H_{0}\\). The data do not provide sufficient evidence to suggest that the minority of Middlebury students drink coffee regularly."
   },
   {
     "objectID": "slides/slides-15-intro-testing.html#summary-of-testing-framework",
     "href": "slides/slides-15-intro-testing.html#summary-of-testing-framework",
     "title": "Introduction to Hypothesis Testing",
     "section": "Summary of testing framework",
-    "text": "Summary of testing framework\nFour steps for hypothesis test:\n\nDefine null and alternative hypotheses \\(H_{0}\\) and \\(H_{A}\\) in context\nCollect data and set significance level \\(\\alpha\\)\nObtain/estimate p-value by modeling randomness that would occur if the \\(H_{0}\\) were true\n\nWe did this using by simulating under the null distribution\n\nInterpret p-value and make a decision in context"
+    "text": "Summary of testing framework\nFour steps for hypothesis test:\n\nDefine null and alternative hypotheses \\(H_{0}\\) and \\(H_{A}\\) in context\nCollect data and set significance level \\(\\alpha\\)\nObtain the null distribution of the statistic and use it to obtain/estimate p-value\n\nWe did this using by simulating\n\nInterpret p-value and make a decision in context"
   },
   {
     "objectID": "slides/slides-15-intro-testing.html#errors-in-decision",
@@ -7537,5 +7537,19 @@
     "title": "Introduction to Hypothesis Testing",
     "section": "Comprehension questions",
     "text": "Comprehension questions\n\nWhat are the similarities/differences between the bootstrap distribution of a sample statistic and the simulated null distribution?\nDo you understand what a p-value represents, and how we obtain it from the null distribution?\nWhat role does \\(\\alpha\\) play? Why is it important to set \\(\\alpha\\) early on?"
+  },
+  {
+    "objectID": "slides/slides-15-intro-testing.html#housekeeping",
+    "href": "slides/slides-15-intro-testing.html#housekeeping",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Housekeeping",
+    "text": "Housekeeping\n\nDataFest groups!"
+  },
+  {
+    "objectID": "slides/slides-15-intro-testing.html#hypothesis-testing-framework",
+    "href": "slides/slides-15-intro-testing.html#hypothesis-testing-framework",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Hypothesis testing framework",
+    "text": "Hypothesis testing framework\nFour stages (we will step through each one):\n\nDefine your hypotheses\nCollect data, set a significance level\nDetermine strength of evidence (null distribution, p-value)\nMake decision and conclusion in context"
   }
 ]

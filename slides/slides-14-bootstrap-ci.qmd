@@ -151,7 +151,7 @@ ggplot(sampling_df, aes(x = props)) +
 
 -   Recall our research question: What proportion of STAT 201A drink coffee regularly?
 
-    -   Could respond using our single point estimate: $\hat{p} = `r mu_a`$
+    -   Could respond using our single point estimate: $\hat{p} = `r mean(x)`$
 
     -   But due to variability, we recognize that the point estimate will rarely (if ever) equal population parameter
 
