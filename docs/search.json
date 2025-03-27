@@ -7480,7 +7480,7 @@
     "href": "slides/slides-15-intro-testing.html#simulating-under-h_0-step-3-cont.-1",
     "title": "Introduction to Hypothesis Testing",
     "section": "Simulating under \\(H_{0}\\) (step 3 cont.)",
-    "text": "Simulating under \\(H_{0}\\) (step 3 cont.)\n\nTo simulate under \\(H_{0}\\), we replicate our original sample, this time sampling from this “null world” bag of paper slips\n\nRepeatedly take samples from this null distribution using original sample size \\(n =\\) 20\nFor each sample, calculate the simulated proportion of pink slips\n\nLive code?\n\n\n\nset.seed(2)\nB <- 5000 \nn <- length(x)\np_null_vec <- rep(NA, B)\nfor(b in 1:B){\n  null_samp <- sample(x = c(\"pink\", \"purple\"), \n                      size = n,\n                      replace = T,\n                      prob = c(0.5, 0.5)) \n  p_null_vec[b] <- sum(null_samp == \"pink\")/n\n}"
+    "text": "Simulating under \\(H_{0}\\) (step 3 cont.)\n\nTo simulate under \\(H_{0}\\), we replicate our original sample, this time sampling from this “null world” bag of paper slips\n\nRepeatedly take samples from this null distribution using original sample size \\(n =\\) 20\nFor each sample, calculate the simulated proportion of pink slips\n\nLive code?\n\n\n\nset.seed(2)\nB <- 5000 \nn <- length(x)\nnull_props <- rep(NA, B)\nfor(b in 1:B){\n  null_samp <- sample(x = c(\"pink\", \"purple\"), \n                      size = n,\n                      replace = T,\n                      prob = c(0.5, 0.5)) \n  null_props[b] <- sum(null_samp == \"pink\")/n\n}"
   },
   {
     "objectID": "slides/slides-15-intro-testing.html#null-distribution-of-statistic",
@@ -7578,13 +7578,13 @@
     "href": "slides/slides-15-intro-testing.html#practice-in-defining-hypotheses-3",
     "title": "Introduction to Hypothesis Testing",
     "section": "Practice in defining hypotheses",
-    "text": "Practice in defining hypotheses\nNew York is known as “the city that never sleeps’’. A random sample of 25 New Yorkers were asked how much they sleep they get per night. Does these data providing convincing evidence that New Yorkers on average sleep less than 8 hours per night?\n\nWords\n\n\\(H_0\\): New Yorkers sleep an average of 8 hours per night\n\\(H_{A}:\\) New Yorkers sleep an average of less than 8 hours per night\n\nNotation: let \\(\\mu\\) be the average hours of sleep of New Yorkers\n\n\\(H_{0}: \\mu = 8\\)\n\\(H_{0}: \\mu < 8\\)"
+    "text": "Practice in defining hypotheses\nNew York is known as “the city that never sleeps’’. A random sample of 25 New Yorkers were asked how much they sleep they get per night. Does these data providing convincing evidence that New Yorkers on average sleep less than 8 hours per night?\n\nWords\n\n\\(H_0\\): New Yorkers sleep an average of 8 hours per night\n\\(H_{A}:\\) New Yorkers sleep an average of less than 8 hours per night\n\nNotation: let \\(\\mu\\) be the average hours of sleep of New Yorkers\n\n\\(H_{0}: \\mu = 8\\)\n\\(H_{A}: \\mu < 8\\)"
   },
   {
     "objectID": "slides/slides-15-intro-testing.html#practice-in-defining-hypotheses-4",
     "href": "slides/slides-15-intro-testing.html#practice-in-defining-hypotheses-4",
     "title": "Introduction to Hypothesis Testing",
     "section": "Practice in defining hypotheses",
-    "text": "Practice in defining hypotheses\nA study suggests that 25% of 25 year-olds in the US have gotten married. You believe that this is incorrect and decide to conduct your own analysis.\n\nWords\n\n\\(H_0\\): the proportion of 25 year-olds in the US who are married is 0.25\n\\(H_{A}:\\) the proportion of 25 year-olds in the US who are married is not 0.25\n\nNotation: let \\(p\\) be the proportion of 25 year-olds in the US who are married\n\n\\(H_{0}: p = 0.25\\)\n\\(H_{0}: p \\neq 0.25\\)"
+    "text": "Practice in defining hypotheses\nA study suggests that 25% of 25 year-olds in the US have gotten married. You believe that this is incorrect and decide to conduct your own analysis.\n\nWords\n\n\\(H_0\\): the proportion of 25 year-olds in the US who are married is 0.25\n\\(H_{A}:\\) the proportion of 25 year-olds in the US who are married is not 0.25\n\nNotation: let \\(p\\) be the proportion of 25 year-olds in the US who are married\n\n\\(H_{0}: p = 0.25\\)\n\\(H_{A}: p \\neq 0.25\\)"
   }
 ]

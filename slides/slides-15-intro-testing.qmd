@@ -137,7 +137,7 @@ New York is known as "the city that never sleeps''. A random sample of 25 New Yo
 -   Notation: let $\mu$ be the average hours of sleep of New Yorkers
 
     -   $H_{0}: \mu = 8$
-    -   $H_{0}:  \mu < 8$
+    -   $H_{A}:  \mu < 8$
 
 ## Practice in defining hypotheses
 
@@ -151,7 +151,7 @@ A study suggests that 25% of 25 year-olds in the US have gotten married. You bel
 -   Notation: let $p$ be the proportion of 25 year-olds in the US who are married
 
     -   $H_{0}: p = 0.25$
-    -   $H_{0}:  p \neq 0.25$
+    -   $H_{A}:  p \neq 0.25$
 
 ## Defining hypotheses in context
 
@@ -247,13 +247,13 @@ Our sample is the convenience sample I took of our class: `r x`, where 1 = "yes"
 set.seed(2)
 B <- 5000 
 n <- length(x)
-p_null_vec <- rep(NA, B)
+null_props <- rep(NA, B)
 for(b in 1:B){
   null_samp <- sample(x = c("pink", "purple"), 
                       size = n,
                       replace = T,
                       prob = c(0.5, 0.5)) 
-  p_null_vec[b] <- sum(null_samp == "pink")/n
+  null_props[b] <- sum(null_samp == "pink")/n
 }
 ```
 :::
@@ -263,7 +263,7 @@ for(b in 1:B){
 We can visualize the distribution of $\hat{p}$ assuming $H_{0}$ true:
 
 ```{r}
-null_dist <- data.frame(p_null = p_null_vec) |>
+null_dist <- data.frame(p_null = null_props) |>
   ggplot(aes(x = p_null)) +
   geom_histogram(binwidth = 0.05,col = "white")+
   scale_x_continuous(breaks = seq(0,1,0.1)) +
@@ -312,7 +312,7 @@ null_dist +
 We can directly estimate the p-value using our null distribution and our observed $\hat{p}$!
 
 ```{r}
-data.frame(p_null = p_null_vec) |>
+data.frame(p_null = null_props) |>
   mutate(greater = p_null <= p_hat) |>
   ggplot(aes(x = p_null, fill = greater)) +
   geom_histogram(binwidth = 0.05,col = "white", alpha = 0.5)+
@@ -324,11 +324,11 @@ data.frame(p_null = p_null_vec) |>
   scale_fill_manual(values = c("grey30", "pink"))+
   guides(fill = "none")
 
-p_val <- sum(p_null_vec <= p_hat)/B
+p_val <- sum(null_props <= p_hat)/B
 ```
 
--   Out of `r B` replications, we saw `r sum(p_null_vec <= p_hat)` instances of $\hat{p} \leq \hat{p}_{obs}$
--   p-value is $\frac{ `r sum(p_null_vec <= p_hat)`}{`r B`} \approx$ `r round(p_val, 2)`
+-   Out of `r B` replications, we saw `r sum(null_props <= p_hat)` instances of $\hat{p} \leq \hat{p}_{obs}$
+-   p-value is $\frac{ `r sum(null_props <= p_hat)`}{`r B`} \approx$ `r round(p_val, 2)`
 
 ## Step 4: Interpret p-value and make decision
 
