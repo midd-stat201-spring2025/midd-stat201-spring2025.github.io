@@ -59,6 +59,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -128,9 +129,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#group-creation" id="toc-group-creation" class="nav-link" data-scroll-target="#group-creation">Group creation</a></li>
   <li><a href="#datafest-participation" id="toc-datafest-participation" class="nav-link" data-scroll-target="#datafest-participation">DataFest participation</a></li>
   <li><a href="#report" id="toc-report" class="nav-link" data-scroll-target="#report">Report</a></li>
-  <li><a href="#presentation" id="toc-presentation" class="nav-link" data-scroll-target="#presentation">Presentation</a></li>
   </ul></li>
-  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
+  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a>
+  <ul class="collapse">
+  <li><a href="#extra-credit-opportunity" id="toc-extra-credit-opportunity" class="nav-link" data-scroll-target="#extra-credit-opportunity"><strong>Extra credit opportunity</strong></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -158,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="brief-description">Brief description</h2>
 <p>Over the weekend of April 4-6, you will work with a completely new-to-you dataset to answer some research question(s) of interest! More details on the <a href="https://midd-datafest-2025.github.io/home.html">Middlebury DataFest website</a>!</p>
 <p>In small groups, you will work to answer the research question(s) of interest using methods we’ve thus far learned in the class.</p>
-<p>Because of the extra time-commitment of DataFest, the problem set associated with Week 7 will be light/combined into a problem set with Week 8!</p>
+<p>Because of the extra time-commitment of DataFest, the problem set associated with Week 7 will be light or maybe combined into a problem set with Week 8!</p>
 </section>
 <section id="key-dates" class="level2">
 <h2 class="anchored" data-anchor-id="key-dates">Key dates</h2>
@@ -197,9 +200,9 @@ ul.task-list li input[type="checkbox"] {
 <td>Sunday 4/6 11:00am</td>
 </tr>
 <tr class="even">
-<td>Project presentations (either rendered report or brief slides)</td>
+<td>Project presentations (optional)</td>
 <td>Q-Center (MBH 202)</td>
-<td>Sunday 4/6 11:00am-1:00pm (depending on time slot)</td>
+<td>Sunday 4/6 11:00am-12:00pm or 12:00pm-1:00pm</td>
 </tr>
 </tbody>
 </table>
@@ -236,14 +239,14 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="report" class="level3">
 <h3 class="anchored" data-anchor-id="report">Report</h3>
-<p>You will be asked to create and submit a well-written report (in the form a rendered <code>.qmd</code>) that answers some or all of the research question(s) using a mix of both:</p>
+<p>You will be asked to create and submit a well-written report (in the form a rendered <code>.qmd</code>) that answers some or all of the research question(s) using a mix of both of the following methods:</p>
 <ol type="1">
 <li><p>Compelling visualizations and summary tables, and</p></li>
-<li><p>Simulation-based techniques (one of which must be in the form of a hypothesis test)</p></li>
+<li><p>Simulation-based inference techniques (at least one of which should be a hypothesis test)</p></li>
 </ol>
 <p>Your report should include:</p>
 <ol type="1">
-<li>A brief introduction</li>
+<li>A brief introduction that includes the research question(s) you plan on answering.</li>
 <li>For each research question of interest:
 <ol type="i">
 <li>Details of cleaning/wrangling of the data you performed to answer the question</li>
@@ -253,20 +256,89 @@ ul.task-list li input[type="checkbox"] {
 <li>A brief conclusion about what you might do differently or things that were particularly challenging</li>
 </ol>
 </section>
-<section id="presentation" class="level3">
-<h3 class="anchored" data-anchor-id="presentation">Presentation</h3>
-<p>Each group will givne an oral presentation of their project to a panel of judges. Prizes will be awarded in several categories. For your presentation, you should either accompany your presentation with:</p>
-<ul>
-<li><p>A brief set of slides (preferred), or</p></li>
-<li><p>Your rendered report</p></li>
-</ul>
-</section>
 </section>
 <section id="grading" class="level2">
 <h2 class="anchored" data-anchor-id="grading">Grading</h2>
-<p>TBD</p>
+<p>This is meant to be a fun and low-stakes assignment that assess your ability to clearly convey a statistical analysis. The report will be graded as follows:</p>
+<table class="table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 83%">
+<col style="width: 3%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>What</th>
+<th>Details</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Introduction</td>
+<td>Includes a brief paragraph introducing any and all data used in the analysis. Also clearly states the research question(s) you plan on answering.</td>
+<td>1.5</td>
+</tr>
+<tr class="even">
+<td>Data cleaning + wrangling description</td>
+<td>Clearly explains how the data were manipulated for the analyses that are subsequently performed, and why you manipulated the data in such a way. This should be at a level of detail where someone could reproduce your cleaning without seeing your actual code.</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>Methodology</td>
+<td>Describes methods used to answer the research question(s) and gives adequate justification for why the method is appropriate.</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>Visualization/table + Interpretation</td>
+<td><p>Compelling and rich. Do not settle for a simple univariate visualization or a frequency table.</p>
+<p>Interprets the visualization with enough detail that someone who is unfamiliar with the data can understand it.</p></td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>Inference technique + interpretation</td>
+<td>Correctly applies the inference techniques that were described in the methods.<br>
+<br>
+Interprets the results in the context of the research question.</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>Conclusion</td>
+<td>Includes a brief concluding paragraph about what could be done differently.</td>
+<td>1.5</td>
+</tr>
+<tr class="odd">
+<td>Writing style</td>
+<td>Clear writing with very few grammatical errors.</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>Reproducibility</td>
+<td>Code is as reproducible as possible. This includes setting seeds and not “hard-coding” values.</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td></td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+<p>These 20 points will be divided by 4 and then incorporated into the your individual final project score. The final project will be out of 125 points. So a 0 on the DataFest project means you could obtain at most 120/125 <span class="math inline">\(\approx 96\%\)</span> on the final project. Once again, I emphasize that this project is low stakes but good practice for the final project!</p>
+<section id="extra-credit-opportunity" class="level3">
+<h3 class="anchored" data-anchor-id="extra-credit-opportunity"><strong>Extra credit opportunity</strong></h3>
+<p>Your project need not only use the methods/functions we’ve learned in this class. Depending on the question/data you work with, you may need or want to teach yourself something new. Groups that successfully teach themselves and/or implement at least one of the following will be eligible for some extra credit points that will count towards Midterm 1. The list is not exhaustive:</p>
+<ul>
+<li>Wrangling dates and times using <code>lubridate</code></li>
+<li>Wrangling text data using <code>tidytext</code></li>
+<li>Visualizing maps/spatial data using <code>geom_sf</code></li>
+<li>Create <code>ggplot()</code>s that use at least two different data frames and <code>geom_xx()</code> functions</li>
+<li>Create an innovative, multivariate visualization that we have not seen as a class</li>
+</ul>
+<p>While there will be mentors at DataFest who can help you, you should take the responsibility of using the internet to learn about some of these methods. Prof.&nbsp;Tang reserves that right to ask clarification questions about any and all code that is in your report.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

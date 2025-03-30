@@ -7151,7 +7151,7 @@
     "href": "datafest.html",
     "title": "DataFest",
     "section": "",
-    "text": "Over the weekend of April 4-6, you will work with a completely new-to-you dataset to answer some research question(s) of interest! More details on the Middlebury DataFest website!\nIn small groups, you will work to answer the research question(s) of interest using methods we’ve thus far learned in the class.\nBecause of the extra time-commitment of DataFest, the problem set associated with Week 7 will be light/combined into a problem set with Week 8!"
+    "text": "Over the weekend of April 4-6, you will work with a completely new-to-you dataset to answer some research question(s) of interest! More details on the Middlebury DataFest website!\nIn small groups, you will work to answer the research question(s) of interest using methods we’ve thus far learned in the class.\nBecause of the extra time-commitment of DataFest, the problem set associated with Week 7 will be light or maybe combined into a problem set with Week 8!"
   },
   {
     "objectID": "datafest.html#brief-description",
@@ -7165,21 +7165,21 @@
     "href": "datafest.html#requirements",
     "title": "DataFest",
     "section": "Requirements",
-    "text": "Requirements\n\nGroup creation\nYou will work in groups of 2-3 people.\nBy the due date listed in the table above, you should either:\n\nform a group of three on your own and then e-mail Prof. Tang your decision, cc-ing everyone in the group\nform a group of two and then e-mail Prof. Tang your decision, cc-ing the other person in the group.\n\nYour group of two may be randomly paired with another person\n\ne-mail Prof. Tang if you don’t have a preference and/or want to meet new people and would like to be randomly placed in a group\n\nWhile not binding, you should view the people you work with on DataFest as people who you might like to work on the final project with.\nOnce all groups have been formed, Prof. Tang will confirm them and we will register for DataFest as a class on Monday 3/31.\n\n\nDataFest participation\n\nYou must attend the DataFest opening ceremony on Friday 4/4 at 6:00pm in the Q-Center. At the ceremony you will learn about the data and the research questions\nIn addition to the opening ceremony, it is my expectation that your group works for at least 3 hours on the project over the course of the weekend.\n\nYour whole group need not work together at the same time, but I highly encourage it all the same!\nYour are certainly welcome to work more than 3 hours!\n\nThere will be plenty of mentors on-site to help you will bugs. Prof. Tang will specifically be there at times TBD.\nYou will be asked to sign-up to present your finalized product to a panel of judges on Sunday 4/6 somewhere between 11am-1pm. Your entire group should attend the presentations (more details below).\n\n\n\nReport\nYou will be asked to create and submit a well-written report (in the form a rendered .qmd) that answers some or all of the research question(s) using a mix of both:\n\nCompelling visualizations and summary tables, and\nSimulation-based techniques (one of which must be in the form of a hypothesis test)\n\nYour report should include:\n\nA brief introduction\nFor each research question of interest:\n\nDetails of cleaning/wrangling of the data you performed to answer the question\nA description of the methods you used to answer the question\nThe actual result+interpretation in context (e.g. a visualization, confidence interval, conduct hypothesis test)\n\nA brief conclusion about what you might do differently or things that were particularly challenging\n\n\n\nPresentation\nEach group will givne an oral presentation of their project to a panel of judges. Prizes will be awarded in several categories. For your presentation, you should either accompany your presentation with:\n\nA brief set of slides (preferred), or\nYour rendered report"
+    "text": "Requirements\n\nGroup creation\nYou will work in groups of 2-3 people.\nBy the due date listed in the table above, you should either:\n\nform a group of three on your own and then e-mail Prof. Tang your decision, cc-ing everyone in the group\nform a group of two and then e-mail Prof. Tang your decision, cc-ing the other person in the group.\n\nYour group of two may be randomly paired with another person\n\ne-mail Prof. Tang if you don’t have a preference and/or want to meet new people and would like to be randomly placed in a group\n\nWhile not binding, you should view the people you work with on DataFest as people who you might like to work on the final project with.\nOnce all groups have been formed, Prof. Tang will confirm them and we will register for DataFest as a class on Monday 3/31.\n\n\nDataFest participation\n\nYou must attend the DataFest opening ceremony on Friday 4/4 at 6:00pm in the Q-Center. At the ceremony you will learn about the data and the research questions\nIn addition to the opening ceremony, it is my expectation that your group works for at least 3 hours on the project over the course of the weekend.\n\nYour whole group need not work together at the same time, but I highly encourage it all the same!\nYour are certainly welcome to work more than 3 hours!\n\nThere will be plenty of mentors on-site to help you will bugs. Prof. Tang will specifically be there at times TBD.\nYou will be asked to sign-up to present your finalized product to a panel of judges on Sunday 4/6 somewhere between 11am-1pm. Your entire group should attend the presentations (more details below).\n\n\n\nReport\nYou will be asked to create and submit a well-written report (in the form a rendered .qmd) that answers some or all of the research question(s) using a mix of both of the following methods:\n\nCompelling visualizations and summary tables, and\nSimulation-based inference techniques (at least one of which should be a hypothesis test)\n\nYour report should include:\n\nA brief introduction that includes the research question(s) you plan on answering.\nFor each research question of interest:\n\nDetails of cleaning/wrangling of the data you performed to answer the question\nA description of the methods you used to answer the question\nThe actual result+interpretation in context (e.g. a visualization, confidence interval, conduct hypothesis test)\n\nA brief conclusion about what you might do differently or things that were particularly challenging"
   },
   {
     "objectID": "datafest.html#grading",
     "href": "datafest.html#grading",
     "title": "DataFest",
     "section": "Grading",
-    "text": "Grading\nTBD"
+    "text": "Grading\nThis is meant to be a fun and low-stakes assignment that assess your ability to clearly convey a statistical analysis. The report will be graded as follows:\n\n\n\n\n\n\n\n\nWhat\nDetails\nPoints\n\n\n\n\nIntroduction\nIncludes a brief paragraph introducing any and all data used in the analysis. Also clearly states the research question(s) you plan on answering.\n1.5\n\n\nData cleaning + wrangling description\nClearly explains how the data were manipulated for the analyses that are subsequently performed, and why you manipulated the data in such a way. This should be at a level of detail where someone could reproduce your cleaning without seeing your actual code.\n3\n\n\nMethodology\nDescribes methods used to answer the research question(s) and gives adequate justification for why the method is appropriate.\n3\n\n\nVisualization/table + Interpretation\nCompelling and rich. Do not settle for a simple univariate visualization or a frequency table.\nInterprets the visualization with enough detail that someone who is unfamiliar with the data can understand it.\n3\n\n\nInference technique + interpretation\nCorrectly applies the inference techniques that were described in the methods.\n\nInterprets the results in the context of the research question.\n4\n\n\nConclusion\nIncludes a brief concluding paragraph about what could be done differently.\n1.5\n\n\nWriting style\nClear writing with very few grammatical errors.\n2\n\n\nReproducibility\nCode is as reproducible as possible. This includes setting seeds and not “hard-coding” values.\n2\n\n\nTotal\n\n20\n\n\n\nThese 20 points will be divided by 4 and then incorporated into the your individual final project score. The final project will be out of 125 points. So a 0 on the DataFest project means you could obtain at most 120/125 \\(\\approx 96\\%\\) on the final project. Once again, I emphasize that this project is low stakes but good practice for the final project!\n\nExtra credit opportunity\nYour project need not only use the methods/functions we’ve learned in this class. Depending on the question/data you work with, you may need or want to teach yourself something new. Groups that successfully teach themselves and/or implement at least one of the following will be eligible for some extra credit points that will count towards Midterm 1. The list is not exhaustive:\n\nWrangling dates and times using lubridate\nWrangling text data using tidytext\nVisualizing maps/spatial data using geom_sf\nCreate ggplot()s that use at least two different data frames and geom_xx() functions\nCreate an innovative, multivariate visualization that we have not seen as a class\n\nWhile there will be mentors at DataFest who can help you, you should take the responsibility of using the internet to learn about some of these methods. Prof. Tang reserves that right to ask clarification questions about any and all code that is in your report."
   },
   {
     "objectID": "datafest.html#key-dates",
     "href": "datafest.html#key-dates",
     "title": "DataFest",
     "section": "Key dates",
-    "text": "Key dates\n\n\n\nDeliverable\nWhat/where\nDate\n\n\n\n\nGroup formation\nEmail Prof. Tang (one per group)\nThursday 3/27 at 11:59pm\n\n\nRegister for DataFest\nDataFest website, “Register” tab (each person must do so)\nMonday 3/31 in class\n\n\nDataFest opening ceremony\nQ-Center (MBH 202)\nFriday 4/4 at 6:00pm\n\n\nWork on DataFest project\nQ-Center (MBH 202)\nAnytime from opening ceremony-Sunday 4/6 11:00am\n\n\nSubmit deliverable\nRendered .qmd report submitted to Canvas\nSunday 4/6 11:00am\n\n\nProject presentations (either rendered report or brief slides)\nQ-Center (MBH 202)\nSunday 4/6 11:00am-1:00pm (depending on time slot)"
+    "text": "Key dates\n\n\n\nDeliverable\nWhat/where\nDate\n\n\n\n\nGroup formation\nEmail Prof. Tang (one per group)\nThursday 3/27 at 11:59pm\n\n\nRegister for DataFest\nDataFest website, “Register” tab (each person must do so)\nMonday 3/31 in class\n\n\nDataFest opening ceremony\nQ-Center (MBH 202)\nFriday 4/4 at 6:00pm\n\n\nWork on DataFest project\nQ-Center (MBH 202)\nAnytime from opening ceremony-Sunday 4/6 11:00am\n\n\nSubmit deliverable\nRendered .qmd report submitted to Canvas\nSunday 4/6 11:00am\n\n\nProject presentations (optional)\nQ-Center (MBH 202)\nSunday 4/6 11:00am-12:00pm or 12:00pm-1:00pm"
   },
   {
     "objectID": "live_code/bootstrap_dist_live.html",
@@ -7586,5 +7586,278 @@
     "title": "Introduction to Hypothesis Testing",
     "section": "Practice in defining hypotheses",
     "text": "Practice in defining hypotheses\nA study suggests that 25% of 25 year-olds in the US have gotten married. You believe that this is incorrect and decide to conduct your own analysis.\n\nWords\n\n\\(H_0\\): the proportion of 25 year-olds in the US who are married is 0.25\n\\(H_{A}:\\) the proportion of 25 year-olds in the US who are married is not 0.25\n\nNotation: let \\(p\\) be the proportion of 25 year-olds in the US who are married\n\n\\(H_{0}: p = 0.25\\)\n\\(H_{A}: p \\neq 0.25\\)"
+  },
+  {
+    "objectID": "slides/slides-16-randomization.html#housekeeping",
+    "href": "slides/slides-16-randomization.html#housekeeping",
+    "title": "Hypothesis Testing via Randomization",
+    "section": "Housekeeping",
+    "text": "Housekeeping\n\nOffice hours change this week"
+  },
+  {
+    "objectID": "slides/slides-16-randomization.html#where-were-going-today",
+    "href": "slides/slides-16-randomization.html#where-were-going-today",
+    "title": "Hypothesis Testing via Randomization",
+    "section": "Where we’re going today",
+    "text": "Where we’re going today\n\nWe will see another kinds of hypotheses for different types of research questions\nHypothesis testing framework is the same, but will change how we obtain null distribution\nTry to see the big picture"
+  },
+  {
+    "objectID": "slides/slides-16-randomization.html#running-example-sex-discrimination-study",
+    "href": "slides/slides-16-randomization.html#running-example-sex-discrimination-study",
+    "title": "Hypothesis Testing via Randomization",
+    "section": "Running example: sex discrimination study",
+    "text": "Running example: sex discrimination study\n\nNote: this study considered sex as binary “male” or “female”, and did not take into consideration gender identities\nParticipants in the study were 48 bank supervisors who identified as male and were attending a management institute at UNC in 1972\n\nEach supervisor was asked to assume the role of personnel director of a bank\nEach given a file to judge whether the person in the file should be promoted\nThe files were identical, except half of them indicated that the candidate was male, and the other half were indicated as female\nFiles were randomly assigned to bank managers\n\nExperiment or observational study?\n\n\n\nResearch question: Are individuals who identify their sex as female discriminated against in promotion decisions made by their managers who identify as male?"
+  },
+  {
+    "objectID": "slides/slides-16-randomization.html#defining-hypotheses",
+    "href": "slides/slides-16-randomization.html#defining-hypotheses",
+    "title": "Hypothesis Testing via Randomization",
+    "section": "Defining hypotheses",
+    "text": "Defining hypotheses\n\nResearch question: Are individuals who identify their sex as female discriminated against in promotion decisions made by their managers who identify as male?\n\n\n\nWhat is/are the variables(s) here? What types of variables are they?\n\nWe need to construct hypotheses where \\(H_{0}\\) is “status quo” and \\(H_{A}\\) is the claim researchers have\n\\(H_{0}\\): the variables sex and decision are independent.\n\ni.e. any observed difference in promotion rates is due to variability\n\n\\(H_{A}\\): the variables sex and decision are not independent, and equally-qualified female personnel are less likely to be promoted than male personnel"
+  },
+  {
+    "objectID": "slides/slides-16-randomization.html#data",
+    "href": "slides/slides-16-randomization.html#data",
+    "title": "Hypothesis Testing via Randomization",
+    "section": "Data",
+    "text": "Data\nFor each of the 48 supervisors, the following were recorded:\n\nThe sex of the candidate in the file (male/female)\nThe decision (promote/not promote)\n\n\n\n\n\n\n \n  \n    sex \n    not promote \n    promote \n    total \n  \n \n\n  \n    female \n    10 \n    14 \n    24 \n  \n  \n    male \n    3 \n    21 \n    24 \n  \n  \n    total \n    13 \n    35 \n    48 \n  \n\n\n\n\n\n\n\n\nWhat evidence do we have? What summary statistic(s) would be useful for answering the research question?"
+  },
+  {
+    "objectID": "slides/slides-16-randomization.html#data-cont.",
+    "href": "slides/slides-16-randomization.html#data-cont.",
+    "title": "Hypothesis Testing via Randomization",
+    "section": "Data (cont.)",
+    "text": "Data (cont.)\nConditional probability of getting promoted by sex:\n\n\n\n# look at data\ndiscrimination |>\n  slice(1:4)\n\n     sex    decision\n1   male     promote\n2 female not promote\n3   male     promote\n4 female     promote\n\n\n\n\ndiscrimination |>\n  count(sex, decision) |>\n  group_by(sex) |>\n  mutate(cond_prob = n/sum(n)) |>\n  filter(decision == \"promote\") |>\n  select(-n)\n\n\n\n\n\n\n\n\nsex\ndecision\ncond_prob\n\n\n\n\nfemale\npromote\n0.583\n\n\nmale\npromote\n0.875\n\n\n\n\n\n\nIs the observed difference \\(\\hat{p}_{f,obs} - \\hat{p}_{m,obs} =\\) -0.2916667 convincing evidence? We need to examine variability in the data, assuming \\(H_{0}\\) true.\nLet’s set \\(\\alpha = 0.05\\)"
+  },
+  {
+    "objectID": "slides/slides-16-randomization.html#simulate-under-null",
+    "href": "slides/slides-16-randomization.html#simulate-under-null",
+    "title": "Hypothesis Testing via Randomization",
+    "section": "Simulate under null",
+    "text": "Simulate under null\n\nSimulating under \\(H_{0}\\) means operating in a hypothetical word where sex and decision are independent.\n\nThis means that knowing the sex of the candidate should have no bearing on the decision to promote or not\n\nWe will perform a simulation called a randomization test:\n\nRandomly pair up decision and sex outcome pairs\nRandomly assigning a decision to each person would be equivalent to a world in which the bankers’ decision had been independent of candidate’s sex (i.e. if \\(H_{0}\\) true)"
+  },
+  {
+    "objectID": "slides/slides-16-randomization.html#randomization-test",
+    "href": "slides/slides-16-randomization.html#randomization-test",
+    "title": "Hypothesis Testing via Randomization",
+    "section": "Randomization test",
+    "text": "Randomization test\n\n\n\n\n \n  \n    sex \n    not promote \n    promote \n    total \n  \n \n\n  \n    female \n    10 \n    14 \n    24 \n  \n  \n    male \n    3 \n    21 \n    24 \n  \n  \n    total \n    13 \n    35 \n    48 \n  \n\n\n\n\n\n\nWrite down “promote” on 35 cards and “not promote” on 13 cards. Repeat the following:\n\nThoroughly shuffle these 48 cards.\nDeal out a stack of 24 cards to represent males, and the remaining 24 cards to represent females\n\nThis is how we simulate under \\(H_{0}\\)\n\nCalculate the proportion of “promote” cards in each stack, \\(\\hat{p}_{f, sim}\\) and \\(\\hat{p}_{m, sim}\\)\nCalculate and record the difference \\(\\hat{p}_{f,sim} - \\hat{p}_{m,sim}\\) (order of difference doesn’t matter so long as you are consistent)"
+  },
+  {
+    "objectID": "slides/slides-16-randomization.html#randomization-test-activity",
+    "href": "slides/slides-16-randomization.html#randomization-test-activity",
+    "title": "Hypothesis Testing via Randomization",
+    "section": "Randomization test (activity)",
+    "text": "Randomization test (activity)\nTry it!"
+  },
+  {
+    "objectID": "slides/slides-16-randomization.html#randomization-test-code",
+    "href": "slides/slides-16-randomization.html#randomization-test-code",
+    "title": "Hypothesis Testing via Randomization",
+    "section": "Randomization test (code)",
+    "text": "Randomization test (code)\n\nset.seed(100)\nn <- nrow(discrimination)\nn_f <- sum(discrimination$sex == \"female\")\nn_m <- sum(discrimination$sex == \"male\")\ndecisions <- discrimination$decision\nB <- 1000\ndiff_props_null <- rep(NA, B)\nfor(b in 1:B){\n  shuffled <- sample(decisions, n)\n  rand_f <- shuffled[1:n_f]\n  rand_m <- shuffled[-c(1:n_f)]\n  \n  p_f_sim <-  mean(rand_f == \"promote\")\n  p_m_sim <-mean(rand_m == \"promote\")\n  \n  diff_props_null[b] <- p_f_sim - p_m_sim\n}\n\n\n\nWhere should the null distribution be centered?"
+  },
+  {
+    "objectID": "slides/slides-16-randomization.html#null-distribution",
+    "href": "slides/slides-16-randomization.html#null-distribution",
+    "title": "Hypothesis Testing via Randomization",
+    "section": "Null distribution",
+    "text": "Null distribution"
+  },
+  {
+    "objectID": "slides/slides-16-randomization.html#obtain-p-value",
+    "href": "slides/slides-16-randomization.html#obtain-p-value",
+    "title": "Hypothesis Testing via Randomization",
+    "section": "Obtain p-value",
+    "text": "Obtain p-value\nRecall, the observed difference in our data was \\(\\hat{p}_{f,obs} - \\hat{p}_{m,obs} =\\) -0.2916667.\n\np-value is probability of observing data as or more extreme than our original data, given \\(H_{0}\\) true.\n\nWhere does “as or more extreme” correspond to on our plot?\n\n\n\n\n\n\n\n\n\n\n\n\n\nOut of 1000 simulations under \\(H_{0}\\), 28 resulted in a difference in promotion rates as or more extreme than our observed\nSo the p-value is approximately 0.028"
+  },
+  {
+    "objectID": "slides/slides-16-randomization.html#making-decision-and-conclusion",
+    "href": "slides/slides-16-randomization.html#making-decision-and-conclusion",
+    "title": "Hypothesis Testing via Randomization",
+    "section": "Making decision and conclusion",
+    "text": "Making decision and conclusion\nOur research question: Are individuals who identify their sex as female discriminated against in promotion decisions made by their managers who identify as male?\n\n\\(H_{0}\\): sex and decision are independent\n\\(H_{A}\\): sex and decision are not independent and equally-qualified female personnel are less likely to get promoted than male personnel by male supervisors\n\\(\\alpha = 0.05\\)\n\n\n\nInterpret our p-value in context.\nMake a decision and conclusion in response to the research question."
+  },
+  {
+    "objectID": "slides/slides-16-randomization.html#making-decision-and-conclusion-answer",
+    "href": "slides/slides-16-randomization.html#making-decision-and-conclusion-answer",
+    "title": "Hypothesis Testing via Randomization",
+    "section": "Making decision and conclusion (answer)",
+    "text": "Making decision and conclusion (answer)\n\np-value interpretation: Assuming that sex and decision are independent, the probability of observing a difference in promotion rates as or more extreme as -0.2916667 is 0.028.\nDecision: Because the observed p-value of 0.028 is less than our significant level 0.05, we reject \\(H_{0}\\).\nConclusion: The data provide strong evidence of sex discrimination against female candidates by the male supervisors.\n\nWhat kind of error could we have made?"
+  },
+  {
+    "objectID": "slides/slides-16-randomization.html#running-example-cpr",
+    "href": "slides/slides-16-randomization.html#running-example-cpr",
+    "title": "Hypothesis Testing via Randomization",
+    "section": "Running example: CPR",
+    "text": "Running example: CPR\n\nAn experiment was conducted, consisting of two treatments on 90 patients who underwent CPR for a heart attack and subsequently went to the hospital. Each patient was randomly assigned to either:\n\ntreatment group: received a blood thinner\ncontrol group: did not receive a blood thinner\n\nFor each patient, the outcome recorded was whether they survived for at least 24 hours.\n\nWhat is/are the variables(s) here? What types of variables are they?"
+  },
+  {
+    "objectID": "slides/slides-16-randomization.html#defining-hypotheses-1",
+    "href": "slides/slides-16-randomization.html#defining-hypotheses-1",
+    "title": "Hypothesis Testing via Randomization",
+    "section": "Defining hypotheses",
+    "text": "Defining hypotheses\nThe researchers are interested in learning if the blood thinner treatment was effective for patients who undergo CPR after a heart attack?\n\n\\(H_{0}:\\) the blood thinner treatment was effective\n\\(H_{A}:\\) the blood thinner treatment was not effective\n\n\n\nTry to write down the hypotheses using statistical notation.\n\n\n\nLet \\(p_{T}\\) and \\(p_{C}\\) denote the proportion of patients who survive when receiving the thinner (Treatment) and when not receiving the treatment (Control), respectively\n\n\n\n\nOption 1\n\n\\(H_{0}\\): \\(p_{T} = p_{C}\\)\n\\(H_{A}\\): \\(p_{T} > p_{C}\\)\n\n\n\n\nOption 2 (preferred)\n\n\\(H_{0}\\): \\(p_{T} - p_{C} = 0\\)\n\\(H_{A}\\): \\(p_{T} - p_{C}> 0\\)"
+  },
+  {
+    "objectID": "slides/slides-16-randomization.html#collect-data",
+    "href": "slides/slides-16-randomization.html#collect-data",
+    "title": "Hypothesis Testing via Randomization",
+    "section": "Collect data",
+    "text": "Collect data\nUsing the data, obtain the observed difference in sample proportions.\n\n\n\ncpr |>\n  slice(1:3)\n\n\n\n# A tibble: 3 × 2\n  group     outcome \n  <fct>     <fct>   \n1 treatment died    \n2 control   died    \n3 control   survived\n\n\n\n\n\n\n\n \n  \n    group \n    died \n    survived \n    total \n  \n \n\n  \n    control \n    39 \n    11 \n    50 \n  \n  \n    treatment \n    26 \n    14 \n    40 \n  \n  \n    total \n    65 \n    25 \n    90 \n  \n\n\n\n\n\n\n\n\n\n\n\n\nWhat evidence do we have? What summary statistic(s) would be useful for answering the research question?"
+  },
+  {
+    "objectID": "slides/slides-16-randomization.html#simulate-under-null-1",
+    "href": "slides/slides-16-randomization.html#simulate-under-null-1",
+    "title": "Hypothesis Testing via Randomization",
+    "section": "Simulate under null",
+    "text": "Simulate under null\n\nWe will once again perform a randomization test to try and simulate the difference in proportions under \\(H_{0}\\)\n\nUnder \\(H_{0}\\), treatment group is no better than control group, so let’s simulate assuming that outcome and treatment are independent\n\n\n\n\nTry filling out worksheet!\n\n\n\nWrite down died on 65 cards, and survived on 25 cards. Then repeat several times:\n\nShuffle cards well\nDeal out 50 to be Control group, and remaining 40 to be Treatment group\nCalculate proportions of survival \\(\\hat{p}_{C, sim}\\) and \\(\\hat{p}_{T, sim}\\)\nObtain and record the simulated difference \\(\\hat{p}_{T, sim} - \\hat{p}_{C, sim}\\)"
+  },
+  {
+    "objectID": "slides/slides-16-randomization.html#simulate-under-null-code",
+    "href": "slides/slides-16-randomization.html#simulate-under-null-code",
+    "title": "Hypothesis Testing via Randomization",
+    "section": "Simulate under null (code)",
+    "text": "Simulate under null (code)\nLive code or look here:\n\nset.seed(310)\nn_t <- sum(cpr$group == \"treatment\")\nn_c <- sum(cpr$group == \"control\")\ncards <- cpr$outcome\nB <- 1000\ndiff_props_null <- rep(NA , B)\nfor(b in 1:B){\n  shuffled <- sample(cards)\n  treat_sim <- shuffled[1:n_t]\n  control_sim <- shuffled[-c(1:n_t)]\n  \n  p_t_sim <- mean(treat_sim == \"survived\")\n  p_c_sim <- mean(control_sim == \"survived\")\n  \n  diff_props_null[b] <- p_t_sim - p_c_sim\n}\n\n\n\nWhere should our null distribution be centered at?"
+  },
+  {
+    "objectID": "slides/slides-16-randomization.html#visualizing-null-distribution",
+    "href": "slides/slides-16-randomization.html#visualizing-null-distribution",
+    "title": "Hypothesis Testing via Randomization",
+    "section": "Visualizing null distribution",
+    "text": "Visualizing null distribution\n\n\nHow would we obtain the p-value in this problem?"
+  },
+  {
+    "objectID": "slides/slides-16-randomization.html#calculate-p-value",
+    "href": "slides/slides-16-randomization.html#calculate-p-value",
+    "title": "Hypothesis Testing via Randomization",
+    "section": "Calculate p-value",
+    "text": "Calculate p-value\n\n\n\n\n\n\n\n\n\nWe simulated 148 out of 1000 simulations where the difference in proportions under \\(H_{0}\\) was as or more extreme than our observed difference of 0.13\nSo p-value is approximately 0.148"
+  },
+  {
+    "objectID": "slides/slides-16-randomization.html#interpret-and-make-conclusion",
+    "href": "slides/slides-16-randomization.html#interpret-and-make-conclusion",
+    "title": "Hypothesis Testing via Randomization",
+    "section": "Interpret and make conclusion",
+    "text": "Interpret and make conclusion\nThe researchers are interested in learning if the blood thinner treatment was effective.\nOur p-value is 0.148.\n\n\nMake a decision and conclusion about the research question in context. What type of error could we have made?\n\n\n\nDecision: because our p-value of 0.148 is greater than \\(\\alpha = 0.05\\), we fail to reject \\(H_{0}\\)\nConclusion: the data do not provide convincing evidence that the blood thinner treatment improves survival rates among patients who undergo CPR.\nPossible error: Type 2"
+  },
+  {
+    "objectID": "slides/slides-16-randomization.html#comprehension-questions",
+    "href": "slides/slides-16-randomization.html#comprehension-questions",
+    "title": "Hypothesis Testing via Randomization",
+    "section": "Comprehension questions",
+    "text": "Comprehension questions\n\nWhat were the similarities and differences between:\n\nhypothesis test for independence\nhypothesis test for two proportions\n\nHow do the randomization tests today differ from the test for one proportion that we learned last class?"
+  },
+  {
+    "objectID": "slides/slides-16-randomization.html#summarise-data",
+    "href": "slides/slides-16-randomization.html#summarise-data",
+    "title": "Hypothesis Testing via Randomization",
+    "section": "Summarise data",
+    "text": "Summarise data\n\n\n\n\n \n  \n    group \n    died \n    survived \n    total \n  \n \n\n  \n    control \n    39 \n    11 \n    50 \n  \n  \n    treatment \n    26 \n    14 \n    40 \n  \n  \n    total \n    65 \n    25 \n    90 \n  \n\n\n\n\n\n\n\n\n\n# pull() takes a column from data frame and turns into vector\np_hat_c <- cpr |>\n  filter(group == \"control\") |>\n  summarise(p = mean(outcome == \"survived\")) |>\n  pull(p) \np_hat_t <- cpr |>\n  filter(group == \"treatment\") |>\n  summarise(p = mean(outcome == \"survived\")) |>\n  pull()\nobs_diff <- p_hat_t - p_hat_c\n\n\n\n\n\\(\\hat{p}_{C, obs} = \\frac{11}{50} = 0.22\\)\n\\(\\hat{p}_{T,obs} = \\frac{14}{40} = 0.35\\)\nObserved difference: \\(\\hat{p}_{T,obs} - \\hat{p}_{C,obs} = 0.13\\)\n\n\n\n\nIs this “convincing evidence” that blood thinner usage after CPR is effective?\nSet \\(\\alpha = 0.05\\)"
+  },
+  {
+    "objectID": "slides/slides-16-randomization.html#running-example-cpr-openintro",
+    "href": "slides/slides-16-randomization.html#running-example-cpr-openintro",
+    "title": "Hypothesis Testing via Randomization",
+    "section": "Running example: CPR (openintro)",
+    "text": "Running example: CPR (openintro)\n\nAn experiment was conducted, consisting of two treatments on 90 patients who underwent CPR for a heart attack and subsequently went to the hospital. Each patient was randomly assigned to either:\n\ntreatment group: received a blood thinner\ncontrol group: did not receive a blood thinner\n\nFor each patient, the outcome recorded was whether they survived for at least 24 hours.\n\nWhat is/are the variables(s) here? What types of variables are they?"
+  },
+  {
+    "objectID": "slides/slides-17-single-mean.html",
+    "href": "slides/slides-17-single-mean.html",
+    "title": "Hypothesis testing for a mean",
+    "section": "",
+    "text": "Office hours tomorrow: 10:30am-12:00pm"
+  },
+  {
+    "objectID": "slides/slides-17-single-mean.html#recap",
+    "href": "slides/slides-17-single-mean.html#recap",
+    "title": "Hypothesis testing for a mean",
+    "section": "Recap",
+    "text": "Recap\n\nWe have seen how to perform hypothesis tests for questions involving the following:\n\nA single proportion (STAT 201 sleep)\nIndependence of two categorical variables (banker sex discrimination)\n\nThink of as one population\n\nDifference in two proportions (blood thinner)\n\nThink of as two populations\n\n\nWe are now going to see another hypothesis test, this time for numerical data"
+  },
+  {
+    "objectID": "slides/slides-17-single-mean.html#running-example-form-hypotheses",
+    "href": "slides/slides-17-single-mean.html#running-example-form-hypotheses",
+    "title": "Hypothesis testing for a mean",
+    "section": "Running example + form hypotheses",
+    "text": "Running example + form hypotheses\nWe will use the duke_forest dataset provided in openintro. It provides data on some houses that were sold in the Duke Forest neighborhood of Durham, NC in November 2020.\n\nBefore we look at the data, we should form our hypotheses. Suppose I am interested in learning if the average price of houses in Duke Forest is $500,000 or not.\n\nWhat might our hypotheses be?\n\n\n\\(H_{0}\\): \\(\\mu = 50\\) versus \\(H_{A}\\): \\(\\mu \\neq 50\\), where \\(\\mu\\) is the average house of prices in Duke Forest in $10,000\nTerminology: I will refer to \\(\\mu_{0} = 50\\) as my “null hypothesized value”. (i.e. the specific value of \\(\\mu\\) in \\(H_{0}\\))"
+  },
+  {
+    "objectID": "slides/slides-17-single-mean.html#collect-data",
+    "href": "slides/slides-17-single-mean.html#collect-data",
+    "title": "Hypothesis testing for a mean",
+    "section": "Collect data",
+    "text": "Collect data\n\n\n\n\n\n\n\n\nThe observed/sample mean housing price is $55.99k from a sample of 98 houses.\n\nNow we must determine if we have “convincing evidence”! Choose \\(\\alpha = 0.05\\)"
+  },
+  {
+    "objectID": "slides/slides-17-single-mean.html#simulating-null-distribution",
+    "href": "slides/slides-17-single-mean.html#simulating-null-distribution",
+    "title": "Hypothesis testing for a mean",
+    "section": "Simulating null distribution",
+    "text": "Simulating null distribution\nTo simulate from the null distribution, we need to operate in a world where \\(H_{0}\\) is true\n\nSo, I need to repeatedly simulate data sets of size 98 where the true mean is \\(50\\), without change anything else about the data sets.\nIf I don’t want to make any assumptions about how the data behave, how might I do that?"
+  },
+  {
+    "objectID": "slides/slides-17-single-mean.html#bootstrap-to-the-rescue",
+    "href": "slides/slides-17-single-mean.html#bootstrap-to-the-rescue",
+    "title": "Hypothesis testing for a mean",
+    "section": "Bootstrap to the rescue",
+    "text": "Bootstrap to the rescue\n\nRecall the bootstrap: we repeatedly took resamples with replacement from our original data, of same size as original data\n\nAssuming the original data was representative, each one of these bootstrapped data sets gives us a plausible “new” sample of data, from which we can calculate statistics of interest\n\n\n\n\n\n\n\n\n\n\n\n\n\nReminder ourselves: Where is the bootstrap distribution centered?"
+  },
+  {
+    "objectID": "slides/slides-17-single-mean.html#bootstrap-to-null-distribution",
+    "href": "slides/slides-17-single-mean.html#bootstrap-to-null-distribution",
+    "title": "Hypothesis testing for a mean",
+    "section": "Bootstrap to null distribution",
+    "text": "Bootstrap to null distribution\n\n\n\n\n\n\n\n\n\nThis is not the null distribution! The null distribution should be centered at \\(\\mu_{0} = 50\\).\nHowever, the null distribution should have the same variability in \\(\\bar{x}\\) as the bootstrap distribution.\n\n\n\n\nSo to get the null distribution, why not just shift the bootstrap distribution to be centered where we want it to be?"
+  },
+  {
+    "objectID": "slides/slides-17-single-mean.html#shifting-to-the-bootstrap-distribution",
+    "href": "slides/slides-17-single-mean.html#shifting-to-the-bootstrap-distribution",
+    "title": "Hypothesis testing for a mean",
+    "section": "Shifting to the bootstrap distribution",
+    "text": "Shifting to the bootstrap distribution\n\nIn this example, bootstrap distribution is centered at \\(\\bar{x} = 55.99\\)\nIn order to center this distribution at \\(\\mu_{0} = 50\\), just subtract \\(55.99 - 50 = 5.99\\) from every single bootstrapped mean\n\nThis will give us a simulated distribution for \\(\\bar{x}\\) centered at \\(\\mu_{0} = 50\\), which is exactly the null distribution!\n\nWe call this “shifting the bootstrap distribution”, because we simply shift where the bootstrap distribution is centered\n\n\n\n\n\nmu0 <- 50\n# how much to shift by, where xbar is sample mean housing prices\nshift <- xbar - mu0\n# shift my vector of bootstrapped sample means\nnull_dist <- boot_means - shift"
+  },
+  {
+    "objectID": "slides/slides-17-single-mean.html#null-distribution",
+    "href": "slides/slides-17-single-mean.html#null-distribution",
+    "title": "Hypothesis testing for a mean",
+    "section": "Null distribution",
+    "text": "Null distribution\n\n\n\n\n\n\n\nNotice where the distributions are centered"
+  },
+  {
+    "objectID": "slides/slides-17-single-mean.html#obtain-the-p-value",
+    "href": "slides/slides-17-single-mean.html#obtain-the-p-value",
+    "title": "Hypothesis testing for a mean",
+    "section": "Obtain the p-value",
+    "text": "Obtain the p-value\n\\(H_{0}\\): \\(\\mu = 50\\) versus \\(H_{A}\\): \\(\\mu \\neq 50\\)\nOur observed sample mean housing price is 55.99.\n\n\n\n\n\n\nWhat does it mean to be “as or more extreme” now?"
+  },
+  {
+    "objectID": "slides/slides-17-single-mean.html#two-sided-alternative-hypothesis",
+    "href": "slides/slides-17-single-mean.html#two-sided-alternative-hypothesis",
+    "title": "Hypothesis testing for a mean",
+    "section": "Two-sided alternative hypothesis",
+    "text": "Two-sided alternative hypothesis\n\nThis is the first time we’ve seen a two-sided hypothesis\nSince the alternative is “double sided”, we can be extreme in both the positive and negative direction!"
+  },
+  {
+    "objectID": "slides/slides-17-single-mean.html#obtain-the-p-value-cont.",
+    "href": "slides/slides-17-single-mean.html#obtain-the-p-value-cont.",
+    "title": "Hypothesis testing for a mean",
+    "section": "Obtain the p-value (cont.)",
+    "text": "Obtain the p-value (cont.)\nLet \\(shift\\) represent the amount we shifted the distribution by:\n\\[shift = 55.99 - 50 = 5.99\\]\nSimulated means as or more extreme than \\(\\mu_{0} + shift\\) or \\(\\mu_{0} - shift\\) will contribute:\n\n\n\n\n\n\n\n\n\nsum( (null_dist >= mu0 + shift) | (null_dist <= mu0 - shift))/B\n\n[1] 0.0098"
+  },
+  {
+    "objectID": "slides/slides-17-single-mean.html#make-decision-and-conclusion",
+    "href": "slides/slides-17-single-mean.html#make-decision-and-conclusion",
+    "title": "Hypothesis testing for a mean",
+    "section": "Make decision and conclusion",
+    "text": "Make decision and conclusion\n\nMake a decision and conclusion in the context of the research question.\n\n\nSince our p-value of 0.0098 is less than the significance level of 0.05, we reject \\(H_{0}\\). We have convincing evidence to suggest that the true average housing price of homes in Duke Forest in 2020 was not $500k."
+  },
+  {
+    "objectID": "slides/slides-17-single-mean.html#comprehension-questions",
+    "href": "slides/slides-17-single-mean.html#comprehension-questions",
+    "title": "Hypothesis testing for a mean",
+    "section": "Comprehension questions",
+    "text": "Comprehension questions\n\nWhy did we shift the bootstrap distribution?\nHow do we estimate the p-value in the case of a two-sided alternative hypothesis?"
   }
 ]
