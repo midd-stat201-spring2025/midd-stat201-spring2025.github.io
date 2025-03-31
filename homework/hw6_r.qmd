@@ -2,7 +2,7 @@
 title: 'STAT 201: Problem Set 6 (R)'
 author: "Your name"
 date: "April 7, 2025"
-formate: pdf
+format: pdf
 ---
 
 **In every code chunk where you perform random sampling, set a seed at the top of the chunk. I don't care what seed you choose so long as you set a seed!**
