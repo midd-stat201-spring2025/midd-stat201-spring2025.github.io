@@ -7697,7 +7697,7 @@
     "href": "slides/slides-16-randomization.html#defining-hypotheses-1",
     "title": "Hypothesis Testing via Randomization",
     "section": "Defining hypotheses",
-    "text": "Defining hypotheses\nThe researchers are interested in learning if the blood thinner treatment was effective for patients who undergo CPR after a heart attack?\n\n\\(H_{0}:\\) the blood thinner treatment was effective\n\\(H_{A}:\\) the blood thinner treatment was not effective\n\n\n\nTry to write down the hypotheses using statistical notation.\n\n\n\nLet \\(p_{T}\\) and \\(p_{C}\\) denote the proportion of patients who survive when receiving the thinner (Treatment) and when not receiving the treatment (Control), respectively\n\n\n\n\nOption 1\n\n\\(H_{0}\\): \\(p_{T} = p_{C}\\)\n\\(H_{A}\\): \\(p_{T} > p_{C}\\)\n\n\n\n\nOption 2 (preferred)\n\n\\(H_{0}\\): \\(p_{T} - p_{C} = 0\\)\n\\(H_{A}\\): \\(p_{T} - p_{C}> 0\\)"
+    "text": "Defining hypotheses\nThe researchers are interested in learning if the blood thinner treatment was effective for patients who undergo CPR after a heart attack?\n\n\\(H_{0}:\\) the blood thinner treatment was not effective\n\\(H_{A}:\\) the blood thinner treatment was effective\n\n\n\nTry to write down the hypotheses using statistical notation.\n\n\n\nLet \\(p_{T}\\) and \\(p_{C}\\) denote the proportion of patients who survive when receiving the thinner (Treatment) and when not receiving the treatment (Control), respectively\n\n\n\n\nOption 1\n\n\\(H_{0}\\): \\(p_{T} = p_{C}\\)\n\\(H_{A}\\): \\(p_{T} > p_{C}\\)\n\n\n\n\nOption 2 (preferred)\n\n\\(H_{0}\\): \\(p_{T} - p_{C} = 0\\)\n\\(H_{A}\\): \\(p_{T} - p_{C}> 0\\)"
   },
   {
     "objectID": "slides/slides-16-randomization.html#collect-data",
@@ -7880,5 +7880,12 @@
     "title": "Hypothesis testing for a mean",
     "section": "Shifting the bootstrap distribution",
     "text": "Shifting the bootstrap distribution\n\nIn this example, bootstrap distribution is centered at \\(\\bar{x} = 5.599\\)\nIn order to center this distribution at \\(\\mu_{0} = 5\\), just subtract \\(5.599 - 5 = 0.599\\) from every single bootstrapped mean\n\nThis will give us a simulated distribution for \\(\\bar{x}\\) centered at \\(\\mu_{0} = 5\\), which is exactly the null distribution!\n\nWe call this “shifting the bootstrap distribution”, because we simply shift where the bootstrap distribution is centered\n\n\n\n\n\nmu0 <- 5\n\n# xbar holds observed sample mean\nshift <- xbar - mu0\n\n# boot_means is a vector holding B bootstrapped sample means\nnull_dist <- boot_means - shift"
+  },
+  {
+    "objectID": "live_code/diff_props_cpr.html",
+    "href": "live_code/diff_props_cpr.html",
+    "title": "Code for CPR example",
+    "section": "",
+    "text": "library(openintro)\nlibrary(tidyverse)\n\n# summarise data\n## option 1: harder to remember\nprops <- cpr |>\n  group_by(group) |>\n  summarise(prop = mean(outcome == \"survived\")) |>\n  pull(prop)\n\ndiff_prop_obs <- props[2] - props[1]\n\n## option 2: more code, but clearer\np_c_obs <- cpr |>\n  group_by(group) |>\n  summarise(prop = mean(outcome == \"survived\")) |>\n  filter(group == \"control\") |>\n  pull(prop)\n\np_t_obs <- cpr |>\n  group_by(group) |>\n  summarise(prop = mean(outcome == \"survived\")) |>\n  filter(group == \"treatment\") |>\n  pull(prop)\ndiff_prop_obs <- p_t_obs - p_c_obs\n\n### step 3: simulate null\nset.seed(310)\nn_t <- sum(cpr$group == \"treatment\")\nn_c <- sum(cpr$group == \"control\")\ncards <- cpr$outcome\nB <- 1000\ndiff_props_null <- rep(NA , B)\nfor(b in 1:B){\n  shuffled <- sample(cards)\n  treat_sim <- shuffled[1:n_t]\n  control_sim <- shuffled[-c(1:n_t)]\n  \n  p_t_sim <- mean(treat_sim == \"survived\")\n  p_c_sim <- mean(control_sim == \"survived\")\n  \n  diff_props_null[b] <- p_t_sim - p_c_sim\n}\n\n# p-value: we want \"greater than\" direction\np_val <- mean(diff_props_null >= diff_prop_obs)"
   }
 ]

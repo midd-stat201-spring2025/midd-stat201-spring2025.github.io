@@ -313,9 +313,9 @@ Our research question: Are individuals who identify their sex as female discrimi
 
 The researchers are interested in learning if the blood thinner treatment was effective for patients who undergo CPR after a heart attack?
 
--   $H_{0}:$ the blood thinner treatment was effective
+-   $H_{0}:$ the blood thinner treatment was not effective
 
--   $H_{A}:$ the blood thinner treatment was not effective
+-   $H_{A}:$ the blood thinner treatment was effective
 
 :::: fragment
 ::: discuss
