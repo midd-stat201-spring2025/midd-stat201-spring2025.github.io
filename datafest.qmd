@@ -66,7 +66,7 @@ You will be asked to create and submit a well-written report (in the form a rend
 
 1.  Compelling visualizations and summary tables, and
 
-2.  Simulation-based inference techniques (at least one of which should be a hypothesis test)
+2.  Simulation-based inference techniques
 
 Your report should include:
 
@@ -76,8 +76,9 @@ Your report should include:
     ii. A description of the methods you used to answer the question
     iii. The actual result+interpretation in context (e.g. a visualization, confidence interval, conduct hypothesis test)
 3.  A brief conclusion about what you might do differently or things that were particularly challenging
+4.  A brief description of each person's contribution.
 
-**You report should be submitted to Gradescope. One per group!**
+**You report should be submitted to Canvas. One per group!**
 
 ## Grading
 
