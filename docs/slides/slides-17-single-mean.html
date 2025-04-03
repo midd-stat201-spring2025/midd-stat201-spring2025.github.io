@@ -439,7 +439,7 @@
 <p>What might our hypotheses be?</p>
 </div>
 <ul>
-<li class="fragment"><span class="math inline">\(H_{0}\)</span>: <span class="math inline">\(\mu =\)</span> 5 versus <span class="math inline">\(H_{A}\)</span>: <span class="math inline">\(\mu\neq\)</span> 5, where <span class="math inline">\(\mu\)</span> is the true average house of prices in Duke Forest in $100,000</li>
+<li class="fragment"><span class="math inline">\(H_{0}\)</span>: <span class="math inline">\(\mu =\)</span> 5 versus <span class="math inline">\(H_{A}\)</span>: <span class="math inline">\(\mu\neq\)</span> 5, where <span class="math inline">\(\mu\)</span> is the true average housing price in Duke Forest in November 2020 (in $100,000)</li>
 <li class="fragment">Terminology: I will refer to <span class="math inline">\(\mu_{0} =\)</span> 5 as my “null hypothesized value”. (i.e.&nbsp;the specific value of <span class="math inline">\(\mu\)</span> in <span class="math inline">\(H_{0}\)</span>)</li>
 </ul></li>
 </ul>
@@ -450,7 +450,7 @@
 
 </div>
 
-<img data-src="slides-17-single-mean_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"><p>The observed/sample mean housing price is <span class="math inline">\(\bar{x} =\)</span> 5.599 from a sample of 98 houses.</p>
+<img data-src="slides-17-single-mean_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"><p>The observed/sample mean housing price is <span class="math inline">\(\bar{x}_{obs} =\)</span> 5.599 from a sample of 98 houses.</p>
 <ul>
 <li class="fragment">Now we must determine if we have “convincing evidence”! Choose <span class="math inline">\(\alpha = 0.05\)</span></li>
 </ul>
@@ -509,7 +509,7 @@
 <section id="shifting-the-bootstrap-distribution" class="slide level2">
 <h2>Shifting the bootstrap distribution</h2>
 <ul>
-<li class="fragment"><p>In this example, bootstrap distribution is centered at <span class="math inline">\(\bar{x} = 5.599\)</span></p></li>
+<li class="fragment"><p>In this example, bootstrap distribution is centered at <span class="math inline">\(\bar{x}_{obs} = 5.599\)</span></p></li>
 <li class="fragment"><p>In order to center this distribution at <span class="math inline">\(\mu_{0} = 5\)</span>, just subtract <span class="math inline">\(5.599 - 5 = 0.599\)</span> from every single bootstrapped mean</p>
 <ul>
 <li class="fragment"><p>This will give us a simulated distribution for <span class="math inline">\(\bar{x}\)</span> centered at <span class="math inline">\(\mu_{0} = 5\)</span>, which is exactly the null distribution!</p></li>
@@ -535,7 +535,7 @@
 
 <img data-src="slides-17-single-mean_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"><ul>
 <li class="fragment"><div style="color: maroon">
-<p>Notice where the distributions are centered</p>
+<p>Notice where the distributions are centered. Also note: graphs aren’t exactly identical due to binning of histogram.</p>
 </div></li>
 </ul>
 </section>

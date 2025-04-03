@@ -63,7 +63,7 @@ mu0 <- 5
     What might our hypotheses be?
     :::
 
-    -   $H_{0}$: $\mu =$ `r mu0` versus $H_{A}$: $\mu\neq$ `r mu0`, where $\mu$ is the true average house of prices in Duke Forest in \$100,000
+    -   $H_{0}$: $\mu =$ `r mu0` versus $H_{A}$: $\mu\neq$ `r mu0`, where $\mu$ is the true average housing price in Duke Forest in November 2020 (in \$100,000)
     -   Terminology: I will refer to $\mu_{0} =$ `r mu0` as my "null hypothesized value". (i.e. the specific value of $\mu$ in $H_{0}$)
 
 ## Collect and summarise data
@@ -83,7 +83,7 @@ ggplot(duke_forest, aes(x = prices)) +
   theme(text = element_text(size = 24))
 ```
 
-The observed/sample mean housing price is $\bar{x} =$ `r xbar` from a sample of `r n` houses.
+The observed/sample mean housing price is $\bar{x}_{obs} =$ `r xbar` from a sample of `r n` houses.
 
 -   Now we must determine if we have "convincing evidence"! Choose $\alpha = 0.05$
 
@@ -97,19 +97,18 @@ To simulate from the null distribution, we need to operate in a world where $H_{
 
 ## Bootstrap to the rescue
 
-::: {.discuss}
+::: discuss
 How would I obtain a bootstrap distribution of the sample mean price of houses?
 :::
 
-::::::: columns
-
-:::: {.column width="30%"}
-::: fragment
-::: {.discuss}
+:::::::: columns
+::::: {.column width="30%"}
+:::: fragment
+::: discuss
 Remind ourselves: Where should the bootstrap distribution be centered?
 :::
-:::
 ::::
+:::::
 
 :::: {.column width="70%"}
 ::: fragment
@@ -128,8 +127,7 @@ p1
 ```
 :::
 ::::
-
-:::::::
+::::::::
 
 ## Bootstrap to null distribution
 
@@ -154,7 +152,7 @@ p1 +
 
 ## Shifting the bootstrap distribution
 
--   In this example, bootstrap distribution is centered at $\bar{x} = `r xbar`$
+-   In this example, bootstrap distribution is centered at $\bar{x}_{obs} = `r xbar`$
 
 -   In order to center this distribution at $\mu_{0} = `r mu0`$, just subtract $`r xbar` - `r mu0` = `r xbar - mu0`$ from every single bootstrapped mean
 
@@ -193,7 +191,7 @@ p1 + p2
 ```
 
 -   ::: {style="color: maroon"}
-    Notice where the distributions are centered
+    Notice where the distributions are centered. Also note: graphs aren't exactly identical due to binning of histogram.
     :::
 
 ## Obtain the p-value
@@ -209,7 +207,6 @@ p2
 ::: discuss
 What does it mean to be "as or more extreme" now?
 :::
-
 
 ## Two-sided alternative hypothesis
 
