@@ -7943,5 +7943,201 @@
     "title": "DataFest",
     "section": "Acknowledgements",
     "text": "Acknowledgements\nPlease briefly describe each team member’s contribution to the project!"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#recap",
+    "href": "slides/slides-19-clt.html#recap",
+    "title": "Central Limit Theorem",
+    "section": "Recap",
+    "text": "Recap\n\n\n\n\nNormal distribution: symmetric, bell-shaped curve that is described by mean \\(\\mu\\) and standard deviation \\(\\sigma\\)\n\nCommon model used to describe behavior of continuous variables\n\nUse area under the Normal curve to obtain probabilities\n68-95-99.7 rule\nz-score standardizes observations to allow for easier comparison: \\(z = \\frac{x- \\mu}{\\sigma}\\)"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#warm-up",
+    "href": "slides/slides-19-clt.html#warm-up",
+    "title": "Central Limit Theorem",
+    "section": "Warm-up",
+    "text": "Warm-up\n\nLet \\(Z \\sim N(0,1)\\). If the 10th percentile of \\(Z\\) is -1.28, what is the 90th percentile?\nLet \\(X \\sim N(0,2)\\). If the 10th percentile of \\(X\\) is -2.56, what is the 90th percentile? Or can you not say without code?\nLet \\(Y \\sim N(2,1)\\). If the 10th percentile of \\(Y\\) is 0.72, what is the 90th percentile? Or can you not say without code?"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#where-were-going",
+    "href": "slides/slides-19-clt.html#where-were-going",
+    "title": "Central Limit Theorem",
+    "section": "Where we’re going",
+    "text": "Where we’re going\n\nWe are going to learn one of the BIGGEST theorems in Statistics\nUses the Normal distribution, and will be immensely helpful for inference tasks of confidence intervals and hypothesis testing"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#central-limit-theorem-clt",
+    "href": "slides/slides-19-clt.html#central-limit-theorem-clt",
+    "title": "Central Limit Theorem",
+    "section": "Central Limit Theorem (CLT)",
+    "text": "Central Limit Theorem (CLT)\n\nAssume that you have a sufficiently large sample of \\(n\\) independent values \\(x_{1},\\ldots, x_{n}\\) from a population with mean \\(\\mu\\) and standard deviation \\(\\sigma\\).\nThen the distribution of sample means is approximately Normal:\n\\[\n\\bar{X} \\overset{\\cdot}{\\sim} N\\left(\\mu, \\frac{\\sigma}{\\sqrt{n}}\\right)\n\\]\n\nThat is, the sampling distribution of the sample mean is approximately normal with mean \\(\\mu\\) and standard error \\(\\sigma/\\sqrt{n}\\)"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#clt-assumptions",
+    "href": "slides/slides-19-clt.html#clt-assumptions",
+    "title": "Central Limit Theorem",
+    "section": "CLT assumptions",
+    "text": "CLT assumptions\n\nIndependent samples:\n\nUsually achieved by random sampling\n\nNormality condition:\n\nIf the data \\(x_{1},\\ldots, x_{n}\\) are known to be Normal and independent, then the distribution of \\(\\bar{X}\\) is exactly Normal\n\n\n\nIf data are not known to be Normal, then check:\n\nIf \\(n\\) is small \\((n < 30)\\): if there are no clear outliers, we assume data are approximately normal\nIf \\(n\\) is larger \\((30 \\leq n < ?)\\): if there are no particularly extreme outliers, we assume data are approximately normal"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#normality-condition",
+    "href": "slides/slides-19-clt.html#normality-condition",
+    "title": "Central Limit Theorem",
+    "section": "Normality condition",
+    "text": "Normality condition\n\nDo you believe the large sample size/normality condition is satisfied in the following two samples?\n\n\n\n\n\n\nSample 1: small \\(n < 30\\). But histogram and boxplot reveals no clear outliers, so I would say normality condition is met.\nSample 2: larger \\(n \\geq 30\\). Even though \\(n\\) is larger, there is a particularly extreme outlier, so I would say normality condition is not met."
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#activity",
+    "href": "slides/slides-19-clt.html#activity",
+    "title": "Central Limit Theorem",
+    "section": "Activity",
+    "text": "Activity"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#height-example",
+    "href": "slides/slides-19-clt.html#height-example",
+    "title": "Central Limit Theorem",
+    "section": "Height example",
+    "text": "Height example\n\n\n\nThe average height of all NBA players in the 2008-9 season is 79.21 inches, with a population standard deviation of 3.57 inches. We randomly sampled \\(20\\) of these players and recorded their heights, as shown below.\n\n\n\nWhat is the sampling distribution of the sample mean heights? Do we know it exactly?"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#height-example-solution",
+    "href": "slides/slides-19-clt.html#height-example-solution",
+    "title": "Central Limit Theorem",
+    "section": "Height example: solution",
+    "text": "Height example: solution\nWe don’t know if the data are Normal. But:\n\nIndependence? Yes: we have independent samples!\nNormality condition? Yes: even though we have small sample size, the histogram of the data looks approximately Normal (no clear outliers).\n\n\nSo CLT applies! By CLT: \\(\\bar{X} \\overset{\\cdot}{\\sim} N\\left(79.21, \\frac{3.57}{\\sqrt{20}}\\right)\\)\n\n\n\n\nIf data instead looked like the following, I would say normality condition is violated:"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#bank-example",
+    "href": "slides/slides-19-clt.html#bank-example",
+    "title": "Central Limit Theorem",
+    "section": "Bank example",
+    "text": "Bank example\nCustomers are standing in line at a bank.\n\nLet \\(X_{i}\\) represent the service time for customer \\(i\\).\nSuppose that the average service time for all customers is 5 minutes, with a standard deviation of 6 minutes.\n\n\n\nAssume that a bank currently has 36 customers in it, and all customers are independent of each other. What is the probability that the average service time of all these customers is less than 4 minutes?"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#bank-example-solution",
+    "href": "slides/slides-19-clt.html#bank-example-solution",
+    "title": "Central Limit Theorem",
+    "section": "Bank example: solution",
+    "text": "Bank example: solution\n\nWe want \\(\\text{Pr}(\\bar{X} < 4)\\)\nConditions for CLT met: independence (random sample) and sufficiently large sample size \\((n=36)\\).\n\nSo by CLT, \\(\\bar{X} \\overset{\\cdot}{\\sim}N(5, \\frac{6}{\\sqrt{36}}) = N(5, 1)\\)\n\nUsing 68-95-99.7 rule, probability that the average service time of all these customers is less than 4 minutes is about \\(1 - (0.34 + 0.5) = 0.16\\)\n\npnorm(4, 5, 1) = 0.159"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#proportion-as-a-mean",
+    "href": "slides/slides-19-clt.html#proportion-as-a-mean",
+    "title": "Central Limit Theorem",
+    "section": "Proportion as a mean",
+    "text": "Proportion as a mean\nRemember \\(\\hat{p}\\) is a sample mean! So the CLT applies to proportions as well!\n\\[\n\\hat{p} = \\frac{1}{n}\\sum_{i=1}^{n} x_{i} \\qquad \\qquad x_{i} =\\{0, 1\\}\n\\]\n\nTypically, \\(x_{i} = 1\\) is read as “success” and \\(x_{i} = 0\\) as “failure”, so \\(p\\) is the population-level probability of success"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#clt-for-proportions",
+    "href": "slides/slides-19-clt.html#clt-for-proportions",
+    "title": "Central Limit Theorem",
+    "section": "CLT for proportions",
+    "text": "CLT for proportions\nCLT for sample proportions: if we have \\(n\\) independent binary observations with \\(np \\geq 10\\) and \\(n(1-p) \\geq 10\\), then:\n\n\\[\n\\hat{p} \\overset{\\cdot}{\\sim} N\\left(p, \\sqrt{\\frac{p(1-p)}{n}}\\right)\n\\]\n\n\n\nWhat do the conditions \\(np \\geq 10\\) and \\(n(1-p)\\geq 10\\) mean?\n\nFor this reason, this is called the “success-failure” condition for CLT for proportions"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#mms-example",
+    "href": "slides/slides-19-clt.html#mms-example",
+    "title": "Central Limit Theorem",
+    "section": "M&M’s example",
+    "text": "M&M’s example\nMars, Inc. is the company that makes M&M’s. In 2008, Mars changed their color distribution to have 13% red candies.\n\n\nLet \\(\\hat{p}\\) represent the proportion of red M&M’s in a random sample of \\(n\\) M&M’s. What is the sampling distribution of \\(\\hat{p}\\) if we take a random sample of sizes:\n\n\\(n = 100\\)\n\\(n = 10\\)"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#mms-example-solution",
+    "href": "slides/slides-19-clt.html#mms-example-solution",
+    "title": "Central Limit Theorem",
+    "section": "M&M’s example: solution",
+    "text": "M&M’s example: solution\n\nIndependence? Yes, due to the random sample.\nSuccess-failure? Depends…\n\n\n\n\nIf \\(n= 100\\):\n\n\\(np = 100(0.13) = 13 \\geq 10\\)\n\\(n(1-p) = 100(0.87) = 87 \\geq 10\\)\n\nSo CLT applies!\n\n\n\\[\n\\begin{align*}\n\\hat{p} &\\overset{\\cdot}{\\sim} N\\left(0.13, \\sqrt{\\frac{0.13(1-0.13)}{100}}\\right) \\\\\n&= N(0.13, 0.034 )\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#mms-example-cont.",
+    "href": "slides/slides-19-clt.html#mms-example-cont.",
+    "title": "Central Limit Theorem",
+    "section": "M&M’s example (cont.)",
+    "text": "M&M’s example (cont.)\nThe following histograms display sampling distributions for \\(\\hat{p}\\) = proportion of red candies in random samples of size \\(n = \\{10, 50, 100, 200\\}\\):"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#why-is-clt-so-important",
+    "href": "slides/slides-19-clt.html#why-is-clt-so-important",
+    "title": "Central Limit Theorem",
+    "section": "Why is CLT so important?",
+    "text": "Why is CLT so important?\n\nAllows statisticians safely assume that the mean’s sampling distribution is approximately Normal. The Normal distribution has nice properties and is easy to work with.\nCan be applied to both continuous and discrete numeric data!\nDoes not depend on the underlying distribution of the data.\n\n\nFor many of these reasons, we can use the CLT for inference!"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#mathematical-cis",
+    "href": "slides/slides-19-clt.html#mathematical-cis",
+    "title": "Central Limit Theorem",
+    "section": "Mathematical CIs",
+    "text": "Mathematical CIs\n\nRather than using simulation techniques (i.e. bootstrap) to obtain the sampling distribution, the CLT gives us the sampling distribution of a mean “for free”\n\n(assuming conditions are met)\n\nFormula for a (symmetric) \\(\\gamma \\times 100\\%\\) confidence interval:\n\\[\n\\text{point estimate} \\pm \\underbrace{\\text{critical value} \\times \\text{SE}}_{\\text{Margin of Error}}\n\\]\n\npoint estimate: the “best guess” statistic from our observed data (e.g. \\(\\hat{p}\\) and \\(\\bar{x}\\))\nSE: standard error of the statistic\ncritical value: percentile that guarantees the \\(\\gamma\\times 100\\). This will vary depending on your data/assumptions"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#towards-a-ci-for-a-single-proportion",
+    "href": "slides/slides-19-clt.html#towards-a-ci-for-a-single-proportion",
+    "title": "Central Limit Theorem",
+    "section": "Towards a CI for a single proportion",
+    "text": "Towards a CI for a single proportion\nSuppose that I have a sample of \\(n\\) binary (0/1) values. I want a \\(\\gamma \\times 100\\%\\) confidence interval for the probability of success \\(p\\) using the sample.\n\nIf assumptions of CLT for sample proportions hold, then we know\n\\[\n\\hat{p} \\overset{\\cdot}{\\sim} N\\left(p, \\sqrt{\\frac{p(1-p)}{n}}\\right)\n\\]\n\n\nWe can use/manipulate this result to obtain a confidence interval for the unknown \\(p\\)!\nHow do we know if success-failure condition holds without knowing \\(p\\)?\n\nLet’s use our best guess: \\(\\hat{p}\\)\nSuccess-failure condition for inference: \\(n\\hat{p}\\) and \\(n(1-\\hat{p})\\) both \\(\\geq 10\\)"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#towards-a-ci-for-a-single-proportion-cont.",
+    "href": "slides/slides-19-clt.html#towards-a-ci-for-a-single-proportion-cont.",
+    "title": "Central Limit Theorem",
+    "section": "Towards a CI for a single proportion (cont.)",
+    "text": "Towards a CI for a single proportion (cont.)\n\nPoint estimate: observed \\(\\hat{p}\\) from our sample\nStandard error: \\(\\sqrt{p(1-p)/n}\\)\n\nBut we still don’t have \\(p\\)!\nInstead, use the following approximation for CI:\n\n\n\n\\[\\text{SE}(\\hat{p}) \\approx \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}\\]\n\n\nCritical value: to obtain the middle \\(\\gamma \\times 100\\%\\) part, we use the \\((1-\\gamma)/2\\) and \\((1+\\gamma)/2\\) percentiles of the \\(N(0,1)\\) distribution\n\n\\(z_{(1-\\gamma)/2}^{*}\\) (lower bound) and \\(z_{(1+\\gamma)/2}^{*}\\) (upper bound)\nNote: \\(z_{(1+\\gamma)/2}^{*} = - z_{(1-\\gamma)/2}^{*}\\)"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#ci-for-single-proportion",
+    "href": "slides/slides-19-clt.html#ci-for-single-proportion",
+    "title": "Central Limit Theorem",
+    "section": "CI for single proportion",
+    "text": "CI for single proportion\nSo the formula for a (symmetric) \\(\\gamma\\times 100\\%\\) CI for \\(p\\) is:\n\n\\[\n\\hat{p} \\pm z_{(1+\\gamma)/2}^{*}\\times \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}\n\\]where the critical value is obtained from \\(N(0,1)\\) distribution\n\n\nCome take STAT 311 to see why this is our CI!"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#example",
+    "href": "slides/slides-19-clt.html#example",
+    "title": "Central Limit Theorem",
+    "section": "Example",
+    "text": "Example\nA poll of 100 randomly sampled registered voters in a town was conducted, asking voters if they support legalized marijuana. It was found that 60% of respondents were in support.\n\nWhat is the population parameter? What is the point estimate/statistic?\n\n\nFind a (symmetric) 90% confidence interval for the true proportion of town residents in favor of legalized marijuana.\n\n\n\nConditions for CLT met?\n\n\nIndependence: random sample\nSuccess-failure condition: \\(n\\hat{p} =100(0.6) = 60 \\geq 10\\) and \\(n(1-\\hat{p}) = 100(0.4) = 40 \\geq 10\\)"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#example-cont.",
+    "href": "slides/slides-19-clt.html#example-cont.",
+    "title": "Central Limit Theorem",
+    "section": "Example (cont.)",
+    "text": "Example (cont.)\n\nFind a (symmetric) 90% confidence interval for the true proportion of town residents in favor of legalized marijuana.\n\n\nGathering components for CI:\n\n\nPoint estimate: \\(\\hat{p}\\) = 0.6\nStandard error: \\(\\text{SE}(\\hat{p}) \\approx \\sqrt{\\frac{0.6(0.4)}{100}} \\approx 0.049\\)\n\nCritical value: what percentiles do we want?\n\n\n\\(z_{0.95}^{*} =\\) qnorm(0.95, mean = 0, sd = 1) \\(\\approx 1.645\\)\n\n\n\nSo our 90% confidence interval for \\(p\\) is:\n\\[\n0.6 \\pm 1.645(0.049) = (0.519, 0.681)\n\\]\n\n\n\nInterpret the confidence interval in context!"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#comprehension-questions",
+    "href": "slides/slides-19-clt.html#comprehension-questions",
+    "title": "Central Limit Theorem",
+    "section": "Comprehension questions",
+    "text": "Comprehension questions\n\nWhat is the main takeaway of the CLT?\nWhat are the assumptions of the CLT?\nHow do we construct a \\(\\gamma \\times 100\\%\\) confidence interval using a mathematical model?"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#clt-for-sample-proportions",
+    "href": "slides/slides-19-clt.html#clt-for-sample-proportions",
+    "title": "Central Limit Theorem",
+    "section": "CLT for sample proportions",
+    "text": "CLT for sample proportions\nSuppose we have some true population proportion \\(p\\). If we take a sample of size \\(n\\) from the population, then the CLT tells us that sampling distribution of \\(\\hat{p}\\) is approximately Normal if we have:\n\nIndependence\n“Success-failure” condition: \\(np \\geq 10\\) and \\(n(1-p) \\geq 10\\)\n\n\nIf these two conditions hold, then by CLT:\n\\[\n\\hat{p} \\overset{\\cdot}{\\sim} N\\left(p, \\sqrt{\\frac{p(1-p)}{n}}\\right)\n\\]\n\n\n\nWhy is the condition called “success-failure”?\nAre you comfortable with using a Normal distribution to approximate the sampling distribution of \\(\\hat{p}\\)?"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#flow-chart",
+    "href": "slides/slides-19-clt.html#flow-chart",
+    "title": "Central Limit Theorem",
+    "section": "Flow chart",
+    "text": "Flow chart"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#mms-example-solution-cont.",
+    "href": "slides/slides-19-clt.html#mms-example-solution-cont.",
+    "title": "Central Limit Theorem",
+    "section": "M&M’s example: solution (cont.)",
+    "text": "M&M’s example: solution (cont.)\n\nIf \\(n = 10\\):\n\n\\(np = 10(0.13) = 1.3 < 10\\)\n\nSuccess-failure condition not met. Cannot use CLT.\n\n\n\n\nIf we incorrectly applied CLT, we might think \\[\\hat{p} \\overset{\\cdot}{\\sim} N\\left(0.13, \\sqrt{\\frac{0.13(1-0.13)}{10}}\\right)\\]\nWhat does this distribution look like?\n\n\n\n\nWhy is this scary??"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#clt-again",
+    "href": "slides/slides-19-clt.html#clt-again",
+    "title": "Central Limit Theorem",
+    "section": "CLT again",
+    "text": "CLT again\nLet’s see it again: If the assumptions of independence and Normality condition apply, then\n\\[\\bar{X} \\overset{\\cdot}{\\sim} N\\left(\\mu, \\frac{\\sigma}{n} \\right)\\] where \\(\\mu\\) and \\(\\sigma\\) are the population mean and standard deviation, and \\(\\bar{X}\\) is the sample mean obtained from a sample of size \\(n\\).\n\n\nWhat does the \\(\\frac{\\sigma}{n}\\) represent?\nFor fixed \\(\\sigma\\), how does the sampling distribution change as \\(n\\) increases?"
   }
 ]

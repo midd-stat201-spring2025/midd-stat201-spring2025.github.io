@@ -1,6 +1,6 @@
 ---
 title: "Central Limit Theorem"
-date: "October 23, 2024"
+date: "April 9, 2025"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
@@ -65,29 +65,32 @@ source("../stat201_fns.R")
     \bar{X} \overset{\cdot}{\sim} N\left(\mu, \frac{\sigma}{\sqrt{n}}\right)
     $$
 
-    -   That is, the sampling distribution of the sample mean is approximately normal with mean $\mu$ and standard error $\sigma/\sqrt{n}$
+    -   That is, the *sampling distribution* of the sample mean is approximately normal with mean $\mu$ and standard error $\sigma/\sqrt{n}$
 
 ## CLT assumptions
 
--   **Remark #1**: does not require any assumption about how the data $x_{1},\ldots, x_{n}$ behave so long as the following assumptions hold:
+1.  Independent samples:
 
-    1.  Independent samples: usually achieved by random sampling
-    2.  Sufficiently large sample size $n$, where large is in relation to total size of population
+    -   Usually achieved by random sampling
 
--   **Remark #2**: if the data $x_{1},\ldots, x_{n}$ are known to be Normal and independent, then the distribution of sample means is *exactly* Normal, even for small $n$
+2.  Normality condition:
 
-    -   For this reason, if $n$ is small we require the data to be Normal
+    -   If the data $x_{1},\ldots, x_{n}$ are known to be Normal and independent, then the distribution of $\bar{X}$ is ***exactly*** Normal
 
-    -   How to know? We replace (2) above with the **normality condition**:
+    <!-- -->
 
-        -   If $n$ is small $(n < 30)$: we assume data are approximately normal if there are no clear outliers
+    -   If data are not known to be Normal, then check:
 
-        -   If $n$ is larger $(30 \leq n < ?)$: we assume data are approximately normal if there are no particularly extreme outliers
+        -   If $n$ is small $(n < 30)$: if there are no clear outliers, we assume data are approximately normal
+
+        -   If $n$ is larger $(30 \leq n < ?)$: if there are no particularly extreme outliers, we assume data are approximately normal
+
+## Flow chart
 
 ## Normality condition
 
 ::: discuss
-Do you believe the large sample size/normality condition is satisified in the following two samples?
+Do you believe the large sample size/normality condition is satisfied in the following two samples?
 :::
 
 ::::: columns
@@ -102,8 +105,17 @@ Do you believe the large sample size/normality condition is satisified in the fo
 :::
 :::::
 
-## Activity
+## CLT again
 
+Let's see it again: If the assumptions of independence and Normality condition apply, then
+
+$$\bar{X} \overset{\cdot}{\sim} N\left(\mu, \frac{\sigma}{n} \right)$$
+where $\mu$ and $\sigma$ are the population mean and standard deviation, and $\bar{X}$ is the sample mean obtained from a sample of size $n$.
+
+::: {.discuss}
+- What does the $\frac{\sigma}{n}$ represent?
+- For fixed $\sigma$, how does the sampling distribution change as $n$ increases?
+:::
 ## Height example
 
 ```{r}
@@ -111,7 +123,7 @@ mu <- round(mean(nba_heights$h_in), 2)
 sigma <- round(sd(nba_heights$h_in), 2)
 ```
 
-The average height of all NBA players in the 2008-9 season is `r mu` inches, with a standard deviation of `r sigma` inches. We randomly sample $20$ of these players and record their heights.
+The average height of all NBA players in the 2008-9 season is `r mu` inches, with a population standard deviation of `r sigma` inches. We randomly sampled $20$ of these players and recorded their heights, as shown below.
 
 ```{r}
 set.seed(16)
@@ -126,39 +138,54 @@ ggplot(data.frame(x), aes(x = x)) +
 
 :::: fragment
 ::: discuss
-What is the sampling distribution of the sample mean heights?
+What is the sampling distribution of the sample mean heights? Do we know it exactly?
 :::
 ::::
 
 ## Height example: solution
 
--   We have independent samples, but not a large sample size. However, the histogram of the data looks approximately Normal (no clear outliers).
+We don't know if the data are Normal. But:
 
--   CLT applies! By CLT: $\bar{X} \overset{\cdot}{\sim} N\left(`r mu`, \frac{`r sigma`}{\sqrt{`r n`}}\right)$
+1.  Independence? Yes: we have independent samples!
+2.  Normality condition? Yes: even though we have small sample size, the histogram of the data looks approximately Normal (no clear outliers).
 
--   If the data instead looked like the following, I would say normality condition is violated:
+-   So CLT applies! By CLT: $\bar{X} \overset{\cdot}{\sim} N\left(`r mu`, \frac{`r sigma`}{\sqrt{`r n`}}\right)$
 
-    ```{r fig.height = 3}
-    set.seed(2)
-    height_sort <- nba_heights |>
-      arrange(desc(h_in)) |>
-      slice(1:100) |>
-      sample_n(n-1) |>
-      pull(h_in)
-    x <- c(height_sort, min(nba_heights$h_in))
-    ggplot(data.frame(x), aes(x = x)) +
-      geom_histogram(bins = 10, color = "white") +
-      labs(x = "Player height (in)") +
-      theme_minimal() +
-      theme(text = element_text(size = 18))
-    ```
+:::::: columns
+::: {.column width="50%"}
+-   If data instead looked like the following, I would say normality condition is violated:
+:::
+
+:::: {.column width="50%"}
+::: fragment
+```{r}
+set.seed(2)
+height_sort <- nba_heights |>
+  arrange(desc(h_in)) |>
+  slice(1:100) |>
+  sample_n(n-1) |>
+  pull(h_in)
+x <- c(height_sort, min(nba_heights$h_in))
+ggplot(data.frame(x), aes(x = x)) +
+  geom_histogram(bins = 10, color = "white") +
+  labs(x = "Player height (in)") +
+  theme_minimal() +
+  theme(text = element_text(size = 30))
+```
+:::
+::::
+::::::
 
 ## Bank example
 
-Customers are standing in line at a bank. The service time for each customer $i$ is represented by $X_{i}$. Suppose that the average service time for all customers is 5 minutes, with a standard deviation of 6 minutes.
+Customers are standing in line at a bank.
+
+-   Let $X_{i}$ represent the service time for customer $i$.
+
+-   Suppose that the average service time for all customers is 5 minutes, with a standard deviation of 6 minutes.
 
 ::: discuss
-Assume that a bank currently has 36 customers in it, and all customers are independent of each other. What is the probability that the average service time of all these customers is less than 4 minutes?
+-   Assume that a bank currently has 36 customers in it, and all customers are independent of each other. What is the probability that the average service time of all these customers is less than 4 minutes?
 :::
 
 ## Bank example: solution
@@ -173,31 +200,30 @@ Assume that a bank currently has 36 customers in it, and all customers are indep
 
     -   `pnorm(4, 5, 1)` = `r round(pnorm(4,5,1), 3)`
 
-## Proportion as a mean
+# CLT for proportions
 
-Remember $\hat{p}$ is a sample mean! So the CLT applies to proportions as well!
+Remember: a proportion can be viewed as a mean! So the CLT will apply to proportions as well!
 
-$$
-\hat{p} = \frac{1}{n}\sum_{i=1}^{n} x_{i} \qquad \qquad x_{i} =\{0, 1\}
-$$
+## **CLT for sample proportions**
 
--   Typically, $x_{i} = 1$ is read as "success" and $x_{i} = 0$ as "failure", so $p$ is the population-level probability of success
+Suppose we have some true population proportion $p$. If we take a sample of size $n$ from the population, then the CLT tells us that **sampling distribution of** $\hat{p}$ is approximately Normal if we have:
 
-## CLT for proportions
+1.  Independence
 
-**CLT for sample proportions**: if we have $n$ independent binary observations with $np \geq 10$ and $n(1-p) \geq 10$, then:
+2.  "Success-failure" condition: $np \geq 10$ *and* $n(1-p) \geq 10$
 
 ::: fragment
+If these two conditions hold, then by CLT:
+
 $$
 \hat{p} \overset{\cdot}{\sim} N\left(p, \sqrt{\frac{p(1-p)}{n}}\right)
 $$
 :::
 
--   ::: discuss
-    What do the conditions $np \geq 10$ and $n(1-p)\geq 10$ mean?
-    :::
-
--   For this reason, this is called the **"success-failure" condition** for CLT for proportions
+::: discuss
+-   Why is the condition called "success-failure"?
+-   Are you comfortable with using a Normal distribution to approximate the sampling distribution of $\hat{p}$?
+:::
 
 ## M&M's example
 
@@ -205,7 +231,7 @@ Mars, Inc. is the company that makes M&M's. In 2008, Mars changed their color di
 
 :::: fragment
 ::: discuss
-Let $p$ be the proportion of red M&M's in a random sample of $n$ M&M's. What is the distribution of $\hat{p}$ if we take random sample of size:
+Let $\hat{p}$ represent the proportion of red M&M's in a random sample of $n$ M&M's. What is the sampling distribution of $\hat{p}$ if we take a random sample of sizes:
 
 -   $n = 100$
 
@@ -215,19 +241,20 @@ Let $p$ be the proportion of red M&M's in a random sample of $n$ M&M's. What is 
 
 ## M&M's example: solution
 
-We have independence due to the random sample. Need to check success-failure condition:
+1.  Independence? Yes, due to the random sample.
+2.  Success-failure? Depends...
 
-:::::: columns
-:::: {.column width="50%"}
+:::: {.columns}
+::: {.column width="60%"}
 -   **If** $n= 100$**:**
 
     -   $np = 100(0.13) = 13 \geq 10$
 
     -   $n(1-p) = 100(0.87) = 87 \geq 10$
 
--   So CLT applies:
+-   So CLT applies!
 
-::: fragment
+::: {.fragment}
 $$
 \begin{align*}
 \hat{p} &\overset{\cdot}{\sim} N\left(0.13, \sqrt{\frac{0.13(1-0.13)}{100}}\right) \\
@@ -235,14 +262,60 @@ $$
 \end{align*}
 $$
 :::
+:::
+::: {.column width="40%"}
+::: fragment
+
+```{r fig.height=8}
+p <- 0.13
+n <- 100
+ggplot() +
+   geom_function(fun = dnorm, args = list(mean = p, sd = sqrt(p*(1-p)/n)) )+
+  theme_minimal() +
+  scale_x_continuous(limits = c(-0.2, 1.1), n.breaks = 6) +
+  theme(axis.text.y = element_blank(), axis.title.y = element_blank()) +
+  labs(x = expression(hat(p)), title = "Theoretical sampling distribution", subtitle = "By CLT") +
+  theme(text = element_text(size = 30))
+```
+:::
+:::
 ::::
 
-::: {.column width="50%"}
+## M&M's example: solution (cont.)
+
 -   **If** $n = 10$**:**
     -   $np = 10(0.13) = 1.3 < 10$
--   Success-failure condition not met. Cannot use CLT.
+-   Success-failure condition not met. **Cannot use CLT.**
+
+:::: {.columns}
+::: {.column width="50%"}
+- If we incorrectly applied CLT, we *might* think 
+$$\hat{p} \overset{\cdot}{\sim} N\left(0.13, \sqrt{\frac{0.13(1-0.13)}{10}}\right)$$
+- What does this distribution look like?
 :::
-::::::
+::: {.column width="50%"}
+::: {.fragment}
+::: {.discuss}
+Why is this scary??
+:::
+```{r fig.height = 7}
+n <- 10
+ggplot() +
+   geom_function(fun = dnorm, args = list(mean = p, sd = sqrt(p*(1-p)/n)) )+
+  theme_minimal() +
+  scale_x_continuous(limits = c(-0.5, 1.1), n.breaks = 6) +
+  theme(axis.text.y = element_blank(), axis.title.y = element_blank()) +
+  labs(x = expression(hat(p)), title = "Incorrect theoretical sampling distribution") +
+  theme(text = element_text(size = 30))
+```
+:::
+:::
+::::
+
+
+
+
+
 
 ## M&M's example (cont.)
 

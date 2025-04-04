@@ -57,7 +57,8 @@ p68 <- base +
   theme(text= element_text(size = 15))+
   geom_segment(data = df, aes(x=x, y=y, xend = x, yend = 0), col = "#84CA72")+
     labs(x="x", y = expression(f(x ~ ";"~ mu, sigma))) +
-  scale_y_continuous(breaks = NULL)
+  scale_y_continuous(breaks = NULL) +
+  theme(axis.text.x = element_text(size = 14, angle = 45, hjust = 1))
 
 p_std <- base +
   geom_function(fun = dnorm) +
@@ -89,7 +90,7 @@ p_perc2 <-p_empty +
 p_norms
 ```
 
-## 68-95-99.7 rules
+## 68-95-99.7 rule
 
 ```{r fig.height=3}
 p68
@@ -188,11 +189,28 @@ Suppose SAT scores are Normally distributed with mean 1100 and standard deviatio
 
 1.  Edward earned a 1030 on his SAT. We will find his percentile using code in two ways.
     a.  First, draw a picture representing what we want to find. Then write code to find the percentile.
+    
+    \vspace{4cm}
+    
+    
     b.  Find Edward's z-score. Write another line of code to find the percentile.
+    
+        \vspace{4cm}
+
 2.  What is the 97.5th percentile for SAT scores?
     a.  Write code to answer this question.
+    
+        \vspace{4cm}
+
+
     b.  Write a different line of code to answer this question that involves a z-score.
+    
+        \vspace{4cm}
+
 3.  Unrelated to SAT scores: consider the standard normal $N(0,1)$ distribution. The 25th percentile of this distribution is `r round(qnorm(0.25), 2)`. Without doing any work beyond drawing a picture, what is the 75th percentile of the distribution?
+
+    \vspace{4cm}
+
 
 \clearpage
 
@@ -218,12 +236,3 @@ Suppose SAT scores are Normally distributed with mean 1100 and standard deviatio
     qnorm(0.6, mean = 0, sd = 1)
     ```
 
-4.  $(^*)$ Suppose body temperatures are Normally distributed with mean $98.6^\circ$ F and standard deviation of $0.7^\circ$ F. Assuming this is true, answer the following:
-
-    a.  Fevers $103^\circ$ F or higher are considered dangerous. What fraction of people would be expected to have such high a fever?
-
-    b.  According to quick Google search, a range for low-grade fever is between $99.5^\circ$ F and $100.3^\circ$ F. What is the probability of having a low-grade fever?
-
-    c.  What body temperatures would you consider as unusually low? Briefly explain why.
-
-    d.  Provide two intervals that each capture/contain 80% of body temperatures.
