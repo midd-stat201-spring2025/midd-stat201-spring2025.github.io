@@ -3,6 +3,10 @@ title: "DataFest"
 toc: true
 ---
 
+`.qmd` **TEMPLATE HERE!!!!**
+
+{{< downloadthis datafest_template.qmd dname="datafest" label="datafest" id=mtcars-btn >}}
+
 ## Brief description
 
 Over the weekend of April 4-6, you will work with a completely new-to-you dataset to answer some research question(s) of interest! More details on the [Middlebury DataFest website](https://midd-datafest-2025.github.io/home.html)!

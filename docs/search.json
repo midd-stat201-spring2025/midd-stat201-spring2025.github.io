@@ -7151,14 +7151,14 @@
     "href": "datafest.html",
     "title": "DataFest",
     "section": "",
-    "text": "Over the weekend of April 4-6, you will work with a completely new-to-you dataset to answer some research question(s) of interest! More details on the Middlebury DataFest website!\nIn small groups, you will work to answer the research question(s) of interest using methods we’ve thus far learned in the class.\nBecause of the extra time-commitment of DataFest, the problem set associated with Week 7 will be light or maybe combined into a problem set with Week 8!"
+    "text": ".qmd TEMPLATE HERE!!!!\ndatafest"
   },
   {
     "objectID": "datafest.html#brief-description",
     "href": "datafest.html#brief-description",
     "title": "DataFest",
     "section": "Brief description",
-    "text": "Brief description\nOver the weekend of April 4-6, you will work with a completely new-to-you dataset to answer some research question(s) of interest!\nIn small groups, you will work to answer the research question(s) of interest using methods we’ve thus far learned in the class.\nBecause of the extra time-commitment of DataFest, the problem set associated with Week 7 will be light/combined into a problem set with Week 8!"
+    "text": "Brief description\nOver the weekend of April 4-6, you will work with a completely new-to-you dataset to answer some research question(s) of interest! More details on the Middlebury DataFest website!\nIn small groups, you will work to answer the research question(s) of interest using methods we’ve thus far learned in the class.\nBecause of the extra time-commitment of DataFest, the problem set associated with Week 7 will be light or maybe combined into a problem set with Week 8!"
   },
   {
     "objectID": "datafest.html#requirements",
@@ -7894,5 +7894,54 @@
     "title": "Simulation test for a single mean",
     "section": "",
     "text": "library(readr)\nlibrary(tidyverse)\n# change the following file path accordingly\nduke_forest <- read_csv(\"~/Desktop/STAT 201/duke_forest.csv\")\n\n\nprices <- duke_forest |>\n  pull(price)\n\nprices <- prices / 100000\n\nxbar <- mean(prices)\nn <- length(prices)\n\n# bootstrap distribution of sample means (5000 iterations)\nset.seed(5)\nB <- 5000\nboot_means <- rep(NA, B)\nfor(b in 1:B){\n  boot_samp <- sample(prices, n, replace = T)\n  boot_means[b] <- mean(boot_samp)\n}\n\nmu0 <- 5\nshift <- xbar - mu0\nnull_dist <- boot_means - shift\n\np_val <- mean(null_dist >= xbar | null_dist <= (mu0 - shift)) \n\nP-value of 0.009"
+  },
+  {
+    "objectID": "datafest_template.html",
+    "href": "datafest_template.html",
+    "title": "DataFest",
+    "section": "",
+    "text": "# add extra packages as necessary\nlibrary(tidyverse)\nlibrary(readr)\n\n# load data"
+  },
+  {
+    "objectID": "datafest_template.html#introduction",
+    "href": "datafest_template.html#introduction",
+    "title": "DataFest",
+    "section": "Introduction",
+    "text": "Introduction\nWrite your introduction here! Make sure to very clearly state the research question(s) you’re trying to answer."
+  },
+  {
+    "objectID": "datafest_template.html#data-cleaningwrangling",
+    "href": "datafest_template.html#data-cleaningwrangling",
+    "title": "DataFest",
+    "section": "Data cleaning/wrangling",
+    "text": "Data cleaning/wrangling\nDiscuss at a high-level the wrangling you needed to do to get your data into a position to implement your methods below. (This might be one of the last parts of the report you right).\n\n# any code you might need to do macro-level wrangling"
+  },
+  {
+    "objectID": "datafest_template.html#methods",
+    "href": "datafest_template.html#methods",
+    "title": "DataFest",
+    "section": "Methods",
+    "text": "Methods\nBrief description of methods used to answer your research question(s), along with justification for why your methods is/are appropriate. Remember, we need at least one visualization and one simulation-based inference method!\nThere shouldn’t any code in this section because you are just describing your methods."
+  },
+  {
+    "objectID": "datafest_template.html#results-with-interpretation",
+    "href": "datafest_template.html#results-with-interpretation",
+    "title": "DataFest",
+    "section": "Results with interpretation",
+    "text": "Results with interpretation\nImplement your methods described above. This section is mostly code, with just some text for interpretation in context."
+  },
+  {
+    "objectID": "datafest_template.html#conclusion",
+    "href": "datafest_template.html#conclusion",
+    "title": "DataFest",
+    "section": "Conclusion",
+    "text": "Conclusion\nBrief conclusion about what you would do differently/wish you had!"
+  },
+  {
+    "objectID": "datafest_template.html#acknowledgements",
+    "href": "datafest_template.html#acknowledgements",
+    "title": "DataFest",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nPlease briefly describe each team member’s contribution to the project!"
   }
 ]

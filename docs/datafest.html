@@ -39,6 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/downloadthis-1.9.1/downloadthis.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -157,6 +158,16 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p><code>.qmd</code> <strong>TEMPLATE HERE!!!!</strong></p>
+<p><a href="#mtcars-btn" onclick="fetch('data:text/plain;base64,LS0tCnRpdGxlOiAiRGF0YUZlc3QiCmF1dGhvcjogIlRlYW0gbmFtZSBoZXJlISEiCmZvcm1hdDogcGRmCi0tLQoKYGBge3IgbWVzc2FnZSA9IEZ9CiMgYWRkIGV4dHJhIHBhY2thZ2VzIGFzIG5lY2Vzc2FyeQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShyZWFkcikKCiMgbG9hZCBkYXRhCmBgYAoKIyMgSW50cm9kdWN0aW9uCgpXcml0ZSB5b3VyIGludHJvZHVjdGlvbiBoZXJlISBNYWtlIHN1cmUgdG8gdmVyeSBjbGVhcmx5IHN0YXRlIHRoZSByZXNlYXJjaCBxdWVzdGlvbihzKSB5b3UncmUgdHJ5aW5nIHRvIGFuc3dlci4KCiMjIERhdGEgY2xlYW5pbmcvd3JhbmdsaW5nCgpEaXNjdXNzIGF0IGEgaGlnaC1sZXZlbCB0aGUgd3JhbmdsaW5nIHlvdSBuZWVkZWQgdG8gZG8gdG8gZ2V0IHlvdXIgZGF0YSBpbnRvIGEgcG9zaXRpb24gdG8gaW1wbGVtZW50IHlvdXIgbWV0aG9kcyBiZWxvdy4gKFRoaXMgbWlnaHQgYmUgb25lIG9mIHRoZSBsYXN0IHBhcnRzIG9mIHRoZSByZXBvcnQgeW91IHJpZ2h0KS4KCmBgYHtyfQojIGFueSBjb2RlIHlvdSBtaWdodCBuZWVkIHRvIGRvIG1hY3JvLWxldmVsIHdyYW5nbGluZwpgYGAKCiMjIE1ldGhvZHMKCkJyaWVmIGRlc2NyaXB0aW9uIG9mIG1ldGhvZHMgdXNlZCB0byBhbnN3ZXIgeW91ciByZXNlYXJjaCBxdWVzdGlvbihzKSwgYWxvbmcgd2l0aCBqdXN0aWZpY2F0aW9uIGZvciB3aHkgeW91ciBtZXRob2RzIGlzL2FyZSBhcHByb3ByaWF0ZS4gUmVtZW1iZXIsIHdlIG5lZWQgYXQgbGVhc3Qgb25lIHZpc3VhbGl6YXRpb24gYW5kIG9uZSBzaW11bGF0aW9uLWJhc2VkIGluZmVyZW5jZSBtZXRob2QhCgpUaGVyZSBzaG91bGRuJ3QgYW55IGNvZGUgaW4gdGhpcyBzZWN0aW9uIGJlY2F1c2UgeW91IGFyZSBqdXN0IGRlc2NyaWJpbmcgeW91ciBtZXRob2RzLgoKIyMgUmVzdWx0cyB3aXRoIGludGVycHJldGF0aW9uCgpJbXBsZW1lbnQgeW91ciBtZXRob2RzIGRlc2NyaWJlZCBhYm92ZS4gVGhpcyBzZWN0aW9uIGlzIG1vc3RseSBjb2RlLCB3aXRoIGp1c3Qgc29tZSB0ZXh0IGZvciBpbnRlcnByZXRhdGlvbiBpbiBjb250ZXh0LiAKCmBgYHtyfQoKYGBgCgojIyBDb25jbHVzaW9uCgpCcmllZiBjb25jbHVzaW9uIGFib3V0IHdoYXQgeW91IHdvdWxkIGRvIGRpZmZlcmVudGx5L3dpc2ggeW91IGhhZCEKCiMjIEFja25vd2xlZGdlbWVudHMKClBsZWFzZSBicmllZmx5IGRlc2NyaWJlIGVhY2ggdGVhbSBtZW1iZXIncyBjb250cmlidXRpb24gdG8gdGhlIHByb2plY3QhCg==').then(res => res.blob()).then(blob => {
+      const downloadURL = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      document.body.appendChild(a);
+      a.href = downloadURL;
+      a.download = 'datafest.qmd'; a.click();
+      window.URL.revokeObjectURL(downloadURL);
+      document.body.removeChild(a);
+        });"><button class="btn btn-default downloadthis  " id="mtcars-btn"><i class="bi bi-download"></i> datafest </button></a></p>
 <section id="brief-description" class="level2">
 <h2 class="anchored" data-anchor-id="brief-description">Brief description</h2>
 <p>Over the weekend of April 4-6, you will work with a completely new-to-you dataset to answer some research question(s) of interest! More details on the <a href="https://midd-datafest-2025.github.io/home.html">Middlebury DataFest website</a>!</p>
