@@ -2314,7 +2314,7 @@
     "href": "index.html#announcements",
     "title": "Advanced Introduction to Statistics and Data Science",
     "section": "Announcements",
-    "text": "Announcements\n\nWelcome back from Spring Break!"
+    "text": "Announcements\n\nMath & Stats pre-registration dessert social!\n\nMonday, 4/14 from 3:00-4:30 in Warner 105\nCome by for dessert and advising!\nAlso, I’m always happy to chat about courses for the upcoming semester!"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#recap",
@@ -3700,21 +3700,21 @@
     "href": "project/project_description.html",
     "title": "Final project",
     "section": "",
-    "text": "Deliverable\nDate\nTime\n\n\n\n\nGroup creation\nWednesday 10/30\nBeginning of class\n\n\nProposal for data collection\nMonday 11/04\n11:59pm\n\n\nRevised proposal for data collection (if applicable)\nSaturday 11/09\n11:59pm\n\n\nCollect your data\nAnytime between proposal approval and Thanksgiving break\n\n\n\nExcel/GoogleSheets of your data\nSunday 12/01\n11:59pm\n\n\nRough draft of report\nSunday 12/08\n11:59pm\n\n\nFinal Presentation\n(Section AZ)\nWednesday 12/11\n7-10pm (slides due at 6pm)\n\n\nFinal Presentation (Section BY)\nThursday 12/12\n9am-12pm (slides due at 8am)\n\n\nFinal report (knitted version and .Rmd) and data with data dictionary\nSunday 12/15 (tentative)\n11:59pm\n\n\nReflection*\nSunday 12/15 (tentative)\n11:59pm\n\n\n\n*Reflection should be submitted individually. All other deliverables are one-per-group."
+    "text": "Deliverable\nDate\nTime\n\n\n\n\nGroup creation\nThursday 4/10\nBeginning of class\n\n\nProposal for data collection\nWednesday 4/16\n11:59pm\n\n\nRevised proposal for data collection (if applicable)\nSaturday 4/19\n11:59pm\n\n\nCollect your data\nAnytime between proposal approval and Sunday 5/04\n\n\n\nExcel/GoogleSheets of your data\nMonday 5/05\nBeginning of class\n\n\nRough draft of report\nSunday 5/11\n11:59pm\n\n\nFinal Presentation\nThursday 5/15\n9am-12pm (slides due at 8am)\n\n\nFinal report (rendered version and .qmd) and data with data dictionary\nSunday 12/18 (tentative)\n11:59pm\n\n\nReflection*\nSunday 12/18 (tentative)\n11:59pm\n\n\n\n*Reflection should be submitted individually. All other deliverables are one-per-group."
   },
   {
     "objectID": "project/project_description.html#description",
     "href": "project/project_description.html#description",
     "title": "Final project",
     "section": "Description",
-    "text": "Description\nAs a final project, you will work in groups to collect and analyze data from fellow Middlebury students! The final project will give you a chance to demonstrate and celebrate your mastery over the the statistics and data science concepts you have learned this entire semester! Your group will come up with a list of research questions that you will subsequently answer using appropriate statistical methods.\nIn particular, your group will:\n\ncome up with a list of inferential research questions you are interested in answering\ndetermine your target population, create a list of variables you’d like to observe, and devise an appropriate sampling strategy\nhave a finalized data set that anyone can access and use, accompanied by a “data dictionary”\npresent your project to the class (and perhaps other professors/TAs)\nsubmit a well-written, professional report\nsubmit a reflection on the project, which will include a rubric for how much each team member contributed\n\nYou should have fun and be creative with this project!! Your research questions can be serious or funny (so long as they are PG-13 and below!)\n\nWeek 12 of the semester will be mostly devoted to project work time."
+    "text": "Description\nAs a final project, you will work (optionally) in groups to collect and analyze data from fellow Middlebury students! The final project will give you a chance to demonstrate and celebrate your mastery over the the statistics and data science concepts you have learned this entire semester! You and your group will come up with a list of research questions that you will subsequently answer using appropriate statistical methods.\nIn particular, your group will:\n\ncome up with a list of inferential research questions you are interested in answering\ndetermine your target population, create a list of variables you’d like to observe, and devise an appropriate sampling strategy\nhave a finalized data set that anyone can access and use, accompanied by a “data dictionary”\npresent your project to the class\nsubmit a well-written, professional report\nsubmit a reflection on the project, which will include a rubric for how much each team member contributed\n\nYou should have fun and be creative with this project!! Your research questions can be serious or funny (so long as they are PG-13 and below!)\n\nWeek 12 of the semester will be mostly devoted to project work time."
   },
   {
     "objectID": "project/project_description.html#requirements",
     "href": "project/project_description.html#requirements",
     "title": "Final project",
     "section": "Requirements",
-    "text": "Requirements\nThe following looks like a lot, but is meant to provide you structure for strong final project that you are proud of!\n\n\nGroup creation\n\n\nEach group will ideally contain three people.\nBy the due date listed in the table above, you should either:\n\nform a group of three on your own and then e-mail Prof. Tang your decision, cc-ing everyone in the group\nform a group of two and then e-mail Prof. Tang your decision, cc-ing the other person in the group.\n\nYour group of two may be randomly paired with another person or pair\n\ne-mail Prof. Tang if you don’t have a preference and/or want to meet new people and would like to be randomly placed in a group\n\n\n\nProposal for data collection\n\n\nBy the due date listed in the table above, your group should submit to Canvas a document detailing the following:\n\nYour target population(s) of interest\nA list of research questions your group is interested in exploring/answering. You should have at least one question per group member, but more is better!\n\nNote: we have not learned about regression yet. But we will soon learn linear regression, which answers questions about how changes in variable \\(x\\) might lead to changes in continuous variable \\(y\\)\n\nA list of variables you will observe/collect from each observational unit that you may be useful and/or required for answering your reseach question(s).\n\nYou should plan to collect at least four numerical variables (at least two of which are continuous), and at least two categorical variables\n\nA detailed description of how you plan to collect your data (i.e. survey students)\n\nHow many people do you plan to include in your data? (You should aim for least 30 people, if possible!)\nHow will you have people submit their data? (e.g. fill out a paper form, GoogleForm)\nIf you want to conduct an observational study: will you implement SRS, stratified, clustering, etc? How exactly will you implement this sampling method?\nIf you want to conduct an experiment: will you randomly recruit people to your study? How will you randomly assign treatments? (Make sure your experiment is ethical!!)\n\nA rough description of the statistical methods you might use to answer each question you listed in (2).\n\nThis might be along the lines of “hypothesis test for a single mean” or “confidence interval for a proportion” or “linear regression” along with a one-two sentence justification for the method is appropriate.\nIt is possible that we haven’t yet learned a method to answer some of your questions. If so, please indicate this on your proposal along with a brief justification for why you think what we have currently learned doesn’t apply.\n\n\n\nOnce you have submitted your proposal, Prof. Tang will give you feedback. Based on the feedback, your group will either have to submit a revised proposal, or you will be given the okay to go forth and collect your data.\n\n\n\nData set\n\n\nOnce you have collected your data, you should compile it all into a single Excel or GoogleSheets. Please give each variable an informative one-word name. This should be submitted to Canvas by the end of Thanksgiving break."
+    "text": "Requirements\nThe following looks like a lot, but is meant to provide you structure for strong final project that you are proud of!\n\n\nGroup creation\n\n\nEach group will ideally contain three people.\nBy the due date listed in the table above, you should either:\n\nform a group of three on your own and then e-mail Prof. Tang your decision, cc-ing everyone in the group\nform a group of two and then e-mail Prof. Tang your decision, cc-ing the other person in the group.\ne-mail Prof. Tang if you would like to work alone\n\n\n\nProposal for data collection\n\n\nBy the due date listed in the table above, your group should submit to Canvas a document detailing the following:\n\nYour target population(s) of interest\nA list of research questions your group is interested in exploring/answering. You should have at least one question per group member, but more is better!\n\nNote: we have not learned about regression yet. But we will soon learn linear regression, which answers questions about how changes in variable \\(x\\) might lead to changes in continuous variable \\(y\\)\n\nA list of variables you will observe/collect from each observational unit that you may be useful and/or required for answering your research question(s).\n\nYou should plan to collect at least four numerical variables (at least two of which are continuous), and at least two categorical variables\n\nA detailed description of how you plan to collect your data (i.e. survey students)\n\nHow many people do you plan to include in your data?\nHow will you have people submit their data? (e.g. fill out a paper form, GoogleForm)\nIf you want to conduct an observational study: will you implement SRS, stratified, clustering, etc? How exactly will you implement this sampling method?\nIf you want to conduct an experiment: will you randomly recruit people to your study? How will you randomly assign treatments? (Make sure your experiment is ethical!!)\n\nA rough description of the statistical methods you might use to answer each question you listed in (2).\n\nThis might be along the lines of “hypothesis test for a single mean” or “confidence interval for a proportion” or “linear regression” along with a one-two sentence justification for the method is appropriate.\nIt is possible that we haven’t yet learned a method to answer some of your questions. If so, please indicate this on your proposal along with a brief justification for why you think what we have currently learned doesn’t apply.\n\n\n\nOnce you have submitted your proposal, Prof. Tang will give you feedback. Based on the feedback, your group will either have to submit a revised proposal, or you will be given the okay to go forth and collect your data.\n\n\n\nData set\n\n\nOnce you have collected your data, you should compile it all into a single Excel or GoogleSheets. Please give each variable an informative one-word name (use underscores to make longer names). This should be submitted to Canvas by the beginning of Week 12. If you link a GoogleSheets, please ensure that you give me access!"
   },
   {
     "objectID": "homework/hw6_r.html",
@@ -5618,21 +5618,21 @@
     "href": "project/project_description.html#report",
     "title": "Final project",
     "section": "Report",
-    "text": "Report\nKnitting more beautiful tables.\nEach group will write a final report created in an .Rmd file. Ideally, the report will be submitted as a PDF (we will discuss how to do this as a class). The code in your report should be as reproducible as possible (e.g. not hard coding specific values, setting a seed when appropriate).\nAdditionally, only the output/execution from the code relevant for the report should be visible to the reader, not the code itself. This means that as the viewer, I should not see any code or extraneous output. The former is achieved by setting the chunk header option echo = F. That being said, if there is some code that you believe is useful/important for the reader to see, you are welcome to make that code visible by setting echo = T.\nThe report does not have a minimum length, but should contain each of the following sections. The report should also have an informative, academically appropriate title along with each group member’s name.\n\nIntroduction\n\nThe introduction should introduce your research questions and the population(s) of interest. Your report should have at least one research question per team member. In the introduction, you should briefly motivate the research questions (i.e. explain why they were of interest to your group)!\n\nIt could be helpful to identify/label your research questions as “Question 1”, “Question 2”, etc. for easier reference moving forward.\n\n\n\n\nData collection\nThis section should describe your data and the sampling process: how the data were collected and a summary description of the variables you collected.\n\n\nMethods\nFor each research question, you should:\n\nIdentify the specific variables used to address the research question. Also describe if you had to create/mutate new variables or filter out/subset your analysis to focus on certain observations for this research question.\nInclude at least one visualization or table of summary statistics that will be useful/informative for answering the research question. Briefly interpret the visualization/summary table.\n\nIt is okay if if one visualization is complex enough to address multiple research questions!\n\nDescribe and justify the statistical method(s) that you will use to answer your research questions. Part of the “justification” component includes conditions being met, if applicable. For linear regression, you should only verify the “L” and the “I” at this point.\n\nBe specific about different groups/populations, direction of differences, explanatory vs response variable, etc.\nIf you are conducting a hypothesis test, don’t forget to define your hypotheses and set the significance level. If you are creating a confidence interval, be sure to specify the level of confidence.\n\n\n\n\nResults\n\nUsing appropriate code, conduct the statistical methods you described in the Methods section for each research question. Then interpret your results in context (i.e. use your interval/p-value/model to actually answer the question).\n\nIf you do linear regression, you should check the “N” and “E” conditions here.\n\nThe goal is not to do an exhaustive data analysis (i.e., do not calculate every statistic and procedure you have learned for every variable), but rather let me know that you are proficient at asking meaningful questions and answering them with results of data analysis, that you are proficient in using R, and that you are proficient at interpreting and presenting the results.\n\n\n\nDiscussion\nThis section is a conclusion and discussion. This will require:\n\nA summary of what you have learned about your research questions along with statistical arguments supporting your conclusions.\nA critique your own methods and provide suggestions for improving your analysis. Issues pertaining to the reliability and validity of your data/data collection and appropriateness of the statistical analysis should also be discussed here.\nA paragraph on what your group would do differently if you were able to start over with the project or what you would do next if you were going to continue work on the project should also be included."
+    "text": "Report\nEach group will write a final report created in an .qmd file. Ideally, the report will be submitted as a PDF (we will discuss how to do this as a class). The code in your report should be as reproducible as possible (e.g. not hard coding specific values, setting a seed when appropriate). All tables should be beautiful!\nAdditionally, only the output/execution from the code relevant for the report should be visible to the reader, not the code itself. This means that as the viewer, I should not see any code or extraneous output. The former is achieved by setting the chunk header option echo = F. That being said, if there is some code that you believe is useful/important for the reader to see, you are welcome to make that code visible by setting echo = T.\nThe report does not have a minimum length, but should contain each of the following sections. The report should also have an informative, academically appropriate title along with each group member’s name.\n\nIntroduction\n\nThe introduction should introduce your research questions and the population(s) of interest. Your report should have at least one research question per team member. In the introduction, you should briefly motivate the research questions (i.e. explain why they were of interest to your group)!\n\nIt could be helpful to identify/label your research questions as “Question 1”, “Question 2”, etc. for easier reference moving forward.\n\n\n\n\nData collection\nThis section should describe your data and the sampling process: how the data were collected and a summary description of the variables you collected.\n\n\nMethods\nFor each research question, you should:\n\nIdentify the specific variables used to address the research question. Also describe if you had to create/mutate new variables or filter out/subset your analysis to focus on certain observations for this research question.\nInclude at least one visualization or table of summary statistics that will be useful/informative for answering the research question. Briefly interpret the visualization/summary table.\n\nIt is okay if if one visualization is complex enough to address multiple research questions!\n\nDescribe and justify the statistical method(s) that you will use to answer your research questions. Part of the “justification” component includes conditions being met, if applicable. For linear regression, you should only verify the “L” and the “I” at this point.\n\nBe specific about different groups/populations, direction of differences, explanatory vs response variable, etc.\nIf you are conducting a hypothesis test, don’t forget to define your hypotheses and set the significance level. If you are creating a confidence interval, be sure to specify the level of confidence.\n\n\n\n\nResults\n\nUsing appropriate code, conduct the statistical methods you described in the Methods section for each research question. Then interpret your results in context (i.e. use your interval/p-value/model to actually answer the question).\n\nIf you do linear regression, you should check the “N” and “E” conditions here.\n\nThe goal is not to do an exhaustive data analysis (i.e., do not calculate every statistic and procedure you have learned for every variable), but rather let me know that you are proficient at asking meaningful questions and answering them with results of data analysis, that you are proficient in using R, and that you are proficient at interpreting and presenting the results.\n\n\n\nDiscussion\nThis section is a conclusion and discussion. This will require:\n\nA summary of what you have learned about your research questions along with statistical arguments supporting your conclusions.\nA critique your own methods and provide suggestions for improving your analysis. Issues pertaining to the reliability and validity of your data/data collection and appropriateness of the statistical analysis should also be discussed here.\nA paragraph on what your group would do differently if you were able to start over with the project or what you would do next if you were going to continue work on the project should also be included."
   },
   {
     "objectID": "project/project_description.html#presentation",
     "href": "project/project_description.html#presentation",
     "title": "Final project",
     "section": "Presentation",
-    "text": "Presentation\nEach group will present their work during the exam period. Presentation duration lengths (before questions) are:\n\nGroups of two: 6-7 minutes\nGroups of three: 9-10 minutes\nGroups of four: 12-13 minutes\n\nPart of your presentation grade will be sticking to the presentation duration. Your presentation will be followed by a few minutes for questions from the audience.\nYour presentation should be accompanied by slides that summarize and showcase your project. Introduce your research questions and data/data collection, showcase visualizations, and provide some conclusions. These slides should serve as a brief visual accompaniment and will be graded for content and quality.\nThe slides are due to Canvas one hour before our final exam/presentation period.\n\nYou do not need to discuss all of your research questions if you don’t want to! You are not expected to have finished all your analyses by the time you present, but you should have some results (whether preliminary or finalized).\nIt’s most important that your audience understands the research questions you present, how you obtained your data, and how you plan to answer the research questions.\nPictures and summary tables are always preferred over sentences!\nA general recommendation is to have one slide per minute of the presentation.\nAll presenters should speak roughly an equal amount of time.\nMake sure the font is large enough. Also, less is more!\n\nPart of the presentation component is participation. You should be an engaged audience member. You will be asked to give feedback to a few groups and you are expected to ask questions.\n\nPresentation order\nSection AZ:\n\nDanny, Mason, Jason\nCharlie, Tanmay, Gideon\nLily, Emma\nHino, Zhanning, Thehan\nMarli, Parker\nTessa, Julia\nHarper, Analiese\nRichard, Lucas, Trevor\n\nSection BY\n\nAidan, Teddy\nSage, Ryan, Izzy\nSebastian, Jackson\nAthena, Remi, Krysta\nGigi, Kaia, Keila\nAndrew, Wills, Ye, Soe\nGabe, Ronin\nMadelyn, Phoebe, Ruth\nAdam, Grace, Ivy"
+    "text": "Presentation\nEach group will present their work during the exam period. Presentation duration lengths (before questions) are:\n\nGroups of one: 5-7 minutes\nGroups of two: 7-9 minutes\nGroups of three: 9-10 minutes\n\nPart of your presentation grade will be sticking to the presentation duration. Your presentation will be followed by a few minutes for questions from the audience.\nYour presentation should be accompanied by slides that summarize and showcase your project. Introduce your research questions and data/data collection, showcase visualizations, and provide some conclusions. These slides should serve as a brief visual accompaniment and will be graded for content and quality.\nThe slides are due to Canvas one hour before our final exam/presentation period.\n\nYou do not need to discuss all of your research questions if you don’t want to! You are not expected to have finished all your analyses by the time you present, but you should have some results (whether preliminary or finalized).\nIt’s most important that your audience understands the research questions you present, how you obtained your data, and how you plan to answer the research questions.\nPictures and summary tables are always preferred over sentences!\nA general recommendation is to have one slide per minute of the presentation.\nAll presenters should speak roughly an equal amount of time.\nMake sure the font is large enough. Also, less is more!\n\nPart of the presentation component is participation. You should be an engaged audience member. You will be asked to give feedback to a few groups and you are expected to ask questions.\n\nPresentation order\nTBD"
   },
   {
     "objectID": "project/project_description.html#grading",
     "href": "project/project_description.html#grading",
     "title": "Final project",
     "section": "Grading",
-    "text": "Grading\n\nGeneral grading structure\nGrading of the project will take into account the following:\n\nContent - What is the quality of research and/or policy question and relevancy of data to those questions?\nCorrectness - Are statistical procedures carried out and explained correctly?\nWriting and Presentation - What is the quality of the statistical presentation, writing, and explanations?\nCreativity and Critical Thought - Is the project carefully thought out? Are the limitations carefully considered? Does it appear that time and effort went into the planning and implementation of the project?\nContribution to group – Did you contribute meaningfully to all aspects of the project?\n\nA general breakdown of scoring for the final report and presentation is as follows:\n\n90%-100%: Outstanding effort. Student understands how to apply all statistical concepts, can put the results into a cogent argument, can identify weaknesses in the argument, and can clearly communicate the results to others.\n80%-89%: Good effort. Student understands most of the concepts, puts together an adequate argument, identifies some weaknesses of their argument, and communicates most results clearly to others.\n70%-79%: Passing effort. Student has misunderstanding of concepts in several areas, has some trouble putting results together in a cogent argument, and communication of results is sometimes unclear.\n60%-69%: Struggling effort. Student is making some effort, but has misunderstanding of many concepts and is unable to put together a cogent argument. Communication of results is unclear.\nBelow 60%: Student is not making a sufficient effort.\n\n\n\n\n\n\n\n\n\nComponent\nSection\nPoints\n\n\n\n\nProject proposal\n\n15 points\n\n\nInitial data set submission\n\n1 point\n\n\nRough draft\nPick two sections you’d like Prof. Tang to give feedback on!\n5 points\n\n\nPresentation\nPresentation style: well-practiced, equal distribution of speaking time, within time limit\n8 points\n\n\n\nSlides: content, quality\n5 points\n\n\n\nParticipation\n2 points\n\n\nFinal report\nIntroduction\n5 points\n\n\n\nData collection description\n5 points\n\n\n\nMethods\n25 points\n\n\n\nResults\n20 points\n\n\n\nDiscussion\n10 points\n\n\n\nClean code + reproducibility\n3 points\n\n\n\nSubmission of both PDF and .Rmd report\n1 point\n\n\nReflection\n\n3 points\n\n\nMisc. items\nFinalized data set with accompanying dictionary (12/15)\n2 point\n\n\n\nContribution to group\n10 points\n\n\nTotal\n\n120 points"
+    "text": "Grading\n\nGeneral grading structure\nGrading of the project will take into account the following:\n\nContent - What is the quality of research and/or policy question and relevancy of data to those questions?\nCorrectness - Are statistical procedures carried out and explained correctly?\nWriting and Presentation - What is the quality of the statistical presentation, writing, and explanations?\nCreativity and Critical Thought - Is the project carefully thought out? Are the limitations carefully considered? Does it appear that time and effort went into the planning and implementation of the project?\nContribution to group – Did you contribute meaningfully to all aspects of the project?\n\nA general breakdown of scoring for the final report and presentation is as follows:\n\n90%-100%: Outstanding effort. Student understands how to apply all statistical concepts, can put the results into a cogent argument, can identify weaknesses in the argument, and can clearly communicate the results to others.\n80%-89%: Good effort. Student understands most of the concepts, puts together an adequate argument, identifies some weaknesses of their argument, and communicates most results clearly to others.\n70%-79%: Passing effort. Student has misunderstanding of concepts in several areas, has some trouble putting results together in a cogent argument, and communication of results is sometimes unclear.\n60%-69%: Struggling effort. Student is making some effort, but has misunderstanding of many concepts and is unable to put together a cogent argument. Communication of results is unclear.\nBelow 60%: Student is not making a sufficient effort.\n\n\n\n\n\n\n\n\n\nComponent\nSection\nPoints\n\n\n\n\nProject proposal\n\n15 points\n\n\nInitial data set submission\n\n1 point\n\n\nRough draft\nPick two sections you’d like Prof. Tang to give feedback on!\n5 points\n\n\nPresentation\nPresentation style: well-practiced, equal distribution of speaking time, within time limit\n8 points\n\n\n\nSlides: content, quality\n5 points\n\n\n\nParticipation\n2 points\n\n\nFinal report\nIntroduction\n5 points\n\n\n\nData collection description\n5 points\n\n\n\nMethods\n25 points\n\n\n\nResults\n20 points\n\n\n\nDiscussion\n10 points\n\n\n\nClean code + reproducibility\n3 points\n\n\n\nSubmission of both PDF and .qmd report\n1 point\n\n\nReflection\n\n3 points\n\n\nMisc. items\nFinalized data set with accompanying dictionary (12/15)\n2 point\n\n\n\nContribution to group\n10 points\n\n\n\nDataFest project\n5 points\n\n\nTotal\n\n125 points"
   },
   {
     "objectID": "slides/slides-29-project.html#housekeeping",
@@ -7977,14 +7977,14 @@
     "href": "slides/slides-19-clt.html#clt-assumptions",
     "title": "Central Limit Theorem",
     "section": "CLT assumptions",
-    "text": "CLT assumptions\n\nIndependent samples:\n\nUsually achieved by random sampling\n\nNormality condition:\n\nIf the data \\(x_{1},\\ldots, x_{n}\\) are known to be Normal and independent, then the distribution of \\(\\bar{X}\\) is exactly Normal\n\n\n\nIf data are not known to be Normal, then check:\n\nIf \\(n\\) is small \\((n < 30)\\): if there are no clear outliers, we assume data are approximately normal\nIf \\(n\\) is larger \\((30 \\leq n < ?)\\): if there are no particularly extreme outliers, we assume data are approximately normal"
+    "text": "CLT assumptions\n\nIndependent samples:\n\nUsually achieved by random sampling\n\nNormality condition:\n\nIf the data \\(x_{1},\\ldots, x_{n}\\) are known to be Normal and independent, then the distribution of \\(\\bar{X}\\) is exactly Normal\n\n\n\nIf data are not known to be Normal, then check:\n\nIf \\(n\\) is small \\((n < 30)\\): if there are no clear outliers, we assume data are approximately normal\nIf \\(n\\) is larger \\((30 \\leq n < ?)\\): if there are no particularly extreme outliers, we assume data are approximately normal\n\n\n\n\n\nIf any of these aren’t met, then we cannot use CLT"
   },
   {
     "objectID": "slides/slides-19-clt.html#normality-condition",
     "href": "slides/slides-19-clt.html#normality-condition",
     "title": "Central Limit Theorem",
     "section": "Normality condition",
-    "text": "Normality condition\n\nDo you believe the large sample size/normality condition is satisfied in the following two samples?\n\n\n\n\n\n\nSample 1: small \\(n < 30\\). But histogram and boxplot reveals no clear outliers, so I would say normality condition is met.\nSample 2: larger \\(n \\geq 30\\). Even though \\(n\\) is larger, there is a particularly extreme outlier, so I would say normality condition is not met."
+    "text": "Normality condition\n\nDo you believe the normality condition is satisfied in the following two samples?\n\n\n\n\n\n\nSample 1: small \\(n < 30\\). But histogram and boxplot reveals no clear outliers, so I would say normality condition is met.\nSample 2: larger \\(n \\geq 30\\). Even though \\(n\\) is larger, there is a particularly extreme outlier, so I would say normality condition is not met."
   },
   {
     "objectID": "slides/slides-19-clt.html#activity",
@@ -7998,7 +7998,7 @@
     "href": "slides/slides-19-clt.html#height-example",
     "title": "Central Limit Theorem",
     "section": "Height example",
-    "text": "Height example\n\n\n\nThe average height of all NBA players in the 2008-9 season is 79.21 inches, with a population standard deviation of 3.57 inches. We randomly sampled \\(20\\) of these players and recorded their heights, as shown below.\n\n\n\nWhat is the sampling distribution of the sample mean heights? Do we know it exactly?"
+    "text": "Height example\n\n\n\nThe average height of all NBA players in the 2008-9 season is 79.21 inches, with a population standard deviation of 3.57 inches. We randomly sampled 20 of these players and recorded their heights, as shown below.\n\n\n\n\n\n\n\nWhat is the sampling distribution of the sample mean heights? Do we know it exactly?"
   },
   {
     "objectID": "slides/slides-19-clt.html#height-example-solution",
@@ -8040,7 +8040,7 @@
     "href": "slides/slides-19-clt.html#mms-example",
     "title": "Central Limit Theorem",
     "section": "M&M’s example",
-    "text": "M&M’s example\nMars, Inc. is the company that makes M&M’s. In 2008, Mars changed their color distribution to have 13% red candies.\n\n\nLet \\(\\hat{p}\\) represent the proportion of red M&M’s in a random sample of \\(n\\) M&M’s. What is the sampling distribution of \\(\\hat{p}\\) if we take a random sample of sizes:\n\n\\(n = 100\\)\n\\(n = 10\\)"
+    "text": "M&M’s example\nMars, Inc. is the company that makes M&M’s. In 2008, Mars changed their color distribution to have 13% red candies.\n\n\nLet \\(\\hat{p}\\) represent the proportion of red M&M’s in a random sample of \\(n\\) M&M’s. What is the sampling distribution of \\(\\hat{p}\\) if we take a random sample of sizes:\n\n\\(n = 100\\), vs.\n\\(n = 10\\)"
   },
   {
     "objectID": "slides/slides-19-clt.html#mms-example-solution",
@@ -8061,42 +8061,42 @@
     "href": "slides/slides-19-clt.html#why-is-clt-so-important",
     "title": "Central Limit Theorem",
     "section": "Why is CLT so important?",
-    "text": "Why is CLT so important?\n\nAllows statisticians safely assume that the mean’s sampling distribution is approximately Normal. The Normal distribution has nice properties and is easy to work with.\nCan be applied to both continuous and discrete numeric data!\nDoes not depend on the underlying distribution of the data.\n\n\nFor many of these reasons, we can use the CLT for inference!"
+    "text": "Why is CLT so important?\n\nAllows statisticians safely assume that the mean’s sampling distribution is approximately Normal. The Normal distribution has nice properties and is easy to work with.\nCan be applied to both continuous and discrete numeric data!\nDoes not depend on the underlying distribution of the data.\n\n\nFor many of these reasons, we can use the CLT for inference!\nNOTE: we might not know what \\(\\mu\\) or \\(p\\) actually are, but CLT tells us that the sampling distributions of \\(\\bar{X}\\) and \\(\\hat{p}\\) are centered at their theoretical values!"
   },
   {
     "objectID": "slides/slides-19-clt.html#mathematical-cis",
     "href": "slides/slides-19-clt.html#mathematical-cis",
     "title": "Central Limit Theorem",
     "section": "Mathematical CIs",
-    "text": "Mathematical CIs\n\nRather than using simulation techniques (i.e. bootstrap) to obtain the sampling distribution, the CLT gives us the sampling distribution of a mean “for free”\n\n(assuming conditions are met)\n\nFormula for a (symmetric) \\(\\gamma \\times 100\\%\\) confidence interval:\n\\[\n\\text{point estimate} \\pm \\underbrace{\\text{critical value} \\times \\text{SE}}_{\\text{Margin of Error}}\n\\]\n\npoint estimate: the “best guess” statistic from our observed data (e.g. \\(\\hat{p}\\) and \\(\\bar{x}\\))\nSE: standard error of the statistic\ncritical value: percentile that guarantees the \\(\\gamma\\times 100\\). This will vary depending on your data/assumptions"
+    "text": "Mathematical CIs\n\nThe CLT gives us the sampling distribution of a sample mean “for free” (assuming conditions are met)\nFormula for a (symmetric) \\(\\gamma \\times 100\\%\\) confidence interval:\n\\[\n\\text{point estimate} \\pm \\underbrace{\\text{critical value} \\times \\text{SE}}_{\\text{Margin of Error}}\n\\]\n\npoint estimate: the “best guess” statistic from our observed data (e.g. \\(\\hat{p}_{obs}\\) and \\(\\bar{x}_{obs}\\))\nSE: standard error of the statistic\ncritical value: percentile that guarantees the \\(\\gamma\\times 100\\). This will vary depending on your data/assumptions"
   },
   {
     "objectID": "slides/slides-19-clt.html#towards-a-ci-for-a-single-proportion",
     "href": "slides/slides-19-clt.html#towards-a-ci-for-a-single-proportion",
     "title": "Central Limit Theorem",
     "section": "Towards a CI for a single proportion",
-    "text": "Towards a CI for a single proportion\nSuppose that I have a sample of \\(n\\) binary (0/1) values. I want a \\(\\gamma \\times 100\\%\\) confidence interval for the probability of success \\(p\\) using the sample.\n\nIf assumptions of CLT for sample proportions hold, then we know\n\\[\n\\hat{p} \\overset{\\cdot}{\\sim} N\\left(p, \\sqrt{\\frac{p(1-p)}{n}}\\right)\n\\]\n\n\nWe can use/manipulate this result to obtain a confidence interval for the unknown \\(p\\)!\nHow do we know if success-failure condition holds without knowing \\(p\\)?\n\nLet’s use our best guess: \\(\\hat{p}\\)\nSuccess-failure condition for inference: \\(n\\hat{p}\\) and \\(n(1-\\hat{p})\\) both \\(\\geq 10\\)"
+    "text": "Towards a CI for a single proportion\nSuppose that I have a sample of \\(n\\) binary values. Using the sample, I want a \\(\\gamma \\times 100\\%\\) confidence interval for the probability of success \\(p\\).\n\nIf assumptions of CLT for sample proportions hold, then we know\n\\[\n\\hat{p} \\overset{\\cdot}{\\sim} N\\left(p, \\sqrt{\\frac{p(1-p)}{n}}\\right)\n\\]\n\n\n\nHow do we know if success-failure condition holds without knowing \\(p\\)?\n\n\nLet’s use our best guess: \\(\\hat{p}_{obs}\\)\nSuccess-failure condition for confidence intervals: \\(n\\hat{p}_{obs}\\) and \\(n(1-\\hat{p}_{obs})\\) both \\(\\geq 10\\)"
   },
   {
     "objectID": "slides/slides-19-clt.html#towards-a-ci-for-a-single-proportion-cont.",
     "href": "slides/slides-19-clt.html#towards-a-ci-for-a-single-proportion-cont.",
     "title": "Central Limit Theorem",
     "section": "Towards a CI for a single proportion (cont.)",
-    "text": "Towards a CI for a single proportion (cont.)\n\nPoint estimate: observed \\(\\hat{p}\\) from our sample\nStandard error: \\(\\sqrt{p(1-p)/n}\\)\n\nBut we still don’t have \\(p\\)!\nInstead, use the following approximation for CI:\n\n\n\n\\[\\text{SE}(\\hat{p}) \\approx \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}\\]\n\n\nCritical value: to obtain the middle \\(\\gamma \\times 100\\%\\) part, we use the \\((1-\\gamma)/2\\) and \\((1+\\gamma)/2\\) percentiles of the \\(N(0,1)\\) distribution\n\n\\(z_{(1-\\gamma)/2}^{*}\\) (lower bound) and \\(z_{(1+\\gamma)/2}^{*}\\) (upper bound)\nNote: \\(z_{(1+\\gamma)/2}^{*} = - z_{(1-\\gamma)/2}^{*}\\)"
+    "text": "Towards a CI for a single proportion (cont.)\nWe can use/manipulate the CLT result to obtain a confidence interval for \\(p\\)!\n\nPoint estimate: \\(\\hat{p}_{obs}\\)\nStandard error: \\(SE = \\sqrt{\\frac{p(1-p)}{n}}\\)\n\nBut we still don’t have \\(p\\)!\nInstead, use the following approximation for CI:\n\n\n\n\\[\\widehat{\\text{SE}} \\approx \\sqrt{\\frac{\\hat{p}_{obs}(1-\\hat{p}_{obs})}{n}}\\]"
   },
   {
     "objectID": "slides/slides-19-clt.html#ci-for-single-proportion",
     "href": "slides/slides-19-clt.html#ci-for-single-proportion",
     "title": "Central Limit Theorem",
     "section": "CI for single proportion",
-    "text": "CI for single proportion\nSo the formula for a (symmetric) \\(\\gamma\\times 100\\%\\) CI for \\(p\\) is:\n\n\\[\n\\hat{p} \\pm z_{(1+\\gamma)/2}^{*}\\times \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}\n\\]where the critical value is obtained from \\(N(0,1)\\) distribution\n\n\nCome take STAT 311 to see why this is our CI!"
+    "text": "CI for single proportion\nSo the formula for a (symmetric) \\(\\gamma\\times 100\\%\\) CI for \\(p\\) is:\n\n\\[\n\\hat{p}_{obs} \\pm z_{(1+\\gamma)/2}^{*}\\times \\sqrt{\\frac{\\hat{p}_{obs}(1-\\hat{p}_{obs})}{n}}\n\\]where the critical value is obtained from \\(N(0,1)\\) distribution. This is obtained directly from the sampling distribution of \\(\\hat{p}\\).\n\n\nCome take STAT 311 to see why this is our CI!"
   },
   {
     "objectID": "slides/slides-19-clt.html#example",
     "href": "slides/slides-19-clt.html#example",
     "title": "Central Limit Theorem",
     "section": "Example",
-    "text": "Example\nA poll of 100 randomly sampled registered voters in a town was conducted, asking voters if they support legalized marijuana. It was found that 60% of respondents were in support.\n\nWhat is the population parameter? What is the point estimate/statistic?\n\n\nFind a (symmetric) 90% confidence interval for the true proportion of town residents in favor of legalized marijuana.\n\n\n\nConditions for CLT met?\n\n\nIndependence: random sample\nSuccess-failure condition: \\(n\\hat{p} =100(0.6) = 60 \\geq 10\\) and \\(n(1-\\hat{p}) = 100(0.4) = 40 \\geq 10\\)"
+    "text": "Example\nA poll of 100 randomly sampled registered voters in a town was conducted, asking voters if they support legalized marijuana. It was found that 60% of respondents were in support.\n\nWhat is the population parameter? What is the point estimate/statistic?\n\n\nFind a (symmetric) 90% confidence interval for the true proportion of town residents in favor of legalized marijuana.\n\n\n\nConditions met?\n\n\nIndependence: random sample\nSuccess-failure condition: \\(n\\hat{p}_{obs} =100(0.6) = 60 \\geq 10\\) and \\(n(1-\\hat{p}_{obs}) = 100(0.4) = 40 \\geq 10\\)"
   },
   {
     "objectID": "slides/slides-19-clt.html#example-cont.",
@@ -8110,7 +8110,7 @@
     "href": "slides/slides-19-clt.html#comprehension-questions",
     "title": "Central Limit Theorem",
     "section": "Comprehension questions",
-    "text": "Comprehension questions\n\nWhat is the main takeaway of the CLT?\nWhat are the assumptions of the CLT?\nHow do we construct a \\(\\gamma \\times 100\\%\\) confidence interval using a mathematical model?"
+    "text": "Comprehension questions\n\nWhat is the main takeaway of the CLT?\nWhat are the assumptions of the CLT?\nWhat is the Normal approximation for CLT?\nHow do we construct a \\(\\gamma \\times 100\\%\\) confidence interval using a mathematical model?"
   },
   {
     "objectID": "slides/slides-19-clt.html#clt-for-sample-proportions",
@@ -8124,14 +8124,14 @@
     "href": "slides/slides-19-clt.html#flow-chart",
     "title": "Central Limit Theorem",
     "section": "Flow chart",
-    "text": "Flow chart"
+    "text": "Flow chart\n\nLet’s make a flow chart!\nNOTE: we might not know what \\(\\mu\\) or \\(p\\) actually are, but CLT tells us that the sampling distributions of \\(\\bar{X}\\) and \\(\\hat{p}\\) are centered at their theoretical values!"
   },
   {
     "objectID": "slides/slides-19-clt.html#mms-example-solution-cont.",
     "href": "slides/slides-19-clt.html#mms-example-solution-cont.",
     "title": "Central Limit Theorem",
     "section": "M&M’s example: solution (cont.)",
-    "text": "M&M’s example: solution (cont.)\n\nIf \\(n = 10\\):\n\n\\(np = 10(0.13) = 1.3 < 10\\)\n\nSuccess-failure condition not met. Cannot use CLT.\n\n\n\n\nIf we incorrectly applied CLT, we might think \\[\\hat{p} \\overset{\\cdot}{\\sim} N\\left(0.13, \\sqrt{\\frac{0.13(1-0.13)}{10}}\\right)\\]\nWhat does this distribution look like?\n\n\n\n\nWhy is this scary??"
+    "text": "M&M’s example: solution (cont.)\n\nIf \\(n = 10\\):\n\n\\(np = 10(0.13) = 1.3 < 10\\)\n\nSuccess-failure condition not met. Cannot use CLT.\n\n\n\n\nIf we incorrectly applied CLT, we might think \\[\\begin{align*}\n\\hat{p} &\\overset{\\cdot}{\\sim} N\\left(0.13, \\sqrt{\\frac{0.13(1-0.13)}{10}}\\right) \\\\\n&=  N(0.13, 0.106 )\n\\end{align*}\\]\nWhat does this distribution look like?\n\n\n\n\nWhy is this scary??"
   },
   {
     "objectID": "slides/slides-19-clt.html#clt-again",
@@ -8139,5 +8139,334 @@
     "title": "Central Limit Theorem",
     "section": "CLT again",
     "text": "CLT again\nLet’s see it again: If the assumptions of independence and Normality condition apply, then\n\\[\\bar{X} \\overset{\\cdot}{\\sim} N\\left(\\mu, \\frac{\\sigma}{n} \\right)\\] where \\(\\mu\\) and \\(\\sigma\\) are the population mean and standard deviation, and \\(\\bar{X}\\) is the sample mean obtained from a sample of size \\(n\\).\n\n\nWhat does the \\(\\frac{\\sigma}{n}\\) represent?\nFor fixed \\(\\sigma\\), how does the sampling distribution change as \\(n\\) increases?"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#compare-sampling-distribution-to-population-and-one-sample",
+    "href": "slides/slides-19-clt.html#compare-sampling-distribution-to-population-and-one-sample",
+    "title": "Central Limit Theorem",
+    "section": "Compare sampling distribution to population and one sample",
+    "text": "Compare sampling distribution to population and one sample\nNote: the y-axis is density (how likely each value of height is from the given distribution).\n\n\nWhat do you notice about how the three distributions compare? Are some distributions very similar? Are some very different? Why do you think this is?"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#the-three-different-dists.",
+    "href": "slides/slides-19-clt.html#the-three-different-dists.",
+    "title": "Central Limit Theorem",
+    "section": "The three different dists.",
+    "text": "The three different dists.\nNote: \\(y\\)-axis is density (how likely each \\(x\\) value is from the given distribution).\n\n\n\n\n\n\nWhat do you notice about how the three distributions compare? Are some distributions very similar? Are some very different? Why do you think this is?"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#towards-a-ci-for-a-single-proportion-cont.-1",
+    "href": "slides/slides-19-clt.html#towards-a-ci-for-a-single-proportion-cont.-1",
+    "title": "Central Limit Theorem",
+    "section": "Towards a CI for a single proportion (cont.)",
+    "text": "Towards a CI for a single proportion (cont.)\n\nCritical value: to obtain the middle \\(\\gamma \\times 100\\%\\) part, we use the \\(\\frac{1-\\gamma}{2}\\) and \\(\\frac{1+\\gamma}{2}\\) percentiles of the \\(N(0,1)\\) distribution\n\n\\(z_{(1-\\gamma)/2}^{*}\\) (lower bound) and \\(z_{(1+\\gamma)/2}^{*}\\) (upper bound)\nNote: \\(z_{(1+\\gamma)/2}^{*} = - z_{(1-\\gamma)/2}^{*}\\)\nNote: the critical value does not depend on the data!"
+  },
+  {
+    "objectID": "slides/slides-20-ht-prop.html#housekeeping",
+    "href": "slides/slides-20-ht-prop.html#housekeeping",
+    "title": "Test for single proportion with CLT",
+    "section": "Housekeeping",
+    "text": "Housekeeping"
+  },
+  {
+    "objectID": "slides/slides-20-ht-prop.html#recap",
+    "href": "slides/slides-20-ht-prop.html#recap",
+    "title": "Test for single proportion with CLT",
+    "section": "Recap",
+    "text": "Recap\n\nCLT -> sampling distribution for sample means -> confidence intervals for populations means\nNow we’re returning to hypothesis testing!\n\nTwo sets of hypotheses (competing claims)\nCollect data, calculate a statistic from the observed data, set significance level\nObtain p-value from the null distribution\n\np-value: probability of observing data as or more extreme as our own, assuming \\(H_{0}\\) true\n\nMake a decision"
+  },
+  {
+    "objectID": "slides/slides-20-ht-prop.html#hypothesis-testing-using-mathematical-model",
+    "href": "slides/slides-20-ht-prop.html#hypothesis-testing-using-mathematical-model",
+    "title": "Test for single proportion with CLT",
+    "section": "Hypothesis testing using mathematical model",
+    "text": "Hypothesis testing using mathematical model\n\nWe learned how to conduct hypothesis tests (HTs) using simulation to obtain null distribution\nBut we can also use CLT to obtain null distribution!\nSo the only step that will “look different” is #3: how we obtain our null distribution and p-value\n\nLooks different depending on type of data\n\nMake a conclusion in terms of \\(H_{A}\\)"
+  },
+  {
+    "objectID": "slides/slides-20-ht-prop.html#steps-1-and-2-dont-change",
+    "href": "slides/slides-20-ht-prop.html#steps-1-and-2-dont-change",
+    "title": "Test for single proportion with CLT",
+    "section": "Steps 1 and 2 don’t change",
+    "text": "Steps 1 and 2 don’t change\nWant to conduct a hypothesis test about a population proportion.\n\nDefine hypotheses\n\n\\(H_{0}: p = p_{0}\\) versus \\(H_{A}: p \\neq p_{0}\\) (or \\(H_{A}: p > p_{0}\\) or \\(H_{A}: p < p_{0}\\))\nRemember, \\(p_{0}\\) is our “null hypothesized value”\n\n\n\n\nCollect data, set significance level\n\nObtain observed sample proportion \\(\\hat{p}_{obs}\\)\nSet \\(\\alpha\\) significance level"
+  },
+  {
+    "objectID": "slides/slides-20-ht-prop.html#null-distribution-and-p-value",
+    "href": "slides/slides-20-ht-prop.html#null-distribution-and-p-value",
+    "title": "Test for single proportion with CLT",
+    "section": "3. Null distribution and p-value",
+    "text": "3. Null distribution and p-value\nRecall CLT for sample proportion: if we have \\(n\\) independent binary observations that satisfy the success-failure condition, then\n\\[\n\\hat{p} \\overset{\\cdot}{\\sim} N\\left(p, \\sqrt{\\frac{p(1-p)}{n}} \\right)\n\\]\n\nThis is the sampling distribution of \\(\\hat{p}\\)\nBut we want the null distribution of \\(\\hat{p}\\): the sampling distribution under \\(H_{0}\\)\nWe should operate in a world where \\(H_{0}\\) is true\n\n\n\nWhat does this mean?\n\n\n\nSo to use CLT for null distribution, we must satisfy:\n\nIndependence\n\nSuccess-failure condition under \\(H_{0}\\): \\(np_{0} \\geq 10\\) and \\(n(1-p_{0}) \\geq 10\\)"
+  },
+  {
+    "objectID": "slides/slides-20-ht-prop.html#null-distribution-and-p-value-cont.",
+    "href": "slides/slides-20-ht-prop.html#null-distribution-and-p-value-cont.",
+    "title": "Test for single proportion with CLT",
+    "section": "3. Null distribution and p-value (cont.)",
+    "text": "3. Null distribution and p-value (cont.)\nIf CLT holds and \\(H_{0}\\) is true, then our null distribution is:\n\\[\n\\hat{p} \\overset{\\cdot}{\\sim} N\\left(p_{0}, \\sqrt{\\frac{p_{0} (1-p_{0})}{n}} \\right)\n\\]\n\nWe can standardize the null distribution by taking z-score:\n\n\n\\[\nZ = \\frac{\\hat{p} - p_{0}}{\\sqrt{\\frac{p_{0} (1-p_{0})}{n}}} \\sim N(0,1)\n\\]"
+  },
+  {
+    "objectID": "slides/slides-20-ht-prop.html#test-statistic",
+    "href": "slides/slides-20-ht-prop.html#test-statistic",
+    "title": "Test for single proportion with CLT",
+    "section": "Test statistic",
+    "text": "Test statistic\n\np-value requires us to compare our observed data to the null distribution\nWe calculate a test statistic: a quantity that assesses how consistent our sampled data are with \\(H_{0}\\)\n\nOur test statistic is always of the form:\n\n\n\\[\\frac{\\text{point estimate} - \\text{null value}}{\\text{SE}_{0}}\\] where \\(\\text{SE}_{0}\\) represents the standard error under \\(H_{0}\\)\n\n\nFor this specific test, our test statistic is the \\(z\\)-score from the previous slide, and our observed value of the test statistic is:\n\n\n\\[z =\\frac{\\hat{p}_{\\text{obs}} - p_{0}}{\\sqrt{\\frac{p_{0} (1-p_{0})}{n}}}\\]\n\n\nWill find this value to the \\(N(0,1)\\) distribution"
+  },
+  {
+    "objectID": "slides/slides-20-ht-prop.html#obtain-p-value",
+    "href": "slides/slides-20-ht-prop.html#obtain-p-value",
+    "title": "Test for single proportion with CLT",
+    "section": "Obtain p-value",
+    "text": "Obtain p-value\n\nIf \\(|z|\\) large, then that usually means observed value is extremely unusual for \\(H_{0}\\), which is convincing evidence against \\(H_{0}\\)\np-value is then \\(\\text{Pr}(Z \\geq z)\\) or \\(\\text{Pr}(Z \\leq z)\\) (or both), depending on \\(H_{A}\\)\n\nEasily obtained using pnorm()\n\nStep 4: doesn’t change!"
+  },
+  {
+    "objectID": "slides/slides-20-ht-prop.html#example-taste-test",
+    "href": "slides/slides-20-ht-prop.html#example-taste-test",
+    "title": "Test for single proportion with CLT",
+    "section": "Example: taste test",
+    "text": "Example: taste test\nSome people claim that they can tell the difference between a diet soda and a regular soda in the first sip. A researcher wanted to test this claim using a hypothesis test at the 0.05 significance level.\n\nHe randomly sampled 80 people who claimed they can tell the difference.\nHe then filled 80 plain white cups with soda, half diet and half regular through random assignment, and asked each person to take one sip from their cup and identify the soda as diet or regular.\n53 participants correctly identified the soda.\n\n\nLet \\(p\\) be the proportion of people who correctly identify soda type among people who think they can tell the difference.\n\n\n\nTry defining \\(H_{0}\\) and \\(H_{A}\\)."
+  },
+  {
+    "objectID": "slides/slides-20-ht-prop.html#example-taste-test-cont.",
+    "href": "slides/slides-20-ht-prop.html#example-taste-test-cont.",
+    "title": "Test for single proportion with CLT",
+    "section": "Example: taste test (cont.)",
+    "text": "Example: taste test (cont.)\n\nDefine hypotheses\n\n\\(H_{0}\\): \\(p = 0.5\\) (random guessing)\n\\(H_{A}\\): \\(p > 0.5\\) (better than random guessing)\nNote: \\(p_{0} = 0.5\\) is our null hypothesized value!\n\nCollect data\n\n\\(\\hat{p}_{\\text{obs}} = \\frac{53}{80} = 0.6625\\)\n\n\n\nNote: significance level already determined to be 0.05"
+  },
+  {
+    "objectID": "slides/slides-20-ht-prop.html#example-taste-test-cont.-1",
+    "href": "slides/slides-20-ht-prop.html#example-taste-test-cont.-1",
+    "title": "Test for single proportion with CLT",
+    "section": "Example: taste test (cont.)",
+    "text": "Example: taste test (cont.)\n\nObtain null distribution and p-value\n\n\nCheck conditions for inference satisfied\n\n\nIndependence: random sample\nsuccess-failure: \\(np_{0} = 80(0.5) = 40 \\geq 10\\) and \\(n(1-p_{0}) = 40 \\geq 10\\)\n\nBecause conditions for CLT are met, we can obtain the null distribution using CLT.\n\n\n\nNull distribution\n\n\n\\[\\hat{p} \\overset{\\cdot}{\\sim} N\\left(0.5, \\sqrt{\\frac{0.5(1-0.5)}{80}} = 0.056 \\right)\\]\n\n\nTest statistic:\n\n\n\\[z = \\frac{\\hat{p}_{obs} - p_{0}}{\\text{SE}_{0}} = \\frac{0.6625 - 0.5}{0.056} = 2.90\\]\n\ni.e. if \\(H_{0}\\) true, our observed \\(\\hat{p}_{obs}\\) is 2.90 SDs above the mean"
+  },
+  {
+    "objectID": "slides/slides-20-ht-prop.html#example-taste-test-cont.-2",
+    "href": "slides/slides-20-ht-prop.html#example-taste-test-cont.-2",
+    "title": "Test for single proportion with CLT",
+    "section": "4. Example: taste test (cont.)",
+    "text": "4. Example: taste test (cont.)\n\n\nCalculate p-value (i.e. set-up the calculation and/or write code)\n\n\nRemember \\(H_{A}: p > 0.5\\)\n\n\n\n\\[\n\\text{p-value} = \\text{Pr}(Z \\geq z) = \\text{Pr}(Z \\geq 2.90) = \\texttt{1 - pnorm(2.90, 0, 1) = 0.0019}\n\\]\n\n\n\nDecision and conclusion\n\n\nSince our p-value of 0.0019 is less than our significance level of 0.05, we reject \\(H_{0}\\).\nThe data provide strong evidence that the rate of correctly identifying a soda for these people is better than random guessing."
+  },
+  {
+    "objectID": "slides/slides-20-ht-prop.html#example-mms",
+    "href": "slides/slides-20-ht-prop.html#example-mms",
+    "title": "Test for single proportion with CLT",
+    "section": "Example: M&M’s",
+    "text": "Example: M&M’s\nM&M’s reported that 14% of its candies are yellow. We are interested in testing this claim. In a random sample of 100 M&M’s, 9 were found to be yellow. Conduct a hypothesis test via CLT at the \\(0.10\\) level.\n\n\n\n\nWrite out null and alternative hypotheses in statistical notation (don’t forget to define quantities)\nSummarise data and set \\(\\alpha\\)\nVerify conditions for CLT are met\n\n\n\n\n\\(H_{0}: p = 0.14\\) vs \\(H_{A}: p \\neq 0.14\\), where \\(p =\\) true proportion of yellow M&M’s\n\\(\\hat{p}_{obs} = \\frac{9}{100} = 0.09\\)\n\\(\\alpha = 0.10\\)\nIndependence? Yes, via random sample\nSuccess-failure: Yes: \\(np_{0} = 100(0.14) = 14 \\geq 10\\) and \\(n(1-p_{0}) = 86 \\geq 10\\)\n\n\n\n\n\nBecause conditions for CLT are met, we can obtain the null distribution using CLT."
+  },
+  {
+    "objectID": "slides/slides-20-ht-prop.html#example-mms-cont.",
+    "href": "slides/slides-20-ht-prop.html#example-mms-cont.",
+    "title": "Test for single proportion with CLT",
+    "section": "Example: M&M’s (cont.)",
+    "text": "Example: M&M’s (cont.)\n\n\n\n\nObtain null distribution and obtain observed test statistic\n\n\n\n\nBy CLT, our null distribution is \\(\\hat{p} \\overset{\\cdot}{\\sim} N\\left(0.14, \\sqrt{\\frac{0.14(1-0.14)}{100}} \\right)\\)\n\\(\\quad =N(0.14, 0.035)\\)\n\n\\(z = \\frac{\\hat{p}_{obs} - p_{0}}{\\text{SE}_{0}} = \\frac{0.09 - 0.14}{0.035} = -1.43\\)\n\n\n\n\n\n\n\n\nObtain p-value. First draw a picture, then write out in \\(\\text{Pr}()\\) notation and in code what we want to find.\n\n\n\n\nSince \\(H_{A}\\) is two-sided, we want \\[\\begin{align*}\n   \\text{p-value} &= \\text{Pr}(Z \\leq -1.43 \\cup Z \\geq 1.43) \\\\\n&= \\text{Pr}(Z \\leq -1.43) + \\text{Pr}(Z \\geq 1.43)  \\\\\n&= 2\\times \\text{Pr}(Z \\geq 1.43) \\\\\n&= \\texttt{2 * (1 - pnorm(1.43))} \\\\\n&= 0.153\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "slides/slides-20-ht-prop.html#example-mms-cont.-1",
+    "href": "slides/slides-20-ht-prop.html#example-mms-cont.-1",
+    "title": "Test for single proportion with CLT",
+    "section": "Example: M&M’s (cont.)",
+    "text": "Example: M&M’s (cont.)\n\n\nMake a decision and conclusion in context.\n\n\nSince our p-value of 0.153 is greater than our significance level of 0.10, we fail to reject \\(H_{0}\\). The data are not strong enough to suggest that the true proportion of yellow M&Ms is different from 14%."
+  },
+  {
+    "objectID": "slides/slides-20-ht-prop.html#null-distribution-via-clt",
+    "href": "slides/slides-20-ht-prop.html#null-distribution-via-clt",
+    "title": "Test for single proportion with CLT",
+    "section": "Null distribution via CLT",
+    "text": "Null distribution via CLT\nRecall CLT for sample proportion: if we have \\(n\\) independent binary observations that satisfy the success-failure condition, then\n\\[\n\\hat{p} \\overset{\\cdot}{\\sim} N\\left(p, \\sqrt{\\frac{p(1-p)}{n}} \\right)\n\\]\n\nThis is the sampling distribution of \\(\\hat{p}\\)\nBut we want the null distribution of \\(\\hat{p}\\): the sampling distribution under \\(H_{0}\\)\nWe should operate in a world where \\(H_{0}\\) is true\nSo to use CLT for null distribution, we must satisfy:\n\nIndependence\n\nSuccess-failure condition under \\(H_{0}\\): \\(np_{0} \\geq 10\\) and \\(n(1-p_{0}) \\geq 10\\)"
+  },
+  {
+    "objectID": "slides/slides-20-ht-prop.html#null-distribution-via-clt-cont.",
+    "href": "slides/slides-20-ht-prop.html#null-distribution-via-clt-cont.",
+    "title": "Test for single proportion with CLT",
+    "section": "Null distribution via CLT (cont.)",
+    "text": "Null distribution via CLT (cont.)\nIf assumptions are met and \\(H_{0}\\) is true, then CLT tells us our null distribution is:\n\\[\n\\hat{p} \\overset{\\cdot}{\\sim} N\\left(p_{0}, \\sqrt{\\frac{p_{0} (1-p_{0})}{n}} \\right)\n\\]\n\nThat is: this is how the sample proportion would behave assuming \\(H_{0}\\) is true!\nWe can standardize the null distribution by taking z-score:\n\n\n\\[\nZ = \\frac{\\hat{p} - p_{0}}{\\sqrt{\\frac{p_{0} (1-p_{0})}{n}}} \\sim N(0,1)\n\\]\n\n\nWe will use this to see how crazy our \\(\\hat{p}_{obs}\\) is"
+  },
+  {
+    "objectID": "slides/handout-20-ht-prop.html",
+    "href": "slides/handout-20-ht-prop.html",
+    "title": "Hypothesis test for single proportion via CLT",
+    "section": "",
+    "text": "Soda taste test example\nSome people claim they can tell the difference between a diet soda and a regular soda in the first sip. A researcher wanted to test this claim using a hypothesis test at the 0.05 significance level.\n\nHe randomly sampled 80 people who claimed they can tell the difference.\nHe then filled 80 plain white cups with soda, half diet and half regular through random assignment, and asked each person to take one sip from their cup and identify the soda as diet or regular.\n53 participants correctly identified the soda.\n\nLet \\(p\\) be the proportion of people who correctly identify soda type among people who think they can tell the difference.\n\nStep 1\n\\(H_{0}:\\)\n\\(H_{A}:\\)\n\n\nStep 2\nCalculate useful summary information and set \\(\\alpha\\)\n\n\nStep 3\nFind null distribution of \\(\\hat{p}\\) via CLT.\n\nCheck conditions:\n\nBecause conditions for CLT are __________, we _______ obtain the null distribution using CLT.\n\nObtain null distribution of \\(\\hat{p}\\):\n\nTo find p-value:\n\nCalculate our observed test statistic:\n\\[\n= \\frac{\\text{point est.} - \\text{null value}}{\\text{SE}_{0}}\n\\]\n\n\nCalculate p-value\n\nDraw a picture of a Normal distribution, and shade in the correct area\nWrite R code that corresponds to the probability of interest\n\n\n\n\nStep 4\nDecision:\nConclusion:\n\n\n\nM&Ms example\nM&M’s reported that 14% of its candies are yellow. We are interested in testing this claim. In a random sample of 100 M&M’s, 9 were found to be yellow. Conduct a hypothesis test via CLT at the \\(0.10\\) level.\n\nStep 1\n\n\n\nStep 2\n\n\n\nStep 3\nVerify conditions for CLT-based hypothesis test are met:\n\n\n\n\n\n\nBecause conditions for CLT are _________, we _______ obtain the null distribution using CLT.\n\nNull distribution: \n\nTo find p-value:\n\nCalculate our observed test statistic\n\n\nCalculate p-value\n\nDraw a picture of a Normal distribution, and shade in the correct area\nWrite probability statement and R code that corresponds to the probability of interest\n\n\n\n\nStep 4\nDecision:\nConclusion:"
+  },
+  {
+    "objectID": "slides/slides-19-clt.html",
+    "href": "slides/slides-19-clt.html",
+    "title": "Central Limit Theorem",
+    "section": "",
+    "text": "Normal distribution: symmetric, bell-shaped curve that is described by mean \\(\\mu\\) and standard deviation \\(\\sigma\\)\n\nCommon model used to describe behavior of continuous variables\n\nUse area under the Normal curve to obtain probabilities\n68-95-99.7 rule\nz-score standardizes observations to allow for easier comparison: \\(z = \\frac{x- \\mu}{\\sigma}\\)"
+  },
+  {
+    "objectID": "slides/slides-21-ci-mean.html",
+    "href": "slides/slides-21-ci-mean.html",
+    "title": "Confidence Intervals for Means",
+    "section": "",
+    "text": "Central Limit Theorem: if we have a sufficiently large sample of \\(n\\) independent observations from a population with mean \\(\\mu\\) and standard deviation \\(\\sigma\\), then \\(\\bar{X} \\overset{\\cdot}{\\sim} N\\left(\\mu, \\frac{\\sigma}{\\sqrt{n}}\\right)\\)\nWhen considering the special case of sample proportions, if success-failure condition is met, we have \\(\\hat{p} \\overset{\\cdot}{\\sim} N\\left(p, \\sqrt{\\frac{p(1-p)}{n}}\\right)\\)\nTo obtain a \\(\\gamma\\times 100\\%\\) CI for a mean, we use\n\n\\[\n\\text{point estimate} \\pm \\text{critical value} \\times \\text{SE}\n\\]\n\n\nWe needed to replace the standard error with an estimate"
+  },
+  {
+    "objectID": "slides/slides-21-ci-mean.html#checking-normality",
+    "href": "slides/slides-21-ci-mean.html#checking-normality",
+    "title": "Confidence Intervals for Means",
+    "section": "Checking normality",
+    "text": "Checking normality\n\nRemember, CLT requires a sufficiently large sample size \\(n\\) or assumption of Normality of the underlying data.\nNo perfect way to check Normality, but rule of thumb:\n\nIf \\(n < 30\\) small: check that there are no clear outliers\nIf \\(n \\geq 30\\) large: check that there are no particularly extreme outliers"
+  },
+  {
+    "objectID": "slides/slides-21-ci-mean.html#ci-for-a-single-mean-known-variance",
+    "href": "slides/slides-21-ci-mean.html#ci-for-a-single-mean-known-variance",
+    "title": "Confidence Intervals for Means",
+    "section": "CI for a single mean (known variance)",
+    "text": "CI for a single mean (known variance)\nSuppose we want a \\(\\gamma\\times 100\\%\\) CI for population mean \\(\\mu\\).\n\nWhat would your “best guess” point estimate for \\(\\mu\\) be?\n\n\nIf CLT holds, then we know\n\\[\n\\bar{X} \\overset{\\cdot}{\\sim} N\\left(\\mu, \\frac{\\sigma}{\\sqrt{n}}\\right)\n\\]\nSo our \\(\\gamma \\times 100\\%\\) CI for \\(\\mu\\) is:\n\\[\n\\text{point estimate} \\pm \\underbrace{\\text{critical value} \\times \\text{SE}}_{\\text{Margin of Error}} = \\bar{x} \\pm z_{(1+\\gamma)/2}^* \\times \\frac{\\sigma}{\\sqrt{n}}\n\\]"
+  },
+  {
+    "objectID": "slides/slides-21-ci-mean.html#example-age-at-marriage",
+    "href": "slides/slides-21-ci-mean.html#example-age-at-marriage",
+    "title": "Confidence Intervals for Means",
+    "section": "Example: age at marriage",
+    "text": "Example: age at marriage\n\n\n\nIn 2006-2010, the CDC conducted a thorough survey asking US women their age at first marriage. The standard deviation of the responses is 4.72 years. Suppose we randomly sample 25 US women and ask them their age at first marriage (plotted below). Their average age at marriage was 23.32.\n\n\n\n\n\n\n\n\nWhat is/are the population parameter(s)? What is the statistic?\n\n\n\nWe will obtain an 80% confidence interval for the mean age of US women at first marriage.\n\n\n\nAre conditions of CLT met?\nIf so, what does CLT tell us?"
+  },
+  {
+    "objectID": "slides/slides-21-ci-mean.html#example-age-at-marriage-cont.",
+    "href": "slides/slides-21-ci-mean.html#example-age-at-marriage-cont.",
+    "title": "Confidence Intervals for Means",
+    "section": "Example: age at marriage (cont.)",
+    "text": "Example: age at marriage (cont.)\n\nObtain an 80% confidence interval for the mean age of US women at first marriage.\n\n\n\n\nBy CLT: \\[\\bar{X} \\overset{\\cdot}{\\sim}N\\left(\\mu, \\frac{4.72}{\\sqrt{25}}\\right) = N(\\mu, 0.944)\\]\n\nCollect necessary components:\n\n\nPoint estimate: \\(\\bar{x} = 23.32\\)\nStandard error: \\(0.944\\)\nCritical value: \\(z_{0.9}^{*} =\\) qnorm(0.9, 0, 1) \\(= 1.28\\)\n\n\nSo our 80% confidence interval is \\(23.32 \\pm 1.28 \\times 0.944 = (22.11, 24.53)\\)\n\n\n\nInterpret this interval!"
+  },
+  {
+    "objectID": "slides/slides-21-ci-mean.html#utility-of-this-model",
+    "href": "slides/slides-21-ci-mean.html#utility-of-this-model",
+    "title": "Confidence Intervals for Means",
+    "section": "Utility of this model",
+    "text": "Utility of this model\n\nThe previous formula for the confidence interval for \\(\\mu\\) relies on knowing \\(\\sigma\\)\nBut wait…\n\nWant to construct a CI for \\(\\mu\\) because we don’t know its value\nIf we don’t know \\(\\mu\\), it seems highly unlikely that we would know \\(\\sigma\\)!\n\nSo in practice, we will have to estimate standard error for \\(\\bar{X}\\):\n\n\n\\[\n    \\text{SE}\\approx \\frac{s}{\\sqrt{n}}\n\\]\nwhere \\(s\\) is the observed sample standard deviation\n\n\nRecall we did something similar for CI for \\(p\\)"
+  },
+  {
+    "objectID": "slides/slides-21-ci-mean.html#variance-issue",
+    "href": "slides/slides-21-ci-mean.html#variance-issue",
+    "title": "Confidence Intervals for Means",
+    "section": "Variance issue",
+    "text": "Variance issue\n\nReplacing \\(s\\) for \\(\\sigma\\) works well enough when \\(n\\) is extremely large so we can estimate \\(\\sigma\\) accurately\nHowever, estimating variance is extremely difficult when \\(n\\) is small, and still not great for large \\(n\\)\nSo if \\(\\sigma\\) is unknown, we cannot use the Normal approximation to model \\(\\bar{X}\\) for inferential tasks\nInstead, we will use a new distribution for inference calculations, called the \\(t\\)-distribution"
+  },
+  {
+    "objectID": "slides/slides-21-ci-mean.html#t-distribution",
+    "href": "slides/slides-21-ci-mean.html#t-distribution",
+    "title": "Confidence Intervals for Means",
+    "section": "\\(t\\)-distribution",
+    "text": "\\(t\\)-distribution\n\nThe \\(t\\)-distribution is symmetric and bell-curved (like the Normal distribution)\nHas “thicker tails” than the Normal distribution (the tails decay more slowly)\n\n\n\n\n\n\n\n\n\n\n\n\n\\(t\\)-distribution is always centered at 0\nOne parameter: degrees of freedom (df) defines exact shape of the \\(t\\)\n\nDenoted \\(t_{df}\\) (e.g. \\(t_{1}\\) or \\(t_{20}\\))\n\n\n\n\n\nAs \\(df\\) increase, \\(t\\) resembles the \\(N(0,1)\\). When \\(df \\geq 30\\), the \\(t_{df}\\) is nearly identical to \\(N(0,1)\\)"
+  },
+  {
+    "objectID": "slides/slides-21-ci-mean.html#working-with-t-distribution",
+    "href": "slides/slides-21-ci-mean.html#working-with-t-distribution",
+    "title": "Confidence Intervals for Means",
+    "section": "Working with \\(t\\) distribution",
+    "text": "Working with \\(t\\) distribution\n\n\n\nLet’s draw pictures for the following:\n\nWhat proportion of the \\(t_{2}\\)-distribution falls below -1.5?\nWhat value of the \\(t_{2}\\)-distribution has \\(70\\%\\) area lying below it?"
+  },
+  {
+    "objectID": "slides/slides-21-ci-mean.html#t-distribution-in-r",
+    "href": "slides/slides-21-ci-mean.html#t-distribution-in-r",
+    "title": "Confidence Intervals for Means",
+    "section": "\\(t\\) distribution in R",
+    "text": "\\(t\\) distribution in R\n\npnorm(x, mean, sd) and qnorm(%, mean, sd) used to find probabilities and percentiles for the Normal distribution\nAnalogous functions for \\(t\\)-distribution: pt(x, df) and qt(%, df)\n\n\n\n\n\n\n\n\n\n\n\npt(-1.5,df =2) = 0.1361966\n\n\n\n\n\n\n\n\n\n\nqt(0.7, df =2) = 0.6172134"
+  },
+  {
+    "objectID": "slides/slides-21-ci-mean.html#ci-for-a-single-mean-unknown-variance",
+    "href": "slides/slides-21-ci-mean.html#ci-for-a-single-mean-unknown-variance",
+    "title": "Confidence Intervals for Means",
+    "section": "CI for a single mean (unknown variance)",
+    "text": "CI for a single mean (unknown variance)\n\nStill require independent observations and the Normality condition for CLT\nGeneral formula for \\(\\gamma \\times 100\\%\\) CI is the same, but we simply change what goes into the margin of error.\n\n\n\\[\n\\begin{align*}\n\\text{point estimate} &\\pm t^*_{df, (1+\\gamma)/2} \\times \\widehat{\\text{SE}} \\\\\n\\bar{x} &\\pm t_{df, (1+\\gamma)/2}^* \\times \\frac{s}{\\sqrt{n}}\n\\end{align*}\n\\]\n\n\n\\(df = n-1\\)\ncritical value \\(t^*_{df, (1+\\gamma)/2}\\) = \\((1+\\gamma)/2\\) percentile of the \\(t_{df}\\) distribution"
+  },
+  {
+    "objectID": "slides/slides-21-ci-mean.html#example-age-at-marriage-cont.-1",
+    "href": "slides/slides-21-ci-mean.html#example-age-at-marriage-cont.-1",
+    "title": "Confidence Intervals for Means",
+    "section": "Example: age at marriage (cont.)",
+    "text": "Example: age at marriage (cont.)\nLet’s return to the age at marriage example. Once again let’s obtain an 80% confidence interval for the average age of first marriage for US women, but now suppose we don’t know \\(\\sigma\\).\n\nIn our sample of \\(n = 25\\) women, we observed a sample mean of \\(23.32\\) years and a sample standard deviation of \\(s = 4.03\\) years.\n\n\n\n\n\nPoint estimate: \\(\\bar{x} = 23.32\\)\nStandard error: \\(\\widehat{\\text{SE}} = \\frac{s}{\\sqrt{n}}= \\frac{4.03}{\\sqrt{25}} = 0.806\\)\nCritical value:\n\n\\(df = n-1 = 24\\)\n\\(t_{24}^*\\) = qt(0.9, df =24) = 1.32\n\n\n\nSo our 80% confidence interval for \\(\\mu\\) is:\n\\[\n23.32 \\pm 1.32 \\times 0.806 = (22.26, 24.38)\n\\]"
+  },
+  {
+    "objectID": "slides/slides-21-ci-mean.html#comparing-cis",
+    "href": "slides/slides-21-ci-mean.html#comparing-cis",
+    "title": "Confidence Intervals for Means",
+    "section": "Comparing CIs",
+    "text": "Comparing CIs\n\n\nKnown variance:\n80% CI: (22.11, 24.53)\n\nUnknown variance:\n80% CI: (22.26, 24.38)\n\n\n\n\nHow do the two intervals compare?\n\nInterpretation of CI does not change even if we use a different model!"
+  },
+  {
+    "objectID": "slides/slides-21-ci-mean.html#examples",
+    "href": "slides/slides-21-ci-mean.html#examples",
+    "title": "Confidence Intervals for Means",
+    "section": "Examples",
+    "text": "Examples\nAssume that all conditions necessary for inference are satisfied.\n\n\n\nqnorm(0.90) = 1.28\nqnorm(0.95) = 1.64\nqnorm(0.975) = 1.96\n\n\n\nqt(0.90, df = 35) = 1.31\nqt(0.95, df = 35) = 1.69\nqt(0.975, df = 35) = 2.03\n\n\n\nqt(0.90, df = 36) = 1.31\nqt(0.95, df = 36) = 1.69\nqt(0.975, df = 36) = 2.03\n\n\n\n\n\nA 90% confidence interval for a population mean \\(\\mu\\) is given as \\((18.985, 21.015)\\). The interval was obtained based on a SRS for 36 observations. Calculate the sample mean and sample standard deviation.\nThe standard deviation for students at particular Ivy League college is 250 points. Two students, Raina and Luke, want to estimate the average SAT score of students at this college. They want their margin of error to be no more than 25 points.\n\nRaina wants to use a 90% confidence level. How large a sample does Raina need to collect?\nLuke wants to use a 95% confidence level. Without calculations, determine whether Luke’s sample should be larger or smaller than Raina’s. Explain your reasoning.\nCalculate the minimum sample size for Luke."
+  },
+  {
+    "objectID": "slides/slides-21-ci-mean.html#paired-data",
+    "href": "slides/slides-21-ci-mean.html#paired-data",
+    "title": "Confidence Intervals for Means",
+    "section": "Paired data",
+    "text": "Paired data\nSuppose we have two sets of observations/data \\(\\boldsymbol{x} = (x_{1}, x_{2}, \\ldots x_{n})\\) and \\(\\boldsymbol{y} = (y_{1}, y_{2}, \\ldots, y_{n})\\)\n\nThe data are considered paired data if each \\(x_{i}\\) corresponds to exactly one \\(y_{i}\\)\nExample: your score on the midterm and your score on the final\nWhen analyzing paired data, we are typically interested in the difference in outcomes of each pair of observations"
+  },
+  {
+    "objectID": "slides/slides-21-ci-mean.html#paired-differences",
+    "href": "slides/slides-21-ci-mean.html#paired-differences",
+    "title": "Confidence Intervals for Means",
+    "section": "Paired differences",
+    "text": "Paired differences\n\nLet \\(d_{i} = y_{i} - x_{i}\\) for each \\(i = 1,\\ldots, n\\) be the observed differences\nThe \\(d_{i}\\) come from larger population with true mean difference \\(\\mu_{d}\\) and standard deviation of differences \\(\\sigma_{d}\\)\nThe sample mean difference and sample standard deviation of the differences are\n\n\n\\[\\bar{d} = \\frac{1}{n}\\sum_{i=1}^{n} d_{i} \\qquad \\qquad s_{d} = \\frac{1}{n-1}\\sum_{i=1}^{n} (d_{i} - \\bar{d})^2 \\]"
+  },
+  {
+    "objectID": "slides/slides-21-ci-mean.html#clt-for-mean-difference-in-pairs",
+    "href": "slides/slides-21-ci-mean.html#clt-for-mean-difference-in-pairs",
+    "title": "Confidence Intervals for Means",
+    "section": "CLT for mean difference in pairs",
+    "text": "CLT for mean difference in pairs\n\nSuppose the \\(n\\) observational units are independent and the distribution of the differences is approximately normal. Then CLT says:\n\\[\n\\bar{d} \\overset{\\cdot}{\\sim} N\\left(\\mu_{d}, \\frac{\\sigma_{d}}{\\sqrt{n}} \\right)\n\\]\nWe are usually interested in performing inference for \\(\\mu_{d}\\) when both \\(\\mu_{d}\\) and \\(\\sigma_{d}\\) unknown\nOur formula for \\(\\gamma\\times 100\\%\\) CI for \\(\\mu_{d}\\) is analogous to the formula for one mean when \\(\\sigma\\) unknown:\n\n\n\\[\n\\begin{align*}\n\\text{point estimate} &\\pm t^*_{df, (1+\\gamma)/2} \\times \\widehat{\\text{SE}} \\\\\n\\bar{d} &\\pm t_{df, (1+\\gamma)/2}^* \\times \\frac{s_{d}}{\\sqrt{n}}\n\\end{align*}\n\\]\nwhere \\(df = n-1\\)"
+  },
+  {
+    "objectID": "slides/slides-21-ci-mean.html#example-zinc",
+    "href": "slides/slides-21-ci-mean.html#example-zinc",
+    "title": "Confidence Intervals for Means",
+    "section": "Example: zinc",
+    "text": "Example: zinc\n\n\n\nData consist of measured zinc concentrations in bottom water and surface water at 10 randomly sampled wells:\n\nDo the data suggest that the true average concentration in the bottom water is different than that of surface water? Let’s answer this using a 95% confidence interval.\n\n\n\n\n\n\n\n\n\n\n\n\n  bottom surface\n1  0.430   0.415\n2  0.266   0.238\n3  0.567   0.390\n4  0.531   0.410\n5  0.707   0.605\n6  0.716   0.609\n\n\n\nAre the data paired? Does CLT apply?"
+  },
+  {
+    "objectID": "slides/slides-21-ci-mean.html#example-zinc-cont.",
+    "href": "slides/slides-21-ci-mean.html#example-zinc-cont.",
+    "title": "Confidence Intervals for Means",
+    "section": "Example: zinc (cont.)",
+    "text": "Example: zinc (cont.)\n\n\n\nzinc <- zinc |>\n  mutate(d = bottom - surface)\nd_bar <- mean(zinc$d)\nd_bar\n\n[1] 0.0804\n\ns_d <- sd(zinc$d)\ns_d\n\n[1] 0.05227321\n\n\n\n\n\n\n\npoint estimate: \\(\\bar{d} = 0.0804\\)\nSE \\(\\approx\\) \\(\\frac{s_{d}}{\\sqrt{n}} = \\frac{0.052}{\\sqrt{10}} = 0.016\\)\n\ncritical value: what code would you write?\n\n\n\\(df = n-1 = 9\\)\n\\(t_{9, 0.975}^{*} =\\) qt(0.975,9) \\(= 2.26\\)\n\n\n\n\n\nSo our 95% confidence interval is:\n\\[0.0804 \\pm 2.26(0.016) = (0.044, 0.117)\\]\n\n\n\nDo the data suggest that the true average concentration in the bottom water is different than that of surface water? Explain."
+  },
+  {
+    "objectID": "slides/slides-21-ci-mean.html#difference-of-two-means",
+    "href": "slides/slides-21-ci-mean.html#difference-of-two-means",
+    "title": "Confidence Intervals for Means",
+    "section": "Difference of two means",
+    "text": "Difference of two means\nNow consider two populations under the condition that the data/populations are not paired.\nWe might be interested in learning about whether or not the means of each population are equal (think about the voice jitter homework problem)!\n\nLet \\(\\mu_{1}\\) and \\(\\mu_{2}\\) represent the population means for the two populations 1 and 2\nSamples of size \\(n_{1}\\) and \\(n_{2}\\) from each population, respectively\nWe might think it reasonable to use \\(\\bar{x}_{1} - \\bar{x}_{2}\\) as a point estimate for \\(\\mu_{1} - \\mu_{2}\\)"
+  },
+  {
+    "objectID": "slides/slides-21-ci-mean.html#conditions-for-inference",
+    "href": "slides/slides-21-ci-mean.html#conditions-for-inference",
+    "title": "Confidence Intervals for Means",
+    "section": "Conditions for inference",
+    "text": "Conditions for inference\nNow that we have two populations, conditions for CLT and use of the \\(t\\)-distribution for inference will look slightly different:\n\nIndependence (extended): need data within and between the two groups\n\ne.g.the two data sets come from independent random samples or from a randomized experiment\n\nNormality: we need to check for approximate normality for both groups separately"
+  },
+  {
+    "objectID": "slides/slides-21-ci-mean.html#ci-for-difference-in-two-means",
+    "href": "slides/slides-21-ci-mean.html#ci-for-difference-in-two-means",
+    "title": "Confidence Intervals for Means",
+    "section": "CI for difference in two means",
+    "text": "CI for difference in two means\nIf the conditions hold, then our usual formula for \\(\\gamma \\times 100\\%\\) CI still holds:\n\\[\n\\text{point estimate} \\pm \\text{critical value} \\times \\text{SE}\n\\]\n\nPoint estimate\n\n\n\n\n\n\n\nIf \\(\\sigma_{1}\\) and \\(\\sigma_{2}\\) known:\n\n\n\\(\\text{SE} = \\sqrt{\\frac{\\sigma_{1}^2}{n_{1}} + \\frac{\\sigma_{2}^2}{n_{2}}}\\)\ncritical value: \\(z_{(1+\\gamma)/2}^*\\)\n\n\\((1+\\gamma)/2\\) percentile of \\(N(0,1)\\)\n\n\n\n\nIf \\(\\sigma_{1}\\) and \\(\\sigma_{2}\\) unknown:\n\n\n\\(\\text{SE} \\approx \\sqrt{\\frac{s_{1}^2}{n_{1}} + \\frac{s_{2}^2}{n_{2}}}\\)\ncritical value: \\(t_{df, (1+\\gamma)/2}^*\\)\n\n\\((1+\\gamma)/2\\) percentile of \\(t_{df}\\)\n\\(df = \\min\\{n_{1} -1, n_{2} - 1\\}\\)"
+  },
+  {
+    "objectID": "slides/slides-21-ci-mean.html#example-voice-shimmer",
+    "href": "slides/slides-21-ci-mean.html#example-voice-shimmer",
+    "title": "Confidence Intervals for Means",
+    "section": "Example: voice shimmer",
+    "text": "Example: voice shimmer\nLet’s consider the voice shimmer of PD vs non-PD patients from last week’s homework.\n\n\nRows: 195 Columns: 6\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (2): clip, status\ndbl (4): jitter, shimmer, hnr, avg.f.q\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\nConvince yourself that this data isn’t paired!\n\n\nPopulation 1: people with Parkinson’s Disease\nPopulation 2: people without Parkinson’s Disease\n\n\nResearch question: are average voice shimmers different between people with and without Parkinson’s? Create a 95% confidence interval to answer this question.\n\n\nWe care about the difference in means \\(\\mu_{\\text{PD}} - \\mu_{\\text{H}}\\)"
+  },
+  {
+    "objectID": "slides/slides-21-ci-mean.html#example-voice-shimmer-cont.",
+    "href": "slides/slides-21-ci-mean.html#example-voice-shimmer-cont.",
+    "title": "Confidence Intervals for Means",
+    "section": "Example: voice shimmer (cont.)",
+    "text": "Example: voice shimmer (cont.)\n\nAre average voice shimmers different between people with and without Parkinson’s? Create a 95% confidence interval to answer this question.\n\n\n\n\n\n\n\n\nstatus\nn\nxbar\ns\n\n\n\n\nHealthy\n48\n0.163\n0.058\n\n\nPD\n147\n0.321\n0.208\n\n\n\n\n\n\n\n\n\n\nDo assumptions for CLT hold?\n\n\nIndependence: random sample!\nNormality condition: \\(n \\geq 30\\) in both groups with no particularly extreme outliers\n\n\n\nSet-up/find the following:\n\n\nPoint estimate\nStandard error\nCode for critical value"
+  },
+  {
+    "objectID": "slides/slides-21-ci-mean.html#example-voice-shimmer-cont.-1",
+    "href": "slides/slides-21-ci-mean.html#example-voice-shimmer-cont.-1",
+    "title": "Confidence Intervals for Means",
+    "section": "Example: voice shimmer (cont.)",
+    "text": "Example: voice shimmer (cont.)\n\n\n\n\nPoint estimate: \\(\\bar{x}_{\\text{PD}} - \\bar{x}_{\\text{H}} = 0.32 - 0.16 = 0.158\\)\nSE \\(\\approx \\sqrt{\\frac{s_{\\text{PD}}^2}{n_{\\text{PD}}} + \\frac{s_{\\text{H}}^2}{n_{\\text{H}}}} = \\sqrt{\\frac{0.21^2}{147} + \\frac{0.06^2}{48}} = 0.019\\)\nCritical value:\n\n\\(df = \\min\\{n_{\\text{PD}} -1, n_{\\text{H}} -1 \\} = \\min\\{147 - 1, 48- 1\\} = 47\\)\nWant \\(0.975\\)-th percentile of \\(t_{47}\\) distribution: qt(0.975, df =47) = 2.01\n\n\n\n\nPutting everything together, our 95% CI for \\(\\mu_{\\text{PD}} - \\mu_{\\text{H}}\\) is: \\[\n0.158 \\pm 2.01 \\times 0.019 = (0.12, 0.196)\n\\]\n\nInterpret this CI in context. Note: direction of difference matters!\nAre average voice shimmers different between people with and without Parkinson’s? Briefly explain why or why not."
   }
 ]

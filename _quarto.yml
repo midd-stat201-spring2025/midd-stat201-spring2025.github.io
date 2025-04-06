@@ -16,6 +16,8 @@ website:
         text: "Midterms"
       - file: datafest.qmd
         text: "DataFest"
+      - file: project/project_description.qmd
+        text: "Project"
     right:
       - icon: book-half
         text: "Textbook"
