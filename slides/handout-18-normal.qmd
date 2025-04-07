@@ -13,8 +13,11 @@ format:
       - left=1in
       - right=1in
       - top=1in
+include-in-header:
+  - text: |
+      \pagenumbering{gobble}
 ---
-
+\vspace{-2cm}
 ```{r message= F, echo = F}
 library(tidyverse)
 library(patchwork)
@@ -86,19 +89,19 @@ p_perc2 <-p_empty +
   annotate("text", label = as.character(1-perc), x = ub + 0.65, y = 0.1)
 ```
 
-```{r fig.height=3}
+```{r fig.height=2}
 p_norms
 ```
 
 ## 68-95-99.7 rule
 
-```{r fig.height=3}
+```{r fig.height=2}
 p68
 ```
 
 ## Finding areas
 
-Suppose $X \sim N(0,1)$
+Suppose $X \sim N(0,1)$ (i.e. $X$ is "standard Normal").
 
 ::: {layout-ncol="3"}
 Area less than -2 and greater than 2.
@@ -118,21 +121,16 @@ p_std
 ```{r fig.height=1.5, fig.width=2}
 p_std 
 ```
-
-$\quad$
-
-$\quad$
-
-$\quad$
-
-$\text{P}(\qquad\qquad\qquad) \approx$
-
-$\quad$
-
-$\quad$
 :::
 
-\vspace{4cm}
+\clearpage
+
+## z-scores
+
+
+\vspace{5cm}
+
+
 
 ## Z-score problem
 
@@ -161,6 +159,11 @@ p_act <- base +
 p_sat / p_act
 ```
 
+
+\vspace{3cm}
+
+Since we assume nearly Normal behavior, we can answer the question: what percent of people did Ann and Tom do better than?
+
 \clearpage
 
 ## Percentiles
@@ -188,51 +191,47 @@ qnorm(0.25, mean = mu, sd = sigma)
 Suppose SAT scores are Normally distributed with mean 1100 and standard deviation 200.
 
 1.  Edward earned a 1030 on his SAT. We will find his percentile using code in two ways.
-    a.  First, draw a picture representing what we want to find. Then write code to find the percentile.
-    
-    \vspace{4cm}
-    
-    
+
+    a.  Draw a picture representing what we want to find. Then write code to find the percentile.
+
+    \vspace{3cm}
+
     b.  Find Edward's z-score. Write another line of code to find the percentile.
-    
-        \vspace{4cm}
+
+        \vspace{3cm}
 
 2.  What is the 97.5th percentile for SAT scores?
-    a.  Write code to answer this question.
-    
-        \vspace{4cm}
 
+    a.  Write code to answer this question.
+
+        \vspace{2cm}
 
     b.  Write a different line of code to answer this question that involves a z-score.
-    
-        \vspace{4cm}
+
+        \vspace{3cm}
 
 3.  Unrelated to SAT scores: consider the standard normal $N(0,1)$ distribution. The 25th percentile of this distribution is `r round(qnorm(0.25), 2)`. Without doing any work beyond drawing a picture, what is the 75th percentile of the distribution?
 
-    \vspace{4cm}
-
-
-\clearpage
+    \vspace{3cm}
 
 ## Some practice problems
 
-1.  In a law school class, the entering students averaged 160 on the LSAT. The variance was 64. The histogram of LSAT scores followed the normal curve reasonable well.
+1.  In a law school class, the entering students averaged 160 on the LSAT. The \emph{variance} was 64. The histogram of LSAT scores followed the normal curve reasonable well.
 
-    a.  About what percentage of the class scores below 152?
+    a.  About what percentage of the class scored below 152?
 
     b.  One student was 0.5 standard deviations above average on the LSAT. About what percentage of the students had lower scores than he did?
 
-2.  Weights of 10-year-old girls are known to be Normally distributed with mean of 70 pounds and standard deviation of 13 pounds. Find the probability that a 10-year-old girl weighs between 60 and 85 pounds two ways:
+2.  Weights of 10-year-old girls are known to be Normally distributed with mean of 70 pounds and standard deviation of 13 pounds. Find the probability that a 10-year-old girl weighs between 60 and 85 pounds in the following two ways. *Optional, but helpful: draw a sketch of the curve and shade in the region of interest.*
 
-    a.  Optional, but helpful: draw a sketch of the curve and shade in the region of interest.
+    a.  Write the probability of interest in $P()$ form. Then write the `R` code necessary to find this probability, and actually execute the code to obtain the probability.
 
-    b.  Write the probability of interest in $P()$ form. Then write the `R` code necessary to find this probability, and actually execute the code to obtain the probability.
-
-    c.  Confirm your solution in (b) by transforming to z-scores first, then using code again to obtain the probability.
+    b.  Confirm your solution in (b) by transforming to z-scores first, then using code again to obtain the probability.
 
 3.  Consider the same scenario as in 2. Without using any code than what is provided below, find the 60th percentile for the weight of 10-year-old girls.
 
-    ```{r echo = T}
-    qnorm(0.6, mean = 0, sd = 1)
+    ```{r echo = F}
+    q <- qnorm(0.6, mean = 0, sd = 1)
     ```
 
+    `qnorm(0.6, mean = 0, sd = 1) =` `r q`

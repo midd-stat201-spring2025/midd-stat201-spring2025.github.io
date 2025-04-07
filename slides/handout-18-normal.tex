@@ -116,6 +116,7 @@
 \def\fps@figure{htbp}
 \makeatother
 
+\pagenumbering{gobble}
 \setkomafont{title}{\small} \setkomafont{date}{\small}
 \KOMAoption{captions}{tableheading}
 \makeatletter
@@ -190,7 +191,9 @@
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, interior hidden, boxrule=0pt, enhanced, breakable, frame hidden, sharp corners]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, boxrule=0pt, interior hidden, enhanced, sharp corners, borderline west={3pt}{0pt}{shadecolor}, breakable]}{\end{tcolorbox}}\fi
+
+\vspace{-2cm}
 
 \includegraphics{handout-18-normal_files/figure-pdf/unnamed-chunk-3-1.pdf}
 
@@ -202,7 +205,7 @@
 \hypertarget{finding-areas}{%
 \subsection{Finding areas}\label{finding-areas}}
 
-Suppose \(X \sim N(0,1)\)
+Suppose \(X \sim N(0,1)\) (i.e.~\(X\) is ``standard Normal'').
 
 \begin{figure}
 
@@ -265,70 +268,15 @@ Area to the right of 1.
 }
 
 \end{minipage}%
-\newline
-\begin{minipage}[t]{0.33\linewidth}
-
-{\centering 
-
-\(\quad\)
-
-}
-
-\end{minipage}%
-%
-\begin{minipage}[t]{0.33\linewidth}
-
-{\centering 
-
-\(\quad\)
-
-}
-
-\end{minipage}%
-%
-\begin{minipage}[t]{0.33\linewidth}
-
-{\centering 
-
-\(\quad\)
-
-}
-
-\end{minipage}%
-\newline
-\begin{minipage}[t]{0.33\linewidth}
-
-{\centering 
-
-\(\text{P}(\qquad\qquad\qquad) \approx\)
-
-}
-
-\end{minipage}%
-%
-\begin{minipage}[t]{0.33\linewidth}
-
-{\centering 
-
-\(\quad\)
-
-}
-
-\end{minipage}%
-%
-\begin{minipage}[t]{0.33\linewidth}
-
-{\centering 
-
-\(\quad\)
-
-}
-
-\end{minipage}%
 
 \end{figure}
 
-\vspace{4cm}
+\clearpage
+
+\hypertarget{z-scores}{%
+\subsection{z-scores}\label{z-scores}}
+
+\vspace{5cm}
 
 \hypertarget{z-score-problem}{%
 \subsection{Z-score problem}\label{z-score-problem}}
@@ -339,6 +287,11 @@ mean of 21 and standard deviation of 6. Suppose Ann scored 1300 on her
 SAT and Tom scored 24 on his ACT. Who performed better?
 
 \includegraphics{handout-18-normal_files/figure-pdf/unnamed-chunk-8-1.pdf}
+
+\vspace{3cm}
+
+Since we assume nearly Normal behavior, we can answer the question: what
+percent of people did Ann and Tom do better than?
 
 \clearpage
 
@@ -407,11 +360,11 @@ deviation 200.
   \def\labelenumii{\alph{enumii}.}
   \tightlist
   \item
-    First, draw a picture representing what we want to find. Then write
-    code to find the percentile.
+    Draw a picture representing what we want to find. Then write code to
+    find the percentile.
   \end{enumerate}
 
-  \vspace{4cm}
+  \vspace{3cm}
 
   \begin{enumerate}
   \def\labelenumii{\alph{enumii}.}
@@ -420,7 +373,7 @@ deviation 200.
     Find Edward's z-score. Write another line of code to find the
     percentile.
 
-    \vspace{4cm}
+    \vspace{3cm}
   \end{enumerate}
 \item
   What is the 97.5th percentile for SAT scores?
@@ -430,12 +383,12 @@ deviation 200.
   \item
     Write code to answer this question.
 
-    \vspace{4cm}
+    \vspace{2cm}
   \item
     Write a different line of code to answer this question that involves
     a z-score.
 
-    \vspace{4cm}
+    \vspace{3cm}
   \end{enumerate}
 \item
   Unrelated to SAT scores: consider the standard normal \(N(0,1)\)
@@ -443,10 +396,8 @@ deviation 200.
   Without doing any work beyond drawing a picture, what is the 75th
   percentile of the distribution?
 
-  \vspace{4cm}
+  \vspace{3cm}
 \end{enumerate}
-
-\clearpage
 
 \hypertarget{some-practice-problems}{%
 \subsection{Some practice problems}\label{some-practice-problems}}
@@ -455,13 +406,13 @@ deviation 200.
 \def\labelenumi{\arabic{enumi}.}
 \item
   In a law school class, the entering students averaged 160 on the LSAT.
-  The variance was 64. The histogram of LSAT scores followed the normal
-  curve reasonable well.
+  The \emph{variance} was 64. The histogram of LSAT scores followed the
+  normal curve reasonable well.
 
   \begin{enumerate}
   \def\labelenumii{\alph{enumii}.}
   \item
-    About what percentage of the class scores below 152?
+    About what percentage of the class scored below 152?
   \item
     One student was 0.5 standard deviations above average on the LSAT.
     About what percentage of the students had lower scores than he did?
@@ -469,14 +420,12 @@ deviation 200.
 \item
   Weights of 10-year-old girls are known to be Normally distributed with
   mean of 70 pounds and standard deviation of 13 pounds. Find the
-  probability that a 10-year-old girl weighs between 60 and 85 pounds
-  two ways:
+  probability that a 10-year-old girl weighs between 60 and 85 pounds in
+  the following two ways. \emph{Optional, but helpful: draw a sketch of
+  the curve and shade in the region of interest.}
 
   \begin{enumerate}
   \def\labelenumii{\alph{enumii}.}
-  \item
-    Optional, but helpful: draw a sketch of the curve and shade in the
-    region of interest.
   \item
     Write the probability of interest in \(P()\) form. Then write the
     \texttt{R} code necessary to find this probability, and actually
@@ -490,15 +439,7 @@ deviation 200.
   is provided below, find the 60th percentile for the weight of
   10-year-old girls.
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{qnorm}\NormalTok{(}\FloatTok{0.6}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 0.2533471
-\end{verbatim}
+  \texttt{qnorm(0.6,\ mean\ =\ 0,\ sd\ =\ 1)\ =} 0.2533471
 \end{enumerate}
 
 
