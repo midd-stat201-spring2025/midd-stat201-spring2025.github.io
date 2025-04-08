@@ -58,7 +58,7 @@ Because conditions for CLT are \_\_\_\_\_\_\_\_\_\_, we \_\_\_\_\_\_\_ obtain th
 
 -   Obtain null distribution of $\hat{p}$:
 
-    \vspace{3cm}
+    \vspace{2.5cm}
 
 To find p-value:
 
@@ -68,23 +68,23 @@ To find p-value:
      = \frac{\text{point est.} - \text{null value}}{\text{SE}_{0}}
     $$
 
-\vspace{2cm}
+\vspace{1cm}
 
 -   Calculate p-value
 
-    -   Draw a picture of a Normal distribution, and shade in the correct area
+    -   Draw a picture of a Normal distribution, and shade in the correct area. Write out a statement in the form of $P()$ that represents what we want to find.
 
-        \vspace{3cm}
+        \vspace{5.5cm}
 
     -   Write `R` code that corresponds to the probability of interest
 
-        \vspace{2cm}
+        \vspace{1cm}
 
 ### Step 4
 
 Decision:
 
-\vspace{2cm}
+\vspace{1cm}
 
 Conclusion:
 
@@ -132,7 +132,7 @@ To find p-value:
 
     -   Write probability statement and `R` code that corresponds to the probability of interest
 
-        \vspace{2cm}
+        \vspace{3cm}
 
 ### Step 4
 

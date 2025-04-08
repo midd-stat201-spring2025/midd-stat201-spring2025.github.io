@@ -8166,7 +8166,7 @@
     "href": "slides/slides-20-ht-prop.html#housekeeping",
     "title": "Test for single proportion with CLT",
     "section": "Housekeeping",
-    "text": "Housekeeping"
+    "text": "Housekeeping\n\nOffice hours today 2:30-3:30pm!\nProject proposals due Wednesday"
   },
   {
     "objectID": "slides/slides-20-ht-prop.html#recap",
@@ -8187,7 +8187,7 @@
     "href": "slides/slides-20-ht-prop.html#steps-1-and-2-dont-change",
     "title": "Test for single proportion with CLT",
     "section": "Steps 1 and 2 don’t change",
-    "text": "Steps 1 and 2 don’t change\nWant to conduct a hypothesis test about a population proportion.\n\nDefine hypotheses\n\n\\(H_{0}: p = p_{0}\\) versus \\(H_{A}: p \\neq p_{0}\\) (or \\(H_{A}: p > p_{0}\\) or \\(H_{A}: p < p_{0}\\))\nRemember, \\(p_{0}\\) is our “null hypothesized value”\n\n\n\n\nCollect data, set significance level\n\nObtain observed sample proportion \\(\\hat{p}_{obs}\\)\nSet \\(\\alpha\\) significance level"
+    "text": "Steps 1 and 2 don’t change\nWant to conduct a hypothesis test about a population proportion.\n\nDefine hypotheses\n\n\\(H_{0}: p = p_{0}\\)\n\\(H_{A}: p \\neq p_{0}\\) (or \\(H_{A}: p > p_{0}\\) or \\(H_{A}: p < p_{0}\\))\nRemember, \\(p_{0}\\) is our “null hypothesized value”\n\n\n\n\nCollect data, set significance level\n\nObtain observed sample proportion \\(\\hat{p}_{obs}\\)\nSet \\(\\alpha\\) significance level"
   },
   {
     "objectID": "slides/slides-20-ht-prop.html#null-distribution-and-p-value",
@@ -8208,7 +8208,7 @@
     "href": "slides/slides-20-ht-prop.html#test-statistic",
     "title": "Test for single proportion with CLT",
     "section": "Test statistic",
-    "text": "Test statistic\n\np-value requires us to compare our observed data to the null distribution\nWe calculate a test statistic: a quantity that assesses how consistent our sampled data are with \\(H_{0}\\)\n\nOur test statistic is always of the form:\n\n\n\\[\\frac{\\text{point estimate} - \\text{null value}}{\\text{SE}_{0}}\\] where \\(\\text{SE}_{0}\\) represents the standard error under \\(H_{0}\\)\n\n\nFor this specific test, our test statistic is the \\(z\\)-score from the previous slide, and our observed value of the test statistic is:\n\n\n\\[z =\\frac{\\hat{p}_{\\text{obs}} - p_{0}}{\\sqrt{\\frac{p_{0} (1-p_{0})}{n}}}\\]\n\n\nWill find this value to the \\(N(0,1)\\) distribution"
+    "text": "Test statistic\n\np-value requires us to compare our observed data to the null distribution\nWe calculate a test statistic: a quantity that assesses how consistent our sampled data are with \\(H_{0}\\)\n\nOur test statistic is always of the form:\n\n\n\\[\\frac{\\text{point estimate} - \\text{null value}}{\\text{SE}_{0}}\\] where \\(\\text{SE}_{0}\\) represents the standard error under \\(H_{0}\\)\n\n\nFor this specific test, our test statistic is the \\(z\\)-score of \\(\\hat{p}_{obs}\\):\n\n\n\\[z =\\frac{\\hat{p}_{\\text{obs}} - p_{0}}{\\sqrt{\\frac{p_{0} (1-p_{0})}{n}}}\\]\n\n\nBecause null distribution is Normal, this z-score follows \\(N(0,1)\\) distribution!"
   },
   {
     "objectID": "slides/slides-20-ht-prop.html#obtain-p-value",
@@ -8236,14 +8236,14 @@
     "href": "slides/slides-20-ht-prop.html#example-taste-test-cont.-1",
     "title": "Test for single proportion with CLT",
     "section": "Example: taste test (cont.)",
-    "text": "Example: taste test (cont.)\n\nObtain null distribution and p-value\n\n\nCheck conditions for inference satisfied\n\n\nIndependence: random sample\nsuccess-failure: \\(np_{0} = 80(0.5) = 40 \\geq 10\\) and \\(n(1-p_{0}) = 40 \\geq 10\\)\n\nBecause conditions for CLT are met, we can obtain the null distribution using CLT.\n\n\n\nNull distribution\n\n\n\\[\\hat{p} \\overset{\\cdot}{\\sim} N\\left(0.5, \\sqrt{\\frac{0.5(1-0.5)}{80}} = 0.056 \\right)\\]\n\n\nTest statistic:\n\n\n\\[z = \\frac{\\hat{p}_{obs} - p_{0}}{\\text{SE}_{0}} = \\frac{0.6625 - 0.5}{0.056} = 2.90\\]\n\ni.e. if \\(H_{0}\\) true, our observed \\(\\hat{p}_{obs}\\) is 2.90 SDs above the mean"
+    "text": "Example: taste test (cont.)\n\nObtain null distribution and p-value\n\n\nCheck conditions for inference satisfied\n\n\nIndependence: random sample\nsuccess-failure: \\(np_{0} = 80(0.5) = 40 \\geq 10\\) and \\(n(1-p_{0}) = 40 \\geq 10\\)\n\nBecause conditions for CLT are met, we can obtain the null distribution using CLT.\n\n\n\nNull distribution\n\n\n\\[\\hat{p} \\overset{\\cdot}{\\sim} N\\left(0.5, \\sqrt{\\frac{0.5(1-0.5)}{80}} = 0.056 \\right)\\]"
   },
   {
     "objectID": "slides/slides-20-ht-prop.html#example-taste-test-cont.-2",
     "href": "slides/slides-20-ht-prop.html#example-taste-test-cont.-2",
     "title": "Test for single proportion with CLT",
-    "section": "4. Example: taste test (cont.)",
-    "text": "4. Example: taste test (cont.)\n\n\nCalculate p-value (i.e. set-up the calculation and/or write code)\n\n\nRemember \\(H_{A}: p > 0.5\\)\n\n\n\n\\[\n\\text{p-value} = \\text{Pr}(Z \\geq z) = \\text{Pr}(Z \\geq 2.90) = \\texttt{1 - pnorm(2.90, 0, 1) = 0.0019}\n\\]\n\n\n\nDecision and conclusion\n\n\nSince our p-value of 0.0019 is less than our significance level of 0.05, we reject \\(H_{0}\\).\nThe data provide strong evidence that the rate of correctly identifying a soda for these people is better than random guessing."
+    "section": "Example: taste test (cont.)",
+    "text": "Example: taste test (cont.)\n\n\nTest statistic:\n\n\n\\[z = \\frac{\\hat{p}_{obs} - p_{0}}{\\text{SE}_{0}} = \\frac{0.6625 - 0.5}{0.056} = 2.90\\]\n\nThis means that if \\(H_{0}\\) true, our observed \\(\\hat{p}_{obs}\\) is 2.90 SDs above the mean\n\nDoes this seem like “convincing evidence”?"
   },
   {
     "objectID": "slides/slides-20-ht-prop.html#example-mms",
@@ -8257,14 +8257,14 @@
     "href": "slides/slides-20-ht-prop.html#example-mms-cont.",
     "title": "Test for single proportion with CLT",
     "section": "Example: M&M’s (cont.)",
-    "text": "Example: M&M’s (cont.)\n\n\n\n\nObtain null distribution and obtain observed test statistic\n\n\n\n\nBy CLT, our null distribution is \\(\\hat{p} \\overset{\\cdot}{\\sim} N\\left(0.14, \\sqrt{\\frac{0.14(1-0.14)}{100}} \\right)\\)\n\\(\\quad =N(0.14, 0.035)\\)\n\n\\(z = \\frac{\\hat{p}_{obs} - p_{0}}{\\text{SE}_{0}} = \\frac{0.09 - 0.14}{0.035} = -1.43\\)\n\n\n\n\n\n\n\n\nObtain p-value. First draw a picture, then write out in \\(\\text{Pr}()\\) notation and in code what we want to find.\n\n\n\n\nSince \\(H_{A}\\) is two-sided, we want \\[\\begin{align*}\n   \\text{p-value} &= \\text{Pr}(Z \\leq -1.43 \\cup Z \\geq 1.43) \\\\\n&= \\text{Pr}(Z \\leq -1.43) + \\text{Pr}(Z \\geq 1.43)  \\\\\n&= 2\\times \\text{Pr}(Z \\geq 1.43) \\\\\n&= \\texttt{2 * (1 - pnorm(1.43))} \\\\\n&= 0.153\n\\end{align*}\\]"
+    "text": "Example: M&M’s (cont.)\n\n\nObtain null distribution and obtain observed test statistic\n\n\n\nBy CLT, our null distribution is \\(\\hat{p} \\overset{\\cdot}{\\sim} N\\left(0.14, \\sqrt{\\frac{0.14(1-0.14)}{100}} = 0.035 \\right)\\)\n\n\nTest statistic:\n\\[z = \\frac{\\hat{p}_{obs} - p_{0}}{\\text{SE}_{0}} = \\frac{0.09 - 0.14}{0.035} = -1.43\\]"
   },
   {
     "objectID": "slides/slides-20-ht-prop.html#example-mms-cont.-1",
     "href": "slides/slides-20-ht-prop.html#example-mms-cont.-1",
     "title": "Test for single proportion with CLT",
     "section": "Example: M&M’s (cont.)",
-    "text": "Example: M&M’s (cont.)\n\n\nMake a decision and conclusion in context.\n\n\nSince our p-value of 0.153 is greater than our significance level of 0.10, we fail to reject \\(H_{0}\\). The data are not strong enough to suggest that the true proportion of yellow M&Ms is different from 14%."
+    "text": "Example: M&M’s (cont.)\n\n\nObtain p-value. First draw a picture, then write out in \\(\\text{Pr}()\\) notation and in code what we want to find.\n\n\n\n\n\n\n\n\n\n\n\n\nSince \\(H_{A}\\) is two-sided, we want \\[\\begin{align*}\n    &\\text{Pr}(Z \\leq -1.43 \\cup Z \\geq 1.43) \\\\\n    &= \\text{Pr}(Z \\leq -1.43) + \\text{Pr}(Z \\geq 1.43)  \\\\\n    &= 2\\times \\text{Pr}(Z \\leq -1.43) \\\\\n    \\end{align*}\\]\n\n\n2 * pnorm(-1.43, 0, 1)\n\n[1] 0.152717\n\n2 * (1-pnorm(1.43, 0, 1))\n\n[1] 0.152717"
   },
   {
     "objectID": "slides/slides-20-ht-prop.html#null-distribution-via-clt",
@@ -8278,7 +8278,7 @@
     "href": "slides/slides-20-ht-prop.html#null-distribution-via-clt-cont.",
     "title": "Test for single proportion with CLT",
     "section": "Null distribution via CLT (cont.)",
-    "text": "Null distribution via CLT (cont.)\nIf assumptions are met and \\(H_{0}\\) is true, then CLT tells us our null distribution is:\n\\[\n\\hat{p} \\overset{\\cdot}{\\sim} N\\left(p_{0}, \\sqrt{\\frac{p_{0} (1-p_{0})}{n}} \\right)\n\\]\n\nThat is: this is how the sample proportion would behave assuming \\(H_{0}\\) is true!\nWe can standardize the null distribution by taking z-score:\n\n\n\\[\nZ = \\frac{\\hat{p} - p_{0}}{\\sqrt{\\frac{p_{0} (1-p_{0})}{n}}} \\sim N(0,1)\n\\]\n\n\nWe will use this to see how crazy our \\(\\hat{p}_{obs}\\) is"
+    "text": "Null distribution via CLT (cont.)\nIf succes-failure and independence conditions are met and \\(H_{0}\\) is true, then CLT tells us our null distribution is:\n\\[\n\\hat{p} \\overset{\\cdot}{\\sim} N\\left(p_{0}, \\sqrt{\\frac{p_{0} (1-p_{0})}{n}} \\right)\n\\]\n\nThis is how the sample proportion would behave assuming \\(H_{0}\\) is true!\nWe will use this to see how crazy our \\(\\hat{p}_{obs}\\) is"
   },
   {
     "objectID": "slides/handout-20-ht-prop.html",
@@ -8475,5 +8475,47 @@
     "title": "Central Limit Theorem",
     "section": "Housekeeping",
     "text": "Housekeeping\n\nFinal project groups!\nNo office hours this Friday, but make-up hours Thursday 2:30-3:30pm"
+  },
+  {
+    "objectID": "slides/slides-20-ht-prop.html#clt-recap",
+    "href": "slides/slides-20-ht-prop.html#clt-recap",
+    "title": "Test for single proportion with CLT",
+    "section": "CLT recap",
+    "text": "CLT recap\nStart off with a sample of size \\(n\\). Assuming independent observations,\n\n\n\nCLT for sample means\nAssume population with mean \\(\\mu\\) and standard deviation \\(\\sigma\\). If normality condition met: \\[\n\\bar{X} \\sim N\\left(\\mu, \\frac{\\sigma}{n}\\right) \\quad \\text{or} \\quad \\bar{X} \\overset{\\cdot}{\\sim}  N\\left(\\mu, \\frac{\\sigma}{n}\\right)\n\\]\n\n\nNormality condition\n\nExactly normal\nNot normal and \\(n < 30\\): no outliers\nNot normal and \\(n \\geq 30\\): no particularly extreme outliers\n\n\n\n\nCLT for sample proportions\nAssume population proportion \\(p\\). If success-failure condition met: \\[\n\\hat{p} \\overset{\\cdot}{\\sim} N\\left (p, \\sqrt{\\frac{p(1-p)}{n}}\\right)\n\\]\n\nSuccess-failure condition: \\(np \\geq 10\\) and \\(n(1-p) \\geq 10\\)"
+  },
+  {
+    "objectID": "slides/slides-20-ht-prop.html#hypothesis-testing-recap",
+    "href": "slides/slides-20-ht-prop.html#hypothesis-testing-recap",
+    "title": "Test for single proportion with CLT",
+    "section": "Hypothesis testing recap",
+    "text": "Hypothesis testing recap\n\nNow we’re returning to hypothesis testing!\n\nTwo sets of hypotheses (competing claims)\nCollect data, calculate a statistic from the observed data, set significance level\nObtain p-value from the null distribution\n\np-value: probability of observing data as or more extreme as our own, assuming \\(H_{0}\\) true\n\nMake a decision"
+  },
+  {
+    "objectID": "slides/slides-20-ht-prop.html#example-taste-test-cont.-3",
+    "href": "slides/slides-20-ht-prop.html#example-taste-test-cont.-3",
+    "title": "Test for single proportion with CLT",
+    "section": "Example: taste test (cont.)",
+    "text": "Example: taste test (cont.)\n\n\nCalculate p-value (i.e. draw picture, set-up the calculation, and/or write code)\n\n\n\n\n\n\n\n\n\n\n\\[\n\\text{p-value} = \\text{Pr}(Z \\geq z) = \\text{Pr}(Z \\geq 2.90)\n\\]\n\n1 - pnorm(2.90, 0, 1)\n\n[1] 0.001865813"
+  },
+  {
+    "objectID": "slides/slides-20-ht-prop.html#example-taste-test-cont.-4",
+    "href": "slides/slides-20-ht-prop.html#example-taste-test-cont.-4",
+    "title": "Test for single proportion with CLT",
+    "section": "Example: taste test (cont.)",
+    "text": "Example: taste test (cont.)\n\n\nDecision and conclusion\n\n\nSince our p-value of 0.0019 is less than our significance level of 0.05, we reject \\(H_{0}\\).\nThe data provide strong evidence that the rate of correctly identifying a soda for these people is better than random guessing."
+  },
+  {
+    "objectID": "slides/slides-20-ht-prop.html#example-mms-cont.-2",
+    "href": "slides/slides-20-ht-prop.html#example-mms-cont.-2",
+    "title": "Test for single proportion with CLT",
+    "section": "Example: M&M’s (cont.)",
+    "text": "Example: M&M’s (cont.)\n\n\nMake a decision and conclusion in context.\n\n\n\nSince our p-value of 0.153 is greater than our significance level of 0.10, we fail to reject \\(H_{0}\\).\nThe data do not provide strong enough evidence to suggest that the true proportion of yellow M&Ms is different from 14%."
+  },
+  {
+    "objectID": "slides/slides-20-ht-prop.html#comprehension-questions",
+    "href": "slides/slides-20-ht-prop.html#comprehension-questions",
+    "title": "Test for single proportion with CLT",
+    "section": "Comprehension questions",
+    "text": "Comprehension questions\n\nWhy/how do the CLT conditions and/or statements change when obtaining:\n\nSampling distribution of \\(\\hat{p}\\)\nNull distribution of \\(\\hat{p}\\)"
   }
 ]

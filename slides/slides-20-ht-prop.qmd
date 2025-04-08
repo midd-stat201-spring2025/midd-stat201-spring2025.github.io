@@ -19,6 +19,10 @@ draft: false
 
 ## Housekeeping
 
+-   Office hours today 2:30-3:30pm!
+
+-   Project proposals due Wednesday
+
 ```{r echo = F, message= F}
 knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
 library(tidyverse)
@@ -27,13 +31,49 @@ library(readr)
 library(kableExtra)
 plot_theme <- theme(text = element_text(size = 24))
 source("../stat201_fns.R")
+funcShaded <- function(x, lower_bound = -Inf, upper_bound = Inf) {
+    y = dnorm(x, mean = mu, sd = sd)
+    y[x < lower_bound] <- NA
+    y[x > upper_bound] <- NA
+    return(y)
+}
 ```
 
--   
+## CLT recap
 
-## Recap
+Start off with a sample of size $n$. Assuming **independent** observations,
 
--   CLT -\> sampling distribution for sample means -\> confidence intervals for populations means
+::::::: columns
+:::: {.column width="50%"}
+::: fragment
+**CLT for sample means**
+
+Assume population with mean $\mu$ and standard deviation $\sigma$. If **normality condition** met: $$
+\bar{X} \sim N\left(\mu, \frac{\sigma}{n}\right) \quad \text{or} \quad \bar{X} \overset{\cdot}{\sim}  N\left(\mu, \frac{\sigma}{n}\right) 
+$$
+:::
+
+-   Normality condition
+
+    1.  Exactly normal
+    2.  Not normal and $n < 30$: no outliers
+    3.  Not normal and $n \geq 30$: no particularly extreme outliers
+::::
+
+:::: {.column width="50%"}
+::: fragment
+**CLT for sample proportions**
+
+Assume population proportion $p$. If **success-failure condition** met: $$
+\hat{p} \overset{\cdot}{\sim} N\left (p, \sqrt{\frac{p(1-p)}{n}}\right) 
+$$
+
+-   Success-failure condition: $np \geq 10$ and $n(1-p) \geq 10$
+:::
+::::
+:::::::
+
+## Hypothesis testing recap
 
 -   Now we're returning to hypothesis testing!
 
@@ -66,7 +106,9 @@ source("../stat201_fns.R")
 Want to conduct a hypothesis test about a population proportion.
 
 1.  Define hypotheses
-    -   $H_{0}: p = p_{0}$ versus $H_{A}: p \neq p_{0}$ (or $H_{A}: p > p_{0}$ or $H_{A}: p < p_{0}$)
+    -   $H_{0}: p = p_{0}$
+
+    -   $H_{A}: p \neq p_{0}$ (or $H_{A}: p > p_{0}$ or $H_{A}: p < p_{0}$)
 
     -   Remember, $p_{0}$ is our "null hypothesized value"
 
@@ -101,21 +143,13 @@ $$
 
 ## Null distribution via CLT (cont.)
 
-If assumptions are met and $H_{0}$ is true, then CLT tells us our **null distribution** is:
+If succes-failure and independence conditions are met and $H_{0}$ is true, then CLT tells us our **null distribution** is:
 
 $$
 \hat{p} \overset{\cdot}{\sim} N\left(p_{0}, \sqrt{\frac{p_{0} (1-p_{0})}{n}} \right)
 $$
 
--   That is: this is how the sample proportion would behave assuming $H_{0}$ is true!
-
--   We can standardize the null distribution by taking z-score:
-
-::: fragment
-$$
-Z = \frac{\hat{p} - p_{0}}{\sqrt{\frac{p_{0} (1-p_{0})}{n}}} \sim N(0,1)
-$$
-:::
+-   This is how the sample proportion would behave assuming $H_{0}$ is true!
 
 -   We will use this to see how crazy our $\hat{p}_{obs}$ is
 
@@ -131,13 +165,13 @@ $$
     $$\frac{\text{point estimate} - \text{null value}}{\text{SE}_{0}}$$ where $\text{SE}_{0}$ represents the standard error under $H_{0}$
     :::
 
-    -   For this specific test, our test statistic is the $z$-score from the previous slide, and our *observed* value of the test statistic is:
+    -   For this specific test, our test statistic is the $z$-score of $\hat{p}_{obs}$:
 
     ::: fragment
     $$z =\frac{\hat{p}_{\text{obs}} - p_{0}}{\sqrt{\frac{p_{0} (1-p_{0})}{n}}}$$
     :::
 
-    -   Will find this value to the $N(0,1)$ distribution
+    -   Because null distribution is Normal, this z-score follows $N(0,1)$ distribution!
 
 ## Obtain p-value
 
@@ -207,29 +241,53 @@ Try defining $H_{0}$ and $H_{A}$.
         $$\hat{p} \overset{\cdot}{\sim} N\left(0.5, \sqrt{\frac{0.5(1-0.5)}{80}} = 0.056 \right)$$
         :::
 
-    iii. ::: discuss
-         Test statistic:
+## Example: taste test (cont.)
+
+iii. ::: discuss
+     Test statistic:
+     :::
+
+     ::: fragment
+     $$z = \frac{\hat{p}_{obs} - p_{0}}{\text{SE}_{0}} = \frac{0.6625 - 0.5}{0.056} = 2.90$$
+
+     -   This means that if $H_{0}$ true, our observed $\hat{p}_{obs}$ is 2.90 SDs above the mean
+
+     -   ::: discuss
+         Does this seem like "convincing evidence"?
          :::
+     :::
 
-         ::: fragment
-         $$z = \frac{\hat{p}_{obs} - p_{0}}{\text{SE}_{0}} = \frac{0.6625 - 0.5}{0.056} = 2.90$$
-
-         -   i.e. if $H_{0}$ true, our observed $\hat{p}_{obs}$ is 2.90 SDs above the mean
-         :::
-
-## 4. Example: taste test (cont.)
+## Example: taste test (cont.)
 
 iv. ::: discuss
-    Calculate p-value (i.e. set-up the calculation and/or write code)
+    Calculate p-value (i.e. draw picture, set-up the calculation, and/or write code)
     :::
 
-    -   Remember $H_{A}: p > 0.5$
+::: fragment
+```{r fig.height=2.5}
+mu <- 0; sd <- 1
+ggplot() +
+  stat_function(fun = dnorm, args = list(mean =mu, sd = sd)) +
+  scale_x_continuous(limits = c(-3.5,3.5), breaks = -3:3) +
+  theme_minimal() +
+  stat_function(fun = funcShaded, args = list(lower_bound = 2.90),  geom = "area", fill = "tomato", alpha = .8) +
+  theme(text = element_text(size = 20),
+        axis.text.y = element_blank()) +
+  labs(y = NULL)
+```
+:::
 
 ::: fragment
 $$
-\text{p-value} = \text{Pr}(Z \geq z) = \text{Pr}(Z \geq 2.90) = \texttt{1 - pnorm(2.90, 0, 1) = `r round(1 - pnorm(2.90, 0, 1), 4)`}
+\text{p-value} = \text{Pr}(Z \geq z) = \text{Pr}(Z \geq 2.90)
 $$
+
+```{r echo = T}
+1 - pnorm(2.90, 0, 1)
+```
 :::
+
+## Example: taste test (cont.)
 
 4.  ::: discuss
     **Decision and conclusion**
@@ -272,40 +330,58 @@ M&M's reported that 14% of its candies are yellow. We are interested in testing 
 
 ## Example: M&M's (cont.)
 
-:::::: columns
-:::: {.column width="40%"}
 ::: discuss
 3.  Obtain null distribution and obtain observed test statistic
 :::
-::::
 
-::: {.column width="60%"}
-3.  By CLT, our null distribution is $\hat{p} \overset{\cdot}{\sim} N\left(0.14, \sqrt{\frac{0.14(1-0.14)}{100}} \right)$
-
-    $\quad =N(0.14, 0.035)$
-
-    ::: fragment
-    $z = \frac{\hat{p}_{obs} - p_{0}}{\text{SE}_{0}} = \frac{0.09 - 0.14}{0.035} = -1.43$
-    :::
+::: fragment
+By CLT, our null distribution is $\hat{p} \overset{\cdot}{\sim} N\left(0.14, \sqrt{\frac{0.14(1-0.14)}{100}} = 0.035 \right)$
 :::
-::::::
 
-:::::: columns
-:::: {.column width="40%"}
+::: fragment
+Test statistic:
+
+$$z = \frac{\hat{p}_{obs} - p_{0}}{\text{SE}_{0}} = \frac{0.09 - 0.14}{0.035} = -1.43$$
+:::
+
+## Example: M&M's (cont.)
+
 ::: discuss
 3.  Obtain p-value. First draw a picture, then write out in $\text{Pr}()$ notation and in code what we want to find.
 :::
-::::
 
-::: {.column width="60%"}
-3.  Since $H_{A}$ is two-sided, we want $$\begin{align*}
-       \text{p-value} &= \text{Pr}(Z \leq -1.43 \cup Z \geq 1.43) \\
+::: fragment
+```{r fig.height=2.5}
+mu <- 0; sd <- 1
+ggplot() +
+  stat_function(fun = dnorm, args = list(mean =mu, sd = sd)) +
+  scale_x_continuous(limits =c(-3,3), breaks = seq(-3,3,0.5)) +
+  theme_minimal() +
+  stat_function(fun = funcShaded, args = list(lower_bound = 1.43),  geom = "area", fill = "tomato", alpha = .8) +
+ stat_function(fun = funcShaded, args = list(upper_bound = -1.43),  geom = "area", fill = "tomato", alpha = .8)+
+  theme(text = element_text(size = 20),
+        axis.text.y = element_blank()) +
+  labs(y = NULL)
+```
+:::
+
+:::::: fragment
+::::: columns
+::: {.column width="50%"}
+Since $H_{A}$ is two-sided, we want $$\begin{align*}
+    &\text{Pr}(Z \leq -1.43 \cup Z \geq 1.43) \\
     &= \text{Pr}(Z \leq -1.43) + \text{Pr}(Z \geq 1.43)  \\
-    &= 2\times \text{Pr}(Z \geq 1.43) \\
-    &= \texttt{2 * (1 - pnorm(1.43))} \\
-    &= `r round(2*pnorm(-1.43), 3)`
+    &= 2\times \text{Pr}(Z \leq -1.43) \\
     \end{align*}$$
 :::
+
+::: {.column width="50%"}
+```{r echo = T}
+2 * pnorm(-1.43, 0, 1)
+2 * (1-pnorm(1.43, 0, 1))
+```
+:::
+:::::
 ::::::
 
 ## Example: M&M's (cont.)
@@ -314,4 +390,14 @@ M&M's reported that 14% of its candies are yellow. We are interested in testing 
     Make a decision and conclusion in context.
     :::
 
-    -   Since our p-value of 0.153 is greater than our significance level of 0.10, we fail to reject $H_{0}$. The data are not strong enough to suggest that the true proportion of yellow M&Ms is different from 14%.
+-   Since our p-value of 0.153 is greater than our significance level of 0.10, we fail to reject $H_{0}$.
+
+-   The data do not provide strong enough evidence to suggest that the true proportion of yellow M&Ms is different from 14%.
+
+## Comprehension questions
+
+-   Why/how do the CLT conditions and/or statements change when obtaining:
+
+    -   Sampling distribution of $\hat{p}$
+
+    -   Null distribution of $\hat{p}$
