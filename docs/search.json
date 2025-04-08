@@ -2314,7 +2314,7 @@
     "href": "index.html#announcements",
     "title": "Advanced Introduction to Statistics and Data Science",
     "section": "Announcements",
-    "text": "Announcements\n\nMath & Stats pre-registration dessert social!\n\nMonday, 4/14 from 3:00-4:30 in Warner 105\nCome by for dessert and advising!\nAlso, I’m always happy to chat about courses for the upcoming semester!"
+    "text": "Announcements\n\nNo office hours Friday 4/11 due to Symposium\nMake-up hour: Thursday 4/10 2:30-3:30pm\nMath & Stats pre-registration dessert social!\n\nMonday, 4/14 from 3:00-4:30 in Warner 105\nCome by for dessert and advising!\nAlso, I’m always happy to chat about courses for the upcoming semester!"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#recap",
@@ -7949,7 +7949,7 @@
     "href": "slides/slides-19-clt.html#recap",
     "title": "Central Limit Theorem",
     "section": "Recap",
-    "text": "Recap\n\n\n\n\nNormal distribution: symmetric, bell-shaped curve that is described by mean \\(\\mu\\) and standard deviation \\(\\sigma\\)\n\nCommon model used to describe behavior of continuous variables\n\nUse area under the Normal curve to obtain probabilities\n68-95-99.7 rule\nz-score standardizes observations to allow for easier comparison: \\(z = \\frac{x- \\mu}{\\sigma}\\)"
+    "text": "Recap\n\n\n\n\nNormal distribution: symmetric, bell-shaped curve that is described by mean \\(\\mu\\) and standard deviation \\(\\sigma\\)\n\nCommon model used to describe behavior of continuous variables\n\nUse area under the Normal curve to obtain probabilities\n68-95-99.7 rule\nz-score standardizes observations to allow for easier comparison: \\(z = \\frac{x- \\mu}{\\sigma}\\)\n\nIf the data are known to be Normal, then the z-scores are \\(N(0,1)\\)"
   },
   {
     "objectID": "slides/slides-19-clt.html#warm-up",
@@ -7977,7 +7977,7 @@
     "href": "slides/slides-19-clt.html#clt-assumptions",
     "title": "Central Limit Theorem",
     "section": "CLT assumptions",
-    "text": "CLT assumptions\n\nIndependent samples:\n\nUsually achieved by random sampling\n\nNormality condition:\n\nIf the data \\(x_{1},\\ldots, x_{n}\\) are known to be Normal and independent, then the distribution of \\(\\bar{X}\\) is exactly Normal\n\n\n\nIf data are not known to be Normal, then check:\n\nIf \\(n\\) is small \\((n < 30)\\): if there are no clear outliers, we assume data are approximately normal\nIf \\(n\\) is larger \\((30 \\leq n < ?)\\): if there are no particularly extreme outliers, we assume data are approximately normal\n\n\n\n\n\nIf any of these aren’t met, then we cannot use CLT"
+    "text": "CLT assumptions\n\nIndependent samples:\n\nUsually achieved by random sampling\n\nNormality condition:\n\nIf the data \\(x_{1},\\ldots, x_{n}\\) are known to be Normal and independent, then the distribution of \\(\\bar{X}\\) is exactly Normal\nIf data are not known to be Normal, then check:\n\nIf \\(n\\) is small \\((n < 30)\\): if there are no clear outliers, we assume data are approximately normal\nIf \\(n\\) is larger \\((30 \\leq n < ?)\\): if there are no particularly extreme outliers, we assume data are approximately normal\n\n\n\n\n\nIf any of these aren’t met, then we cannot use CLT"
   },
   {
     "objectID": "slides/slides-19-clt.html#normality-condition",
@@ -7998,7 +7998,7 @@
     "href": "slides/slides-19-clt.html#height-example",
     "title": "Central Limit Theorem",
     "section": "Height example",
-    "text": "Height example\n\n\n\nThe average height of all NBA players in the 2008-9 season is 79.21 inches, with a population standard deviation of 3.57 inches. We randomly sampled 20 of these players and recorded their heights, as shown below.\n\n\n\n\n\n\n\nWhat is the sampling distribution of the sample mean heights? Do we know it exactly?"
+    "text": "Height example\n\n\n\nThe average height of all NBA players in the 2008-9 season is 79.21 inches, with a population standard deviation of 3.57 inches. We randomly sampled 20 of these players and recorded their heights, as shown below.\n\n\n\nWhat is the sampling distribution of the sample mean heights? Do we know it exactly?"
   },
   {
     "objectID": "slides/slides-19-clt.html#height-example-solution",
@@ -8089,21 +8089,21 @@
     "href": "slides/slides-19-clt.html#ci-for-single-proportion",
     "title": "Central Limit Theorem",
     "section": "CI for single proportion",
-    "text": "CI for single proportion\nSo the formula for a (symmetric) \\(\\gamma\\times 100\\%\\) CI for \\(p\\) is:\n\n\\[\n\\hat{p}_{obs} \\pm z_{(1+\\gamma)/2}^{*}\\times \\sqrt{\\frac{\\hat{p}_{obs}(1-\\hat{p}_{obs})}{n}}\n\\]where the critical value is obtained from \\(N(0,1)\\) distribution. This is obtained directly from the sampling distribution of \\(\\hat{p}\\).\n\n\nCome take STAT 311 to see why this is our CI!"
+    "text": "CI for single proportion\nSo the formula for a (symmetric) \\(\\gamma\\times 100\\%\\) CI for \\(p\\) is:\n\n\\[\n\\hat{p}_{obs} \\pm z_{(1+\\gamma)/2}^{*}\\times \\sqrt{\\frac{\\hat{p}_{obs}(1-\\hat{p}_{obs})}{n}}\n\\]where the critical value \\(z^{*}_{(1+\\gamma)/2}\\) is obtained from \\(N(0,1)\\) distribution.\n\n\nNOTE: we could have obtained the CI directly from the sampling distribution of \\(\\hat{p}\\). However, the critical value of \\(z_{(1+\\gamma)/2}^{*}\\sim N(0,1)\\) is very general. Does not depend on the specific data you have!"
   },
   {
     "objectID": "slides/slides-19-clt.html#example",
     "href": "slides/slides-19-clt.html#example",
     "title": "Central Limit Theorem",
     "section": "Example",
-    "text": "Example\nA poll of 100 randomly sampled registered voters in a town was conducted, asking voters if they support legalized marijuana. It was found that 60% of respondents were in support.\n\nWhat is the population parameter? What is the point estimate/statistic?\n\n\nFind a (symmetric) 90% confidence interval for the true proportion of town residents in favor of legalized marijuana.\n\n\n\nConditions met?\n\n\nIndependence: random sample\nSuccess-failure condition: \\(n\\hat{p}_{obs} =100(0.6) = 60 \\geq 10\\) and \\(n(1-\\hat{p}_{obs}) = 100(0.4) = 40 \\geq 10\\)"
+    "text": "Example\nA poll of 100 randomly sampled registered voters in a town was conducted, asking voters if they support legalized marijuana. It was found that 60% of respondents were in support.\n\nWhat is the population parameter? What is the point estimate/statistic?\n\n\nFind a (symmetric) 90% confidence interval for the true proportion of town residents in favor of legalized marijuana.\n\n\n\nConditions met?\n\n\nIndependence: random sample\nSuccess-failure condition: \\(n\\hat{p}_{obs} =100(0.6) = 60 \\geq 10\\) and \\(n(1-\\hat{p}_{obs}) = 100(0.4) = 40 \\geq 10\\)\n\nBecause conditions for CLT are met, we can proceed."
   },
   {
     "objectID": "slides/slides-19-clt.html#example-cont.",
     "href": "slides/slides-19-clt.html#example-cont.",
     "title": "Central Limit Theorem",
     "section": "Example (cont.)",
-    "text": "Example (cont.)\n\nFind a (symmetric) 90% confidence interval for the true proportion of town residents in favor of legalized marijuana.\n\n\nGathering components for CI:\n\n\nPoint estimate: \\(\\hat{p}\\) = 0.6\nStandard error: \\(\\text{SE}(\\hat{p}) \\approx \\sqrt{\\frac{0.6(0.4)}{100}} \\approx 0.049\\)\n\nCritical value: what percentiles do we want?\n\n\n\\(z_{0.95}^{*} =\\) qnorm(0.95, mean = 0, sd = 1) \\(\\approx 1.645\\)\n\n\n\nSo our 90% confidence interval for \\(p\\) is:\n\\[\n0.6 \\pm 1.645(0.049) = (0.519, 0.681)\n\\]\n\n\n\nInterpret the confidence interval in context!"
+    "text": "Example (cont.)\n\nFind 90% CI for proportion of town residents in favor of legalized marijuana.\n\n\nGathering components for CI:\n\n\nPoint estimate: \\(\\hat{p}_{obs}\\) = 0.6\nStandard error: \\(\\widehat{SE} = \\sqrt{\\frac{0.6(0.4)}{100}} \\approx 0.049\\)\n\nCritical value: what percentiles do we want?\n\n\n\\(z_{0.95}^{*} =\\) qnorm(0.95, mean = 0, sd = 1) \\(\\approx 1.645\\)\n\n\n\nSo our 90% confidence interval for \\(p\\) is:\n\\[\n\\hat{p}_{obs} \\pm z^{*}_{0.95} \\widehat{SE} = 0.6 \\pm 1.645(0.049) = (0.519, 0.681)\n\\]\n\n\n\nInterpret the confidence interval in context!"
   },
   {
     "objectID": "slides/slides-19-clt.html#comprehension-questions",
@@ -8152,14 +8152,14 @@
     "href": "slides/slides-19-clt.html#the-three-different-dists.",
     "title": "Central Limit Theorem",
     "section": "The three different dists.",
-    "text": "The three different dists.\nNote: \\(y\\)-axis is density (how likely each \\(x\\) value is from the given distribution).\n\n\n\n\n\n\nWhat do you notice about how the three distributions compare? Are some distributions very similar? Are some very different? Why do you think this is?"
+    "text": "The three different dists.\nNote: \\(y\\)-axis is density (how likely each \\(x\\) value is from the given distribution).\n\n\nWhat do you notice about how the three distributions compare? Are some distributions very similar? Are some very different? Why do you think this is?"
   },
   {
     "objectID": "slides/slides-19-clt.html#towards-a-ci-for-a-single-proportion-cont.-1",
     "href": "slides/slides-19-clt.html#towards-a-ci-for-a-single-proportion-cont.-1",
     "title": "Central Limit Theorem",
     "section": "Towards a CI for a single proportion (cont.)",
-    "text": "Towards a CI for a single proportion (cont.)\n\nCritical value: to obtain the middle \\(\\gamma \\times 100\\%\\) part, we use the \\(\\frac{1-\\gamma}{2}\\) and \\(\\frac{1+\\gamma}{2}\\) percentiles of the \\(N(0,1)\\) distribution\n\n\\(z_{(1-\\gamma)/2}^{*}\\) (lower bound) and \\(z_{(1+\\gamma)/2}^{*}\\) (upper bound)\nNote: \\(z_{(1+\\gamma)/2}^{*} = - z_{(1-\\gamma)/2}^{*}\\)\nNote: the critical value does not depend on the data!"
+    "text": "Towards a CI for a single proportion (cont.)\n\nCritical value: to obtain the middle \\(\\gamma \\times 100\\%\\), use the \\(\\frac{1-\\gamma}{2}\\) and \\(\\frac{1+\\gamma}{2}\\) percentiles of the \\(N(0,1)\\) distribution\n\n\\(z_{(1-\\gamma)/2}^{*}\\) (lower bound) and \\(z_{(1+\\gamma)/2}^{*}\\) (upper bound)\nNote: \\(z_{(1+\\gamma)/2}^{*} = - z_{(1-\\gamma)/2}^{*}\\)"
   },
   {
     "objectID": "slides/slides-20-ht-prop.html#housekeeping",
@@ -8468,5 +8468,12 @@
     "title": "Confidence Intervals for Means",
     "section": "Example: voice shimmer (cont.)",
     "text": "Example: voice shimmer (cont.)\n\n\n\n\nPoint estimate: \\(\\bar{x}_{\\text{PD}} - \\bar{x}_{\\text{H}} = 0.32 - 0.16 = 0.158\\)\nSE \\(\\approx \\sqrt{\\frac{s_{\\text{PD}}^2}{n_{\\text{PD}}} + \\frac{s_{\\text{H}}^2}{n_{\\text{H}}}} = \\sqrt{\\frac{0.21^2}{147} + \\frac{0.06^2}{48}} = 0.019\\)\nCritical value:\n\n\\(df = \\min\\{n_{\\text{PD}} -1, n_{\\text{H}} -1 \\} = \\min\\{147 - 1, 48- 1\\} = 47\\)\nWant \\(0.975\\)-th percentile of \\(t_{47}\\) distribution: qt(0.975, df =47) = 2.01\n\n\n\n\nPutting everything together, our 95% CI for \\(\\mu_{\\text{PD}} - \\mu_{\\text{H}}\\) is: \\[\n0.158 \\pm 2.01 \\times 0.019 = (0.12, 0.196)\n\\]\n\nInterpret this CI in context. Note: direction of difference matters!\nAre average voice shimmers different between people with and without Parkinson’s? Briefly explain why or why not."
+  },
+  {
+    "objectID": "slides/slides-19-clt.html#housekeeping",
+    "href": "slides/slides-19-clt.html#housekeeping",
+    "title": "Central Limit Theorem",
+    "section": "Housekeeping",
+    "text": "Housekeeping\n\nFinal project groups!\nNo office hours this Friday, but make-up hours Thursday 2:30-3:30pm"
   }
 ]

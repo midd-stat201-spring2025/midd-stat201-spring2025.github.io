@@ -17,6 +17,12 @@ editor_options:
 draft: false
 ---
 
+## Housekeeping
+
+-   Final project groups!
+
+-   No office hours this Friday, but make-up hours Thursday 2:30-3:30pm
+
 ## Recap
 
 ```{r echo = F, message= F}
@@ -39,13 +45,7 @@ source("../stat201_fns.R")
 
 -   z-score standardizes observations to allow for easier comparison: $z = \frac{x- \mu}{\sigma}$
 
-## Warm-up
-
--   Let $Z \sim N(0,1)$. If the 10th percentile of $Z$ is `r round(qnorm(0.1), 2)`, what is the 90th percentile?
-
--   Let $X \sim N(0,2)$. If the 10th percentile of $X$ is `r round(qnorm(0.1, 0, 2), 2)`, what is the 90th percentile? Or can you not say without code?
-
--   Let $Y \sim N(2,1)$. If the 10th percentile of $Y$ is `r round(qnorm(0.1, 2, 1), 2)`, what is the 90th percentile? Or can you not say without code?
+    -   If the data are known to be Normal, then the z-scores are $N(0,1)$
 
 ## Where we're going
 
@@ -76,11 +76,7 @@ source("../stat201_fns.R")
 2.  Normality condition:
 
     -   If the data $x_{1},\ldots, x_{n}$ are known to be Normal and independent, then the distribution of $\bar{X}$ is ***exactly*** Normal
-
-    <!-- -->
-
     -   If data are not known to be Normal, then check:
-
         -   If $n$ is small $(n < 30)$: if there are no clear outliers, we assume data are approximately normal
 
         -   If $n$ is larger $(30 \leq n < ?)$: if there are no particularly extreme outliers, we assume data are approximately normal
@@ -418,15 +414,14 @@ $$\widehat{\text{SE}} \approx \sqrt{\frac{\hat{p}_{obs}(1-\hat{p}_{obs})}{n}}$$
 
 ## Towards a CI for a single proportion (cont.)
 
-3.  **Critical value**: to obtain the middle $\gamma \times 100\%$ part, we use the $\frac{1-\gamma}{2}$ and $\frac{1+\gamma}{2}$ percentiles of the $N(0,1)$ distribution
+3.  **Critical value**: to obtain the middle $\gamma \times 100\%$, use the $\frac{1-\gamma}{2}$ and $\frac{1+\gamma}{2}$ percentiles of the $N(0,1)$ distribution
 
     -   $z_{(1-\gamma)/2}^{*}$ (lower bound) and $z_{(1+\gamma)/2}^{*}$ (upper bound)
 
     -   Note: $z_{(1+\gamma)/2}^{*} = - z_{(1-\gamma)/2}^{*}$
 
-    -   Note: the critical value does not depend on the data!
-
-```{r}
+::: fragment
+```{r fig.height=3.5}
 funcShaded <- function(x, lower_bound = -Inf, upper_bound = Inf) {
     y = dnorm(x, mean = mu, sd = sd)
     y[x < lower_bound] <- NA
@@ -439,6 +434,11 @@ lb <- qnorm((1-gamma)/2)
 ub <- qnorm((1+gamma)/2)
 df <- data.frame(x = c(lb + 0.025, ub -0.025))|>
   mutate(y = dnorm(x))
+temp_lb <- expression({z^"*"}[(1 - gamma)/2])
+temp_ub <- expression({z^"*"}[(1 + gamma)/2])
+x_lb <- lb-1
+x_ub <- ub + 1
+y_lb <- y_ub <- 0.15
 ggplot() +
   stat_function(fun = dnorm, args = list(mean = mu, sd = sd)) +
   theme_minimal() +
@@ -447,9 +447,16 @@ ggplot() +
   stat_function(fun = funcShaded, args = list(lower_bound = lb, upper_bound = ub),  geom = "area", fill = "gray", alpha = .8) +
   theme(axis.text.y = element_blank()) +
   labs( y = NULL, x = "z", title = expression(N(0,1))) +
-  theme(text = element_text(size = 25)) +
-   geom_segment(data = df, aes(x=x, y=y, xend = x, yend = 0), linetype = "dashed", linewidth = 1)
+  theme(text = element_text(size = 25)) + 
+   geom_segment(data = df, aes(x=x, y=y, xend = x, yend = 0), linetype = "dashed", linewidth = 1) +
+   annotate("text", x = c(0), y = c(0.2), label = c(expression(gamma)), size = 15) +
+   annotate("text", x = c(x_lb), y = c(y_lb), label = as.character(temp_lb), parse = T, size = 10)  +
+     annotate("text", x = c(x_ub), y = c(y_ub), label = as.character(temp_ub), parse = T, size = 10) +
+  geom_segment(aes(x = x_lb, y = y_lb-0.05, xend = lb, yend = 0), arrow = arrow())+
+    geom_segment(aes(x = x_ub, y = y_ub-0.05, xend = ub, yend = 0), arrow = arrow())
+
 ```
+:::
 
 ## CI for single proportion
 
@@ -458,11 +465,11 @@ So the formula for a (symmetric) $\gamma\times 100\%$ CI for $p$ is:
 ::: fragment
 $$
 \hat{p}_{obs} \pm z_{(1+\gamma)/2}^{*}\times \sqrt{\frac{\hat{p}_{obs}(1-\hat{p}_{obs})}{n}}
-$$where the critical value is obtained from $N(0,1)$ distribution. This is obtained directly from the sampling distribution of $\hat{p}$.
+$$where the critical value $z^{*}_{(1+\gamma)/2}$ is obtained from $N(0,1)$ distribution.
 :::
 
 ::: {.fragment style="color: maroon"}
-Come take STAT 311 to see why this is our CI!
+NOTE: we could have obtained the CI directly from the sampling distribution of $\hat{p}$. However, the critical value of $z_{(1+\gamma)/2}^{*}\sim N(0,1)$ is very general. Does not depend on the specific data you have!
 :::
 
 ## Example
@@ -485,19 +492,21 @@ Find a (symmetric) 90% confidence interval for the true proportion of town resid
 
     -   Success-failure condition: $n\hat{p}_{obs} =100(0.6) = 60 \geq 10$ and $n(1-\hat{p}_{obs}) = 100(0.4) = 40 \geq 10$
 
+- Because conditions for CLT are met, we can proceed.
+
 ## Example (cont.)
 
 ::: {.fragment style="color: maroon"}
-Find a (symmetric) 90% confidence interval for the true proportion of town residents in favor of legalized marijuana.
+Find 90% CI for proportion of town residents in favor of legalized marijuana.
 :::
 
 ::: fragment
 Gathering components for CI:
 :::
 
-1.  Point estimate: $\hat{p}$ = 0.6
+1.  Point estimate: $\hat{p}_{obs}$ = 0.6
 
-2.  Standard error: $\text{SE}(\hat{p}) \approx \sqrt{\frac{0.6(0.4)}{100}} \approx 0.049$
+2.  Standard error: $\widehat{SE} = \sqrt{\frac{0.6(0.4)}{100}} \approx 0.049$
 
 3.  ::: discuss
     Critical value: what percentiles do we want?
@@ -509,7 +518,7 @@ Gathering components for CI:
 So our 90% confidence interval for $p$ is:
 
 $$
-0.6 \pm 1.645(0.049) = (0.519, 0.681)
+\hat{p}_{obs} \pm z^{*}_{0.95} \widehat{SE} = 0.6 \pm 1.645(0.049) = (0.519, 0.681)
 $$
 :::
 
