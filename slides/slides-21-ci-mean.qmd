@@ -1,6 +1,7 @@
 ---
-title: "Confidence Intervals for Means"
-date: "October 24, 2024"
+title: "CIs and HTs for a single mean"
+subtitle: "CLT-based"
+date: "April 14, 2025"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
@@ -304,7 +305,7 @@ $$
 
 ## Example: age at marriage (cont.)
 
-Let's return to the age at marriage example. Once again let's obtain an 80% confidence interval for the average age of first marriage for US women, but now suppose we **don't know $\sigma$**.
+Let's return to the age at marriage example. Once again let's obtain an 80% confidence interval for the average age of first marriage for US women, but now suppose we **don't know** $\sigma$.
 
 ::: fragment
 In our sample of $n = 25$ women, we observed a sample mean of $`r xbar`$ years and a sample standard deviation of $s = `r s_age`$ years.
@@ -432,7 +433,6 @@ $$\bar{d} = \frac{1}{n}\sum_{i=1}^{n} d_{i} \qquad \qquad s_{d} = \frac{1}{n-1}\
     $$
     \bar{d} \overset{\cdot}{\sim} N\left(\mu_{d}, \frac{\sigma_{d}}{\sqrt{n}} \right)
     $$
-
 
 -   We are usually interested in performing inference for $\mu_{d}$ when both $\mu_{d}$ and $\sigma_{d}$ unknown
 
@@ -704,13 +704,12 @@ ci <- round(point_est + se * t975 * c(-1,1), 3)
 
 :::: fragment
 ::: discuss
-Putting everything together, our 95% CI for $\mu_{\text{PD}} - \mu_{\text{H}}$ is: 
-$$
+Putting everything together, our 95% CI for $\mu_{\text{PD}} - \mu_{\text{H}}$ is: $$
 `r point_est` \pm `r t975` \times `r se` = (`r ci`)
 $$
 
-- Interpret this CI in context. Note: direction of difference matters! 
+-   Interpret this CI in context. Note: direction of difference matters!
 
-- Are average voice shimmers different between people with and without Parkinson's? Briefly explain why or why not.
+-   Are average voice shimmers different between people with and without Parkinson's? Briefly explain why or why not.
 :::
 ::::

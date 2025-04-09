@@ -107,10 +107,10 @@ Do you believe the normality condition is satisfied in the following two samples
 
 Let's see it again: If the assumptions of independence and Normality condition apply, then
 
-$$\bar{X} \overset{\cdot}{\sim} N\left(\mu, \frac{\sigma}{n} \right)$$ where $\mu$ and $\sigma$ are the population mean and standard deviation, and $\bar{X}$ is the sample mean obtained from a sample of size $n$.
+$$\bar{X} \overset{\cdot}{\sim} N\left(\mu, \frac{\sigma}{\sqrt{n}} \right)$$ where $\mu$ and $\sigma$ are the population mean and standard deviation, and $\bar{X}$ is the sample mean obtained from a sample of size $n$.
 
 ::: discuss
--   What does the $\frac{\sigma}{n}$ represent?
+-   What does the $\frac{\sigma}{\sqrt{n}}$ represent?
 -   For fixed $\sigma$, how does the sampling distribution change as $n$ increases?
 :::
 
@@ -492,7 +492,7 @@ Find a (symmetric) 90% confidence interval for the true proportion of town resid
 
     -   Success-failure condition: $n\hat{p}_{obs} =100(0.6) = 60 \geq 10$ and $n(1-\hat{p}_{obs}) = 100(0.4) = 40 \geq 10$
 
-- Because conditions for CLT are met, we can proceed.
+-   Because conditions for CLT are met, we can proceed.
 
 ## Example (cont.)
 

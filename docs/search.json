@@ -8138,7 +8138,7 @@
     "href": "slides/slides-19-clt.html#clt-again",
     "title": "Central Limit Theorem",
     "section": "CLT again",
-    "text": "CLT again\nLet’s see it again: If the assumptions of independence and Normality condition apply, then\n\\[\\bar{X} \\overset{\\cdot}{\\sim} N\\left(\\mu, \\frac{\\sigma}{n} \\right)\\] where \\(\\mu\\) and \\(\\sigma\\) are the population mean and standard deviation, and \\(\\bar{X}\\) is the sample mean obtained from a sample of size \\(n\\).\n\n\nWhat does the \\(\\frac{\\sigma}{n}\\) represent?\nFor fixed \\(\\sigma\\), how does the sampling distribution change as \\(n\\) increases?"
+    "text": "CLT again\nLet’s see it again: If the assumptions of independence and Normality condition apply, then\n\\[\\bar{X} \\overset{\\cdot}{\\sim} N\\left(\\mu, \\frac{\\sigma}{\\sqrt{n}} \\right)\\] where \\(\\mu\\) and \\(\\sigma\\) are the population mean and standard deviation, and \\(\\bar{X}\\) is the sample mean obtained from a sample of size \\(n\\).\n\n\nWhat does the \\(\\frac{\\sigma}{\\sqrt{n}}\\) represent?\nFor fixed \\(\\sigma\\), how does the sampling distribution change as \\(n\\) increases?"
   },
   {
     "objectID": "slides/slides-19-clt.html#compare-sampling-distribution-to-population-and-one-sample",
@@ -8297,175 +8297,175 @@
   {
     "objectID": "slides/slides-21-ci-mean.html",
     "href": "slides/slides-21-ci-mean.html",
-    "title": "Confidence Intervals for Means",
+    "title": "CIs and HTs for a single mean",
     "section": "",
     "text": "Central Limit Theorem: if we have a sufficiently large sample of \\(n\\) independent observations from a population with mean \\(\\mu\\) and standard deviation \\(\\sigma\\), then \\(\\bar{X} \\overset{\\cdot}{\\sim} N\\left(\\mu, \\frac{\\sigma}{\\sqrt{n}}\\right)\\)\nWhen considering the special case of sample proportions, if success-failure condition is met, we have \\(\\hat{p} \\overset{\\cdot}{\\sim} N\\left(p, \\sqrt{\\frac{p(1-p)}{n}}\\right)\\)\nTo obtain a \\(\\gamma\\times 100\\%\\) CI for a mean, we use\n\n\\[\n\\text{point estimate} \\pm \\text{critical value} \\times \\text{SE}\n\\]\n\n\nWe needed to replace the standard error with an estimate"
   },
   {
     "objectID": "slides/slides-21-ci-mean.html#checking-normality",
     "href": "slides/slides-21-ci-mean.html#checking-normality",
-    "title": "Confidence Intervals for Means",
+    "title": "CIs and HTs for a single mean",
     "section": "Checking normality",
     "text": "Checking normality\n\nRemember, CLT requires a sufficiently large sample size \\(n\\) or assumption of Normality of the underlying data.\nNo perfect way to check Normality, but rule of thumb:\n\nIf \\(n < 30\\) small: check that there are no clear outliers\nIf \\(n \\geq 30\\) large: check that there are no particularly extreme outliers"
   },
   {
     "objectID": "slides/slides-21-ci-mean.html#ci-for-a-single-mean-known-variance",
     "href": "slides/slides-21-ci-mean.html#ci-for-a-single-mean-known-variance",
-    "title": "Confidence Intervals for Means",
+    "title": "CIs and HTs for a single mean",
     "section": "CI for a single mean (known variance)",
     "text": "CI for a single mean (known variance)\nSuppose we want a \\(\\gamma\\times 100\\%\\) CI for population mean \\(\\mu\\).\n\nWhat would your “best guess” point estimate for \\(\\mu\\) be?\n\n\nIf CLT holds, then we know\n\\[\n\\bar{X} \\overset{\\cdot}{\\sim} N\\left(\\mu, \\frac{\\sigma}{\\sqrt{n}}\\right)\n\\]\nSo our \\(\\gamma \\times 100\\%\\) CI for \\(\\mu\\) is:\n\\[\n\\text{point estimate} \\pm \\underbrace{\\text{critical value} \\times \\text{SE}}_{\\text{Margin of Error}} = \\bar{x} \\pm z_{(1+\\gamma)/2}^* \\times \\frac{\\sigma}{\\sqrt{n}}\n\\]"
   },
   {
     "objectID": "slides/slides-21-ci-mean.html#example-age-at-marriage",
     "href": "slides/slides-21-ci-mean.html#example-age-at-marriage",
-    "title": "Confidence Intervals for Means",
+    "title": "CIs and HTs for a single mean",
     "section": "Example: age at marriage",
     "text": "Example: age at marriage\n\n\n\nIn 2006-2010, the CDC conducted a thorough survey asking US women their age at first marriage. The standard deviation of the responses is 4.72 years. Suppose we randomly sample 25 US women and ask them their age at first marriage (plotted below). Their average age at marriage was 23.32.\n\n\n\n\n\n\n\n\nWhat is/are the population parameter(s)? What is the statistic?\n\n\n\nWe will obtain an 80% confidence interval for the mean age of US women at first marriage.\n\n\n\nAre conditions of CLT met?\nIf so, what does CLT tell us?"
   },
   {
     "objectID": "slides/slides-21-ci-mean.html#example-age-at-marriage-cont.",
     "href": "slides/slides-21-ci-mean.html#example-age-at-marriage-cont.",
-    "title": "Confidence Intervals for Means",
+    "title": "CIs and HTs for a single mean",
     "section": "Example: age at marriage (cont.)",
     "text": "Example: age at marriage (cont.)\n\nObtain an 80% confidence interval for the mean age of US women at first marriage.\n\n\n\n\nBy CLT: \\[\\bar{X} \\overset{\\cdot}{\\sim}N\\left(\\mu, \\frac{4.72}{\\sqrt{25}}\\right) = N(\\mu, 0.944)\\]\n\nCollect necessary components:\n\n\nPoint estimate: \\(\\bar{x} = 23.32\\)\nStandard error: \\(0.944\\)\nCritical value: \\(z_{0.9}^{*} =\\) qnorm(0.9, 0, 1) \\(= 1.28\\)\n\n\nSo our 80% confidence interval is \\(23.32 \\pm 1.28 \\times 0.944 = (22.11, 24.53)\\)\n\n\n\nInterpret this interval!"
   },
   {
     "objectID": "slides/slides-21-ci-mean.html#utility-of-this-model",
     "href": "slides/slides-21-ci-mean.html#utility-of-this-model",
-    "title": "Confidence Intervals for Means",
+    "title": "CIs and HTs for a single mean",
     "section": "Utility of this model",
     "text": "Utility of this model\n\nThe previous formula for the confidence interval for \\(\\mu\\) relies on knowing \\(\\sigma\\)\nBut wait…\n\nWant to construct a CI for \\(\\mu\\) because we don’t know its value\nIf we don’t know \\(\\mu\\), it seems highly unlikely that we would know \\(\\sigma\\)!\n\nSo in practice, we will have to estimate standard error for \\(\\bar{X}\\):\n\n\n\\[\n    \\text{SE}\\approx \\frac{s}{\\sqrt{n}}\n\\]\nwhere \\(s\\) is the observed sample standard deviation\n\n\nRecall we did something similar for CI for \\(p\\)"
   },
   {
     "objectID": "slides/slides-21-ci-mean.html#variance-issue",
     "href": "slides/slides-21-ci-mean.html#variance-issue",
-    "title": "Confidence Intervals for Means",
+    "title": "CIs and HTs for a single mean",
     "section": "Variance issue",
     "text": "Variance issue\n\nReplacing \\(s\\) for \\(\\sigma\\) works well enough when \\(n\\) is extremely large so we can estimate \\(\\sigma\\) accurately\nHowever, estimating variance is extremely difficult when \\(n\\) is small, and still not great for large \\(n\\)\nSo if \\(\\sigma\\) is unknown, we cannot use the Normal approximation to model \\(\\bar{X}\\) for inferential tasks\nInstead, we will use a new distribution for inference calculations, called the \\(t\\)-distribution"
   },
   {
     "objectID": "slides/slides-21-ci-mean.html#t-distribution",
     "href": "slides/slides-21-ci-mean.html#t-distribution",
-    "title": "Confidence Intervals for Means",
+    "title": "CIs and HTs for a single mean",
     "section": "\\(t\\)-distribution",
     "text": "\\(t\\)-distribution\n\nThe \\(t\\)-distribution is symmetric and bell-curved (like the Normal distribution)\nHas “thicker tails” than the Normal distribution (the tails decay more slowly)\n\n\n\n\n\n\n\n\n\n\n\n\n\\(t\\)-distribution is always centered at 0\nOne parameter: degrees of freedom (df) defines exact shape of the \\(t\\)\n\nDenoted \\(t_{df}\\) (e.g. \\(t_{1}\\) or \\(t_{20}\\))\n\n\n\n\n\nAs \\(df\\) increase, \\(t\\) resembles the \\(N(0,1)\\). When \\(df \\geq 30\\), the \\(t_{df}\\) is nearly identical to \\(N(0,1)\\)"
   },
   {
     "objectID": "slides/slides-21-ci-mean.html#working-with-t-distribution",
     "href": "slides/slides-21-ci-mean.html#working-with-t-distribution",
-    "title": "Confidence Intervals for Means",
+    "title": "CIs and HTs for a single mean",
     "section": "Working with \\(t\\) distribution",
     "text": "Working with \\(t\\) distribution\n\n\n\nLet’s draw pictures for the following:\n\nWhat proportion of the \\(t_{2}\\)-distribution falls below -1.5?\nWhat value of the \\(t_{2}\\)-distribution has \\(70\\%\\) area lying below it?"
   },
   {
     "objectID": "slides/slides-21-ci-mean.html#t-distribution-in-r",
     "href": "slides/slides-21-ci-mean.html#t-distribution-in-r",
-    "title": "Confidence Intervals for Means",
+    "title": "CIs and HTs for a single mean",
     "section": "\\(t\\) distribution in R",
     "text": "\\(t\\) distribution in R\n\npnorm(x, mean, sd) and qnorm(%, mean, sd) used to find probabilities and percentiles for the Normal distribution\nAnalogous functions for \\(t\\)-distribution: pt(x, df) and qt(%, df)\n\n\n\n\n\n\n\n\n\n\n\npt(-1.5,df =2) = 0.1361966\n\n\n\n\n\n\n\n\n\n\nqt(0.7, df =2) = 0.6172134"
   },
   {
     "objectID": "slides/slides-21-ci-mean.html#ci-for-a-single-mean-unknown-variance",
     "href": "slides/slides-21-ci-mean.html#ci-for-a-single-mean-unknown-variance",
-    "title": "Confidence Intervals for Means",
+    "title": "CIs and HTs for a single mean",
     "section": "CI for a single mean (unknown variance)",
     "text": "CI for a single mean (unknown variance)\n\nStill require independent observations and the Normality condition for CLT\nGeneral formula for \\(\\gamma \\times 100\\%\\) CI is the same, but we simply change what goes into the margin of error.\n\n\n\\[\n\\begin{align*}\n\\text{point estimate} &\\pm t^*_{df, (1+\\gamma)/2} \\times \\widehat{\\text{SE}} \\\\\n\\bar{x} &\\pm t_{df, (1+\\gamma)/2}^* \\times \\frac{s}{\\sqrt{n}}\n\\end{align*}\n\\]\n\n\n\\(df = n-1\\)\ncritical value \\(t^*_{df, (1+\\gamma)/2}\\) = \\((1+\\gamma)/2\\) percentile of the \\(t_{df}\\) distribution"
   },
   {
     "objectID": "slides/slides-21-ci-mean.html#example-age-at-marriage-cont.-1",
     "href": "slides/slides-21-ci-mean.html#example-age-at-marriage-cont.-1",
-    "title": "Confidence Intervals for Means",
+    "title": "CIs and HTs for a single mean",
     "section": "Example: age at marriage (cont.)",
     "text": "Example: age at marriage (cont.)\nLet’s return to the age at marriage example. Once again let’s obtain an 80% confidence interval for the average age of first marriage for US women, but now suppose we don’t know \\(\\sigma\\).\n\nIn our sample of \\(n = 25\\) women, we observed a sample mean of \\(23.32\\) years and a sample standard deviation of \\(s = 4.03\\) years.\n\n\n\n\n\nPoint estimate: \\(\\bar{x} = 23.32\\)\nStandard error: \\(\\widehat{\\text{SE}} = \\frac{s}{\\sqrt{n}}= \\frac{4.03}{\\sqrt{25}} = 0.806\\)\nCritical value:\n\n\\(df = n-1 = 24\\)\n\\(t_{24}^*\\) = qt(0.9, df =24) = 1.32\n\n\n\nSo our 80% confidence interval for \\(\\mu\\) is:\n\\[\n23.32 \\pm 1.32 \\times 0.806 = (22.26, 24.38)\n\\]"
   },
   {
     "objectID": "slides/slides-21-ci-mean.html#comparing-cis",
     "href": "slides/slides-21-ci-mean.html#comparing-cis",
-    "title": "Confidence Intervals for Means",
+    "title": "CIs and HTs for a single mean",
     "section": "Comparing CIs",
     "text": "Comparing CIs\n\n\nKnown variance:\n80% CI: (22.11, 24.53)\n\nUnknown variance:\n80% CI: (22.26, 24.38)\n\n\n\n\nHow do the two intervals compare?\n\nInterpretation of CI does not change even if we use a different model!"
   },
   {
     "objectID": "slides/slides-21-ci-mean.html#examples",
     "href": "slides/slides-21-ci-mean.html#examples",
-    "title": "Confidence Intervals for Means",
+    "title": "CIs and HTs for a single mean",
     "section": "Examples",
     "text": "Examples\nAssume that all conditions necessary for inference are satisfied.\n\n\n\nqnorm(0.90) = 1.28\nqnorm(0.95) = 1.64\nqnorm(0.975) = 1.96\n\n\n\nqt(0.90, df = 35) = 1.31\nqt(0.95, df = 35) = 1.69\nqt(0.975, df = 35) = 2.03\n\n\n\nqt(0.90, df = 36) = 1.31\nqt(0.95, df = 36) = 1.69\nqt(0.975, df = 36) = 2.03\n\n\n\n\n\nA 90% confidence interval for a population mean \\(\\mu\\) is given as \\((18.985, 21.015)\\). The interval was obtained based on a SRS for 36 observations. Calculate the sample mean and sample standard deviation.\nThe standard deviation for students at particular Ivy League college is 250 points. Two students, Raina and Luke, want to estimate the average SAT score of students at this college. They want their margin of error to be no more than 25 points.\n\nRaina wants to use a 90% confidence level. How large a sample does Raina need to collect?\nLuke wants to use a 95% confidence level. Without calculations, determine whether Luke’s sample should be larger or smaller than Raina’s. Explain your reasoning.\nCalculate the minimum sample size for Luke."
   },
   {
     "objectID": "slides/slides-21-ci-mean.html#paired-data",
     "href": "slides/slides-21-ci-mean.html#paired-data",
-    "title": "Confidence Intervals for Means",
+    "title": "CIs and HTs for a single mean",
     "section": "Paired data",
     "text": "Paired data\nSuppose we have two sets of observations/data \\(\\boldsymbol{x} = (x_{1}, x_{2}, \\ldots x_{n})\\) and \\(\\boldsymbol{y} = (y_{1}, y_{2}, \\ldots, y_{n})\\)\n\nThe data are considered paired data if each \\(x_{i}\\) corresponds to exactly one \\(y_{i}\\)\nExample: your score on the midterm and your score on the final\nWhen analyzing paired data, we are typically interested in the difference in outcomes of each pair of observations"
   },
   {
     "objectID": "slides/slides-21-ci-mean.html#paired-differences",
     "href": "slides/slides-21-ci-mean.html#paired-differences",
-    "title": "Confidence Intervals for Means",
+    "title": "CIs and HTs for a single mean",
     "section": "Paired differences",
     "text": "Paired differences\n\nLet \\(d_{i} = y_{i} - x_{i}\\) for each \\(i = 1,\\ldots, n\\) be the observed differences\nThe \\(d_{i}\\) come from larger population with true mean difference \\(\\mu_{d}\\) and standard deviation of differences \\(\\sigma_{d}\\)\nThe sample mean difference and sample standard deviation of the differences are\n\n\n\\[\\bar{d} = \\frac{1}{n}\\sum_{i=1}^{n} d_{i} \\qquad \\qquad s_{d} = \\frac{1}{n-1}\\sum_{i=1}^{n} (d_{i} - \\bar{d})^2 \\]"
   },
   {
     "objectID": "slides/slides-21-ci-mean.html#clt-for-mean-difference-in-pairs",
     "href": "slides/slides-21-ci-mean.html#clt-for-mean-difference-in-pairs",
-    "title": "Confidence Intervals for Means",
+    "title": "CIs and HTs for a single mean",
     "section": "CLT for mean difference in pairs",
     "text": "CLT for mean difference in pairs\n\nSuppose the \\(n\\) observational units are independent and the distribution of the differences is approximately normal. Then CLT says:\n\\[\n\\bar{d} \\overset{\\cdot}{\\sim} N\\left(\\mu_{d}, \\frac{\\sigma_{d}}{\\sqrt{n}} \\right)\n\\]\nWe are usually interested in performing inference for \\(\\mu_{d}\\) when both \\(\\mu_{d}\\) and \\(\\sigma_{d}\\) unknown\nOur formula for \\(\\gamma\\times 100\\%\\) CI for \\(\\mu_{d}\\) is analogous to the formula for one mean when \\(\\sigma\\) unknown:\n\n\n\\[\n\\begin{align*}\n\\text{point estimate} &\\pm t^*_{df, (1+\\gamma)/2} \\times \\widehat{\\text{SE}} \\\\\n\\bar{d} &\\pm t_{df, (1+\\gamma)/2}^* \\times \\frac{s_{d}}{\\sqrt{n}}\n\\end{align*}\n\\]\nwhere \\(df = n-1\\)"
   },
   {
     "objectID": "slides/slides-21-ci-mean.html#example-zinc",
     "href": "slides/slides-21-ci-mean.html#example-zinc",
-    "title": "Confidence Intervals for Means",
+    "title": "CIs and HTs for a single mean",
     "section": "Example: zinc",
     "text": "Example: zinc\n\n\n\nData consist of measured zinc concentrations in bottom water and surface water at 10 randomly sampled wells:\n\nDo the data suggest that the true average concentration in the bottom water is different than that of surface water? Let’s answer this using a 95% confidence interval.\n\n\n\n\n\n\n\n\n\n\n\n\n  bottom surface\n1  0.430   0.415\n2  0.266   0.238\n3  0.567   0.390\n4  0.531   0.410\n5  0.707   0.605\n6  0.716   0.609\n\n\n\nAre the data paired? Does CLT apply?"
   },
   {
     "objectID": "slides/slides-21-ci-mean.html#example-zinc-cont.",
     "href": "slides/slides-21-ci-mean.html#example-zinc-cont.",
-    "title": "Confidence Intervals for Means",
+    "title": "CIs and HTs for a single mean",
     "section": "Example: zinc (cont.)",
     "text": "Example: zinc (cont.)\n\n\n\nzinc <- zinc |>\n  mutate(d = bottom - surface)\nd_bar <- mean(zinc$d)\nd_bar\n\n[1] 0.0804\n\ns_d <- sd(zinc$d)\ns_d\n\n[1] 0.05227321\n\n\n\n\n\n\n\npoint estimate: \\(\\bar{d} = 0.0804\\)\nSE \\(\\approx\\) \\(\\frac{s_{d}}{\\sqrt{n}} = \\frac{0.052}{\\sqrt{10}} = 0.016\\)\n\ncritical value: what code would you write?\n\n\n\\(df = n-1 = 9\\)\n\\(t_{9, 0.975}^{*} =\\) qt(0.975,9) \\(= 2.26\\)\n\n\n\n\n\nSo our 95% confidence interval is:\n\\[0.0804 \\pm 2.26(0.016) = (0.044, 0.117)\\]\n\n\n\nDo the data suggest that the true average concentration in the bottom water is different than that of surface water? Explain."
   },
   {
     "objectID": "slides/slides-21-ci-mean.html#difference-of-two-means",
     "href": "slides/slides-21-ci-mean.html#difference-of-two-means",
-    "title": "Confidence Intervals for Means",
+    "title": "CIs and HTs for a single mean",
     "section": "Difference of two means",
     "text": "Difference of two means\nNow consider two populations under the condition that the data/populations are not paired.\nWe might be interested in learning about whether or not the means of each population are equal (think about the voice jitter homework problem)!\n\nLet \\(\\mu_{1}\\) and \\(\\mu_{2}\\) represent the population means for the two populations 1 and 2\nSamples of size \\(n_{1}\\) and \\(n_{2}\\) from each population, respectively\nWe might think it reasonable to use \\(\\bar{x}_{1} - \\bar{x}_{2}\\) as a point estimate for \\(\\mu_{1} - \\mu_{2}\\)"
   },
   {
     "objectID": "slides/slides-21-ci-mean.html#conditions-for-inference",
     "href": "slides/slides-21-ci-mean.html#conditions-for-inference",
-    "title": "Confidence Intervals for Means",
+    "title": "CIs and HTs for a single mean",
     "section": "Conditions for inference",
     "text": "Conditions for inference\nNow that we have two populations, conditions for CLT and use of the \\(t\\)-distribution for inference will look slightly different:\n\nIndependence (extended): need data within and between the two groups\n\ne.g.the two data sets come from independent random samples or from a randomized experiment\n\nNormality: we need to check for approximate normality for both groups separately"
   },
   {
     "objectID": "slides/slides-21-ci-mean.html#ci-for-difference-in-two-means",
     "href": "slides/slides-21-ci-mean.html#ci-for-difference-in-two-means",
-    "title": "Confidence Intervals for Means",
+    "title": "CIs and HTs for a single mean",
     "section": "CI for difference in two means",
     "text": "CI for difference in two means\nIf the conditions hold, then our usual formula for \\(\\gamma \\times 100\\%\\) CI still holds:\n\\[\n\\text{point estimate} \\pm \\text{critical value} \\times \\text{SE}\n\\]\n\nPoint estimate\n\n\n\n\n\n\n\nIf \\(\\sigma_{1}\\) and \\(\\sigma_{2}\\) known:\n\n\n\\(\\text{SE} = \\sqrt{\\frac{\\sigma_{1}^2}{n_{1}} + \\frac{\\sigma_{2}^2}{n_{2}}}\\)\ncritical value: \\(z_{(1+\\gamma)/2}^*\\)\n\n\\((1+\\gamma)/2\\) percentile of \\(N(0,1)\\)\n\n\n\n\nIf \\(\\sigma_{1}\\) and \\(\\sigma_{2}\\) unknown:\n\n\n\\(\\text{SE} \\approx \\sqrt{\\frac{s_{1}^2}{n_{1}} + \\frac{s_{2}^2}{n_{2}}}\\)\ncritical value: \\(t_{df, (1+\\gamma)/2}^*\\)\n\n\\((1+\\gamma)/2\\) percentile of \\(t_{df}\\)\n\\(df = \\min\\{n_{1} -1, n_{2} - 1\\}\\)"
   },
   {
     "objectID": "slides/slides-21-ci-mean.html#example-voice-shimmer",
     "href": "slides/slides-21-ci-mean.html#example-voice-shimmer",
-    "title": "Confidence Intervals for Means",
+    "title": "CIs and HTs for a single mean",
     "section": "Example: voice shimmer",
     "text": "Example: voice shimmer\nLet’s consider the voice shimmer of PD vs non-PD patients from last week’s homework.\n\n\nRows: 195 Columns: 6\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (2): clip, status\ndbl (4): jitter, shimmer, hnr, avg.f.q\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\nConvince yourself that this data isn’t paired!\n\n\nPopulation 1: people with Parkinson’s Disease\nPopulation 2: people without Parkinson’s Disease\n\n\nResearch question: are average voice shimmers different between people with and without Parkinson’s? Create a 95% confidence interval to answer this question.\n\n\nWe care about the difference in means \\(\\mu_{\\text{PD}} - \\mu_{\\text{H}}\\)"
   },
   {
     "objectID": "slides/slides-21-ci-mean.html#example-voice-shimmer-cont.",
     "href": "slides/slides-21-ci-mean.html#example-voice-shimmer-cont.",
-    "title": "Confidence Intervals for Means",
+    "title": "CIs and HTs for a single mean",
     "section": "Example: voice shimmer (cont.)",
     "text": "Example: voice shimmer (cont.)\n\nAre average voice shimmers different between people with and without Parkinson’s? Create a 95% confidence interval to answer this question.\n\n\n\n\n\n\n\n\nstatus\nn\nxbar\ns\n\n\n\n\nHealthy\n48\n0.163\n0.058\n\n\nPD\n147\n0.321\n0.208\n\n\n\n\n\n\n\n\n\n\nDo assumptions for CLT hold?\n\n\nIndependence: random sample!\nNormality condition: \\(n \\geq 30\\) in both groups with no particularly extreme outliers\n\n\n\nSet-up/find the following:\n\n\nPoint estimate\nStandard error\nCode for critical value"
   },
   {
     "objectID": "slides/slides-21-ci-mean.html#example-voice-shimmer-cont.-1",
     "href": "slides/slides-21-ci-mean.html#example-voice-shimmer-cont.-1",
-    "title": "Confidence Intervals for Means",
+    "title": "CIs and HTs for a single mean",
     "section": "Example: voice shimmer (cont.)",
     "text": "Example: voice shimmer (cont.)\n\n\n\n\nPoint estimate: \\(\\bar{x}_{\\text{PD}} - \\bar{x}_{\\text{H}} = 0.32 - 0.16 = 0.158\\)\nSE \\(\\approx \\sqrt{\\frac{s_{\\text{PD}}^2}{n_{\\text{PD}}} + \\frac{s_{\\text{H}}^2}{n_{\\text{H}}}} = \\sqrt{\\frac{0.21^2}{147} + \\frac{0.06^2}{48}} = 0.019\\)\nCritical value:\n\n\\(df = \\min\\{n_{\\text{PD}} -1, n_{\\text{H}} -1 \\} = \\min\\{147 - 1, 48- 1\\} = 47\\)\nWant \\(0.975\\)-th percentile of \\(t_{47}\\) distribution: qt(0.975, df =47) = 2.01\n\n\n\n\nPutting everything together, our 95% CI for \\(\\mu_{\\text{PD}} - \\mu_{\\text{H}}\\) is: \\[\n0.158 \\pm 2.01 \\times 0.019 = (0.12, 0.196)\n\\]\n\nInterpret this CI in context. Note: direction of difference matters!\nAre average voice shimmers different between people with and without Parkinson’s? Briefly explain why or why not."
   },
