@@ -49,7 +49,7 @@ Start off with a sample of size $n$. Assuming **independent** observations,
 **CLT for sample means**
 
 Assume population with mean $\mu$ and standard deviation $\sigma$. If **normality condition** met: $$
-\bar{X} \sim N\left(\mu, \frac{\sigma}{n}\right) \quad \text{or} \quad \bar{X} \overset{\cdot}{\sim}  N\left(\mu, \frac{\sigma}{n}\right) 
+\bar{X} \sim N\left(\mu, \frac{\sigma}{\sqrt{n}}\right) \quad \text{or} \quad \bar{X} \overset{\cdot}{\sim}  N\left(\mu, \frac{\sigma}{\sqrt{n}}\right) 
 $$
 :::
 
@@ -187,12 +187,12 @@ $$
 
 Some people claim that they can tell the difference between a diet soda and a regular soda in the first sip. A researcher wanted to test this claim using a hypothesis test at the 0.05 significance level.
 
--   He randomly sampled 80 people who claimed they can tell the difference.
+-   He randomly sampled 80 people.
 -   He then filled 80 plain white cups with soda, half diet and half regular through random assignment, and asked each person to take one sip from their cup and identify the soda as diet or regular.
 -   53 participants correctly identified the soda.
 
 ::: {.fragment style="color: maroon"}
-Let $p$ be the proportion of people who correctly identify soda type among people who think they can tell the difference.
+Let $p$ be the proportion of people who correctly identify soda type.
 :::
 
 :::: fragment

@@ -8222,7 +8222,7 @@
     "href": "slides/slides-20-ht-prop.html#example-taste-test",
     "title": "Test for single proportion with CLT",
     "section": "Example: taste test",
-    "text": "Example: taste test\nSome people claim that they can tell the difference between a diet soda and a regular soda in the first sip. A researcher wanted to test this claim using a hypothesis test at the 0.05 significance level.\n\nHe randomly sampled 80 people who claimed they can tell the difference.\nHe then filled 80 plain white cups with soda, half diet and half regular through random assignment, and asked each person to take one sip from their cup and identify the soda as diet or regular.\n53 participants correctly identified the soda.\n\n\nLet \\(p\\) be the proportion of people who correctly identify soda type among people who think they can tell the difference.\n\n\n\nTry defining \\(H_{0}\\) and \\(H_{A}\\)."
+    "text": "Example: taste test\nSome people claim that they can tell the difference between a diet soda and a regular soda in the first sip. A researcher wanted to test this claim using a hypothesis test at the 0.05 significance level.\n\nHe randomly sampled 80 people.\nHe then filled 80 plain white cups with soda, half diet and half regular through random assignment, and asked each person to take one sip from their cup and identify the soda as diet or regular.\n53 participants correctly identified the soda.\n\n\nLet \\(p\\) be the proportion of people who correctly identify soda type.\n\n\n\nTry defining \\(H_{0}\\) and \\(H_{A}\\)."
   },
   {
     "objectID": "slides/slides-20-ht-prop.html#example-taste-test-cont.",
@@ -8481,7 +8481,7 @@
     "href": "slides/slides-20-ht-prop.html#clt-recap",
     "title": "Test for single proportion with CLT",
     "section": "CLT recap",
-    "text": "CLT recap\nStart off with a sample of size \\(n\\). Assuming independent observations,\n\n\n\nCLT for sample means\nAssume population with mean \\(\\mu\\) and standard deviation \\(\\sigma\\). If normality condition met: \\[\n\\bar{X} \\sim N\\left(\\mu, \\frac{\\sigma}{n}\\right) \\quad \\text{or} \\quad \\bar{X} \\overset{\\cdot}{\\sim}  N\\left(\\mu, \\frac{\\sigma}{n}\\right)\n\\]\n\n\nNormality condition\n\nExactly normal\nNot normal and \\(n < 30\\): no outliers\nNot normal and \\(n \\geq 30\\): no particularly extreme outliers\n\n\n\n\nCLT for sample proportions\nAssume population proportion \\(p\\). If success-failure condition met: \\[\n\\hat{p} \\overset{\\cdot}{\\sim} N\\left (p, \\sqrt{\\frac{p(1-p)}{n}}\\right)\n\\]\n\nSuccess-failure condition: \\(np \\geq 10\\) and \\(n(1-p) \\geq 10\\)"
+    "text": "CLT recap\nStart off with a sample of size \\(n\\). Assuming independent observations,\n\n\n\nCLT for sample means\nAssume population with mean \\(\\mu\\) and standard deviation \\(\\sigma\\). If normality condition met: \\[\n\\bar{X} \\sim N\\left(\\mu, \\frac{\\sigma}{\\sqrt{n}}\\right) \\quad \\text{or} \\quad \\bar{X} \\overset{\\cdot}{\\sim}  N\\left(\\mu, \\frac{\\sigma}{\\sqrt{n}}\\right)\n\\]\n\n\nNormality condition\n\nExactly normal\nNot normal and \\(n < 30\\): no outliers\nNot normal and \\(n \\geq 30\\): no particularly extreme outliers\n\n\n\n\nCLT for sample proportions\nAssume population proportion \\(p\\). If success-failure condition met: \\[\n\\hat{p} \\overset{\\cdot}{\\sim} N\\left (p, \\sqrt{\\frac{p(1-p)}{n}}\\right)\n\\]\n\nSuccess-failure condition: \\(np \\geq 10\\) and \\(n(1-p) \\geq 10\\)"
   },
   {
     "objectID": "slides/slides-20-ht-prop.html#hypothesis-testing-recap",
