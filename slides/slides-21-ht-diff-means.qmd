@@ -48,6 +48,337 @@ source("../stat201_fns.R")
 
     -   $t$-test: we don't know $\sigma$, use $t$ distribution
 
+# CI for paired mean
+
+## Paired data
+
+Suppose we have two sets of observations/data $\boldsymbol{x} = (x_{1}, x_{2}, \ldots x_{n})$ and $\boldsymbol{y} = (y_{1}, y_{2}, \ldots, y_{n})$
+
+-   The data are considered **paired data** if each $x_{i}$ corresponds to exactly one $y_{i}$
+
+-   Example: your score on the midterm and your score on the final
+
+-   When analyzing paired data, we are typically interested in the difference in outcomes of each pair of observations
+
+## Paired differences
+
+-   Let $d_{i} = y_{i} - x_{i}$ for each $i = 1,\ldots, n$ be the observed differences
+
+-   The $d_{i}$ come from larger population with true mean difference $\mu_{d}$ and standard deviation of differences $\sigma_{d}$
+
+-   The sample mean difference and sample standard deviation of the differences are
+
+::: fragment
+$$\bar{d} = \frac{1}{n}\sum_{i=1}^{n} d_{i} \qquad \qquad s_{d} = \frac{1}{n-1}\sum_{i=1}^{n} (d_{i} - \bar{d})^2 $$
+:::
+
+## CLT for mean difference in pairs
+
+-   Suppose the $n$ observational units are independent and the distribution of the differences is approximately normal. Then CLT says:
+
+    $$
+    \bar{d} \overset{\cdot}{\sim} N\left(\mu_{d}, \frac{\sigma_{d}}{\sqrt{n}} \right)
+    $$
+
+-   We are usually interested in performing inference for $\mu_{d}$ when both $\mu_{d}$ and $\sigma_{d}$ unknown
+
+-   Our formula for $\gamma\times 100\%$ CI for $\mu_{d}$ is analogous to the formula for one mean when $\sigma$ unknown:
+
+::: fragment
+$$
+\begin{align*}
+\text{point estimate} &\pm t^*_{df, (1+\gamma)/2} \times \widehat{\text{SE}} \\
+\bar{d} &\pm t_{df, (1+\gamma)/2}^* \times \frac{s_{d}}{\sqrt{n}}
+\end{align*}
+$$
+
+where $df = n-1$
+:::
+
+## Example: zinc
+
+```{r}
+zinc <- data.frame(bottom = c(0.430, 0.266, 0.567, 0.531, 0.707, 0.716, .651,	.589,	.469,	.723),
+                   surface = c(.415,	.238,	.390,	.410,	.605,	.609,	.632,	.523,	.411,	.612))
+```
+
+Data consist of measured zinc concentrations in bottom water and surface water at 10 randomly sampled wells:
+
+::: {style="color: maroon"}
+Do the data suggest that the true average concentration in the bottom water is different than that of surface water? Let's answer this using a 95% confidence interval.
+:::
+
+::::::: columns
+::: {.column width="50%"}
+```{r}
+zinc |>
+  mutate(d = bottom - surface) |>
+  ggplot(aes(x = d)) +
+  geom_histogram(bins = 10) +
+  labs(x = "Observed difference (bottom - surface)") +
+  theme_minimal() +
+  theme(text= element_text(size =28))
+```
+:::
+
+::::: {.column width="50%"}
+:::: fragment
+```{r}
+head(zinc)
+```
+
+::: discuss
+Are the data paired? Does CLT apply?
+:::
+::::
+:::::
+:::::::
+
+## Example: zinc (cont.)
+
+::::: columns
+::: {.column width="40%"}
+```{r echo = T}
+zinc <- zinc |>
+  mutate(d = bottom - surface)
+d_bar <- mean(zinc$d)
+d_bar
+s_d <- sd(zinc$d)
+s_d
+```
+
+```{r}
+n <- nrow(zinc)
+d_bar <- round(d_bar, 4)
+s_d <- round(s_d, 3)
+se <- round(s_d/sqrt(n), 3)
+df <- n-1
+tstar <- round(qt(0.975, df), 2)
+zinc_ci <- round(d_bar + tstar*se*c(-1,1), 3)
+```
+:::
+
+::: {.column width="60%"}
+1.  point estimate: $\bar{d} = `r d_bar`$
+
+2.  SE $\approx$ $\frac{s_{d}}{\sqrt{n}} = \frac{`r s_d`}{\sqrt{`r n`}} = `r se`$
+
+3.  ::: discuss
+    critical value: what code would you write?
+    :::
+
+    -   $df = n-1 = `r n-1`$
+
+    -   $t_{`r df`, 0.975}^{*} =$ `qt(0.975,`r df`)` $= `r tstar`$
+:::
+:::::
+
+::: fragment
+So our 95% confidence interval is:
+
+$$`r d_bar` \pm `r tstar`(`r se`) = (`r zinc_ci`)$$
+:::
+
+:::: fragment
+::: {style="color: maroon"}
+Do the data suggest that the true average concentration in the bottom water is different than that of surface water? Explain.
+:::
+::::
+
+# CIs for difference in two means
+
+## Difference of two means
+
+Now consider two populations under the condition that the data/populations are not paired.
+
+We might be interested in learning about whether or not the means of each population are equal (think about the voice jitter homework problem)!
+
+-   Let $\mu_{1}$ and $\mu_{2}$ represent the population means for the two populations 1 and 2
+
+-   Samples of size $n_{1}$ and $n_{2}$ from each population, respectively
+
+-   We might think it reasonable to use $\bar{x}_{1} - \bar{x}_{2}$ as a point estimate for $\mu_{1} - \mu_{2}$
+
+## Conditions for inference
+
+Now that we have two populations, conditions for CLT and use of the $t$-distribution for inference will look slightly different:
+
+1.  **Independence** (extended): need data within *and* between the two groups
+
+    -   e.g.the two data sets come from independent random samples or from a randomized experiment
+
+2.  **Normality**: we need to check for approximate normality for *both* groups separately
+
+## CI for difference in two means
+
+If the conditions hold, then our usual formula for $\gamma \times 100\%$ CI still holds:
+
+$$
+\text{point estimate} \pm \text{critical value} \times \text{SE}
+$$
+
+1.  Point estimate
+
+```{r}
+
+```
+
+::::::: columns
+:::: {.column width="50%"}
+::: {.fragment style="color: maroon"}
+If $\sigma_{1}$ and $\sigma_{2}$ known:
+:::
+
+2.  $\text{SE} = \sqrt{\frac{\sigma_{1}^2}{n_{1}} + \frac{\sigma_{2}^2}{n_{2}}}$
+
+3.  critical value: $z_{(1+\gamma)/2}^*$
+
+    -   $(1+\gamma)/2$ percentile of $N(0,1)$
+::::
+
+:::: {.column width="50%"}
+::: {.fragment style="color: maroon"}
+If $\sigma_{1}$ and $\sigma_{2}$ unknown:
+:::
+
+2.  $\text{SE} \approx \sqrt{\frac{s_{1}^2}{n_{1}} + \frac{s_{2}^2}{n_{2}}}$
+
+3.  critical value: $t_{df, (1+\gamma)/2}^*$
+
+    -   $(1+\gamma)/2$ percentile of $t_{df}$
+
+    -   $df = \min\{n_{1} -1, n_{2} - 1\}$
+::::
+:::::::
+
+## Example: C02 concentrations
+
+-   The Mauna Loa Observatory in Hawaii of monitors atmospheric solar, atmospheric, and meteorological parameters
+
+-   Continuous measurements of atmospheric carbon dioxide (C02) began in March 1958
+
+-   We have data on annual atmospheric C02 concentrations from 2000-2015.
+
+-   We will conduct a hypothesis test to see if the average atmospheric C02 levels (ppm) from 2000-2015 is different from 350 ppm.
+
+```{r}
+co2 <- read_csv("data/co2_annmean_mlo.csv") |>
+  rename("CO2" = "mean")
+co2_subset <- co2 |>
+  filter(year %in% 2000:2015)
+ggplot(co2_subset,aes(x =CO2)) +
+  geom_histogram(bins = 10)
+```
+
+## Example: voice shimmer
+
+Let's consider the voice shimmer of PD vs non-PD patients from last week's homework.
+
+```{r}
+url_file <- "https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/parkinsons.csv"
+parkinsons <- read_csv(url_file)
+x_pd <- parkinsons |>
+  filter(status == "PD") |>
+  pull(shimmer)
+x_healthy <- parkinsons |>
+  filter(status == "Healthy") |>
+  pull(shimmer)
+n1 <- length(x_pd); n2 <- length(x_healthy)
+xbar1 <- mean(x_pd); xbar2 <- mean(x_healthy)
+s1 <- sd(x_pd); s2 <- sd(x_healthy)
+```
+
+::: {style="color: maroon"}
+Convince yourself that this data isn't paired!
+:::
+
+-   Population 1: people with Parkinson's Disease
+
+-   Population 2: people without Parkinson's Disease
+
+::: {.fragment style="color: maroon"}
+Research question: are average voice shimmers different between people with and without Parkinson's? Create a 95% confidence interval to answer this question.
+:::
+
+-   We care about the difference in means $\mu_{\text{PD}} - \mu_{\text{H}}$
+
+## Example: voice shimmer (cont.)
+
+::: {style="color: maroon"}
+Are average voice shimmers different between people with and without Parkinson's? Create a 95% confidence interval to answer this question.
+:::
+
+:::::::: columns
+::: {.column width="50%"}
+```{r}
+shimmer_sum <- parkinsons |>
+  group_by(status) |>
+  summarise(n = n(), xbar = mean(shimmer), s = sd(shimmer))
+kableExtra::kable(shimmer_sum, digits = 3)
+parkinsons |> 
+  ggplot(aes(x = shimmer))+
+    geom_histogram(bins = 20) +
+    facet_wrap(~ status, scales = "free") +
+  labs(x = "Voice shimmer") +
+    theme_minimal()+
+    theme(text = element_text(size = 28))
+```
+:::
+
+:::::: {.column width="50%"}
+::: discuss
+Do assumptions for CLT hold?
+:::
+
+-   Independence: random sample!
+-   Normality condition: $n \geq 30$ in both groups with no particularly extreme outliers
+
+:::: fragment
+::: discuss
+Set-up/find the following:
+:::
+
+1.  Point estimate
+2.  Standard error
+3.  Code for critical value
+::::
+::::::
+::::::::
+
+## Example: voice shimmer (cont.)
+
+```{r}
+#kableExtra::kable(birth_sum, digits = 3)
+point_est <- round(xbar1 - xbar2,3)
+se <- round(sqrt(s1^2/n1  + s2^2 / n2), 3)
+df <- min(c(n1-1, n2-1))
+t975 <- round(qt(0.975, df), 2)
+
+ci <- round(point_est + se * t975 * c(-1,1), 3)
+```
+
+1.  Point estimate: $\bar{x}_{\text{PD}} - \bar{x}_{\text{H}} = `r round(xbar1, 2)` - `r round(xbar2,2)` = `r point_est`$
+
+2.  SE $\approx \sqrt{\frac{s_{\text{PD}}^2}{n_{\text{PD}}} + \frac{s_{\text{H}}^2}{n_{\text{H}}}} = \sqrt{\frac{`r round(s1,2)`^2}{`r n1`} + \frac{`r round(s2,2)`^2}{`r n2`}} = `r se`$
+
+3.  Critical value:
+
+    -   $df = \min\{n_{\text{PD}} -1, n_{\text{H}} -1 \} = \min\{`r n1` - 1, `r n2`- 1\} = `r df`$
+
+    -   Want $0.975$-th percentile of $t_{`r df`}$ distribution: `qt(0.975, df =`r df`)` = `r t975`
+
+:::: fragment
+::: discuss
+Putting everything together, our 95% CI for $\mu_{\text{PD}} - \mu_{\text{H}}$ is: $$
+`r point_est` \pm `r t975` \times `r se` = (`r ci`)
+$$
+
+-   Interpret this CI in context. Note: direction of difference matters!
+
+-   Are average voice shimmers different between people with and without Parkinson's? Briefly explain why or why not.
+:::
+::::
+
 # Hypothesis test for mean paired difference
 
 ## Paired data (recap)
@@ -151,7 +482,7 @@ $$t = \frac{\bar{d}_{obs} - \mu_{0}}{s_{d}/\sqrt{n}} = \frac{`r d_bar` - 0}{`r s
 
 -   So our p-value is $\text{Pr}(T \geq t) = \text{Pr}(T \geq `r t`) = 1 - \texttt{pt(`r t`, `r df`)} = `r p_val`$
 
-- We reject $H_{0}$! The data provide convincing evidence that zinc concentrations of bottom well water is greater than those of surface water.
+-   We reject $H_{0}$! The data provide convincing evidence that zinc concentrations of bottom well water is greater than those of surface water.
 
 # Hypothesis test for difference in means
 

@@ -30,11 +30,9 @@ plot_theme <- theme(text = element_text(size = 24))
 source("../stat201_fns.R")
 ```
 
--   Central Limit Theorem: if we have a sufficiently large sample of $n$ independent observations from a population with mean $\mu$ and standard deviation $\sigma$, then $\bar{X} \overset{\cdot}{\sim} N\left(\mu, \frac{\sigma}{\sqrt{n}}\right)$
+-   CLT: if we have a sufficiently large sample of $n$ independent observations from a population with mean $\mu$ and standard deviation $\sigma$, then $\bar{X} \overset{\cdot}{\sim} N\left(\mu, \frac{\sigma}{\sqrt{n}}\right)$
 
--   When considering the special case of sample proportions, if success-failure condition is met, we have $\hat{p} \overset{\cdot}{\sim} N\left(p, \sqrt{\frac{p(1-p)}{n}}\right)$
-
--   To obtain a $\gamma\times 100\%$ CI for a mean, we use
+-   To obtain a $\gamma\times 100\%$ CI via CLT, we use
 
     ::: fragment
     $$
@@ -42,7 +40,7 @@ source("../stat201_fns.R")
     $$
     :::
 
-    -   We needed to replace the standard error with an estimate
+    -   We may need to replace the standard error with an estimate $\widehat{SE}$
 
 ## Checking normality
 
@@ -60,11 +58,7 @@ source("../stat201_fns.R")
 
 Suppose we want a $\gamma\times 100\%$ CI for population mean $\mu$.
 
-::: discuss
-What would your "best guess" point estimate for $\mu$ be?
-:::
-
--   If CLT holds, then we know
+-   *If* CLT holds, then we know
 
     $$
     \bar{X} \overset{\cdot}{\sim} N\left(\mu, \frac{\sigma}{\sqrt{n}}\right)
@@ -84,11 +78,13 @@ n <- 25
 sd_age <- round(sd(age_at_mar$age), 2)
 x <- sample(age_at_mar$age, n)
 xbar <- mean(x)
+sigma_age <- 5
+se <- sigma_age / sqrt(n)
 s_age <- round(sd(x),2)
-se <- sd_age / sqrt(n)
+# se <- sd_age / sqrt(n)
 ```
 
-In 2006-2010, the CDC conducted a thorough survey asking US women their age at first marriage. The standard deviation of the responses is `r sd_age` years. Suppose we randomly sample 25 US women and ask them their age at first marriage (plotted below). Their average age at marriage was `r xbar`.
+In 2006-2010, the CDC conducted a thorough survey asking US women their age at first marriage. Suppose it is known that the standard deviation of the ages at first marriage is `r sigma_age` years. Suppose we randomly sample 25 US women and ask them their age at first marriage (plotted below). Their average age at marriage was `r xbar`.
 
 :::::::: columns
 :::: {.column width="50%"}
@@ -118,36 +114,37 @@ We will obtain an 80% confidence interval for the mean age of US women at first 
 :::::
 ::::::::
 
+
+
 ## Example: age at marriage (cont.)
 
 ::: {style="color: maroon"}
 Obtain an 80% confidence interval for the mean age of US women at first marriage.
 :::
 
+- Because we have a random sample (independence) and there are no outliers in the data (normality condition), we can proceed with CLT!
+
 ```{r}
 zstar90 <- round(qnorm(0.9), 2)
 ci <- round(xbar +  zstar90*se*c(-1,1), 2)
 ```
 
-By CLT: $$\bar{X} \overset{\cdot}{\sim}N\left(\mu, \frac{`r sd_age`}{\sqrt{`r n`}}\right) = N(\mu, `r se`)$$
-
-::: fragment
-Collect necessary components:
+::: {.fragment}
+$$\bar{X} \overset{\cdot}{\sim}N\left(\mu, \frac{`r sigma_age`}{\sqrt{`r n`}}\right) = N(\mu, `r se`)$$
 :::
 
-1.  Point estimate: $\bar{x} = `r xbar`$
-2.  Standard error: $`r se`$
+::: {.discuss}
+- Construct your confidence interval and interpret!
+:::
+
+1.  Point estimate: $\bar{x}_{obs} = `r xbar`$
+2.  Standard error: $\text{SE} = `r se`$
 3.  Critical value: $z_{0.9}^{*} =$ `qnorm(0.9, 0, 1)` $= `r zstar90`$
 
 ::: fragment
 So our 80% confidence interval is $`r xbar` \pm `r round(qnorm(0.9),2)` \times `r se` = (`r ci[1]`, `r ci[2]`)$
 :::
 
-:::: fragment
-::: discuss
-Interpret this interval!
-:::
-::::
 
 ## Utility of this model
 
@@ -163,19 +160,19 @@ Interpret this interval!
 
 ::: fragment
 $$
-    \text{SE}\approx \frac{s}{\sqrt{n}}
+    \widehat{\text{SE}} = \frac{s}{\sqrt{n}}
 $$
 
 where $s$ is the observed sample standard deviation
 :::
 
--   Recall we did something similar for CI for $p$
+-   Recall we did something similar for CI for $p$, where we replaced $p$ with $\hat{p}_{obs}$
 
 ## Variance issue
 
--   Replacing $s$ for $\sigma$ works well enough when $n$ is extremely large so we can estimate $\sigma$ accurately
+-   Estimating variance is extremely difficult when $n$ is small, and still not great for large $n$
 
--   However, estimating variance is extremely difficult when $n$ is small, and still not great for large $n$
+    -   Thus, replacing $\sigma$ with $s$ invalidates CLT
 
 -   So if $\sigma$ is unknown, we ***cannot*** use the Normal approximation to model $\bar{X}$ for inferential tasks
 
@@ -211,21 +208,7 @@ ggplot() +
 :::
 ::::::
 
--   As $df$ increase, $t$ resembles the $N(0,1)$. When $df \geq 30$, the $t_{df}$ is nearly identical to $N(0,1)$
-
-## Working with $t$ distribution
-
-```{r}
-ub <- -1.5
-p <- 0.7
-df <- 2
-```
-
-Let's draw pictures for the following:
-
--   What proportion of the $t_{`r df`}$-distribution falls below `r ub`?
-
--   What value of the $t_{`r df`}$-distribution has $`r p*100`\%$ area lying below it?
+-   As $df$ increases, $t$ resembles the $N(0,1)$. When $df \geq 30$, the $t_{df}$ is nearly identical to $N(0,1)$
 
 ## $t$ distribution in `R`
 
@@ -237,6 +220,8 @@ Let's draw pictures for the following:
 ::::: {.column width="50%"}
 ::: fragment
 ```{r}
+ub <- -1.5
+df <- 2
 funcShaded_t <- function(x, lower_bound = -Inf, upper_bound = Inf) {
     y = dt(x, df = df)
     y[x < lower_bound] <- NA
@@ -246,13 +231,13 @@ funcShaded_t <- function(x, lower_bound = -Inf, upper_bound = Inf) {
 
 
 ggplot() +
-  stat_function(fun = dt, args = list(df = 2)) +
-  scale_x_continuous(limits = c(-4,4), breaks = -4:4) +
+  stat_function(fun = dt, args = list(df = df)) +
+  scale_x_continuous(limits = c(-3.5,3.5), breaks = seq(-3.5,3.5, 1)) +
   theme_minimal() +
   labs(title = (expression(t[2])), y = "density", x = "x") +
   theme(text = element_text(size = 28)) +
   stat_function(fun = funcShaded_t, args = list( upper_bound = ub),  geom = "area", fill = "#84CA72", alpha = .8)  +
-  annotate("text", label = "?", x = ub - 0.75, y = 0.02, size = 15 )
+  annotate("text", label = "?", x = ub - 0.75, y = 0.02, size = 15 ) 
 
 prob <- pt(ub, df)
 ```
@@ -266,6 +251,7 @@ prob <- pt(ub, df)
 ::::: {.column width="50%"}
 ::: fragment
 ```{r}
+p <- 0.7
 ub <- qt(p, df)
 ggplot() +
   stat_function(fun = dt, args = list(df = 2)) +
@@ -274,7 +260,8 @@ ggplot() +
   labs(title = (expression(t[2])), y = "density", x = "x") +
   theme(text = element_text(size = 28)) +
   stat_function(fun = funcShaded_t, args = list( upper_bound = ub),  geom = "area", fill = "#84CA72", alpha = .8) +
-   annotate("text", label = as.character(p), x = ub - 0.75, y = 0.15, size = 15)
+   annotate("text", label = as.character(p), x = ub - 0.75, y = 0.15, size = 15)+
+   annotate("text", label = "?", x = qt(p, df), y = 0, size = 15 ) 
 ```
 :::
 
@@ -292,20 +279,17 @@ ggplot() +
 
 ::: fragment
 $$
-\begin{align*}
-\text{point estimate} &\pm t^*_{df, (1+\gamma)/2} \times \widehat{\text{SE}} \\
-\bar{x} &\pm t_{df, (1+\gamma)/2}^* \times \frac{s}{\sqrt{n}}
-\end{align*}
+\text{point estimate} \pm t^*_{df, (1+\gamma)/2} \times \widehat{\text{SE}} = \bar{x}_{obs} \pm t_{df, (1+\gamma)/2}^* \times \frac{s}{\sqrt{n}}
 $$
 :::
 
--   $df = n-1$
+-   $df = n-1$ (always for this CI)
 
 -   critical value $t^*_{df, (1+\gamma)/2}$ = $(1+\gamma)/2$ percentile of the $t_{df}$ distribution
 
 ## Example: age at marriage (cont.)
 
-Let's return to the age at marriage example. Once again let's obtain an 80% confidence interval for the average age of first marriage for US women, but now suppose we **don't know** $\sigma$.
+Let's return to the age at marriage example. Once again, obtain an 80% CI for the average age of first marriage for US women, but now suppose we **don't know** $\sigma$.
 
 ::: fragment
 In our sample of $n = 25$ women, we observed a sample mean of $`r xbar`$ years and a sample standard deviation of $s = `r s_age`$ years.
@@ -318,11 +302,11 @@ tstar90 <- round(qt(0.9, df), 2)
 ci_t <- round(xbar + tstar90*se_hat*c(-1,1), 2)
 ```
 
-1.  Point estimate: $\bar{x} = `r xbar`$
+1.  Point estimate: $\bar{x}_{obs} = `r xbar`$
 2.  Standard error: $\widehat{\text{SE}} = \frac{s}{\sqrt{n}}= \frac{`r s_age`}{\sqrt{`r n`}} = `r se_hat`$
 3.  Critical value:
     -   $df = n-1 = `r df`$
-    -   $t_{`r df`}^*$ = `qt(0.9, df =`r df`)` = `r tstar90`
+    -   $t_{`r df`, 0.9}^*$ = `qt(0.9, df =`r df`)` = `r tstar90`
 
 ::: fragment
 So our 80% confidence interval for $\mu$ is:
@@ -332,27 +316,15 @@ $$
 $$
 :::
 
-## Comparing CIs
-
-::::: columns
-::: {.column width="50%"}
-**Known variance:**
-
-80% CI: (`r ci`)
-:::
-
-::: {.column width="50%"}
-**Unknown variance:**
-
-80% CI: (`r ci_t`)
-:::
-:::::
-
--   ::: discuss
-    How do the two intervals compare?
-    :::
+## Remarks
 
 -   Interpretation of CI does not change even if we use a different model!
+
+-   ::: discuss
+    If you have access to both $\sigma$ and $s$, would should you use?
+    :::
+
+    -   You should use $\sigma$!
 
 ## Examples
 
@@ -402,314 +374,199 @@ Assume that all conditions necessary for inference are satisfied.
     c.  Calculate the minimum sample size for Luke.
 :::
 
-# CI for paired mean
+# Test for a single mean
 
-## Paired data
+## Hypothesis test recap
 
-Suppose we have two sets of observations/data $\boldsymbol{x} = (x_{1}, x_{2}, \ldots x_{n})$ and $\boldsymbol{y} = (y_{1}, y_{2}, \ldots, y_{n})$
+1.  Set hypotheses
+2.  Collect and summarise data, set $\alpha$
+3.  Obtain null distribution and p-value
+    -   For CLT-based method, obtain *test statistic*
+4.  Decision and conclusion
 
--   The data are considered **paired data** if each $x_{i}$ corresponds to exactly one $y_{i}$
+## Hypotheses and null distribution
 
--   Example: your score on the midterm and your score on the final
+Want to conduct a hypothesis test for the mean $\mu$ of a population.
 
--   When analyzing paired data, we are typically interested in the difference in outcomes of each pair of observations
+-   Hypotheses: $H_0: \mu= \mu_{0}$ versus $H_{A}: \mu \neq \mu_{0} \ (\text{or } \mu > \mu_{0} \text{ or } \mu < \mu_{0})$
 
-## Paired differences
+-   Verify conditions for CLT
 
--   Let $d_{i} = y_{i} - x_{i}$ for each $i = 1,\ldots, n$ be the observed differences
+    1.  Independence
+    2.  Approximate normality or large sample size
 
--   The $d_{i}$ come from larger population with true mean difference $\mu_{d}$ and standard deviation of differences $\sigma_{d}$
+-   Then from population with mean $\mu$ and standard deviation $\sigma$, we have $\bar{X} \overset{\cdot}{\sim} N\left(\mu, \frac{\sigma}{\sqrt{n}}\right)$
 
--   The sample mean difference and sample standard deviation of the differences are
-
-::: fragment
-$$\bar{d} = \frac{1}{n}\sum_{i=1}^{n} d_{i} \qquad \qquad s_{d} = \frac{1}{n-1}\sum_{i=1}^{n} (d_{i} - \bar{d})^2 $$
-:::
-
-## CLT for mean difference in pairs
-
--   Suppose the $n$ observational units are independent and the distribution of the differences is approximately normal. Then CLT says:
-
-    $$
-    \bar{d} \overset{\cdot}{\sim} N\left(\mu_{d}, \frac{\sigma_{d}}{\sqrt{n}} \right)
-    $$
-
--   We are usually interested in performing inference for $\mu_{d}$ when both $\mu_{d}$ and $\sigma_{d}$ unknown
-
--   Our formula for $\gamma\times 100\%$ CI for $\mu_{d}$ is analogous to the formula for one mean when $\sigma$ unknown:
-
-::: fragment
-$$
-\begin{align*}
-\text{point estimate} &\pm t^*_{df, (1+\gamma)/2} \times \widehat{\text{SE}} \\
-\bar{d} &\pm t_{df, (1+\gamma)/2}^* \times \frac{s_{d}}{\sqrt{n}}
-\end{align*}
-$$
-
-where $df = n-1$
-:::
-
-## Example: zinc
-
-```{r}
-zinc <- data.frame(bottom = c(0.430, 0.266, 0.567, 0.531, 0.707, 0.716, .651,	.589,	.469,	.723),
-                   surface = c(.415,	.238,	.390,	.410,	.605,	.609,	.632,	.523,	.411,	.612))
-```
-
-Data consist of measured zinc concentrations in bottom water and surface water at 10 randomly sampled wells:
-
-::: {style="color: maroon"}
-Do the data suggest that the true average concentration in the bottom water is different than that of surface water? Let's answer this using a 95% confidence interval.
-:::
-
-::::::: columns
-::: {.column width="50%"}
-```{r}
-zinc |>
-  mutate(d = bottom - surface) |>
-  ggplot(aes(x = d)) +
-  geom_histogram(bins = 10) +
-  labs(x = "Observed difference (bottom - surface)") +
-  theme_minimal() +
-  theme(text= element_text(size =28))
-```
-:::
-
-::::: {.column width="50%"}
-:::: fragment
-```{r}
-head(zinc)
-```
-
-::: discuss
-Are the data paired? Does CLT apply?
-:::
-::::
-:::::
-:::::::
-
-## Example: zinc (cont.)
-
-::::: columns
-::: {.column width="40%"}
-```{r echo = T}
-zinc <- zinc |>
-  mutate(d = bottom - surface)
-d_bar <- mean(zinc$d)
-d_bar
-s_d <- sd(zinc$d)
-s_d
-```
-
-```{r}
-n <- nrow(zinc)
-d_bar <- round(d_bar, 4)
-s_d <- round(s_d, 3)
-se <- round(s_d/sqrt(n), 3)
-df <- n-1
-tstar <- round(qt(0.975, df), 2)
-zinc_ci <- round(d_bar + tstar*se*c(-1,1), 3)
-```
-:::
-
-::: {.column width="60%"}
-1.  point estimate: $\bar{d} = `r d_bar`$
-
-2.  SE $\approx$ $\frac{s_{d}}{\sqrt{n}} = \frac{`r s_d`}{\sqrt{`r n`}} = `r se`$
-
-3.  ::: discuss
-    critical value: what code would you write?
+-   ::: discuss
+    What does the (approximate) **null distribution** for $\bar{X}$ look like?
     :::
 
-    -   $df = n-1 = `r n-1`$
-
-    -   $t_{`r df`, 0.975}^{*} =$ `qt(0.975,`r df`)` $= `r tstar`$
-:::
-:::::
-
 ::: fragment
-So our 95% confidence interval is:
-
-$$`r d_bar` \pm `r tstar`(`r se`) = (`r zinc_ci`)$$
+$$
+\bar{X} \overset{\cdot}{\sim}  N\left(\boldsymbol{\mu_{0}}, \frac{\sigma}{\sqrt{n}}\right)
+$$
 :::
 
-:::: fragment
-::: {style="color: maroon"}
-Do the data suggest that the true average concentration in the bottom water is different than that of surface water? Explain.
-:::
-::::
+## z-test and *t*-test statistics
 
-# CIs for difference in two means
-
-## Difference of two means
-
-Now consider two populations under the condition that the data/populations are not paired.
-
-We might be interested in learning about whether or not the means of each population are equal (think about the voice jitter homework problem)!
-
--   Let $\mu_{1}$ and $\mu_{2}$ represent the population means for the two populations 1 and 2
-
--   Samples of size $n_{1}$ and $n_{2}$ from each population, respectively
-
--   We might think it reasonable to use $\bar{x}_{1} - \bar{x}_{2}$ as a point estimate for $\mu_{1} - \mu_{2}$
-
-## Conditions for inference
-
-Now that we have two populations, conditions for CLT and use of the $t$-distribution for inference will look slightly different:
-
-1.  **Independence** (extended): need data within *and* between the two groups
-
-    -   e.g.the two data sets come from independent random samples or from a randomized experiment
-
-2.  **Normality**: we need to check for approximate normality for *both* groups separately
-
-## CI for difference in two means
-
-If the conditions hold, then our usual formula for $\gamma \times 100\%$ CI still holds:
+Our test statistic is always of the form:
 
 $$
-\text{point estimate} \pm \text{critical value} \times \text{SE}
+\frac{\text{observed} - \text{null}}{\text{SE}} \qquad \text{ or } \qquad \frac{\text{observed} - \text{null}}{\widehat{\text{SE}}}
 $$
-
-1.  Point estimate
-
-```{r}
-
-```
 
 ::::::: columns
 :::: {.column width="50%"}
-::: {.fragment style="color: maroon"}
-If $\sigma_{1}$ and $\sigma_{2}$ known:
+-   If $\sigma$ known and CLT met, we perform a **z-test** where our test-statistic is:
+
+::: fragment
+$$z = \frac{\bar{x}_{obs} - \mu_{0}}{\frac{\sigma}{\sqrt{n}}} \sim N(0,1)$$
+
+and we obtain our p-value using `pnorm()`
 :::
-
-2.  $\text{SE} = \sqrt{\frac{\sigma_{1}^2}{n_{1}} + \frac{\sigma_{2}^2}{n_{2}}}$
-
-3.  critical value: $z_{(1+\gamma)/2}^*$
-
-    -   $(1+\gamma)/2$ percentile of $N(0,1)$
 ::::
 
 :::: {.column width="50%"}
-::: {.fragment style="color: maroon"}
-If $\sigma_{1}$ and $\sigma_{2}$ unknown:
+-   If $\sigma$ unknown and CLT met, we perform a ***t*****-test** by estimating $\sigma$ with $s$. Our test statistic is:
+
+::: fragment
+$$
+t = \frac{\bar{x}_{obs} - \mu_{0}}{\frac{s}{\sqrt{n}}} \sim t_{df} \qquad df = n-1
+$$
+
+and we obtain our p-value using `pt()`
 :::
-
-2.  $\text{SE} \approx \sqrt{\frac{s_{1}^2}{n_{1}} + \frac{s_{2}^2}{n_{2}}}$
-
-3.  critical value: $t_{df, (1+\gamma)/2}^*$
-
-    -   $(1+\gamma)/2$ percentile of $t_{df}$
-
-    -   $df = \min\{n_{1} -1, n_{2} - 1\}$
 ::::
 :::::::
 
-## Example: voice shimmer
+-   Everything else proceeds as usual!
 
-Let's consider the voice shimmer of PD vs non-PD patients from last week's homework.
+## Example: salinity
+
+The salinity level in a body of water is important for ecosystem function.
 
 ```{r}
-url_file <- "https://raw.githubusercontent.com/midd-stat201-fall2024/midd-stat201-fall2024.github.io/refs/heads/main/data/parkinsons.csv"
-parkinsons <- read_csv(url_file)
-x_pd <- parkinsons |>
-  filter(status == "PD") |>
-  pull(shimmer)
-x_healthy <- parkinsons |>
-  filter(status == "Healthy") |>
-  pull(shimmer)
-n1 <- length(x_pd); n2 <- length(x_healthy)
-xbar1 <- mean(x_pd); xbar2 <- mean(x_healthy)
-s1 <- sd(x_pd); s2 <- sd(x_healthy)
+salinity_dat <- salinity
+x <- salinity_dat$salinity_ppt
+n <- length(x)
+s <- sd(x)
+df <- n-1
+mu0 <- 38
 ```
 
-::: {style="color: maroon"}
-Convince yourself that this data isn't paired!
-:::
+We have `r n` salinity level measurements (ppt) collected from a random sample of water masses in the Bimini Lagoon, Bahamas.
 
--   Population 1: people with Parkinson's Disease
 
--   Population 2: people without Parkinson's Disease
-
-::: {.fragment style="color: maroon"}
-Research question: are average voice shimmers different between people with and without Parkinson's? Create a 95% confidence interval to answer this question.
-:::
-
--   We care about the difference in means $\mu_{\text{PD}} - \mu_{\text{H}}$
-
-## Example: voice shimmer (cont.)
-
-::: {style="color: maroon"}
-Are average voice shimmers different between people with and without Parkinson's? Create a 95% confidence interval to answer this question.
-:::
-
-:::::::: columns
-::: {.column width="50%"}
 ```{r}
-shimmer_sum <- parkinsons |>
-  group_by(status) |>
-  summarise(n = n(), xbar = mean(shimmer), s = sd(shimmer))
-kableExtra::kable(shimmer_sum, digits = 3)
-parkinsons |> 
-  ggplot(aes(x = shimmer))+
-    geom_histogram(bins = 20) +
-    facet_wrap(~ status, scales = "free") +
-  labs(x = "Voice shimmer") +
-    theme_minimal()+
-    theme(text = element_text(size = 28))
+salinity_dat |>
+  ggplot(aes(x = salinity_ppt)) +
+  geom_histogram(bins = 10) +
+  theme_minimal() +
+  labs(x = "Salinity (ppt)") +
+  theme(text = element_text(size = 24))
+```
+
+-   We want to test if the average salinity level in Bimini Lagoon is different from `r mu0` ppm at the $\alpha = 0.05$ level.
+
+
+## Example: salinity (cont.)
+
+1.  ::: discuss
+    Set hypotheses (define parameters as necessary).
+    :::
+
+    -   Let $\mu$ be the average salinity level in Bimini Lagoon in ppt.
+
+    -   $H_{0}: \mu = `r mu0`$ versus $H_{A}: \mu \neq `r mu0`$
+
+2.  Collect summary information, set $\alpha$.
+
+```{r}
+x <- salinity_dat$salinity_ppt
+n <- length(x)
+xbar <- mean(x)
+s <- sd(x)
+```
+
+-   $\bar{x}_{obs} = `r round(xbar,2)`$
+
+-   $s = `r round(s,2)`$
+
+-   $n = `r n`$
+
+-   $\alpha = 0.05$
+
+## Example: salinity (cont.)
+
+```{r}
+se <- s/sqrt(n)
+t <- round((xbar - mu0)/se, 3)
+```
+
+::: discuss
+3.  Obtain null distribution, test statistic, and p-value
+    i.  Check conditions for CLT
+    ii. If conditions met, obtain null distribution and test-statistic, and determine distribution of test-statistic
+:::
+
+-   Conditions:
+
+    -   Independence: random sample
+
+    -   Approximate normality: $n = `r n`$, but no clear outliers
+
+-   So by CLT, null dist. is $\bar{X} \overset{\cdot}{\sim} N\left(`r mu0`, \frac{\sigma}{\sqrt{`r n`}}\right)$
+
+-   Since we don't know $\sigma$, we perform a $t$-test and obtain the following test-statistic:
+
+    -   $t = \frac{\bar{x}_{obs} - \mu_{0}}{\widehat{SE}} = \frac{`r round(xbar,2)` - `r mu0`}{`r round(s,2)` / \sqrt{`r n`}} = `r t`$
+
+    -   This test-statistic follows a $t_{`r n-1`}$ distribution
+
+## Example: salinity (cont.)
+
+::: discuss
+iii. Use test-statistic to obtain p-value (draw picture and/or write code using appropriate distribution)
+:::
+
+::::::: columns
+:::: {.column width="60%"}
+::: fragment
+```{r fig.height = 5}
+ggplot() +
+  stat_function(fun = dt, args = list(df = n-1)) +
+  scale_x_continuous(limits = c(-3, 3)) +
+  theme_minimal() +
+  labs(title = (expression(t[29])), y = "density", x = "x") +
+  theme(text = element_text(size = 28)) +
+  stat_function(fun = funcShaded_t, args = list( lower_bound = t, upper_bound = Inf),  geom = "area", fill = "#84CA72", alpha = .8)  +
+  stat_function(fun = funcShaded_t, args = list( lower_bound = -Inf, upper_bound = -t),  geom = "area", fill = "#84CA72", alpha = .8)  +
+  labs(y = NULL) +
+  theme(axis.title = element_blank(), axis.text.y = element_blank())
 ```
 :::
-
-:::::: {.column width="50%"}
-::: discuss
-Do assumptions for CLT hold?
-:::
-
--   Independence: random sample!
--   Normality condition: $n \geq 30$ in both groups with no particularly extreme outliers
-
-:::: fragment
-::: discuss
-Set-up/find the following:
-:::
-
-1.  Point estimate
-2.  Standard error
-3.  Code for critical value
 ::::
-::::::
-::::::::
 
-## Example: voice shimmer (cont.)
+:::: {.column width="40%"}
+::: fragment
+Want $P(T \geq `r round(t,2)`) + P(T \leq `r round(t,2)`)$ because $H_{A}$ is two-sided!
 
-```{r}
-#kableExtra::kable(birth_sum, digits = 3)
-point_est <- round(xbar1 - xbar2,3)
-se <- round(sqrt(s1^2/n1  + s2^2 / n2), 3)
-df <- min(c(n1-1, n2-1))
-t975 <- round(qt(0.975, df), 2)
-
-ci <- round(point_est + se * t975 * c(-1,1), 3)
+```{r echo = T}
+p_val <- 2 * (1 - pt(t, df = n-1))
+p_val
 ```
-
-1.  Point estimate: $\bar{x}_{\text{PD}} - \bar{x}_{\text{H}} = `r round(xbar1, 2)` - `r round(xbar2,2)` = `r point_est`$
-
-2.  SE $\approx \sqrt{\frac{s_{\text{PD}}^2}{n_{\text{PD}}} + \frac{s_{\text{H}}^2}{n_{\text{H}}}} = \sqrt{\frac{`r round(s1,2)`^2}{`r n1`} + \frac{`r round(s2,2)`^2}{`r n2`}} = `r se`$
-
-3.  Critical value:
-
-    -   $df = \min\{n_{\text{PD}} -1, n_{\text{H}} -1 \} = \min\{`r n1` - 1, `r n2`- 1\} = `r df`$
-
-    -   Want $0.975$-th percentile of $t_{`r df`}$ distribution: `qt(0.975, df =`r df`)` = `r t975`
-
-:::: fragment
-::: discuss
-Putting everything together, our 95% CI for $\mu_{\text{PD}} - \mu_{\text{H}}$ is: $$
-`r point_est` \pm `r t975` \times `r se` = (`r ci`)
-$$
-
--   Interpret this CI in context. Note: direction of difference matters!
-
--   Are average voice shimmers different between people with and without Parkinson's? Briefly explain why or why not.
 :::
 ::::
+:::::::
+
+## Example: salinity (cont.)
+
+4.  Decision and conclusion
+
+-   Since our p-value `r round(p_val, 3)` is less than 0.05, we reject $H_{0}$.
+
+-   The data do provide sufficient evidence to suggest that the average salinity level in Bimini Lagoon is different from 38 ppt.
+
+::: {.fragment}
+Let's code it up together!
+:::
