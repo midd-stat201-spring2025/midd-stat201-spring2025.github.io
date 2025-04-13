@@ -396,6 +396,15 @@
 
   <p class="date">4/14/25</p>
 </section>
+<section id="housekeeping" class="slide level2">
+<h2>Housekeeping</h2>
+<ul>
+<li class="fragment"><p>Dessert social today! 3-4:30pm in WNS 105!</p></li>
+<li class="fragment"><p>Modified office hours today: 1:30-2:30pm instead of 2-3pm</p></li>
+<li class="fragment"><p>Homework 7 due tonight</p></li>
+<li class="fragment"><p>Project proposals due Wednesday night</p></li>
+</ul>
+</section>
 <section id="recap" class="slide level2">
 <h2>Recap</h2>
 <div class="cell">
@@ -440,7 +449,7 @@
 \]</span></p></li>
 <li class="fragment"><p>So our <span class="math inline">\(\gamma \times 100\%\)</span> CI for <span class="math inline">\(\mu\)</span> is:</p>
 <p><span class="math display">\[
-\text{point estimate} \pm \underbrace{\text{critical value} \times \text{SE}}_{\text{Margin of Error}} = \bar{x} \pm z_{(1+\gamma)/2}^* \times \frac{\sigma}{\sqrt{n}}
+\text{point estimate} \pm \underbrace{\text{critical value} \times \text{SE}}_{\text{Margin of Error}} = \bar{x}_{obs} \pm z_{(1+\gamma)/2}^* \times \frac{\sigma}{\sqrt{n}}
 \]</span></p></li>
 </ul>
 </section>
@@ -646,42 +655,6 @@
 <li class="fragment">You should use <span class="math inline">\(\sigma\)</span>!</li>
 </ul></li>
 </ul>
-</section>
-<section id="examples" class="slide level2">
-<h2>Examples</h2>
-<p>Assume that all conditions necessary for inference are satisfied.</p>
-<div class="columns">
-<div class="column" style="width:33%;">
-<div style="font-size:75%">
-<p><code>qnorm(0.90)</code> = 1.28</p>
-<p><code>qnorm(0.95)</code> = 1.64</p>
-<p><code>qnorm(0.975)</code> = 1.96</p>
-</div>
-</div><div class="column" style="width:33%;">
-<div style="font-size:75%">
-<p><code>qt(0.90, df = 35)</code> = 1.31</p>
-<p><code>qt(0.95, df = 35)</code> = 1.69</p>
-<p><code>qt(0.975, df = 35)</code> = 2.03</p>
-</div>
-</div><div class="column" style="width:33%;">
-<div style="font-size:75%">
-<p><code>qt(0.90, df = 36)</code> = 1.31</p>
-<p><code>qt(0.95, df = 36)</code> = 1.69</p>
-<p><code>qt(0.975, df = 36)</code> = 2.03</p>
-</div>
-</div>
-</div>
-<div style="font-size:85%">
-<ol type="1">
-<li class="fragment"><p>A 90% confidence interval for a population mean <span class="math inline">\(\mu\)</span> is given as <span class="math inline">\((18.985, 21.015)\)</span>. The interval was obtained based on a SRS for 36 observations. Calculate the sample mean and sample standard deviation.</p></li>
-<li class="fragment"><p>The standard deviation for students at particular Ivy League college is 250 points. Two students, Raina and Luke, want to estimate the average SAT score of students at this college. They want their margin of error to be no more than 25 points.</p>
-<ol type="a">
-<li class="fragment"><p>Raina wants to use a 90% confidence level. How large a sample does Raina need to collect?</p></li>
-<li class="fragment"><p>Luke wants to use a 95% confidence level. Without calculations, determine whether Luke’s sample should be larger or smaller than Raina’s. Explain your reasoning.</p></li>
-<li class="fragment"><p>Calculate the minimum sample size for Luke.</p></li>
-</ol></li>
-</ol>
-</div>
 </section></section>
 <section>
 <section id="test-for-a-single-mean" class="title-slide slide level1 center">

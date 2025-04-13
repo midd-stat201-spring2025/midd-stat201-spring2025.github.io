@@ -1,7 +1,7 @@
 ---
-title: "Hypothesis testing with CLT (cont.)"
+title: "HTs and CIs for differences"
 subtitle: "Difference in means"
-date: "October 31, 2024"
+date: "April 16, 2025"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
