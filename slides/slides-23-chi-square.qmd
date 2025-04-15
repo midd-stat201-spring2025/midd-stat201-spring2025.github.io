@@ -29,7 +29,7 @@ plot_theme <- theme(text = element_text(size = 24))
 source("../stat201_fns.R")
 ```
 
--   Thank you for submitting project proposals! Will give feedback ASAP. Stay tuned if you need revisions.
+-   Project proposals due tonight!
 
 # Chi-squared test for independence
 

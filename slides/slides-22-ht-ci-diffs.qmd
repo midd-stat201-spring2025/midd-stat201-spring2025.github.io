@@ -1,7 +1,7 @@
 ---
 title: "HTs and CIs for differences"
 subtitle: "Difference in means and proportions"
-date: "April 16, 2025"
+date: "April 17, 2025"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
