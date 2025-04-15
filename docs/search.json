@@ -9133,5 +9133,187 @@
     "title": "HTs and CIs for differences",
     "section": "Diff. means HT example (cont.)",
     "text": "Diff. means HT example (cont.)\n\n\n\nObtain test-statistic and p-value.\n\n\nFind the value of the test-statistic and its distribution\n\n\n\n\\[\nt = \\frac{(385.02 - 353.12)- 0}{3.19} = 10 \\sim t_{15}\n\\]\n\n\n\nWrite code for p-value (optionally draw picture)\n\np-value = 1- pt(10, df = 15) = 2.4984491^{-8} (tiny!)"
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html#housekeeping",
+    "href": "slides/slides-23-chi-square.html#housekeeping",
+    "title": "Chi-squared test",
+    "section": "Housekeeping",
+    "text": "Housekeeping\n\n\n\n\nThank you for submitting project proposals! Will give feedback ASAP. Stay tuned if you need revisions."
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html#recall-probability",
+    "href": "slides/slides-23-chi-square.html#recall-probability",
+    "title": "Chi-squared test",
+    "section": "Recall probability",
+    "text": "Recall probability\n\nHow might we test these hypotheses?\nRecall from Probability lecture: if events \\(A\\) and \\(B\\) are independent, then \\(P(A \\cap B) = P(A) P(B)\\).\n\nWe will use this idea to obtain “expected counts” in each cell under a world where we assume the two variables are independent."
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html#coffee-death-example",
+    "href": "slides/slides-23-chi-square.html#coffee-death-example",
+    "title": "Chi-squared test",
+    "section": "Coffee-death example",
+    "text": "Coffee-death example\n\n\n\nUnder independence\n\n\n\n\n\n\n\n\n\n\nDid not die\nDied\nTotal\n\n\n\n\nDoes not drink coffee\n\\(\\text{expected}= \\frac{6477 \\times 60084}{69164} = 5626.69\\)\n\n6477\n\n\nDrinks coffee occasionally\n\n\n34152\n\n\nDrinks coffee regularly\n\n\n28535\n\n\nTotal\n60084\n9080\n69164\n\n\n\n\nGive example from table (assuming independence)\n\\[\n\\text{P}(\\text{does not drink coffee} \\cap \\text{die not die}) = \\text{P}(\\text{does not drink coffee}) \\times \\text{Pr}(\\text{die not die})\n\\]\nSo the expected count is this probability times sample size \\(n\\):\nIn general, assuming independence, the number of counts in cell \\((i,j)\\) should be\n\\[\n\\text{Expected Count in row i, column j} = E_{ij} = \\frac{(\\text{Row } i \\text{ total}) \\times (\\text{Column } j \\text{ total})}{\\text{Overall total}}\n\\]\n\nFill out rest of table!"
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html#table-of-expected-counts",
+    "href": "slides/slides-23-chi-square.html#table-of-expected-counts",
+    "title": "Chi-squared test",
+    "section": "Table of expected counts",
+    "text": "Table of expected counts\n\n\n\n\n\n\n\n\n\n\nDid not die\nDied\nTotal\n\n\n\n\nNo coffee\n\\(E_{11}= \\frac{6477 \\times 60084}{69164} = 5626.69\\)\n\n6477\n\n\nOccasional coffee\n\n\n34152\n\n\nRegular coffee\n\n\n28535\n\n\nTotal\n60084\n9080\n69164\n\n\n\n\nIn general, the expected counts in cell of row \\(i\\) and column \\(j\\) (denoted \\(E_{ij}\\)) is:\n\\[\nE_{ij} = \\frac{(\\text{row } i \\text{ total}) \\times (\\text{column } j \\text{ total})}{\\text{Overall total}}\n\\]\n\nFill out rest of table!"
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html#towards-a-test-statistic",
+    "href": "slides/slides-23-chi-square.html#towards-a-test-statistic",
+    "title": "Chi-squared test",
+    "section": "Towards a test statistic",
+    "text": "Towards a test statistic\nRemember, a test statistic is a quantity that compares our data to null world.\n\nSo let’s compare our observed counts to what we would expect under \\(H_{0}\\).\nLet \\(O_{ij}\\) represent the observed count in row \\(i\\) and column \\(j\\)\nWe might consider the following as a test statistic: \\[\\sum_{i,j} (O_{ij} - E_{ij}) \\qquad \\text{ (summing over all } i,j)\\]\n\nWhy might we not like this?"
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html#our-test-statistic",
+    "href": "slides/slides-23-chi-square.html#our-test-statistic",
+    "title": "Chi-squared test",
+    "section": "Our test statistic",
+    "text": "Our test statistic\nWe will consider the ratio of how far the observed counts are from the expected counts, as compared to the expected count\n\\[\n\\chi^2 = \\sum_{i,j} \\frac{(O_{ij} - E_{ij})^2}{E_{ij}}\n\\]\n\nThis is called the Chi-squared test statistic\n\nLet’s calculate the value of \\(\\chi^2\\) for our data!\n\n\n\n\n\n\n\\[\n\\begin{align*}\n\\chi^2 &= \\frac{(5438 - 5626.7 )^2}{5626.7} + \\frac{(1039 - 850.3 )^2}{850.3} + \\ldots + \\frac{(3601 - 3746.1)^2}{3746.1} \\\\\n&= 6.33 + 41.88 + 0.06 + 0.42 + 0.85 + 5.62 \\\\\n&= 55.16\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html#understanding-the-test-statistic",
+    "href": "slides/slides-23-chi-square.html#understanding-the-test-statistic",
+    "title": "Chi-squared test",
+    "section": "Understanding the test statistic",
+    "text": "Understanding the test statistic\n\n\nDiscuss with someone next to you:\n\nWhat are the bounds of \\(\\chi^2\\)?\nWould higher or lower values of \\(\\chi^2\\) provide convincing evidence against \\(H_{0}\\)? Why?\n\n\nThe sampling distribution of this statistic is clearly not Normal. Why?\nIf you take STAT 311, you will learn that the null distribution of the \\(\\chi^2\\) test statistic is the \\(\\chi_{df}^2\\) distribution (sorry for terminology)"
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html#chi-squared-distribution",
+    "href": "slides/slides-23-chi-square.html#chi-squared-distribution",
+    "title": "Chi-squared test",
+    "section": "Chi-squared distribution",
+    "text": "Chi-squared distribution"
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html#towards-a-test-statistic-cont.",
+    "href": "slides/slides-23-chi-square.html#towards-a-test-statistic-cont.",
+    "title": "Chi-squared test",
+    "section": "Towards a test statistic (cont.)",
+    "text": "Towards a test statistic (cont.)\n\nLet’s try to fix this issue using the following: \\[\\sum_{i,j} (O_{ij} - E_{ij})^2\\]\n\nThis is better, but not perfect because the magnitude of the quantity may be overly influenced by:\n\nHighly-represented cells\nThe number of levels \\(I\\) and \\(J\\)"
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html#null-distribution-for-this-test",
+    "href": "slides/slides-23-chi-square.html#null-distribution-for-this-test",
+    "title": "Chi-squared test",
+    "section": "Null distribution for this test",
+    "text": "Null distribution for this test\nWhen \\(H_{0}\\) true, the test statistic \\(\\chi^2 \\sim \\chi_{df}^2\\) where the degrees of freedom is calculated as \\(df = (I- 1)\\times(J-1)\\)\n\ni.e. \\(df = (\\text{number of rows} - 1)\\times(\\text{number of columns} - 1)\\)\n\nWhat are the degrees of freedom in our data?\n\n\n\\(df = (3-1) \\times (2-1) = 2\\)"
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html#p-value",
+    "href": "slides/slides-23-chi-square.html#p-value",
+    "title": "Chi-squared test",
+    "section": "p-value",
+    "text": "p-value"
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html#null-distribution-and-p-value",
+    "href": "slides/slides-23-chi-square.html#null-distribution-and-p-value",
+    "title": "Chi-squared test",
+    "section": "Null distribution and p-value",
+    "text": "Null distribution and p-value\nWhen \\(H_{0}\\) true, the test statistic \\(\\chi^2 \\sim \\chi_{df}^2\\) where \\(df = (I- 1)\\times(J-1)\\)\n\nThat is, \\(df = (\\text{number of rows} - 1)\\times(\\text{number of columns} - 1)\\)\n\nWhat are the degrees of freedom in our data?\n\n\n\\(df = (3-1) \\times (2-1) = 2\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\nBecause the distribution is positive, p-value for this test is always calculated as the probability we are \\(\\geq\\) the observed test statistic\nUse pchisq(x, df) function:\n\n\n\n1 - pchisq(55.15, df = 2)\n\n[1] 1.057598e-12"
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html#conditions-for-the-test",
+    "href": "slides/slides-23-chi-square.html#conditions-for-the-test",
+    "title": "Chi-squared test",
+    "section": "Conditions for the test",
+    "text": "Conditions for the test\n\nEven though this isn’t a CLT-based result, we are still using a mathematical model (i.e. the \\(\\chi^2\\) distribution)\nAs a result, we have some conditions that must be met in order to use this test:\n\nIndependent observations (i.e. random sample)\nLarge samples: \\(E_{ij} \\geq 5\\) for each \\((i,j)\\) cell\n\nIn our data, the study was a random sample and we definitely had \\(E_{ij} \\geq 5\\), so we could indeed perform the Chi-squared test!"
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html#conditions-for-the-chi-squared-test",
+    "href": "slides/slides-23-chi-square.html#conditions-for-the-chi-squared-test",
+    "title": "Chi-squared test",
+    "section": "Conditions for the chi-squared test",
+    "text": "Conditions for the chi-squared test\n\nEven though this isn’t a CLT-based result, we are still using a mathematical model (i.e. the \\(\\chi^2\\) distribution)\nAs a result, we have some conditions that must be met in order to use this test:\n\nIndependent observations (i.e. random sample)\nLarge samples: \\(E_{ij} \\geq 5\\) for each \\((i,j)\\) cell\n\nIn our data, the study was a random sample and we definitely had \\(E_{ij} \\geq 5\\), so we could indeed perform the Chi-squared test!"
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html#coffee-death-data",
+    "href": "slides/slides-23-chi-square.html#coffee-death-data",
+    "title": "Chi-squared test",
+    "section": "Coffee-death data",
+    "text": "Coffee-death data\nRecall our data from earlier in the semester:\n\nSource: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5788283/\n\n\n\n\n\nDid not die\nDied\nTotal\n\n\n\n\nNo coffee\n5438\n1039\n6477\n\n\nOccasional coffee\n29712\n4440\n34152\n\n\nRegular coffee\n24934\n3601\n28535\n\n\nTotal\n60084\n9080\n69164\n\n\n\n\n\n\\(H_{0}:\\) coffee consumption and mortality are independent\n\\(H_{A}\\): coffee consumption and mortality are associated\nNote, \\(I = 3\\) rows and \\(J = 2\\) columns"
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html#what-is-null-world",
+    "href": "slides/slides-23-chi-square.html#what-is-null-world",
+    "title": "Chi-squared test",
+    "section": "What is null world?",
+    "text": "What is null world?\n\n\n\n\nDid not die\nDied\nTotal\n\n\n\n\nNo coffee\n\n\n6477\n\n\nOccasional coffee\n\n\n34152\n\n\nRegular coffee\n\n\n28535\n\n\nTotal\n60084\n9080\n69164\n\n\n\n\nAssuming independence:\n\\[\n\\begin{align*}\n\\text{P}(\\text{no coffee} \\cap \\text{die not die}) &= \\text{P}(\\text{no coffee}) \\times \\text{P}(\\text{die not die}) \\\\\n&= \\left( \\frac{6477}{69164} \\right)\\times \\left( \\frac{60084}{69164} \\right)\n\\end{align*}\n\\]\n\n\nSo the expected count of this cell is the the sample size times this probability:\n\\[\n\\text{expected count} = 69164 \\times \\left( \\frac{6477}{69164} \\right)\\times \\left( \\frac{60084}{69164} \\right) = \\frac{6477 \\times 60084}{69164}\n\\]"
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html#table-of-expected-counts-1",
+    "href": "slides/slides-23-chi-square.html#table-of-expected-counts-1",
+    "title": "Chi-squared test",
+    "section": "Table of expected counts",
+    "text": "Table of expected counts\n\n\n\n\n\n\n\n\n\n\nDid not die\nDied\nTotal\n\n\n\n\nNo coffee\n\\(E_{11} = \\frac{6477 \\times 60084}{69164} = 5626.7\\)\n\\(E_{12} = 850.3\\)\n6477\n\n\nOccasional coffee\n\\(E_{21} =2.96685\\times 10^{4}\\)\n\\(E_{22} = 4483.5\\)\n34152\n\n\nRegular coffee\n\\(E_{31} = 2.47889\\times 10^{4}\\)\n\\(E_{32} = 3746.1\\)\n28535\n\n\nTotal\n60084\n9080\n69164"
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html#example-2",
+    "href": "slides/slides-23-chi-square.html#example-2",
+    "title": "Chi-squared test",
+    "section": "Example 2",
+    "text": "Example 2"
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html#a-new-test",
+    "href": "slides/slides-23-chi-square.html#a-new-test",
+    "title": "Chi-squared test",
+    "section": "A new test",
+    "text": "A new test\n\nSuppose we have two categorical variables:\n\nVariable 1 has \\(I\\) levels\nVariable 2 has \\(J\\) levels\n\nWe are interested in learning if the two variables are associated or not!\n\n\\(H_{0}\\): the two variables are independent (put into context)\n\\(H_{A}\\): the two variables are associated (put into context)\n\nNote! We are not interested in a mean/proportion, so CLT will not be helpful here!\nWe will build this hypothesis test backwards."
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html#example-2-exploding-termites",
+    "href": "slides/slides-23-chi-square.html#example-2-exploding-termites",
+    "title": "Chi-squared test",
+    "section": "Example 2: exploding termites!",
+    "text": "Example 2: exploding termites!\n\nData come from this study!\nIn some termite species, worker termites assume a large share of defense\nThis often involves self-sacrifice (i.e. bursting)\nIn the species Neocapritermes taracua, workers fall into one of two categories based on coloring: “blue workers” and “white workers”\n\nThe blue coloring comes from a pair of crystal-like structures in the body\nIn defensive mode, both types of workers will burst and emit a toxic fluid\nBlue termites are thought to be more toxic than white termites"
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html#experiment",
+    "href": "slides/slides-23-chi-square.html#experiment",
+    "title": "Chi-squared test",
+    "section": "Experiment",
+    "text": "Experiment\n\nSome scientists wanted to learn about the toxicity of the termites and how they relate to the crystals.\nDesigned an experiment where another species of termite (Labiotermes labralis) was exposed to a drop of the bursting liquid obtained from one of four sources\n\nObserved survival status after 60 minutes\n\n\n\n\n\nFour types of burst liquid (treatment):\n\nBlue workers\nWhite workers\nBlue workers with crystals removed\nWhite workers with crystals added\n\n\n\n\nSurvival of (Labiotermes labralis) (response):\n\nUnharmed\nParalyzed\nDead"
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html#data-cont.",
+    "href": "slides/slides-23-chi-square.html#data-cont.",
+    "title": "Chi-squared test",
+    "section": "Data (cont.)",
+    "text": "Data (cont.)\nWe have the following data:\n\n\n\n\n\n\n\n\n\n\n\nUnharmed\nParalyzed\nDead\nTotal\n\n\n\n\nBlue workers\n3\n11\n26\n40\n\n\nWhite workers\n31\n4\n5\n40\n\n\nBlue workers (crystals removed)\n26\n8\n7\n41\n\n\nWhite workers (crystals added)\n17\n5\n18\n40\n\n\nTotal\n77\n28\n56\n161\n\n\n\n\nLet’s perform a \\(\\chi^2\\) test at the 0.05-level to see if bursting liquid source is associated with toxicity!"
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html#conduct-test",
+    "href": "slides/slides-23-chi-square.html#conduct-test",
+    "title": "Chi-squared test",
+    "section": "Conduct test",
+    "text": "Conduct test\n\nDefine hypotheses\nCheck conditions for inference.\n\n\n\\(H_{0}\\): the bursting liquid source and toxicity of the liquid are independent\n\\(H_{A}\\): the bursting liquid source and toxicity of the liquid are associated"
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html#conditions",
+    "href": "slides/slides-23-chi-square.html#conditions",
+    "title": "Chi-squared test",
+    "section": "Conditions",
+    "text": "Conditions\nTable of expected counts:\n\n\n\n\nUnharmed\nParalyzed\nDead\nTotal\n\n\n\n\nBlue\n19.13\n6.96\n13.91\n40\n\n\nWhite\n19.13\n6.96\n13.91\n40\n\n\nBlue (w/o crystals)\n19.61\n7.13\n14.26\n41\n\n\nWhite (w/ crystals)\n19.13\n6.96\n13.91\n40\n\n\nTotal\n77\n28\n56\n161\n\n\n\nSince all expected counts \\(\\geq 5\\) and it’s reasonable to believe independence across termite survival, conditions are met!"
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html#finish-test",
+    "href": "slides/slides-23-chi-square.html#finish-test",
+    "title": "Chi-squared test",
+    "section": "Finish test",
+    "text": "Finish test\n\nObtain (or set-up the calculation) test-statistic, the distribution of the test statistic, and write-code to obtain p-value.\n\n\nValue of test statistic:\n\\[\n  \\begin{align*}\n  \\chi^2 &= \\frac{(3-19.13)^2}{19.13} + \\frac{(11-6.96)^2}{6.96} + \\frac{(26-13.91)^2}{13.91} + \\ldots + \\frac{(18-13.91)^2}{13.91} \\\\\n  &= 48.66\n  \\end{align*}\n  \\]\nDistribution of test statistic: \\(\\chi^2_{6}\\)\np-value: \\(P(\\chi^2 \\geq 48.66)\\)\n\n1 - pchisq(48.66, df = 6)\n\n[1] 8.720311e-09\n\n\n\n\n\nDecision and conclusion!"
+  },
+  {
+    "objectID": "slides/slides-23-chi-square.html",
+    "href": "slides/slides-23-chi-square.html",
+    "title": "Chi-squared test",
+    "section": "",
+    "text": "Thank you for submitting project proposals! Will give feedback ASAP. Stay tuned if you need revisions."
   }
 ]
