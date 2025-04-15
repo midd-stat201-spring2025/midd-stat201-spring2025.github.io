@@ -462,7 +462,7 @@ $$
 \text{point estimate} \pm \text{critical value} \times \text{SE}
 $$
 
-1.  Point estimate: $\bar{x}_{1,obs} - \bar{x}_{2,obs}$
+Point estimate: $\bar{x}_{1,obs} - \bar{x}_{2,obs}$
 
 ::::::: columns
 :::: {.column width="50%"}
@@ -470,9 +470,9 @@ $$
 If $\sigma_{1}$ and $\sigma_{2}$ known:
 :::
 
-2.  $\text{SE} = \sqrt{\frac{\sigma_{1}^2}{n_{1}} + \frac{\sigma_{2}^2}{n_{2}}}$
+-   $\text{SE} = \sqrt{\frac{\sigma_{1}^2}{n_{1}} + \frac{\sigma_{2}^2}{n_{2}}}$
 
-3.  critical value: $z_{(1+\gamma)/2}^*$
+-   Critical value: $z_{(1+\gamma)/2}^*$
 
     -   $(1+\gamma)/2$ percentile of $N(0,1)$
 ::::
@@ -482,9 +482,9 @@ If $\sigma_{1}$ and $\sigma_{2}$ known:
 If $\sigma_{1}$ and $\sigma_{2}$ unknown:
 :::
 
-2.  $\widehat{\text{SE}} \approx \sqrt{\frac{s_{1}^2}{n_{1}} + \frac{s_{2}^2}{n_{2}}}$
+-   $\widehat{\text{SE}} \approx \sqrt{\frac{s_{1}^2}{n_{1}} + \frac{s_{2}^2}{n_{2}}}$
 
-3.  critical value: $t_{df, (1+\gamma)/2}^*$
+-   critical value: $t_{df, (1+\gamma)/2}^*$
 
     -   $(1+\gamma)/2$ percentile of $t_{df}$
 
