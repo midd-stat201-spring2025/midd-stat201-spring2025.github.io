@@ -8999,7 +8999,7 @@
     "href": "slides/slides-22-ht-ci-diffs.html#diff.-props-ci-example-offshore-drilling",
     "title": "HTs and CIs for differences",
     "section": "Diff. props CI example: offshore drilling",
-    "text": "Diff. props CI example: offshore drilling\nA survey asked 827 randomly sampled registered voters in California: Do you support or oppose drilling for oil and natural gas off the Coast of California? We have the following distribution of responses separated by whether the respondent graduated from college:\n\n\n\n\n \n  \n    position \n    no \n    yes \n    total \n  \n \n\n  \n    oppose \n    126 \n    180 \n    306 \n  \n  \n    support \n    132 \n    154 \n    286 \n  \n  \n    total \n    258 \n    334 \n    592 \n  \n\n\n\n\n\n\nLet’s obtain a 95% CI via the CLT for the difference in the proportion of college and non-college Californians who support offshore drilling."
+    "text": "Diff. props CI example: offshore drilling\nA survey asked 592 randomly sampled registered voters in California: Do you support or oppose drilling for oil and natural gas off the Coast of California? We have the following distribution of responses separated by whether the respondent graduated from college:\n\n\n\n\n \n  \n    position \n    no \n    yes \n    total \n  \n \n\n  \n    oppose \n    126 \n    180 \n    306 \n  \n  \n    support \n    132 \n    154 \n    286 \n  \n  \n    total \n    258 \n    334 \n    592 \n  \n\n\n\n\n\n\nLet’s obtain a 95% CI via the CLT for the difference in the proportion of college and non-college Californians who support offshore drilling."
   },
   {
     "objectID": "slides/slides-22-ht-ci-diffs.html#diff.-props-ci-example-cont.",

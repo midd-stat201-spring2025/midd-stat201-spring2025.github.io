@@ -114,7 +114,7 @@ $$
 
 ## Diff. props CI example: offshore drilling
 
-A survey asked 827 randomly sampled registered voters in California: Do you support or oppose drilling for oil and natural gas off the Coast of California? We have the following distribution of responses separated by whether the respondent graduated from college:
+A survey asked 592 randomly sampled registered voters in California: Do you support or oppose drilling for oil and natural gas off the Coast of California? We have the following distribution of responses separated by whether the respondent graduated from college:
 
 ```{r}
 drilling <- openintro::offshore_drilling |>
