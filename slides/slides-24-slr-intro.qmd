@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Simple Linear Regression"
-date: "November 6, 2024"
+date: "April 21, 2025"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
@@ -32,9 +32,9 @@ plot_theme <-  theme_minimal() +
 source("../stat201_fns.R")
 ```
 
--   Homework 7 due tonight!
+-   Homework 8 due tonight!
 
--   Last problem set is assigned today! Atypical due date: Wednesday 11/13
+-   Project proposal feedback
 
 # Linear regression
 
@@ -48,15 +48,15 @@ Crash course; take STAT 211 for more depth!
 
     -   This function is *deterministic*: as long as we know $x$, we know value of $y$ exactly
 
--   **Linear regression**: statistical method where the relationship between variable $x$ and variable $y$ is modeled as a **line + error:**
+-   **Simple linear regression**: statistical method where the relationship between variables $x$ and $y$ is modeled as a **line + error:**
 
 ::: fragment
 $$
-y = \underbrace{\beta_{0} + \beta_{1} x}_{\text{line}} + \underbrace{\epsilon}_{\text{error}}
+y = \underbrace{\beta_{0} \ +\ \beta_{1} x}_{\text{line}} \ + \underbrace{\epsilon}_{\text{error}}
 $$
 :::
 
-## Linear regression model
+## Simple linear regression model
 
 $$
 y = \beta_{0} + \beta_{1} x + \epsilon
@@ -94,7 +94,7 @@ fit <- coef(lm(y~x))
 
 df <- data.frame(x, y)
 p <- ggplot(df, aes(x=x, y = y)) +
-  geom_point(size = 2) +
+  geom_point(size = 3) +
   theme_minimal() +
   theme(text = element_text(size = 24))
 p
@@ -104,15 +104,15 @@ p
 
 ## Fitted values
 
-Suppose we have some specific estimates $b_0$ and $b_{1}$. We could fit the linear relationship using these values as:
+Suppose we have some specific estimates $b_0$ and $b_{1}$. We could **approximate** the linear relationship using these values as:
 
 $$
 \hat{y} = b_{0} + b_{1} x
 $$
 
--   The hat on $y$ signifies that this is an estimate: the estimated/**fitted** value of $y$ given these specific values of $x$, $b_{0}$ and $b_{1}$
+-   The hat on $y$ signifies an estimate: $\hat{y}$ is the **estimated/fitted** value of $y$ given these specific values of $x$, $b_{0}$ and $b_{1}$
 
-    -   We observe $y$, but can obtain a corresponding estimate $\hat{y}$
+    -   Can obtain a estimate $\hat{y}$ for every observed response $y$
 
 -   Note that the fitted value is obtained *without* the error
 
@@ -135,31 +135,29 @@ p_resid <- p1 +
 p_resid
 ```
 
--   Suppose our estimated line is the yellow one
--   Every observed value $y_{i}$ has a corresponding fitted value $\hat{y}_{i}$; the above plot just shows three specific examples
+-   Suppose our estimated line is the yellow one: $\hat{y} = `r round(fit[1],2)` + `r round(fit[2], 2)` x$
+-   The fitted value $\hat{y}_{i}$ for $y_{i}$ **lies on the line**; the above plot shows three specific examples
 
 ## Residual
 
-**Residuals** are the remaining variation in the data after fitting a model.
+**Residuals** (denoted as $e$) are the remaining variation in the data after fitting a model.
 
 $$
-\text{data} = \text{fit} + \text{residual}
+\text{observed response} = \text{fit} + \text{residual}
 $$
 
--   For each observation $i$, we obtain residual $e_{i}$ via:
+-   For **each** observation $i$, we obtain the residual $e_{i}$ via:
 
 ::: fragment
-$$y_{i} = \hat{y}_{i} + e_{i} \quad \Rightarrow \quad e_{i} = \hat{y}_{i} - y_{i}$$
+$$y_{i} = \hat{y}_{i} + e_{i} \Rightarrow e_{i} =  y_{i} - \hat{y}_{i}$$
 :::
 
 -   Residual = difference between observed and expected
 
--   Since each observation has a fitted value, each observation has a residual
-
-    -   In the linear regression case, the residual is indicated by the vertical dashed line
+-   In the plot, the residual is indicated by the vertical dashed line
 
     -   ::: discuss
-        What is the ideal value for a residual?
+        What is the ideal value for a residual? What does a positive/negative residual indicate?
         :::
 
 ## Residual (cont.)
@@ -174,7 +172,7 @@ Residual values for the three highlighted observations:
 ```{r}
 df |>
   add_column(y_hat) |>
-  mutate(residual = y_hat-y) |>
+  mutate(residual = y - y_hat) |>
   slice(ids) |>
   kable(digits = 3) |>
   kable_styling(font_size = 25)
@@ -185,19 +183,19 @@ df |>
 
 -   Residuals are very helpful in evaluating how well a model fits a set of data
 
--   **Residual plot**: original $x$ values plotted against their corresponding residuals on $y$-axis
+-   **Residual plot**: original $x$ values plotted against corresponding residuals on $y$-axis
 
 ::: fragment
-```{r fig.width=15}
+```{r fig.height=5}
 df |>
   add_column(y_hat) |>
-  mutate(residual = y_hat-y) |>
+  mutate(residual = y - y_hat) |>
   ggplot(aes(x = x, y = residual)) +
   geom_point(size = 4) +
   theme_minimal() +
   theme(text = element_text(size = 28)) +
   geom_hline(yintercept = 0, linetype = "dashed") +
-  geom_point(data = df_fit, aes(x = x, y = y_end - y), size = 2, col = "#F8766D" ) +
+  geom_point(data = df_fit, aes(x = x, y = y - y_end), size = 2, col = "#F8766D" ) +
   labs(title = "Residual plot", caption = "Red dots = specific points from previous plot")
 ```
 :::
@@ -211,12 +209,10 @@ Residual plots can be useful for identifying characteristics/patterns that remai
     :::
 
 :::: fragment
-![](figs/23-residual-plot.png){fig-align="center" width="532"}
+![](figs/23-residual-plot.png){fig-align="center" width="506"}
 
 ::: discuss
 Can you identify any patterns remaining in the residuals?
-
--   Sorry! The residuals shown here are taken as $y_{i} - \hat{y}_{i}$!
 :::
 ::::
 
@@ -361,6 +357,8 @@ $$
     -   response variable value $y_{i}$
     -   error/randomness $\epsilon_{i}$
 
+-   In SLR, we further assume that the errors $\epsilon_{i}$ are independent and Normally distributed
+
 ## Conditions for the least squares line (LINE)
 
 Like when using CLT, we should check some conditions before saying a linear regression model is appropriate!
@@ -403,6 +401,14 @@ cherry |>
 -   Response variable $y$: `volume`
 :::
 :::::
+
+::: fragment
+Our candidate linear regression model is as follows
+
+$$
+\text{volume} = \beta_{0} + \beta_{1} \text{diameter} +\epsilon
+$$
+:::
 
 ## 1. Linearity
 
@@ -466,11 +472,7 @@ cherry_lm <- lm(volume ~ diam, cherry)
 cherry_coefs <- round(coef(cherry_lm), 2)
 ```
 
-At this point, it is time to actually fit our model
-
-$$
-\text{volume} = \beta_{0} + \beta_{1} \text{diameter} +\epsilon
-$$
+Because the first two conditions are met, we can go ahead and fit the linear regression model (i.e. estimate the values of the coefficients)
 
 -   After fitting the model, we get the following estimates: $b_{0}= `r cherry_coefs[1]`$ and $b_{1} = `r cherry_coefs[2]`$. So our **fitted model** is:
 
@@ -490,9 +492,9 @@ Remember: the "hat" denotes an estimated/fitted value!
 
 ## 3. Nearly normal residuals
 
-Assess *after* fitting the model by obtaining residuals and making a histogram.
+Assess *after* fitting the model by making histogram of residuals and checking for approximate Normality.
 
--   Remember, residuals are $\hat{y}_{i} - y_{i}$
+-   Remember, residuals are $e_{i} = y_{i} - \hat{y}_{i}$
 
 :::::: fragment
 ::::: columns
@@ -500,13 +502,13 @@ Assess *after* fitting the model by obtaining residuals and making a histogram.
 ```{r echo = T, eval = F}
 cherry |>
   mutate(volume_hat = -36.94 + 5.07*diam) |>
-  mutate(residual = volume_hat - volume) 
+  mutate(residual = volume - volume_hat) 
 ```
 
 ```{r echo = F}
 cherry |>
   select(-height) |>
-  mutate(volume_hat = -36.94 + 5.066*diam) |>
+  mutate(volume_hat = cherry_coefs[1] + cherry_coefs[2]*diam) |>
   mutate(residual = volume_hat - volume) |>
   slice(1:5)|>
   kable(digits = 3) |>
@@ -522,7 +524,7 @@ augment(cherry_lm) |>
   geom_histogram(bins = 20) +
   plot_theme +
   theme(text = element_text(size = 28)) +
-  labs(x = "residuals", titles="Cherry data")
+  labs(x = "residuals", title="Histogram of residuals for cherry model")
 ```
 :::
 :::::
@@ -543,7 +545,7 @@ Assess *after* fitting the model by examining a residual plot and looking for pa
 A good residual plot:
 
 ```{r}
-set.seed(12)
+set.seed(15)
 x <- seq(1,100, 2)
 resid_good <- rnorm(length(x), mean = 0, sd = 4)
 data.frame(x, residual = resid_good) |>
@@ -571,7 +573,7 @@ data.frame(x, residual = resid_bad) |>
 :::
 :::::
 
-We usually have a horizontal line at 0 to compare residuals to
+We usually add a horizontal line at 0.
 
 ## 4. Equal variance (cont.)
 
@@ -583,9 +585,13 @@ augment(cherry_lm) |>
   geom_point(size = 3) +
   plot_theme +
   geom_hline(yintercept = 0, linetype = "dashed", linewidth =1.25, col ="darkgrey") +
-  labs(y = "Residual", title = "Cherry model", x = "diameter (inches)")
+  labs(y = "Residual", title = "Residual plot for cherry model", x = "diameter (inches)")
 ```
 
--   Based on this plot, I would say there is a definite pattern in the residuals and equal variance condition is not perfectly met.
+-   ::: discuss
+    Do we think equal variance is met?
+    :::
+
+    -   I would say there is a definite pattern in the residuals, so equal variance condition is not met.
 
     -   Some of the variability in the errors appear related to `diameter`
