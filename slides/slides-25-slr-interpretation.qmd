@@ -1,6 +1,6 @@
 ---
 title: "SLR coefficient estimates"
-date: "November 7, 2024"
+date: "April 23, 2025"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
@@ -33,13 +33,11 @@ plot_theme <-  theme_minimal() +
 source("../stat201_fns.R")
 ```
 
--   No TA hours tonight
-
 -   Will discuss details of Midterm 2 next week!
 
--   Revisions for proposals due Saturday 11:59pm
+-   This Problem Set 9 is our last problem set!
 
-# Recap
+## Recap
 
 -   **Linear regression**: statistical method where the relationship between variable $x$ and variable $y$ is modeled as a **line + error:**
 
@@ -56,6 +54,44 @@ $$
 -   Residual: $e_{i} = \hat{y}_{i}  - y_{i}$
 
 -   LINE conditions: **L**inearity, **I**ndependence, **N**ormal residuals, **E**qual variance
+
+## Example: `elmhurst`
+
+The `elmhurst` dataset from `openintro` provides a random sample of 50 students' gift aid for students at Elmhurst College.
+
+-   We will examine the relationship between the family `income` of the student and the `gift aid` that student received (in \$1000s)
+
+::::::::::: columns
+:::: {.column width="55%"}
+::: fragment
+```{r}
+ggplot(elmhurst, aes(x = family_income, y = gift_aid)) +
+  geom_point(size = 3) +
+  labs(x = "Family income ($1000s)", y = "Gift aid ($1000s)") +
+  theme_minimal() +
+  theme(text=element_text(size = 25))
+```
+:::
+::::
+
+:::::::: {.column width="45%"}
+::::: discuss
+::: fragment
+Write down the linear regression model.
+:::
+
+::: fragment
+$$\text{gift aid} = \beta_{0} + \beta_{1} \text{income} + \epsilon$$
+:::
+:::::
+
+:::: fragment
+::: discuss
+Are the first two conditions of LINE satisfied?
+:::
+::::
+::::::::
+:::::::::::
 
 # Fitting the least-squares line
 
@@ -82,7 +118,7 @@ where:
 
 -   $s_{x}$ and $s_{y}$ are the sample standard deviations of the explanatory and response variables
 
--   $R$ is the correlation between $x$ and $y$
+-   $R$ is the sample correlation between $x$ and $y$
 ::::
 
 ::::: {.column width="50%"}
@@ -95,7 +131,7 @@ $$b_{0} = \bar{y} - b_{1} \bar{x}$$ where
 
 -   $\bar{y}$ is the sample mean of the response variable
 
--   $x$ is the sample mean of the explanatory variable
+-   $\bar{x}$ is the sample mean of the explanatory variable
 ::::
 :::::
 ::::::::
@@ -104,55 +140,38 @@ $$b_{0} = \bar{y} - b_{1} \bar{x}$$ where
     Take STAT 0211 or 0311 to see where these formulas come from!
     :::
 
-## Fitting `cherry` model (by hand)
+## Fitting `elmhurst` model (by hand)
 
-```{r}
-cherry_lm <- lm(volume ~ diam, cherry)
-cherry_coefs <- round(coef(cherry_lm), 2)
-```
-
-Verify estimates $b_{0} = `r round(cherry_coefs[1],2)`$ and $b_{1} = `r round(cherry_coefs[2],2)`$ from our model for the cherry data:
-
-:::::: columns
-::: {.column width="55%"}
-```{r echo = T, eval = F}
-cherry |>
-  pivot_longer(cols = c(diam, volume), 
-               names_to = "variable", 
-               values_to = "val") |>
-  select(-height) |>
-  group_by(variable) |>
-  summarise(mean = mean(val), s = sd(val)) 
-```
+Let's obtain this coefficients by hand!
 
 ```{r echo = F, eval = T}
-cherry |>
-  pivot_longer(cols = c(diam, volume), names_to = "variable", values_to = "val") |>
-  select(-height) |>
+elmhurst_lm <- lm(gift_aid ~ family_income, elmhurst)
+elmhurst_coefs <- round(coef(elmhurst_lm), 3)
+elmhurst |>
+  pivot_longer(cols = c(family_income, gift_aid), 
+               names_to = "variable", 
+               values_to = "val") |>
+  select(-price_paid) |>
   group_by(variable) |>
-  summarise(mean = mean(val), s = sd(val)) |>
-  kable(digits = 3) |>
+  summarise(mean = mean(val), s = sd(val))|>
+  kable(digits = 2) |>
   kable_styling(font_size = 30)
 ```
-:::
 
-:::: {.column width="45%"}
 ```{r echo = T}
-R <- cor(cherry$diam, cherry$volume)
+R <- cor(elmhurst$family_income, elmhurst$gift_aid)
 R
 ```
 
 ::: discuss
 What does this value of $R$ tell us?
 :::
-::::
-::::::
 
 ```{r}
-mean_diam <- round(mean(cherry$diam),3)
-mean_vol <-round(mean(cherry$volume),3)
-s_diam <- round(sd(cherry$diam) ,3)
-s_vol <-round(sd(cherry$volume),3)
+ybar <- round(mean(elmhurst$gift_aid),3)
+xbar <-round(mean(elmhurst$family_income),3)
+s_x <- round(sd(elmhurst$family_income) ,3)
+s_y <-round(sd(elmhurst$gift_aid),3)
 R <- round(R , 3)
 ```
 
@@ -168,148 +187,23 @@ R <- round(R , 3)
 ::::
 
 ::: {.column width="60%"}
--   $b_{1} = \frac{`r s_vol`}{`r s_diam`} \times `r R` = `r round(cherry_coefs[2], 2)`$
+-   $b_{1} = \frac{`r s_y`}{`r s_x`} \times `r R` = `r elmhurst_coefs[2]`$
 
--   $b_{0} = `r mean_vol` -  `r round(cherry_coefs[2], 2)` \times `r mean_diam` = `r round(cherry_coefs[1], 2)`$
+-   $b_{0} = `r ybar` -  `r elmhurst_coefs[2]` \times `r xbar` = `r elmhurst_coefs[1]`$
 
--   What do these numbers really mean?
+-   Write out the fitted model!
 :::
 ::::::
-
-# Interpreting parameters
-
-Interpreting the parameters (i.e. **coefficients**) in a regression model is one of *the most* important steps in an analysis!
-
-## Intercept interpretation
-
-Our fitted model is $\hat{y} = b_{0} + b_{1}x$.
-
--   To interpret the estimate of the intercept coefficient $b_{0}$, simply plug in $x= 0$:
-
-$$
-\hat{y} = b_{0} + b_{1} x = b_{0} + b_{1}(0) = b_{0}
-$$
-
--   So, the intercept describes the **average/expected** value of the response variable $y$ if $x=0$
-
-## Intercept in `cherry` model
-
-$$
-\widehat{\text{volume}} = `r cherry_coefs[1]` + `r cherry_coefs[2]` \times \text{diameter}
-$$
-
--   Interpretation of intercept in context: for a tree with a diameter of 0 inches, the expected volume would be `r cherry_coefs[1]` cubic feet
-    -   This interpretation is mathematically correct, but practically speaking is useless
--   The intercept's interpretation only makes sense when a value of $x=0$ for the explanatory variable is plausible!
-    -   This is typically not the case/relevant in many applications
-    -   Trees with 0 diameter are not able to sampled
-
-## Slope interpretation
-
--   Let $\hat{y}_{1}$ be the estimated response for a given value of $x$, so $\hat{y}_{1} = b_{0} + b_{1} x$
--   What happens when we increase $x$ by 1?
--   Let $\hat{y}_{2}$ be the estimated response for $x +1$:
-
-::: fragment
-$$
-\begin{align*}
-\hat{y}_{2} &= b_{0} + b_{1} (x + 1)  \\
-&= \color{orange}{b_{0} + b_{1}x}  + b_{1} \\
-&= \color{orange}{\hat{y}_{1}} + b_{1} \Rightarrow \\
-b_{1} &= \hat{y}_{2} - \hat{y}_{1}
-\end{align*}
-$$
-:::
-
--   Interpretation: for a 1 unit increase in the explanatory variable $x$, we expect the response variable to change by $b_{1}$ units
-
-## Slope in `cherry` model
-
-$$
-\widehat{\text{volume}} = `r cherry_coefs[1]` + `r cherry_coefs[2]` \times \text{diameter}
-$$
-
--   Interpretation in context: for every 1 inch increase in diameter, we expect that volume of cherry trees to increase by `r cherry_coefs[2]` cubic feet
-
-## Example: `elmhurst`
-
-The `elmhurst` dataset from `openintro` provides a random sample of 50 students gift aid for students at Elmhurst College.
-
--   We will examine the relationship between the family income of the student and the gift aid that student received (in \$1000s)
-
-:::::::: columns
-:::: {.column width="70%"}
-::: fragment
-```{r}
-ggplot(elmhurst, aes(x = family_income, y = gift_aid)) +
-  geom_point(size = 3) +
-  labs(x = "Family income ($1000s)", y = "Gift aid ($1000s)") +
-  theme_minimal() +
-  plot_theme 
-```
-:::
-::::
-
-::::: {.column width="30%"}
-:::: fragment
-::: discuss
-Are the first two conditions of LINE satisfied?
-:::
-::::
-:::::
-::::::::
-
-## Example: `elmhurst` (cont.)
-
-::::: columns
-::: {.column width="60%"}
-```{r}
-elmhurst_lm <- lm(gift_aid ~ family_income, elmhurst)
-elmhurst_b0 <- round(coef(elmhurst_lm)[1], 3)
-elmhurst_b1 <- round(coef(elmhurst_lm)[2], 3)
-```
-
-We run the model in `R`, and the output looks something like this:
-
-```{r}
-tidy(elmhurst_lm) |>
-  kable(digits = 3) |>
-  kable_styling(font_size = 24)
-```
-:::
-
-::: {.column width="40%"}
-```{r}
-ggplot(elmhurst, aes(x = family_income, y = gift_aid)) +
-  geom_point(size = 4) +
-  labs(x = "Family income ($1000s)", y = "Gift aid ($1000s)", caption = "Least squares line") +
-  theme_minimal() +
-  theme(text = element_text(size= 28)) +
-  geom_smooth(method = "lm", se = F)
-```
-:::
-:::::
-
--   The values in the estimate column are our $b_{0}$ and $b_{1}$:
-
-    ::: discuss
-    -   $b_{0} =$ ? and $b_{1} =$ ?
-    -   What do you think the second column is?
-    :::
-
--   ::: discuss
-    Write out our fitted model in context
-    :::
 
 ## Example: `elmhurst` model
 
 $$
-\widehat{\text{aid}} = `r elmhurst_b0` + `r elmhurst_b1` \times \text{family_income}
+\widehat{\text{gift aid}} = `r elmhurst_coefs[1]`  `r elmhurst_coefs[2]` \times \text{family_income}
 $$
 
 -   Before we interpret the coefficients, we should verify that the linear model is appropriate for the data!
 
-::: fragment
+:::: fragment
 ```{r fig.height=3}
 p1 <- augment(elmhurst_lm)  |>
   ggplot(aes(x = .resid)) +
@@ -328,37 +222,125 @@ p2 <- augment(elmhurst_lm)  |>
 
 p1 + p2
 ```
-:::
 
-:::: fragment
 ::: discuss
 Do you believe the last two conditions of LINE are satisfied?
 :::
 ::::
 
-## Example: `elmhurst` interpretation
+# Interpreting parameters
 
-$$
-\widehat{\text{aid}} = `r elmhurst_b0` + `r elmhurst_b1` \times \text{family_income}
-$$
+Assuming the SLR model is appropriate, interpreting the parameters (i.e. **coefficients**) is one of *the most* important steps in an analysis!
+
+## Intercept interpretation
+
+::::: columns
+::: {.column width="50%"}
+-   To interpret the estimate of the **intercept** $b_{0}$, simply plug in $x= 0$:
+
+    $$
+    \begin{align*}
+    \hat{y} &= b_{0} + b_{1} x \\
+    &= b_{0} + b_{1}(0) \\
+    &= b_{0}
+    \end{align*}
+    $$
+:::
+
+::: {.column width="50%"}
+-   So, the intercept describes the **estimated/expected** value of the response variable $y$ if $x=0$
+
+    -   Be sure to interpret in context!
+:::
+:::::
+
+::: discuss
+-   Interpret the intercept in our `elmhurst` model
+
+    -   For a family with an income of \$0, the expected gift aid would be \$`r elmhurst_coefs[1]` (in \$1000s), or simply \$`r format(elmhurst_coefs[1]*1000, scientific = F)`
+:::
+
+-   The intercept's interpretation only makes sense when a value of $x=0$ is plausible!
+
+    -   This is typically not the case/relevant in many applications (though it is here!)
+
+## Slope interpretation
+
+-   Let $\hat{y}_{1}$ be the estimated response for a given value of $x$, so $\hat{y}_{1} = b_{0} + b_{1} x$
+-   Let $\hat{y}_{2}$ be the estimated response for $x +1$:
 
 :::::: columns
 :::: {.column width="50%"}
-::: discuss
--   Interpret the slope in context
-
--   Interpret the intercept in context
-
--   Is the meaning of the intercept relevant?
+::: fragment
+$$
+\begin{align*}
+\hat{y}_{2} &= b_{0} + b_{1} (x + 1)  \\
+&= \color{orange}{b_{0} + b_{1}x}  + b_{1} \\
+&= \color{orange}{\hat{y}_{1}} + b_{1} \Rightarrow \\
+b_{1} &= \hat{y}_{2} - \hat{y}_{1}
+\end{align*}
+$$
 :::
 ::::
 
 ::: {.column width="50%"}
--   Slope: for every \$1000 increase in family income, we expect that the student's gift aid will decrease by \$`r abs(elmhurst_b1) * 1000`.
--   Intercept: for a student whose family income is \$0, we expect that average amount of aid they will receive is \$`r elmhurst_b0*1000`
--   Since a family could have an income of \$0, the intercept does seem relevant
+-   Interpretation of estimated **slope** $b_{1}$: for a 1 unit increase in the explanatory variable $x$, we expect the response variable $y$ to change by $b_{1}$ units
 :::
 ::::::
+
+::: discuss
+-   Interpret in context the estimated slope coefficient in the `elmhurst` model
+
+    -   For every \$1000 increase in a family's income, we expect that the gift aid the student receives will *decrease* by about \$`r format(abs(elmhurst_coefs[2]*1000), scientific = F)`
+:::
+
+## Running SLR in `R`
+
+
+
+We run the model in `R`, and the output looks something like this:
+
+```{r}
+tidy(elmhurst_lm) |>
+  kable(digits = 3) |>
+  kable_styling(font_size = 24)
+```
+
+-   The estimates $b_{0}$ and $b_{1}$ are shown in the second column
+
+    -   We will use the other columns for HTs and CIs!
+
+-   We can also easily add the fitted SLR line to a ggplot:
+
+::::: columns
+::: {.column width="50%"}
+::: fragment
+```{r echo = T, eval = F}
+#| code-line-numbers: "7"
+ggplot(elmhurst, aes(x = family_income, 
+                     y = gift_aid)) +
+  geom_point() +
+  labs(x = "Family income ($1000s)", 
+       y = "Gift aid ($1000s)", 
+       caption = "Least squares line") +
+  geom_smooth(method = "lm", se = F)
+```
+:::
+:::
+
+::: {.column width="50%"}
+::: {.fragment}
+```{r fig.height=5}
+ggplot(elmhurst, aes(x = family_income, y = gift_aid)) +
+  geom_point(size = 3) +
+  labs(x = "Family income ($1000s)", y = "Gift aid ($1000s)", caption = "Least squares line") +
+  theme_minimal() +
+  theme(text = element_text(size= 23)) +
+  geom_smooth(method = "lm", se = F)
+```
+:::
+:::
+:::::
 
 ## Words of caution
 
@@ -380,22 +362,21 @@ Suppose we would like to use our fitted model to estimate the expected gift aid 
     Find the estimated gift aid (careful with units)
     :::
 
-    -   $\widehat{\text{aid}} = `r elmhurst_b0` + `r elmhurst_b1` \times 1000 = `r elmhurst_b0 + elmhurst_b1 *1000`$
+    -   $\widehat{\text{gift aid}} = `r elmhurst_coefs[1]` + `r elmhurst_coefs[2]` \times 1000 = `r elmhurst_coefs[1] + elmhurst_coefs[2] *1000`$
     -   This is ridiculous!
 
 -   This is an example of **extrapolation**: using the model to estimate values outside the scope of the original data
 
     -   We should *never* extrapolate!
 
-# Strength of fit
+
+## Describing strength the fit
 
 If we fit a model and determine LINE was met, we still need a way to describe how "good" the fit is!
 
-## Describing the fit
-
 -   Recall sample correlation $R$ describes the linear relationship between variables $x$ and $y$
 
--   We typically use the **coefficient of determination** or $R^2$ (**R-squared**) to describe strength of linear fit
+-   We typically use the **coefficient of determination** or $R^2$ (**R-squared**) to describe *strength* of linear fit of a model
 
     -   Describes amount of variation in $y$ that is explained by predictor $x$ in the least squares line
 
@@ -417,24 +398,26 @@ R2 <- round(R^2, 3)
 
 -   So the coefficient of determination is $R^2 = (`r R`)^2 = `r R2`$
 
-    -   **Interpretation**: using a linear model, about `r R2*100`% of the variability in `aid` received by the student is explained by `family income`
+    -   **Interpretation**: using a linear model, about `r R2*100`% of the variability in `gift aid` received by the student is explained by `family income`
+    
+- I think this is actually a pretty good model!
 
 # Categorical predictor
 
 Thus far, we have assumed that $x$ is numerical. Now let $x$ be categorical.
 
+- Note: we will go out of order and check conditions after fitting and interpreting model
+
 ## Categorical predictor with two levels
 
--   Remember that the different groupings/categories of categorical variables are called levels
-
 -   ::: {style="color: maroon"}
-    Now assume that $x$ is categorical with two levels
+    For now, assume that $x$ is categorical with two levels
     :::
 
--   Running example: the `possum` data from `openintro`
+-   Running example: the `possum` data from `openintro` which has data representing possums in Australia and New Guinea
 
     -   Response variable: `tail_l` (tail length in cm)
-    -   Explanatory variable: `pop` (either `Vic` or `other`)
+    -   Explanatory variable: `pop` (either "Vic" for possums from Victoria or "other" for possums from New South Wales or Queensland)
 
 -   Maybe we would think to write our regression as
 
@@ -472,7 +455,7 @@ $$
 set.seed(1)
 possum |>
   select(tail_l, pop) |>
-  mutate(pop_new = 1*(pop == "other")) |>
+  mutate(pop_other = 1*(pop == "other")) |>
   sample_n(5) |>
   kable() |>
   kable_styling(font_size = 25)
@@ -484,16 +467,16 @@ possum |>
 -   The level that corresponds to 0 is called the **base** **level**
 
     -   So `Vic` is the base level
-    -   Choosing which level is the base level can sometimes be important
+
 
 ## Example: `possum` model
 
-This yields the SLR model
+This yields the now "legal" SLR model
 
 $$\text{tail length} = \beta_{0} + \beta_{1} \text{pop_other} + \epsilon$$
 
 ::: fragment
-Our estimates are as follows:
+R will automatically convert categorical variables to indicators! So our estimates are as follows:
 
 ```{r}
 possum_lm <- lm(tail_l ~ pop, data = possum)
@@ -512,46 +495,35 @@ tidy(possum_lm) |>
 
 ## Intercept for categorical $x$
 
-Our fitted model is:
+- Our fitted model is:
 
-$$\widehat{\text{tail length}} = `r possum_b0` + `r possum_b1` \times \text{pop_other}$$
+    $$\widehat{\text{tail length}} = `r possum_b0` + `r possum_b1` \times \text{pop_other}$$
 
--   Let's interpret the intercept by plugging in $0$ for the explanatory variable:
-
-::: fragment
-$$\widehat{\text{tail length}} = `r possum_b0` + `r possum_b1`\times 0 = `r possum_b0`$$
+::: {.discuss}
+-   Try interpreting the intercept $b_{0}$
 :::
 
--   But wait, when is $\text{pop_other} = 0$? When the possum is from Victoria!
+
+-   What does $\text{pop_other} = 0$ mean? That the possum is from Victoria!
 
 -   ::: {style="color: maroon"}
-    So when $x$ is categorical, the interpretation of $b_{0}$ is the expected value of the response variable for the base level of $x$
+    So when $x$ is categorical, the interpretation of $b_{0}$ is the estimated value of the response variable for the base level of $x$
     :::
 
--   ::: discuss
-    Interpret $b_{0}$ in context
-    :::
 
-    -   The expected tail length of possums from Victoria is `r possum_b0` cm
+-   Interpretation: the expected tail length of possums from Victoria is `r possum_b0` cm
 
 ## Slope for categorical $x$
 
 $$\widehat{\text{tail length}} = `r possum_b0` + `r possum_b1`\times \text{pop_other}$$
 
-$$
-\text{pop_other} = \begin{cases}
-0 & \text{ if  pop = Vic} \\
-1 & \text{ if  pop = other}
-\end{cases}
-$$
-
--   Remember, the slope coefficient is interpreted as the expected change in $y$ for a one unit increase in $x$
+-   Remember, $b_{1}$ is the expected change in $y$ for a one unit increase in $x$
 
 -   ::: discuss
-    What does it mean for the indicator variable to increase by one unit here?
+    What does it mean for $\text{pop_other}$ to increase by one unit here?
     :::
 
-    -   $\text{pop_other}$ increases by one unit by going from 0 to 1. This corresponds to a `pop` value of "other"
+    -   Changing from to a `pop` value of "Vic" to "other"
 
 -   ::: {style="color: maroon"}
     When $x$ is categorical, the interpretation of $b_{1}$ is the expected change in $y$ when moving from the base level to the non-base level
@@ -560,39 +532,52 @@ $$
 -   ::: discuss
     Try interpreting $b_{1}$ in context!
     :::
+    
+    -  Interpretation: possums from "other" (i.e. New South Wales/Queensland) are expected to have tail lengths about `r possum_b1` cm longer than possums from Victoria
 
-## Slope for categorical $x$ (cont.)
 
-$$\widehat{\text{tail length}} = `r possum_b0` + `r possum_b1`\times \text{pop_other}$$
-
-$$
-\text{pop_other} = \begin{cases}
-0 & \text{ if  pop = Vic} \\
-1 & \text{ if  pop = other}
-\end{cases}
-$$
-
--   Interpretation of slope: possums from outside of Victoria are expected to have tail lengths about `r possum_b1` cm longer than possums from Victoria
--   Note: interpretations for $b_{0}$ and $b_{1}$ for categorical $x$ are the same as for numerical $x$, but they have more specific/nuanced interpretations when placed in context
 
 ## Assessing linear fit
 
--   When $x$ is categorical, the LINE conditions still need to hold
+-   When categorical $x$ only has two levels, **L**inearity is always satisfied (yay!)
 
--   When $x$ only has two levels, the **L**inearity assumption will always be satisfied
+- **I**ndependence condition is the same before
 
--   We need to evaluate **N**early normal residuals and **E**qual variance for each level:
+-   We need to evaluate **N**early normal residuals and **E**qual variance for each level
+
+    - Note: the residual plot (right) is uncessary given histogram of residuals
 
 ::: fragment
-```{r fig.width = 12}
-augment(possum_lm) |>
+```{r fig.height=2.75}
+p1 <- augment(possum_lm) |>
   ggplot(aes(x = .resid)) + 
   geom_histogram(bins = 15) +
   facet_wrap(~pop) +
   theme_minimal() +
-  plot_theme +
+  theme(text = element_text(size = 20)) +
   labs(x = "Residual")
+p2 <- augment(possum_lm) |>
+  ggplot(aes(x = pop, y = .resid)) + 
+  geom_point() +
+  theme_minimal() +
+  theme(text = element_text(size = 20)) +
+  labs(y = "Residual")
+p1 + p2
 ```
 :::
 
+::: {.fragment}
+::: {.discuss}
+Are all four conditions for SLR met?
+:::
+:::
+
+## Remarks
+
+- When $x$ is categorical, mathematical meaning for $b_{0}$ and $b_{1}$ are the same as for numerical $x$, but they have more specific/nuanced interpretations when placed in context
+
+- When $x$ is categorical, SLR is a bit "overkill" (you'll explore this in homework) 
+
+    - As we'll see next week, the more interest things happen when we have more than one predictor in the model!
+    
 # Live code

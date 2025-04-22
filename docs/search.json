@@ -5051,7 +5051,7 @@
     "href": "coding_practice/coding-practice-25-slr.html",
     "title": "SLR coding practice",
     "section": "",
-    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors\n\nlibrary(openintro)\n\nLoading required package: airports\nLoading required package: cherryblossom\nLoading required package: usdata\n\nlibrary(broom)\n\n\nUsing the possum data again, fit a linear regression for the length of heads for a possum using their tail lengths as a predictor. Store the model output as a variable called possum_lm and display information about the coefficients in tidy form using the appropriate function.\n\n\n\n\n\nCreate a residual plot of the fitted model using the augment() function and ggplot(). Try adding a horizontal dashed line at 0!\n\n\n\n\n\nSuppose we found a tail of a possum on the ground! We measure the tail to be 36.1 cm. Being as reproducible as possible, obtain the estimated head length of this squirrel by doing the following:\n\n\nCreate variable called x_pred that stores the value of the explanatory variable we’d like to obtain a prediction for.\nObtain the estimated coefficients from the tidy output by pull()-ing the relevant column. Store them as a variable called possum_coeffs.\nIndexing coeffs (i.e. using bracket notation) and using x, obtain the estimated head length and store this as a value called head_l_pred.\n\n\n# create x\n\n# create possum_coeffs\n\n# create head_l_pred\n\nReport your answer using in-line code.\nAnswer:"
+    "text": "library(tidyverse)\nlibrary(openintro)\nlibrary(broom)\n\n\nUsing the possum data from openintro, fit a linear regression for the length of heads for a possum using their tail lengths as a predictor. Store the model output as a variable called possum_lm and display information about the coefficients in tidy form using the appropriate function.\n\n\n\n\n\nCreate a residual plot of the fitted model using the augment() function and ggplot(). Try adding a horizontal dashed line at 0!\n\n\n\n\n\nSuppose we found a tail of a possum on the ground! We measure the tail to be 36.1 cm. Being as reproducible as possible, obtain the estimated head length of this squirrel by doing the following:\n\n\nCreate variable called x_pred that stores the value of the explanatory variable we’d like to obtain a prediction for.\nObtain the estimated coefficients from the tidy output by pull()-ing the relevant column. Store them as a variable called possum_coeffs.\nIndexing coeffs (i.e. using bracket notation) and using x, obtain the estimated head length and store this as a value called head_l_pred.\n\n\n# create x_pred\n\n# create possum_coeffs\n\n# create head_l_pred\n\nReport your answer using in-line code.\nAnswer:"
   },
   {
     "objectID": "live_code/slr_extras.html#pretty-output-using-broom",
@@ -9503,21 +9503,21 @@
     "href": "slides/slides-25-slr-interpretation.html#estimating-slope-and-intercept",
     "title": "SLR coefficient estimates",
     "section": "Estimating slope and intercept",
-    "text": "Estimating slope and intercept\n\n\nFirst obtain \\(b_{1}\\):\n\n\\[\nb_{1} =\\frac{s_{y}}{s_{x}} R\n\\]\nwhere:\n\n\n\\(s_{x}\\) and \\(s_{y}\\) are the sample standard deviations of the explanatory and response variables\n\\(R\\) is the correlation between \\(x\\) and \\(y\\)\n\n\n\nThen obtain \\(b_{0}\\):\n\n\\[b_{0} = \\bar{y} - b_{1} \\bar{x}\\] where\n\n\n\\(\\bar{y}\\) is the sample mean of the response variable\n\\(x\\) is the sample mean of the explanatory variable\n\n\n\n\n\n\nTake STAT 0211 or 0311 to see where these formulas come from!"
+    "text": "Estimating slope and intercept\n\n\nFirst obtain \\(b_{1}\\):\n\n\\[\nb_{1} =\\frac{s_{y}}{s_{x}} R\n\\]\nwhere:\n\n\n\\(s_{x}\\) and \\(s_{y}\\) are the sample standard deviations of the explanatory and response variables\n\\(R\\) is the sample correlation between \\(x\\) and \\(y\\)\n\n\n\nThen obtain \\(b_{0}\\):\n\n\\[b_{0} = \\bar{y} - b_{1} \\bar{x}\\] where\n\n\n\\(\\bar{y}\\) is the sample mean of the response variable\n\\(\\bar{x}\\) is the sample mean of the explanatory variable\n\n\n\n\n\n\nTake STAT 0211 or 0311 to see where these formulas come from!"
   },
   {
     "objectID": "slides/slides-25-slr-interpretation.html#fitting-cherry-model-by-hand",
     "href": "slides/slides-25-slr-interpretation.html#fitting-cherry-model-by-hand",
     "title": "SLR coefficient estimates",
     "section": "Fitting cherry model (by hand)",
-    "text": "Fitting cherry model (by hand)\n\n\n\nVerify estimates \\(b_{0} = -36.94\\) and \\(b_{1} = 5.07\\) from our model for the cherry data:\n\n\n\ncherry |>\n  pivot_longer(cols = c(diam, volume), \n               names_to = \"variable\", \n               values_to = \"val\") |>\n  select(-height) |>\n  group_by(variable) |>\n  summarise(mean = mean(val), s = sd(val)) \n\n\n\n\n\n \n  \n    variable \n    mean \n    s \n  \n \n\n  \n    diam \n    13.248 \n    3.138 \n  \n  \n    volume \n    30.171 \n    16.438 \n  \n\n\n\n\n\n\n\nR <- cor(cherry$diam, cherry$volume)\nR\n\n[1] 0.9671194\n\n\n\nWhat does this value of \\(R\\) tell us?\n\n\n\n\n\n\n\n\n\n\nSet-up the calculations:\n\n\\(b_{1} = \\frac{s_{y}}{s_{x}} R\\)\n\\(b_{0} = \\bar{y} -b_{1} \\bar{x}\\)\n\n\n\n\n\n\\(b_{1} = \\frac{16.438}{3.138} \\times 0.967 = 5.07\\)\n\\(b_{0} = 30.171 - 5.07 \\times 13.248 = -36.94\\)\nWhat do these numbers really mean?"
+    "text": "Fitting cherry model (by hand)\n\n\n\nVerify estimates \\(b_{0} = -36.94\\) and \\(b_{1} = 5.07\\) from our model for the cherry data:\n\n\n\ncherry |>\n  pivot_longer(cols = c(diam, volume), \n               names_to = \"variable\", \n               values_to = \"val\") |>\n  select(-height) |>\n  group_by(variable) |>\n  summarise(mean = mean(val), s = sd(val))  \n\n\n\n\n\n \n  \n    variable \n    mean \n    s \n  \n \n\n  \n    diam \n    13.248 \n    3.138 \n  \n  \n    volume \n    30.171 \n    16.438 \n  \n\n\n\n\n\n\n\nR <- cor(cherry$diam, cherry$volume)\nR\n\n[1] 0.9671194\n\n\n\nWhat does this value of \\(R\\) tell us?\n\n\n\n\n\n\n\n\n\n\nSet-up the calculations:\n\n\\(b_{1} = \\frac{s_{y}}{s_{x}} R\\)\n\\(b_{0} = \\bar{y} -b_{1} \\bar{x}\\)\n\n\n\n\n\n\\(b_{1} = \\frac{16.438}{3.138} \\times 0.967 = 5.07\\)\n\\(b_{0} = 30.171 - 5.07 \\times 13.248 = -36.94\\)\nLet’s find out what these numbers really mean!"
   },
   {
     "objectID": "slides/slides-25-slr-interpretation.html#intercept-interpretation",
     "href": "slides/slides-25-slr-interpretation.html#intercept-interpretation",
     "title": "SLR coefficient estimates",
     "section": "Intercept interpretation",
-    "text": "Intercept interpretation\nOur fitted model is \\(\\hat{y} = b_{0} + b_{1}x\\).\n\nTo interpret the estimate of the intercept coefficient \\(b_{0}\\), simply plug in \\(x= 0\\):\n\n\\[\n\\hat{y} = b_{0} + b_{1} x = b_{0} + b_{1}(0) = b_{0}\n\\]\n\nSo, the intercept describes the average/expected value of the response variable \\(y\\) if \\(x=0\\)"
+    "text": "Intercept interpretation\n\n\n\nTo interpret the estimate of the intercept \\(b_{0}\\), simply plug in \\(x= 0\\):\n\\[\n\\begin{align*}\n\\hat{y} &= b_{0} + b_{1} x \\\\\n&= b_{0} + b_{1}(0) \\\\\n&= b_{0}\n\\end{align*}\n\\]\n\n\n\nSo, the intercept describes the estimated/expected value of the response variable \\(y\\) if \\(x=0\\)\n\nBe sure to interpret in context!\n\n\n\n\n\n\nInterpret the intercept in our elmhurst model\n\nFor a family with an income of $0, the expected gift aid would be $24.319 (in $1000s), or simply $24319\n\n\n\n\nThe intercept’s interpretation only makes sense when a value of \\(x=0\\) is plausible!\n\nThis is typically not the case/relevant in many applications (though it is here!)"
   },
   {
     "objectID": "slides/slides-25-slr-interpretation.html#intercept-in-cherry-model",
@@ -9531,7 +9531,7 @@
     "href": "slides/slides-25-slr-interpretation.html#slope-interpretation",
     "title": "SLR coefficient estimates",
     "section": "Slope interpretation",
-    "text": "Slope interpretation\n\nLet \\(\\hat{y}_{1}\\) be the estimated response for a given value of \\(x\\), so \\(\\hat{y}_{1} = b_{0} + b_{1} x\\)\nWhat happens when we increase \\(x\\) by 1?\nLet \\(\\hat{y}_{2}\\) be the estimated response for \\(x +1\\):\n\n\n\\[\n\\begin{align*}\n\\hat{y}_{2} &= b_{0} + b_{1} (x + 1)  \\\\\n&= \\color{orange}{b_{0} + b_{1}x}  + b_{1} \\\\\n&= \\color{orange}{\\hat{y}_{1}} + b_{1} \\Rightarrow \\\\\nb_{1} &= \\hat{y}_{2} - \\hat{y}_{1}\n\\end{align*}\n\\]\n\n\nInterpretation: for a 1 unit increase in the explanatory variable \\(x\\), we expect the response variable to change by \\(b_{1}\\) units"
+    "text": "Slope interpretation\n\nLet \\(\\hat{y}_{1}\\) be the estimated response for a given value of \\(x\\), so \\(\\hat{y}_{1} = b_{0} + b_{1} x\\)\nLet \\(\\hat{y}_{2}\\) be the estimated response for \\(x +1\\):\n\n\n\n\n\\[\n\\begin{align*}\n\\hat{y}_{2} &= b_{0} + b_{1} (x + 1)  \\\\\n&= \\color{orange}{b_{0} + b_{1}x}  + b_{1} \\\\\n&= \\color{orange}{\\hat{y}_{1}} + b_{1} \\Rightarrow \\\\\nb_{1} &= \\hat{y}_{2} - \\hat{y}_{1}\n\\end{align*}\n\\]\n\n\n\nInterpretation of estimated slope \\(b_{1}\\): for a 1 unit increase in the explanatory variable \\(x\\), we expect the response variable \\(y\\) to change by \\(b_{1}\\) units\n\n\n\n\n\nInterpret in context the estimated slope coefficient in the elmhurst model\n\nFor every $1000 increase in a family’s income, we expect that the gift aid the student receives will decrease by about $43"
   },
   {
     "objectID": "slides/slides-25-slr-interpretation.html#slope-in-cherry-model",
@@ -9545,21 +9545,21 @@
     "href": "slides/slides-25-slr-interpretation.html#example-elmhurst",
     "title": "SLR coefficient estimates",
     "section": "Example: elmhurst",
-    "text": "Example: elmhurst\nThe elmhurst dataset from openintro provides a random sample of 50 students gift aid for students at Elmhurst College.\n\nWe will examine the relationship between the family income of the student and the gift aid that student received (in $1000s)\n\n\n\n\n\n\n\n\n\n\n\n\n\nAre the first two conditions of LINE satisfied?"
+    "text": "Example: elmhurst\nThe elmhurst dataset from openintro provides a random sample of 50 students’ gift aid for students at Elmhurst College.\n\nWe will examine the relationship between the family income of the student and the gift aid that student received (in $1000s)\n\n\n\n\n\n\n\n\n\n\n\n\n\nWrite down the linear regression model.\n\n\n\\[\\text{gift aid} = \\beta_{0} + \\beta_{1} \\text{income} + \\epsilon\\]\n\n\n\n\nAre the first two conditions of LINE satisfied?"
   },
   {
     "objectID": "slides/slides-25-slr-interpretation.html#example-elmhurst-cont.",
     "href": "slides/slides-25-slr-interpretation.html#example-elmhurst-cont.",
     "title": "SLR coefficient estimates",
     "section": "Example: elmhurst (cont.)",
-    "text": "Example: elmhurst (cont.)\n\n\n\n\n\nWe run the model in R, and the output looks something like this:\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    24.319 \n    1.291 \n    18.831 \n    0 \n  \n  \n    family_income \n    -0.043 \n    0.011 \n    -3.985 \n    0 \n  \n\n\n\n\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\nThe values in the estimate column are our \\(b_{0}\\) and \\(b_{1}\\):\n\n\n\\(b_{0} =\\) ? and \\(b_{1} =\\) ?\nWhat do you think the second column is?\n\n\n\nWrite out our fitted model in context"
+    "text": "Example: elmhurst (cont.)\n\n\n\n\n\nWe run the model in R, and the output looks something like this:\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    24.319 \n    1.291 \n    18.831 \n    0 \n  \n  \n    family_income \n    -0.043 \n    0.011 \n    -3.985 \n    0 \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe values in the estimate column are our \\(b_{0}\\) and \\(b_{1}\\):\n\n\n\\(b_{0} =\\) ? and \\(b_{1} =\\) ?\nWhat do you think the second column is?\n\n\n\nWrite out our fitted model in context"
   },
   {
     "objectID": "slides/slides-25-slr-interpretation.html#example-elmhurst-model",
     "href": "slides/slides-25-slr-interpretation.html#example-elmhurst-model",
     "title": "SLR coefficient estimates",
     "section": "Example: elmhurst model",
-    "text": "Example: elmhurst model\n\\[\n\\widehat{\\text{aid}} = 24.319 + -0.043 \\times \\text{family_income}\n\\]\n\nBefore we interpret the coefficients, we should verify that the linear model is appropriate for the data!\n\n\n\n\n\n\n\n\n\n\nDo you believe the last two conditions of LINE are satisfied?"
+    "text": "Example: elmhurst model\n\\[\n\\widehat{\\text{gift aid}} = 24.319  -0.043 \\times \\text{family_income}\n\\]\n\nBefore we interpret the coefficients, we should verify that the linear model is appropriate for the data!\n\n\n\n\n\n\n\n\nDo you believe the last two conditions of LINE are satisfied?"
   },
   {
     "objectID": "slides/slides-25-slr-interpretation.html#example-elmhurst-interpretation",
@@ -9580,70 +9580,70 @@
     "href": "slides/slides-25-slr-interpretation.html#extrapolation",
     "title": "SLR coefficient estimates",
     "section": "Extrapolation",
-    "text": "Extrapolation\nSuppose we would like to use our fitted model to estimate the expected gift aid for someone whose family income is $1,000,000:\n\n\nFind the estimated gift aid (careful with units)\n\n\n\\(\\widehat{\\text{aid}} = 24.319 + -0.043 \\times 1000 = -18.681\\)\nThis is ridiculous!\n\nThis is an example of extrapolation: using the model to estimate values outside the scope of the original data\n\nWe should never extrapolate!"
+    "text": "Extrapolation\nSuppose we would like to use our fitted model to estimate the expected gift aid for someone whose family income is $1,000,000:\n\n\nFind the estimated gift aid (careful with units)\n\n\n\\(\\widehat{\\text{gift aid}} = 24.319 + -0.043 \\times 1000 = -18.681\\)\nThis is ridiculous!\n\nThis is an example of extrapolation: using the model to estimate values outside the scope of the original data\n\nWe should never extrapolate!"
   },
   {
     "objectID": "slides/slides-25-slr-interpretation.html#describing-the-fit",
     "href": "slides/slides-25-slr-interpretation.html#describing-the-fit",
     "title": "SLR coefficient estimates",
     "section": "Describing the fit",
-    "text": "Describing the fit\n\nRecall sample correlation \\(R\\) describes the linear relationship between variables \\(x\\) and \\(y\\)\nWe typically use the coefficient of determination or \\(R^2\\) (R-squared) to describe strength of linear fit\n\nDescribes amount of variation in \\(y\\) that is explained by predictor \\(x\\) in the least squares line\n\nIt turns out that \\(R^2\\) in SLR is exactly … \\(R\\) squared (i.e. the square of the sample correlation)\n\n\nWhat are the possible values of \\(R^2\\)? What are desirable values of \\(R^2\\)?"
+    "text": "Describing the fit\n\nRecall sample correlation \\(R\\) describes the linear relationship between variables \\(x\\) and \\(y\\)\nWe typically use the coefficient of determination or \\(R^2\\) (R-squared) to describe strength of linear fit of a model\n\nDescribes amount of variation in \\(y\\) that is explained by predictor \\(x\\) in the least squares line\n\nIt turns out that \\(R^2\\) in SLR is exactly … \\(R\\) squared (i.e. the square of the sample correlation)\n\n\nWhat are the possible values of \\(R^2\\)? What are desirable values of \\(R^2\\)?"
   },
   {
     "objectID": "slides/slides-25-slr-interpretation.html#example-elmhurst-model-fit",
     "href": "slides/slides-25-slr-interpretation.html#example-elmhurst-model-fit",
     "title": "SLR coefficient estimates",
     "section": "Example: elmhurst model fit",
-    "text": "Example: elmhurst model fit\n\n\n\n\nThe sample correlation between family income and aid is \\(R=\\) -0.499\nSo the coefficient of determination is \\(R^2 = (-0.499)^2 = 0.249\\)\n\nInterpretation: using a linear model, about 24.9% of the variability in aid received by the student is explained by family income"
+    "text": "Example: elmhurst model fit\n\n\n\n\nThe sample correlation between family income and aid is \\(R=\\) -0.499\nSo the coefficient of determination is \\(R^2 = (-0.499)^2 = 0.249\\)\n\nInterpretation: using a linear model, about 24.9% of the variability in gift aid received by the student is explained by family income\n\nI think this is actually a pretty good model!"
   },
   {
     "objectID": "slides/slides-25-slr-interpretation.html#categorical-predictor-with-two-levels",
     "href": "slides/slides-25-slr-interpretation.html#categorical-predictor-with-two-levels",
     "title": "SLR coefficient estimates",
     "section": "Categorical predictor with two levels",
-    "text": "Categorical predictor with two levels\n\nRemember that the different groupings/categories of categorical variables are called levels\n\nNow assume that \\(x\\) is categorical with two levels\n\nRunning example: the possum data from openintro\n\nResponse variable: tail_l (tail length in cm)\nExplanatory variable: pop (either Vic or other)\n\nMaybe we would think to write our regression as\n\n\n\\[\\text{tail length} = \\beta_{0} + \\beta_{1} \\text{pop} + \\epsilon\\]\n\n\n\nWhy doesn’t this work?\n\n\nFunctions require a numerical input!"
+    "text": "Categorical predictor with two levels\n\n\nFor now, assume that \\(x\\) is categorical with two levels\n\nRunning example: the possum data from openintro which has data representing possums in Australia and New Guinea\n\nResponse variable: tail_l (tail length in cm)\nExplanatory variable: pop (either “Vic” for possums from Victoria or “other” for possums from New South Wales or Queensland)\n\nMaybe we would think to write our regression as\n\n\n\\[\\text{tail length} = \\beta_{0} + \\beta_{1} \\text{pop} + \\epsilon\\]\n\n\n\nWhy doesn’t this work?\n\n\nFunctions require a numerical input!"
   },
   {
     "objectID": "slides/slides-25-slr-interpretation.html#indicator-variables",
     "href": "slides/slides-25-slr-interpretation.html#indicator-variables",
     "title": "SLR coefficient estimates",
     "section": "Indicator variables",
-    "text": "Indicator variables\nWe need a mechanism to convert the categorical levels into numerical form!\n\n\n\nThis is achieved through an indicator variable which takes the value 1 for one specific level and the value 0 otherwise:\n\n\n\\[\n\\text{pop_other} = \\begin{cases}\n0 & \\text{ if  pop = Vic} \\\\\n1 & \\text{ if  pop = other}\n\\end{cases}\n\\]\n\n\n\n\n\n\n\n \n  \n    tail_l \n    pop \n    pop_new \n  \n \n\n  \n    38.0 \n    other \n    1 \n  \n  \n    34.0 \n    Vic \n    0 \n  \n  \n    36.0 \n    Vic \n    0 \n  \n  \n    36.5 \n    Vic \n    0 \n  \n  \n    41.5 \n    other \n    1 \n  \n\n\n\n\n\n\n\n\n\nThe level that corresponds to 0 is called the base level\n\nSo Vic is the base level\nChoosing which level is the base level can sometimes be important"
+    "text": "Indicator variables\nWe need a mechanism to convert the categorical levels into numerical form!\n\n\n\nThis is achieved through an indicator variable which takes the value 1 for one specific level and the value 0 otherwise:\n\n\n\\[\n\\text{pop_other} = \\begin{cases}\n0 & \\text{ if  pop = Vic} \\\\\n1 & \\text{ if  pop = other}\n\\end{cases}\n\\]\n\n\n\n\n\n\n\n \n  \n    tail_l \n    pop \n    pop_other \n  \n \n\n  \n    38.0 \n    other \n    1 \n  \n  \n    34.0 \n    Vic \n    0 \n  \n  \n    36.0 \n    Vic \n    0 \n  \n  \n    36.5 \n    Vic \n    0 \n  \n  \n    41.5 \n    other \n    1 \n  \n\n\n\n\n\n\n\n\n\nThe level that corresponds to 0 is called the base level\n\nSo Vic is the base level"
   },
   {
     "objectID": "slides/slides-25-slr-interpretation.html#example-possum-model",
     "href": "slides/slides-25-slr-interpretation.html#example-possum-model",
     "title": "SLR coefficient estimates",
     "section": "Example: possum model",
-    "text": "Example: possum model\nThis yields the SLR model\n\\[\\text{tail length} = \\beta_{0} + \\beta_{1} \\text{pop_other} + \\epsilon\\]\n\nOur estimates are as follows:\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    35.935 \n    0.253 \n    142.065 \n    0 \n  \n  \n    popother \n    1.927 \n    0.339 \n    5.690 \n    0 \n  \n\n\n\n\n\n\n\n\nWrite out the equation of our fitted model"
+    "text": "Example: possum model\nThis yields the now “legal” SLR model\n\\[\\text{tail length} = \\beta_{0} + \\beta_{1} \\text{pop_other} + \\epsilon\\]\n\nR will automatically convert categorical variables to indicators! So our estimates are as follows:\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    35.935 \n    0.253 \n    142.065 \n    0 \n  \n  \n    popother \n    1.927 \n    0.339 \n    5.690 \n    0 \n  \n\n\n\n\n\n\n\n\nWrite out the equation of our fitted model"
   },
   {
     "objectID": "slides/slides-25-slr-interpretation.html#intercept-for-categorical-x",
     "href": "slides/slides-25-slr-interpretation.html#intercept-for-categorical-x",
     "title": "SLR coefficient estimates",
     "section": "Intercept for categorical \\(x\\)",
-    "text": "Intercept for categorical \\(x\\)\nOur fitted model is:\n\\[\\widehat{\\text{tail length}} = 35.935 + 1.927 \\times \\text{pop_other}\\]\n\nLet’s interpret the intercept by plugging in \\(0\\) for the explanatory variable:\n\n\n\\[\\widehat{\\text{tail length}} = 35.935 + 1.927\\times 0 = 35.935\\]\n\n\nBut wait, when is \\(\\text{pop_other} = 0\\)? When the possum is from Victoria!\n\nSo when \\(x\\) is categorical, the interpretation of \\(b_{0}\\) is the expected value of the response variable for the base level of \\(x\\)\n\n\nInterpret \\(b_{0}\\) in context\n\n\nThe expected tail length of possums from Victoria is 35.935 cm"
+    "text": "Intercept for categorical \\(x\\)\n\nOur fitted model is:\n\\[\\widehat{\\text{tail length}} = 35.935 + 1.927 \\times \\text{pop_other}\\]\n\n\n\nTry interpreting the intercept \\(b_{0}\\)\n\n\n\nWhat does \\(\\text{pop_other} = 0\\) mean? That the possum is from Victoria!\n\nSo when \\(x\\) is categorical, the interpretation of \\(b_{0}\\) is the estimated value of the response variable for the base level of \\(x\\)\n\nInterpretation: the expected tail length of possums from Victoria is 35.935 cm"
   },
   {
     "objectID": "slides/slides-25-slr-interpretation.html#slope-for-categorical-x",
     "href": "slides/slides-25-slr-interpretation.html#slope-for-categorical-x",
     "title": "SLR coefficient estimates",
     "section": "Slope for categorical \\(x\\)",
-    "text": "Slope for categorical \\(x\\)\n\\[\\widehat{\\text{tail length}} = 35.935 + 1.927\\times \\text{pop_other}\\]\n\\[\n\\text{pop_other} = \\begin{cases}\n0 & \\text{ if  pop = Vic} \\\\\n1 & \\text{ if  pop = other}\n\\end{cases}\n\\]\n\nRemember, the slope coefficient is interpreted as the expected change in \\(y\\) for a one unit increase in \\(x\\)\n\nWhat does it mean for the indicator variable to increase by one unit here?\n\n\n\\(\\text{pop_other}\\) increases by one unit by going from 0 to 1. This corresponds to a pop value of “other”\n\n\nWhen \\(x\\) is categorical, the interpretation of \\(b_{1}\\) is the expected change in \\(y\\) when moving from the base level to the non-base level\n\n\nTry interpreting \\(b_{1}\\) in context!"
+    "text": "Slope for categorical \\(x\\)\n\\[\\widehat{\\text{tail length}} = 35.935 + 1.927\\times \\text{pop_other}\\]\n\nRemember, \\(b_{1}\\) is the expected change in \\(y\\) for a one unit increase in \\(x\\)\n\nWhat does it mean for \\(\\text{pop_other}\\) to increase by one unit here?\n\n\nChanging from to a pop value of “Vic” to “other”\n\n\nWhen \\(x\\) is categorical, the interpretation of \\(b_{1}\\) is the expected change in \\(y\\) when moving from the base level to the non-base level\n\n\nTry interpreting \\(b_{1}\\) in context!\n\n\nInterpretation: possums from “other” (i.e. New South Wales/Queensland) are expected to have tail lengths about 1.927 cm longer than possums from Victoria"
   },
   {
     "objectID": "slides/slides-25-slr-interpretation.html#slope-for-categorical-x-cont.",
     "href": "slides/slides-25-slr-interpretation.html#slope-for-categorical-x-cont.",
     "title": "SLR coefficient estimates",
     "section": "Slope for categorical \\(x\\) (cont.)",
-    "text": "Slope for categorical \\(x\\) (cont.)\n\\[\\widehat{\\text{tail length}} = 35.935 + 1.927\\times \\text{pop_other}\\]\n\\[\n\\text{pop_other} = \\begin{cases}\n0 & \\text{ if  pop = Vic} \\\\\n1 & \\text{ if  pop = other}\n\\end{cases}\n\\]\n\nInterpretation of slope: possums from outside of Victoria are expected to have tail lengths about 1.927 cm longer than possums from Victoria\nNote: interpretations for \\(b_{0}\\) and \\(b_{1}\\) for categorical \\(x\\) are the same as for numerical \\(x\\), but they have more specific/nuanced interpretations when placed in context"
+    "text": "Slope for categorical \\(x\\) (cont.)\n\\[\\widehat{\\text{tail length}} = 35.935 + 1.927\\times \\text{pop_other}\\]\n\\[\n\\text{pop_other} = \\begin{cases}\n0 & \\text{ if  pop = Vic} \\\\\n1 & \\text{ if  pop = other}\n\\end{cases}\n\\]\n\nNote: interpretations for \\(b_{0}\\) and \\(b_{1}\\) for categorical \\(x\\) are the same as for numerical \\(x\\), but they have more specific/nuanced interpretations when placed in context"
   },
   {
     "objectID": "slides/slides-25-slr-interpretation.html#assessing-linear-fit",
     "href": "slides/slides-25-slr-interpretation.html#assessing-linear-fit",
     "title": "SLR coefficient estimates",
     "section": "Assessing linear fit",
-    "text": "Assessing linear fit\n\nWhen \\(x\\) is categorical, the LINE conditions still need to hold\nWhen \\(x\\) only has two levels, the Linearity assumption will always be satisfied\nWe need to evaluate Nearly normal residuals and Equal variance for each level:"
+    "text": "Assessing linear fit\n\nWhen categorical \\(x\\) only has two levels, Linearity is always satisfied (yay!)\nIndependence condition is the same before\nWe need to evaluate Nearly normal residuals and Equal variance for each level\n\nNote: the residual plot (right) is uncessary given histogram of residuals\n\n\n\n\n\n\n\n\n\n\n\nAre all four conditions for SLR met?"
   },
   {
     "objectID": "slides/slides-26-slr-inference.html",
@@ -9749,5 +9749,61 @@
     "title": "Inference in SLR",
     "section": "Remarks",
     "text": "Remarks\n\nNote: for \\(\\beta_{1}\\), the null hypothesis is always of the form \\(H_{0}: \\beta_{1} = 0\\)\nLINE conditions must be met for underlying mathematical and probability theory to hold here! If not met, simulation-based methods would be a better choice\nHere, the Independence conditions did not seem to be met\n\nTake STAT 412 or other course to learn how to incorporate dependencies between observations!\n\nSo what can we say?\n\nThe results suggested by our inference should be viewed as preliminary, and not conclusive\nFurther investigation is certainly warranted!\nChecking LINE can be very subjective, but that’s how real-world analysis will be!"
+  },
+  {
+    "objectID": "slides/slides-25-slr-interpretation.html#housekeeping",
+    "href": "slides/slides-25-slr-interpretation.html#housekeeping",
+    "title": "SLR coefficient estimates",
+    "section": "Housekeeping",
+    "text": "Housekeeping\n\n\n\n\nWill discuss details of Midterm 2 next week!\nThis Problem Set 9 is our last problem set!"
+  },
+  {
+    "objectID": "slides/slides-25-slr-interpretation.html#fitting-elmhurst-model-by-hand",
+    "href": "slides/slides-25-slr-interpretation.html#fitting-elmhurst-model-by-hand",
+    "title": "SLR coefficient estimates",
+    "section": "Fitting elmhurst model (by hand)",
+    "text": "Fitting elmhurst model (by hand)\nLet’s obtain this coefficients by hand!\n\n\n\n\n \n  \n    variable \n    mean \n    s \n  \n \n\n  \n    family_income \n    101.78 \n    63.21 \n  \n  \n    gift_aid \n    19.94 \n    5.46 \n  \n\n\n\n\n\n\nR <- cor(elmhurst$family_income, elmhurst$gift_aid)\nR\n\n[1] -0.4985561\n\n\n\nWhat does this value of \\(R\\) tell us?\n\n\n\n\n\n\n\n\nSet-up the calculations:\n\n\\(b_{1} = \\frac{s_{y}}{s_{x}} R\\)\n\\(b_{0} = \\bar{y} -b_{1} \\bar{x}\\)\n\n\n\n\n\n\\(b_{1} = \\frac{5.461}{63.206} \\times -0.499 = -0.043\\)\n\\(b_{0} = 19.936 - -0.043 \\times 101.779 = 24.319\\)\nWrite out the fitted model!"
+  },
+  {
+    "objectID": "slides/slides-25-slr-interpretation.html#intercept-in-elmhurst-model",
+    "href": "slides/slides-25-slr-interpretation.html#intercept-in-elmhurst-model",
+    "title": "SLR coefficient estimates",
+    "section": "Intercept in elmhurst model",
+    "text": "Intercept in elmhurst model\n\\[\n\\widehat{\\text{gift aid}} = 24.319 + -0.043 \\times \\text{income}\n\\]\n\nInterpretation of intercept: for a family with an income of $0, the expected gift aid would be $2.4319^{4}\nThe intercept’s interpretation only makes sense when a value of \\(x=0\\) is plausible!\n\nThis is typically not the case/relevant in many applications (though it is here!)"
+  },
+  {
+    "objectID": "slides/slides-25-slr-interpretation.html#slope-in-elmhurst-model",
+    "href": "slides/slides-25-slr-interpretation.html#slope-in-elmhurst-model",
+    "title": "SLR coefficient estimates",
+    "section": "Slope in elmhurst model",
+    "text": "Slope in elmhurst model\n\\[\n\\widehat{\\text{gift aid}} = 24.319 + -0.043 \\times \\text{income}\n\\]\n\nInterpretation in context: for every $1000 increase in a family’s income, we expect that the gift aid the student receives will decrease by about $-43"
+  },
+  {
+    "objectID": "slides/slides-25-slr-interpretation.html#running-slr-in-r",
+    "href": "slides/slides-25-slr-interpretation.html#running-slr-in-r",
+    "title": "SLR coefficient estimates",
+    "section": "Running SLR in R",
+    "text": "Running SLR in R\nWe run the model in R, and the output looks something like this:\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    24.319 \n    1.291 \n    18.831 \n    0 \n  \n  \n    family_income \n    -0.043 \n    0.011 \n    -3.985 \n    0 \n  \n\n\n\n\n\n\nThe estimates \\(b_{0}\\) and \\(b_{1}\\) are shown in the second column\n\nWe will use the other columns for HTs and CIs!\n\nWe can also easily add the fitted SLR line to a ggplot:\n\n\n\n\n\nggplot(elmhurst, aes(x = family_income, \n                     y = gift_aid)) +\n  geom_point() +\n  labs(x = \"Family income ($1000s)\", \n       y = \"Gift aid ($1000s)\", \n       caption = \"Least squares line\") +\n  geom_smooth(method = \"lm\", se = F)"
+  },
+  {
+    "objectID": "slides/slides-25-slr-interpretation.html#describing-strength-the-fit",
+    "href": "slides/slides-25-slr-interpretation.html#describing-strength-the-fit",
+    "title": "SLR coefficient estimates",
+    "section": "Describing strength the fit",
+    "text": "Describing strength the fit\nIf we fit a model and determine LINE was met, we still need a way to describe how “good” the fit is!\n\nRecall sample correlation \\(R\\) describes the linear relationship between variables \\(x\\) and \\(y\\)\nWe typically use the coefficient of determination or \\(R^2\\) (R-squared) to describe strength of linear fit of a model\n\nDescribes amount of variation in \\(y\\) that is explained by predictor \\(x\\) in the least squares line\n\nIt turns out that \\(R^2\\) in SLR is exactly … \\(R\\) squared (i.e. the square of the sample correlation)\n\n\nWhat are the possible values of \\(R^2\\)? What are desirable values of \\(R^2\\)?"
+  },
+  {
+    "objectID": "slides/slides-25-slr-interpretation.html#recap",
+    "href": "slides/slides-25-slr-interpretation.html#recap",
+    "title": "SLR coefficient estimates",
+    "section": "Recap",
+    "text": "Recap\n\nLinear regression: statistical method where the relationship between variable \\(x\\) and variable \\(y\\) is modeled as a line + error:\n\n\n\\[\ny = \\underbrace{\\beta_{0} + \\beta_{1} x}_{\\text{line}} + \\underbrace{\\epsilon}_{\\text{error}}\n\\]\n\n\n\\(\\beta_{0}\\) and \\(\\beta_{1}\\) are population parameters and their corresponding point estimates \\(b_{0}\\) and \\(b_{1}\\) are estimated from the data\nFitted model: \\(\\hat{y} = b_{0} + b_{1}x\\)\nResidual: \\(e_{i} = \\hat{y}_{i} - y_{i}\\)\nLINE conditions: Linearity, Independence, Normal residuals, Equal variance"
+  },
+  {
+    "objectID": "slides/slides-25-slr-interpretation.html#remarks",
+    "href": "slides/slides-25-slr-interpretation.html#remarks",
+    "title": "SLR coefficient estimates",
+    "section": "Remarks",
+    "text": "Remarks\n\nWhen \\(x\\) is categorical, mathematical meaning for \\(b_{0}\\) and \\(b_{1}\\) are the same as for numerical \\(x\\), but they have more specific/nuanced interpretations when placed in context\nWhen \\(x\\) is categorical, SLR is a bit “overkill” (you’ll explore this in homework)\n\nAs we’ll see next week, the more interest things happen when we have more than one predictor in the model!"
   }
 ]
