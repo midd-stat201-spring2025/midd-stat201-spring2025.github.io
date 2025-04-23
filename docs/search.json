@@ -9657,7 +9657,7 @@
     "href": "slides/slides-26-slr-inference.html#recap",
     "title": "Inference in SLR",
     "section": "Recap",
-    "text": "Recap\n\nLearned how to interpret slope and intercept of fitted model\n\n\\(b_0\\) is expected value of response when \\(x=0\\)\n\\(b_{1}\\) is expected change in \\(y\\) for a one unit increase in \\(x\\)\n\nWhen explanatory \\(x\\) is categorical, we have a slightly more nuanced interpretation\nCoefficient of determination \\(R^2\\) assesses strength of linear model fit"
+    "text": "Recap\n\nLearned how to interpret slope and intercept of fitted model\n\n\\(b_0\\) is estimate of \\(\\hat{y}\\) when \\(x=0\\)\n\\(b_{1}\\) is expected change in \\(\\hat{y}\\) for a one unit increase in \\(x\\)\n\nWhen explanatory \\(x\\) is categorical, we have a slightly more nuanced interpretation\nCoefficient of determination \\(R^2\\) assesses strength of linear model fit"
   },
   {
     "objectID": "slides/slides-26-slr-inference.html#variability-of-coefficient-estimates",
@@ -9678,7 +9678,7 @@
     "href": "slides/slides-26-slr-inference.html#what-are-we-interested-in",
     "title": "Inference in SLR",
     "section": "What are we interested in?",
-    "text": "What are we interested in?\nRemember: we fit SLR to understand how \\(x\\) is (linearly) related to \\(y\\):\n\\[\ny = \\beta_{0} + \\beta_{1} x + \\epsilon\n\\]\n\n\nWhat would a value of \\(\\beta_{1} = 0\\) mean?\n\n\nIf \\(\\beta_{1} = 0\\), then the effect of \\(x\\) disappears and there is in fact no linear relationship between \\(x\\) and \\(y\\)\n\nWe don’t know \\(\\beta_{1}\\), so let’s look at estimate \\(b_{1}\\):\n\n\nIs an estimate of \\(b_{1}= 0\\) a convincing evidence of no relationship? What if \\(b_{1} = 0.1\\)?\n\nIt depends! We saw that \\(b_{1}\\) varies by sample! So let’s perform inference for \\(\\beta_{1}\\)"
+    "text": "What are we interested in?\nRemember: we fit SLR to understand how \\(x\\) is (linearly) related to \\(y\\):\n\\[\ny = \\beta_{0} + \\beta_{1} x + \\epsilon\n\\]\n\n\nWhat would a value of \\(\\beta_{1} = 0\\) mean?\n\n\nIf \\(\\beta_{1} = 0\\), then the effect of \\(x\\) disappears and there is in fact no linear relationship between \\(x\\) and \\(y\\)\n\nWe don’t know \\(\\beta_{1}\\), so we can perform inference for it!\n\nCan conduct HTs and obtain CIs using our best guess \\(b_{1}\\)"
   },
   {
     "objectID": "slides/slides-26-slr-inference.html#running-example-evals-data",
@@ -9692,28 +9692,28 @@
     "href": "slides/slides-26-slr-inference.html#teaching-evaluations-data",
     "title": "Inference in SLR",
     "section": "Teaching evaluations data",
-    "text": "Teaching evaluations data\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\nDoes this line really have a non-zero slope?"
+    "text": "Teaching evaluations data\n\n\nDoes this line really have a non-zero slope?"
   },
   {
     "objectID": "slides/slides-26-slr-inference.html#hypothesis-test-for-slope",
     "href": "slides/slides-26-slr-inference.html#hypothesis-test-for-slope",
     "title": "Inference in SLR",
     "section": "Hypothesis test for slope",
-    "text": "Hypothesis test for slope\n\nWe have the following hypotheses:\n\n\\(H_{0}: \\beta_{1} = 0\\): the true linear model has slope zero\n\\(H_{A}: \\beta_{1} \\neq 0\\): the true linear model has a non-zero slope. An instructor’s average beauty score is predictive of their average teaching evaluation score.\n\nTo assess, we do what we usually do:\n\nCheck if methods are appropriate\nIf so: obtain an estimate, identify/estimate standard error of the estimate, find an appropriate test statistic, and calculate p-value\n\n\nThe output from lm() actually does all of this for us, but we will see how the test statistic and p-value are calculated!"
+    "text": "Hypothesis test for slope\n\n\\(H_{0}: \\beta_{1} = 0\\): the true linear model has slope zero.\n\nIn context: there is no linear relationship between an instructor’s average beauty score and their average teaching evaluation score.\n\n\\(H_{A}: \\beta_{1} \\neq 0\\): the true linear model has a non-zero slope.\n\nIn context: there is a linear relationship between an average instructor’s beauty score and average teaching evaluation score.\n\nTo assess, we do what we usually do:\n\nCheck if methods are appropriate\nIf so: obtain an estimate, identify/estimate standard error of the estimate, find an appropriate test statistic, and calculate p-value\n\n\nThe output from lm() actually does all of #2 for us, but we will see how the test statistic and p-value are calculated!"
   },
   {
     "objectID": "slides/slides-26-slr-inference.html#teaching-evaluations-model-assessment",
     "href": "slides/slides-26-slr-inference.html#teaching-evaluations-model-assessment",
     "title": "Inference in SLR",
     "section": "Teaching evaluations: model assessment",
-    "text": "Teaching evaluations: model assessment\nWe fit the model in R, and obtain the following plots.\n\nAre all conditions of LINE met?\n\n\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'"
+    "text": "Teaching evaluations: model assessment\nWe fit the model in R, and obtain the following plots.\n\nAre all conditions of LINE met?"
   },
   {
     "objectID": "slides/slides-26-slr-inference.html#looking-at-lm-output",
     "href": "slides/slides-26-slr-inference.html#looking-at-lm-output",
     "title": "Inference in SLR",
     "section": "Looking at lm() output",
-    "text": "Looking at lm() output\n\nlibrary(broom)\neval_mod <- lm(score ~ bty_avg, data = evals)\neval_mod |>\n  tidy()\n\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    3.880338 \n    0.0761430 \n    50.961213 \n    0.00e+00 \n  \n  \n    bty_avg \n    0.066637 \n    0.0162912 \n    4.090382 \n    5.08e-05 \n  \n\n\n\n\n\n\nAssuming the linear model is appropriate, interpret the coefficients!\n\n\nIntercept: an instructor with an average beauty score of 0 would be expected to have an average evaluation score of 3.88\nSlope: for every one point increase in average beauty score an instructor receives, their evaluation score is expected to incrase by 0.067 points"
+    "text": "Looking at lm() output\n\nlibrary(broom)\neval_mod <- lm(score ~ bty_avg, data = evals)\neval_mod |>\n  tidy()\n\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    3.880338 \n    0.0761430 \n    50.961213 \n    0.00e+00 \n  \n  \n    bty_avg \n    0.066637 \n    0.0162912 \n    4.090382 \n    5.08e-05 \n  \n\n\n\n\n\n\nAssuming the linear model is appropriate, interpret the coefficients!\n\n\nIntercept: an instructor with an average beauty score of 0 has an estimated evaluation score of 3.88\nSlope: for every one point increase in average beauty score an instructor receives, their evaluation score is estimated to increase by 0.067 points"
   },
   {
     "objectID": "slides/slides-26-slr-inference.html#looking-at-lm-output-1",
@@ -9727,28 +9727,28 @@
     "href": "slides/slides-26-slr-inference.html#p-value-and-conclusion",
     "title": "Inference in SLR",
     "section": "p-value and conclusion",
-    "text": "p-value and conclusion\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    3.880338 \n    0.0761430 \n    50.961213 \n    0.00e+00 \n  \n  \n    bty_avg \n    0.066637 \n    0.0162912 \n    4.090382 \n    5.08e-05 \n  \n\n\n\n\n\nLet’s confirm the p-value calculation:\n\\[\\text{p-value} = \\text{Pr}(T \\geq 4.09) + \\text{Pr}(T \\leq -4.09)\\] where \\(T \\sim t_{461}\\)\n\nSo our p-value is: 2 * (1 - pt(4.09, 461)) = 5.0827307^{-5}\nAssuming the LINE conditions are met: since our p-value 5.0827307^{-5} is extremely small, we would reject \\(H_{0}\\) at any reasonable significant level. Thus, the data provide convincing evidence that there is a linear relationship between instructor’s beauty score and evaluation score."
+    "text": "p-value and conclusion\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    3.880338 \n    0.0761430 \n    50.961213 \n    0.00e+00 \n  \n  \n    bty_avg \n    0.066637 \n    0.0162912 \n    4.090382 \n    5.08e-05 \n  \n\n\n\n\n\nLet’s confirm the p-value calculation:\n\\[\\text{p-value} = \\text{Pr}(T \\geq 4.09) + \\text{Pr}(T \\leq -4.09)\\] where \\(T \\sim t_{461}\\)\n\n\nWrite out the code you would use to calculate the p-value.\n\n\n\n2 * (1 - pt(4.09, df = 461)) = 0.00005082731\nAssuming the LINE conditions are met: since our p-value 0.00005082731 is extremely small, we would reject \\(H_{0}\\) at any reasonable significant level. Thus, the data provide convincing evidence that there is a linear relationship between instructor’s beauty score and evaluation score."
   },
   {
     "objectID": "slides/slides-26-slr-inference.html#different-h_a",
     "href": "slides/slides-26-slr-inference.html#different-h_a",
     "title": "Inference in SLR",
     "section": "Different \\(H_{A}\\)",
-    "text": "Different \\(H_{A}\\)\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    3.880338 \n    0.0761430 \n    50.961213 \n    0.00e+00 \n  \n  \n    bty_avg \n    0.066637 \n    0.0162912 \n    4.090382 \n    5.08e-05 \n  \n\n\n\n\n\n\n\n\nWhat would your p-value be if your alternative was \\(H_{A}: \\beta_{1} > 0\\)? What would your conclusion be?\n\n\n\\(\\text{Pr}(T \\geq 4.09)\\) = (1-pt(4.09, 461) = 2.5413653^{-5}\nThe data provide convincing evidence that there is a positive relationship between instructor’s beauty score and evaluation score.\n\n\n\nWhat would your p-value be if your alternative was \\(H_{A}: \\beta_{1} < 0\\)? What would your conclusion be?\n\n\n\\(\\text{Pr}(T \\leq 4.09)\\) = pt(4.09, 461) = 0.9999745\nThe data do not provide convincing evidence that there is a negative relationship between instructor’s beauty score and evaluation score."
+    "text": "Different \\(H_{A}\\)\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    3.880338 \n    0.0761430 \n    50.961213 \n    0.00e+00 \n  \n  \n    bty_avg \n    0.066637 \n    0.0162912 \n    4.090382 \n    5.08e-05 \n  \n\n\n\n\n\n\n\n\nWrite code for your p-value if your alternative was \\(H_{A}: \\beta_{1} > 0\\). What would your conclusion be?\n\n\n\\(\\text{Pr}(T \\geq 4.09)\\) = 1-pt(4.09, 461) = 0.00002541365\nThe data provide convincing evidence that there is a positive relationship between instructor’s beauty score and evaluation score.\n\n\n\nWrite code for your p-value if your alternative was \\(H_{A}: \\beta_{1} < 0\\). What would your conclusion be?\n\n\n\\(\\text{Pr}(T \\leq 4.09)\\) = pt(4.09, 461) = 0.9999745\nThe data do not provide convincing evidence that there is a negative relationship between instructor’s beauty score and evaluation score."
   },
   {
     "objectID": "slides/slides-26-slr-inference.html#confidence-intervals",
     "href": "slides/slides-26-slr-inference.html#confidence-intervals",
     "title": "Inference in SLR",
     "section": "Confidence intervals",
-    "text": "Confidence intervals\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    3.880338 \n    0.0761430 \n    50.961213 \n    0.00e+00 \n  \n  \n    bty_avg \n    0.066637 \n    0.0162912 \n    4.090382 \n    5.08e-05 \n  \n\n\n\n\n\nWe can also construct confidence intervals using the output from lm()! Remember:\n\\[\n\\text{CI} = \\text{point est.} \\pm \\text{critical value} \\times \\text{SE}\n\\]\n\nCritical value also comes from \\(t_{n-2}\\) distribution\nSuppose we want a 95% confidence intervals for \\(\\beta_{1}\\):\n\n\nWhat code would you use to obtain critical value?\n\nqt(0.975, 461) = 1.97\n\nSo our 95% CI for \\(\\beta_{1}\\) is: \\(0.067 \\pm 1.97 \\times 0.016 = (0.035, 0.099)\\)"
+    "text": "Confidence intervals\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    3.880338 \n    0.0761430 \n    50.961213 \n    0.00e+00 \n  \n  \n    bty_avg \n    0.066637 \n    0.0162912 \n    4.090382 \n    5.08e-05 \n  \n\n\n\n\n\nWe can also construct confidence intervals using the output from lm()! Remember:\n\\[\n\\text{CI} = \\text{point est.} \\pm \\text{critical value} \\times \\widehat{\\text{SE}}\n\\]\n\nCritical value also comes from \\(t_{n-2}\\) distribution\nSuppose we want a 95% confidence intervals for \\(\\beta_{1}\\):\n\n\nWhat code would you use to obtain critical value? Then set up your CI!\n\nqt(0.975, 461) = 1.97\n\n\n\n\\[\\text{95% CI}: 0.067 \\pm 1.97 \\times 0.016 = (0.035, 0.099)\\]"
   },
   {
     "objectID": "slides/slides-26-slr-inference.html#remarks",
     "href": "slides/slides-26-slr-inference.html#remarks",
     "title": "Inference in SLR",
     "section": "Remarks",
-    "text": "Remarks\n\nNote: for \\(\\beta_{1}\\), the null hypothesis is always of the form \\(H_{0}: \\beta_{1} = 0\\)\nLINE conditions must be met for underlying mathematical and probability theory to hold here! If not met, simulation-based methods would be a better choice\nHere, the Independence conditions did not seem to be met\n\nTake STAT 412 or other course to learn how to incorporate dependencies between observations!\n\nSo what can we say?\n\nThe results suggested by our inference should be viewed as preliminary, and not conclusive\nFurther investigation is certainly warranted!\nChecking LINE can be very subjective, but that’s how real-world analysis will be!"
+    "text": "Remarks\n\nNote: for \\(\\beta_{1}\\), the null hypothesis is always of the form \\(H_{0}: \\beta_{1} = 0\\)\nLINE conditions must be met for underlying mathematical and probability theory to hold here! If not met, interpret and perform inference with caution\nHere, the Independence conditions did not seem to be met\n\nTake STAT 412 or other course to learn how to incorporate dependencies between observations!\n\nSo what can we say?\n\nThe results suggested by our inference should be viewed as preliminary, and not conclusive\nFurther investigation is certainly warranted!\nChecking LINE can be very subjective, but that’s how real-world analysis will be!"
   },
   {
     "objectID": "slides/slides-25-slr-interpretation.html#housekeeping",
@@ -9805,5 +9805,19 @@
     "title": "SLR coefficient estimates",
     "section": "Remarks",
     "text": "Remarks\n\nWhen \\(x\\) is categorical, mathematical meaning for \\(b_{0}\\) and \\(b_{1}\\) are the same as for numerical \\(x\\), but they have more specific/nuanced interpretations when placed in context\nWhen \\(x\\) is categorical, SLR is a bit “overkill” (you’ll explore this in homework)\n\nAs we’ll see next week, the more interest things happen when we have more than one predictor in the model!"
+  },
+  {
+    "objectID": "slides/slides-26-slr-inference.html#housekeeping",
+    "href": "slides/slides-26-slr-inference.html#housekeeping",
+    "title": "Inference in SLR",
+    "section": "Housekeeping",
+    "text": "Housekeeping"
+  },
+  {
+    "objectID": "slides/slides-26-slr-inference.html#housekeeping-1",
+    "href": "slides/slides-26-slr-inference.html#housekeeping-1",
+    "title": "Inference in SLR",
+    "section": "Housekeeping",
+    "text": "Housekeeping\n\nMidterm 2 is one week from today (in class)\n\nContent through this week is fair game for midterm\nPractice problems to be released over the weekend"
   }
 ]
