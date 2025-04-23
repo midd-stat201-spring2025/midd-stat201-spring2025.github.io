@@ -126,7 +126,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -150,6 +150,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="nav-link" href="../schedule.html">
  <span class="menu-text">Schedule</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../midterms.html">
+ <span class="menu-text">Midterms</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../datafest.html">
+ <span class="menu-text">DataFest</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../project/project_description.html">
+ <span class="menu-text">Project</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
@@ -172,9 +184,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -202,13 +215,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The function that will obtain the coefficients for the least-squares line is the <code>lm()</code> function. The syntax is as follows:</p>
 <p><code>lm(response ~ explanatory, data)</code></p>
 </section>
-<section id="example-1-cherry-data-with-continuous-x" class="level3">
-<h3 class="anchored" data-anchor-id="example-1-cherry-data-with-continuous-x">Example 1: <code>cherry</code> data with continuous <span class="math inline">\(x\)</span></h3>
-<p>Let’s once again consider the <code>cherry</code> data from <code>openintro</code>, where we want to fit the model</p>
-<p><span class="math display">\[\text{volume} = \beta_{0} + \beta_{1} \times \text{diameter} + \epsilon\]</span></p>
+<section id="example-elmhurst-data" class="level3">
+<h3 class="anchored" data-anchor-id="example-elmhurst-data">Example: <code>elmhurst</code> data</h3>
+<p>Let’s once again consider the <code>elmhurst</code> data from <code>openintro</code>, where we want to fit the model</p>
+<p><span class="math display">\[\text{gift aid} = \beta_{0} + \beta_{1} \times \text{income} + \epsilon\]</span></p>
 <p>What does this look like in <code>R</code>?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(volume <span class="sc">~</span> diam, <span class="at">data =</span> cherry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(gift_aid <span class="sc">~</span> family_income, <span class="at">data =</span> elmhurst)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><em>Note that the variables have to be spelled as they appear in the data frame!</em></p>
 <p>The output from this line of code is:</p>
@@ -216,66 +229,137 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
-lm(formula = volume ~ diam, data = cherry)
+lm(formula = gift_aid ~ family_income, data = elmhurst)
 
 Coefficients:
-(Intercept)         diam  
-    -36.943        5.066  </code></pre>
+  (Intercept)  family_income  
+     24.31933       -0.04307  </code></pre>
 </div>
 </div>
 <p>This isn’t the most informative of output, so what we will do is use an additional function called <code>summary()</code> that will give us much more information!</p>
-<p>We will first store the output from <code>lm()</code> as a variable called <code>cherry_lm</code>:</p>
+<p>We will first store the output from <code>lm()</code> as a variable called <code>elmhurst_lm</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>cherry_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(volume <span class="sc">~</span> diam, <span class="at">data =</span> cherry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>elmhurst_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(gift_aid <span class="sc">~</span> family_income, <span class="at">data =</span> elmhurst)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Then we will use the <code>summary()</code> function and pass in the linear model:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cherry_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(elmhurst_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
-lm(formula = volume ~ diam, data = cherry)
+lm(formula = gift_aid ~ family_income, data = elmhurst)
 
 Residuals:
-   Min     1Q Median     3Q    Max 
--8.065 -3.107  0.152  3.495  9.587 
+     Min       1Q   Median       3Q      Max 
+-10.1128  -3.6234  -0.2161   3.1587  11.5707 
 
 Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept) -36.9435     3.3651  -10.98 7.62e-12 ***
-diam          5.0659     0.2474   20.48  &lt; 2e-16 ***
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   24.31933    1.29145  18.831  &lt; 2e-16 ***
+family_income -0.04307    0.01081  -3.985 0.000229 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 4.252 on 29 degrees of freedom
-Multiple R-squared:  0.9353,    Adjusted R-squared:  0.9331 
-F-statistic: 419.4 on 1 and 29 DF,  p-value: &lt; 2.2e-16</code></pre>
+Residual standard error: 4.783 on 48 degrees of freedom
+Multiple R-squared:  0.2486,    Adjusted R-squared:  0.2329 
+F-statistic: 15.88 on 1 and 48 DF,  p-value: 0.0002289</code></pre>
 </div>
 </div>
 <p>There’s a lot more information here! We can now see the <span class="math inline">\(b_{0}\)</span> and <span class="math inline">\(b_{1}\)</span> estimates, along with some extra information. In particular, the “Multiple R-squared” quantity is the coefficient of determination <span class="math inline">\(R^2\)</span>!</p>
-</section>
-<section id="example-2-possum-data-with-categorical-x" class="level3">
-<h3 class="anchored" data-anchor-id="example-2-possum-data-with-categorical-x">Example 2: <code>possum</code> data with categorical <span class="math inline">\(x\)</span></h3>
-<p>The nice thing about <code>lm()</code> is that it will automatically convert categorical variables to indicator variables!</p>
-<p>Let’s re-visit the <code>possum</code> model:</p>
-<p><span class="math display">\[\text{tail length} = \beta_{0} + \beta_{1} \times \text{pop-other} + \epsilon\]</span> <span class="math display">\[
-\text{pop-other} = \begin{cases}
-0 &amp; \text{ if  pop = Vic} \\
-1 &amp; \text{ if  pop = other}
-\end{cases}
-\]</span></p>
-<p>We can use the <code>lm()</code> function just as before:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>possum_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(tail_l <span class="sc">~</span> pop, <span class="at">data =</span> possum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <p>Sometimes we just want the coefficients. The <code>coef()</code> function will output the coefficients as a vector. These can be nice for reproducibility and in-line code:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(possum_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(elmhurst_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>(Intercept)    popother 
-  35.934783    1.927286 </code></pre>
+<pre><code>  (Intercept) family_income 
+  24.31932901   -0.04307165 </code></pre>
 </div>
 </div>
+</section>
+<section id="pretty-output-using-broom" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="pretty-output-using-broom">Pretty output using <code>broom</code></h2>
+<p>The <code>broom</code> package has a function that turns the output from <code>lm()</code> into tidy, data frame form. We simply pass in the fitted model into the function of interest!</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Install the package either by typing <code>install.packages("broom")</code> in your Console, or in the Packages pane.</p>
+</div></div><section id="tidy" class="level3">
+<h3 class="anchored" data-anchor-id="tidy"><code>tidy()</code></h3>
+<p>The function <code>tidy()</code> turns the information about the coefficients into a nice data frame:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(elmhurst_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 5
+  term          estimate std.error statistic  p.value
+  &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 (Intercept)    24.3       1.29       18.8  8.28e-24
+2 family_income  -0.0431    0.0108     -3.98 2.29e- 4</code></pre>
+</div>
+</div>
+<p>Since this is in data frame form, each column is a variable, and all of our <code>dplyr</code> wrangling functions work!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(elmhurst_lm) <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(estimate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 24.31932901 -0.04307165</code></pre>
+</div>
+</div>
+</section>
+<section id="glance" class="level3">
+<h3 class="anchored" data-anchor-id="glance"><code>glance()</code></h3>
+<p>The function <code>glance()</code> turns the extra information about the model fit into nice data frame:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(elmhurst_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 12
+  r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC
+      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1     0.249         0.233  4.78      15.9 0.000229     1  -148.  302.  308.
+# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(elmhurst_lm) <span class="sc">|&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(r.squared)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.2485582</code></pre>
+</div>
+</div>
+</section>
+<section id="augment" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="augment"><code>augment()</code></h3>
+<p>The function <code>augment()</code> takes a fitted SLR model input, and combines the <code>x</code> and <code>y</code> variables from the original data frame (i.e.&nbsp;<code>family_income</code> and <code>gift_aid</code>) with extra variables whose values come from the model fit</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">augment</span>(elmhurst_lm) <span class="sc">|&gt;</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 8
+  gift_aid family_income .fitted .resid   .hat .sigma  .cooksd .std.resid
+     &lt;dbl&gt;         &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;
+1     21.7         92.9     20.3   1.40 0.0204   4.83 0.000915      0.296
+2     27.5          0.25    24.3   3.16 0.0727   4.81 0.0185        0.686
+3     27.8         53.1     22.0   5.72 0.0321   4.76 0.0245        1.22 </code></pre>
+</div>
+</div>
+<p>You can see we have the new variables:</p>
+<ul>
+<li><p><code>.fitted</code>: the fitted (estimated) values <span class="math inline">\(\hat{y}\)</span> for the corresponding observation</p></li>
+<li><p><code>.resid</code>: the residual for the observation</p></li>
+</ul>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>The periods are important!</p>
+</div></div><p>We can use the output from augment to plot residuals:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">augment</span>(elmhurst_lm) <span class="sc">|&gt;</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> family_income, <span class="at">y =</span> .resid)) <span class="sc">+</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="slr1_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="576"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
 
 
 </section>

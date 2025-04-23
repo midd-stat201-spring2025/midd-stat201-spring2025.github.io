@@ -19,6 +19,12 @@ draft: false
 
 ## Housekeeping
 
+-   Midterm 2 is one week from today (in class)
+
+    -   Content through this week is fair game for midterm
+
+    -   Practice problems to be released over the weekend
+
 ```{r echo = F, message= F}
 knitr::opts_chunk$set(echo = F, warning = F, messabundance = F)
 library(tidyverse)
@@ -33,14 +39,6 @@ plot_theme <-  theme_minimal() +
   theme(text= element_text(size = 24))
 source("../stat201_fns.R")
 ```
-
-## Housekeeping
-
--   Midterm 2 is one week from today (in class)
-
-    -   Content through this week is fair game for midterm
-
-    -   Practice problems to be released over the weekend
 
 ## Recap
 
@@ -133,12 +131,16 @@ Data on 463 courses at UT Austin were obtained to answer the question: "What fac
 
     -   `bty_avg`: course instructor's average "beauty" score, where average is calculated from six student evaluations of "beauty". Scores ranged from 1-10, with 1 being lowest.
 
+-   ::: discuss
+    Write out our linear regression model
+    :::
+
 ## Teaching evaluations data
 
 ```{r}
 p1 <- ggplot(evals, mapping = aes(x = bty_avg, y = score)) +
   geom_point() +
-  labs(x = "Average beauty score", "Average rating", title = "Relationship between teaching and beauty scores")+
+  labs(x = "Average beauty score", y = "Average rating", title = "Relationship between teaching and beauty scores")+
   plot_theme +
   geom_smooth(method = "lm", se = FALSE)
 p1 
@@ -197,7 +199,6 @@ p_val <- 2*(1-pt(test_stat,df))
 ```{r fig.width=12}
 p2 <- eval_mod |>
   augment() |>
-    mutate(.resid = -1*.resid) |>
   ggplot(aes(x = .resid)) +
   geom_histogram(bins = 25) +
   labs(x = "Residual")+
@@ -205,7 +206,6 @@ p2 <- eval_mod |>
 
 p3 <- eval_mod |>
   augment() |>
-  mutate(.resid = -1*.resid) |>
   ggplot(aes(x = bty_avg, y= .resid)) +
   geom_point()+
   labs(y = "Residual", x = "Average beauty score") +
@@ -226,7 +226,7 @@ eval_mod |>
 
 ```{r}
 tidy_eval |>
-  kable() |>
+  kable(digits = c(3,3,3,3,5)) |>
   kable_styling(font_size = 24)
 ```
 
@@ -242,7 +242,7 @@ Assuming the linear model is appropriate, interpret the coefficients!
 
 ```{r}
 tidy_eval |>
-  kable() |>
+  kable(digits = c(3,3,3,3,5)) |>
   kable_styling(font_size = 24)
 ```
 
@@ -274,7 +274,7 @@ where $df = n-2$
 
 ```{r}
 tidy_eval |>
-  kable() |>
+  kable(digits = c(3,3,3,3,5)) |>
   kable_styling(font_size = 24)
 ```
 
@@ -293,7 +293,7 @@ $$\text{p-value} = \text{Pr}(T \geq 4.09) + \text{Pr}(T \leq -4.09)$$ where $T \
 
 ```{r}
 tidy_eval |>
-  kable() |>
+  kable(digits = c(3,3,3,3,5)) |>
   kable_styling(font_size = 24)
 ```
 
@@ -327,8 +327,8 @@ ub <- round(est + (cv * se ) , 3)
 lb <- round(est - (cv * se ) , 3)
 
 tidy_eval |>
-  kable() |>
-  kable_styling(font_size = 20)
+  kable(digits = c(3,3,3,3,5)) |>
+  kable_styling(font_size = 24)
 ```
 
 We can also construct confidence intervals using the output from `lm()`! Remember:
@@ -347,7 +347,7 @@ $$
 
     -   `` qt(0.975, `r df`) `` = `r round(cv, 2)`
 
-::: {.fragment}    
+::: fragment
 $$\text{95% CI}: `r round(est, 3)` \pm `r round(cv, 2)` \times `r round(se, 3)` = (`r lb`, `r ub`)$$
 :::
 
@@ -357,7 +357,7 @@ $$\text{95% CI}: `r round(est, 3)` \pm `r round(cv, 2)` \times `r round(se, 3)` 
 
 -   LINE conditions must be met for underlying mathematical and probability theory to hold here! If not met, interpret and perform inference with caution
 
--   Here, the **I**ndependence conditions did not seem to be met
+-   Here, the **I**ndependence and **N**ormality conditions did not seem to be met
 
     -   Take STAT 412 or other course to learn how to incorporate dependencies between observations!
 
