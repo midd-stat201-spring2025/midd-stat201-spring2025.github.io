@@ -9797,7 +9797,7 @@
     "href": "slides/slides-25-slr-interpretation.html#recap",
     "title": "SLR coefficient estimates",
     "section": "Recap",
-    "text": "Recap\n\nLinear regression: statistical method where the relationship between variable \\(x\\) and variable \\(y\\) is modeled as a line + error:\n\n\n\\[\ny = \\underbrace{\\beta_{0} + \\beta_{1} x}_{\\text{line}} + \\underbrace{\\epsilon}_{\\text{error}}\n\\]\n\n\n\\(\\beta_{0}\\) and \\(\\beta_{1}\\) are population parameters and their corresponding point estimates \\(b_{0}\\) and \\(b_{1}\\) are estimated from the data\nFitted model: \\(\\hat{y} = b_{0} + b_{1}x\\)\nResidual: \\(e_{i} = \\hat{y}_{i} - y_{i}\\)\nLINE conditions: Linearity, Independence, Normal residuals, Equal variance"
+    "text": "Recap\n\nLinear regression: statistical method where the relationship between variable \\(x\\) and variable \\(y\\) is modeled as a line + error:\n\n\n\\[\ny = \\underbrace{\\beta_{0} + \\beta_{1} x}_{\\text{line}} + \\underbrace{\\epsilon}_{\\text{error}}\n\\]\n\n\n\\(\\beta_{0}\\) and \\(\\beta_{1}\\) are population parameters and their corresponding point estimates \\(b_{0}\\) and \\(b_{1}\\) are estimated from the data\nFitted model: \\(\\hat{y} = b_{0} + b_{1}x\\)\nResidual: \\(e_{i} = y_{i}-\\hat{y}_{i}\\)\nLINE conditions: Linearity, Independence, Normal residuals, Equal variance"
   },
   {
     "objectID": "slides/slides-25-slr-interpretation.html#remarks",

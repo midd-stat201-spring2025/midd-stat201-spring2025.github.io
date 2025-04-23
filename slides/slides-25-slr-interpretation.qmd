@@ -51,7 +51,7 @@ $$
 
 -   **Fitted** model: $\hat{y} = b_{0} + b_{1}x$
 
--   Residual: $e_{i} = \hat{y}_{i}  - y_{i}$
+-   Residual: $e_{i} = y_{i}-\hat{y}_{i}$
 
 -   LINE conditions: **L**inearity, **I**ndependence, **N**ormal residuals, **E**qual variance
 
@@ -296,8 +296,6 @@ $$
 
 ## Running SLR in `R`
 
-
-
 We run the model in `R`, and the output looks something like this:
 
 ```{r}
@@ -312,8 +310,8 @@ tidy(elmhurst_lm) |>
 
 -   We can also easily add the fitted SLR line to a ggplot:
 
-::::: columns
-::: {.column width="50%"}
+::::::: columns
+:::: {.column width="50%"}
 ::: fragment
 ```{r echo = T, eval = F}
 #| code-line-numbers: "7"
@@ -326,10 +324,10 @@ ggplot(elmhurst, aes(x = family_income,
   geom_smooth(method = "lm", se = F)
 ```
 :::
-:::
+::::
 
-::: {.column width="50%"}
-::: {.fragment}
+:::: {.column width="50%"}
+::: fragment
 ```{r fig.height=5}
 ggplot(elmhurst, aes(x = family_income, y = gift_aid)) +
   geom_point(size = 3) +
@@ -339,8 +337,8 @@ ggplot(elmhurst, aes(x = family_income, y = gift_aid)) +
   geom_smooth(method = "lm", se = F)
 ```
 :::
-:::
-:::::
+::::
+:::::::
 
 ## Words of caution
 
@@ -368,7 +366,6 @@ Suppose we would like to use our fitted model to estimate the expected gift aid 
 -   This is an example of **extrapolation**: using the model to estimate values outside the scope of the original data
 
     -   We should *never* extrapolate!
-
 
 ## Describing strength the fit
 
@@ -399,14 +396,14 @@ R2 <- round(R^2, 3)
 -   So the coefficient of determination is $R^2 = (`r R`)^2 = `r R2`$
 
     -   **Interpretation**: using a linear model, about `r R2*100`% of the variability in `gift aid` received by the student is explained by `family income`
-    
-- I think this is actually a pretty good model!
+
+-   I think this is actually a pretty good model!
 
 # Categorical predictor
 
 Thus far, we have assumed that $x$ is numerical. Now let $x$ be categorical.
 
-- Note: we will go out of order and check conditions after fitting and interpreting model
+-   Note: we will go out of order and check conditions after fitting and interpreting model
 
 ## Categorical predictor with two levels
 
@@ -468,7 +465,6 @@ possum |>
 
     -   So `Vic` is the base level
 
-
 ## Example: `possum` model
 
 This yields the now "legal" SLR model
@@ -495,21 +491,19 @@ tidy(possum_lm) |>
 
 ## Intercept for categorical $x$
 
-- Our fitted model is:
+-   Our fitted model is:
 
     $$\widehat{\text{tail length}} = `r possum_b0` + `r possum_b1` \times \text{pop_other}$$
 
-::: {.discuss}
+::: discuss
 -   Try interpreting the intercept $b_{0}$
 :::
-
 
 -   What does $\text{pop_other} = 0$ mean? That the possum is from Victoria!
 
 -   ::: {style="color: maroon"}
     So when $x$ is categorical, the interpretation of $b_{0}$ is the estimated value of the response variable for the base level of $x$
     :::
-
 
 -   Interpretation: the expected tail length of possums from Victoria is `r possum_b0` cm
 
@@ -532,20 +526,18 @@ $$\widehat{\text{tail length}} = `r possum_b0` + `r possum_b1`\times \text{pop_o
 -   ::: discuss
     Try interpreting $b_{1}$ in context!
     :::
-    
-    -  Interpretation: possums from "other" (i.e. New South Wales/Queensland) are expected to have tail lengths about `r possum_b1` cm longer than possums from Victoria
 
-
+    -   Interpretation: possums from "other" (i.e. New South Wales/Queensland) are expected to have tail lengths about `r possum_b1` cm longer than possums from Victoria
 
 ## Assessing linear fit
 
 -   When categorical $x$ only has two levels, **L**inearity is always satisfied (yay!)
 
-- **I**ndependence condition is the same before
+-   **I**ndependence condition is the same before
 
 -   We need to evaluate **N**early normal residuals and **E**qual variance for each level
 
-    - Note: the residual plot (right) is uncessary given histogram of residuals
+    -   Note: the residual plot (right) is uncessary given histogram of residuals
 
 ::: fragment
 ```{r fig.height=2.75}
@@ -566,18 +558,18 @@ p1 + p2
 ```
 :::
 
-::: {.fragment}
-::: {.discuss}
+:::: fragment
+::: discuss
 Are all four conditions for SLR met?
 :::
-:::
+::::
 
 ## Remarks
 
-- When $x$ is categorical, mathematical meaning for $b_{0}$ and $b_{1}$ are the same as for numerical $x$, but they have more specific/nuanced interpretations when placed in context
+-   When $x$ is categorical, mathematical meaning for $b_{0}$ and $b_{1}$ are the same as for numerical $x$, but they have more specific/nuanced interpretations when placed in context
 
-- When $x$ is categorical, SLR is a bit "overkill" (you'll explore this in homework) 
+-   When $x$ is categorical, SLR is a bit "overkill" (you'll explore this in homework)
 
-    - As we'll see next week, the more interest things happen when we have more than one predictor in the model!
-    
+    -   As we'll see next week, the more interest things happen when we have more than one predictor in the model!
+
 # Live code
