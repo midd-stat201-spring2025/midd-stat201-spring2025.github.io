@@ -108,13 +108,12 @@ You can see we have the new variables:
 The periods are important!
 :::
 
-We can use the output from augment to plot residuals:
+We can use the output from augment to plot histogram of residuals:
 
 ```{r fig.height=3.5, fig.width=6}
 augment(elmhurst_lm) |>
-  ggplot(aes(x = family_income, y = .resid)) +
-  geom_point() +
-  geom_hline(yintercept = 0, linetype = "dashed")
+  ggplot(aes(x = .resid)) +
+  geom_histogram(bins = 15)
 ```
 
 ## 
