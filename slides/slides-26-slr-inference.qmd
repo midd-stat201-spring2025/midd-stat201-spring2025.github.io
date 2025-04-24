@@ -123,7 +123,7 @@ $$
 
 Data on 463 courses at UT Austin were obtained to answer the question: "What factors explain differences in instructor teaching evaluation scores?"
 
--   One hypothesis was that more attractive instructors receive better teaching evaluations
+-   One hypothesis is that attractiveness of a teacher influences their teaching evaluations
 
 -   We will look at the variables:
 

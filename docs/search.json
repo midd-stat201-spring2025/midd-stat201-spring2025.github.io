@@ -9685,7 +9685,7 @@
     "href": "slides/slides-26-slr-inference.html#running-example-evals-data",
     "title": "Inference in SLR",
     "section": "Running example: evals data",
-    "text": "Running example: evals data\nData on 463 courses at UT Austin were obtained to answer the question: “What factors explain differences in instructor teaching evaluation scores?”\n\nOne hypothesis was that more attractive instructors receive better teaching evaluations\nWe will look at the variables:\n\nscore: course instructor’s average teaching score, where average is calculated from all students in that course. Scores ranged from 1-5, with 1 being lowest.\nbty_avg: course instructor’s average “beauty” score, where average is calculated from six student evaluations of “beauty”. Scores ranged from 1-10, with 1 being lowest.\n\n\nWrite out our linear regression model"
+    "text": "Running example: evals data\nData on 463 courses at UT Austin were obtained to answer the question: “What factors explain differences in instructor teaching evaluation scores?”\n\nOne hypothesis is that attractiveness of a teacher influences their teaching evaluations\nWe will look at the variables:\n\nscore: course instructor’s average teaching score, where average is calculated from all students in that course. Scores ranged from 1-5, with 1 being lowest.\nbty_avg: course instructor’s average “beauty” score, where average is calculated from six student evaluations of “beauty”. Scores ranged from 1-10, with 1 being lowest.\n\n\nWrite out our linear regression model"
   },
   {
     "objectID": "slides/slides-26-slr-inference.html#teaching-evaluations-data",
