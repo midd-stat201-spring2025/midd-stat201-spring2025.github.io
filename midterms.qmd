@@ -2,6 +2,41 @@
 title: "Midterms"
 ---
 
+## Midterm 2
+
+### Logistics
+
+-   **When and where**: Thursday, 5/1/25 during class (75 minutes)
+
+-   **What**: inference content (Weeks 6-10)
+
+    -   Note: some concepts from Weeks 1-4 are important to understand concepts from Weeks 6-10, but you will not be explicitly assessed on the earlier content
+
+    -   This is a *written* exam. No `dplyr` or `ggplot` code will be assessed, but feel comfortable hand-writing code to obtain p-values and critical values!
+
+    -   You are allowed to bring a single, one-sided 8.5x11 inch piece of paper as your note sheet. **Your note sheet cannot have any example problems.** You will submit your note sheet alongside your midterm. No other outside resources will be allowed.
+
+    -   You will be provided a table z, t, and $\chi^2$ table. We will familiarize ourselves with them in class prior to the midterm.
+
+### Preparation
+
+-   Come to office hours!
+
+<!-- -->
+
+-   My personal working strategy:
+
+    1.  First review your notes and homework
+    2.  Make a first draft of your note sheet, then do some practice problems using only your note sheet to see if what you wrote on it is actually useful for you
+    3.  Make a new note sheet
+    4.  Repeat as necessary
+
+-   Extra practice problems are available [here](midterms/midterm2_practice_probs.pdf). A previous midterm will be shared shortly.
+
+-   You should make sure you understand how to read the distribution tables. Prof. Tang will not be able to help you read them during the midterm.
+
+    ------------------------------------------------------------------------
+
 ## Midterm 1
 
 ### Logistics

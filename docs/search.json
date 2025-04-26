@@ -2300,7 +2300,7 @@
     "href": "midterms.html",
     "title": "Midterms",
     "section": "",
-    "text": "When and where: Thursday, 3/13/25 during class (75 minutes)\nWhat: content through end of Week 4 (i.e. through Simpson’s Paradox)\n\nThis includes homework and coding practices\nThe midterm will be done entirely in a .qmd that will be made available to you at the start of class 11:15am on 3/13. The midterm ends at 12:30pm, but you will have an extra 5 minutes to render the assignment and submit to Gradescope. If your submission is not in by 12:35pm, you will receive an automatic 25% penalty.\nNon-coding concepts are also fair game for the midterm!\n\nImportant: Prof. Tang will be proctoring the exam\n\nHowever, Prof. Tang will not help de-bug code or fix rendering issues.\n\nYou will not have a problem set assigned this week!\nFriday 3/14 office hours will be moved to Wednesday 3/12 3:15-4:15pm instead.\nThis midterm will be open note in the sense that your notes, my slides, and your homework/coding practices are all available to you.\n\n\n\n\n\nThe best preparation you can do for the midterm is to go through your homework and coding practices and be honest with yourself about what you do/don’t understand. This means going through the painful process of looking at feedback on Gradescope. For the concepts that you need to practice more, try more problems (see below)!\nJust because the midterm is open note, this does not mean you cannot study and prepare. You will not have time to try and re-learn what all the functions we learned do!\n\nI suggest going through each of the ggplot and dplyr functions that we’ve seen in the course and ensuring you know how they work and when to use them!\n\nFor extra practice, additional coding problems are made available below. These questions are not necessarily representative of the typical scope and difficulty of individual exam questions. This review is not comprehensive, nor does it represent the expected amount of time for it will take for you to complete the midterm.\n\nIn-class practice: rendered version\n\nSolutions (note that many problems have many different solutions)\n\nPractice 1: rendered version (solutions)\n\n.qmd template  .qmd \n\nPractice 2: rendered version (solutions)\n\n.qmd template  .qmd"
+    "text": "When and where: Thursday, 5/1/25 during class (75 minutes)\nWhat: inference content (Weeks 6-10)\n\nNote: some concepts from Weeks 1-4 are important to understand concepts from Weeks 6-10, but you will not be explicitly assessed on the earlier content\nThis is a written exam. No dplyr or ggplot code will be assessed, but feel comfortable hand-writing code to obtain p-values and critical values!\nYou are allowed to bring a single, one-sided 8.5x11 inch piece of paper as your note sheet. Your note sheet cannot have any example problems. You will submit your note sheet alongside your midterm. No other outside resources will be allowed.\nYou will be provided a table z, t, and \\(\\chi^2\\) table. We will familiarize ourselves with them in class prior to the midterm.\n\n\n\n\n\n\nCome to office hours!\n\n\n\nMy personal working strategy:\n\nFirst review your notes and homework\nMake a first draft of your note sheet, then do some practice problems using only your note sheet to see if what you wrote on it is actually useful for you\nMake a new note sheet\nRepeat as necessary\n\nExtra practice problems are available here. A previous midterm will be shared shortly.\nYou should make sure you understand how to read the distribution tables. Prof. Tang will not be able to help you read them during the midterm."
   },
   {
     "objectID": "midterms.html#preparation",
@@ -2314,7 +2314,7 @@
     "href": "index.html#announcements",
     "title": "Advanced Introduction to Statistics and Data Science",
     "section": "Announcements",
-    "text": "Announcements\n\nProject proposal revisions due Sunday 11:59pm (if necessary)"
+    "text": "Announcements\n\nMidterm 2 this Thursday 5/1 in class!\nWeek 11 office hours:\n\nMonday 4/28: 2-3pm (usual)\nTuesday 4/29: 2-3pm\nFriday 5/02: cancelled"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#recap",
@@ -5030,7 +5030,7 @@
     "href": "midterms.html#midterm-1",
     "title": "Midterms",
     "section": "Midterm 1",
-    "text": "Midterm 1\n\nLogistics\n\nWhen and where: Thursday, October 10 during class (75 minutes)\nWhat: content through end of Week 4 (i.e. through Simpson’s Paradox)\n\nYou will not be asked to write code, but you may be asked to read or critique it\n\nImportant: Prof. Tang will be proctoring the exam\nYou will not have a problem set assigned this week!\nProf. Tang will move Friday’s office hours to Wednesday 10/09 3-4pm instead.\n\nYou should bring a calculator to the midterm. If you do not have one, the department can provide very basic calculators."
+    "text": "Midterm 1\n\nLogistics\n\nWhen and where: Thursday, 3/13/25 during class (75 minutes)\nWhat: content through end of Week 4 (i.e. through Simpson’s Paradox)\n\nThis includes homework and coding practices\nThe midterm will be done entirely in a .qmd that will be made available to you at the start of class 11:15am on 3/13. The midterm ends at 12:30pm, but you will have an extra 5 minutes to render the assignment and submit to Gradescope. If your submission is not in by 12:35pm, you will receive an automatic 25% penalty.\nNon-coding concepts are also fair game for the midterm!\n\nImportant: Prof. Tang will be proctoring the exam\n\nHowever, Prof. Tang will not help de-bug code or fix rendering issues.\n\nYou will not have a problem set assigned this week!\nFriday 3/14 office hours will be moved to Wednesday 3/12 3:15-4:15pm instead.\nThis midterm will be open note in the sense that your notes, my slides, and your homework/coding practices are all available to you.\n\n\n\nPreparation\n\nThe best preparation you can do for the midterm is to go through your homework and coding practices and be honest with yourself about what you do/don’t understand. This means going through the painful process of looking at feedback on Gradescope. For the concepts that you need to practice more, try more problems (see below)!\nJust because the midterm is open note, this does not mean you cannot study and prepare. You will not have time to try and re-learn what all the functions we learned do!\n\nI suggest going through each of the ggplot and dplyr functions that we’ve seen in the course and ensuring you know how they work and when to use them!\n\nFor extra practice, additional coding problems are made available below. These questions are not necessarily representative of the typical scope and difficulty of individual exam questions. This review is not comprehensive, nor does it represent the expected amount of time for it will take for you to complete the midterm.\n\nIn-class practice: rendered version\n\nSolutions (note that many problems have many different solutions)\n\nPractice 1: rendered version (solutions)\n\n.qmd template  .qmd \n\nPractice 2: rendered version (solutions)\n\n.qmd template  .qmd"
   },
   {
     "objectID": "midterms.html#preparation-2",
@@ -9819,5 +9819,201 @@
     "title": "Inference in SLR",
     "section": "Housekeeping",
     "text": "Housekeeping\n\nMidterm 2 is one week from today (in class)\n\nContent through this week is fair game for midterm\nPractice problems to be released over the weekend"
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#housekeeping",
+    "href": "slides/slides-27-mlr-intro.html#housekeeping",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Housekeeping",
+    "text": "Housekeeping\n\n\n\n\nStudy for midterm!\nToday’s content will not be assessed on midterm, but might be useful for your final project and future coursework!"
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#voice-shimmer-and-jitter-data",
+    "href": "slides/slides-27-mlr-intro.html#voice-shimmer-and-jitter-data",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Voice shimmer and jitter data",
+    "text": "Voice shimmer and jitter data\nRecall the data from a previous problem set about voice jitter and shimmer among patients with and without Parkinson’s Disease (PD).\n\n\n\nThe variables in the dataset are as follows:\n\n\nclip: ID of the recording\njitter: a measure of variation in fundamental frequency\nshimmer: a measure of variation in amplitude\nhnr: a ratio of total components vs. noise in the voice recording\nstatus: PD vs. Healthy\navg.f.q: 1, 2, or 3, corresponding to average vocal fundamental frequency (1 = low, 2 = mid, 3 = high)"
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#analysis-goal",
+    "href": "slides/slides-27-mlr-intro.html#analysis-goal",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Analysis goal",
+    "text": "Analysis goal\nWant to understand what might help explain the voice shimmer of a patient with low vocal fundamental frequency.\n\n\n\n\n\n\n\n\n\n\nWhat do you notice about how shimmer relates to hnr, jitter, and status?\n\nCan we somehow incorporate all the predictors into the same model for shimmer? Do you think we need to?"
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#multiple-linear-regression-1",
+    "href": "slides/slides-27-mlr-intro.html#multiple-linear-regression-1",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Multiple linear regression",
+    "text": "Multiple linear regression\n\nWe have seen simple linear regression, where we had one explanatory variable\nExtend to include multiple explanatory variables\n\nSeems natural: usually several factors affect behavior of phenomena\n\nMultiple linear regression takes the form: \\[y = \\beta_{0} + \\beta_{1} x_{1} + \\beta_{2} x_{2} + \\ldots + \\beta_{p} x_{p} + \\epsilon\\]\n\nNow there are \\(p\\) different explanatory variables \\(x_{1},\\ldots, x_{p}\\) per observation\nStill one response \\(y\\) and error \\(\\epsilon\\) per observation\n\nRepresents a holistic approach for modeling all of the variables simultaneously"
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#pd-data-cont.",
+    "href": "slides/slides-27-mlr-intro.html#pd-data-cont.",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "PD data (cont.)",
+    "text": "PD data (cont.)\nLet’s start off by building a model that does not include status, as the EDA didn’t seem to show a strong relationship between status and shimmer.\n\nOur multiple linear regression model is:\n\\[\\text{shimmer} = \\beta_{0} + \\beta_{1} \\text{hnr} + \\beta_{2} \\text{jitter} + \\epsilon\\]\nJust as in the case of SLR, the estimates of \\(\\beta_{0}, \\beta_{1}, \\beta_{2}\\) parameters are chosen via the least squares criterion"
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#multiple-regression-in-r",
+    "href": "slides/slides-27-mlr-intro.html#multiple-regression-in-r",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Multiple regression in R",
+    "text": "Multiple regression in R\nVery easy to code:\n\nshimmer_lm <- lm(shimmer ~ hnr + jitter, data = pd)\ntidy(shimmer_lm)\n\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    0.732 \n    0.091 \n    8.022 \n    0.0e+00 \n  \n  \n    hnr \n    -0.025 \n    0.004 \n    -7.066 \n    0.0e+00 \n  \n  \n    jitter \n    13.467 \n    2.574 \n    5.232 \n    1.2e-06 \n  \n\n\n\n\n\n\nSimply identify the estimated coefficients from the output to obtain fitted model\n\nTry writing down the fitted model\n\n\n\n\\[\n\\begin{align*}\n\\widehat{\\text{shimmer}} &= 0.732  -0.025 \\text{hnr}+ 13.467 \\text{jitter}\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#interpretation-of-intercept",
+    "href": "slides/slides-27-mlr-intro.html#interpretation-of-intercept",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Interpretation of intercept",
+    "text": "Interpretation of intercept\n\nInterpretation of the estimated intercept \\(b_{0}\\) in MLR is very similar to SLR!\n\n\n\\[\n\\begin{align*}\n\\widehat{\\text{shimmer}} &= 0.732  -0.025 \\text{hnr} + 13.467 \\text{jitter}\n\\end{align*}\n\\]\n\n\n\nTry interpreting the intercept!\n\nWe simply plug in 0 for all the explanatory variables\n\nThe estimated voice shimmer of a patient with 0 hnr and 0 voice jitter is 0.732."
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#interpretation-of-non-intercept",
+    "href": "slides/slides-27-mlr-intro.html#interpretation-of-non-intercept",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Interpretation of non-intercept",
+    "text": "Interpretation of non-intercept\n\nWhen we have more than one predictor variable, interpretation of the coefficients requires a bit of care\n\nMultiple moving parts\n\nInterpretation of a particular non-intercept coefficient \\(b_{k}\\) relies on “holding the other variables fixed/constant” (assuming the model is appropriate)\n\n\n\\[\n\\begin{align*}\n\\widehat{\\text{shimmer}} &= 0.732  -0.025 \\text{hnr} + 13.467 \\text{jitter}\n\\end{align*}\n\\]\n\n\nFor every one unit increase in a person’s HNR, their voice shimmer is expected/estimated to \\(\\color{orange}{\\text{decrease by } 0.025}\\), holding their voice jitter value constant\n\nInterpret the coefficient associated with jitter"
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#interpretation-on-non-intercept-cont.",
+    "href": "slides/slides-27-mlr-intro.html#interpretation-on-non-intercept-cont.",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Interpretation on non-intercept (cont.)",
+    "text": "Interpretation on non-intercept (cont.)\n\\[\n\\begin{align*}\n\\widehat{\\text{shimmer}} &= 0.732  -0.025 \\text{hnr} 13.467 \\text{jitter}\n\\end{align*}\n\\]\n\nFor every one unit increase in a patient’s voice jitter, their voice shimmer is expected to \\(\\color{orange}{\\text{increase by } 13.467}\\) units, holding their HNR value constant"
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#more-isnt-always-better",
+    "href": "slides/slides-27-mlr-intro.html#more-isnt-always-better",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "More isn’t always better",
+    "text": "More isn’t always better\n\nYou might be tempted to throw in all available predictors into your model! Don’t fall into temptation!\nQuality over quantity\nFor SLR, we used the coefficient of determination \\(R^2\\) to assess how good the model was\n\n\\(R^2\\) is less helpful when there are many variables\nWhy? The \\(R^2\\) will never decrease (and will almost always increase) when we include an additional predictor"
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#adjusted-r2",
+    "href": "slides/slides-27-mlr-intro.html#adjusted-r2",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Adjusted \\(R^2\\)",
+    "text": "Adjusted \\(R^2\\)\n\nFor multiple linear regression, we use the adjusted \\(R^2\\) to assess the quality of model fit\n\n“Adjusted” for the presence of additional predictors\nTake STAT 211 to learn the formula and intuition behind it!\n\nAdjusted \\(R^2\\) is always less than \\(R^2\\), and doesn’t have a nice interpretation\nWhen choosing between models, one method is to choose the one with highest adjusted \\(R^2\\)"
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#adjusted-r2-cont.",
+    "href": "slides/slides-27-mlr-intro.html#adjusted-r2-cont.",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Adjusted \\(R^2\\) (cont.)",
+    "text": "Adjusted \\(R^2\\) (cont.)\n\n\n\nsummary(shimmer_lm)\n\n\nCall:\nlm(formula = shimmer ~ hnr + jitter, data = pd)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.182276 -0.047886 -0.007739  0.029861  0.236647 \n\nCoefficients:\n             Estimate Std. Error t value Pr(>|t|)    \n(Intercept)  0.732203   0.091279   8.022 5.89e-12 ***\nhnr         -0.024795   0.003509  -7.066 4.54e-10 ***\njitter      13.466902   2.573728   5.232 1.23e-06 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.07437 on 83 degrees of freedom\nMultiple R-squared:  0.807, Adjusted R-squared:  0.8024 \nF-statistic: 173.5 on 2 and 83 DF,  p-value: < 2.2e-16\n\n\n\n\nglance(shimmer_lm)\n\n\n\n\n\n \n  \n    r.squared \n    adj.r.squared \n    sigma \n    statistic \n    p.value \n    df \n    logLik \n    AIC \n    BIC \n    deviance \n    df.residual \n    nobs \n  \n \n\n  \n    0.807 \n    0.8024 \n    0.0744 \n    173.5385 \n    0 \n    2 \n    102.9875 \n    -197.975 \n    -188.1576 \n    0.4591 \n    83 \n    86"
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#conditions-for-inference",
+    "href": "slides/slides-27-mlr-intro.html#conditions-for-inference",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Conditions for inference",
+    "text": "Conditions for inference\nWe still need LINE to hold\n\nLinearity: harder to assess now that multiple predictors are involved. Good idea to make several scatter plots\nIndependence: same as before\nNearly normal residuals: same as before\nEqual variance: residual plot has fitted values \\(\\hat{y}\\) on the x-axis"
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#hypothesis-testing-in-mlr",
+    "href": "slides/slides-27-mlr-intro.html#hypothesis-testing-in-mlr",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Hypothesis testing in MLR",
+    "text": "Hypothesis testing in MLR\n\nIn MLR, we are interested in the effect of each predictor variable on the response \\(y\\).\n\nNeed to account for presence of other predictors in the model\n\n\\(H_{0}: \\beta_{k} = 0\\), given other predictors in the model\n\\(H_{A}: \\beta_{k} \\neq 0\\), given other predictors in the model (or \\(>, <\\))\nWe can write down one null hypothesis for each coefficient in the model"
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#hypothesis-tests-from-lm",
+    "href": "slides/slides-27-mlr-intro.html#hypothesis-tests-from-lm",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Hypothesis tests from lm()",
+    "text": "Hypothesis tests from lm()\n\\[\\text{shimmer} = \\beta_{0} + \\beta_{1} \\text{hnr} + \\beta_{2} \\text{jitter} + \\epsilon\\]\nWe can test the following null hypotheses (no need to write down):\n\n\\(H_{0}: \\beta_{1} = 0\\), given jitter is included in the model\n\ni.e. HNR has no effect on shimmer once we account for jitter\n\n\\(H_{0}: \\beta_{2} = 0\\), given HNR is included in the model"
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#hypothesis-tests-from-lm-1",
+    "href": "slides/slides-27-mlr-intro.html#hypothesis-tests-from-lm-1",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Hypothesis tests from lm()",
+    "text": "Hypothesis tests from lm()\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    0.73 \n    0.091 \n    8.022 \n    0.0e+00 \n  \n  \n    hnr \n    -0.02 \n    0.004 \n    -7.066 \n    0.0e+00 \n  \n  \n    jitter \n    13.47 \n    2.574 \n    5.232 \n    1.2e-06 \n  \n\n\n\n\n\n\nOutput from lm() provides:\n\nTest statistic, which follows \\(t_{n-p}\\) where \\(p =\\) total number of unknown parameters (i.e. \\(\\beta\\) terms)\np-values for testing two-sided \\(H_{A}\\) provided\n\n\n\n\nBased on the model fit, which variables seem to be important predictors of voice shimmer? Why?"
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#hypothesis-tests-from-lm-cont.",
+    "href": "slides/slides-27-mlr-intro.html#hypothesis-tests-from-lm-cont.",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Hypothesis tests from lm() (cont.)",
+    "text": "Hypothesis tests from lm() (cont.)\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    0.732 \n    0.091 \n    8.022 \n    0.0e+00 \n  \n  \n    hnr \n    -0.025 \n    0.004 \n    -7.066 \n    0.0e+00 \n  \n  \n    jitter \n    13.467 \n    2.574 \n    5.232 \n    1.2e-06 \n  \n\n\n\n\n\n\nHNR does seem to be an important predictor for voice shimmer, even when including jitter in the model\n\nLow p-value suggests it would be extremely unlikely to see data that produce \\(b_{1} = -0.025\\) if the true relationship between shimmer and HNR was non-existent (i.e., if \\(\\beta_{1} = 0\\)) and the model also included jitter\n\nJitter does seem to be an important predictor, even when including HNR in the model"
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#more-complex-model",
+    "href": "slides/slides-27-mlr-intro.html#more-complex-model",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "More complex model",
+    "text": "More complex model\nLet’s see a model that now includes the status of the patient as a predictor:\n\nshimmer_lm2 <- lm(shimmer ~ hnr + jitter + status, data = pd)\ntidy(shimmer_lm2)\n\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    0.688 \n    0.103 \n    6.668 \n    0.0000000 \n  \n  \n    hnr \n    -0.024 \n    0.004 \n    -6.273 \n    0.0000000 \n  \n  \n    jitter \n    13.662 \n    2.585 \n    5.285 \n    0.0000010 \n  \n  \n    statusPD \n    0.020 \n    0.022 \n    0.915 \n    0.3628131 \n  \n\n\n\n\n\n\nRemember, status is categorical with two levels. lm() converted to indicator variable for us: statusPD = 1 when status = \"PD\"\n\n\n\nWrite out the fitted model."
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#interpretation-with-categorical-variable",
+    "href": "slides/slides-27-mlr-intro.html#interpretation-with-categorical-variable",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Interpretation with categorical variable",
+    "text": "Interpretation with categorical variable\n\\[\n\\widehat{\\text{shimmer}} = 0.688 -0.024 \\text{hnr} + 13.662 \\text{jitter} + 0.02 \\text{statusPD}\n\\]\n\n\nTry interpreting the intercept here!\n\nWhat does it mean for the explanatory variables to be 0? It means hnr = 0, jitter = 0, and the patient does not have PD\n\nA “healthy” patient with HNR and jitter values of 0 is estimated to have a voice shimmer of 0.688"
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#interpretation-of-slope-coefficients",
+    "href": "slides/slides-27-mlr-intro.html#interpretation-of-slope-coefficients",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Interpretation of slope coefficients",
+    "text": "Interpretation of slope coefficients\n\\[\n\\widehat{shimmer} = 0.688  -0.024 \\text{hnr} + 13.662 \\text{jitter} + 0.02 \\text{statusPD}\n\\]\n\nTry interpreting the coefficients of hnr, jitter, and statusPD. Remember the special wording/acknowledgement now that we are in MLR world!\n\n\nCoefficient for hnr: for every one unit increase in HNR, we expect the patient’s shimmer to decrease by 0.024 units, holding the other variables (jitter and status) constant.\nCoefficient for jitter: for every one unit increase in jitter, we expect the patient’s shimmer to increase by 13.662 units, holding the other variables constant.\nCoefficient for statusPD: patients with PD are estimated to have a voice shimmer 0.02 units higher than patients without PD, holding the other variables constant"
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#effect-of-status",
+    "href": "slides/slides-27-mlr-intro.html#effect-of-status",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Effect of status",
+    "text": "Effect of status\n\n\n\n\n \n  \n    term \n    estimate \n    std.error \n    statistic \n    p.value \n  \n \n\n  \n    (Intercept) \n    0.688 \n    0.103 \n    6.668 \n    0.0000000 \n  \n  \n    hnr \n    -0.024 \n    0.004 \n    -6.273 \n    0.0000000 \n  \n  \n    jitter \n    13.662 \n    2.585 \n    5.285 \n    0.0000010 \n  \n  \n    statusPD \n    0.020 \n    0.022 \n    0.915 \n    0.3628131 \n  \n\n\n\n\n\n\nBased off the model output, does it appear that status is an important predictor of a patient’s voice shimmer? Why or why not? What about the other two variables hnr and jitter?"
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#comparing-models",
+    "href": "slides/slides-27-mlr-intro.html#comparing-models",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Comparing models",
+    "text": "Comparing models\nLet’s compare the two models:\n\n\n\ntidy(shimmer_lm) |>\n  select(term, estimate, p.value)\n\n\n\n\n\n \n  \n    term \n    estimate \n    p.value \n  \n \n\n  \n    (Intercept) \n    0.732 \n    0e+00 \n  \n  \n    hnr \n    -0.025 \n    0e+00 \n  \n  \n    jitter \n    13.467 \n    1e-06 \n  \n\n\n\n\n\n\nglance(shimmer_lm)\n\n\n\n\n\n \n  \n    r.squared \n    adj.r.squared \n    sigma \n    statistic \n    p.value \n    df \n    logLik \n    AIC \n    BIC \n    deviance \n    df.residual \n    nobs \n  \n \n\n  \n    0.807 \n    0.8024 \n    0.0744 \n    173.5385 \n    0 \n    2 \n    102.9875 \n    -197.975 \n    -188.1576 \n    0.4591 \n    83 \n    86 \n  \n\n\n\n\n\n\n\ntidy(shimmer_lm2) |>\n  select(term, estimate, p.value)\n\n\n\n\n\n \n  \n    term \n    estimate \n    p.value \n  \n \n\n  \n    (Intercept) \n    0.688 \n    0.000000 \n  \n  \n    hnr \n    -0.024 \n    0.000000 \n  \n  \n    jitter \n    13.662 \n    0.000001 \n  \n  \n    statusPD \n    0.020 \n    0.362813 \n  \n\n\n\n\n\n\nglance(shimmer_lm2)\n\n\n\n\n\n \n  \n    r.squared \n    adj.r.squared \n    sigma \n    statistic \n    p.value \n    df \n    logLik \n    AIC \n    BIC \n    deviance \n    df.residual \n    nobs \n  \n \n\n  \n    0.809 \n    0.802 \n    0.0744 \n    115.7449 \n    0 \n    3 \n    103.4244 \n    -196.8488 \n    -184.5771 \n    0.4544 \n    82 \n    86 \n  \n\n\n\n\n\n\n\n\nWhat do you notice about the estimated coefficients, \\(R^2\\), and adjusted \\(R^2\\) across the two models?"
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#remarks",
+    "href": "slides/slides-27-mlr-intro.html#remarks",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Remarks",
+    "text": "Remarks\n\nWe have only scratched the surface of MLR\nThings to consider (beyond our course):\n\nMulticollinearity (when the predictor variables are correlated with each other)\nModel selection\nMore than one categorical variable\nInteraction effects"
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#voice-shimmer-and-jitter-data-.incrementalfalse",
+    "href": "slides/slides-27-mlr-intro.html#voice-shimmer-and-jitter-data-.incrementalfalse",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Voice shimmer and jitter data {.incremental=“false”}",
+    "text": "Voice shimmer and jitter data {.incremental=“false”}\nRecall the data from a previous problem set about voice jitter and shimmer among patients with and without Parkinson’s Disease (PD).\n\n\n\nThe variables in the dataset are as follows:\n\nclip: ID of the recording\njitter: a measure of variation in fundamental frequency\nshimmer: a measure of variation in amplitude\nhnr: a ratio of total components vs. noise in the voice recording\nstatus: PD vs. Healthy\navg.f.q: 1, 2, or 3, corresponding to average vocal fundamental frequency (1 = low, 2 = mid, 3 = high)"
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#voice-shimmer-and-jitter-data-.incrementalf",
+    "href": "slides/slides-27-mlr-intro.html#voice-shimmer-and-jitter-data-.incrementalf",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Voice shimmer and jitter data {.incremental=F}",
+    "text": "Voice shimmer and jitter data {.incremental=F}\nRecall the data from a previous problem set about voice jitter and shimmer among patients with and without Parkinson’s Disease (PD).\n\n\n\nThe variables in the dataset are as follows:\n\nclip: ID of the recording\njitter: a measure of variation in fundamental frequency\nshimmer: a measure of variation in amplitude\nhnr: a ratio of total components vs. noise in the voice recording\nstatus: PD vs. Healthy\navg.f.q: 1, 2, or 3, corresponding to average vocal fundamental frequency (1 = low, 2 = mid, 3 = high)"
+  },
+  {
+    "objectID": "slides/handout-27-mlr-intro.html",
+    "href": "slides/handout-27-mlr-intro.html",
+    "title": "Multiple Linear Regression (MLR)",
+    "section": "",
+    "text": "Want to understand what might help explain the voice shimmer of a patient with low vocal fundamental frequency."
+  },
+  {
+    "objectID": "slides/handout-27-mlr-intro.html#model-1",
+    "href": "slides/handout-27-mlr-intro.html#model-1",
+    "title": "Multiple Linear Regression (MLR)",
+    "section": "Model 1",
+    "text": "Model 1\nMultiple linear regression model: \n\nshimmer_lm <- lm(shimmer ~ hnr + jitter, data = pd) \n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n0.732\n0.091\n8.022\n0.0e+00\n\n\nhnr\n-0.025\n0.004\n-7.066\n0.0e+00\n\n\njitter\n13.467\n2.574\n5.232\n1.2e-06\n\n\n\n\n\nFitted model: \nInterpretation of:\n\nIntercept: \nRemaining coefficients: \n\nModel 1 fit\n\n\n\n\n\nr.squared\nadj.r.squared\n\n\n\n\n0.807\n0.8024\n\n\n\n\n\nConditions\n\n\n\n\n\n\n\n\n\n\n\n\nInference\n\nHypotheses: \nWhich variables seem to be associated with shimmer? Why?"
+  },
+  {
+    "objectID": "slides/handout-27-mlr-intro.html#model-2",
+    "href": "slides/handout-27-mlr-intro.html#model-2",
+    "title": "Multiple Linear Regression (MLR)",
+    "section": "Model 2",
+    "text": "Model 2\nLet’s see a model that now includes the status of the patient as a predictor:\n\nshimmer_lm2 <- lm(shimmer ~ hnr + jitter + status, data = pd)\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n0.688\n0.103\n6.668\n0.0000000\n\n\nhnr\n-0.024\n0.004\n-6.273\n0.0000000\n\n\njitter\n13.662\n2.585\n5.285\n0.0000010\n\n\nstatusPD\n0.020\n0.022\n0.915\n0.3628131\n\n\n\n\n\nFitted model: \nInterpretation of:\n\nIntercept: \nRemaining coefficients: \n\nModel 2 fit\n\n\n\n\n\nr.squared\nadj.r.squared\n\n\n\n\n0.807\n0.8024\n\n\n\n\n\nWhich model seems “better”, and why?"
   }
 ]

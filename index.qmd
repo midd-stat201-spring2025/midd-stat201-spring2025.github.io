@@ -8,7 +8,11 @@ Welcome to the website for Middlebury College’s Spring 2025 STAT 201. On this 
 
 ## Announcements
 
--   Project proposal revisions due Sunday 11:59pm (if necessary)
+-   [Midterm 2](midterms.qmd) this Thursday 5/1 in class!
+-   Week 11 office hours:
+    -   Monday 4/28: 2-3pm (usual)
+    -   Tuesday 4/29: 2-3pm
+    -   Friday 5/02: cancelled
 
 ------------------------------------------------------------------------
 
