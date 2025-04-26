@@ -6,7 +6,9 @@ title: "Midterms"
 
 ### Logistics
 
--   **When and where**: Thursday, 5/1/25 during class (75 minutes)
+-   **When and where**: Thursday, 5/1/25 **during class** (75 minutes)
+
+    -   NOTE: this is a change from the syllabus which originally stated an evening midterm.
 
 -   **What**: inference content (Weeks 6-10)
 
