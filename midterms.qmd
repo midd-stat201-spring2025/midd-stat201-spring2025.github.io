@@ -18,6 +18,8 @@ title: "Midterms"
 
     -   You are allowed to bring a single, one-sided 8.5x11 inch piece of paper as your note sheet. **Your note sheet cannot have any example problems.** You will submit your note sheet alongside your midterm. No other outside resources will be allowed.
 
+    -   A calculator will be provided for you.
+
     -   You will be provided a table [z](z_table.pdf), [t](t_table.pdf), and [$\chi^2$](chi_square_table.pdf) table. We will familiarize ourselves with them in class prior to the midterm.
 
 ### Preparation
