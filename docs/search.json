@@ -2300,7 +2300,7 @@
     "href": "midterms.html",
     "title": "Midterms",
     "section": "",
-    "text": "When and where: Thursday, 5/1/25 during class (75 minutes)\n\nNOTE: this is a change from the syllabus which originally stated an evening midterm.\n\nWhat: inference content (Weeks 6-10)\n\nNote: some concepts from Weeks 1-4 are important to understand concepts from Weeks 6-10, but you will not be explicitly assessed on the earlier content\nThis is a written exam. No dplyr or ggplot code will be assessed, but feel comfortable hand-writing code to obtain p-values and critical values!\nYou are allowed to bring a single, one-sided 8.5x11 inch piece of paper as your note sheet. Your note sheet cannot have any example problems. You will submit your note sheet alongside your midterm. No other outside resources will be allowed.\nYou will be provided a table z, t, and \\(\\chi^2\\) table. We will familiarize ourselves with them in class prior to the midterm.\n\n\n\n\n\n\nCome to office hours!\n\n\n\nMy personal working strategy:\n\nFirst review your notes and homework\nMake a first draft of your note sheet, then do some practice problems using only your note sheet to see if what you wrote on it is actually useful for you\nMake a new note sheet\nRepeat as necessary\n\nExtra practice problems are available here. A previous midterm will be shared shortly.\nYou should make sure you understand how to read the distribution tables. Prof. Tang will not be able to help you read them during the midterm."
+    "text": "When and where: Thursday, 5/1/25 during class (75 minutes)\n\nNOTE: this is a change from the syllabus which originally stated an evening midterm.\n\nWhat: inference content (Weeks 6-10)\n\nNote: some concepts from Weeks 1-4 are important to understand concepts from Weeks 6-10, but you will not be explicitly assessed on the earlier content\nThis is a written exam. No dplyr or ggplot code will be assessed, but feel comfortable hand-writing code to obtain p-values and critical values!\nYou are allowed to bring a single, one-sided 8.5x11 inch piece of paper as your note sheet. Your note sheet cannot have any example problems. You will submit your note sheet alongside your midterm. No other outside resources will be allowed.\nYou will be provided a table z, t, and \\(\\chi^2\\) table. We will familiarize ourselves with them in class prior to the midterm.\n\n\n\n\n\n\nCome to office hours!\n\n\n\nMy personal working strategy:\n\nFirst review your notes and homework\nMake a first draft of your note sheet, then do some practice problems using only your note sheet to see if what you wrote on it is actually useful for you\nMake a new note sheet\nRepeat as necessary\n\nExtra practice problems are available here.\nA previous midterm is shared here. Note, there are some concepts on the previous midterm that were not taught this semester (e.g. mean difference in paired data).\nYou should make sure you understand how to read the distribution tables. Prof. Tang will not be able to help you read them during the midterm."
   },
   {
     "objectID": "midterms.html#preparation",
@@ -10015,5 +10015,19 @@
     "title": "Multiple Linear Regression (MLR)",
     "section": "Model 2",
     "text": "Model 2\nLet’s see a model that now includes the status of the patient as a predictor:\n\nshimmer_lm2 <- lm(shimmer ~ hnr + jitter + status, data = pd)\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n0.688\n0.103\n6.668\n0.0000000\n\n\nhnr\n-0.024\n0.004\n-6.273\n0.0000000\n\n\njitter\n13.662\n2.585\n5.285\n0.0000010\n\n\nstatusPD\n0.020\n0.022\n0.915\n0.3628131\n\n\n\n\n\nFitted model: \nInterpretation of:\n\nIntercept: \nRemaining coefficients: \n\nModel 2 fit\n\n\n\n\n\nr.squared\nadj.r.squared\n\n\n\n\n0.807\n0.8024\n\n\n\n\n\nWhich model seems “better”, and why?"
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html",
+    "href": "slides/slides-27-mlr-intro.html",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "",
+    "text": "Study for midterm!\nToday’s content will not be assessed on midterm, but might be useful for your final project and future coursework!"
+  },
+  {
+    "objectID": "slides/slides-27-mlr-intro.html#interpretation-of-non-intercept-cont.",
+    "href": "slides/slides-27-mlr-intro.html#interpretation-of-non-intercept-cont.",
+    "title": "Introduction to Multiple Linear Regression",
+    "section": "Interpretation of non-intercept (cont.)",
+    "text": "Interpretation of non-intercept (cont.)\n\\[\n\\begin{align*}\n\\widehat{\\text{shimmer}} &= 0.732  -0.025 \\text{hnr} + 13.467 \\text{jitter}\n\\end{align*}\n\\]\n\nFor every one unit increase in a patient’s voice jitter, their voice shimmer is expected to \\(\\color{orange}{\\text{increase by } 13.467}\\) units, holding their HNR value constant"
   }
 ]

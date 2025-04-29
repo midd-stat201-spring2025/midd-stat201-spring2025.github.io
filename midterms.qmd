@@ -18,7 +18,7 @@ title: "Midterms"
 
     -   You are allowed to bring a single, one-sided 8.5x11 inch piece of paper as your note sheet. **Your note sheet cannot have any example problems.** You will submit your note sheet alongside your midterm. No other outside resources will be allowed.
 
-    -   You will be provided a table z, t, and $\chi^2$ table. We will familiarize ourselves with them in class prior to the midterm.
+    -   You will be provided a table [z](z_table.pdf), [t](t_table.pdf), and [$\chi^2$](chi_square_table.pdf) table. We will familiarize ourselves with them in class prior to the midterm.
 
 ### Preparation
 
@@ -33,7 +33,9 @@ title: "Midterms"
     3.  Make a new note sheet
     4.  Repeat as necessary
 
--   Extra practice problems are available [here](midterms/midterm2_practice_probs.pdf). A previous midterm will be shared shortly.
+-   Extra practice problems are available [here](midterms/midterm2_practice_probs.pdf).
+
+-   A previous midterm is shared [here](midterms/midterm2_f24.pdf). Note, there are some concepts on the previous midterm that were not taught this semester (e.g. mean difference in paired data).
 
 -   You should make sure you understand how to read the distribution tables. Prof. Tang will not be able to help you read them during the midterm.
 

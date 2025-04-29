@@ -187,11 +187,11 @@ $$
     Interpret the coefficient associated with jitter
     :::
 
-## Interpretation on non-intercept (cont.)
+## Interpretation of non-intercept (cont.)
 
 $$
 \begin{align*}
-\widehat{\text{shimmer}} &= `r mlr_coefs[1]`  `r mlr_coefs[2]` \text{hnr} `r mlr_coefs[3]` \text{jitter} 
+\widehat{\text{shimmer}} &= `r mlr_coefs[1]`  `r mlr_coefs[2]` \text{hnr} + `r mlr_coefs[3]` \text{jitter} 
 \end{align*}
 $$
 
