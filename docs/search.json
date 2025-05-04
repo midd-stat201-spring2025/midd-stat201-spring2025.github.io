@@ -2314,7 +2314,7 @@
     "href": "index.html#announcements",
     "title": "Advanced Introduction to Statistics and Data Science",
     "section": "Announcements",
-    "text": "Announcements\n\nMidterm 2 this Thursday 5/1 in class!\nWeek 11 office hours:\n\nMonday 4/28: 2-3pm (usual)\nTuesday 4/29: 2-3pm\nFriday 5/02: cancelled"
+    "text": "Announcements\n\nFinal project work!\n\nSign up for 1:1 meetings outside of office hours here"
   },
   {
     "objectID": "slides/slides-09-conditional-probability.html#recap",
@@ -5618,7 +5618,7 @@
     "href": "project/project_description.html#report",
     "title": "Final project",
     "section": "Report",
-    "text": "Report\nEach group will write a final report created in an .qmd file. Ideally, the report will be submitted as a PDF (we will discuss how to do this as a class). The code in your report should be as reproducible as possible (e.g. not hard coding specific values, setting a seed when appropriate). All tables should be beautiful!\nAdditionally, only the output/execution from the code relevant for the report should be visible to the reader, not the code itself. This means that as the viewer, I should not see any code or extraneous output. The former is achieved by setting the chunk header option echo = F. That being said, if there is some code that you believe is useful/important for the reader to see, you are welcome to make that code visible by setting echo = T.\nThe report does not have a minimum length, but should contain each of the following sections. The report should also have an informative, academically appropriate title along with each group member’s name.\n\nIntroduction\n\nThe introduction should introduce your research questions and the population(s) of interest. Your report should have at least one research question per team member. In the introduction, you should briefly motivate the research questions (i.e. explain why they were of interest to your group)!\n\nIt could be helpful to identify/label your research questions as “Question 1”, “Question 2”, etc. for easier reference moving forward.\n\n\n\n\nData collection\nThis section should describe your data and the sampling process: how the data were collected and a summary description of the variables you collected.\n\n\nMethods\nFor each research question, you should:\n\nIdentify the specific variables used to address the research question. Also describe if you had to create/mutate new variables or filter out/subset your analysis to focus on certain observations for this research question.\nInclude at least one visualization or table of summary statistics that will be useful/informative for answering the research question. Briefly interpret the visualization/summary table.\n\nIt is okay if if one visualization is complex enough to address multiple research questions!\n\nDescribe and justify the statistical method(s) that you will use to answer your research questions. Part of the “justification” component includes conditions being met, if applicable. For linear regression, you should only verify the “L” and the “I” at this point.\n\nBe specific about different groups/populations, direction of differences, explanatory vs response variable, etc.\nIf you are conducting a hypothesis test, don’t forget to define your hypotheses and set the significance level. If you are creating a confidence interval, be sure to specify the level of confidence.\n\n\n\n\nResults\n\nUsing appropriate code, conduct the statistical methods you described in the Methods section for each research question. Then interpret your results in context (i.e. use your interval/p-value/model to actually answer the question).\n\nIf you do linear regression, you should check the “N” and “E” conditions here.\n\nThe goal is not to do an exhaustive data analysis (i.e., do not calculate every statistic and procedure you have learned for every variable), but rather let me know that you are proficient at asking meaningful questions and answering them with results of data analysis, that you are proficient in using R, and that you are proficient at interpreting and presenting the results.\n\n\n\nDiscussion\nThis section is a conclusion and discussion. This will require:\n\nA summary of what you have learned about your research questions along with statistical arguments supporting your conclusions.\nA critique your own methods and provide suggestions for improving your analysis. Issues pertaining to the reliability and validity of your data/data collection and appropriateness of the statistical analysis should also be discussed here.\nA paragraph on what your group would do differently if you were able to start over with the project or what you would do next if you were going to continue work on the project should also be included."
+    "text": "Report\nEach group will write a final report created in an .qmd file. You can download the template here:\n template \nIdeally, your report will be submitted both as a PDF and as a .qmd file. The code in your report should be as reproducible as possible (e.g. not hard coding specific values, setting a seed when appropriate). All tables should be beautiful!\nAdditionally, only the output/execution from the code relevant for the report should be visible to the reader, not the code itself. This means that as the viewer, I should not see any code or extraneous output. The former is achieved by setting the chunk header option echo = F. That being said, if there is some code that you believe is useful/important for the reader to see, you are welcome to make that code visible by setting echo = T.\nThe report does not have a minimum length, but should contain each of the following sections. The report should also have an informative, academically appropriate title along with each group member’s name.\n\nIntroduction\n\nThe introduction should introduce your research questions and the population(s) of interest. Your report should have at least one research question per team member. In the introduction, you should briefly motivate the research questions (i.e. explain why they were of interest to your group)!\n\nIt could be helpful to identify/label your research questions as “Question 1”, “Question 2”, etc. for easier reference moving forward.\n\n\n\n\nData collection\nThis section should describe your data and the sampling process: how the data were collected and a summary description of the variables you collected.\n\n\nMethods\nFor each research question, you should:\n\nIdentify the specific variables used to address the research question. Also describe if you had to create/mutate new variables or filter out/subset your analysis to focus on certain observations for this research question.\nInclude at least one visualization or table of summary statistics that will be useful/informative for answering the research question. Briefly interpret the visualization/summary table.\n\nIt is okay if if one visualization is complex enough to address multiple research questions!\n\nDescribe and justify the statistical method(s) that you will use to answer your research questions. Part of the “justification” component includes conditions being met, if applicable. For linear regression, you should only verify the “L” and the “I” at this point.\n\nBe specific about different groups/populations, direction of differences, explanatory vs response variable, etc.\nIf you are conducting a hypothesis test, don’t forget to define your hypotheses and set the significance level. If you are creating a confidence interval, be sure to specify the level of confidence.\n\n\n\n\nResults\n\nUsing appropriate code, conduct the statistical methods you described in the Methods section for each research question. Then interpret your results in context (i.e. use your interval/p-value/model to actually answer the question).\n\nIf you do linear regression, you should check the “N” and “E” conditions here.\n\nThe goal is not to do an exhaustive data analysis (i.e., do not calculate every statistic and procedure you have learned for every variable), but rather let me know that you are proficient at asking meaningful questions and answering them with results of data analysis, that you are proficient in using R, and that you are proficient at interpreting and presenting the results.\n\n\n\nDiscussion\nThis section is a conclusion and discussion. This will require:\n\nA summary of what you have learned about your research questions along with statistical arguments supporting your conclusions.\nA critique your own methods and provide suggestions for improving your analysis. Issues pertaining to the reliability and validity of your data/data collection and appropriateness of the statistical analysis should also be discussed here.\nA paragraph on what your group would do differently if you were able to start over with the project or what you would do next if you were going to continue work on the project should also be included."
   },
   {
     "objectID": "project/project_description.html#presentation",
@@ -10029,5 +10029,103 @@
     "title": "Introduction to Multiple Linear Regression",
     "section": "Interpretation of non-intercept (cont.)",
     "text": "Interpretation of non-intercept (cont.)\n\\[\n\\begin{align*}\n\\widehat{\\text{shimmer}} &= 0.732  -0.025 \\text{hnr} + 13.467 \\text{jitter}\n\\end{align*}\n\\]\n\nFor every one unit increase in a patient’s voice jitter, their voice shimmer is expected to \\(\\color{orange}{\\text{increase by } 13.467}\\) units, holding their HNR value constant"
+  },
+  {
+    "objectID": "slides/slides-28-project.html#housekeeping",
+    "href": "slides/slides-28-project.html#housekeeping",
+    "title": "Final project",
+    "section": "Housekeeping",
+    "text": "Housekeeping\n\n\n\n\nPlease sit with your final project group this week!\nOffice hours + additional 1:1 meetings available"
+  },
+  {
+    "objectID": "slides/slides-28-project.html#final-report-requirements",
+    "href": "slides/slides-28-project.html#final-report-requirements",
+    "title": "Final project",
+    "section": "Final report: Requirements",
+    "text": "Final report: Requirements\nReview the Report components on the Project description page."
+  },
+  {
+    "objectID": "slides/slides-28-project.html#qmd-template",
+    "href": "slides/slides-28-project.html#qmd-template",
+    "title": "Final project",
+    "section": ".qmd template",
+    "text": ".qmd template\nI have provided you with a .qmd template for the final project. Feel free to add to/modify the template as your group sees fit!\n\nPlease ensure your .qmd is in your STAT 201 folder\nThen, have a copy of your working dataset as a .csv file located in the same STAT 201 folder"
+  },
+  {
+    "objectID": "slides/slides-28-project.html#data-file",
+    "href": "slides/slides-28-project.html#data-file",
+    "title": "Final project",
+    "section": "Data file",
+    "text": "Data file\n\nIn your group, everyone should have the same file name for the data.\nNow modify the second code chunk in the template to read in your data:\n\n\n\nNote: name the variable whatever you like (i.e. not need to use my_data, so long as your group is consistent.\n\n\nIf you prefer to use a .xlsx file, you will need to load the readxl package at the top of the document (may need to install first) and then modify the code to\n\n\n\nmy_data <- read_xlsx(\"data_file_name.xlsx\")"
+  },
+  {
+    "objectID": "slides/slides-28-project.html#r-chunk-headers",
+    "href": "slides/slides-28-project.html#r-chunk-headers",
+    "title": "Final project",
+    "section": "R chunk headers",
+    "text": "R chunk headers\n\n\nIn .qmd documents, we can control the behavior of specific code chunks by changing the settings in the chunk header:\n\n\n\n\n\n\n\nFor example, setting the option eval = F in the code chunk header means “do not evaluate the code in this chunk”.\n\n\n\n\nCode:\n\n\n\n\nOutput:"
+  },
+  {
+    "objectID": "slides/slides-28-project.html#hiding-code",
+    "href": "slides/slides-28-project.html#hiding-code",
+    "title": "Final project",
+    "section": "Hiding code",
+    "text": "Hiding code\nWe can hide code from the viewer but still have it execute using the echo setting.\n\n\nCode:\n\n\n\nOutput:\n\n\n\n\n\n\n\nCode:\n\n\n\n\nOutput:"
+  },
+  {
+    "objectID": "slides/slides-28-project.html#working-methods",
+    "href": "slides/slides-28-project.html#working-methods",
+    "title": "Final project",
+    "section": "Working methods",
+    "text": "Working methods\n\nCollaborative working styles:\n\nPhysically work together on the same .qmd document\nWork on separate .qmd documents and then share code with each other (e.g. via a Googledoc) to compile one master .qmd\nA combination of the above two as the project comes together\n\nRecommendations:\n\nClear your environment before running new, shared code\nKnit often"
+  },
+  {
+    "objectID": "slides/slides-28-project.html#cleaning-your-data",
+    "href": "slides/slides-28-project.html#cleaning-your-data",
+    "title": "Final project",
+    "section": "Cleaning your data",
+    "text": "Cleaning your data\n\nYou might need to clean your data before working with it. This is probably most easily achieved within GoogleSheets or Excel rather than in R.\n\nE.g. a data entry is “6.4 hours” instead of 6.4, or there is inconsistent capitalization\n\nOnce/if your group has cleaned the data, you should replace the old data file in your STAT 201 folder with the cleaned version."
+  },
+  {
+    "objectID": "slides/slides-28-project.html#due-dates",
+    "href": "slides/slides-28-project.html#due-dates",
+    "title": "Final project",
+    "section": "Due dates",
+    "text": "Due dates\n\nRough draft of report due Sunday, 5/11 at 11:59pm\n\nThis is low stakes in the sense that it will be graded on a good faith effort\nYour group will identify one section of your report you would like feedback on!\n\nFinal presentations will take place on exam day Thursday, 5/15 from 9:00am-12:00pm\n\nSlides + preliminary results\n\nFinal reports due Sunday, 12/18 at 11:59pm (tentative)"
+  },
+  {
+    "objectID": "project/stat201_final_project.html#introduction",
+    "href": "project/stat201_final_project.html#introduction",
+    "title": "STAT 201: Final Project Report Template",
+    "section": "Introduction",
+    "text": "Introduction"
+  },
+  {
+    "objectID": "project/stat201_final_project.html#data-collection",
+    "href": "project/stat201_final_project.html#data-collection",
+    "title": "STAT 201: Final Project Report Template",
+    "section": "Data Collection",
+    "text": "Data Collection"
+  },
+  {
+    "objectID": "project/stat201_final_project.html#methods",
+    "href": "project/stat201_final_project.html#methods",
+    "title": "STAT 201: Final Project Report Template",
+    "section": "Methods",
+    "text": "Methods"
+  },
+  {
+    "objectID": "project/stat201_final_project.html#results",
+    "href": "project/stat201_final_project.html#results",
+    "title": "STAT 201: Final Project Report Template",
+    "section": "Results",
+    "text": "Results"
+  },
+  {
+    "objectID": "project/stat201_final_project.html#discussion",
+    "href": "project/stat201_final_project.html#discussion",
+    "title": "STAT 201: Final Project Report Template",
+    "section": "Discussion",
+    "text": "Discussion"
   }
 ]

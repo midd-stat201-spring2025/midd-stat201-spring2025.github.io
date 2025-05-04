@@ -1,6 +1,6 @@
 ---
 title: "Final project"
-date: "December 2, 2024"
+date: "May 5, 2025"
 title-slide-attributes:
     data-background-image: "figs/bikeshare-plots.png"
     data-background-size: contain
@@ -42,11 +42,11 @@ source("../stat201_fns.R")
 
 Review the Report components on the Project description page.
 
-## `.Rmd` template
+## `.qmd` template
 
-I have provided you with a `.Rmd` template for the final project. Feel free to add to/modify the template as your group sees fit!
+I have provided you with a `.qmd` template for the final project. Feel free to add to/modify the template as your group sees fit!
 
--   Please ensure your `.Rmd` is in your STAT 201 folder
+-   Please ensure your `.qmd` is in your STAT 201 folder
 
 -   Then, have a copy of your working dataset as a .csv file located in the same STAT 201 folder
 
@@ -74,7 +74,7 @@ my_data <- read_xlsx("data_file_name.xlsx")
 
 :::::: columns
 ::: {.column width="60%"}
-In `.Rmd` documents, we can control the behavior of specific code chunks by changing the settings in the chunk header:
+In `.qmd` documents, we can control the behavior of specific code chunks by changing the settings in the chunk header:
 :::
 
 :::: {.column width="40%"}
@@ -148,9 +148,9 @@ Output:
 
 -   Collaborative working styles:
 
-    -   Physically work together on the same `.Rmd` document
+    -   Physically work together on the same `.qmd` document
 
-    -   Work on separate `.Rmd` documents and then share code with each other (e.g. via a Googledoc) to compile one master `.Rmd`
+    -   Work on separate `.qmd` documents and then share code with each other (e.g. via a Googledoc) to compile one master `.qmd`
 
     -   A combination of the above two as the project comes together
 
@@ -167,3 +167,17 @@ Output:
     -   E.g. a data entry is "6.4 hours" instead of 6.4, or there is inconsistent capitalization
 
 -   Once/if your group has cleaned the data, you should replace the old data file in your STAT 201 folder with the cleaned version.
+
+## Due dates
+
+-   Rough draft of report due Sunday, 5/11 at 11:59pm
+
+    -   This is **low stakes** in the sense that it will be graded on a good faith effort
+
+    -   Your group will identify **one** section of your report you would like feedback on!
+
+-   Final presentations will take place on exam day Thursday, 5/15 from 9:00am-12:00pm
+
+    -   Slides + preliminary results
+
+-   Final reports due Sunday, 12/18 at 11:59pm (tentative)
