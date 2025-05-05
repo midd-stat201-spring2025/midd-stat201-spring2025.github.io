@@ -158,7 +158,7 @@ Output:
 
     -   Clear your environment before running new, shared code
 
-    -   Knit often
+    -   Render often
 
 ## Cleaning your data
 
@@ -174,7 +174,7 @@ Output:
 
     -   This is **low stakes** in the sense that it will be graded on a good faith effort
 
-    -   Your group will identify **one** section of your report you would like feedback on!
+    -   Your group will identify **one-two** sections of your report you would like feedback on!
 
 -   Final presentations will take place on exam day Thursday, 5/15 from 9:00am-12:00pm
 

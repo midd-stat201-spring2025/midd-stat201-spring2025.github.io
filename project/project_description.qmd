@@ -206,7 +206,7 @@ A general breakdown of scoring for the final report and presentation is as follo
 |------------------------|------------------------|------------------------|
 | **Project proposal** |  | 15 points |
 | **Initial data set submission** |  | 1 point |
-| **Rough draft** | Pick two sections you'd like Prof. Tang to give feedback on! | 5 points |
+| **Rough draft** | Pick one-two sections you'd like Prof. Tang to give feedback on! | 5 points |
 | **Presentation** | Presentation style: well-practiced, equal distribution of speaking time, within time limit | 8 points |
 |  | Slides: content, quality | 5 points |
 |  | Participation | 2 points |
