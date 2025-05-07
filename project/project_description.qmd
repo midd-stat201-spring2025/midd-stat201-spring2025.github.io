@@ -6,7 +6,7 @@ toc: true
 ## Deadlines
 
 | Deliverable | Date | Time |
-|------------------------|------------------------|------------------------|
+|----|----|----|
 | [Group creation](#group) | Thursday 4/10 | Beginning of class |
 | [Proposal for data collection](#proposal) | Wednesday 4/16 | 11:59pm |
 | Revised proposal for data collection (if applicable) | Sunday 4/20 | 11:59pm |
@@ -203,7 +203,7 @@ A general breakdown of scoring for the final report and presentation is as follo
 -   *Below 60%*: Student is not making a sufficient effort.
 
 | Component | Section | Points |
-|------------------------|------------------------|------------------------|
+|----|----|----|
 | **Project proposal** |  | 15 points |
 | **Initial data set submission** |  | 1 point |
 | **Rough draft** | Pick one-two sections you'd like Prof. Tang to give feedback on! | 5 points |
